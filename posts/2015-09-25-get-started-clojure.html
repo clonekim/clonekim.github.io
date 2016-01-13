@@ -59,7 +59,7 @@
     <h2>Clojure 시작하기</h2>
 </div>
 <div>
-    <ol class="content"><li><a href="#clojure_얻기">clojure 얻기</a></li><li><a href="#ide/tools">IDE/Tools</a></li><li><a href="#leiningen으로_시작하기">Leiningen으로 시작하기</a></li><li><a href="#project_생성">Project 생성</a></li><li><a href="#repl(read_eval_print_loop)_실행">REPL(Read Eval Print Loop) 실행</a></li><li><a href="#자료구조">자료구조</a></li><ol><li><a href="#list">List</a></li><li><a href="#vector">Vector</a></li><li><a href="#map">Map</a></li><li><a href="#set">Set</a></li></ol><li><a href="#binding">Binding</a></li><li><a href="#함수정의">함수정의</a></li><li><a href="#제어구문">제어구문</a></li><ol><li><a href="#if">if</a></li><li><a href="#when,when-let">when,when-let</a></li><li><a href="#cond,_case">cond, case</a></li></ol><li><a href="#database">Database</a></li><li><a href="#java_interoperability">Java Interoperability</a></li><li><a href="#web_programming">Web Programming</a></li><li><a href="#3rd_party_libraries">3rd Party Libraries</a></li><li><a href="#plugins">plugins</a></li><ol><li><a href="#lein-try_사용하기">lein-try 사용하기</a></li></ol></ol>
+    <ol class="content"><li><a href="#clojure_얻기">clojure 얻기</a></li><li><a href="#ide/tools">IDE/Tools</a></li><li><a href="#leiningen으로_시작하기">Leiningen으로 시작하기</a></li><li><a href="#project_생성">Project 생성</a></li><li><a href="#repl(read_eval_print_loop)_실행">REPL(Read Eval Print Loop) 실행</a></li><li><a href="#자료구조">자료구조</a></li><ol><li><a href="#list">List</a></li><li><a href="#vector">Vector</a></li><li><a href="#map">Map</a></li><li><a href="#set">Set</a></li></ol><li><a href="#binding">Binding</a></li></ol>
     <p>JVM위에서 작동하는 함수형 프로그래밍이다</p><h2><a name="clojure&#95;얻기"></a>clojure 얻기</h2><pre><code>http://clojure.org/</code></pre><h2><a name="ide/tools"></a>IDE/Tools</h2><ul><li><a href='http://lighttable.com'>LightTable</a></li><li><a href='https://cursiveclojure.com'>Cursive</a></li><li>Emacs</li></ul><h2><a name="leiningen으로&#95;시작하기"></a>Leiningen으로 시작하기</h2><p>Leiningen(레닝겐)은 클로져를 쉽게 시작하기 위한 빌드자동화 툴이다</p><pre><code>http://leiningen.org/</code></pre><p><img src="/img/clojure/lein-self-install.png" alt="Image 1" /></p><h2><a name="project&#95;생성"></a>Project 생성</h2><pre><code>lein new &#91;프로젝트명&#93;
 </code></pre><h2><a name="repl(read&#95;eval&#95;print&#95;loop)&#95;실행"></a>REPL(Read Eval Print Loop) 실행</h2><pre><code>lein repl
 </code></pre><p>도움말 보기</p><pre><code class="clojure">user=&gt; &#40;doc conj&#41;
@@ -191,120 +191,68 @@ clojure.lang.PersistentVector$ChunkedSeq
 
 &#40;clojure.set/intersection #{:r :b :w} #{:w :p :y}&#41;
 ;;#{:w}
-</code></pre><h2><a name="binding"></a>Binding</h2><p>변수에 값을 할당하는 과정을 말한다<br /> repl에서 정의하면 기본적으로 user라는 네임공간(namespace)서만 사용가능하다</p><pre><code class="clojure">
-&#40;def devloper &quot;Alice&quot;&#41;
+</code></pre><h2><a name="binding"></a>Binding</h2><p>변수에 값을 할당하는 과정을 말한다<br /> repl에서 정의하면 기본적으로 user라는 네임공간(namespace)서만 사용가능하다</p><pre><code class="clojure">&#40;def devloper &quot;Alice&quot;&#41;
 ;; #'user/developer
-&lt;/code&gt;
+</code></pre><p>let은 해당 컨텍스트안에서만 유효한 로컬 변수임 ``clojure (let [developer "Alice in Wonderland"])</p><p>(let [developer "Alice in Wonderland" rabbit "White Rabbit" ])</p><p>(let [[color size] ["blue" "small"]]   (str "The " color " door is " size)) ;; "The blue door is small"</p><p>(let [x ["blue" "small"]   color (first x)   size (last x)]    (str "The " color " door is " size)) ;; "The blue door is small"</p><p>;; 현재 네임공간 확인 <em>ns</em> ;; #object[clojure.lang.Namespace 0x4e5051b9 "user"]</p><p>;; 다른 네임공간으로 전환 (ns alice) (def name "King") (ns user) alice/name ;; "King" 다른 네임공간의 변수를 사용</p><p>;; alias 사용 (require '[alice :as al]) al/name ;; "King"</p><p>;; alias 사용하지 않고 현재 네임공간에서 사용할 경우 (ns wonderland   (:require [alice :refer :all] ;;alice 네임공간의 모든 것을 현재 네임공간에서 사용한다<pre><code>        &#91;rabbit :refer :all&#93;&#41;&#41;
+         </code></pre>;;함수명이 같아서 충돌할 경우가 발생할 수 도 있다 ;; 그럴 경우 일부만 aliac로  사용하자</p><p>(ns wonderland   (:require [clojure.set :as s]<pre><code>        &#91;alice :as al&#93;&#41;&#41;          <pre><code>
+## 함수정의
 
-let은 해당 컨텍스트안에서만 유효한 로컬 변수임
-&lt;code clojure&gt;
-&#40;let &#91;developer &quot;Alice in Wonderland&quot;&#93;&#41;
-
-&#40;let &#91;developer &quot;Alice in Wonderland&quot; rabbit &quot;White Rabbit&quot; &#93;&#41;
-
-&#40;let &#91;&#91;color size&#93; &#91;&quot;blue&quot; &quot;small&quot;&#93;&#93;
-  &#40;str &quot;The &quot; color &quot; door is &quot; size&#41;&#41;
-;; &quot;The blue door is small&quot;
-
-&#40;let &#91;x &#91;&quot;blue&quot; &quot;small&quot;&#93;
-  color &#40;first x&#41;
-  size &#40;last x&#41;&#93;
-   &#40;str &quot;The &quot; color &quot; door is &quot; size&#41;&#41;
-;; &quot;The blue door is small&quot;
+ </code></pre>clojure (defn follow-the-rabbit [] "Off we go!")</p><p>(follow-the-rabbit) ;; "Off we go!"</p><p>defn shop-for-jams [jam1 jam2]   {:name "jam-basket"    :jam1 jam1    :jam2 jam2})</p><p>(shop-for-jams "strawberry" "marmalade") ;; {:name "jam-basket", :jam1 "strawberry", :jam2 "marmalade"}</p><p>;;anonymous 함수 (fn [] (str "Off we go" "!")) ;; #object[user$eval1365$fn<b>1366 0x4c3e78fd "user$eval1365$fn</b>1366@4c3e78fd"]</p><p>;; 단축표현(shorthand) (#(str "Off we go" "!")) ;; "Off we go!"</p><p>(#(str "Off we go" "!" " - " %) "again") ;; "Off we go! - again" %(또는 %1)는 첫번째 파라미터 두번째부터는 %2로 처리해야함<pre><code>
+## 제어구문
 
 
-;; 현재 네임공간 확인
-&#42;ns&#42;
-;; #object&#91;clojure.lang.Namespace 0x4e5051b9 &quot;user&quot;&#93;
+### if
 
-;; 다른 네임공간으로 전환
-&#40;ns alice&#41;
-&#40;def name &quot;King&quot;&#41;
-&#40;ns user&#41;
-alice/name
-;; &quot;King&quot; 다른 네임공간의 변수를 사용
+ </code></pre>clojure (if true "true" "false") ;;-> "true"</p><p>(if nil "true" "false") ;;-> "false"</p><p>(if (= :drink :drink)   "Try"   "Don't try" ) ;;-> "Try"</p><p>(let [is-small (> 5 3)]   (if is-small<pre><code>&quot;Small&quot;
+&quot;No&quot;&#41;&#41; </code></pre>;; "Small"  <br /> ;; 5보다 3이 작은경우 true를 저장하고 조건에 맞는 결과값을 반환한다</p><p>(if-let [is-small (> 5 3)]   "Small"   "No") ;; "Small"<br /><pre><code>
+### when,when-let
 
-;; alias 사용
-&#40;require '&#91;alice :as al&#93;&#41;
-al/name
-;; &quot;King&quot;
+ </code></pre>clojure (defn ask [question]   (when question "Yes")) ;;-> "Yes"</p><p>(when-let [question] "Yes") ;;-> Yes otherwise nil<pre><code>
+### cond, case
 
-;; alias 사용하지 않고 현재 네임공간에서 사용할 경우
-&#40;ns wonderland
-  &#40;:require &#91;alice :refer :all&#93; ;;alice 네임공간의 모든 것을 현재 네임공간에서 사용한다
-            &#91;rabbit :refer :all&#93;&#41;&#41;
-            
-;;함수명이 같아서 충돌할 경우가 발생할 수 도 있다
-;; 그럴 경우 일부만 aliac로  사용하자
+ </code></pre>clojure (let [bottle "drink"]   (cond<pre><code>&#40;= bottle &quot;poison&quot;&#41; &quot;don't touch&quot;
+&#40;= bottle &quot;empty&quot;&#41; &quot;all gone&quot;&#41;&#41; </code></pre> ;;-> nil<pre><code>
+cond와 달리 매칭되는 것이 없을 경우  IllegalArgumentException 을 발생시킴  
+아래와 같이 익셉션을 발생하지 않고 unknown을 출력할 수 있음
 
-&#40;ns wonderland
-  &#40;:require &#91;clojure.set :as s&#93;
-            &#91;alice :as al&#93;&#41;&#41;          
-</code></pre><h2><a name="함수정의"></a>함수정의</h2><pre><code class="clojure">&#40;defn follow-the-rabbit &#91;&#93; &quot;Off we go!&quot;&#41;
+ </code></pre>clojure (let [bottle "drink"]  (case bottle    "poison" "don't touch"    "drink" "drink it"     "unknown" )) <pre><code>
+## Database
 
-&#40;follow-the-rabbit&#41;
-;; &quot;Off we go!&quot;
+&#42; &#91;jdbc&#93;&#40;http://clojure-doc.org/articles/ecosystem/java&#95;jdbc/home.html&#41;
+&#42; &#91;SQL Korma&#93;&#40;http://sqlkorma.com/&#41;
+&#42; &#91;monger&#93;&#40;http://clojuremongodb.info&#41;
 
-defn shop-for-jams &#91;jam1 jam2&#93;
-  {:name &quot;jam-basket&quot;
-   :jam1 jam1
-   :jam2 jam2}&#41;
+## Java Interoperability
 
-&#40;shop-for-jams &quot;strawberry&quot; &quot;marmalade&quot;&#41;
-;; {:name &quot;jam-basket&quot;, :jam1 &quot;strawberry&quot;, :jam2 &quot;marmalade&quot;}
 
-;;anonymous 함수
-&#40;fn &#91;&#93; &#40;str &quot;Off we go&quot; &quot;!&quot;&#41;&#41;
-;; #object&#91;user$eval1365$fn&#95;&#95;1366 0x4c3e78fd &quot;user$eval1365$fn&#95;&#95;1366@4c3e78fd&quot;&#93;
 
-;; 단축표현&#40;shorthand&#41;
-&#40;#&#40;str &quot;Off we go&quot; &quot;!&quot;&#41;&#41;
-;; &quot;Off we go!&quot;
+## Web Programming
 
-&#40;#&#40;str &quot;Off we go&quot; &quot;!&quot; &quot; - &quot; %&#41; &quot;again&quot;&#41;
-;; &quot;Off we go! - again&quot; %&#40;또는 %1&#41;는 첫번째 파라미터
-두번째부터는 %2로 처리해야함
-</code></pre><h2><a name="제어구문"></a>제어구문</h2><h3><a name="if"></a>if</h3><pre><code class="clojure">&#40;if true &quot;true&quot; &quot;false&quot;&#41;
-;;-&gt; &quot;true&quot;
+&#42; &#91;Ring&#93;&#40;https://github.com/ring-clojure/ring&#41;
+&#42; &#91;Luminus&#93;&#40;http://www.luminusweb.net&#41;
 
-&#40;if nil &quot;true&quot; &quot;false&quot;&#41;
-;;-&gt; &quot;false&quot;
 
-&#40;if &#40;= :drink :drink&#41;
-  &quot;Try&quot;
-  &quot;Don't try&quot; &#41;
-;;-&gt; &quot;Try&quot;
+## 3rd Party Libraries
 
-&#40;let &#91;is-small &#40;&gt; 5 3&#41;&#93;
-  &#40;if is-small
-    &quot;Small&quot;
-    &quot;No&quot;&#41;&#41;
-;; &quot;Small&quot;    
-;; 5보다 3이 작은경우 true를 저장하고 조건에 맞는 결과값을 반환한다
+&#42; bouncer
+&#42; validateur
+&#42; SQLingvo
+&#42; HoneySQL
 
-&#40;if-let &#91;is-small &#40;&gt; 5 3&#41;&#93;
-  &quot;Small&quot;
-  &quot;No&quot;&#41;
-;; &quot;Small&quot;  
-</code></pre><h3><a name="when,when-let"></a>when,when-let</h3><pre><code class="clojure">&#40;defn ask &#91;question&#93;
-  &#40;when question &quot;Yes&quot;&#41;&#41;
-;;-&gt; &quot;Yes&quot;
+## plugins
 
-&#40;when-let &#91;question&#93; &quot;Yes&quot;&#41;
-;;-&gt; Yes otherwise nil
-</code></pre><h3><a name="cond,&#95;case"></a>cond, case</h3><pre><code class="clojure">&#40;let &#91;bottle &quot;drink&quot;&#93;
-  &#40;cond
-    &#40;= bottle &quot;poison&quot;&#41; &quot;don't touch&quot;
-    &#40;= bottle &quot;empty&quot;&#41; &quot;all gone&quot;&#41;&#41;
- ;;-&gt; nil
-</code></pre><p>cond와 달리 매칭되는 것이 없을 경우  IllegalArgumentException 을 발생시킴<br /> 아래와 같이 익셉션을 발생하지 않고 unknown을 출력할 수 있음</p><pre><code class="clojure">&#40;let &#91;bottle &quot;drink&quot;&#93;
- &#40;case bottle
-   &quot;poison&quot; &quot;don't touch&quot;
-   &quot;drink&quot; &quot;drink it&quot; 
-   &quot;unknown&quot; &#41;&#41; 
-</code></pre><h2><a name="database"></a>Database</h2><ul><li><a href='http://clojure-doc.org/articles/ecosystem/java_jdbc/home.html'>jdbc</a></li><li><a href='http://sqlkorma.com/'>SQL Korma</a></li><li><a href='http://clojuremongodb.info'>monger</a></li></ul><h2><a name="java&#95;interoperability"></a>Java Interoperability</h2><h2><a name="web&#95;programming"></a>Web Programming</h2><ul><li><a href='https://github.com/ring-clojure/ring'>Ring</a></li><li><a href='http://www.luminusweb.net'>Luminus</a></li></ul><h2><a name="3rd&#95;party&#95;libraries"></a>3rd Party Libraries</h2><ul><li>bouncer</li><li>validateur</li><li>SQLingvo</li><li>HoneySQL</li></ul><h2><a name="plugins"></a>plugins</h2><h3><a name="lein-try&#95;사용하기"></a>lein-try 사용하기</h3><p>아래 파일을 편집한다</p><p>${HOME}/.lein/profiles.clj</p><pre><code class="clojure">{:user {:plugins &#91;&#91;lein-try &quot;0.4.3&quot;&#93;&#93;}}
-</code></pre>clj-time이라는 라이브러를 가지고 간단한 테스트 해볼때<br />아래와 같이 repl를 열수있다<pre><code>lein try clj-time
-</code></pre>
+### lein-try 사용하기
+
+아래 파일을 편집한다
+
+${HOME}/.lein/profiles.clj
+
+
+ </code></pre>clojure {:user {:plugins [[lein-try "0.4.3"]]}}<pre><code>clj-time이라는 라이브러를 가지고 간단한 테스트 해볼때  
+아래와 같이 repl를 열수있다
+
+ </code></pre> lein try clj-time<pre><code>
+
 </div>
 
 <div id="post-tags">
@@ -317,7 +265,7 @@ defn shop-for-jams &#91;jam1 jam2&#93;
 
     <div id="prev-next">
         
-        <a href="/posts/2016-01-07-github-page.html">&laquo; Github에 블로그제작</a>
+        <a href="/posts/2015-09-25-using-jdbc-in-clojure.html">&laquo; 클로저에서 Jdbc사용</a>
         
         
         <a class="right" href="/posts/2015-09-23-freemarker-assign-tip.html">Freemarker assign팁 &raquo;</a>
@@ -349,13 +297,13 @@ defn shop-for-jams &#91;jam1 jam2&#93;
                         
                         <li><a href="/posts/2016-01-07-github-page.html">Github에 블로그제작</a></li>
                         
+                        <li><a href="/posts/2015-09-25-using-jdbc-in-clojure.html">클로저에서 Jdbc사용</a></li>
+                        
                         <li><a href="/posts/2015-09-25-get-started-clojure.html">Clojure 시작하기</a></li>
                         
                         <li><a href="/posts/2015-09-23-freemarker-assign-tip.html">Freemarker assign팁</a></li>
                         
                         <li><a href="/posts/2015-09-10-oracle-jdbc.html">Oracle Jdbc Url</a></li>
-                        
-                        <li><a href="/posts/2015-07-16-windows-vim.html">윈도우즈 Vim설정</a></li>
                         
                     </ul>
                 </div>
@@ -371,13 +319,19 @@ defn shop-for-jams &#91;jam1 jam2&#93;
                         
                         <li><a href="/tags/clojure.html">clojure</a></li>
                         
+                        <li><a href="/tags/redmine.html">redmine</a></li>
+                        
                         <li><a href="/tags/oracle.html">oracle</a></li>
                         
                         <li><a href="/tags/vi.html">vi</a></li>
                         
                         <li><a href="/tags/java.html">java</a></li>
                         
+                        <li><a href="/tags/mariadb.html">mariadb</a></li>
+                        
                         <li><a href="/tags/freemarker.html">freemarker</a></li>
+                        
+                        <li><a href="/tags/ruby.html">ruby</a></li>
                         
                         <li><a href="/tags/jdbc.html">jdbc</a></li>
                         
@@ -385,9 +339,13 @@ defn shop-for-jams &#91;jam1 jam2&#93;
                         
                         <li><a href="/tags/vim.html">vim</a></li>
                         
+                        <li><a href="/tags/jruby.html">jruby</a></li>
+                        
                         <li><a href="/tags/angularjs.html">angularjs</a></li>
                         
                         <li><a href="/tags/javascript.html">javascript</a></li>
+                        
+                        <li><a href="/tags/sinatra.html">sinatra</a></li>
                         
                     </ul>
                 </div>

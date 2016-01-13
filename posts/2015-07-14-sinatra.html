@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
     <meta charset="utf-8"/>
-    <title>On the Clojure: Oracle Jdbc Url</title>
+    <title>On the Clojure: Sinatra 웹프로그래밍</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700' rel='stylesheet'
           type='text/css'>
@@ -53,39 +53,102 @@
 <div id="post">
     <div class="post-header">
     <div id="post-meta" class="row">
-        <div class="col-lg-6">2015년 9월 10일 (목)</div>
+        <div class="col-lg-6">2015년 7월 14일 (화)</div>
         
     </div>
-    <h2>Oracle Jdbc Url</h2>
+    <h2>Sinatra 웹프로그래밍</h2>
 </div>
 <div>
-    
-    <p>JDBC URL syntax</p><pre><code>jdbc:oracle:thin:@&#91;HOST&#93;&#91;:PORT&#93;:SID
+    <ol class="content"><li><a href="#설치">설치</a></li><li><a href="#hello_ruby">Hello Ruby</a></li><li><a href="#라우터">라우터</a></li><li><a href="#요청파라미터">요청파라미터</a></li><li><a href="#본문으로_json를_요청받을_경우">본문으로 Json를 요청받을 경우</a></li><li><a href="#응답하기">응답하기</a></li><li><a href="#json으로_응답하기">Json으로 응답하기</a></li><li><a href="#sample_web">Sample Web</a></li><li><a href="#contrib_활용">Contrib 활용</a></li><li><a href="#war_배포">War 배포</a></li></ol>
+    <h2><a name="설치"></a>설치</h2><pre><code>jruby -S gem install sinatra
+</code></pre><h2><a name="hello&#95;ruby"></a>Hello Ruby</h2><pre><code class="ruby">require 'rubygems'
+require 'sinatra'
 
-jdbc:oracle:thin:@//&#91;HOST&#93;&#91;:PORT&#93;/SERVICE
-</code></pre><p>Hikari Pool를 사용 시 아래와 같이 경고메시지가 나타나면<br /> oracle.jdbc.driver.OracleDriver에서 oracle.jdbc.OracleDriver 로 바꿀 것</p><pre><code>2015-09-10 WARN  &#40;main&#41; &#91;DriverDataSource&#40;&lt;init&gt;:68&#41;&#93; Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
-2015-09-10 DEBUG &#40;main&#41; &#91;PoolUtilities&#40;getAndSetNetworkTimeout:198&#41;&#93; HikariPool-0 - Connection.setNetworkTimeout&#40;&#41; not supported
-</code></pre>
+get '/' do
+  'Hello Jruby'
+end
+</code></pre><h2><a name="라우터"></a>라우터</h2><p>get, post, put, delete를 사용할 수있다</p><pre><code class="ruby">get '/' do
+
+end
+</code></pre><h2><a name="요청파라미터"></a>요청파라미터</h2><p>/?name=foo 로 요청 시 아래와 같이</p><pre><code class="ruby">post '/' do
+  puts params&#91;'name'&#93;
+end
+</code></pre><h2><a name="본문으로&#95;json를&#95;요청받을&#95;경우"></a>본문으로 Json를 요청받을 경우</h2><pre><code class="ruby">post '/' do
+  payload = JSON.parse&#40;request.body.read&#41;
+  puts payload
+  status 201
+end
+</code></pre><p>{{:jruby:post.png?200|}}</p><h2><a name="응답하기"></a>응답하기</h2><p>문자열, html, json, 바이너리 등의 모든 컨텐츠로 응답가능하다</p><pre><code class="ruby">get '/' do
+  'Hello'
+end
+</code></pre><h2><a name="json으로&#95;응답하기"></a>Json으로 응답하기</h2><pre><code class="ruby">require 'sinatra'
+require 'json'
+
+get '/' do
+  content&#95;type :json
+  data = { foo: 'bar'}
+  data.to&#95;json
+end
+</code></pre><p>또는 sinatra-contrib를 사용해서</p><pre><code class="ruby">require 'sinatra'
+require 'sinatra-contrib'
+
+get '/' do
+  data = { foo: 'bar'}
+  json data
+end
+</code></pre><h2><a name="sample&#95;web"></a>Sample Web</h2><p><strong>app.rb</strong></p><pre><code class="ruby">require 'rubygems'
+require 'sinatra'
+require 'sinatra/reloader'
+require 'json'
+require 'sequel'
+require './mysql-connector-java-5.1.35.jar'
+
+DB = Sequel.connect&#40;'jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&amp;characterEncoding=utf8',
+			:user=&gt;'test',
+			:password=&gt;'test'&#41;
+user = DB&#91;:users&#93;
+
+
+get '/' do
+  erb :index
+end
+
+get '/api/users' do
+  data = user.all
+  pager = {
+ 	total: data.count,
+	rows: data,
+	page: 1
+  }
+  pager.to&#95;json
+end
+</code></pre><p><strong>config.ru</strong><pre><code class="ruby">require 'app.rb'
+run Sinatra::Application
+ </code></pre></p><p>아래와 같이 실행한다</p><pre><code>jruby app.rb
+</code></pre><p>실행 시 내장된 웹서버서(WEBrick)를 사용한다<br /> 기본적으로 4567번 포트를 사용한다</p><p>아래는 Rack기반으로 기동하는 방법이다<br /> 기본적으로 9292번 포트를 사용한다</p><pre><code>jruby -S rackup config.ru
+</code></pre><p>===== 템플릿 =====</p><p>기본적으로 erb템플릿을 사용한다</p><p><strong>디렉토리 구조</strong></p><p>public에 정적인 파일을 views에 .erb파일이 위치한다.</p><p><code> ├─public └─views<pre><code>   index.erb
+   layout.erb </code></pre></code>     <br /></p><p><file ruby layout.erb> <body>  <%= yield %> </body> </file></p><p><file ruby index.erb> <h1>Hello Sinatra</h1> <%= $servlet_context %> </file></p><p><file ruby> get '/' do   erb :index end </file></p><p>$servlet_context라는 인스턴스명을 출력할 것이다 &#92; 단지 rack기반일 경우에만 출력됨</p><h2><a name="contrib&#95;활용"></a>Contrib 활용</h2><pre><code>jruby -S gem install sinatra-contrib</code></pre><p>reloader만 추가하고 소스를 수정 시 바로 적용됨</p><pre><code>require 'sinatra/reloader'
+</code></pre><h2><a name="war&#95;배포"></a>War 배포</h2><p>warbler를 설치한다</p><pre><code>jruby -S gem install warbler</code></pre><p>루비웹 프레임워크는 rack 이라는 인터페이스위에서 작동한다<br /> 자바의 서블릿과 같다<br /> rack으로 기동하는 파일을 작성한다</p><p><file ruby config.ru> require 'app.rb' run Sinatra::Application </file></p><p>config 디렉토리를 만들고 warble config를 작성한다 &#92; config아래에 warble.config라는 파일이 생성된다</p><p><code> mkdir config jruby -S warble config </code></p><p><file ruby warble.rb> Warbler::Config.new do |config|</p><p>   config.dirs = %w(public views)    config.includes = FileList["app.rb"]    config.gems += ["sinatra","sinatra-contrib", "sequel"]    config.gem_dependencies = true    config.pathmaps.application = ["WEB-INF/%p"]    config.jar_name = "app" end<br /> </file></p><p>이제 war파일을 작성하면 &#92; app.war 라는 파일이 보일것이다 <code> jruby -S warble </code></p><p>===== 참고 =====</p><p>http://www.rubyinside.com/sinatra-29-links-and-resources-for-a-quicker-easier-way-to-build-webapps-1371.html http://aligach.net/diary/20110307.html http://www7b.biglobe.ne.jp/~makandat/gg<i>sites/Sinatra</i>Diary_01.html#example1</p>
 </div>
 
 <div id="post-tags">
     <b>Tags: </b>
     
-    <a href="/tags/oracle.html">oracle</a>
+    <a href="/tags/ruby.html">ruby</a>
     
-    <a href="/tags/java.html">java</a>
+    <a href="/tags/jruby.html">jruby</a>
     
-    <a href="/tags/jdbc.html">jdbc</a>
+    <a href="/tags/sinatra.html">sinatra</a>
     
 </div>
 
 
     <div id="prev-next">
         
-        <a href="/posts/2015-09-23-freemarker-assign-tip.html">&laquo; Freemarker assign팁</a>
+        <a href="/posts/2015-07-16-windows-vim.html">&laquo; 윈도우즈 Vim설정</a>
         
         
-        <a class="right" href="/posts/2015-09-03-mariadb-replication-using-gtid.html">GTID를 이용한 Mariadb Replication &raquo;</a>
+        <a class="right" href="/posts/2015-07-02-angularjs.html">AngularJS &raquo;</a>
         
     </div>
 

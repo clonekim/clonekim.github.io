@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
     <meta charset="utf-8"/>
-    <title>On the Clojure: Tags</title>
+    <title>On the Clojure: GTID를 이용한 Mariadb Replication</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700' rel='stylesheet'
           type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
-    <link href="css/screen.css" rel="stylesheet" type="text/css" />
+    <link href="/css/screen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
@@ -50,48 +50,62 @@
         <div class="col-lg-9">
             <div id="content">
                 
-<div id="tags-page">
-    <div id="page-header">
-        <h2>Tags</h2>
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta" class="row">
+        <div class="col-lg-6">2015년 9월 3일 (목)</div>
+        
+    </div>
+    <h2>GTID를 이용한 Mariadb Replication</h2>
+</div>
+<div>
+    <ol class="content"><li><a href="#환경">환경</a></li><li><a href="#마스터설정">마스터설정</a></li><li><a href="#슬레이브설정">슬레이브설정</a></li></ol>
+     <h2><a name="환경"></a>환경</h2><p>vm002: master<br /> vm003: slave</p> <h2><a name="마스터설정"></a>마스터설정</h2><p>GTID를 사용하기 위해 <code>gtid&#95;strict&#95;mode</code>를 활성해야함<br /> 활성화시키위해서 서버를 재시작한다</p><pre><code>server-id = 1
+character-set-server = utf8
+bind-address = 0.0.0.0
+log&#95;bin = /var/lib/mysql/mariadb-bin
+expire&#95;logs&#95;days = 2
+sync&#95;binlog = 0
+slave&#95;compressed&#95;protocol = 1
+binlog&#95;format = row
+gtid&#95;strict&#95;mode = 1
+</code></pre><p>마스터에 접속할 슬레이브계정을 만든다</p><pre><code>create user 'replication@vm003' identified by 'password';
+grant replication slave on &#42;.&#42; to 'replication@vm003';
+flush privileges;
+</code></pre><h2><a name="슬레이브설정"></a>슬레이브설정</h2><pre><code>&#91;mysqld&#93;
+server-id = 2
+character-set-server = utf8
+bind-address = 0.0.0.0
+slave&#95;compressed&#95;protocol = 1
+binlog&#95;format = row
+read&#95;only
+gtid&#95;strict&#95;mode = 1
+</code></pre><p>슬레이브 시작을 위해서 GTID 정보가 필요하다<br /> 마스터에서 DB에 변화를 주면 이벤트가 발생하고 아래와 같이 이벤트 번호를 확인가능하다</p><p><img src="/img/mariadb/master.png" alt="Master" /></p><p><img src="/img/mariadb/slave_pos.png" alt="Slave Setting" /></p><p>슬레이브에서는 마스터의 gtid를 확인을 하려면 먼저 슬레이브를 시작하여야 함</p><pre><code>stop slave
+reset slave
+startslave
+</code></pre>
+</div>
+
+<div id="post-tags">
+    <b>Tags: </b>
+    
+    <a href="/tags/mariadb.html">mariadb</a>
+    
+</div>
+
+
+    <div id="prev-next">
+        
+        <a href="/posts/2015-09-10-oracle-jdbc.html">&laquo; Oracle Jdbc Url</a>
+        
+        
+        <a class="right" href="/posts/2015-07-18-install-redmine.html">Redmine3 설치하기 &raquo;</a>
+        
     </div>
 
-    <ul>
-        
-        <li><a href="/tags/cryogen.html">cryogen</a></li>
-        
-        <li><a href="/tags/github.html">github</a></li>
-        
-        <li><a href="/tags/clojure.html">clojure</a></li>
-        
-        <li><a href="/tags/redmine.html">redmine</a></li>
-        
-        <li><a href="/tags/oracle.html">oracle</a></li>
-        
-        <li><a href="/tags/vi.html">vi</a></li>
-        
-        <li><a href="/tags/java.html">java</a></li>
-        
-        <li><a href="/tags/mariadb.html">mariadb</a></li>
-        
-        <li><a href="/tags/freemarker.html">freemarker</a></li>
-        
-        <li><a href="/tags/ruby.html">ruby</a></li>
-        
-        <li><a href="/tags/jdbc.html">jdbc</a></li>
-        
-        <li><a href="/tags/template.html">template</a></li>
-        
-        <li><a href="/tags/vim.html">vim</a></li>
-        
-        <li><a href="/tags/jruby.html">jruby</a></li>
-        
-        <li><a href="/tags/angularjs.html">angularjs</a></li>
-        
-        <li><a href="/tags/javascript.html">javascript</a></li>
-        
-        <li><a href="/tags/sinatra.html">sinatra</a></li>
-        
-    </ul>
+    
+
+
 </div>
 
             </div>
@@ -175,7 +189,7 @@
 </div>
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="js/highlight.pack.js" type="text/javascript"></script>
+<script src="/js/highlight.pack.js" type="text/javascript"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>
