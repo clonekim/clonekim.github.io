@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>My Awesome Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700' rel='stylesheet'
+          type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
+    <link href="css/screen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/index.html">My Awesome Blog</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li  class="active" ><a href="/index.html">Home</a></li>
+                <li
+                ><a href="/archives.html">Archives</a></li>
+                
+                <li
+                >
+                <a href="/pages-output/about.html">About</a>
+                </li>
+                
+                <li><a href="/feed.xml">RSS</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+</nav>
+
+
+<div class="container">
+
+
+    <div class="row">
+        <div class="col-lg-9">
+            <div id="content">
+                
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta" class="row">
+        <div class="col-lg-6">2016년 1월 7일 (목)</div>
+        
+    </div>
+    <h2>Github에 블로그제작</h2>
+</div>
+<div>
+    <ol class="content"><li><a href="#깃허브에_계정만들기">깃허브에 계정만들기</a></li><li><a href="#lein_설치하고_템플릿작성">lein 설치하고 템플릿작성</a></li><li><a href="#블로그_프로젝트를_생성한다">블로그 프로젝트를 생성한다</a></li><li><a href="#git_clone한다">git clone한다</a></li><li><a href="#config.edn_편집">config.edn 편집</a></li><li><a href="#서버_시작">서버 시작</a></li><li><a href="#마크다운으로_기사_작성하기">마크다운으로 기사 작성하기</a></li><li><a href="#github에_올리기">github에 올리기</a></li></ol>
+    <h2><a name="깃허브에&#95;계정만들기"></a>깃허브에 계정만들기</h2><p>먼저 <a href='http://github.com'>github.com</a>에 가입하고 저장소를 만든다<br /> 저장소는 계정명.github.io라고 작성한다</p><p>https://help.github.com/articles/what-are-github-pages/</p><h2><a name="lein&#95;설치하고&#95;템플릿작성"></a>lein 설치하고 템플릿작성</h2><p><a href='http://leiningen.org/'>leingen</a> (레닝겐) 을 설치한다</p><h2><a name="블로그&#95;프로젝트를&#95;생성한다"></a>블로그 프로젝트를 생성한다</h2><p>cryogen을 이용해서 블로그 프로젝트를 생성한다</p><pre><code>lein new cryogen my-blog
+</code></pre><h2><a name="git&#95;clone한다"></a>git clone한다</h2><p>public 디렉토리는 없기때문에 작성한다<br /></p><pre><code>예&#41; git@github.com:&#91;계정명&#93;/&#91;생성한 저장소&#93; &#91;target 디렉토리&#93;  
+git clone git@github.com:clonekim/clonekim.github.io.git resources/public
+</code></pre><h2><a name="config.edn&#95;편집"></a>config.edn 편집</h2><p>resources/templates/config.edn를 편집한다<br /> 내용중 아래와 같이 ""으로 설정한다<pre><code>:blog-prefix &quot;&quot;
+ </code></pre></p><h2><a name="서버&#95;시작"></a>서버 시작</h2><p>아래 명령어로 서버를 시작한다<br /> 서버는 로컬에서 생성하고 앞으로 작성한 문서를 서버에서 파싱해주는 역할을 한다<br /></p><pre><code>lein ring server
+</code></pre>서버를 시작하고 http://localhost:3000 에 접속한다  <br /><h2><a name="마크다운으로&#95;기사&#95;작성하기"></a>마크다운으로 기사 작성하기</h2><p>resources/templates/md/posts에 yyyy-mm-dd-docs.md 형식으로 파일을 작성한다<pre><code>{:title &quot;TEST 기사&quot;
+ :layout :post
+ :tags  &#91;&quot;태그1&quot; &quot;태그2&quot;&#93;
+ :toc true}
+여기에 마크다운문법을 이용해서 작성한다...
+## Hello
+ 
+ </code></pre></p><p>파일을 편집하고 저장 할 때 마다 서버에서 자동으로 마크다운 페이지를 파싱하여<br /> resources/publc 밑에 결과물을 생성해 낸다 결국 public 디렉토리만 github에 올리면 끝</p><h2><a name="github에&#95;올리기"></a>github에 올리기</h2><pre><code>git add --all
+git commit -m &quot;cryogen 적용&quot;
+git push -u origin master
+</code></pre>
+</div>
+
+<div id="post-tags">
+    <b>Tags: </b>
+    
+    <a href="/tags-output/cryogen.html">cryogen</a>
+    
+    <a href="/tags-output/github.html">github</a>
+    
+</div>
+
+
+    
+
+    <div id="prev-next">
+        
+        
+    </div>
+</div>
+
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div id="sidebar">
+                <h3>Links</h3>
+                <ul id="links">
+                    <li><a href="http://cryogenweb.org/docs/home.html">Cryogen Docs</a></li>
+                    <li><a href="http://carmenla.me/blog/index.html">Carmen's Blog</a></li>
+                    
+                    <li><a href="/pages-output/another-page.html">Another Page</a></li>
+                    
+                </ul>
+                
+                <div id="recent">
+                    <h3>Recent Posts</h3>
+                    <ul>
+                        
+                        <li><a href="/posts-output/2016-01-07-docs.html">Github에 블로그제작</a></li>
+                        
+                    </ul>
+                </div>
+                
+                
+                <div id="tags">
+                    <h3>Tags</h3>
+                    <ul>
+                        
+                        <li><a href="/tags-output/cryogen.html">cryogen</a></li>
+                        
+                        <li><a href="/tags-output/github.html">github</a></li>
+                        
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <footer>Copyright &copy;  Daehee Kim
+        <p style="text-align: center;">Powered by <a href="http://cryogenweb.org">Cryogen</a></p></footer>
+</div>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="js/highlight.pack.js" type="text/javascript"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rss version='2.0' xmlns:atom='http://www.w3.org/2005/Atom'>
+<channel>
+<atom:link href='http://clonekim.github.io/' rel='self' type='application/rss+xml'/>
+<title>
+My Awesome Blog
+</title>
+<link>
+http://clonekim.github.io/
+</link>
+<description>
+This blog is awesome
+</description>
+<lastBuildDate>
+Wed, 13 Jan 2016 14:34:12 +0900
+</lastBuildDate>
+<generator>
+clj-rss
+</generator>
+<item>
+<guid>
+http://clonekim.github.io/posts-output/2016-01-07-docs.html
+</guid>
+<link>
+http://clonekim.github.io/posts-output/2016-01-07-docs.html
+</link>
+<title>
+Github에 블로그제작
+</title>
+<description>
+&lt;h2&gt;&lt;a name=&quot;깃허브에&amp;#95;계정만들기&quot;&gt;&lt;/a&gt;깃허브에 계정만들기&lt;/h2&gt;&lt;p&gt;먼저 &lt;a href='http://github.com'&gt;github.com&lt;/a&gt;에 가입하고 저장소를 만든다&lt;br /&gt; 저장소는 계정명.github.io라고 작성한다&lt;/p&gt;&lt;p&gt;https://help.github.com/articles/what-are-github-pages/&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;lein&amp;#95;설치하고&amp;#95;템플릿작성&quot;&gt;&lt;/a&gt;lein 설치하고 템플릿작성&lt;/h2&gt;&lt;p&gt;&lt;a href='http://leiningen.org/'&gt;leingen&lt;/a&gt; (레닝겐) 을 설치한다&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;블로그&amp;#95;프로젝트를&amp;#95;생성한다&quot;&gt;&lt;/a&gt;블로그 프로젝트를 생성한다&lt;/h2&gt;&lt;p&gt;cryogen을 이용해서 블로그 프로젝트를 생성한다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;lein new cryogen my-blog
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;git&amp;#95;clone한다&quot;&gt;&lt;/a&gt;git clone한다&lt;/h2&gt;&lt;p&gt;public 디렉토리는 없기때문에 작성한다&lt;br /&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;예&amp;#41; git@github.com:&amp;#91;계정명&amp;#93;/&amp;#91;생성한 저장소&amp;#93; &amp;#91;target 디렉토리&amp;#93;  
+git clone git@github.com:clonekim/clonekim.github.io.git resources/public
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;config.edn&amp;#95;편집&quot;&gt;&lt;/a&gt;config.edn 편집&lt;/h2&gt;&lt;p&gt;resources/templates/config.edn를 편집한다&lt;br /&gt; 내용중 아래와 같이 &quot;&quot;으로 설정한다&lt;pre&gt;&lt;code&gt;:blog-prefix &amp;quot;&amp;quot;
+ &lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;서버&amp;#95;시작&quot;&gt;&lt;/a&gt;서버 시작&lt;/h2&gt;&lt;p&gt;아래 명령어로 서버를 시작한다&lt;br /&gt; 서버는 로컬에서 생성하고 앞으로 작성한 문서를 서버에서 파싱해주는 역할을 한다&lt;br /&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;lein ring server
+&lt;/code&gt;&lt;/pre&gt;서버를 시작하고 http://localhost:3000 에 접속한다  &lt;br /&gt;&lt;h2&gt;&lt;a name=&quot;마크다운으로&amp;#95;기사&amp;#95;작성하기&quot;&gt;&lt;/a&gt;마크다운으로 기사 작성하기&lt;/h2&gt;&lt;p&gt;resources/templates/md/posts에 yyyy-mm-dd-docs.md 형식으로 파일을 작성한다&lt;pre&gt;&lt;code&gt;{:title &amp;quot;TEST 기사&amp;quot;
+ :layout :post
+ :tags  &amp;#91;&amp;quot;태그1&amp;quot; &amp;quot;태그2&amp;quot;&amp;#93;
+ :toc true}
+여기에 마크다운문법을 이용해서 작성한다...
+## Hello
+ 
+ &lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;&lt;p&gt;파일을 편집하고 저장 할 때 마다 서버에서 자동으로 마크다운 페이지를 파싱하여&lt;br /&gt; resources/publc 밑에 결과물을 생성해 낸다 결국 public 디렉토리만 github에 올리면 끝&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;github에&amp;#95;올리기&quot;&gt;&lt;/a&gt;github에 올리기&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;git add --all
+git commit -m &amp;quot;cryogen 적용&amp;quot;
+git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Thu, 07 Jan 2016 00:00:00 +0900
+</pubDate>
+</item>
+</channel>
+</rss>
