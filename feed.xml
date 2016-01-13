@@ -3,37 +3,38 @@
 <channel>
 <atom:link href='http://clonekim.github.io/' rel='self' type='application/rss+xml'/>
 <title>
-My Awesome Blog
+On the Clojure
 </title>
 <link>
 http://clonekim.github.io/
 </link>
 <description>
-This blog is awesome
+This blog is generated using cryogen
 </description>
 <lastBuildDate>
-Wed, 13 Jan 2016 14:34:12 +0900
+Wed, 13 Jan 2016 16:23:25 +0900
 </lastBuildDate>
 <generator>
 clj-rss
 </generator>
 <item>
 <guid>
-http://clonekim.github.io/posts-output/2016-01-07-docs.html
+http://clonekim.github.io/posts-output/2016-01-07-github-page.html
 </guid>
 <link>
-http://clonekim.github.io/posts-output/2016-01-07-docs.html
+http://clonekim.github.io/posts-output/2016-01-07-github-page.html
 </link>
 <title>
 Github에 블로그제작
 </title>
 <description>
 &lt;h2&gt;&lt;a name=&quot;깃허브에&amp;#95;계정만들기&quot;&gt;&lt;/a&gt;깃허브에 계정만들기&lt;/h2&gt;&lt;p&gt;먼저 &lt;a href='http://github.com'&gt;github.com&lt;/a&gt;에 가입하고 저장소를 만든다&lt;br /&gt; 저장소는 계정명.github.io라고 작성한다&lt;/p&gt;&lt;p&gt;https://help.github.com/articles/what-are-github-pages/&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;lein&amp;#95;설치하고&amp;#95;템플릿작성&quot;&gt;&lt;/a&gt;lein 설치하고 템플릿작성&lt;/h2&gt;&lt;p&gt;&lt;a href='http://leiningen.org/'&gt;leingen&lt;/a&gt; (레닝겐) 을 설치한다&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;블로그&amp;#95;프로젝트를&amp;#95;생성한다&quot;&gt;&lt;/a&gt;블로그 프로젝트를 생성한다&lt;/h2&gt;&lt;p&gt;cryogen을 이용해서 블로그 프로젝트를 생성한다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;lein new cryogen my-blog
+cd my-blog
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;git&amp;#95;clone한다&quot;&gt;&lt;/a&gt;git clone한다&lt;/h2&gt;&lt;p&gt;public 디렉토리는 없기때문에 작성한다&lt;br /&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;예&amp;#41; git@github.com:&amp;#91;계정명&amp;#93;/&amp;#91;생성한 저장소&amp;#93; &amp;#91;target 디렉토리&amp;#93;  
 git clone git@github.com:clonekim/clonekim.github.io.git resources/public
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;config.edn&amp;#95;편집&quot;&gt;&lt;/a&gt;config.edn 편집&lt;/h2&gt;&lt;p&gt;resources/templates/config.edn를 편집한다&lt;br /&gt; 내용중 아래와 같이 &quot;&quot;으로 설정한다&lt;pre&gt;&lt;code&gt;:blog-prefix &amp;quot;&amp;quot;
- &lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;서버&amp;#95;시작&quot;&gt;&lt;/a&gt;서버 시작&lt;/h2&gt;&lt;p&gt;아래 명령어로 서버를 시작한다&lt;br /&gt; 서버는 로컬에서 생성하고 앞으로 작성한 문서를 서버에서 파싱해주는 역할을 한다&lt;br /&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;lein ring server
-&lt;/code&gt;&lt;/pre&gt;서버를 시작하고 http://localhost:3000 에 접속한다  &lt;br /&gt;&lt;h2&gt;&lt;a name=&quot;마크다운으로&amp;#95;기사&amp;#95;작성하기&quot;&gt;&lt;/a&gt;마크다운으로 기사 작성하기&lt;/h2&gt;&lt;p&gt;resources/templates/md/posts에 yyyy-mm-dd-docs.md 형식으로 파일을 작성한다&lt;pre&gt;&lt;code&gt;{:title &amp;quot;TEST 기사&amp;quot;
+ &lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;서버&amp;#95;시작&quot;&gt;&lt;/a&gt;서버 시작&lt;/h2&gt;&lt;p&gt;아래 명령어로 서버를 시작한다&lt;br /&gt; 서버는 로컬에서 시작하고 앞으로 작성할 문서를 서버에서 파싱해주는 역할을 한다&lt;br /&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;lein ring server
+&lt;/code&gt;&lt;/pre&gt;서버를 시작하고 http://localhost:3000 에 접속한다  &lt;br /&gt;&lt;h2&gt;&lt;a name=&quot;마크다운으로&amp;#95;기사&amp;#95;작성하기&quot;&gt;&lt;/a&gt;마크다운으로 기사 작성하기&lt;/h2&gt;&lt;p&gt;resources/templates/md/posts에 yyyy-mm-dd-[페이지명].md 형식으로 파일을 작성한다&lt;pre&gt;&lt;code&gt;{:title &amp;quot;TEST 기사&amp;quot;
  :layout :post
  :tags  &amp;#91;&amp;quot;태그1&amp;quot; &amp;quot;태그2&amp;quot;&amp;#93;
  :toc true}
@@ -50,6 +51,374 @@ git push -u origin master
 </enclosure>
 <pubDate>
 Thu, 07 Jan 2016 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
+http://clonekim.github.io/posts-output/2015-09-25-get-started-clojure.html
+</guid>
+<link>
+http://clonekim.github.io/posts-output/2015-09-25-get-started-clojure.html
+</link>
+<title>
+Clojure 시작하기
+</title>
+<description>
+&lt;p&gt;JVM위에서 작동하는 함수형 프로그래밍이다&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;clojure&amp;#95;얻기&quot;&gt;&lt;/a&gt;clojure 얻기&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;http://clojure.org/&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;ide/tools&quot;&gt;&lt;/a&gt;IDE/Tools&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://lighttable.com'&gt;LightTable&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://cursiveclojure.com'&gt;Cursive&lt;/a&gt;&lt;/li&gt;&lt;li&gt;Emacs&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;leiningen으로&amp;#95;시작하기&quot;&gt;&lt;/a&gt;Leiningen으로 시작하기&lt;/h2&gt;&lt;p&gt;Leiningen(레닝겐)은 클로져를 쉽게 시작하기 위한 빌드자동화 툴이다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;http://leiningen.org/&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;{{:clojure:lein-self-install.png?200|}}&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;project&amp;#95;생성&quot;&gt;&lt;/a&gt;Project 생성&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;lein new &amp;#91;프로젝트명&amp;#93;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;repl(read&amp;#95;eval&amp;#95;print&amp;#95;loop)&amp;#95;실행&quot;&gt;&lt;/a&gt;REPL(Read Eval Print Loop) 실행&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;lein repl
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;도움말 보기&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;user=&amp;gt; &amp;#40;doc conj&amp;#41;
+-------------------------
+clojure.core/conj
+&amp;#40;&amp;#91;coll x&amp;#93; &amp;#91;coll x &amp;amp; xs&amp;#93;&amp;#41;
+  conj&amp;#91;oin&amp;#93;. Returns a new collection with the xs
+    'added'. &amp;#40;conj nil item&amp;#41; returns &amp;#40;item&amp;#41;.  The 'addition' may
+    happen at different 'places' depending on the concrete type.
+nil
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;자료구조&quot;&gt;&lt;/a&gt;자료구조&lt;/h2&gt;&lt;p&gt;repl에서 아래를 입력해보고 결과를 보자&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;4/2
+;; 2
+
+4.0/2
+;; NumberFormatException Invalid number: 4.0/2
+
+&amp;#40;/ 1 3&amp;#41;
+;;  1/3
+
+&amp;#40;/ 1.0 3&amp;#41;
+;; 0.3333333333333
+
+&amp;quot;jam&amp;quot;
+;; 문자열은 반드시 쌍따옴표를 사용할 것
+
+:jam
+;; 이것은 키워드
+
+&amp;#40;+ 1 1&amp;#41;
+;; 2
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;collecton 과 sequence로 나뉘는데&lt;br /&gt; 콜렉션은 단순히 vecotr, list, map 이 있고 영속적이고 불변적인 데이터구조이고&lt;br /&gt; clojure.lang.IPersistentCollection 인터페이스를 구현한 녀석들이다&lt;/p&gt;&lt;p&gt;그리고 count, conj, seq라는 메서드를 사용할 수있다&lt;/p&gt;&lt;p&gt;seq라는 함수는 콜렉션을 시퀀스로 바꿔주는 역할을 한다.&lt;/p&gt;&lt;p&gt;시퀀스란 walkable(순회가능한)리스트이다 또한 영속적이고 불변적이고&lt;br /&gt; first, rest, cons라는 메서드를 사용한다.&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;user=&amp;gt; &amp;#40;class &amp;#91;1 2 3&amp;#93;&amp;#41;
+clojure.lang.PersistentVector
+user=&amp;gt; &amp;#40;class &amp;#40;seq &amp;#91;1 2 3&amp;#93;&amp;#41;&amp;#41;
+clojure.lang.PersistentVector$ChunkedSeq
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;a name=&quot;list&quot;&gt;&lt;/a&gt;List&lt;/h3&gt;&lt;p&gt;리스트는 '(quote)로 시작 하거나 list를 사용할 것&lt;br /&gt; 만약 '(' 로 시작하면 문법파싱이 일어나서 첫번째를 함수로 인식 결국 에러 발생&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;'&amp;#40;1 2 &amp;quot;jam&amp;quot; :jack&amp;#41;
+
+;;위와 같음 콤마&amp;#40;,&amp;#41;는 생략가능
+'&amp;#40;1, 2, &amp;quot;jam&amp;quot;, :jack&amp;#41;
+
+&amp;#40;list 1 2 3 4&amp;#41;
+;; &amp;#40;1 2 3 4&amp;#41;
+
+&amp;#40;first '&amp;#40;1 2 3 4&amp;#41;&amp;#41;
+;; 1
+
+&amp;#40;rest '&amp;#40;1 2 3 4&amp;#41;&amp;#41;
+;; &amp;#40;2 3 4&amp;#41;
+
+&amp;#40;last '&amp;#40;1 2 3 4&amp;#41;&amp;#41;
+;; 4
+
+&amp;#40;cons 4 '&amp;#40;1 2 3&amp;#41;&amp;#41;
+;; &amp;#40;4 1 2 3&amp;#41;
+
+&amp;#40;cons 5 '&amp;#40;&amp;#41;&amp;#41;
+;; &amp;#40;5&amp;#41;
+
+&amp;#40;cons 5 nil&amp;#41;
+;; &amp;#40;5&amp;#41;
+
+&amp;#40;conj '&amp;#40;1 2 3&amp;#41; 4&amp;#41;
+;; &amp;#40;4 1 2 3&amp;#41;
+
+&amp;#40;conj '&amp;#40;1 2 3&amp;#41; 4 5&amp;#41;
+;; &amp;#40;5 4 1 2 3&amp;#41;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;a name=&quot;vector&quot;&gt;&lt;/a&gt;Vector&lt;/h3&gt;&lt;p&gt; [ ]를 사용하여 표현하고 인덱스값으로 접근이 가능함&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;&amp;#91;:jam 1 2 3&amp;#93;
+
+&amp;#40;first &amp;#91;:jam 1 2 3&amp;#93;&amp;#41;
+;; :jam
+
+&amp;#40;rest &amp;#91;:jam 1 2 3&amp;#93;&amp;#41;
+;; &amp;#40;1 2 3&amp;#41;
+
+&amp;#40;last &amp;#91;:jam 1 2 3&amp;#93;&amp;#41;
+;; 3
+
+&amp;#40;nth &amp;#91;:jam 1 2 3&amp;#93; 2&amp;#41;
+;; 2
+
+&amp;#40;count &amp;#91;1 2 3&amp;#41;&amp;#41;
+;; 3
+
+&amp;#40;conj &amp;#91;1 2 3&amp;#93; :butter&amp;#41;
+;; &amp;#91;1 2 3 :butter&amp;#93;  벡터 끝에 요소를 추가함
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;a name=&quot;map&quot;&gt;&lt;/a&gt;Map&lt;/h3&gt;&lt;p&gt;키:값 구조로 키는 문자열이나 키워드를 사용함&lt;br /&gt; 키 값으로 데이터를 찾을 수 있음&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;{:weapon &amp;quot;gun&amp;quot; :armor 120}
+
+&amp;#40;get {:weapon &amp;quot;gun&amp;quot; :armor 120} :weapon&amp;#41;
+;; &amp;quot;gun&amp;quot;
+
+&amp;#40;get {:weapon &amp;quot;gun&amp;quot; :armor 120} :speed&amp;#41;
+;; nil
+
+&amp;#40;get {:weapon &amp;quot;gun&amp;quot; :armor 120} :speed &amp;quot;error&amp;quot;&amp;#41;
+;; &amp;quot;error&amp;quot;
+
+&amp;#40;:armor {:weapon &amp;quot;gun&amp;quot; :armor 120}&amp;#41;
+;; 120
+
+&amp;#40;keys {:weapon &amp;quot;gun&amp;quot; :armor 120}&amp;#41;
+;; &amp;#40;:weapon :armor&amp;#41;
+
+&amp;#40;vals {:weapon &amp;quot;gun&amp;quot; :armor 120}&amp;#41;
+;; &amp;#40;&amp;quot;gun&amp;quot; 120&amp;#41;
+
+
+&amp;#40;assoc {:weapon &amp;quot;gun&amp;quot; :armor 120} :speed 90&amp;#41;
+;; {:weapon &amp;quot;gun&amp;quot; :armor 120 :speed 90}
+
+&amp;#40;dissoc {:weapon &amp;quot;gun&amp;quot; :armor 120 :speed 90} :armor&amp;#41;
+;; {:weapon &amp;quot;gun&amp;quot; :speed 90}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;a name=&quot;set&quot;&gt;&lt;/a&gt;Set&lt;/h3&gt;&lt;p&gt;중복되지 않는 요소만 포함한다&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;#{:red :blud :white :pink}
+
+;; set은 다른 콜렉션을 Set로 바꾼다
+&amp;#40;set &amp;#91;1 2 3&amp;#93;&amp;#41;
+;;#{1 3 2}
+
+&amp;#40;set '&amp;#40;1 2 3&amp;#41;&amp;#41;
+;; #{1 3 2}
+
+&amp;#40;set {:a 1 :b 2 :c 3}&amp;#41;
+;; #{&amp;#91;:c 3&amp;#93; &amp;#91;:b 2&amp;#93; &amp;#91;:a 1&amp;#93;}
+
+
+&amp;#40;clojure.set/union #{:r :b :w} #{:w :p :y}&amp;#41;
+;; #{:y :r :w :b :p}  중복요소 제거하고 모두 포함
+
+&amp;#40;clojure.set/difference #{:r :b :w} #{:w :p :y}&amp;#41;
+;; #{:r :b}
+
+&amp;#40;clojure.set/intersection #{:r :b :w} #{:w :p :y}&amp;#41;
+;;#{:w}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;binding&quot;&gt;&lt;/a&gt;Binding&lt;/h2&gt;&lt;p&gt;변수에 값을 할당하는 과정을 말한다&lt;br /&gt; repl에서 정의하면 기본적으로 user라는 네임공간(namespace)서만 사용가능하다&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;
+&amp;#40;def devloper &amp;quot;Alice&amp;quot;&amp;#41;
+;; #'user/developer
+&amp;lt;/code&amp;gt;
+
+let은 해당 컨텍스트안에서만 유효한 로컬 변수임
+&amp;lt;code clojure&amp;gt;
+&amp;#40;let &amp;#91;developer &amp;quot;Alice in Wonderland&amp;quot;&amp;#93;&amp;#41;
+
+&amp;#40;let &amp;#91;developer &amp;quot;Alice in Wonderland&amp;quot; rabbit &amp;quot;White Rabbit&amp;quot; &amp;#93;&amp;#41;
+
+&amp;#40;let &amp;#91;&amp;#91;color size&amp;#93; &amp;#91;&amp;quot;blue&amp;quot; &amp;quot;small&amp;quot;&amp;#93;&amp;#93;
+  &amp;#40;str &amp;quot;The &amp;quot; color &amp;quot; door is &amp;quot; size&amp;#41;&amp;#41;
+;; &amp;quot;The blue door is small&amp;quot;
+
+&amp;#40;let &amp;#91;x &amp;#91;&amp;quot;blue&amp;quot; &amp;quot;small&amp;quot;&amp;#93;
+  color &amp;#40;first x&amp;#41;
+  size &amp;#40;last x&amp;#41;&amp;#93;
+   &amp;#40;str &amp;quot;The &amp;quot; color &amp;quot; door is &amp;quot; size&amp;#41;&amp;#41;
+;; &amp;quot;The blue door is small&amp;quot;
+
+
+;; 현재 네임공간 확인
+&amp;#42;ns&amp;#42;
+;; #object&amp;#91;clojure.lang.Namespace 0x4e5051b9 &amp;quot;user&amp;quot;&amp;#93;
+
+;; 다른 네임공간으로 전환
+&amp;#40;ns alice&amp;#41;
+&amp;#40;def name &amp;quot;King&amp;quot;&amp;#41;
+&amp;#40;ns user&amp;#41;
+alice/name
+;; &amp;quot;King&amp;quot; 다른 네임공간의 변수를 사용
+
+;; alias 사용
+&amp;#40;require '&amp;#91;alice :as al&amp;#93;&amp;#41;
+al/name
+;; &amp;quot;King&amp;quot;
+
+;; alias 사용하지 않고 현재 네임공간에서 사용할 경우
+&amp;#40;ns wonderland
+  &amp;#40;:require &amp;#91;alice :refer :all&amp;#93; ;;alice 네임공간의 모든 것을 현재 네임공간에서 사용한다
+            &amp;#91;rabbit :refer :all&amp;#93;&amp;#41;&amp;#41;
+            
+;;함수명이 같아서 충돌할 경우가 발생할 수 도 있다
+;; 그럴 경우 일부만 aliac로  사용하자
+
+&amp;#40;ns wonderland
+  &amp;#40;:require &amp;#91;clojure.set :as s&amp;#93;
+            &amp;#91;alice :as al&amp;#93;&amp;#41;&amp;#41;          
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;함수정의&quot;&gt;&lt;/a&gt;함수정의&lt;/h2&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;&amp;#40;defn follow-the-rabbit &amp;#91;&amp;#93; &amp;quot;Off we go!&amp;quot;&amp;#41;
+
+&amp;#40;follow-the-rabbit&amp;#41;
+;; &amp;quot;Off we go!&amp;quot;
+
+defn shop-for-jams &amp;#91;jam1 jam2&amp;#93;
+  {:name &amp;quot;jam-basket&amp;quot;
+   :jam1 jam1
+   :jam2 jam2}&amp;#41;
+
+&amp;#40;shop-for-jams &amp;quot;strawberry&amp;quot; &amp;quot;marmalade&amp;quot;&amp;#41;
+;; {:name &amp;quot;jam-basket&amp;quot;, :jam1 &amp;quot;strawberry&amp;quot;, :jam2 &amp;quot;marmalade&amp;quot;}
+
+;;anonymous 함수
+&amp;#40;fn &amp;#91;&amp;#93; &amp;#40;str &amp;quot;Off we go&amp;quot; &amp;quot;!&amp;quot;&amp;#41;&amp;#41;
+;; #object&amp;#91;user$eval1365$fn&amp;#95;&amp;#95;1366 0x4c3e78fd &amp;quot;user$eval1365$fn&amp;#95;&amp;#95;1366@4c3e78fd&amp;quot;&amp;#93;
+
+;; 단축표현&amp;#40;shorthand&amp;#41;
+&amp;#40;#&amp;#40;str &amp;quot;Off we go&amp;quot; &amp;quot;!&amp;quot;&amp;#41;&amp;#41;
+;; &amp;quot;Off we go!&amp;quot;
+
+&amp;#40;#&amp;#40;str &amp;quot;Off we go&amp;quot; &amp;quot;!&amp;quot; &amp;quot; - &amp;quot; %&amp;#41; &amp;quot;again&amp;quot;&amp;#41;
+;; &amp;quot;Off we go! - again&amp;quot; %&amp;#40;또는 %1&amp;#41;는 첫번째 파라미터
+두번째부터는 %2로 처리해야함
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;제어구문&quot;&gt;&lt;/a&gt;제어구문&lt;/h2&gt;&lt;h3&gt;&lt;a name=&quot;if&quot;&gt;&lt;/a&gt;if&lt;/h3&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;&amp;#40;if true &amp;quot;true&amp;quot; &amp;quot;false&amp;quot;&amp;#41;
+;;-&amp;gt; &amp;quot;true&amp;quot;
+
+&amp;#40;if nil &amp;quot;true&amp;quot; &amp;quot;false&amp;quot;&amp;#41;
+;;-&amp;gt; &amp;quot;false&amp;quot;
+
+&amp;#40;if &amp;#40;= :drink :drink&amp;#41;
+  &amp;quot;Try&amp;quot;
+  &amp;quot;Don't try&amp;quot; &amp;#41;
+;;-&amp;gt; &amp;quot;Try&amp;quot;
+
+&amp;#40;let &amp;#91;is-small &amp;#40;&amp;gt; 5 3&amp;#41;&amp;#93;
+  &amp;#40;if is-small
+    &amp;quot;Small&amp;quot;
+    &amp;quot;No&amp;quot;&amp;#41;&amp;#41;
+;; &amp;quot;Small&amp;quot;    
+;; 5보다 3이 작은경우 true를 저장하고 조건에 맞는 결과값을 반환한다
+
+&amp;#40;if-let &amp;#91;is-small &amp;#40;&amp;gt; 5 3&amp;#41;&amp;#93;
+  &amp;quot;Small&amp;quot;
+  &amp;quot;No&amp;quot;&amp;#41;
+;; &amp;quot;Small&amp;quot;  
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;a name=&quot;when,when-let&quot;&gt;&lt;/a&gt;when,when-let&lt;/h3&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;&amp;#40;defn ask &amp;#91;question&amp;#93;
+  &amp;#40;when question &amp;quot;Yes&amp;quot;&amp;#41;&amp;#41;
+;;-&amp;gt; &amp;quot;Yes&amp;quot;
+
+&amp;#40;when-let &amp;#91;question&amp;#93; &amp;quot;Yes&amp;quot;&amp;#41;
+;;-&amp;gt; Yes otherwise nil
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;a name=&quot;cond,&amp;#95;case&quot;&gt;&lt;/a&gt;cond, case&lt;/h3&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;&amp;#40;let &amp;#91;bottle &amp;quot;drink&amp;quot;&amp;#93;
+  &amp;#40;cond
+    &amp;#40;= bottle &amp;quot;poison&amp;quot;&amp;#41; &amp;quot;don't touch&amp;quot;
+    &amp;#40;= bottle &amp;quot;empty&amp;quot;&amp;#41; &amp;quot;all gone&amp;quot;&amp;#41;&amp;#41;
+ ;;-&amp;gt; nil
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;cond와 달리 매칭되는 것이 없을 경우  IllegalArgumentException 을 발생시킴&lt;br /&gt; 아래와 같이 익셉션을 발생하지 않고 unknown을 출력할 수 있음&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;&amp;#40;let &amp;#91;bottle &amp;quot;drink&amp;quot;&amp;#93;
+ &amp;#40;case bottle
+   &amp;quot;poison&amp;quot; &amp;quot;don't touch&amp;quot;
+   &amp;quot;drink&amp;quot; &amp;quot;drink it&amp;quot; 
+   &amp;quot;unknown&amp;quot; &amp;#41;&amp;#41; 
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;database&quot;&gt;&lt;/a&gt;Database&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://clojure-doc.org/articles/ecosystem/java_jdbc/home.html'&gt;jdbc&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://sqlkorma.com/'&gt;SQL Korma&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://clojuremongodb.info'&gt;monger&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;java&amp;#95;interoperability&quot;&gt;&lt;/a&gt;Java Interoperability&lt;/h2&gt;&lt;h2&gt;&lt;a name=&quot;web&amp;#95;programming&quot;&gt;&lt;/a&gt;Web Programming&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://github.com/ring-clojure/ring'&gt;Ring&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://www.luminusweb.net'&gt;Luminus&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;3rd&amp;#95;party&amp;#95;libraries&quot;&gt;&lt;/a&gt;3rd Party Libraries&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;bouncer&lt;/li&gt;&lt;li&gt;validateur&lt;/li&gt;&lt;li&gt;SQLingvo&lt;/li&gt;&lt;li&gt;HoneySQL&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;plugins&quot;&gt;&lt;/a&gt;plugins&lt;/h2&gt;&lt;h3&gt;&lt;a name=&quot;lein-try&amp;#95;사용하기&quot;&gt;&lt;/a&gt;lein-try 사용하기&lt;/h3&gt;&lt;p&gt;아래 파일을 편집한다&lt;/p&gt;&lt;p&gt;${HOME}/.lein/profiles.clj&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;{:user {:plugins &amp;#91;&amp;#91;lein-try &amp;quot;0.4.3&amp;quot;&amp;#93;&amp;#93;}}
+&lt;/code&gt;&lt;/pre&gt;clj-time이라는 라이브러를 가지고 간단한 테스트 해볼때&lt;br /&gt;아래와 같이 repl를 열수있다&lt;pre&gt;&lt;code&gt;lein try clj-time
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Fri, 25 Sep 2015 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
+http://clonekim.github.io/posts-output/2015-09-23-freemarker-assign-tip.html
+</guid>
+<link>
+http://clonekim.github.io/posts-output/2015-09-23-freemarker-assign-tip.html
+</link>
+<title>
+Freemarker assign팁
+</title>
+<description>
+&lt;p&gt;변수 x에 42를 할당하고 이것은 명백이 Number 타입이다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;#assign x=42 /&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;String타입으로 변환할 수 있다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;${x?string}
+${x?string&amp;#91;0..1&amp;#93;}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;.(dot)가 들어간 변수도 사용할 수 있다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;#assign telephone=&amp;quot;${site\\.telephone?string}&amp;quot; /&amp;gt;  //15881234
+${telephone&amp;#91;0..3&amp;#93;}-${telephone&amp;#91;4..7&amp;#93;} //1588-1234
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Wed, 23 Sep 2015 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
+http://clonekim.github.io/posts-output/2015-09-10-oracle-jdbc.html
+</guid>
+<link>
+http://clonekim.github.io/posts-output/2015-09-10-oracle-jdbc.html
+</link>
+<title>
+Oracle Jdbc Url
+</title>
+<description>
+&lt;p&gt;JDBC URL syntax&lt;/p&gt;&lt;pre&gt;&lt;code&gt;jdbc:oracle:thin:@&amp;#91;HOST&amp;#93;&amp;#91;:PORT&amp;#93;:SID
+
+jdbc:oracle:thin:@//&amp;#91;HOST&amp;#93;&amp;#91;:PORT&amp;#93;/SERVICE
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Hikari Pool를 사용 시 아래와 같이 경고메시지가 나타나면&lt;br /&gt; oracle.jdbc.driver.OracleDriver에서 oracle.jdbc.OracleDriver 로 바꿀 것&lt;/p&gt;&lt;pre&gt;&lt;code&gt;2015-09-10 WARN  &amp;#40;main&amp;#41; &amp;#91;DriverDataSource&amp;#40;&amp;lt;init&amp;gt;:68&amp;#41;&amp;#93; Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2015-09-10 DEBUG &amp;#40;main&amp;#41; &amp;#91;PoolUtilities&amp;#40;getAndSetNetworkTimeout:198&amp;#41;&amp;#93; HikariPool-0 - Connection.setNetworkTimeout&amp;#40;&amp;#41; not supported
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Thu, 10 Sep 2015 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
+http://clonekim.github.io/posts-output/2015-07-16-windows-vim.html
+</guid>
+<link>
+http://clonekim.github.io/posts-output/2015-07-16-windows-vim.html
+</link>
+<title>
+윈도우즈 Vim설정
+</title>
+<description>
+ &lt;p&gt; vi를 윈도우즈에서 사용하기 위한 가이드&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;설치&quot;&gt;&lt;/a&gt;설치&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;http://www.vim.org&lt;/li&gt;&lt;li&gt;http://www.vim.org/download.php&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;설정&quot;&gt;&lt;/a&gt;설정&lt;/h2&gt;&lt;p&gt;아래 파일을 C:\Users&amp;#91;계정명]&amp;#95;vimrc 에 위치한다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;set nu
+set autoindent
+set nobackup
+set showcmd
+set ruler
+set enc=utf-8
+set fencs=euckr,cp949,utf-8
+set tabstop=3
+set nowrap
+
+lang mes en&amp;#95;US
+
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Thu, 16 Jul 2015 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
+http://clonekim.github.io/posts-output/2015-07-02-angularjs.html
+</guid>
+<link>
+http://clonekim.github.io/posts-output/2015-07-02-angularjs.html
+</link>
+<title>
+AngularJS
+</title>
+<description>
+
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Thu, 02 Jul 2015 00:00:00 +0900
 </pubDate>
 </item>
 </channel>
