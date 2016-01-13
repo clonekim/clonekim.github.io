@@ -12,7 +12,7 @@ http://clonekim.github.io/
 This blog is generated using cryogen
 </description>
 <lastBuildDate>
-Wed, 13 Jan 2016 17:03:06 +0900
+Wed, 13 Jan 2016 17:05:05 +0900
 </lastBuildDate>
 <generator>
 clj-rss
@@ -328,7 +328,7 @@ http://clonekim.github.io/posts/2015-09-23-freemarker-assign-tip.html
 Freemarker assign팁
 </title>
 <description>
-&lt;p&gt;변수 x에 42를 할당하고 이것은 명백이 Number 타입이다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;#assign x=42 /&amp;gt; 
+&lt;p&gt;변수 x에 42를 할당하고 이것은 명백히 Number 타입이다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;#assign x=42 /&amp;gt; 
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;String타입으로 변환할 수 있다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;${x?string}
 ${x?string&amp;#91;0..1&amp;#93;}
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;.(dot)가 들어간 변수도 사용할 수 있다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;#assign telephone=&amp;quot;${site\\.telephone?string}&amp;quot; /&amp;gt;  //15881234
