@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>On the Clojure: Clojure 시작하기</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700' rel='stylesheet'
+          type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
+    <link href="/css/screen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/index.html">On the Clojure</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li ><a href="/index.html">Home</a></li>
+                <li
+                ><a href="/archives.html">Archives</a></li>
+                
+                <li
+                >
+                <a href="/pages/about.html">About</a>
+                </li>
+                
+                <li><a href="/feed.xml">RSS</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+</nav>
+
+
+<div class="container">
+
+
+    <div class="row">
+        <div class="col-lg-9">
+            <div id="content">
+                
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta" class="row">
+        <div class="col-lg-6">2015년 9월 25일 (금)</div>
+        
+    </div>
+    <h2>Clojure 시작하기</h2>
+</div>
+<div>
+    <ol class="content"><li><a href="#clojure_얻기">clojure 얻기</a></li><li><a href="#ide/tools">IDE/Tools</a></li><li><a href="#leiningen으로_시작하기">Leiningen으로 시작하기</a></li><li><a href="#project_생성">Project 생성</a></li><li><a href="#repl(read_eval_print_loop)_실행">REPL(Read Eval Print Loop) 실행</a></li><li><a href="#자료구조">자료구조</a></li><ol><li><a href="#list">List</a></li><li><a href="#vector">Vector</a></li><li><a href="#map">Map</a></li><li><a href="#set">Set</a></li></ol><li><a href="#binding">Binding</a></li><li><a href="#함수정의">함수정의</a></li><li><a href="#제어구문">제어구문</a></li><ol><li><a href="#if">if</a></li><li><a href="#when,when-let">when,when-let</a></li><li><a href="#cond,_case">cond, case</a></li></ol><li><a href="#database">Database</a></li><li><a href="#java_interoperability">Java Interoperability</a></li><li><a href="#web_programming">Web Programming</a></li><li><a href="#3rd_party_libraries">3rd Party Libraries</a></li><li><a href="#plugins">plugins</a></li><ol><li><a href="#lein-try_사용하기">lein-try 사용하기</a></li></ol></ol>
+    <p>JVM위에서 작동하는 함수형 프로그래밍이다</p><h2><a name="clojure&#95;얻기"></a>clojure 얻기</h2><pre><code>http://clojure.org/</code></pre><h2><a name="ide/tools"></a>IDE/Tools</h2><ul><li><a href='http://lighttable.com'>LightTable</a></li><li><a href='https://cursiveclojure.com'>Cursive</a></li><li>Emacs</li></ul><h2><a name="leiningen으로&#95;시작하기"></a>Leiningen으로 시작하기</h2><p>Leiningen(레닝겐)은 클로져를 쉽게 시작하기 위한 빌드자동화 툴이다</p><pre><code>http://leiningen.org/</code></pre><p><img src="/img/clojure/lein-self-install.png" alt="Image 1" /></p><h2><a name="project&#95;생성"></a>Project 생성</h2><pre><code>lein new &#91;프로젝트명&#93;
+</code></pre><h2><a name="repl(read&#95;eval&#95;print&#95;loop)&#95;실행"></a>REPL(Read Eval Print Loop) 실행</h2><pre><code>lein repl
+</code></pre><p>도움말 보기</p><pre><code class="clojure">user=&gt; &#40;doc conj&#41;
+-------------------------
+clojure.core/conj
+&#40;&#91;coll x&#93; &#91;coll x &amp; xs&#93;&#41;
+  conj&#91;oin&#93;. Returns a new collection with the xs
+    'added'. &#40;conj nil item&#41; returns &#40;item&#41;.  The 'addition' may
+    happen at different 'places' depending on the concrete type.
+nil
+</code></pre><h2><a name="자료구조"></a>자료구조</h2><p>repl에서 아래를 입력해보고 결과를 보자</p><pre><code class="clojure">4/2
+;; 2
+
+4.0/2
+;; NumberFormatException Invalid number: 4.0/2
+
+&#40;/ 1 3&#41;
+;;  1/3
+
+&#40;/ 1.0 3&#41;
+;; 0.3333333333333
+
+&quot;jam&quot;
+;; 문자열은 반드시 쌍따옴표를 사용할 것
+
+:jam
+;; 이것은 키워드
+
+&#40;+ 1 1&#41;
+;; 2
+</code></pre><p>collecton 과 sequence로 나뉘는데<br /> 콜렉션은 단순히 vecotr, list, map 이 있고 영속적이고 불변적인 데이터구조이고<br /> clojure.lang.IPersistentCollection 인터페이스를 구현한 녀석들이다</p><p>그리고 count, conj, seq라는 메서드를 사용할 수있다</p><p>seq라는 함수는 콜렉션을 시퀀스로 바꿔주는 역할을 한다.</p><p>시퀀스란 walkable(순회가능한)리스트이다 또한 영속적이고 불변적이고<br /> first, rest, cons라는 메서드를 사용한다.</p><pre><code class="clojure">user=&gt; &#40;class &#91;1 2 3&#93;&#41;
+clojure.lang.PersistentVector
+user=&gt; &#40;class &#40;seq &#91;1 2 3&#93;&#41;&#41;
+clojure.lang.PersistentVector$ChunkedSeq
+</code></pre><h3><a name="list"></a>List</h3><p>리스트는 '(quote)로 시작 하거나 list를 사용할 것<br /> 만약 '(' 로 시작하면 문법파싱이 일어나서 첫번째를 함수로 인식 결국 에러 발생</p><pre><code class="clojure">'&#40;1 2 &quot;jam&quot; :jack&#41;
+
+;;위와 같음 콤마&#40;,&#41;는 생략가능
+'&#40;1, 2, &quot;jam&quot;, :jack&#41;
+
+&#40;list 1 2 3 4&#41;
+;; &#40;1 2 3 4&#41;
+
+&#40;first '&#40;1 2 3 4&#41;&#41;
+;; 1
+
+&#40;rest '&#40;1 2 3 4&#41;&#41;
+;; &#40;2 3 4&#41;
+
+&#40;last '&#40;1 2 3 4&#41;&#41;
+;; 4
+
+&#40;cons 4 '&#40;1 2 3&#41;&#41;
+;; &#40;4 1 2 3&#41;
+
+&#40;cons 5 '&#40;&#41;&#41;
+;; &#40;5&#41;
+
+&#40;cons 5 nil&#41;
+;; &#40;5&#41;
+
+&#40;conj '&#40;1 2 3&#41; 4&#41;
+;; &#40;4 1 2 3&#41;
+
+&#40;conj '&#40;1 2 3&#41; 4 5&#41;
+;; &#40;5 4 1 2 3&#41;
+</code></pre><h3><a name="vector"></a>Vector</h3><p> [ ]를 사용하여 표현하고 인덱스값으로 접근이 가능함</p><pre><code class="clojure">&#91;:jam 1 2 3&#93;
+
+&#40;first &#91;:jam 1 2 3&#93;&#41;
+;; :jam
+
+&#40;rest &#91;:jam 1 2 3&#93;&#41;
+;; &#40;1 2 3&#41;
+
+&#40;last &#91;:jam 1 2 3&#93;&#41;
+;; 3
+
+&#40;nth &#91;:jam 1 2 3&#93; 2&#41;
+;; 2
+
+&#40;count &#91;1 2 3&#41;&#41;
+;; 3
+
+&#40;conj &#91;1 2 3&#93; :butter&#41;
+;; &#91;1 2 3 :butter&#93;  벡터 끝에 요소를 추가함
+</code></pre><h3><a name="map"></a>Map</h3><p>키:값 구조로 키는 문자열이나 키워드를 사용함<br /> 키 값으로 데이터를 찾을 수 있음</p><pre><code class="clojure">{:weapon &quot;gun&quot; :armor 120}
+
+&#40;get {:weapon &quot;gun&quot; :armor 120} :weapon&#41;
+;; &quot;gun&quot;
+
+&#40;get {:weapon &quot;gun&quot; :armor 120} :speed&#41;
+;; nil
+
+&#40;get {:weapon &quot;gun&quot; :armor 120} :speed &quot;error&quot;&#41;
+;; &quot;error&quot;
+
+&#40;:armor {:weapon &quot;gun&quot; :armor 120}&#41;
+;; 120
+
+&#40;keys {:weapon &quot;gun&quot; :armor 120}&#41;
+;; &#40;:weapon :armor&#41;
+
+&#40;vals {:weapon &quot;gun&quot; :armor 120}&#41;
+;; &#40;&quot;gun&quot; 120&#41;
+
+
+&#40;assoc {:weapon &quot;gun&quot; :armor 120} :speed 90&#41;
+;; {:weapon &quot;gun&quot; :armor 120 :speed 90}
+
+&#40;dissoc {:weapon &quot;gun&quot; :armor 120 :speed 90} :armor&#41;
+;; {:weapon &quot;gun&quot; :speed 90}
+</code></pre><h3><a name="set"></a>Set</h3><p>중복되지 않는 요소만 포함한다</p><pre><code class="clojure">#{:red :blud :white :pink}
+
+;; set은 다른 콜렉션을 Set로 바꾼다
+&#40;set &#91;1 2 3&#93;&#41;
+;;#{1 3 2}
+
+&#40;set '&#40;1 2 3&#41;&#41;
+;; #{1 3 2}
+
+&#40;set {:a 1 :b 2 :c 3}&#41;
+;; #{&#91;:c 3&#93; &#91;:b 2&#93; &#91;:a 1&#93;}
+
+
+&#40;clojure.set/union #{:r :b :w} #{:w :p :y}&#41;
+;; #{:y :r :w :b :p}  중복요소 제거하고 모두 포함
+
+&#40;clojure.set/difference #{:r :b :w} #{:w :p :y}&#41;
+;; #{:r :b}
+
+&#40;clojure.set/intersection #{:r :b :w} #{:w :p :y}&#41;
+;;#{:w}
+</code></pre><h2><a name="binding"></a>Binding</h2><p>변수에 값을 할당하는 과정을 말한다<br /> repl에서 정의하면 기본적으로 user라는 네임공간(namespace)서만 사용가능하다</p><pre><code class="clojure">
+&#40;def devloper &quot;Alice&quot;&#41;
+;; #'user/developer
+&lt;/code&gt;
+
+let은 해당 컨텍스트안에서만 유효한 로컬 변수임
+&lt;code clojure&gt;
+&#40;let &#91;developer &quot;Alice in Wonderland&quot;&#93;&#41;
+
+&#40;let &#91;developer &quot;Alice in Wonderland&quot; rabbit &quot;White Rabbit&quot; &#93;&#41;
+
+&#40;let &#91;&#91;color size&#93; &#91;&quot;blue&quot; &quot;small&quot;&#93;&#93;
+  &#40;str &quot;The &quot; color &quot; door is &quot; size&#41;&#41;
+;; &quot;The blue door is small&quot;
+
+&#40;let &#91;x &#91;&quot;blue&quot; &quot;small&quot;&#93;
+  color &#40;first x&#41;
+  size &#40;last x&#41;&#93;
+   &#40;str &quot;The &quot; color &quot; door is &quot; size&#41;&#41;
+;; &quot;The blue door is small&quot;
+
+
+;; 현재 네임공간 확인
+&#42;ns&#42;
+;; #object&#91;clojure.lang.Namespace 0x4e5051b9 &quot;user&quot;&#93;
+
+;; 다른 네임공간으로 전환
+&#40;ns alice&#41;
+&#40;def name &quot;King&quot;&#41;
+&#40;ns user&#41;
+alice/name
+;; &quot;King&quot; 다른 네임공간의 변수를 사용
+
+;; alias 사용
+&#40;require '&#91;alice :as al&#93;&#41;
+al/name
+;; &quot;King&quot;
+
+;; alias 사용하지 않고 현재 네임공간에서 사용할 경우
+&#40;ns wonderland
+  &#40;:require &#91;alice :refer :all&#93; ;;alice 네임공간의 모든 것을 현재 네임공간에서 사용한다
+            &#91;rabbit :refer :all&#93;&#41;&#41;
+            
+;;함수명이 같아서 충돌할 경우가 발생할 수 도 있다
+;; 그럴 경우 일부만 aliac로  사용하자
+
+&#40;ns wonderland
+  &#40;:require &#91;clojure.set :as s&#93;
+            &#91;alice :as al&#93;&#41;&#41;          
+</code></pre><h2><a name="함수정의"></a>함수정의</h2><pre><code class="clojure">&#40;defn follow-the-rabbit &#91;&#93; &quot;Off we go!&quot;&#41;
+
+&#40;follow-the-rabbit&#41;
+;; &quot;Off we go!&quot;
+
+defn shop-for-jams &#91;jam1 jam2&#93;
+  {:name &quot;jam-basket&quot;
+   :jam1 jam1
+   :jam2 jam2}&#41;
+
+&#40;shop-for-jams &quot;strawberry&quot; &quot;marmalade&quot;&#41;
+;; {:name &quot;jam-basket&quot;, :jam1 &quot;strawberry&quot;, :jam2 &quot;marmalade&quot;}
+
+;;anonymous 함수
+&#40;fn &#91;&#93; &#40;str &quot;Off we go&quot; &quot;!&quot;&#41;&#41;
+;; #object&#91;user$eval1365$fn&#95;&#95;1366 0x4c3e78fd &quot;user$eval1365$fn&#95;&#95;1366@4c3e78fd&quot;&#93;
+
+;; 단축표현&#40;shorthand&#41;
+&#40;#&#40;str &quot;Off we go&quot; &quot;!&quot;&#41;&#41;
+;; &quot;Off we go!&quot;
+
+&#40;#&#40;str &quot;Off we go&quot; &quot;!&quot; &quot; - &quot; %&#41; &quot;again&quot;&#41;
+;; &quot;Off we go! - again&quot; %&#40;또는 %1&#41;는 첫번째 파라미터
+두번째부터는 %2로 처리해야함
+</code></pre><h2><a name="제어구문"></a>제어구문</h2><h3><a name="if"></a>if</h3><pre><code class="clojure">&#40;if true &quot;true&quot; &quot;false&quot;&#41;
+;;-&gt; &quot;true&quot;
+
+&#40;if nil &quot;true&quot; &quot;false&quot;&#41;
+;;-&gt; &quot;false&quot;
+
+&#40;if &#40;= :drink :drink&#41;
+  &quot;Try&quot;
+  &quot;Don't try&quot; &#41;
+;;-&gt; &quot;Try&quot;
+
+&#40;let &#91;is-small &#40;&gt; 5 3&#41;&#93;
+  &#40;if is-small
+    &quot;Small&quot;
+    &quot;No&quot;&#41;&#41;
+;; &quot;Small&quot;    
+;; 5보다 3이 작은경우 true를 저장하고 조건에 맞는 결과값을 반환한다
+
+&#40;if-let &#91;is-small &#40;&gt; 5 3&#41;&#93;
+  &quot;Small&quot;
+  &quot;No&quot;&#41;
+;; &quot;Small&quot;  
+</code></pre><h3><a name="when,when-let"></a>when,when-let</h3><pre><code class="clojure">&#40;defn ask &#91;question&#93;
+  &#40;when question &quot;Yes&quot;&#41;&#41;
+;;-&gt; &quot;Yes&quot;
+
+&#40;when-let &#91;question&#93; &quot;Yes&quot;&#41;
+;;-&gt; Yes otherwise nil
+</code></pre><h3><a name="cond,&#95;case"></a>cond, case</h3><pre><code class="clojure">&#40;let &#91;bottle &quot;drink&quot;&#93;
+  &#40;cond
+    &#40;= bottle &quot;poison&quot;&#41; &quot;don't touch&quot;
+    &#40;= bottle &quot;empty&quot;&#41; &quot;all gone&quot;&#41;&#41;
+ ;;-&gt; nil
+</code></pre><p>cond와 달리 매칭되는 것이 없을 경우  IllegalArgumentException 을 발생시킴<br /> 아래와 같이 익셉션을 발생하지 않고 unknown을 출력할 수 있음</p><pre><code class="clojure">&#40;let &#91;bottle &quot;drink&quot;&#93;
+ &#40;case bottle
+   &quot;poison&quot; &quot;don't touch&quot;
+   &quot;drink&quot; &quot;drink it&quot; 
+   &quot;unknown&quot; &#41;&#41; 
+</code></pre><h2><a name="database"></a>Database</h2><ul><li><a href='http://clojure-doc.org/articles/ecosystem/java_jdbc/home.html'>jdbc</a></li><li><a href='http://sqlkorma.com/'>SQL Korma</a></li><li><a href='http://clojuremongodb.info'>monger</a></li></ul><h2><a name="java&#95;interoperability"></a>Java Interoperability</h2><h2><a name="web&#95;programming"></a>Web Programming</h2><ul><li><a href='https://github.com/ring-clojure/ring'>Ring</a></li><li><a href='http://www.luminusweb.net'>Luminus</a></li></ul><h2><a name="3rd&#95;party&#95;libraries"></a>3rd Party Libraries</h2><ul><li>bouncer</li><li>validateur</li><li>SQLingvo</li><li>HoneySQL</li></ul><h2><a name="plugins"></a>plugins</h2><h3><a name="lein-try&#95;사용하기"></a>lein-try 사용하기</h3><p>아래 파일을 편집한다</p><p>${HOME}/.lein/profiles.clj</p><pre><code class="clojure">{:user {:plugins &#91;&#91;lein-try &quot;0.4.3&quot;&#93;&#93;}}
+</code></pre>clj-time이라는 라이브러를 가지고 간단한 테스트 해볼때<br />아래와 같이 repl를 열수있다<pre><code>lein try clj-time
+</code></pre>
+</div>
+
+<div id="post-tags">
+    <b>Tags: </b>
+    
+    <a href="/tags/clojure.html">clojure</a>
+    
+</div>
+
+
+    <div id="prev-next">
+        
+        <a href="/posts/2016-01-07-github-page.html">&laquo; Github에 블로그제작</a>
+        
+        
+        <a class="right" href="/posts/2015-09-23-freemarker-assign-tip.html">Freemarker assign팁 &raquo;</a>
+        
+    </div>
+
+    
+
+
+</div>
+
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div id="sidebar">
+                <h3>Links</h3>
+                <ul id="links">
+                    <li><a href="http://cryogenweb.org/docs/home.html">Cryogen Docs</a></li>
+                    <li><a href="http://nakkaya.com/archives.html">Nakkaya</a></li>
+                    
+                    <li><a href="/pages/guick-guide.html">Quick Start Guide</a></li>
+                    
+                </ul>
+                
+                <div id="recent">
+                    <h3>Recent Posts</h3>
+                    <ul>
+                        
+                        <li><a href="/posts/2016-01-07-github-page.html">Github에 블로그제작</a></li>
+                        
+                        <li><a href="/posts/2015-09-25-get-started-clojure.html">Clojure 시작하기</a></li>
+                        
+                        <li><a href="/posts/2015-09-23-freemarker-assign-tip.html">Freemarker assign팁</a></li>
+                        
+                        <li><a href="/posts/2015-09-10-oracle-jdbc.html">Oracle Jdbc Url</a></li>
+                        
+                        <li><a href="/posts/2015-07-16-windows-vim.html">윈도우즈 Vim설정</a></li>
+                        
+                    </ul>
+                </div>
+                
+                
+                <div id="tags">
+                    <h3>Tags</h3>
+                    <ul>
+                        
+                        <li><a href="/tags/cryogen.html">cryogen</a></li>
+                        
+                        <li><a href="/tags/github.html">github</a></li>
+                        
+                        <li><a href="/tags/clojure.html">clojure</a></li>
+                        
+                        <li><a href="/tags/oracle.html">oracle</a></li>
+                        
+                        <li><a href="/tags/vi.html">vi</a></li>
+                        
+                        <li><a href="/tags/java.html">java</a></li>
+                        
+                        <li><a href="/tags/freemarker.html">freemarker</a></li>
+                        
+                        <li><a href="/tags/jdbc.html">jdbc</a></li>
+                        
+                        <li><a href="/tags/template.html">template</a></li>
+                        
+                        <li><a href="/tags/vim.html">vim</a></li>
+                        
+                        <li><a href="/tags/angularjs.html">angularjs</a></li>
+                        
+                        <li><a href="/tags/javascript.html">javascript</a></li>
+                        
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <footer>Copyright &copy;  Daehee Kim
+        <p style="text-align: center;">Powered by <a href="http://cryogenweb.org">Cryogen</a></p></footer>
+</div>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="/js/highlight.pack.js" type="text/javascript"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

@@ -12,23 +12,23 @@ http://clonekim.github.io/
 This blog is generated using cryogen
 </description>
 <lastBuildDate>
-Wed, 13 Jan 2016 16:23:25 +0900
+Wed, 13 Jan 2016 17:03:06 +0900
 </lastBuildDate>
 <generator>
 clj-rss
 </generator>
 <item>
 <guid>
-http://clonekim.github.io/posts-output/2016-01-07-github-page.html
+http://clonekim.github.io/posts/2016-01-07-github-page.html
 </guid>
 <link>
-http://clonekim.github.io/posts-output/2016-01-07-github-page.html
+http://clonekim.github.io/posts/2016-01-07-github-page.html
 </link>
 <title>
 Github에 블로그제작
 </title>
 <description>
-&lt;h2&gt;&lt;a name=&quot;깃허브에&amp;#95;계정만들기&quot;&gt;&lt;/a&gt;깃허브에 계정만들기&lt;/h2&gt;&lt;p&gt;먼저 &lt;a href='http://github.com'&gt;github.com&lt;/a&gt;에 가입하고 저장소를 만든다&lt;br /&gt; 저장소는 계정명.github.io라고 작성한다&lt;/p&gt;&lt;p&gt;https://help.github.com/articles/what-are-github-pages/&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;lein&amp;#95;설치하고&amp;#95;템플릿작성&quot;&gt;&lt;/a&gt;lein 설치하고 템플릿작성&lt;/h2&gt;&lt;p&gt;&lt;a href='http://leiningen.org/'&gt;leingen&lt;/a&gt; (레닝겐) 을 설치한다&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;블로그&amp;#95;프로젝트를&amp;#95;생성한다&quot;&gt;&lt;/a&gt;블로그 프로젝트를 생성한다&lt;/h2&gt;&lt;p&gt;cryogen을 이용해서 블로그 프로젝트를 생성한다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;lein new cryogen my-blog
+&lt;h2&gt;&lt;a name=&quot;깃허브에&amp;#95;계정만들기&quot;&gt;&lt;/a&gt;깃허브에 계정만들기&lt;/h2&gt;&lt;p&gt;먼저 &lt;a href='http://github.com'&gt;github.com&lt;/a&gt;에 가입하고 저장소를 만든다&lt;br /&gt; 저장소는 계정명.github.io라고 작성한다. 자세한 것은 &lt;a href='https://help.github.com/articles/what-are-github-pages/'&gt;GitHub Page&lt;/a&gt;를 살펴볼 것&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;lein&amp;#95;설치하고&amp;#95;템플릿작성&quot;&gt;&lt;/a&gt;lein 설치하고 템플릿작성&lt;/h2&gt;&lt;p&gt;&lt;a href='http://leiningen.org/'&gt;leiningen&lt;/a&gt; 을 설치한다&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;블로그&amp;#95;프로젝트를&amp;#95;생성한다&quot;&gt;&lt;/a&gt;블로그 프로젝트를 생성한다&lt;/h2&gt;&lt;p&gt;cryogen을 이용해서 블로그 프로젝트를 생성한다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;lein new cryogen my-blog
 cd my-blog
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;git&amp;#95;clone한다&quot;&gt;&lt;/a&gt;git clone한다&lt;/h2&gt;&lt;p&gt;public 디렉토리는 없기때문에 작성한다&lt;br /&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;예&amp;#41; git@github.com:&amp;#91;계정명&amp;#93;/&amp;#91;생성한 저장소&amp;#93; &amp;#91;target 디렉토리&amp;#93;  
 git clone git@github.com:clonekim/clonekim.github.io.git resources/public
@@ -55,16 +55,16 @@ Thu, 07 Jan 2016 00:00:00 +0900
 </item>
 <item>
 <guid>
-http://clonekim.github.io/posts-output/2015-09-25-get-started-clojure.html
+http://clonekim.github.io/posts/2015-09-25-get-started-clojure.html
 </guid>
 <link>
-http://clonekim.github.io/posts-output/2015-09-25-get-started-clojure.html
+http://clonekim.github.io/posts/2015-09-25-get-started-clojure.html
 </link>
 <title>
 Clojure 시작하기
 </title>
 <description>
-&lt;p&gt;JVM위에서 작동하는 함수형 프로그래밍이다&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;clojure&amp;#95;얻기&quot;&gt;&lt;/a&gt;clojure 얻기&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;http://clojure.org/&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;ide/tools&quot;&gt;&lt;/a&gt;IDE/Tools&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://lighttable.com'&gt;LightTable&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://cursiveclojure.com'&gt;Cursive&lt;/a&gt;&lt;/li&gt;&lt;li&gt;Emacs&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;leiningen으로&amp;#95;시작하기&quot;&gt;&lt;/a&gt;Leiningen으로 시작하기&lt;/h2&gt;&lt;p&gt;Leiningen(레닝겐)은 클로져를 쉽게 시작하기 위한 빌드자동화 툴이다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;http://leiningen.org/&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;{{:clojure:lein-self-install.png?200|}}&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;project&amp;#95;생성&quot;&gt;&lt;/a&gt;Project 생성&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;lein new &amp;#91;프로젝트명&amp;#93;
+&lt;p&gt;JVM위에서 작동하는 함수형 프로그래밍이다&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;clojure&amp;#95;얻기&quot;&gt;&lt;/a&gt;clojure 얻기&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;http://clojure.org/&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;ide/tools&quot;&gt;&lt;/a&gt;IDE/Tools&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://lighttable.com'&gt;LightTable&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://cursiveclojure.com'&gt;Cursive&lt;/a&gt;&lt;/li&gt;&lt;li&gt;Emacs&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;leiningen으로&amp;#95;시작하기&quot;&gt;&lt;/a&gt;Leiningen으로 시작하기&lt;/h2&gt;&lt;p&gt;Leiningen(레닝겐)은 클로져를 쉽게 시작하기 위한 빌드자동화 툴이다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;http://leiningen.org/&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;/img/clojure/lein-self-install.png&quot; alt=&quot;Image 1&quot; /&gt;&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;project&amp;#95;생성&quot;&gt;&lt;/a&gt;Project 생성&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;lein new &amp;#91;프로젝트명&amp;#93;
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;repl(read&amp;#95;eval&amp;#95;print&amp;#95;loop)&amp;#95;실행&quot;&gt;&lt;/a&gt;REPL(Read Eval Print Loop) 실행&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;lein repl
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;도움말 보기&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;user=&amp;gt; &amp;#40;doc conj&amp;#41;
 -------------------------
@@ -319,10 +319,10 @@ Fri, 25 Sep 2015 00:00:00 +0900
 </item>
 <item>
 <guid>
-http://clonekim.github.io/posts-output/2015-09-23-freemarker-assign-tip.html
+http://clonekim.github.io/posts/2015-09-23-freemarker-assign-tip.html
 </guid>
 <link>
-http://clonekim.github.io/posts-output/2015-09-23-freemarker-assign-tip.html
+http://clonekim.github.io/posts/2015-09-23-freemarker-assign-tip.html
 </link>
 <title>
 Freemarker assign팁
@@ -344,10 +344,10 @@ Wed, 23 Sep 2015 00:00:00 +0900
 </item>
 <item>
 <guid>
-http://clonekim.github.io/posts-output/2015-09-10-oracle-jdbc.html
+http://clonekim.github.io/posts/2015-09-10-oracle-jdbc.html
 </guid>
 <link>
-http://clonekim.github.io/posts-output/2015-09-10-oracle-jdbc.html
+http://clonekim.github.io/posts/2015-09-10-oracle-jdbc.html
 </link>
 <title>
 Oracle Jdbc Url
@@ -369,10 +369,10 @@ Thu, 10 Sep 2015 00:00:00 +0900
 </item>
 <item>
 <guid>
-http://clonekim.github.io/posts-output/2015-07-16-windows-vim.html
+http://clonekim.github.io/posts/2015-07-16-windows-vim.html
 </guid>
 <link>
-http://clonekim.github.io/posts-output/2015-07-16-windows-vim.html
+http://clonekim.github.io/posts/2015-07-16-windows-vim.html
 </link>
 <title>
 윈도우즈 Vim설정
@@ -403,10 +403,10 @@ Thu, 16 Jul 2015 00:00:00 +0900
 </item>
 <item>
 <guid>
-http://clonekim.github.io/posts-output/2015-07-02-angularjs.html
+http://clonekim.github.io/posts/2015-07-02-angularjs.html
 </guid>
 <link>
-http://clonekim.github.io/posts-output/2015-07-02-angularjs.html
+http://clonekim.github.io/posts/2015-07-02-angularjs.html
 </link>
 <title>
 AngularJS
