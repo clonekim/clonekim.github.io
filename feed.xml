@@ -12,35 +12,35 @@ http://clonekim.github.io/
 This blog is generated using cryogen
 </description>
 <lastBuildDate>
-Thu, 14 Jan 2016 01:29:41 +0900
+Thu, 14 Jan 2016 13:57:14 +0900
 </lastBuildDate>
 <generator>
 clj-rss
 </generator>
 <item>
 <guid>
-http://clonekim.github.io/posts/2016-01-07-github-page.html
+http://clonekim.github.io/posts/2016-01-13-github-page.html
 </guid>
 <link>
-http://clonekim.github.io/posts/2016-01-07-github-page.html
+http://clonekim.github.io/posts/2016-01-13-github-page.html
 </link>
 <title>
 Github에 블로그제작
 </title>
 <description>
-&lt;h2&gt;&lt;a name=&quot;깃허브에&amp;#95;계정만들기&quot;&gt;&lt;/a&gt;깃허브에 계정만들기&lt;/h2&gt;&lt;p&gt;먼저 &lt;a href='http://github.com'&gt;github.com&lt;/a&gt;에 가입하고 저장소를 만든다&lt;br /&gt; 저장소는 계정명.github.io라고 작성한다. 자세한 것은 &lt;a href='https://help.github.com/articles/what-are-github-pages/'&gt;GitHub Page&lt;/a&gt;를 살펴볼 것&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;lein&amp;#95;설치하고&amp;#95;템플릿작성&quot;&gt;&lt;/a&gt;lein 설치하고 템플릿작성&lt;/h2&gt;&lt;p&gt;&lt;a href='http://leiningen.org/'&gt;leiningen&lt;/a&gt; 을 설치한다&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;블로그&amp;#95;프로젝트를&amp;#95;생성한다&quot;&gt;&lt;/a&gt;블로그 프로젝트를 생성한다&lt;/h2&gt;&lt;p&gt;cryogen을 이용해서 블로그 프로젝트를 생성한다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;lein new cryogen my-blog
+&lt;h2&gt;&lt;a name=&quot;깃허브에&amp;#95;계정만들기&quot;&gt;&lt;/a&gt;깃허브에 계정만들기&lt;/h2&gt;&lt;p&gt;먼저 &lt;a href='http://github.com'&gt;github.com&lt;/a&gt;에 가입하고 저장소를 만든다&lt;br /&gt; 저장소는 계정명.github.io라고 작성한다. 자세한 것은 &lt;a href='https://help.github.com/articles/what-are-github-pages/'&gt;GitHub Page&lt;/a&gt;를 살펴볼 것&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;lein&amp;#95;설치&quot;&gt;&lt;/a&gt;lein 설치&lt;/h2&gt;&lt;p&gt;&lt;a href='http://leiningen.org/'&gt;leiningen&lt;/a&gt; 을 설치한다&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;프로젝트를&amp;#95;생성한다&quot;&gt;&lt;/a&gt;프로젝트를 생성한다&lt;/h2&gt;&lt;p&gt;cryogen템플릿을 이용해서 블로그 프로젝트를 생성한다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;lein new cryogen my-blog
 cd my-blog
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;git&amp;#95;clone한다&quot;&gt;&lt;/a&gt;git clone한다&lt;/h2&gt;&lt;p&gt;public 디렉토리는 없기때문에 작성한다&lt;br /&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;예&amp;#41; git@github.com:&amp;#91;계정명&amp;#93;/&amp;#91;생성한 저장소&amp;#93; &amp;#91;target 디렉토리&amp;#93;  
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;git&amp;#95;clone한다&quot;&gt;&lt;/a&gt;git clone한다&lt;/h2&gt;&lt;p&gt;public 디렉토리는 없기때문에 작성한다&lt;br /&gt; 예) git@github.com:&lt;code&gt;&amp;#91;계정명&amp;#93;&lt;/code&gt;/&lt;code&gt;&amp;#91;생성한 저장소&amp;#93;&lt;/code&gt; &lt;code&gt;&amp;#91;target 디렉토리&amp;#93;&lt;/code&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;mkdir resources/public
 git clone git@github.com:clonekim/clonekim.github.io.git resources/public
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;config.edn&amp;#95;편집&quot;&gt;&lt;/a&gt;config.edn 편집&lt;/h2&gt;&lt;p&gt;resources/templates/config.edn를 편집한다&lt;br /&gt; 내용중 아래와 같이 &quot;&quot;으로 설정한다&lt;pre&gt;&lt;code&gt;:blog-prefix &amp;quot;&amp;quot;
  &lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;서버&amp;#95;시작&quot;&gt;&lt;/a&gt;서버 시작&lt;/h2&gt;&lt;p&gt;아래 명령어로 서버를 시작한다&lt;br /&gt; 서버는 로컬에서 시작하고 앞으로 작성할 문서를 서버에서 파싱해주는 역할을 한다&lt;br /&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;lein ring server
-&lt;/code&gt;&lt;/pre&gt;서버를 시작하고 http://localhost:3000 에 접속한다  &lt;br /&gt;&lt;h2&gt;&lt;a name=&quot;마크다운으로&amp;#95;기사&amp;#95;작성하기&quot;&gt;&lt;/a&gt;마크다운으로 기사 작성하기&lt;/h2&gt;&lt;p&gt;resources/templates/md/posts에 yyyy-mm-dd-[페이지명].md 형식으로 파일을 작성한다&lt;pre&gt;&lt;code&gt;{:title &amp;quot;TEST 기사&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;서버를 시작하고 http://localhost:3000 에 접속한다  &lt;br /&gt;&lt;h2&gt;&lt;a name=&quot;블로그&amp;#95;포스팅&quot;&gt;&lt;/a&gt;블로그 포스팅&lt;/h2&gt;&lt;p&gt;resources/templates/md/posts에 yyyy-MM-dd-[페이지명].md 형식으로 파일을 작성한다&lt;br /&gt; 참고로 규칙은 config.edn에 명시되어 있다&lt;pre&gt;&lt;code&gt;{:title &amp;quot;TEST 기사&amp;quot;
  :layout :post
  :tags  &amp;#91;&amp;quot;태그1&amp;quot; &amp;quot;태그2&amp;quot;&amp;#93;
  :toc true}
-여기에 마크다운문법을 이용해서 작성한다...
+
+여기에 Markdown 문법을 이용해서 작성한다...
 ## Hello
- 
  &lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;&lt;p&gt;파일을 편집하고 저장 할 때 마다 서버에서 자동으로 마크다운 페이지를 파싱하여&lt;br /&gt; resources/publc 밑에 결과물을 생성해 낸다 결국 public 디렉토리만 github에 올리면 끝&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;github에&amp;#95;올리기&quot;&gt;&lt;/a&gt;github에 올리기&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;git add --all
 git commit -m &amp;quot;cryogen 적용&amp;quot;
 git push -u origin master
@@ -50,42 +50,7 @@ git push -u origin master
 
 </enclosure>
 <pubDate>
-Thu, 07 Jan 2016 00:00:00 +0900
-</pubDate>
-</item>
-<item>
-<guid>
-http://clonekim.github.io/posts/2015-09-25-using-jdbc-in-clojure.html
-</guid>
-<link>
-http://clonekim.github.io/posts/2015-09-25-using-jdbc-in-clojure.html
-</link>
-<title>
-클로저에서 Jdbc사용
-</title>
-<description>
-&lt;p&gt; 클로저에서 JDBC(Java Database Connectivity) 를 사용하기 위한 가이드&lt;br /&gt;  몇몇 함수가 없어진 경우가 있기 때문에 소스보기로 확인할 것&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://clojure-doc.org/articles/ecosystem/java_jdbc/home.html'&gt;clojure-doc보기&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://github.com/clojure/java.jdbc/blob/java.jdbc-0.4.2/src/main/clojure/clojure/java/jdbc.clj'&gt;소스보기&lt;/a&gt;   &lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;leiningen&quot;&gt;&lt;/a&gt;leiningen&lt;/h2&gt; &lt;pre&gt;&lt;code&gt;&amp;#91;org.clojure/java.jdbc &amp;quot;0.4.2&amp;quot;&amp;#93;&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;간단한&amp;#95;예제&quot;&gt;&lt;/a&gt;간단한 예제&lt;/h2&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;&amp;#40;ns db-test.core
-	&amp;#40;:require &amp;#91;clojure.java.jdbc :as sql&amp;#93;&amp;#41;&amp;#41;	
-
-&amp;#40;def db
-  {:classname &amp;quot;com.mysql.jdbc.Driver&amp;quot;
-   :subprotocol &amp;quot;mysql&amp;quot;
-   :subname &amp;quot;//127.0.0.1:3306/test&amp;quot;
-   :user &amp;quot;xxx&amp;quot;
-   :password &amp;quot;xxxx&amp;quot; }&amp;#41;
-
-&amp;#40;defn get-user &amp;#91;&amp;#93;
-  &amp;#40;println &amp;#40;sql/query db &amp;#91;&amp;quot;select &amp;#42; from users&amp;quot;&amp;#93;&amp;#41;&amp;#41;&amp;#41; 
-
-&amp;#40;defn -main &amp;#91;&amp;#93; 
-  &amp;#40;get-user&amp;#41;&amp;#41;
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;참고&quot;&gt;&lt;/a&gt;참고&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://php-hackers.com/p/devn/hikari-cp'&gt;HikarCP를 사용하는 예&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://funcool.github.io/clojure.jdbc/latest'&gt;clojure.jdbc doc&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
-</description>
-<enclosure>
-
-</enclosure>
-<pubDate>
-Fri, 25 Sep 2015 00:00:00 +0900
+Wed, 13 Jan 2016 00:00:00 +0900
 </pubDate>
 </item>
 <item>
@@ -302,6 +267,41 @@ Fri, 25 Sep 2015 00:00:00 +0900
 </item>
 <item>
 <guid>
+http://clonekim.github.io/posts/2015-09-25-using-jdbc-in-clojure.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2015-09-25-using-jdbc-in-clojure.html
+</link>
+<title>
+클로저에서 Jdbc사용
+</title>
+<description>
+&lt;p&gt; 클로저에서 JDBC(Java Database Connectivity) 를 사용하기 위한 가이드&lt;br /&gt;  몇몇 함수가 없어진 경우가 있기 때문에 소스보기로 확인할 것&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://clojure-doc.org/articles/ecosystem/java_jdbc/home.html'&gt;clojure-doc보기&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://github.com/clojure/java.jdbc/blob/java.jdbc-0.4.2/src/main/clojure/clojure/java/jdbc.clj'&gt;소스보기&lt;/a&gt;   &lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;leiningen&quot;&gt;&lt;/a&gt;leiningen&lt;/h2&gt; &lt;pre&gt;&lt;code&gt;&amp;#91;org.clojure/java.jdbc &amp;quot;0.4.2&amp;quot;&amp;#93;&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;간단한&amp;#95;예제&quot;&gt;&lt;/a&gt;간단한 예제&lt;/h2&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;&amp;#40;ns db-test.core
+	&amp;#40;:require &amp;#91;clojure.java.jdbc :as sql&amp;#93;&amp;#41;&amp;#41;	
+
+&amp;#40;def db
+  {:classname &amp;quot;com.mysql.jdbc.Driver&amp;quot;
+   :subprotocol &amp;quot;mysql&amp;quot;
+   :subname &amp;quot;//127.0.0.1:3306/test&amp;quot;
+   :user &amp;quot;xxx&amp;quot;
+   :password &amp;quot;xxxx&amp;quot; }&amp;#41;
+
+&amp;#40;defn get-user &amp;#91;&amp;#93;
+  &amp;#40;println &amp;#40;sql/query db &amp;#91;&amp;quot;select &amp;#42; from users&amp;quot;&amp;#93;&amp;#41;&amp;#41;&amp;#41; 
+
+&amp;#40;defn -main &amp;#91;&amp;#93; 
+  &amp;#40;get-user&amp;#41;&amp;#41;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;참고&quot;&gt;&lt;/a&gt;참고&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://php-hackers.com/p/devn/hikari-cp'&gt;HikarCP를 사용하는 예&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://funcool.github.io/clojure.jdbc/latest'&gt;clojure.jdbc doc&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Fri, 25 Sep 2015 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
 http://clonekim.github.io/posts/2015-09-23-freemarker-assign-tip.html
 </guid>
 <link>
@@ -361,30 +361,39 @@ http://clonekim.github.io/posts/2015-09-03-mariadb-replication-using-gtid.html
 GTID를 이용한 Mariadb Replication
 </title>
 <description>
- &lt;h2&gt;&lt;a name=&quot;환경&quot;&gt;&lt;/a&gt;환경&lt;/h2&gt;&lt;p&gt;vm002: master&lt;br /&gt; vm003: slave&lt;/p&gt; &lt;h2&gt;&lt;a name=&quot;마스터설정&quot;&gt;&lt;/a&gt;마스터설정&lt;/h2&gt;&lt;p&gt;GTID를 사용하기 위해 &lt;code&gt;gtid&amp;#95;strict&amp;#95;mode&lt;/code&gt;를 활성해야함&lt;br /&gt; 활성화시키위해서 서버를 재시작한다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;server-id = 1
+&lt;h2&gt;&lt;a name=&quot;개요&quot;&gt;&lt;/a&gt;개요&lt;/h2&gt;&lt;ol&gt;&lt;li&gt;클라이언트가 마스터노드에게 쓰기 트랜잭션을 요청한다&lt;/li&gt;&lt;li&gt;바이너리로그가 업데이트된다 (바이너리로그에는 디비의 이벤트도 포함된다)&lt;/li&gt;&lt;li&gt;슬레이브가 마스터로부터 정보를 전달받는다&lt;/li&gt;&lt;li&gt;슬레이브는 이 정보를 릴레이로그에 첨부한다&lt;/li&gt;&lt;li&gt;슬레이브 SQL 스레이드는 릴레이로그에 있는 명령문을 수행반복한다&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;&lt;strong&gt;복제메커니즘&lt;/strong&gt;&lt;/p&gt;&lt;ol&gt;&lt;li&gt;표준복제: 각 노드는 자신만의 트랜잭션 ID를 갖는다&lt;/li&gt;&lt;li&gt;글로벌 트랜잭션(GTID, Global Transaction ID): 모든 노드는 같은 트랜잭션 ID를 갖는다 (MariaDB 10부터 가능)&lt;/li&gt;&lt;/ol&gt;&lt;h2&gt;&lt;a name=&quot;환경&quot;&gt;&lt;/a&gt;환경&lt;/h2&gt;&lt;p&gt;vm002: master&lt;br /&gt; vm003: slave&lt;/p&gt; &lt;h2&gt;&lt;a name=&quot;마스터설정&quot;&gt;&lt;/a&gt;마스터설정&lt;/h2&gt;&lt;p&gt;GTID를 사용하기 위해 &lt;code&gt;gtid&amp;#95;strict&amp;#95;mode&lt;/code&gt;를 활성해야함&lt;br /&gt; 활성화시키위해서 서버를 재시작해야 한다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;&amp;#91;mysqld&amp;#93;
+server-id = 1
 character-set-server = utf8
 bind-address = 0.0.0.0
-log&amp;#95;bin = /var/lib/mysql/mariadb-bin
-expire&amp;#95;logs&amp;#95;days = 2
-sync&amp;#95;binlog = 0
-slave&amp;#95;compressed&amp;#95;protocol = 1
-binlog&amp;#95;format = row
+log&amp;#95;bin = /var/lib/mysql/mariadb-bin #빈로그 저장경로
+expire&amp;#95;logs&amp;#95;days = 2 #빈로그가 무작성 커지는것을 방지하기위해 2일이 지나면 플러시한다
+sync&amp;#95;binlog = 0 #1로 설정하면 빈로그파일을 디스크 동기화한다. 복제성능을 높이려면 0으로
+slave&amp;#95;compressed&amp;#95;protocol = 1 #압축을 사용하면 cpu를 더많이 사용하지만 빨라진다
+binlog&amp;#95;format = row #row, statement, mixed가 있다, row가 제일 안전하다
 gtid&amp;#95;strict&amp;#95;mode = 1
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;마스터에 접속할 슬레이브계정을 만든다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;create user 'replication@vm003' identified by 'password';
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;마스터에 허용할 슬레이브계정을 만든다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;create user 'replication@vm003' identified by 'password';
 grant replication slave on &amp;#42;.&amp;#42; to 'replication@vm003';
 flush privileges;
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;슬레이브설정&quot;&gt;&lt;/a&gt;슬레이브설정&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;&amp;#91;mysqld&amp;#93;
 server-id = 2
 character-set-server = utf8
 bind-address = 0.0.0.0
-slave&amp;#95;compressed&amp;#95;protocol = 1
+slave&amp;#95;compressed&amp;#95;protocol = 1 #마스터,슬레이드 둘다 설정되어야함
 binlog&amp;#95;format = row
 read&amp;#95;only
 gtid&amp;#95;strict&amp;#95;mode = 1
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;슬레이브 시작을 위해서 GTID 정보가 필요하다&lt;br /&gt; 마스터에서 DB에 변화를 주면 이벤트가 발생하고 아래와 같이 이벤트 번호를 확인가능하다&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;/img/mariadb/master.png&quot; alt=&quot;Master&quot; /&gt;&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;/img/mariadb/slave_pos.png&quot; alt=&quot;Slave Setting&quot; /&gt;&lt;/p&gt;&lt;p&gt;슬레이브에서는 마스터의 gtid를 확인을 하려면 먼저 슬레이브를 시작하여야 함&lt;/p&gt;&lt;pre&gt;&lt;code&gt;stop slave
-reset slave
-startslave
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;마스터에서 DB에 변화를 주면 이벤트가 발생하고 아래와 같이 이벤트 번호를 확인가능하다&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;/img/mariadb/master.png&quot; alt=&quot;Master&quot; /&gt;&lt;/p&gt;&lt;p&gt;슬레이브에서는 마스터의 gtid를 확인을 하려면 먼저 슬레이브 노드를  재시작한다&lt;/p&gt;&lt;p&gt;&lt;code&gt;master&amp;#95;use&amp;#95;gtid&lt;/code&gt;에 사용가능한 옵션은 &lt;code&gt;slave&amp;#95;pos, current&amp;#95;pos, no&lt;/code&gt;가 있다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;MariaDB &amp;#91;&amp;#40;none&amp;#41;&amp;#93;&amp;gt; stop slave;
+MariaDB &amp;#91;&amp;#40;none&amp;#41;&amp;#93;&amp;gt; reset slave;
+MariaDB &amp;#91;&amp;#40;none&amp;#41;&amp;#93;&amp;gt; select global slave&amp;#95;pos;
+MariaDB &amp;#91;&amp;#40;none&amp;#41;&amp;#93;&amp;gt; set global slave&amp;#95;pos=&amp;quot;0-1-1&amp;quot;; #마스터노드와 동일하게 설정
+MariaDB &amp;#91;&amp;#40;none&amp;#41;&amp;#93;&amp;gt; change master to master&amp;#95;host='vm002', master&amp;#95;user='replication', master&amp;#95;password='password', master&amp;#95;use&amp;#95;gtid=slave&amp;#95;pos;
+MariaDB &amp;#91;&amp;#40;none&amp;#41;&amp;#93;&amp;gt; start slave;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;/img/mariadb/slave_pos.png&quot; alt=&quot;Slave Setting&quot; /&gt;&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;슬레이브&amp;#95;상태확인&quot;&gt;&lt;/a&gt;슬레이브 상태확인&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;MariaDB &amp;#91;&amp;#40;none&amp;#41;&amp;#93;&amp;gt; show slave status\G;
+...
+ Slave&amp;#95;IO&amp;#95;Running: Yes
+ Slave&amp;#95;SQL&amp;#95;Running: Yes
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;참고&quot;&gt;&lt;/a&gt;참고&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;http://www.unixmen.com/setup-mariadb-master-slave-replication-in-centos-7/&lt;/li&gt;&lt;/ul&gt;
 </description>
 <enclosure>
 
@@ -468,6 +477,63 @@ source $VIMRUNTIME/menu.vim
 </enclosure>
 <pubDate>
 Thu, 16 Jul 2015 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
+http://clonekim.github.io/posts/2015-07-14-how-to-captcha-using-node.js.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2015-07-14-how-to-captcha-using-node.js.html
+</link>
+<title>
+Node.js로 Captcha
+</title>
+<description>
+&lt;p&gt;canvas를 이용한 캡챠(captcha)를 생성하려고 한다.&lt;br /&gt; 사용하려는 패키지는 canvas-captcha이다&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;의존성&amp;#95;설치&quot;&gt;&lt;/a&gt;의존성 설치&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;apt-get install libpango1.0-dev
+apt-get install libjpeg-dev
+apt-get install libgif-dev
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;소스작성&quot;&gt;&lt;/a&gt;소스작성&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;captcha.js&lt;/strong&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;var captcha = require&amp;#40;'canvas-captcha'&amp;#41;
+    ,captchaOptions = {
+        charPool: &amp;#40;'abcdefghijklmnopqrstuvwxyz' + 'abcdefghijklmnopqrstuvwxyz'.toUpperCase&amp;#40;&amp;#41; + '1234567890'&amp;#41;.split&amp;#40;''&amp;#41; //char pool Array
+        ,size: {
+            width: 120
+            ,height: 52
+        } //image size
+        ,textPos: {
+            left: 15
+            ,top: 36
+        } //text drawing start position
+        ,rotate: .01 //text ratate
+        ,charLength: 5 //how many chars
+        //,font: '26px' //font size
+        ,strokeStyle: '#0088cc' //style
+        ,bgColor: '#eeeeee' //bg color
+        ,confusion: true //draw another group background text to mangle the text
+        //,cFont: '30px' //bg text style
+        ,cStrokeStyle: '#adc' //bg text color
+        ,cRotate: -.05 //bg text rotate
+    };
+
+exports.captcha = function&amp;#40;req, res&amp;#41; {
+    captcha&amp;#40;captchaOptions, function&amp;#40;err, data&amp;#41; {
+        if&amp;#40;err&amp;#41; {
+            res.send&amp;#40;err&amp;#41;;
+        }
+        else {
+            console.log&amp;#40;&amp;quot;Generated Captcha -&amp;gt; &amp;quot;, data.captchaStr&amp;#41;;
+            req.session.captcha = data.captchaStr;
+            res.end&amp;#40;data.captchaImg&amp;#41;
+        }
+    }&amp;#41;
+};
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Tue, 14 Jul 2015 00:00:00 +0900
 </pubDate>
 </item>
 <item>
