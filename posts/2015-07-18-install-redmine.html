@@ -60,10 +60,10 @@
 </div>
 <div>
     <ol class="content"><li><a href="#설치환경">설치환경</a></li><li><a href="#rvm_설치">RVM 설치</a></li><ol><li><a href="#의존성_라이브러리">의존성 라이브러리</a></li></ol><li><a href="#redmine_설치">redmine 설치</a></li><li><a href="#thin">Thin</a></li><li><a href="#참고">참고</a></li></ol>
-    <h2><a name="설치환경"></a>설치환경</h2><ul><li>redmine-3.0.4</li><li>centos 6.6</li><li>http://www.redmine.org/projects/redmine/wiki/RedmineInstall</li></ul><h2><a name="rvm&#95;설치"></a>RVM 설치</h2><p>https://rvm.io</p><p>rvm을 이용하여 루비를 버젼별로 설치및 관리할 수 있다</p><pre><code>rvm install ruby
+    <h2><a name="설치환경"></a>설치환경</h2><ul><li>redmine-3.0.4</li><li>centos 6.6</li><li><a href='http://www.redmine.org/projects/redmine/wiki/RedmineInstall'>redmine install가이드</a></li></ul><h2><a name="rvm&#95;설치"></a>RVM 설치</h2><p><a href='https://rvm.io'>rvm.io 에 대하여</a></p><p>rvm을 이용하여 루비를 버젼별로 설치및 관리할 수 있다</p><pre><code>rvm install ruby
 rvm gemset create redmine
 rvm gemset use redmine
-</code></pre><h3><a name="의존성&#95;라이브러리"></a>의존성 라이브러리</h3><p>http://www.redmine.org/projects/redmine/wiki/Install<i>Redmine</i>25x<i>on</i>Centos<i>65</i>complete</p><h2><a name="redmine&#95;설치"></a>redmine 설치</h2><pre><code>$ cd redmine-x.x.x
+</code></pre><h3><a name="의존성&#95;라이브러리"></a>의존성 라이브러리</h3><p><a href='http://www.redmine.org/projects/redmine/wiki/Install_Redmine_25x_on_Centos_65_complete'>CentOS 의존성</a></p><h2><a name="redmine&#95;설치"></a>redmine 설치</h2><pre><code>$ cd redmine-x.x.x
 $ gem install bundler
 $ bundle install --without development test
 </code></pre><h2><a name="thin"></a>Thin</h2><p>Gemfile을 수정하여 thin을 최상단에 추가<br /> 다시 번들로 라이브러리 설치</p><pre><code>bundle install --without development test
@@ -83,7 +83,7 @@ threadpool&#95;size: 20
 servers: 2
 daemonize: true 
 </code></pre><p>thin서버 시작</p><pre><code>thin start -C /etc/thin/redmine.yml
-</code></pre><h2><a name="참고"></a>참고</h2><ul><li>http://www.php5.me/blog/centos-6-6-mariadb-10-0-%ec%97%90-redmine-2-6-0-%ec%84%a4%ec%b9%98/</li></ul>
+</code></pre><h2><a name="참고"></a>참고</h2><ul><li><a href='http://www.php5.me/blog/centos-6-6-mariadb-10-0-%ec%97%90-redmine-2-6-0-%ec%84%a4%ec%b9%98/'>CentOS 6.6 + MariaDB 10.0 에 redmine 2.6.0 설치</a></li></ul>
 </div>
 
 <div id="post-tags">
@@ -129,15 +129,15 @@ daemonize: true
                     <h3>Recent Posts</h3>
                     <ul>
                         
+                        <li><a href="/posts/2016-01-14-clojurescript-gaming.html">Clojure(Script)로 게임제작</a></li>
+                        
                         <li><a href="/posts/2016-01-13-github-page.html">Github에 블로그제작</a></li>
                         
                         <li><a href="/posts/2015-09-25-get-started-clojure.html">Clojure 시작하기</a></li>
                         
-                        <li><a href="/posts/2015-09-25-using-jdbc-in-clojure.html">클로저에서 Jdbc사용</a></li>
+                        <li><a href="/posts/2015-09-25-jdbc-in-clojure.html">클로저에서 Jdbc사용</a></li>
                         
                         <li><a href="/posts/2015-09-23-freemarker-assign-tip.html">Freemarker assign팁</a></li>
-                        
-                        <li><a href="/posts/2015-09-10-oracle-jdbc.html">Oracle Jdbc Url</a></li>
                         
                     </ul>
                 </div>
@@ -149,13 +149,19 @@ daemonize: true
                         
                         <li><a href="/tags/cryogen.html">cryogen</a></li>
                         
+                        <li><a href="/tags/imagemagick.html">imagemagick</a></li>
+                        
                         <li><a href="/tags/github.html">github</a></li>
                         
                         <li><a href="/tags/clojure.html">clojure</a></li>
                         
                         <li><a href="/tags/redmine.html">redmine</a></li>
                         
+                        <li><a href="/tags/raspberry.html">raspberry</a></li>
+                        
                         <li><a href="/tags/oracle.html">oracle</a></li>
+                        
+                        <li><a href="/tags/web programming.html">web programming</a></li>
                         
                         <li><a href="/tags/vi.html">vi</a></li>
                         
@@ -163,9 +169,21 @@ daemonize: true
                         
                         <li><a href="/tags/java.html">java</a></li>
                         
+                        <li><a href="/tags/wiki.html">wiki</a></li>
+                        
+                        <li><a href="/tags/io.html">io</a></li>
+                        
+                        <li><a href="/tags/pi.html">pi</a></li>
+                        
+                        <li><a href="/tags/php.html">php</a></li>
+                        
                         <li><a href="/tags/mariadb.html">mariadb</a></li>
                         
                         <li><a href="/tags/freemarker.html">freemarker</a></li>
+                        
+                        <li><a href="/tags/OGNL.html">OGNL</a></li>
+                        
+                        <li><a href="/tags/nginx.html">nginx</a></li>
                         
                         <li><a href="/tags/ruby.html">ruby</a></li>
                         
@@ -173,17 +191,25 @@ daemonize: true
                         
                         <li><a href="/tags/template.html">template</a></li>
                         
-                        <li><a href="/tags/vim.html">vim</a></li>
-                        
                         <li><a href="/tags/jruby.html">jruby</a></li>
+                        
+                        <li><a href="/tags/concurrent.html">concurrent</a></li>
                         
                         <li><a href="/tags/angularjs.html">angularjs</a></li>
                         
                         <li><a href="/tags/javascript.html">javascript</a></li>
                         
+                        <li><a href="/tags/microframework.html">microframework</a></li>
+                        
+                        <li><a href="/tags/proxy.html">proxy</a></li>
+                        
+                        <li><a href="/tags/game.html">game</a></li>
+                        
                         <li><a href="/tags/node.js.html">node.js</a></li>
                         
-                        <li><a href="/tags/sinatra.html">sinatra</a></li>
+                        <li><a href="/tags/taglib.html">taglib</a></li>
+                        
+                        <li><a href="/tags/jsp.html">jsp</a></li>
                         
                     </ul>
                 </div>

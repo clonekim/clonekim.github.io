@@ -59,7 +59,7 @@
     <h2>Sinatra 웹프로그래밍</h2>
 </div>
 <div>
-    <ol class="content"><li><a href="#설치">설치</a></li><li><a href="#hello_ruby">Hello Ruby</a></li><li><a href="#라우터">라우터</a></li><li><a href="#요청파라미터">요청파라미터</a></li><li><a href="#본문으로_json를_요청받을_경우">본문으로 Json를 요청받을 경우</a></li><li><a href="#응답하기">응답하기</a></li><li><a href="#json으로_응답하기">Json으로 응답하기</a></li><li><a href="#sample_web">Sample Web</a></li><li><a href="#contrib_활용">Contrib 활용</a></li><li><a href="#war_배포">War 배포</a></li></ol>
+    <ol class="content"><li><a href="#설치">설치</a></li><li><a href="#hello_ruby">Hello Ruby</a></li><li><a href="#라우터">라우터</a></li><li><a href="#요청파라미터">요청파라미터</a></li><li><a href="#본문으로_json를_요청받을_경우">본문으로 Json를 요청받을 경우</a></li><li><a href="#응답하기">응답하기</a></li><li><a href="#json으로_응답하기">Json으로 응답하기</a></li><li><a href="#sample_web">Sample Web</a></li><li><a href="#템플릿">템플릿</a></li><li><a href="#contrib_활용">Contrib 활용</a></li><li><a href="#war_배포">War 배포</a></li><li><a href="#참고">참고</a></li></ol>
     <h2><a name="설치"></a>설치</h2><pre><code>jruby -S gem install sinatra
 </code></pre><h2><a name="hello&#95;ruby"></a>Hello Ruby</h2><pre><code class="ruby">require 'rubygems'
 require 'sinatra'
@@ -78,7 +78,7 @@ end
   puts payload
   status 201
 end
-</code></pre><p>{{:jruby:post.png?200|}}</p><h2><a name="응답하기"></a>응답하기</h2><p>문자열, html, json, 바이너리 등의 모든 컨텐츠로 응답가능하다</p><pre><code class="ruby">get '/' do
+</code></pre><h2><a name="응답하기"></a>응답하기</h2><p>문자열, html, json, 바이너리 등의 모든 컨텐츠로 응답가능하다</p><pre><code class="ruby">get '/' do
   'Hello'
 end
 </code></pre><h2><a name="json으로&#95;응답하기"></a>Json으로 응답하기</h2><pre><code class="ruby">require 'sinatra'
@@ -122,33 +122,57 @@ get '/api/users' do
   }
   pager.to&#95;json
 end
-</code></pre><p><strong>config.ru</strong><pre><code class="ruby">require 'app.rb'
+</code></pre><p><strong>config.ru</strong></p><pre><code class="ruby">require 'app.rb'
 run Sinatra::Application
- </code></pre></p><p>아래와 같이 실행한다</p><pre><code>jruby app.rb
+</code></pre><p>아래와 같이 실행한다</p><pre><code>jruby app.rb
 </code></pre><p>실행 시 내장된 웹서버서(WEBrick)를 사용한다<br /> 기본적으로 4567번 포트를 사용한다</p><p>아래는 Rack기반으로 기동하는 방법이다<br /> 기본적으로 9292번 포트를 사용한다</p><pre><code>jruby -S rackup config.ru
-</code></pre><p>===== 템플릿 =====</p><p>기본적으로 erb템플릿을 사용한다</p><p><strong>디렉토리 구조</strong></p><p>public에 정적인 파일을 views에 .erb파일이 위치한다.</p><p><code> ├─public └─views<pre><code>   index.erb
-   layout.erb </code></pre></code>     <br /></p><p><file ruby layout.erb> <body>  <%= yield %> </body> </file></p><p><file ruby index.erb> <h1>Hello Sinatra</h1> <%= $servlet_context %> </file></p><p><file ruby> get '/' do   erb :index end </file></p><p>$servlet_context라는 인스턴스명을 출력할 것이다 &#92; 단지 rack기반일 경우에만 출력됨</p><h2><a name="contrib&#95;활용"></a>Contrib 활용</h2><pre><code>jruby -S gem install sinatra-contrib</code></pre><p>reloader만 추가하고 소스를 수정 시 바로 적용됨</p><pre><code>require 'sinatra/reloader'
-</code></pre><h2><a name="war&#95;배포"></a>War 배포</h2><p>warbler를 설치한다</p><pre><code>jruby -S gem install warbler</code></pre><p>루비웹 프레임워크는 rack 이라는 인터페이스위에서 작동한다<br /> 자바의 서블릿과 같다<br /> rack으로 기동하는 파일을 작성한다</p><p><file ruby config.ru> require 'app.rb' run Sinatra::Application </file></p><p>config 디렉토리를 만들고 warble config를 작성한다 &#92; config아래에 warble.config라는 파일이 생성된다</p><p><code> mkdir config jruby -S warble config </code></p><p><file ruby warble.rb> Warbler::Config.new do |config|</p><p>   config.dirs = %w(public views)    config.includes = FileList["app.rb"]    config.gems += ["sinatra","sinatra-contrib", "sequel"]    config.gem_dependencies = true    config.pathmaps.application = ["WEB-INF/%p"]    config.jar_name = "app" end<br /> </file></p><p>이제 war파일을 작성하면 &#92; app.war 라는 파일이 보일것이다 <code> jruby -S warble </code></p><p>===== 참고 =====</p><p>http://www.rubyinside.com/sinatra-29-links-and-resources-for-a-quicker-easier-way-to-build-webapps-1371.html http://aligach.net/diary/20110307.html http://www7b.biglobe.ne.jp/~makandat/gg<i>sites/Sinatra</i>Diary_01.html#example1</p>
+</code></pre><h2><a name="템플릿"></a>템플릿</h2><p>기본적으로 erb템플릿을 사용한다</p><p><strong>디렉토리 구조</strong></p><p>public에 정적인 파일을 views에 .erb파일이 위치한다.</p><pre><code>├─public
+└─views
+       index.erb
+       layout.erb
+</code></pre><p><em>layout.erb</em></p><pre><code>&lt;body&gt;
+ &lt;%= yield %&gt;
+&lt;/body&gt;
+</code></pre><p><em>index.erb</em></p><pre><code>&lt;h1&gt;Hello Sinatra&lt;/h1&gt;
+&lt;%= $servlet&#95;context %&gt;
+</code></pre><p>템플릿을 사용하려면</p><pre><code class="ruby">get '/' do
+  erb :index
+end
+</code></pre><p>$servlet_context라는 인스턴스명을 출력할 것이다<br /> 단지 rack기반일 경우에만 출력됨</p><h2><a name="contrib&#95;활용"></a>Contrib 활용</h2><pre><code>jruby -S gem install sinatra-contrib</code></pre><p>reloader만 추가하고 소스를 수정 시 바로 적용됨</p><pre><code>require 'sinatra/reloader'
+</code></pre><h2><a name="war&#95;배포"></a>War 배포</h2><p>warbler를 설치한다</p><pre><code>jruby -S gem install warbler</code></pre><p>루비웹 프레임워크는 rack 이라는 인터페이스위에서 작동한다<br /> 자바의 서블릿과 같다<br /> rack으로 기동하는 파일을 작성한다</p><p><em>config.ru</em></p><pre><code>require 'app.rb'
+run Sinatra::Application
+</code></pre><p>config 디렉토리를 만들고 warble config를 작성한다<br /> config아래에 warble.config라는 파일이 생성된다</p><pre><code>mkdir config
+jruby -S warble config
+</code></pre><p><em>warble.rb</em></p><pre><code class="ruby">Warbler::Config.new do |config|
+
+   config.dirs = %w&#40;public views&#41;
+   config.includes = FileList&#91;&quot;app.rb&quot;&#93;
+   config.gems += &#91;&quot;sinatra&quot;,&quot;sinatra-contrib&quot;, &quot;sequel&quot;&#93;
+   config.gem&#95;dependencies = true
+   config.pathmaps.application = &#91;&quot;WEB-INF/%p&quot;&#93;
+   config.jar&#95;name = &quot;app&quot;
+end  
+</code></pre><p>이제 war파일을 작성하면 app.war 라는 파일이 보일것이다</p><pre><code>jruby -S warble</code></pre><h2><a name="참고"></a>참고</h2><ul><li><a href='http://www.rubyinside.com/sinatra-29-links-and-resources-for-a-quicker-easier-way-to-build-webapps-1371.html'>Sinatra: 29 Links and Resources For A Quicker, Easier Way to Build Webapps</a></li><li><a href='http://aligach.net/diary/20110307.html'> 今さらSinatra最低限メモ</a></li><li><a href='http://www7b.biglobe.ne.jp/~makandat/gg_sites/Sinatra_Diary_01.html'>Sinatra 日記</a></li></ul>
 </div>
 
 <div id="post-tags">
     <b>Tags: </b>
     
-    <a href="/tags/ruby.html">ruby</a>
+    <a href="/tags/web programming.html">web programming</a>
     
     <a href="/tags/jruby.html">jruby</a>
     
-    <a href="/tags/sinatra.html">sinatra</a>
+    <a href="/tags/microframework.html">microframework</a>
     
 </div>
 
 
     <div id="prev-next">
         
-        <a href="/posts/2015-07-14-how-to-captcha-using-node.js.html">&laquo; Node.js로 Captcha</a>
+        <a href="/posts/2015-07-16-windows-vim.html">&laquo; 윈도우즈 Vim설정</a>
         
         
-        <a class="right" href="/posts/2015-07-02-angularjs.html">AngularJS &raquo;</a>
+        <a class="right" href="/posts/2015-07-14-how-to-captcha-in-node.js.html">Node.js로 Captcha &raquo;</a>
         
     </div>
 
@@ -176,15 +200,15 @@ run Sinatra::Application
                     <h3>Recent Posts</h3>
                     <ul>
                         
+                        <li><a href="/posts/2016-01-14-clojurescript-gaming.html">Clojure(Script)로 게임제작</a></li>
+                        
                         <li><a href="/posts/2016-01-13-github-page.html">Github에 블로그제작</a></li>
                         
                         <li><a href="/posts/2015-09-25-get-started-clojure.html">Clojure 시작하기</a></li>
                         
-                        <li><a href="/posts/2015-09-25-using-jdbc-in-clojure.html">클로저에서 Jdbc사용</a></li>
+                        <li><a href="/posts/2015-09-25-jdbc-in-clojure.html">클로저에서 Jdbc사용</a></li>
                         
                         <li><a href="/posts/2015-09-23-freemarker-assign-tip.html">Freemarker assign팁</a></li>
-                        
-                        <li><a href="/posts/2015-09-10-oracle-jdbc.html">Oracle Jdbc Url</a></li>
                         
                     </ul>
                 </div>
@@ -196,13 +220,19 @@ run Sinatra::Application
                         
                         <li><a href="/tags/cryogen.html">cryogen</a></li>
                         
+                        <li><a href="/tags/imagemagick.html">imagemagick</a></li>
+                        
                         <li><a href="/tags/github.html">github</a></li>
                         
                         <li><a href="/tags/clojure.html">clojure</a></li>
                         
                         <li><a href="/tags/redmine.html">redmine</a></li>
                         
+                        <li><a href="/tags/raspberry.html">raspberry</a></li>
+                        
                         <li><a href="/tags/oracle.html">oracle</a></li>
+                        
+                        <li><a href="/tags/web programming.html">web programming</a></li>
                         
                         <li><a href="/tags/vi.html">vi</a></li>
                         
@@ -210,9 +240,21 @@ run Sinatra::Application
                         
                         <li><a href="/tags/java.html">java</a></li>
                         
+                        <li><a href="/tags/wiki.html">wiki</a></li>
+                        
+                        <li><a href="/tags/io.html">io</a></li>
+                        
+                        <li><a href="/tags/pi.html">pi</a></li>
+                        
+                        <li><a href="/tags/php.html">php</a></li>
+                        
                         <li><a href="/tags/mariadb.html">mariadb</a></li>
                         
                         <li><a href="/tags/freemarker.html">freemarker</a></li>
+                        
+                        <li><a href="/tags/OGNL.html">OGNL</a></li>
+                        
+                        <li><a href="/tags/nginx.html">nginx</a></li>
                         
                         <li><a href="/tags/ruby.html">ruby</a></li>
                         
@@ -220,17 +262,25 @@ run Sinatra::Application
                         
                         <li><a href="/tags/template.html">template</a></li>
                         
-                        <li><a href="/tags/vim.html">vim</a></li>
-                        
                         <li><a href="/tags/jruby.html">jruby</a></li>
+                        
+                        <li><a href="/tags/concurrent.html">concurrent</a></li>
                         
                         <li><a href="/tags/angularjs.html">angularjs</a></li>
                         
                         <li><a href="/tags/javascript.html">javascript</a></li>
                         
+                        <li><a href="/tags/microframework.html">microframework</a></li>
+                        
+                        <li><a href="/tags/proxy.html">proxy</a></li>
+                        
+                        <li><a href="/tags/game.html">game</a></li>
+                        
                         <li><a href="/tags/node.js.html">node.js</a></li>
                         
-                        <li><a href="/tags/sinatra.html">sinatra</a></li>
+                        <li><a href="/tags/taglib.html">taglib</a></li>
+                        
+                        <li><a href="/tags/jsp.html">jsp</a></li>
                         
                     </ul>
                 </div>

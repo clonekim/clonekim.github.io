@@ -12,11 +12,31 @@ http://clonekim.github.io/
 This blog is generated using cryogen
 </description>
 <lastBuildDate>
-Thu, 14 Jan 2016 13:57:14 +0900
+Fri, 15 Jan 2016 16:19:37 +0900
 </lastBuildDate>
 <generator>
 clj-rss
 </generator>
+<item>
+<guid>
+http://clonekim.github.io/posts/2016-01-14-clojurescript-gaming.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2016-01-14-clojurescript-gaming.html
+</link>
+<title>
+Clojure(Script)로 게임제작
+</title>
+<description>
+  &lt;p&gt;&lt;a href='http://www.parens-of-the-dead.com/'&gt;PARENS OF THE DEAD&lt;/a&gt;  &lt;/p&gt;&lt;p&gt;&lt;img src=&quot;/img/clojure/parens_of_the_dead.png&quot; alt=&quot;parens_of_the_dead&quot; /&gt;&lt;/p&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Thu, 14 Jan 2016 00:00:00 +0900
+</pubDate>
+</item>
 <item>
 <guid>
 http://clonekim.github.io/posts/2016-01-13-github-page.html
@@ -64,9 +84,11 @@ http://clonekim.github.io/posts/2015-09-25-get-started-clojure.html
 Clojure 시작하기
 </title>
 <description>
-&lt;p&gt;JVM위에서 작동하는 함수형 프로그래밍이다&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;clojure&amp;#95;얻기&quot;&gt;&lt;/a&gt;clojure 얻기&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;http://clojure.org/&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;ide/tools&quot;&gt;&lt;/a&gt;IDE/Tools&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://lighttable.com'&gt;LightTable&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://cursiveclojure.com'&gt;Cursive&lt;/a&gt;&lt;/li&gt;&lt;li&gt;Emacs&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;leiningen으로&amp;#95;시작하기&quot;&gt;&lt;/a&gt;Leiningen으로 시작하기&lt;/h2&gt;&lt;p&gt;Leiningen(레닝겐)은 클로져를 쉽게 시작하기 위한 빌드자동화 툴이다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;http://leiningen.org/&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;/img/clojure/lein-self-install.png&quot; alt=&quot;Image 1&quot; /&gt;&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;project&amp;#95;생성&quot;&gt;&lt;/a&gt;Project 생성&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;lein new &amp;#91;프로젝트명&amp;#93;
+&lt;p&gt;JVM위에서 작동하는 함수형 프로그래밍이다&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;clojure&amp;#95;얻기&quot;&gt;&lt;/a&gt;clojure 얻기&lt;/h2&gt;&lt;p&gt;&lt;a href='http://clojure.org'&gt;http://clojure.org&lt;/a&gt;&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;ide/tools&quot;&gt;&lt;/a&gt;IDE/Tools&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://lighttable.com'&gt;LightTable&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://cursiveclojure.com'&gt;Cursive&lt;/a&gt;&lt;/li&gt;&lt;li&gt;Emacs&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;leiningen으로&amp;#95;시작하기&quot;&gt;&lt;/a&gt;Leiningen으로 시작하기&lt;/h2&gt;&lt;p&gt;&lt;a href='http://leiningen.org'&gt;Leiningen&lt;/a&gt; (레닝겐)은 클로져를 쉽게 시작하기 위한 빌드자동화 툴이다&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;/img/clojure/lein-self-install.png&quot; alt=&quot;Image 1&quot; /&gt;&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;project&amp;#95;생성&quot;&gt;&lt;/a&gt;Project 생성&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;lein new &amp;#91;프로젝트명&amp;#93;
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;repl(read&amp;#95;eval&amp;#95;print&amp;#95;loop)&amp;#95;실행&quot;&gt;&lt;/a&gt;REPL(Read Eval Print Loop) 실행&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;lein repl
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;도움말 보기&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;user=&amp;gt; &amp;#40;doc conj&amp;#41;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;REPL에서 클로저코드를 작성하고 바로 실행이 가능하다&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;user=&amp;gt; &amp;#40;+ 1 3&amp;#41;
+4
+user=&amp;gt; &amp;#40;doc conj&amp;#41; ;도움말 보기
 -------------------------
 clojure.core/conj
 &amp;#40;&amp;#91;coll x&amp;#93; &amp;#91;coll x &amp;amp; xs&amp;#93;&amp;#41;
@@ -74,6 +96,13 @@ clojure.core/conj
     'added'. &amp;#40;conj nil item&amp;#41; returns &amp;#40;item&amp;#41;.  The 'addition' may
     happen at different 'places' depending on the concrete type.
 nil
+user=&amp;gt; &amp;#40;doc +&amp;#41;
+-------------------------
+clojure.core/+
+&amp;#40;&amp;#91;&amp;#93; &amp;#91;x&amp;#93; &amp;#91;x y&amp;#93; &amp;#91;x y &amp;amp; more&amp;#93;&amp;#41;
+  Returns the sum of nums. &amp;#40;+&amp;#41; returns 0. Does not auto-promote
+  longs, will throw on overflow. See also: +'
+nil  
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;자료구조&quot;&gt;&lt;/a&gt;자료구조&lt;/h2&gt;&lt;p&gt;repl에서 아래를 입력해보고 결과를 보자&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;4/2
 ;; 2
 
@@ -197,66 +226,137 @@ clojure.lang.PersistentVector$ChunkedSeq
 ;;#{:w}
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;binding&quot;&gt;&lt;/a&gt;Binding&lt;/h2&gt;&lt;p&gt;변수에 값을 할당하는 과정을 말한다&lt;br /&gt; repl에서 정의하면 기본적으로 user라는 네임공간(namespace)서만 사용가능하다&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;&amp;#40;def devloper &amp;quot;Alice&amp;quot;&amp;#41;
 ;; #'user/developer
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;let은 해당 컨텍스트안에서만 유효한 로컬 변수임 ``clojure (let [developer &quot;Alice in Wonderland&quot;])&lt;/p&gt;&lt;p&gt;(let [developer &quot;Alice in Wonderland&quot; rabbit &quot;White Rabbit&quot; ])&lt;/p&gt;&lt;p&gt;(let [[color size] [&quot;blue&quot; &quot;small&quot;]]   (str &quot;The &quot; color &quot; door is &quot; size)) ;; &quot;The blue door is small&quot;&lt;/p&gt;&lt;p&gt;(let [x [&quot;blue&quot; &quot;small&quot;]   color (first x)   size (last x)]    (str &quot;The &quot; color &quot; door is &quot; size)) ;; &quot;The blue door is small&quot;&lt;/p&gt;&lt;p&gt;;; 현재 네임공간 확인 &lt;em&gt;ns&lt;/em&gt; ;; #object[clojure.lang.Namespace 0x4e5051b9 &quot;user&quot;]&lt;/p&gt;&lt;p&gt;;; 다른 네임공간으로 전환 (ns alice) (def name &quot;King&quot;) (ns user) alice/name ;; &quot;King&quot; 다른 네임공간의 변수를 사용&lt;/p&gt;&lt;p&gt;;; alias 사용 (require '[alice :as al]) al/name ;; &quot;King&quot;&lt;/p&gt;&lt;p&gt;;; alias 사용하지 않고 현재 네임공간에서 사용할 경우 (ns wonderland   (:require [alice :refer :all] ;;alice 네임공간의 모든 것을 현재 네임공간에서 사용한다&lt;pre&gt;&lt;code&gt;        &amp;#91;rabbit :refer :all&amp;#93;&amp;#41;&amp;#41;
-         &lt;/code&gt;&lt;/pre&gt;;;함수명이 같아서 충돌할 경우가 발생할 수 도 있다 ;; 그럴 경우 일부만 aliac로  사용하자&lt;/p&gt;&lt;p&gt;(ns wonderland   (:require [clojure.set :as s]&lt;pre&gt;&lt;code&gt;        &amp;#91;alice :as al&amp;#93;&amp;#41;&amp;#41;          &lt;pre&gt;&lt;code&gt;
-## 함수정의
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;let은 해당 컨텍스트안에서만 유효한 로컬 변수임&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;&amp;#40;let &amp;#91;developer &amp;quot;Alice in Wonderland&amp;quot;&amp;#93;&amp;#41;
 
- &lt;/code&gt;&lt;/pre&gt;clojure (defn follow-the-rabbit [] &quot;Off we go!&quot;)&lt;/p&gt;&lt;p&gt;(follow-the-rabbit) ;; &quot;Off we go!&quot;&lt;/p&gt;&lt;p&gt;defn shop-for-jams [jam1 jam2]   {:name &quot;jam-basket&quot;    :jam1 jam1    :jam2 jam2})&lt;/p&gt;&lt;p&gt;(shop-for-jams &quot;strawberry&quot; &quot;marmalade&quot;) ;; {:name &quot;jam-basket&quot;, :jam1 &quot;strawberry&quot;, :jam2 &quot;marmalade&quot;}&lt;/p&gt;&lt;p&gt;;;anonymous 함수 (fn [] (str &quot;Off we go&quot; &quot;!&quot;)) ;; #object[user$eval1365$fn&lt;b&gt;1366 0x4c3e78fd &quot;user$eval1365$fn&lt;/b&gt;1366@4c3e78fd&quot;]&lt;/p&gt;&lt;p&gt;;; 단축표현(shorthand) (#(str &quot;Off we go&quot; &quot;!&quot;)) ;; &quot;Off we go!&quot;&lt;/p&gt;&lt;p&gt;(#(str &quot;Off we go&quot; &quot;!&quot; &quot; - &quot; %) &quot;again&quot;) ;; &quot;Off we go! - again&quot; %(또는 %1)는 첫번째 파라미터 두번째부터는 %2로 처리해야함&lt;pre&gt;&lt;code&gt;
-## 제어구문
+&amp;#40;let &amp;#91;developer &amp;quot;Alice in Wonderland&amp;quot; rabbit &amp;quot;White Rabbit&amp;quot; &amp;#93;&amp;#41;
 
+&amp;#40;let &amp;#91;&amp;#91;color size&amp;#93; &amp;#91;&amp;quot;blue&amp;quot; &amp;quot;small&amp;quot;&amp;#93;&amp;#93;
+  &amp;#40;str &amp;quot;The &amp;quot; color &amp;quot; door is &amp;quot; size&amp;#41;&amp;#41;
+;; &amp;quot;The blue door is small&amp;quot;
 
-### if
-
- &lt;/code&gt;&lt;/pre&gt;clojure (if true &quot;true&quot; &quot;false&quot;) ;;-&gt; &quot;true&quot;&lt;/p&gt;&lt;p&gt;(if nil &quot;true&quot; &quot;false&quot;) ;;-&gt; &quot;false&quot;&lt;/p&gt;&lt;p&gt;(if (= :drink :drink)   &quot;Try&quot;   &quot;Don't try&quot; ) ;;-&gt; &quot;Try&quot;&lt;/p&gt;&lt;p&gt;(let [is-small (&gt; 5 3)]   (if is-small&lt;pre&gt;&lt;code&gt;&amp;quot;Small&amp;quot;
-&amp;quot;No&amp;quot;&amp;#41;&amp;#41; &lt;/code&gt;&lt;/pre&gt;;; &quot;Small&quot;  &lt;br /&gt; ;; 5보다 3이 작은경우 true를 저장하고 조건에 맞는 결과값을 반환한다&lt;/p&gt;&lt;p&gt;(if-let [is-small (&gt; 5 3)]   &quot;Small&quot;   &quot;No&quot;) ;; &quot;Small&quot;&lt;br /&gt;&lt;pre&gt;&lt;code&gt;
-### when,when-let
-
- &lt;/code&gt;&lt;/pre&gt;clojure (defn ask [question]   (when question &quot;Yes&quot;)) ;;-&gt; &quot;Yes&quot;&lt;/p&gt;&lt;p&gt;(when-let [question] &quot;Yes&quot;) ;;-&gt; Yes otherwise nil&lt;pre&gt;&lt;code&gt;
-### cond, case
-
- &lt;/code&gt;&lt;/pre&gt;clojure (let [bottle &quot;drink&quot;]   (cond&lt;pre&gt;&lt;code&gt;&amp;#40;= bottle &amp;quot;poison&amp;quot;&amp;#41; &amp;quot;don't touch&amp;quot;
-&amp;#40;= bottle &amp;quot;empty&amp;quot;&amp;#41; &amp;quot;all gone&amp;quot;&amp;#41;&amp;#41; &lt;/code&gt;&lt;/pre&gt; ;;-&gt; nil&lt;pre&gt;&lt;code&gt;
-cond와 달리 매칭되는 것이 없을 경우  IllegalArgumentException 을 발생시킴  
-아래와 같이 익셉션을 발생하지 않고 unknown을 출력할 수 있음
-
- &lt;/code&gt;&lt;/pre&gt;clojure (let [bottle &quot;drink&quot;]  (case bottle    &quot;poison&quot; &quot;don't touch&quot;    &quot;drink&quot; &quot;drink it&quot;     &quot;unknown&quot; )) &lt;pre&gt;&lt;code&gt;
-## Database
-
-&amp;#42; &amp;#91;jdbc&amp;#93;&amp;#40;http://clojure-doc.org/articles/ecosystem/java&amp;#95;jdbc/home.html&amp;#41;
-&amp;#42; &amp;#91;SQL Korma&amp;#93;&amp;#40;http://sqlkorma.com/&amp;#41;
-&amp;#42; &amp;#91;monger&amp;#93;&amp;#40;http://clojuremongodb.info&amp;#41;
-
-## Java Interoperability
+&amp;#40;let &amp;#91;x &amp;#91;&amp;quot;blue&amp;quot; &amp;quot;small&amp;quot;&amp;#93;
+  color &amp;#40;first x&amp;#41;
+  size &amp;#40;last x&amp;#41;&amp;#93;
+   &amp;#40;str &amp;quot;The &amp;quot; color &amp;quot; door is &amp;quot; size&amp;#41;&amp;#41;
+;; &amp;quot;The blue door is small&amp;quot;
 
 
+;; 현재 네임공간 확인
+&amp;#42;ns&amp;#42;
+;; #object&amp;#91;clojure.lang.Namespace 0x4e5051b9 &amp;quot;user&amp;quot;&amp;#93;
 
-## Web Programming
+;; 다른 네임공간으로 전환
+&amp;#40;ns alice&amp;#41;
+&amp;#40;def name &amp;quot;King&amp;quot;&amp;#41;
+&amp;#40;ns user&amp;#41;
+alice/name
+;; &amp;quot;King&amp;quot; 다른 네임공간의 변수를 사용
 
-&amp;#42; &amp;#91;Ring&amp;#93;&amp;#40;https://github.com/ring-clojure/ring&amp;#41;
-&amp;#42; &amp;#91;Luminus&amp;#93;&amp;#40;http://www.luminusweb.net&amp;#41;
+;; alias 사용
+&amp;#40;require '&amp;#91;alice :as al&amp;#93;&amp;#41;
+al/name
+;; &amp;quot;King&amp;quot;
 
+;; alias 사용하지 않고 현재 네임공간에서 사용할 경우
+&amp;#40;ns wonderland
+  &amp;#40;:require &amp;#91;alice :refer :all&amp;#93; ;;alice 네임공간의 모든 것을 현재 네임공간에서 사용한다
+            &amp;#91;rabbit :refer :all&amp;#93;&amp;#41;&amp;#41;
+            
+;;함수명이 같아서 충돌할 경우가 발생할 수 도 있다
+;; 그럴 경우 일부만 as&amp;#40;aliase&amp;#41;로  사용하자
 
-## 3rd Party Libraries
+&amp;#40;ns wonderland
+  &amp;#40;:require &amp;#91;clojure.set :as s&amp;#93;
+            &amp;#91;alice :as al&amp;#93;&amp;#41;&amp;#41;          
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;함수정의&quot;&gt;&lt;/a&gt;함수정의&lt;/h2&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;&amp;#40;defn follow-the-rabbit &amp;#91;&amp;#93; &amp;quot;Off we go!&amp;quot;&amp;#41;
 
-&amp;#42; bouncer
-&amp;#42; validateur
-&amp;#42; SQLingvo
-&amp;#42; HoneySQL
+&amp;#40;follow-the-rabbit&amp;#41;
+;; &amp;quot;Off we go!&amp;quot;
 
-## plugins
+defn shop-for-jams &amp;#91;jam1 jam2&amp;#93;
+  {:name &amp;quot;jam-basket&amp;quot;
+   :jam1 jam1
+   :jam2 jam2}&amp;#41;
 
-### lein-try 사용하기
+&amp;#40;shop-for-jams &amp;quot;strawberry&amp;quot; &amp;quot;marmalade&amp;quot;&amp;#41;
+;; {:name &amp;quot;jam-basket&amp;quot;, :jam1 &amp;quot;strawberry&amp;quot;, :jam2 &amp;quot;marmalade&amp;quot;}
 
-아래 파일을 편집한다
+;;anonymous 함수
+&amp;#40;fn &amp;#91;&amp;#93; &amp;#40;str &amp;quot;Off we go&amp;quot; &amp;quot;!&amp;quot;&amp;#41;&amp;#41;
+;; #object&amp;#91;user$eval1365$fn&amp;#95;&amp;#95;1366 0x4c3e78fd &amp;quot;user$eval1365$fn&amp;#95;&amp;#95;1366@4c3e78fd&amp;quot;&amp;#93;
 
-${HOME}/.lein/profiles.clj
+;; 단축표현&amp;#40;shorthand&amp;#41;
+&amp;#40;#&amp;#40;str &amp;quot;Off we go&amp;quot; &amp;quot;!&amp;quot;&amp;#41;&amp;#41;
+;; &amp;quot;Off we go!&amp;quot;
 
+&amp;#40;#&amp;#40;str &amp;quot;Off we go&amp;quot; &amp;quot;!&amp;quot; &amp;quot; - &amp;quot; %&amp;#41; &amp;quot;again&amp;quot;&amp;#41;
+;; &amp;quot;Off we go! - again&amp;quot; %&amp;#40;또는 %1&amp;#41;는 첫번째 파라미터
+두번째부터는 %2로 처리해야함
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;제어구문&quot;&gt;&lt;/a&gt;제어구문&lt;/h2&gt;&lt;h3&gt;&lt;a name=&quot;if&quot;&gt;&lt;/a&gt;if&lt;/h3&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;&amp;#40;if true &amp;quot;true&amp;quot; &amp;quot;false&amp;quot;&amp;#41;
+;;-&amp;gt; &amp;quot;true&amp;quot;
 
- &lt;/code&gt;&lt;/pre&gt;clojure {:user {:plugins [[lein-try &quot;0.4.3&quot;]]}}&lt;pre&gt;&lt;code&gt;clj-time이라는 라이브러를 가지고 간단한 테스트 해볼때  
-아래와 같이 repl를 열수있다
+&amp;#40;if nil &amp;quot;true&amp;quot; &amp;quot;false&amp;quot;&amp;#41;
+;;-&amp;gt; &amp;quot;false&amp;quot;
 
- &lt;/code&gt;&lt;/pre&gt; lein try clj-time&lt;pre&gt;&lt;code&gt;
+&amp;#40;if &amp;#40;= :drink :drink&amp;#41;
+  &amp;quot;Try&amp;quot;
+  &amp;quot;Don't try&amp;quot; &amp;#41;
+;;-&amp;gt; &amp;quot;Try&amp;quot;
 
+&amp;#40;let &amp;#91;is-small &amp;#40;&amp;gt; 5 3&amp;#41;&amp;#93;
+  &amp;#40;if is-small
+    &amp;quot;Small&amp;quot;
+    &amp;quot;No&amp;quot;&amp;#41;&amp;#41;
+;; &amp;quot;Small&amp;quot;    
+;; 5보다 3이 작은경우 true를 저장하고 조건에 맞는 결과값을 반환한다
+
+&amp;#40;if-let &amp;#91;is-small &amp;#40;&amp;gt; 5 3&amp;#41;&amp;#93;
+  &amp;quot;Small&amp;quot;
+  &amp;quot;No&amp;quot;&amp;#41;
+;; &amp;quot;Small&amp;quot;  
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;a name=&quot;when,when-let&quot;&gt;&lt;/a&gt;when,when-let&lt;/h3&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;&amp;#40;defn ask &amp;#91;question&amp;#93;
+  &amp;#40;when question &amp;quot;Yes&amp;quot;&amp;#41;&amp;#41;
+;;-&amp;gt; &amp;quot;Yes&amp;quot;
+
+&amp;#40;when-let &amp;#91;question&amp;#93; &amp;quot;Yes&amp;quot;&amp;#41;
+;;-&amp;gt; Yes otherwise nil
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;a name=&quot;cond,&amp;#95;case&quot;&gt;&lt;/a&gt;cond, case&lt;/h3&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;&amp;#40;let &amp;#91;bottle &amp;quot;drink&amp;quot;&amp;#93;
+  &amp;#40;cond
+    &amp;#40;= bottle &amp;quot;poison&amp;quot;&amp;#41; &amp;quot;don't touch&amp;quot;
+    &amp;#40;= bottle &amp;quot;empty&amp;quot;&amp;#41; &amp;quot;all gone&amp;quot;&amp;#41;&amp;#41;
+ ;;-&amp;gt; nil
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;cond와 달리 매칭되는 것이 없을 경우  IllegalArgumentException 을 발생시킴&lt;br /&gt; 아래와 같이 익셉션을 발생하지 않고 unknown을 출력할 수 있음&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;&amp;#40;let &amp;#91;bottle &amp;quot;drink&amp;quot;&amp;#93;
+ &amp;#40;case bottle
+   &amp;quot;poison&amp;quot; &amp;quot;don't touch&amp;quot;
+   &amp;quot;drink&amp;quot; &amp;quot;drink it&amp;quot; 
+   &amp;quot;unknown&amp;quot; &amp;#41;&amp;#41; 
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;그&amp;#95;밖의&amp;#95;expression&quot;&gt;&lt;/a&gt;그 밖의 expression&lt;/h2&gt;&lt;h3&gt;&lt;a name=&quot;doto&quot;&gt;&lt;/a&gt;doto&lt;/h3&gt;&lt;p&gt;doto는 생성된 인스턴스에 계속적인 메서드를 호출(부가효과)를 할 수 있고&lt;br /&gt; 최종적으로 돌려주는 것은 그 인스턴스가 된다&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;&amp;#40;doto &amp;#40;java.util.HashMap.&amp;#41;
+      &amp;#40;.put &amp;quot;name&amp;quot; &amp;quot;clojure&amp;quot;&amp;#41;
+      &amp;#40;.put &amp;quot;ver&amp;quot; &amp;quot;1.7&amp;quot;&amp;#41;&amp;#41;
+
+;; {&amp;quot;name&amp;quot; &amp;quot;clojure&amp;quot; , &amp;quot;ver&amp;quot; &amp;quot;1.7&amp;quot;}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;a name=&quot;threading(-&gt;)&quot;&gt;&lt;/a&gt;Threading(-&gt;)&lt;/h3&gt;&lt;p&gt;최종적으로 돌려주는 것은 해당 메서드가 적용된 것&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;&amp;#40;-&amp;gt; &amp;#40;java.util.HashMap.&amp;#41;
+    &amp;#40;.put &amp;quot;num&amp;quot; 1234&amp;#41;&amp;#41;
+;; nil
+
+&amp;#40;-&amp;gt; &amp;quot;aaaa&amp;quot;
+    &amp;#40;.toUpperCase&amp;#41;&amp;#41;
+;; &amp;quot;AAAA&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;database&quot;&gt;&lt;/a&gt;Database&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://clojure-doc.org/articles/ecosystem/java_jdbc/home.html'&gt;jdbc&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://sqlkorma.com/'&gt;SQL Korma&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://clojuremongodb.info'&gt;monger&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;java&amp;#95;interoperability&quot;&gt;&lt;/a&gt;Java Interoperability&lt;/h2&gt;&lt;p&gt;&lt;a href='http://clojure.org/reference/java_interop'&gt;Java Interop&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;import&quot;&gt;&lt;/a&gt;Import&lt;/h3&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;&amp;#40;:import java.awt.Panel
+         java.util.Date&amp;#41;
+
+&amp;#40;:import &amp;#40;java.io Writer
+                  ByteArrayOutputStream&amp;#41;&amp;#41;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;a name=&quot;inner&amp;#95;class를&amp;#95;사용할&amp;#95;경우&quot;&gt;&lt;/a&gt;Inner class를 사용할 경우&lt;/h3&gt;&lt;p&gt;아래와 같은 클래스일 경우다&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;java&quot;&gt;public class Robot {
+
+  public static class Radio  {
+   ...
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;&amp;#40;Robot$Radio.&amp;#41;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;web&amp;#95;programming&quot;&gt;&lt;/a&gt;Web Programming&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://github.com/ring-clojure/ring'&gt;Ring&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://www.luminusweb.net'&gt;Luminus&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;3rd&amp;#95;party&amp;#95;libraries&quot;&gt;&lt;/a&gt;3rd Party Libraries&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;bouncer&lt;/li&gt;&lt;li&gt;validateur&lt;/li&gt;&lt;li&gt;SQLingvo&lt;/li&gt;&lt;li&gt;HoneySQL&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;plugins&quot;&gt;&lt;/a&gt;plugins&lt;/h2&gt;&lt;h3&gt;&lt;a name=&quot;lein-try&amp;#95;사용하기&quot;&gt;&lt;/a&gt;lein-try 사용하기&lt;/h3&gt;&lt;p&gt;아래 파일을 편집한다&lt;/p&gt;&lt;p&gt;${HOME}/.lein/profiles.clj&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;{:user {:plugins &amp;#91;&amp;#91;lein-try &amp;quot;0.4.3&amp;quot;&amp;#93;&amp;#93;}}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;clj-time이라는 라이브러를 가지고 간단한 테스트 해볼때&lt;br /&gt; 아래와 같이 repl를 열수있다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;lein try clj-time
+&lt;/code&gt;&lt;/pre&gt;
 </description>
 <enclosure>
 
@@ -267,10 +367,10 @@ Fri, 25 Sep 2015 00:00:00 +0900
 </item>
 <item>
 <guid>
-http://clonekim.github.io/posts/2015-09-25-using-jdbc-in-clojure.html
+http://clonekim.github.io/posts/2015-09-25-jdbc-in-clojure.html
 </guid>
 <link>
-http://clonekim.github.io/posts/2015-09-25-using-jdbc-in-clojure.html
+http://clonekim.github.io/posts/2015-09-25-jdbc-in-clojure.html
 </link>
 <title>
 클로저에서 Jdbc사용
@@ -341,7 +441,7 @@ Oracle Jdbc Url
 jdbc:oracle:thin:@//&amp;#91;HOST&amp;#93;&amp;#91;:PORT&amp;#93;/SERVICE
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Hikari Pool를 사용 시 아래와 같이 경고메시지가 나타나면&lt;br /&gt; oracle.jdbc.driver.OracleDriver에서 oracle.jdbc.OracleDriver 로 바꿀 것&lt;/p&gt;&lt;pre&gt;&lt;code&gt;2015-09-10 WARN  &amp;#40;main&amp;#41; &amp;#91;DriverDataSource&amp;#40;&amp;lt;init&amp;gt;:68&amp;#41;&amp;#93; Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
 2015-09-10 DEBUG &amp;#40;main&amp;#41; &amp;#91;PoolUtilities&amp;#40;getAndSetNetworkTimeout:198&amp;#41;&amp;#93; HikariPool-0 - Connection.setNetworkTimeout&amp;#40;&amp;#41; not supported
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://www.orafaq.com/wiki/JDBC'&gt;JDBC - Oracle FAQ&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://docs.oracle.com/cd/B28359_01/java.111/b31224/urls.htm'&gt;Database JDBC Developer's Guide and Reference&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 </description>
 <enclosure>
 
@@ -413,10 +513,10 @@ http://clonekim.github.io/posts/2015-07-18-install-redmine.html
 Redmine3 설치하기
 </title>
 <description>
-&lt;h2&gt;&lt;a name=&quot;설치환경&quot;&gt;&lt;/a&gt;설치환경&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;redmine-3.0.4&lt;/li&gt;&lt;li&gt;centos 6.6&lt;/li&gt;&lt;li&gt;http://www.redmine.org/projects/redmine/wiki/RedmineInstall&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;rvm&amp;#95;설치&quot;&gt;&lt;/a&gt;RVM 설치&lt;/h2&gt;&lt;p&gt;https://rvm.io&lt;/p&gt;&lt;p&gt;rvm을 이용하여 루비를 버젼별로 설치및 관리할 수 있다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;rvm install ruby
+&lt;h2&gt;&lt;a name=&quot;설치환경&quot;&gt;&lt;/a&gt;설치환경&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;redmine-3.0.4&lt;/li&gt;&lt;li&gt;centos 6.6&lt;/li&gt;&lt;li&gt;&lt;a href='http://www.redmine.org/projects/redmine/wiki/RedmineInstall'&gt;redmine install가이드&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;rvm&amp;#95;설치&quot;&gt;&lt;/a&gt;RVM 설치&lt;/h2&gt;&lt;p&gt;&lt;a href='https://rvm.io'&gt;rvm.io 에 대하여&lt;/a&gt;&lt;/p&gt;&lt;p&gt;rvm을 이용하여 루비를 버젼별로 설치및 관리할 수 있다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;rvm install ruby
 rvm gemset create redmine
 rvm gemset use redmine
-&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;a name=&quot;의존성&amp;#95;라이브러리&quot;&gt;&lt;/a&gt;의존성 라이브러리&lt;/h3&gt;&lt;p&gt;http://www.redmine.org/projects/redmine/wiki/Install&lt;i&gt;Redmine&lt;/i&gt;25x&lt;i&gt;on&lt;/i&gt;Centos&lt;i&gt;65&lt;/i&gt;complete&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;redmine&amp;#95;설치&quot;&gt;&lt;/a&gt;redmine 설치&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;$ cd redmine-x.x.x
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;a name=&quot;의존성&amp;#95;라이브러리&quot;&gt;&lt;/a&gt;의존성 라이브러리&lt;/h3&gt;&lt;p&gt;&lt;a href='http://www.redmine.org/projects/redmine/wiki/Install_Redmine_25x_on_Centos_65_complete'&gt;CentOS 의존성&lt;/a&gt;&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;redmine&amp;#95;설치&quot;&gt;&lt;/a&gt;redmine 설치&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;$ cd redmine-x.x.x
 $ gem install bundler
 $ bundle install --without development test
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;thin&quot;&gt;&lt;/a&gt;Thin&lt;/h2&gt;&lt;p&gt;Gemfile을 수정하여 thin을 최상단에 추가&lt;br /&gt; 다시 번들로 라이브러리 설치&lt;/p&gt;&lt;pre&gt;&lt;code&gt;bundle install --without development test
@@ -436,7 +536,7 @@ threadpool&amp;#95;size: 20
 servers: 2
 daemonize: true 
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;thin서버 시작&lt;/p&gt;&lt;pre&gt;&lt;code&gt;thin start -C /etc/thin/redmine.yml
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;참고&quot;&gt;&lt;/a&gt;참고&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;http://www.php5.me/blog/centos-6-6-mariadb-10-0-%ec%97%90-redmine-2-6-0-%ec%84%a4%ec%b9%98/&lt;/li&gt;&lt;/ul&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;참고&quot;&gt;&lt;/a&gt;참고&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://www.php5.me/blog/centos-6-6-mariadb-10-0-%ec%97%90-redmine-2-6-0-%ec%84%a4%ec%b9%98/'&gt;CentOS 6.6 + MariaDB 10.0 에 redmine 2.6.0 설치&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 </description>
 <enclosure>
 
@@ -456,7 +556,7 @@ http://clonekim.github.io/posts/2015-07-16-windows-vim.html
 윈도우즈 Vim설정
 </title>
 <description>
- &lt;p&gt; vi를 윈도우즈에서 사용하기 위한 가이드&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;설치&quot;&gt;&lt;/a&gt;설치&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;http://www.vim.org&lt;/li&gt;&lt;li&gt;http://www.vim.org/download.php&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;설정&quot;&gt;&lt;/a&gt;설정&lt;/h2&gt;&lt;p&gt;아래 파일을 C:\Users&amp;#91;계정명]&amp;#95;vimrc 에 위치한다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;set nu
+ &lt;p&gt; vi를 윈도우즈에서 사용하기 위한 가이드&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;설치&quot;&gt;&lt;/a&gt;설치&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://www.vim.org'&gt;http://www.vim.org&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://www.vim.org/download.php'&gt;http://www.vim.org/download.php&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;설정&quot;&gt;&lt;/a&gt;설정&lt;/h2&gt;&lt;p&gt;아래 파일을 C:\Users&amp;#91;계정명]&amp;#95;vimrc 에 위치한다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;set nu
 set autoindent
 set nobackup
 set showcmd
@@ -465,12 +565,13 @@ set enc=utf-8
 set fencs=euckr,cp949,utf-8
 set tabstop=3
 set nowrap
+set lines=30 columns=140
 
 lang mes en&amp;#95;US
 
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;explore&quot;&gt;&lt;/a&gt;Explore&lt;/h2&gt;&lt;p&gt;명령모드에서 :Explore로 입력하면 탐색창모드로 전환한다. 특정파일을 선택 시 편집할 수 있고&lt;br /&gt; Ctrl +^ 입력시 바로 이전 탐색창으로 이동한다.&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;/img/vim_explore.png&quot; alt=&quot;Explore&quot; /&gt;&lt;/p&gt;
 </description>
 <enclosure>
 
@@ -481,10 +582,122 @@ Thu, 16 Jul 2015 00:00:00 +0900
 </item>
 <item>
 <guid>
-http://clonekim.github.io/posts/2015-07-14-how-to-captcha-using-node.js.html
+http://clonekim.github.io/posts/2015-07-14-sinatra.html
 </guid>
 <link>
-http://clonekim.github.io/posts/2015-07-14-how-to-captcha-using-node.js.html
+http://clonekim.github.io/posts/2015-07-14-sinatra.html
+</link>
+<title>
+Sinatra 웹프로그래밍
+</title>
+<description>
+&lt;h2&gt;&lt;a name=&quot;설치&quot;&gt;&lt;/a&gt;설치&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;jruby -S gem install sinatra
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;hello&amp;#95;ruby&quot;&gt;&lt;/a&gt;Hello Ruby&lt;/h2&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;require 'rubygems'
+require 'sinatra'
+
+get '/' do
+  'Hello Jruby'
+end
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;라우터&quot;&gt;&lt;/a&gt;라우터&lt;/h2&gt;&lt;p&gt;get, post, put, delete를 사용할 수있다&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;get '/' do
+
+end
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;요청파라미터&quot;&gt;&lt;/a&gt;요청파라미터&lt;/h2&gt;&lt;p&gt;/?name=foo 로 요청 시 아래와 같이&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;post '/' do
+  puts params&amp;#91;'name'&amp;#93;
+end
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;본문으로&amp;#95;json를&amp;#95;요청받을&amp;#95;경우&quot;&gt;&lt;/a&gt;본문으로 Json를 요청받을 경우&lt;/h2&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;post '/' do
+  payload = JSON.parse&amp;#40;request.body.read&amp;#41;
+  puts payload
+  status 201
+end
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;응답하기&quot;&gt;&lt;/a&gt;응답하기&lt;/h2&gt;&lt;p&gt;문자열, html, json, 바이너리 등의 모든 컨텐츠로 응답가능하다&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;get '/' do
+  'Hello'
+end
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;json으로&amp;#95;응답하기&quot;&gt;&lt;/a&gt;Json으로 응답하기&lt;/h2&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;require 'sinatra'
+require 'json'
+
+get '/' do
+  content&amp;#95;type :json
+  data = { foo: 'bar'}
+  data.to&amp;#95;json
+end
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;또는 sinatra-contrib를 사용해서&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;require 'sinatra'
+require 'sinatra-contrib'
+
+get '/' do
+  data = { foo: 'bar'}
+  json data
+end
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;sample&amp;#95;web&quot;&gt;&lt;/a&gt;Sample Web&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;app.rb&lt;/strong&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;require 'rubygems'
+require 'sinatra'
+require 'sinatra/reloader'
+require 'json'
+require 'sequel'
+require './mysql-connector-java-5.1.35.jar'
+
+DB = Sequel.connect&amp;#40;'jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&amp;amp;characterEncoding=utf8',
+			:user=&amp;gt;'test',
+			:password=&amp;gt;'test'&amp;#41;
+user = DB&amp;#91;:users&amp;#93;
+
+
+get '/' do
+  erb :index
+end
+
+get '/api/users' do
+  data = user.all
+  pager = {
+ 	total: data.count,
+	rows: data,
+	page: 1
+  }
+  pager.to&amp;#95;json
+end
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;config.ru&lt;/strong&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;require 'app.rb'
+run Sinatra::Application
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;아래와 같이 실행한다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;jruby app.rb
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;실행 시 내장된 웹서버서(WEBrick)를 사용한다&lt;br /&gt; 기본적으로 4567번 포트를 사용한다&lt;/p&gt;&lt;p&gt;아래는 Rack기반으로 기동하는 방법이다&lt;br /&gt; 기본적으로 9292번 포트를 사용한다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;jruby -S rackup config.ru
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;템플릿&quot;&gt;&lt;/a&gt;템플릿&lt;/h2&gt;&lt;p&gt;기본적으로 erb템플릿을 사용한다&lt;/p&gt;&lt;p&gt;&lt;strong&gt;디렉토리 구조&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;public에 정적인 파일을 views에 .erb파일이 위치한다.&lt;/p&gt;&lt;pre&gt;&lt;code&gt;├─public
+└─views
+       index.erb
+       layout.erb
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;layout.erb&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;body&amp;gt;
+ &amp;lt;%= yield %&amp;gt;
+&amp;lt;/body&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;index.erb&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;h1&amp;gt;Hello Sinatra&amp;lt;/h1&amp;gt;
+&amp;lt;%= $servlet&amp;#95;context %&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;템플릿을 사용하려면&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;get '/' do
+  erb :index
+end
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;$servlet_context라는 인스턴스명을 출력할 것이다&lt;br /&gt; 단지 rack기반일 경우에만 출력됨&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;contrib&amp;#95;활용&quot;&gt;&lt;/a&gt;Contrib 활용&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;jruby -S gem install sinatra-contrib&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;reloader만 추가하고 소스를 수정 시 바로 적용됨&lt;/p&gt;&lt;pre&gt;&lt;code&gt;require 'sinatra/reloader'
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;war&amp;#95;배포&quot;&gt;&lt;/a&gt;War 배포&lt;/h2&gt;&lt;p&gt;warbler를 설치한다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;jruby -S gem install warbler&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;루비웹 프레임워크는 rack 이라는 인터페이스위에서 작동한다&lt;br /&gt; 자바의 서블릿과 같다&lt;br /&gt; rack으로 기동하는 파일을 작성한다&lt;/p&gt;&lt;p&gt;&lt;em&gt;config.ru&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;require 'app.rb'
+run Sinatra::Application
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;config 디렉토리를 만들고 warble config를 작성한다&lt;br /&gt; config아래에 warble.config라는 파일이 생성된다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;mkdir config
+jruby -S warble config
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;warble.rb&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;Warbler::Config.new do |config|
+
+   config.dirs = %w&amp;#40;public views&amp;#41;
+   config.includes = FileList&amp;#91;&amp;quot;app.rb&amp;quot;&amp;#93;
+   config.gems += &amp;#91;&amp;quot;sinatra&amp;quot;,&amp;quot;sinatra-contrib&amp;quot;, &amp;quot;sequel&amp;quot;&amp;#93;
+   config.gem&amp;#95;dependencies = true
+   config.pathmaps.application = &amp;#91;&amp;quot;WEB-INF/%p&amp;quot;&amp;#93;
+   config.jar&amp;#95;name = &amp;quot;app&amp;quot;
+end  
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;이제 war파일을 작성하면 app.war 라는 파일이 보일것이다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;jruby -S warble&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;참고&quot;&gt;&lt;/a&gt;참고&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://www.rubyinside.com/sinatra-29-links-and-resources-for-a-quicker-easier-way-to-build-webapps-1371.html'&gt;Sinatra: 29 Links and Resources For A Quicker, Easier Way to Build Webapps&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://aligach.net/diary/20110307.html'&gt; 今さらSinatra最低限メモ&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://www7b.biglobe.ne.jp/~makandat/gg_sites/Sinatra_Diary_01.html'&gt;Sinatra 日記&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Tue, 14 Jul 2015 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
+http://clonekim.github.io/posts/2015-07-14-how-to-captcha-in-node.js.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2015-07-14-how-to-captcha-in-node.js.html
 </link>
 <title>
 Node.js로 Captcha
@@ -538,94 +751,6 @@ Tue, 14 Jul 2015 00:00:00 +0900
 </item>
 <item>
 <guid>
-http://clonekim.github.io/posts/2015-07-14-sinatra.html
-</guid>
-<link>
-http://clonekim.github.io/posts/2015-07-14-sinatra.html
-</link>
-<title>
-Sinatra 웹프로그래밍
-</title>
-<description>
-&lt;h2&gt;&lt;a name=&quot;설치&quot;&gt;&lt;/a&gt;설치&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;jruby -S gem install sinatra
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;hello&amp;#95;ruby&quot;&gt;&lt;/a&gt;Hello Ruby&lt;/h2&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;require 'rubygems'
-require 'sinatra'
-
-get '/' do
-  'Hello Jruby'
-end
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;라우터&quot;&gt;&lt;/a&gt;라우터&lt;/h2&gt;&lt;p&gt;get, post, put, delete를 사용할 수있다&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;get '/' do
-
-end
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;요청파라미터&quot;&gt;&lt;/a&gt;요청파라미터&lt;/h2&gt;&lt;p&gt;/?name=foo 로 요청 시 아래와 같이&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;post '/' do
-  puts params&amp;#91;'name'&amp;#93;
-end
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;본문으로&amp;#95;json를&amp;#95;요청받을&amp;#95;경우&quot;&gt;&lt;/a&gt;본문으로 Json를 요청받을 경우&lt;/h2&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;post '/' do
-  payload = JSON.parse&amp;#40;request.body.read&amp;#41;
-  puts payload
-  status 201
-end
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;{{:jruby:post.png?200|}}&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;응답하기&quot;&gt;&lt;/a&gt;응답하기&lt;/h2&gt;&lt;p&gt;문자열, html, json, 바이너리 등의 모든 컨텐츠로 응답가능하다&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;get '/' do
-  'Hello'
-end
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;json으로&amp;#95;응답하기&quot;&gt;&lt;/a&gt;Json으로 응답하기&lt;/h2&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;require 'sinatra'
-require 'json'
-
-get '/' do
-  content&amp;#95;type :json
-  data = { foo: 'bar'}
-  data.to&amp;#95;json
-end
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;또는 sinatra-contrib를 사용해서&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;require 'sinatra'
-require 'sinatra-contrib'
-
-get '/' do
-  data = { foo: 'bar'}
-  json data
-end
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;sample&amp;#95;web&quot;&gt;&lt;/a&gt;Sample Web&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;app.rb&lt;/strong&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;require 'rubygems'
-require 'sinatra'
-require 'sinatra/reloader'
-require 'json'
-require 'sequel'
-require './mysql-connector-java-5.1.35.jar'
-
-DB = Sequel.connect&amp;#40;'jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&amp;amp;characterEncoding=utf8',
-			:user=&amp;gt;'test',
-			:password=&amp;gt;'test'&amp;#41;
-user = DB&amp;#91;:users&amp;#93;
-
-
-get '/' do
-  erb :index
-end
-
-get '/api/users' do
-  data = user.all
-  pager = {
- 	total: data.count,
-	rows: data,
-	page: 1
-  }
-  pager.to&amp;#95;json
-end
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;config.ru&lt;/strong&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;require 'app.rb'
-run Sinatra::Application
- &lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;&lt;p&gt;아래와 같이 실행한다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;jruby app.rb
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;실행 시 내장된 웹서버서(WEBrick)를 사용한다&lt;br /&gt; 기본적으로 4567번 포트를 사용한다&lt;/p&gt;&lt;p&gt;아래는 Rack기반으로 기동하는 방법이다&lt;br /&gt; 기본적으로 9292번 포트를 사용한다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;jruby -S rackup config.ru
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;===== 템플릿 =====&lt;/p&gt;&lt;p&gt;기본적으로 erb템플릿을 사용한다&lt;/p&gt;&lt;p&gt;&lt;strong&gt;디렉토리 구조&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;public에 정적인 파일을 views에 .erb파일이 위치한다.&lt;/p&gt;&lt;p&gt;&lt;code&gt; ├─public └─views&lt;pre&gt;&lt;code&gt;   index.erb
-   layout.erb &lt;/code&gt;&lt;/pre&gt;&lt;/code&gt;     &lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;file ruby layout.erb&gt; &lt;body&gt;  &lt;%= yield %&gt; &lt;/body&gt; &lt;/file&gt;&lt;/p&gt;&lt;p&gt;&lt;file ruby index.erb&gt; &lt;h1&gt;Hello Sinatra&lt;/h1&gt; &lt;%= $servlet_context %&gt; &lt;/file&gt;&lt;/p&gt;&lt;p&gt;&lt;file ruby&gt; get '/' do   erb :index end &lt;/file&gt;&lt;/p&gt;&lt;p&gt;$servlet_context라는 인스턴스명을 출력할 것이다 &amp;#92; 단지 rack기반일 경우에만 출력됨&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;contrib&amp;#95;활용&quot;&gt;&lt;/a&gt;Contrib 활용&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;jruby -S gem install sinatra-contrib&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;reloader만 추가하고 소스를 수정 시 바로 적용됨&lt;/p&gt;&lt;pre&gt;&lt;code&gt;require 'sinatra/reloader'
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;war&amp;#95;배포&quot;&gt;&lt;/a&gt;War 배포&lt;/h2&gt;&lt;p&gt;warbler를 설치한다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;jruby -S gem install warbler&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;루비웹 프레임워크는 rack 이라는 인터페이스위에서 작동한다&lt;br /&gt; 자바의 서블릿과 같다&lt;br /&gt; rack으로 기동하는 파일을 작성한다&lt;/p&gt;&lt;p&gt;&lt;file ruby config.ru&gt; require 'app.rb' run Sinatra::Application &lt;/file&gt;&lt;/p&gt;&lt;p&gt;config 디렉토리를 만들고 warble config를 작성한다 &amp;#92; config아래에 warble.config라는 파일이 생성된다&lt;/p&gt;&lt;p&gt;&lt;code&gt; mkdir config jruby -S warble config &lt;/code&gt;&lt;/p&gt;&lt;p&gt;&lt;file ruby warble.rb&gt; Warbler::Config.new do |config|&lt;/p&gt;&lt;p&gt;   config.dirs = %w(public views)    config.includes = FileList[&quot;app.rb&quot;]    config.gems += [&quot;sinatra&quot;,&quot;sinatra-contrib&quot;, &quot;sequel&quot;]    config.gem_dependencies = true    config.pathmaps.application = [&quot;WEB-INF/%p&quot;]    config.jar_name = &quot;app&quot; end&lt;br /&gt; &lt;/file&gt;&lt;/p&gt;&lt;p&gt;이제 war파일을 작성하면 &amp;#92; app.war 라는 파일이 보일것이다 &lt;code&gt; jruby -S warble &lt;/code&gt;&lt;/p&gt;&lt;p&gt;===== 참고 =====&lt;/p&gt;&lt;p&gt;http://www.rubyinside.com/sinatra-29-links-and-resources-for-a-quicker-easier-way-to-build-webapps-1371.html http://aligach.net/diary/20110307.html http://www7b.biglobe.ne.jp/~makandat/gg&lt;i&gt;sites/Sinatra&lt;/i&gt;Diary_01.html#example1&lt;/p&gt;
-</description>
-<enclosure>
-
-</enclosure>
-<pubDate>
-Tue, 14 Jul 2015 00:00:00 +0900
-</pubDate>
-</item>
-<item>
-<guid>
 http://clonekim.github.io/posts/2015-07-02-angularjs.html
 </guid>
 <link>
@@ -642,6 +767,1270 @@ AngularJS
 </enclosure>
 <pubDate>
 Thu, 02 Jul 2015 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
+http://clonekim.github.io/posts/2015-06-28-raspberrypi.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2015-06-28-raspberrypi.html
+</link>
+<title>
+RaspberryPi
+</title>
+<description>
+   &lt;h2&gt;&lt;a name=&quot;준비&quot;&gt;&lt;/a&gt;준비&lt;/h2&gt;&lt;ol&gt;&lt;li&gt;라즈베리파이2&lt;/li&gt;&lt;li&gt;microSD카드 (8G이상)&lt;/li&gt;&lt;li&gt;HDMI케이블&lt;/li&gt;&lt;li&gt;LAN케이블 (카테고리3 이상)&lt;/li&gt;&lt;li&gt;AC어댑터( USB단자출력 1A, 최소 700mA)&lt;/li&gt;&lt;li&gt;microUSB케이블 (A,B타입)&lt;/li&gt;&lt;li&gt;키보드,마우스 (USB연결)&lt;ul&gt;&lt;li&gt;USB 3.0 : 5V, 900mA&lt;/li&gt;&lt;li&gt;USB 2.0 : 5V, 500mA&lt;/li&gt;&lt;li&gt;&lt;a href='https://ko.wikipedia.org/wiki/USB'&gt;https://ko.wikipedia.org/wiki/USB&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ol&gt;&lt;h2&gt;&lt;a name=&quot;구입&quot;&gt;&lt;/a&gt;구입&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://eleparts.co.kr/EPXDVKYK'&gt;라즈베리파이2 with 고급 투명케이스 C + 방열판 셋트&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://eleparts.co.kr/EPXDVF6A'&gt;RPi Camera (C)&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;하드웨어&amp;#95;살펴보기&quot;&gt;&lt;/a&gt;하드웨어 살펴보기&lt;/h2&gt;&lt;p&gt;정면&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;/img/raspberry/picture360-1.png&quot; alt=&quot;Front&quot; /&gt;&lt;/p&gt;&lt;p&gt;뒷면&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;/img/raspberry/picture360-2.png&quot; alt=&quot;Back&quot; /&gt;&lt;/p&gt;&lt;p&gt;1) SoC (CPU), 메모리&lt;br /&gt; 2) 전원단자&lt;br /&gt; 3) USB포트&lt;br /&gt; 4) HDMI포트&lt;br /&gt; 7) 컴포지트출력, 오디오출력&lt;br /&gt; 8) DSI (Display Serial Interface)&lt;br /&gt; 9) 랜포트&lt;br /&gt; 10) 카메라 (CSI: Camera Serial Interface)&lt;br /&gt; 11) GPIO (Genernal Purpose Input/Ouput)&lt;br /&gt; 12) SD카드슬롯&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;os설치하고&amp;#95;부팅까지&quot;&gt;&lt;/a&gt;OS설치하고 부팅까지&lt;/h2&gt;&lt;h3&gt;&lt;a name=&quot;os&amp;#95;설치&quot;&gt;&lt;/a&gt;OS 설치&lt;/h3&gt;&lt;ol&gt;&lt;li&gt;SD카드 포맷툴 다운로드하고 포맷할것&lt;ul&gt;&lt;li&gt;&lt;a href='https://www.sdcard.org/downloads/index.html'&gt;SD Formatter for Windows Download&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;NOOBS를 다운로드하고 SD카드에 압축해제&lt;ul&gt;&lt;li&gt;NOOBS에는 기본적으로 Raspbian이 포함되어 있음&lt;/li&gt;&lt;li&gt;&lt;a href='https://www.raspberrypi.org/help/noobs-setup'&gt;https://www.raspberrypi.org/help/noobs-setup&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ol&gt;&lt;h3&gt;&lt;a name=&quot;라즈베리&amp;#95;연결구성&quot;&gt;&lt;/a&gt;라즈베리 연결구성&lt;/h3&gt;&lt;h2&gt;&lt;img src=&quot;/img/raspberry/picture306-1.png&quot; alt=&quot;picture306-1&quot; /&gt;&lt;/h2&gt;&lt;h3&gt;&lt;a name=&quot;로그인&quot;&gt;&lt;/a&gt;로그인&lt;/h3&gt;&lt;p&gt;처음설치 후 로그인계정은 아래와 같음&lt;/p&gt;&lt;p&gt;로그인: pi&lt;br /&gt; 패스워드: raspberry&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;네트워크&amp;#95;설정&quot;&gt;&lt;/a&gt;네트워크 설정&lt;/h3&gt;&lt;p&gt;기본적으로 라즈베리에 dhcp에 Hot-plug기능이 있음&lt;br /&gt; 그래서 랜카드를 그냥 꽂으면 ip를 자동으로 할당함&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;원격으로&amp;#95;서버를&amp;#95;접속하려면&quot;&gt;&lt;/a&gt;원격으로 서버를 접속하려면&lt;/h2&gt;&lt;h3&gt;&lt;a name=&quot;sshd&quot;&gt;&lt;/a&gt;SSHD&lt;/h3&gt;&lt;p&gt;기본적으로 sshd 데몬이 기동되고 있기 때문에 설정필요없음&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;vnc&quot;&gt;&lt;/a&gt;VNC&lt;/h3&gt;&lt;p&gt;vnc서버 설치 후 원격에서 접속이 가능하다&lt;/p&gt;&lt;h4&gt;&lt;a name=&quot;vnc서버&amp;#95;설치&quot;&gt;&lt;/a&gt;VNC서버 설치&lt;/h4&gt;&lt;pre&gt;&lt;code&gt; sudo apt-get install tightvncserver
+&lt;/code&gt;&lt;/pre&gt;&lt;h4&gt;&lt;a name=&quot;vnc서버&amp;#95;시작&quot;&gt;&lt;/a&gt;VNC서버 시작&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;tightvncserver :1 -geometry 1280x800 -depth 24
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;위 명령어 입력 후 패스워드 설정이 나온다&lt;br /&gt; Would you like to enter a view-only password라고 물어보면 그냥 엔터&lt;/p&gt;&lt;h4&gt;&lt;a name=&quot;vnc&amp;#95;클라이언트를&amp;#95;이용해서&amp;#95;vnc서버&amp;#95;접속&quot;&gt;&lt;/a&gt;VNC 클라이언트를 이용해서 VNC서버 접속&lt;/h4&gt;&lt;p&gt;리얼vnc를 실행한다.&lt;br /&gt; 서버주소와 디스플레이넘버를 아래와 같이 입력 후 패스워드를 물어보면&lt;br /&gt; 서버설정 시 입력한 패스워드를 입력한다&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;/img/raspberry/picture14-1.png&quot; alt=&quot;&quot;Connect VNC&quot;&quot; /&gt;&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;/img/raspberry/picture14-2.png&quot; alt=&quot;&quot;VNC Screen&quot;&quot; /&gt;&lt;/p&gt;&lt;h4&gt;&lt;a name=&quot;서버스크립트&quot;&gt;&lt;/a&gt;서버스크립트&lt;/h4&gt;&lt;p&gt;VNC서버를 자동으로 시작하기 위해 첨부파일 스크립트를 사용한다&lt;br /&gt; 스크립트를 복사후 실행권한을 준다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;sudo cp tightvnc /etc/init.d
+sudo chmod +x /etc/init.d/tightvnc
+&lt;/code&gt;&lt;/pre&gt;&lt;ol&gt;&lt;li&gt;서버를 시작한다&lt;pre&gt;&lt;code&gt;sudo /etc/init.d/tightvnc start
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;&lt;li&gt;서버 부팅시 자동으로 실행될 수 있도록 작성&lt;pre&gt;&lt;code&gt;sudo update-rc.d tightvnc defaults
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;&lt;/ol&gt;&lt;h2&gt;&lt;a name=&quot;라이브tv&quot;&gt;&lt;/a&gt;라이브TV&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://www.techradar.com/news/computing/pc/tv-on-raspberry-pi-watch-and-record-live-tv-1151587'&gt;Watch and record live TV on your Raspberry Pi&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;gpio&quot;&gt;&lt;/a&gt;GPIO&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://openmicros.org/index.php/articles/94-ciseco-product-documentation/raspberry-pi/217-getting-started-with-raspberry-pi-gpio-and-python'&gt;Getting Started with Raspberry Pi GPIO and Python&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://makezine.com/projects/tutorial-raspberry-pi-gpio-pins-and-python/'&gt;Tutorial: Raspberry Pi GPIO Pins and Python&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;카메라&quot;&gt;&lt;/a&gt;카메라&lt;/h2&gt;&lt;h3&gt;&lt;a name=&quot;하드웨어&amp;#95;설치&amp;#95;(전원이&amp;#95;off된&amp;#95;상태에서)&quot;&gt;&lt;/a&gt;하드웨어 설치 (전원이 off된 상태에서)&lt;/h3&gt;&lt;p&gt;&lt;a href='https://www.raspberrypi.org/documentation/usage/camera/'&gt;10번&lt;/a&gt;에 연결한다&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;카메라&amp;#95;활성화&quot;&gt;&lt;/a&gt;카메라 활성화&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;sudo raspi-config
+&lt;/code&gt;&lt;/pre&gt;&lt;img src=&quot;/img/raspberry/picture825-1.png&quot; alt=&quot;picture825-1.png&quot; /&gt;&lt;p&gt;에서 Enable Camera를 활성화 시키고 재부팅&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;카메라를&amp;#95;작동하기&amp;#95;위한&amp;#95;프로그래밍&quot;&gt;&lt;/a&gt;카메라를 작동하기 위한 프로그래밍&lt;/h3&gt;&lt;p&gt;Shell, Python으로 가능하다. (모든 프로그래밍 및 라이브러리는 초기설치에 포함되어있음)&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;참고&quot;&gt;&lt;/a&gt;참고&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://learn.sparkfun.com/tutorials'&gt;https://learn.sparkfun.com/tutorials&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://wiki.rasplay.org/doku.php'&gt;http://wiki.rasplay.org/doku.php&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://www.itworld.co.kr/slideshow/88471?slide=1#stage_slide'&gt;http://www.itworld.co.kr/slideshow/88471?slide=1#stage_slide&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://billnote.net/386'&gt;http://billnote.net/386&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://www.icbanq.com/shop/templete_list.asp?t_idx=11'&gt;http://www.icbanq.com/shop/templete&lt;i&gt;list.asp?t&lt;/i&gt;idx=11&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://www.itworld.co.kr/slideshow/90358?slide=1#stage_slide'&gt;http://www.itworld.co.kr/slideshow/90358?slide=1#stage_slide&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://www.rasplay.org/'&gt;http://www.rasplay.org/&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='/img/raspberry/picture820-1.png'&gt;참고도서&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Sun, 28 Jun 2015 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
+http://clonekim.github.io/posts/2015-02-01-imagemagick.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2015-02-01-imagemagick.html
+</link>
+<title>
+ImageMagick
+</title>
+<description>
+&lt;ul&gt;&lt;li&gt;&lt;a href='http://ameblo.jp/itboy/entry-10593629105.html'&gt;ImageMagickを使ってコマンドラインからCAPTCHAを作ってみる&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://alexandrotommy.wordpress.com/tag/quebrar-captcha/'&gt;Quebrar Captcha&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://www.fmwconcepts.com/imagemagick/captcha/index.php'&gt;Fred's ImageMagick Scripts&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Sun, 01 Feb 2015 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
+http://clonekim.github.io/posts/2014-12-29-requirejs.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2014-12-29-requirejs.html
+</link>
+<title>
+RequireJS 예제
+</title>
+<description>
+&lt;p&gt;&lt;a href='http://requirejs.org/'&gt;RequireJS&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;em&gt;log.js&lt;/em&gt; 를 작성하고&lt;br /&gt; log라고 모듈을 정의한다&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;define&amp;#40;'log', function&amp;#40;&amp;#41; {
+	
+	return function&amp;#40;str&amp;#41; {
+		console.log&amp;#40;&amp;quot;--&amp;gt; &amp;quot;, str&amp;#41;;
+	}
+}&amp;#41;;
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&amp;quot;ko&amp;quot;&amp;gt;
+&amp;lt;head&amp;gt;
+   
+    &amp;lt;script src=&amp;quot;requirejs/2.1.15/require.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+    &amp;lt;script src=&amp;quot;js/log.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+
+&amp;lt;script&amp;gt;
+ require&amp;#40;&amp;#91;'log'&amp;#93;, function&amp;#40;log&amp;#41; {
+ 	log&amp;#40;&amp;quot;Hello !&amp;quot;&amp;#41;;
+ }&amp;#41;;
+&amp;lt;/script&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;프로토타입으로 작성한 &lt;em&gt;boost.js&lt;/em&gt; &lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;define&amp;#40;'boost', function&amp;#40;&amp;#41; {
+	
+	function Boost&amp;#40;&amp;#41; {
+
+	}
+
+	Boost.prototype.version = function&amp;#40;&amp;#41; {
+		return &amp;quot;1.0&amp;quot;;
+	};
+
+	return Boost;
+
+}&amp;#41;;
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&amp;quot;ko&amp;quot;&amp;gt;
+&amp;lt;head&amp;gt;
+  &amp;lt;script src=&amp;quot;requirejs/2.1.15/require.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+  &amp;lt;script src=&amp;quot;js/boost.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+  &amp;lt;script&amp;gt;
+   require&amp;#40;&amp;#91;'boost'&amp;#93;, function&amp;#40;Boost&amp;#41; {
+       var boost = new Boost&amp;#40;&amp;#41;;
+ 	   alert&amp;#40;boost.version&amp;#40;&amp;#41;&amp;#41;;
+   }&amp;#41;;
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;IIFE(mmediately-Invoked Function Expression)를 적용하면&lt;br /&gt; new 생성자 없이 사용가능하다&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;define&amp;#40;'boost', function&amp;#40;&amp;#41; {
+	
+	var boost = &amp;#40;function&amp;#40;&amp;#41;{
+		var version = &amp;quot;1.0&amp;quot;;
+
+		return {
+			version: function&amp;#40;&amp;#41; {
+				return version; 
+			}
+		}
+	}&amp;#41;&amp;#40;&amp;#41;;
+
+	return boost;
+}&amp;#41;;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Mon, 29 Dec 2014 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
+http://clonekim.github.io/posts/2014-11-10-angularjs-tip.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2014-11-10-angularjs-tip.html
+</link>
+<title>
+AngularJS Tips
+</title>
+<description>
+&lt;p&gt;&lt;em&gt;개발 정보&lt;/em&gt;&lt;/p&gt;&lt;p&gt;버젼 1.2.26를 사용&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;scope&amp;#95;계층화&quot;&gt;&lt;/a&gt;scope 계층화&lt;/h2&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&amp;quot;ko&amp;quot; ng-app=&amp;quot;app&amp;quot;&amp;gt;
+&amp;lt;head&amp;gt;
+    &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;
+    &amp;lt;meta http-equiv=&amp;quot;X-UA-Compatible&amp;quot; content=&amp;quot;IE=edge&amp;quot;&amp;gt;
+    &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0&amp;quot;&amp;gt;
+    &amp;lt;title&amp;gt;Services and Modules&amp;lt;/title&amp;gt;
+    &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;bootstrap/css/bootstrap.css&amp;quot; /&amp;gt;
+    &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;bootstrap/css/bootstrap-theme.css&amp;quot; /&amp;gt;
+    &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;jquery/jquery.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+    &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;jquery-ui/jquery-ui.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+    &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;angular/angular.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+    &amp;lt;script&amp;gt;
+        angular.module&amp;#40;&amp;quot;app&amp;quot;, &amp;#91;&amp;#93;&amp;#41;
+        .controller&amp;#40;&amp;quot;ParentController&amp;quot;,  &amp;#91;'$scope', function&amp;#40;$scope&amp;#41; {
+            $scope.value = 'parent value';
+            $scope.getUpperValue = function &amp;#40;&amp;#41; {
+                return angular.uppercase&amp;#40;$scope.value&amp;#41;;
+            }
+        }&amp;#93;&amp;#41;
+        .controller&amp;#40;&amp;quot;ChildController&amp;quot;,&amp;#91; '$scope', function&amp;#40;$scope&amp;#41; {
+            $scope.newValue = 'child value';
+
+        }&amp;#93;&amp;#41;;
+    &amp;lt;/script&amp;gt;
+&amp;lt;/head&amp;gt;
+
+&amp;lt;body&amp;gt;
+    &amp;lt;div ng-controller=&amp;quot;ParentController&amp;quot;&amp;gt;
+        &amp;lt;h3&amp;gt;parent&amp;lt;/h3&amp;gt;
+        &amp;lt;ul&amp;gt;
+            &amp;lt;li&amp;gt;value: {{value}}&amp;lt;/li&amp;gt;
+            &amp;lt;li&amp;gt;Upper: {{getUpperValue&amp;#40;&amp;#41;}}&amp;lt;/li&amp;gt;
+            &amp;lt;li&amp;gt;newValue: {{newValue}} &amp;lt;/li&amp;gt;
+        &amp;lt;/ul&amp;gt;
+    &amp;lt;/div&amp;gt;
+
+    &amp;lt;div ng-controller=&amp;quot;ChildController&amp;quot;&amp;gt;
+        &amp;lt;h3&amp;gt;parent&amp;lt;/h3&amp;gt;
+        &amp;lt;ul&amp;gt;
+            &amp;lt;li&amp;gt;value: {{value}}&amp;lt;/li&amp;gt;
+            &amp;lt;li&amp;gt;Upper: {{getUpperValue&amp;#40;&amp;#41;}}&amp;lt;/li&amp;gt;
+            &amp;lt;li&amp;gt;newValue: {{newValue}} &amp;lt;/li&amp;gt;
+        &amp;lt;/ul&amp;gt;
+    &amp;lt;/div&amp;gt;
+
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;/img/angular/picture504-1.png&quot; alt=&quot;picture504-1.png&quot; /&gt;&lt;/p&gt;&lt;p&gt;제대로 된 결과를 보려면&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;   &amp;lt;div ng-controller=&amp;quot;ParentController&amp;quot;&amp;gt;
+        &amp;lt;h3&amp;gt;parent&amp;lt;/h3&amp;gt;
+        &amp;lt;ul&amp;gt;
+            &amp;lt;li&amp;gt;value: {{value}}&amp;lt;/li&amp;gt;
+            &amp;lt;li&amp;gt;Upper: {{getUpperValue&amp;#40;&amp;#41;}}&amp;lt;/li&amp;gt;
+            &amp;lt;li&amp;gt;newValue: {{newValue}} &amp;lt;/li&amp;gt;
+        &amp;lt;/ul&amp;gt;
+		&amp;lt;div ng-controller=&amp;quot;ChildController&amp;quot;&amp;gt; &amp;lt;!-- 부모밑으로 들어가도록 한다 --&amp;gt;
+			&amp;lt;h3&amp;gt;child&amp;lt;/h3&amp;gt;
+			&amp;lt;ul&amp;gt;
+				&amp;lt;li&amp;gt;value: {{value}}&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;Upper: {{getUpperValue&amp;#40;&amp;#41;}}&amp;lt;/li&amp;gt;
+				&amp;lt;li&amp;gt;newValue: {{newValue}} &amp;lt;/li&amp;gt;
+			&amp;lt;/ul&amp;gt;
+		&amp;lt;/div&amp;gt;
+    &amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;/img/angular/picture85-1.png&quot; alt=&quot;picture85-1.png&quot; /&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;
+&amp;lt;script&amp;gt;
+        angular.module&amp;#40;&amp;quot;app&amp;quot;, &amp;#91;&amp;#93;&amp;#41;
+        .controller&amp;#40;&amp;quot;ParentController&amp;quot;,  &amp;#91;'$scope', function&amp;#40;$scope&amp;#41; {
+            $scope.value = 128
+            $scope.increment = function &amp;#40;&amp;#41; {
+				this.value++;
+            }
+        }&amp;#93;&amp;#41;
+        .controller&amp;#40;&amp;quot;ChildController&amp;quot;,&amp;#91; '$scope', function&amp;#40;$scope&amp;#41; {
+			$scope.decrement = function &amp;#40;&amp;#41; {
+				this.value--;
+			}
+
+        }&amp;#93;&amp;#41;;
+    &amp;lt;/script&amp;gt;
+&amp;lt;/head&amp;gt;
+
+&amp;lt;body&amp;gt;
+    &amp;lt;div ng-controller=&amp;quot;ParentController&amp;quot;&amp;gt;
+        &amp;lt;h3&amp;gt;parent&amp;lt;/h3&amp;gt;
+        
+		&amp;lt;p&amp;gt;value: {{value}} &amp;lt;/p&amp;gt;
+		&amp;lt;button ng-click=&amp;quot;increment&amp;#40;&amp;#41;&amp;quot;&amp;gt; increment&amp;lt;/button&amp;gt;
+
+		&amp;lt;div ng-controller=&amp;quot;ChildController&amp;quot;&amp;gt;
+		   &amp;lt;h3&amp;gt;child&amp;lt;/h3&amp;gt;
+		    &amp;lt;p&amp;gt;value: {{value}} &amp;lt;/p&amp;gt;
+			&amp;lt;button ng-click=&amp;quot;decrement&amp;#40;&amp;#41;&amp;quot;&amp;gt; decrement&amp;lt;/button&amp;gt;
+		&amp;lt;/div&amp;gt;
+    &amp;lt;/div&amp;gt;
+&amp;lt;/body&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;/img/angular/picture860-1.png&quot; alt=&quot;picture860-1.png&quot; /&gt;&lt;/p&gt;&lt;p&gt;부모 영역의 버튼을 클릭 시 함께 증가한다. 하지만 자식영역의 버튼을 클릭한 순간&lt;br /&gt; 자식 영역의 값만 감소하게 된다.&lt;/p&gt;&lt;p&gt;자식 영역에서 부모영역의 값을 감소하도록 하려면 아래와 같이 수정한다.&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;  angular.module&amp;#40;&amp;quot;app&amp;quot;, &amp;#91;&amp;#93;&amp;#41;
+        .controller&amp;#40;&amp;quot;ParentController&amp;quot;,  &amp;#91;'$scope', function&amp;#40;$scope&amp;#41; {
+            $scope.value = 128
+			$scope.data = { value: 456};
+            $scope.increment = function &amp;#40;&amp;#41; {
+				this.value++;
+            }
+        }&amp;#93;&amp;#41;
+        .controller&amp;#40;&amp;quot;ChildController&amp;quot;,&amp;#91; '$scope', function&amp;#40;$scope&amp;#41; {
+
+			$scope.decrement = function &amp;#40;&amp;#41; {
+				$scope.data.value = 654;
+				$scope.$parent.value--;
+			}
+
+        }&amp;#93;&amp;#41;;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;service&quot;&gt;&lt;/a&gt;Service&lt;/h2&gt;&lt;p&gt;공통적으로 두루 사용되는 재사용 가능한 함수의 모임이다.&lt;br /&gt; 문서에는 cross-cutting concerns를 위해서 제작되었다고 기술되었다.&lt;br /&gt; 즉, 로깅, 보안, 기타 네트워크등등 의 재사용가능한 함수들이다.&lt;/p&gt;&lt;p&gt;&lt;a href='https://code.angularjs.org/1.2.26/docs/guide/services'&gt;https://code.angularjs.org/1.2.26/docs/guide/services&lt;/a&gt;&lt;/p&gt;&lt;p&gt;위에 api 문서에 보면 미리 정의된 서비스를 볼 수 있다.&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;module&quot;&gt;&lt;/a&gt;Module&lt;/h2&gt;&lt;p&gt;모듈의 주된 2가지의 Role은 다음과 같다&lt;/p&gt;&lt;ol&gt;&lt;li&gt;ng-app 디렉티브를 사용해서 html에 적용 가능한 어플리케이션을 정의&lt;/li&gt;&lt;li&gt;서비스나 디렉티브, 필터등 재사용가능한 것을 정의&lt;/li&gt;&lt;/ol&gt;&lt;h3&gt;&lt;a name=&quot;간단한&amp;#95;예제&quot;&gt;&lt;/a&gt;간단한 예제&lt;/h3&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&amp;quot;ko&amp;quot; ng-app=&amp;quot;exampleApp&amp;quot;&amp;gt;
+&amp;lt;head&amp;gt;
+	&amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;
+	&amp;lt;meta http-equiv=&amp;quot;X-UA-Compatible&amp;quot; content=&amp;quot;IE=edge&amp;quot;&amp;gt;
+	&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0&amp;quot;&amp;gt;
+	&amp;lt;title&amp;gt;Services and Modules&amp;lt;/title&amp;gt;
+	&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;bootstrap/3.3.0/css/bootstrap.min.css&amp;quot;&amp;gt;
+	
+	&amp;lt;!--&amp;#91;if lt IE 9&amp;#93;&amp;gt;
+      &amp;lt;script src=&amp;quot;https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+      &amp;lt;script src=&amp;quot;https://oss.maxcdn.com/respond/1.4.2/respond.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+    &amp;lt;!&amp;#91;endif&amp;#93;--&amp;gt;
+		
+	&amp;lt;script src=&amp;quot;jquery/1.11.1/jquery.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+	&amp;lt;script src=&amp;quot;bootstrap/3.3.0/js/bootstrap.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+	&amp;lt;script src=&amp;quot;angularjs/1.2.26/angular.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+	&amp;lt;script&amp;gt;
+		angular.module&amp;#40;&amp;quot;exampleApp&amp;quot;, &amp;#91;&amp;#93;&amp;#41;
+		.controller&amp;#40;&amp;quot;defaultCtrl&amp;quot;, function&amp;#40;$scope&amp;#41; {
+			$scope.data = {
+				cities: &amp;#91;&amp;quot;London&amp;quot;, &amp;quot;New York&amp;quot;, &amp;quot;Paris&amp;quot;&amp;#93;,
+				totalClicks: 0
+			};
+
+			$scope.$watch&amp;#40;&amp;quot;data.totalClicks&amp;quot;, function&amp;#40;newVal&amp;#41; {
+				console.log&amp;#40;&amp;quot;Total click count: &amp;quot; + newVal&amp;#41;;
+			}&amp;#41;;		
+		}&amp;#41;
+		.directive&amp;#40;&amp;quot;triButton&amp;quot;, function&amp;#40;&amp;#41; {
+			
+			return {
+				scope: { counter: &amp;quot;=counter&amp;quot; },
+				link: function&amp;#40;scope, element, attrs&amp;#41; {
+					element.on&amp;#40;&amp;quot;click&amp;quot;, function&amp;#40;event&amp;#41; {
+						console.log&amp;#40;&amp;quot;Button click: &amp;quot; + event.target.innerText&amp;#41;;
+						scope.$apply&amp;#40;function&amp;#40;&amp;#41; {
+							scope.counter++;
+						}&amp;#41;;
+					}&amp;#41;;
+				}
+			}
+		
+		}&amp;#41;;
+	&amp;lt;/script&amp;gt;
+&amp;lt;/head&amp;gt;
+
+&amp;lt;body ng-controller=&amp;quot;defaultCtrl&amp;quot;&amp;gt;
+	&amp;lt;div class=&amp;quot;well&amp;quot;&amp;gt;
+		&amp;lt;div class=&amp;quot;btn-group&amp;quot; tri-button counter=&amp;quot;data.totalClicks&amp;quot; source=&amp;quot;data.cities&amp;quot;&amp;gt;
+			&amp;lt;button class=&amp;quot;btn btn-default&amp;quot; ng-repeat=&amp;quot;city in data.cities&amp;quot;&amp;gt;
+				{{city}}
+			&amp;lt;/button&amp;gt;
+		&amp;lt;/div&amp;gt;
+		&amp;lt;h5&amp;gt; Total Clicks: {{data.totalClicks}}&amp;lt;/h5&amp;gt;
+	&amp;lt;/div&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;클릭 시 클릭횟수를 출력합니다.&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;/img/angular/example.png&quot; alt=&quot;example.png&quot; /&gt;&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;directive&amp;#95;를&amp;#95;분리하자&quot;&gt;&lt;/a&gt;Directive 를 분리하자&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;example2.html&lt;/strong&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;	&amp;lt;script&amp;gt;
+		angular.module&amp;#40;&amp;quot;exampleApp&amp;quot;, &amp;#91;&amp;#93;&amp;#41;
+		.controller&amp;#40;&amp;quot;defaultCtrl&amp;quot;, function&amp;#40;$scope&amp;#41; {
+			$scope.data = {
+				cities: &amp;#91;&amp;quot;London&amp;quot;, &amp;quot;New York&amp;quot;, &amp;quot;Paris&amp;quot;&amp;#93;,
+				totalClicks: 0
+			};
+
+			$scope.$watch&amp;#40;&amp;quot;data.totalClicks&amp;quot;, function&amp;#40;newVal&amp;#41; {
+				console.log&amp;#40;&amp;quot;Total click count: &amp;quot; + newVal&amp;#41;;
+			}&amp;#41;;		
+		}&amp;#41;;
+	&amp;lt;/script&amp;gt;
+        &amp;lt;script src=&amp;quot;js/custom-dir.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;custom-dir.js&lt;/strong&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;angular.module&amp;#40;&amp;quot;customDirective&amp;quot;&amp;#41;
+.directive&amp;#40;&amp;quot;triButton&amp;quot;, function&amp;#40;&amp;#41; {
+	return {
+		scope: { counter: &amp;quot;=counter&amp;quot; },
+		link: function&amp;#40;scope, element, attrs&amp;#41; {
+			element.on&amp;#40;&amp;quot;click&amp;quot;, function&amp;#40;event&amp;#41; {
+				console.log&amp;#40;&amp;quot;Button click: &amp;quot; + event.target.innerText&amp;#41;;
+				scope.$apply&amp;#40;function&amp;#40;&amp;#41; {
+					scope.counter++;
+				}&amp;#41;;
+			}&amp;#41;;
+		}
+	}
+
+}&amp;#41;;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;directive를&amp;#95;새&amp;#95;모듈로&amp;#95;구성&quot;&gt;&lt;/a&gt;Directive를 새 모듈로 구성&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;example3.html&lt;/strong&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;    &amp;lt;script src=&amp;quot;js/custom-dir.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+	&amp;lt;script&amp;gt;
+		angular.module&amp;#40;&amp;quot;exampleApp&amp;quot;, &amp;#91;&amp;quot;customDirective&amp;quot;&amp;#93;&amp;#41; // added customDirective module as a dependency
+		.controller&amp;#40;&amp;quot;defaultCtrl&amp;quot;, function&amp;#40;$scope&amp;#41; {
+			$scope.data = {
+				cities: &amp;#91;&amp;quot;London&amp;quot;, &amp;quot;New York&amp;quot;, &amp;quot;Paris&amp;quot;&amp;#93;,
+				totalClicks: 0
+			};
+
+			$scope.$watch&amp;#40;&amp;quot;data.totalClicks&amp;quot;, function&amp;#40;newVal&amp;#41; {
+				console.log&amp;#40;&amp;quot;Total click count: &amp;quot; + newVal&amp;#41;;
+			}&amp;#41;;		
+		}&amp;#41;;
+	&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;pre&gt; &lt;code class=&quot;js&quot;&gt; angular.module(&quot;customDirective&quot;,[]) .directive(&quot;triButton&quot;, function() { 	return { 		scope: { counter: &quot;=counter&quot; }, 		link: function(scope, element, attrs) { 			element.on(&quot;click&quot;, function(event) { 				console.log(&quot;Button click: &quot; + event.target.innerText); 				scope.$apply(function() { 					scope.counter++; 				}); 			}); 		} 	}&lt;/p&gt;&lt;p&gt;}); &lt;/code&gt; &lt;/pre&gt;&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;서비스&amp;#95;사용하기&quot;&gt;&lt;/a&gt;서비스 사용하기&lt;/h2&gt;&lt;h3&gt;&lt;a name=&quot;factory&amp;#95;메서드를&amp;#95;사용해서&amp;#95;구현&quot;&gt;&lt;/a&gt;Factory 메서드를 사용해서 구현&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;custom-srv.js&lt;/strong&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;angular.module&amp;#40;&amp;quot;customService&amp;quot;, &amp;#91;&amp;#93;&amp;#41;
+.factory&amp;#40;&amp;quot;logService&amp;quot;, function&amp;#40;&amp;#41; {
+	
+	var messageCount = 0;
+
+	return {
+		log: function&amp;#40;msg&amp;#41; {
+			console.log&amp;#40;&amp;quot;&amp;#40;LOG + &amp;quot; + messageCount++ + &amp;quot;&amp;#41; &amp;quot; + msg&amp;#41;;
+		}
+	};
+
+}&amp;#41;;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;custom-dir.js&lt;/strong&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;angular.module&amp;#40;&amp;quot;customDirective&amp;quot;, &amp;#91;&amp;quot;customService&amp;quot;&amp;#93;&amp;#41;
+.directive&amp;#40;&amp;quot;triButton&amp;quot;, function&amp;#40;logService&amp;#41; {
+	return {
+		scope: { counter: &amp;quot;=counter&amp;quot; },
+		link: function&amp;#40;scope, element, attrs&amp;#41; {
+			element.on&amp;#40;&amp;quot;click&amp;quot;, function&amp;#40;event&amp;#41; {
+				logService.log&amp;#40;&amp;quot;Button click: &amp;quot; + event.target.innerText&amp;#41;;
+				scope.$apply&amp;#40;function&amp;#40;&amp;#41; {
+					scope.counter++;
+				}&amp;#41;;
+			}&amp;#41;;
+		}
+	}
+
+}&amp;#41;;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;example4.html&lt;/strong&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;	&amp;lt;script src=&amp;quot;js/custom-dir.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+	&amp;lt;script src=&amp;quot;js/custom-srv.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+	&amp;lt;script&amp;gt;
+		angular.module&amp;#40;&amp;quot;exampleApp&amp;quot;, &amp;#91;&amp;quot;customDirective&amp;quot;, &amp;quot;customService&amp;quot;&amp;#93;&amp;#41;
+		.controller&amp;#40;&amp;quot;defaultCtrl&amp;quot;, function&amp;#40;$scope, logService&amp;#41; {
+			$scope.data = {
+				cities: &amp;#91;&amp;quot;London&amp;quot;, &amp;quot;New York&amp;quot;, &amp;quot;Paris&amp;quot;&amp;#93;,
+				totalClicks: 0
+			};
+
+			$scope.$watch&amp;#40;&amp;quot;data.totalClicks&amp;quot;, function&amp;#40;newVal&amp;#41; {
+				logService.log&amp;#40;&amp;quot;Total click count: &amp;quot; + newVal&amp;#41;;
+			}&amp;#41;;		
+		}&amp;#41;;
+	&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;!example4.png!&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;service&amp;#95;method를&amp;#95;사용해서&amp;#95;구현&quot;&gt;&lt;/a&gt;Service Method를 사용해서 구현&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;custom-logger.js&lt;/strong&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;var baseLogger = function&amp;#40;&amp;#41; {
+        console.log&amp;#40;&amp;quot;init!!&amp;quot;&amp;#41;;
+	this.messageCount = 0;
+	this.log = function&amp;#40;msg&amp;#41; {
+		console.log&amp;#40;this.msgType + &amp;quot;: &amp;quot; + &amp;#40;this.messageCount++&amp;#41; + &amp;quot; &amp;quot; + msg&amp;#41;;
+	}
+};
+
+var debugLogger = function&amp;#40;&amp;#41; {};
+debugLogger.prototype = new baseLogger&amp;#40;&amp;#41;;
+debugLogger.prototype.msgType = &amp;quot;Debug&amp;quot;;
+
+var errorLogger = function&amp;#40;&amp;#41; {};
+errorLogger.prototype = new baseLogger&amp;#40;&amp;#41;;
+errorLogger.prototype.msgType = &amp;quot;Error&amp;quot;;
+
+angular.module&amp;#40;&amp;quot;customService&amp;quot;,&amp;#91;&amp;#93;&amp;#41;
+.service&amp;#40;&amp;quot;logService&amp;quot;, debugLogger&amp;#41;  //서비스 생성자 메서드를 이용해서 구현, 즉  angularjs에서 apply메서드를 호출하기 때문에 생성자를 만들어야 한다.
+.service&amp;#40;&amp;quot;errorService&amp;quot;, errorLogger&amp;#41;;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;example5.html&lt;/strong&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;	&amp;lt;script src=&amp;quot;js/custom-logger.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+	&amp;lt;script&amp;gt;
+		angular.module&amp;#40;&amp;quot;exampleApp&amp;quot;, &amp;#91;&amp;quot;customDirective&amp;quot;, &amp;quot;customService&amp;quot;&amp;#93;&amp;#41;
+		.controller&amp;#40;&amp;quot;defaultCtrl&amp;quot;, function&amp;#40;$scope, logService&amp;#41; {
+			$scope.data = {
+				cities: &amp;#91;&amp;quot;London&amp;quot;, &amp;quot;New York&amp;quot;, &amp;quot;Paris&amp;quot;&amp;#93;,
+				totalClicks: 0
+			};
+
+			$scope.$watch&amp;#40;&amp;quot;data.totalClicks&amp;quot;, function&amp;#40;newVal&amp;#41; {
+				logService.log&amp;#40;&amp;quot;Total click count: &amp;quot; + newVal&amp;#41;;
+			}&amp;#41;;		
+		}&amp;#41;;
+	&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;!example5.png!&lt;/p&gt;&lt;p&gt;아래와 같이 사용한다면 메서드 Override하게 될 것이다.&lt;/p&gt;&lt;p&gt;&lt;pre&gt; &lt;code class=&quot;js&quot;&gt; 	&lt;script src=&quot;js/custom-dir.js&quot;&gt;&lt;/script&gt; 	&lt;script src=&quot;js/custom-logger.js&quot;&gt;&lt;/script&gt; 	&lt;script src=&quot;js/custom-srv.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;&lt;p&gt;&lt;/code&gt; &lt;/pre&gt;&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;provider&amp;#95;메서드를&amp;#95;이용해서&amp;#95;구현&quot;&gt;&lt;/a&gt;Provider 메서드를 이용해서 구현&lt;/h3&gt;&lt;p&gt;Provider를 이용하면 config메서드를 사용하여 설정정보를 전달 할 수 있다.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;custom-provider.js&lt;/strong&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;angular.module&amp;#40;&amp;quot;customService&amp;quot;, &amp;#91;&amp;#93;&amp;#41;
+.provider&amp;#40;&amp;quot;logService&amp;quot;, function&amp;#40;&amp;#41; {
+
+	var counter = true;
+	var debug = true;
+
+	return {
+		messageCounterEnabled: function&amp;#40;setting&amp;#41; {
+			if&amp;#40;angular.isDefined&amp;#40;setting&amp;#41;&amp;#41; {
+				counter = setting;
+				return this;
+			}else {
+				return counter;
+			}
+		},
+
+		debugEnabled: function&amp;#40;setting&amp;#41; {
+			if&amp;#40;angular.isDefined&amp;#40;setting&amp;#41;&amp;#41; {
+				debug = setting;
+				return this;
+			}else {
+				return debug;
+			}
+		},
+
+		$get: function&amp;#40;&amp;#41; {
+			return {
+				messageCount: 0,
+				log: function&amp;#40;msg&amp;#41; {
+					if&amp;#40;debug&amp;#41; {
+						console.log&amp;#40;&amp;quot;&amp;#40;LOG +&amp;quot; + &amp;#40;counter? this.messageCount++ : &amp;quot;&amp;quot;&amp;#41; + &amp;quot;&amp;#41; &amp;quot; + msg&amp;#41;;						
+					}
+				}
+			};
+		}
+	}
+}&amp;#41;;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;example6.html&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;이제 로그가 출력되지 않는다.&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&amp;lt;script src=&amp;quot;js/custom-dir.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+	&amp;lt;script src=&amp;quot;js/custom-provider.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+	&amp;lt;script&amp;gt;
+		angular.module&amp;#40;&amp;quot;exampleApp&amp;quot;, &amp;#91;&amp;quot;customDirective&amp;quot;, &amp;quot;customService&amp;quot;&amp;#93;&amp;#41;
+		.config&amp;#40; function&amp;#40;logServiceProvider&amp;#41;{
+			logServiceProvider.debugEnabled&amp;#40;false&amp;#41;.messageCounterEnabled&amp;#40;false&amp;#41;;
+		}&amp;#41;
+		.controller&amp;#40;&amp;quot;defaultCtrl&amp;quot;, function&amp;#40;$scope, logService&amp;#41; {
+			$scope.data = {
+				cities: &amp;#91;&amp;quot;London&amp;quot;, &amp;quot;New York&amp;quot;, &amp;quot;Paris&amp;quot;&amp;#93;,
+				totalClicks: 0
+			};
+
+			$scope.$watch&amp;#40;&amp;quot;data.totalClicks&amp;quot;, function&amp;#40;newVal&amp;#41; {
+				logService.log&amp;#40;&amp;quot;Total click count: &amp;quot; + newVal&amp;#41;;
+			}&amp;#41;;		
+		}&amp;#41;;
+	&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Mon, 10 Nov 2014 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
+http://clonekim.github.io/posts/2014-03-02-uuid-in-javascript.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2014-03-02-uuid-in-javascript.html
+</link>
+<title>
+자바스크립트로 UUID 생성
+</title>
+<description>
+&lt;p&gt;&lt;a href='http://www.ietf.org/rfc/rfc4122.txt'&gt;RFC4122&lt;/a&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace&amp;#40;/&amp;#91;xy&amp;#93;/g, function&amp;#40;c&amp;#41; {
+   var r = Math.random&amp;#40;&amp;#41;&amp;#42;16|0, v = c === 'x' ? r : &amp;#40;r&amp;amp;0x3|0x8&amp;#41;;
+   return v.toString&amp;#40;16&amp;#41;;
+}&amp;#41;;
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;var s = &amp;#91;&amp;#93;;
+var hexDigits = &amp;quot;0123456789abcdef&amp;quot;;
+
+for &amp;#40;var i = 0; i &amp;lt; 36; i++&amp;#41; {
+  s&amp;#91;i&amp;#93; = hexDigits.substr&amp;#40;Math.floor&amp;#40;Math.random&amp;#40;&amp;#41; &amp;#42; 0x10&amp;#41;, 1&amp;#41;;
+}
+
+s&amp;#91;14&amp;#93; = &amp;quot;4&amp;quot;;
+s&amp;#91;19&amp;#93; = hexDigits.substr&amp;#40;&amp;#40;s&amp;#91;19&amp;#93; &amp;amp; 0x3&amp;#41; | 0x8, 1&amp;#41;;
+s&amp;#91;8&amp;#93; = s&amp;#91;13&amp;#93; = s&amp;#91;18&amp;#93; = s&amp;#91;23&amp;#93; = &amp;quot;-&amp;quot;;
+
+var uuid = s.join&amp;#40;&amp;quot;&amp;quot;&amp;#41;;
+  return uuid;
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Sun, 02 Mar 2014 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
+http://clonekim.github.io/posts/2014-01-05-java-ionio-tutorial.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2014-01-05-java-ionio-tutorial.html
+</link>
+<title>
+Java IO/NIO Tutorial
+</title>
+<description>
+ &lt;ul&gt;&lt;li&gt;&lt;a href='http://rox-xmlrpc.sourceforge.net/niotut/'&gt;The Rox Java NIO Tutorial&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://www.javaworld.com/article/2078654/java-se/java-se-five-ways-to-maximize-java-nio-and-nio-2.html'&gt;Five ways to maximize Java NIO and NIO.2&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://www.studytrails.com/java-io/non-blocking-io-multiplexing.jsp'&gt;Java NIO - Non Blocking IO and Multiplexing&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://www.java2s.com/Code/Java/Network-Protocol/AsimpleHTTPserverthatdisplaysinformationaboutallaccessibleprintersonthenetwork.htm'&gt;A simple HTTP server that displays information about all accessible printers on the network&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Sun, 05 Jan 2014 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
+http://clonekim.github.io/posts/2013-10-12-bigdecimal-java.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2013-10-12-bigdecimal-java.html
+</link>
+<title>
+BigDecimal을 이용한 반올림
+</title>
+<description>
+ &lt;pre&gt;&lt;code class=&quot;java&quot;&gt; 
+BigDecimal.ROUND&amp;#95;DOWN		// 내림
+BigDecimal.ROUND&amp;#95;HALF&amp;#95;UP 	// 반올림
+BigDecimal.ROUND&amp;#95;UP 		// 올림
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Sat, 12 Oct 2013 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
+http://clonekim.github.io/posts/2013-10-10-javascript-pattern.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2013-10-10-javascript-pattern.html
+</link>
+<title>
+JavaScript 개발팁
+</title>
+<description>
+&lt;p&gt;&lt;strong&gt;Module Pattern&lt;/strong&gt;&lt;/p&gt;&lt;p&gt; 로직과 private 변수를 캡슐화하는 방법으로 아래와 같은 모듈패턴( 익명함수) 을 많이 사용한다.&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt; &amp;#40;function&amp;#40;&amp;#41; {
+  /&amp;#42; ... &amp;#42;/
+ }&amp;#41;&amp;#40;&amp;#41;;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; jQuery와 연동해서 사용할 경우 아래와 같이 파라미터를 전달하도록 한다.&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt; &amp;#40;function&amp;#40;$&amp;#41; {
+  /&amp;#42; ... &amp;#42;/
+ }&amp;#41;&amp;#40;jQuery&amp;#41;;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;글로벌 변수를 전달해서 네임스페이스로 확장 할 수 있다.&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt; &amp;#40;function&amp;#40;$, exports&amp;#41; {
+  exports.Foo = &amp;quot;wem&amp;quot;;
+ }&amp;#41;&amp;#40;jQuery, window&amp;#41;;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;IIFE(mmediately-Invoked Function Expression)&lt;/strong&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt; &amp;#40;function&amp;#40;&amp;#41; {
+   var mod = {};
+    
+ }&amp;#41;&amp;#40;&amp;#41;;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;window라는 식별자를 거치지 않고 전역변수를 접근하자&lt;br /&gt; 함수를 new와 생성자를 사용하지 않고 호출한 경우 this 는 전역객체 (window)가 된다.&lt;br /&gt; 그러므로 아래와 같은 패턴을 즉, 즉시 실행함수로 작성한다.&lt;br /&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;var global = &amp;#40;function&amp;#40;&amp;#41; {
+ return this;
+}&amp;#40;&amp;#41;&amp;#41;;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Type Casting&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;변수를 비교시 타입 캐스팅을 한다. 그러므로 아래는 true 반환한다.&lt;br /&gt; 암묵적 타입캐스팅을 방지 하기 위해서 ===와 !==를 사용해야 한다.&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;false == 0;
+&amp;quot;&amp;quot; == 0
+&lt;/code&gt;&lt;/pre&gt;&lt;/pre&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Thu, 10 Oct 2013 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
+http://clonekim.github.io/posts/2013-10-01-java-concurrent.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2013-10-01-java-concurrent.html
+</link>
+<title>
+java.util.concurrent
+</title>
+<description>
+&lt;ol&gt;&lt;li&gt;쓰레드 생성은 시스템에 따라 제한됨&lt;/li&gt;&lt;li&gt;쓰레드풀을 사용할 수 있는 패키지가 있음&lt;/li&gt;&lt;li&gt;Future는 메서드를 비동기로 실행 후 나중에 결과를 받을 수 있음&lt;/li&gt;&lt;/ol&gt;&lt;pre&gt;&lt;code class=&quot;java&quot;&gt;
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
+public class CallableTest {
+
+    public static void main&amp;#40;String&amp;#91;&amp;#93; args&amp;#41; {
+        callableTest&amp;#40;&amp;#41;;
+    }
+
+    private static class Result {
+        Long in;
+        BigDecimal out;
+
+        Result&amp;#40;final Long in, final BigDecimal out&amp;#41; {
+            this.in = in;
+            this.out = out;
+        }
+    }
+
+    private static void callableTest&amp;#40;&amp;#41; {
+
+        ExecutorService executor = Executors.newFixedThreadPool&amp;#40;3&amp;#41;;
+        List&amp;lt;Future&amp;lt;Result&amp;gt;&amp;gt; futures = new ArrayList&amp;lt;Future&amp;lt;Result&amp;gt;&amp;gt;&amp;#40;&amp;#41;;
+
+        for&amp;#40;long i =2; i &amp;lt;= 1000; i++&amp;#41; {
+            final Long n = Long.valueOf&amp;#40;i&amp;#41;;
+            Callable&amp;lt;Result&amp;gt; callable = new Callable&amp;lt;Result&amp;gt;&amp;#40;&amp;#41; {
+
+                public Result call&amp;#40;&amp;#41; throws Exception {
+                    BigDecimal fac = fac&amp;#40;n&amp;#41;;
+                    return new Result&amp;#40;n, fac&amp;#41;;
+                }
+            };
+
+            Future&amp;lt;Result&amp;gt; future = executor.submit&amp;#40;callable&amp;#41;;
+            futures.add&amp;#40;future&amp;#41;;
+        }
+
+        for&amp;#40;Future&amp;lt;Result&amp;gt; future : futures&amp;#41; {
+            Result result;
+            try {
+                result = future.get&amp;#40;&amp;#41;;
+                System.out.printf&amp;#40;&amp;quot;fac&amp;#40;%d&amp;#41; = %s\n&amp;quot;, result.in, result.out&amp;#41;;
+            } catch &amp;#40;InterruptedException e&amp;#41; {
+                e.printStackTrace&amp;#40;&amp;#41;;
+            } catch &amp;#40;ExecutionException e&amp;#41; {
+                e.printStackTrace&amp;#40;&amp;#41;;
+            }
+
+        }
+    }
+
+    private static BigDecimal fac&amp;#40;Long n&amp;#41; {
+        BigDecimal result = BigDecimal.ONE;
+        for&amp;#40;long i =1; i &amp;lt;= n; i++&amp;#41; {
+            result = result.multiply&amp;#40;BigDecimal.valueOf&amp;#40;i&amp;#41;&amp;#41;;
+        }
+
+        return result;
+    }
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Tue, 01 Oct 2013 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
+http://clonekim.github.io/posts/2013-09-27-jspwiki-install.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2013-09-27-jspwiki-install.html
+</link>
+<title>
+JSPWiki 설치
+</title>
+<description>
+&lt;p&gt;&lt;a href='http://jspwiki.apache.org/'&gt;Apache JSPWiki&lt;/a&gt;&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;설정&quot;&gt;&lt;/a&gt;설정&lt;/h2&gt;&lt;p&gt;&lt;em&gt;server.xml&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;&amp;lt;Connector address=&amp;quot;127.0.0.1&amp;quot; port=&amp;quot;8080&amp;quot; protocol=&amp;quot;org.apache.coyote.http11.Http11NioProtocol&amp;quot;
+               connectionTimeout=&amp;quot;20000&amp;quot;
+               maxThreads=&amp;quot;3&amp;quot; minSpareThreads=&amp;quot;2&amp;quot;
+               redirectPort=&amp;quot;8443&amp;quot; URIEncoding=&amp;quot;UTF-8&amp;quot;/&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;jspwiki.properties&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;jspwiki.baseURL= http://cloud9ine.cafe24.com/wiki
+jspwiki.fileSystemProvider.pageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/
+jspwiki.basicAttachmentProvider.storageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;jspwiki.policy&lt;/em&gt;&lt;/p&gt;&lt;p&gt;   Anonymous를 코멘트처리&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;nginx&amp;#95;연동&quot;&gt;&lt;/a&gt;Nginx 연동&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;upstream tomcat {
+    server 127.0.0.1:8080;
+}
+
+server {
+ ...
+  location /wiki {
+      proxy&amp;#95;pass http://tomcat;
+  }
+
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Fri, 27 Sep 2013 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
+http://clonekim.github.io/posts/2013-09-27-proxy-authentication.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2013-09-27-proxy-authentication.html
+</link>
+<title>
+프록시서버 인증에러
+</title>
+<description>
+&lt;p&gt;HttpURLConnecton를 이용해서 프록시설정하고 다운로드할 데이터가 있었으나 인증에러를 발생&lt;br /&gt; java.net.Authenticator를 구현해야함&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;java&quot;&gt;import java.net.Authenticator;
+import java.net.MalformedURLException;
+import java.net.PasswordAuthentication;
+import java.net.URL;
+
+public class ProxyAuthenticator extends Authenticator {
+  private String proxyhost;
+  private String userid;
+  private String password;
+
+  public ProxyAuthenticator&amp;#40;String proxyhost, String userid, String password&amp;#41; {
+    this.proxyhost = proxyhost;
+    this.userid = userid;
+    this.password = password;
+  }
+
+  @Override
+  public URL getRequestingURL&amp;#40;&amp;#41; {
+    if &amp;#40;this.proxyhost == null&amp;#41; return null;
+    try {
+      return new URL&amp;#40;this.proxyhost&amp;#41;;
+    } catch &amp;#40;MalformedURLException e&amp;#41; {
+      return null;
+    }
+  }
+
+  @Override
+  protected RequestorType getRequestorType&amp;#40;&amp;#41; {
+    return RequestorType.PROXY;
+  }
+
+  @Override
+  protected PasswordAuthentication getPasswordAuthentication&amp;#40;&amp;#41; {
+    if &amp;#40;this.userid == null || this.password == null&amp;#41; return null;
+    return new PasswordAuthentication&amp;#40;userid, password.toCharArray&amp;#40;&amp;#41;&amp;#41;;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Fri, 27 Sep 2013 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
+http://clonekim.github.io/posts/2013-09-27-jackson-json-processor.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2013-09-27-jackson-json-processor.html
+</link>
+<title>
+Jackson JSON Processor
+</title>
+<description>
+&lt;h2&gt;&lt;a name=&quot;parsing&amp;#95;option&quot;&gt;&lt;/a&gt;Parsing option&lt;/h2&gt;&lt;pre&gt;&lt;code class=&quot;java&quot;&gt;String data = &amp;quot;&amp;#91;{'text':'PROJECT','id':'00156','leaf':true}&amp;#93;&amp;quot;;
+
+
+ObjectMapper mapper = new ObjectMapper&amp;#40;&amp;#41;;
+mapper.configure&amp;#40;JsonParser.Feature.ALLOW&amp;#95;SINGLE&amp;#95;QUOTES, true&amp;#41;;
+
+JsonNode node = mapper.readTree&amp;#40;data&amp;#41;;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;annotation&quot;&gt;&lt;/a&gt;Annotation&lt;/h2&gt;&lt;p&gt;&lt;em&gt;JsonSerialize &lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;java&quot;&gt;	@JsonSerialize&amp;#40;using=JsonDateSerializer.class&amp;#41;
+	public Date getCreationDate&amp;#40;&amp;#41; {
+		return creationDate;
+	}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;JsonDateSerializer.java&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;java&quot;&gt;public class JsonDateSerializer extends JsonSerializer&amp;lt;Date&amp;gt; {
+
+    private static final SimpleDateFormat dateFormat = new SimpleDateFormat&amp;#40;&amp;quot;yyyy-MM-dd HH:mm:ss&amp;quot;&amp;#41;; 
+	  
+	@Override
+	public void serialize&amp;#40;Date date, JsonGenerator json, SerializerProvider provider&amp;#41;
+			throws IOException, JsonProcessingException {
+		
+		String formattedDate = dateFormat.format&amp;#40;date&amp;#41;;
+		json.writeString&amp;#40;formattedDate&amp;#41;;
+	}
+
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://wiki.fasterxml.com/JacksonHome'&gt;Jackson JSON Processor Wiki&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Fri, 27 Sep 2013 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
+http://clonekim.github.io/posts/2013-09-24-apache-taglib.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2013-09-24-apache-taglib.html
+</link>
+<title>
+Apache Tag Lib
+</title>
+<description>
+ &lt;h2&gt;&lt;a name=&quot;maven&quot;&gt;&lt;/a&gt;Maven&lt;/h2&gt;&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;&amp;lt;groupId&amp;gt;jstl&amp;lt;/groupId&amp;gt;
+&amp;lt;artifactId&amp;gt;jstl&amp;lt;/artifactId&amp;gt;
+&amp;lt;version&amp;gt;1.2&amp;lt;/version&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;태그를&amp;#95;사용하기&amp;#95;위한&amp;#95;선언&quot;&gt;&lt;/a&gt;태그를 사용하기 위한 선언&lt;/h2&gt;&lt;pre&gt;&lt;code class=&quot;jsp&quot;&gt;&amp;lt;%@ taglib prefix=&amp;quot;c&amp;quot; uri=&amp;quot;http://java.sun.com/jsp/jstl/core&amp;quot;%&amp;gt;
+&amp;lt;%@ taglib prefix=&amp;quot;fn&amp;quot; uri=&amp;quot;http://java.sun.com/jsp/jstl/functions&amp;quot; %&amp;gt;
+&amp;lt;%@ taglib prefix=&amp;quot;fmt&amp;quot; uri=&amp;quot;http://java.sun.com/jsp/jstl/fmt&amp;quot;%&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;param&quot;&gt;&lt;/a&gt;param&lt;/h2&gt;&lt;p&gt;test.jsp?name=1234 일 경우&lt;/p&gt;&lt;p&gt;${param.변수} 로 획득할 수 있다.&lt;br /&gt; ${param.name}으로 알수 있겠다.&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;core&quot;&gt;&lt;/a&gt;core&lt;/h2&gt;&lt;h3&gt;&lt;a name=&quot;set&quot;&gt;&lt;/a&gt;set&lt;/h3&gt;&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;&amp;lt;c:set var=&amp;quot;string&amp;quot; value=&amp;quot;값&amp;quot;/&amp;gt;
+&amp;lt;c:set var=&amp;quot;string&amp;quot; value=&amp;quot;${변수.프로퍼티}&amp;quot;/&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;a name=&quot;out&quot;&gt;&lt;/a&gt;out&lt;/h3&gt;&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;&amp;lt;c:out value=&amp;quot;${fn:substring&amp;#40;string,0,50&amp;#41;}&amp;quot;  default=&amp;quot;초기값&amp;quot;/&amp;gt;
+&amp;lt;c:out value=&amp;quot;안녕하세요&amp;quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;a name=&quot;test&quot;&gt;&lt;/a&gt;test&lt;/h3&gt;&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;&amp;lt;c:if test=&amp;quot;${변수가 존재하면}&amp;quot;&amp;gt;
+..처리
+&amp;lt;/c:if&amp;gt;
+
+&amp;lt;c:if test=&amp;quot;${변수 &amp;lt; 숫자 }&amp;quot;&amp;gt;
+..처리
+&amp;lt;/c:if&amp;gt;
+
+&amp;lt;c:if test=&amp;quot;${변수 &amp;lt; true}&amp;quot;&amp;gt;
+..처리
+&amp;lt;/c:if&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;a name=&quot;choose&quot;&gt;&lt;/a&gt;choose&lt;/h3&gt;&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;&amp;lt;c:choose&amp;gt;
+  &amp;lt;c:when test=&amp;quot;조건&amp;quot;&amp;gt;
+ ..
+  &amp;lt;/c:when&amp;gt;
+  &amp;lt;c:when test=&amp;quot;조건&amp;quot;&amp;gt;
+ ..
+  &amp;lt;/c:when&amp;gt;
+  &amp;lt;c:otherwise&amp;gt;
+   그외 조건처리
+  &amp;lt;/c:otherwise&amp;gt;
+&amp;lt;/c:choose&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;a name=&quot;exception&quot;&gt;&lt;/a&gt;exception&lt;/h3&gt;&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;&amp;lt;c:catch var=&amp;quot;exception&amp;quot;&amp;gt;
+ ...처리
+&amp;lt;/c:catch&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;a name=&quot;url&quot;&gt;&lt;/a&gt;url&lt;/h3&gt;&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;&amp;lt;c:url value='/hello.jsp'/&amp;gt;&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;a name=&quot;function&quot;&gt;&lt;/a&gt;function&lt;/h3&gt;&lt;h4&gt;&lt;a name=&quot;length&quot;&gt;&lt;/a&gt;length&lt;/h4&gt;&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;&amp;lt;c:set var=&amp;quot;length&amp;quot; value=&amp;quot;${fn:length&amp;#40;변수&amp;#41;}&amp;quot;/&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h4&gt;&lt;a name=&quot;substring&quot;&gt;&lt;/a&gt;substring&lt;/h4&gt;&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;&amp;lt;c:out value=&amp;quot;${fn:substring&amp;#40;string,0, fn:length&amp;#40;string&amp;#41;&amp;#41;}&amp;quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;a name=&quot;format&quot;&gt;&lt;/a&gt;format&lt;/h3&gt;&lt;h4&gt;&lt;a name=&quot;formatdate&quot;&gt;&lt;/a&gt;formatDate&lt;/h4&gt;&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;&amp;lt;fmt:formatDate value=&amp;quot;${변수}&amp;quot; pattern=&amp;quot;패턴&amp;quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;a name=&quot;sql&quot;&gt;&lt;/a&gt;sql&lt;/h3&gt;&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;&amp;lt;%@ page pageEncoding=&amp;quot;utf-8&amp;quot; %&amp;gt;
+&amp;lt;%@ taglib prefix=&amp;quot;sql&amp;quot; uri=&amp;quot;http://java.sun.com/jsp/jstl/sql&amp;quot; %&amp;gt;
+&amp;lt;%@ taglib prefix=&amp;quot;c&amp;quot; uri=&amp;quot;http://java.sun.com/jsp/jstl/core&amp;quot; %&amp;gt;
+
+&amp;lt;sql:setDataSource dataSource=&amp;quot;jdbc/wodb&amp;quot;/&amp;gt;
+
+&amp;lt;sql:query var=&amp;quot;rs&amp;quot;  sql=&amp;quot;select 1 as id from dual union all select 10 as id from dual&amp;quot;/&amp;gt;
+ or
+&amp;lt;sql:query var=&amp;quot;rs&amp;quot;&amp;gt;
+  select 1 as id from dual union all select 10 as id from dual&amp;quot;
+&amp;lt;/sql:query&amp;gt;
+
+&amp;lt;table border=&amp;quot;1&amp;quot;&amp;gt;
+&amp;lt;c:forEach var=&amp;quot;rec&amp;quot; items=&amp;quot;${rs.rows}&amp;quot; &amp;gt;
+　　&amp;lt;tr&amp;gt; 
+　　　　&amp;lt;td&amp;gt;&amp;lt;c:out value=&amp;quot;${rec.id}&amp;quot; /&amp;gt;&amp;lt;/td&amp;gt;
+　　&amp;lt;/tr&amp;gt;
+&amp;lt;/c:forEach&amp;gt;
+&amp;lt;/table&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Tue, 24 Sep 2013 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
+http://clonekim.github.io/posts/2013-06-20-unsupported-classversion-error.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2013-06-20-unsupported-classversion-error.html
+</link>
+<title>
+자바 호환에러
+</title>
+<description>
+&lt;pre&gt;&lt;code&gt;java.lang.UnsupportedClassVersion&amp;#95;error
+&amp;#40;Unsupported major.minor version 51.0&amp;#41;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;하위버전의 클래스파일을 상위버전이 읽어들일때는 상관없지만&lt;br /&gt; 상위버전의 클래스파일을 하위버전이 읽어올때는 위와 같은 에러를 낸다&lt;/p&gt;&lt;p&gt;&lt;em&gt;에러 상세코드&lt;/em&gt;&lt;/p&gt;&lt;p&gt;version 52.0   컴파일 버전 : 1.8&lt;/p&gt;&lt;p&gt;version 51.0   컴파일 버전 : 1.7&lt;/p&gt;&lt;p&gt;version 50.0   컴파일 버전 : 1.6&lt;/p&gt;&lt;p&gt;version 49.0   컴파일 버전 : 1.5&lt;/p&gt;&lt;p&gt;version 48.0   컴파일 버전 : 1.4&lt;/p&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Thu, 20 Jun 2013 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
+http://clonekim.github.io/posts/2013-06-16-java-compile-option.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2013-06-16-java-compile-option.html
+</link>
+<title>
+Java Compile Option
+</title>
+<description>
+&lt;pre&gt;&lt;code&gt;-Dfile.encoding=&amp;#91;Character Set&amp;#93;
+-Dclient.encoding.override=&amp;#91;Character Set&amp;#93;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Sun, 16 Jun 2013 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
+http://clonekim.github.io/posts/2013-05-13-phpfpm-nginx.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2013-05-13-phpfpm-nginx.html
+</link>
+<title>
+PHP FPM
+</title>
+<description>
+ &lt;h2&gt;&lt;a name=&quot;php&amp;#95;install&quot;&gt;&lt;/a&gt;PHP Install&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;apt-get install php5-fpm php5-mongo php5-mysql
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;/etc/php5/fpm/php.ini&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;; This directive determines whether or not PHP will recognize code between
+; &amp;lt;? and ?&amp;gt; tags as PHP source which should be processed as such. It is
+; generally recommended that &amp;lt;?php and ?&amp;gt; should be used and that this feature
+; should be disabled, as enabling it may result in issues when generating XML
+; documents, however this remains supported for backward compatibility reasons.
+; Note that this directive does not control the &amp;lt;?= shorthand tag, which can be
+; used regardless of this directive.
+; Default Value: On
+; Development Value: Off
+; Production Value: Off
+; http://php.net/short-open-tag
+short&amp;#95;open&amp;#95;tag = Off
+...
+; http://php.net/post-max-size
+post&amp;#95;max&amp;#95;size = 8M
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;/etc/php5/fpm/pool.d/www.conf&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;; Unix user/group of processes
+; Note: The user is mandatory. If the group is not set, the default user's group
+;       will be used.
+user = www-data
+group = www-data
+
+listen = /var/run/php5-fpm.sock
+
+listen.owner = www-data
+listen.group = www-data
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;error&lt;/code&gt;&lt;/p&gt;&lt;p&gt;아래와 같이 퍼미션에러가 나면 nginx 와 php5-fpm의 권한이 일치하지 않아서이다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;2015/02/05 21:37:04 &amp;#91;crit&amp;#93; 8615#0: &amp;#42;3 connect&amp;#40;&amp;#41; to unix:/var/run/php5-fpm.sock failed &amp;#40;13: Permission denied&amp;#41; while connecting to upstream, client: 127.0.0.1, server: localhost, request: &amp;quot;GET /a.php HTTP/1.1&amp;quot;, upstream: &amp;quot;fastcgi://unix:/var/run/php5-fpm.sock:&amp;quot;, host: &amp;quot;127.0.0.1&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;그&amp;#95;외&amp;#95;필요한&amp;#95;설정&quot;&gt;&lt;/a&gt;그 외 필요한 설정&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;; 디폴트 문자코드
+default&amp;#95;charset = &amp;quot;UTF-8&amp;quot;
+
+; 타임존
+date.timezone = &amp;quot;Asia/Tokyo&amp;quot;
+
+&amp;#91;mbstring&amp;#93;
+; 디폴트 언어설정
+mbstring.language = Korean
+
+; 내부문자코드
+; 설정이 안됬을 경우 디폴트 문자코드가 사용됨
+;mbstring.internal&amp;#95;encoding = EUC-KR
+
+;HTTP 입력 문자 인코딩
+;mbstring.http&amp;#95;input = auto
+
+; HTTP 출력문자 인코딩
+
+;mbstring.http&amp;#95;output = &amp;quot;UTF-8&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;nginx에&amp;#95;fastcgi&quot;&gt;&lt;/a&gt;nginx에 fastcgi&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;server {
+    listen       80;
+    server&amp;#95;name  localhost;
+
+    #charset koi8-r;
+    #access&amp;#95;log  /var/log/nginx/log/host.access.log  main;
+
+    location / {
+        root   /usr/share/nginx/html;
+        index  index.html index.htm;
+    }
+
+    #error&amp;#95;page  404              /404.html;
+
+    # redirect server error pages to the static page /50x.html
+    #
+    error&amp;#95;page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   /usr/share/nginx/html;
+    }
+
+
+    # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+    #
+    location &amp;#126; \.php$ {
+        root           /home/www;
+        fastcgi&amp;#95;pass   unix:/var/run/php5-fpm.sock;
+        fastcgi&amp;#95;index  index.php;
+        fastcgi&amp;#95;param  SCRIPT&amp;#95;FILENAME  $document&amp;#95;root$fastcgi&amp;#95;script&amp;#95;name;
+        include        fastcgi&amp;#95;params;
+    }
+
+}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;wordpress를 사용하는 예&lt;/p&gt;&lt;p&gt;&lt;em&gt;/etc/nginx/conf.d/wordpress.conf&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;server {
+  listen 80;
+  server&amp;#95;name example.com;
+  root /var/www/wordpress;
+  index index.php;
+
+  location / {
+    if &amp;#40;!-e $request&amp;#95;filename&amp;#41; {
+      rewrite &amp;#94;/&amp;#40;.+&amp;#41;#  /index.php?q=$1 last;
+      break;
+    }
+  }
+  
+  # wp-config.php에 접속금지
+  location &amp;#126;&amp;#42; /wp-config.php {
+    deny all;
+  }
+
+  location &amp;#126; \.php$ {
+    fastcgi&amp;#95;pass 127.0.0.1:9000;
+    fastcgi&amp;#95;param SCRIPT&amp;#95;FILENAME /home/wordpress$fastcgi&amp;#95;script&amp;#95;name;
+    fastcgi&amp;#95;param PATH&amp;#95;INFO $fastcgi&amp;#95;script&amp;#95;name;
+    include fastcgi&amp;#95;params;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;basic&amp;#95;인증&quot;&gt;&lt;/a&gt;Basic 인증&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;$ sudo htpasswd -cb /home/wordpress/.htpasswd wordpress password&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;server {
+  ...
+
+  location &amp;#126;&amp;#42; /wp-login\.php|/wp-admin/&amp;#40;&amp;#40;?!admin-ajax\.php&amp;#41;.&amp;#41;&amp;#42;$ {
+    auth&amp;#95;basic &amp;quot;Please enter your name and password&amp;quot;;
+    auth&amp;#95;basic&amp;#95;user&amp;#95;file  &amp;quot;/home/wordpress/.htpasswd&amp;quot;;
+  }
+
+  location &amp;#126; \.php$ {
+  ...
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Mon, 13 May 2013 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
+http://clonekim.github.io/posts/2012-10-17-ognl-in-java.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2012-10-17-ognl-in-java.html
+</link>
+<title>
+OGNL
+</title>
+<description>
+ &lt;p&gt;&lt;strong&gt;Maven&lt;/strong&gt;  &lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt; &amp;lt;dependency&amp;gt;
+    &amp;lt;groupId&amp;gt;ognl&amp;lt;/groupId&amp;gt;
+    &amp;lt;artifactId&amp;gt;ognl&amp;lt;/artifactId&amp;gt;
+    &amp;lt;version&amp;gt;3.0.5&amp;lt;/version&amp;gt;
+&amp;lt;/dependency&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;소스&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;java&quot;&gt;
+Map&amp;lt;String, Object&amp;gt; map = new HashMap&amp;lt;String, Object&amp;gt;&amp;#40;&amp;#41;;
+map.put&amp;#40;&amp;quot;book&amp;quot;, &amp;quot;모바일 웹앱&amp;quot;&amp;#41;;
+
+System.out.println&amp;#40;Ognl.getValue&amp;#40;Ognl.parseExpression&amp;#40;&amp;quot;book&amp;quot;&amp;#41;, map&amp;#41;&amp;#41;;
+
+Map context = new HashMap&amp;#40;&amp;#41;;
+List&amp;lt;String&amp;gt; values1 = &amp;#40;List&amp;#41;Ognl.getValue&amp;#40;&amp;quot;{123,'abc','00oo'}&amp;quot;, context, new Object&amp;#40;&amp;#41;&amp;#41;;
+
+System.out.println&amp;#40;values1&amp;#41;;
+
+Map values2  = &amp;#40;Map&amp;#41; Ognl.getValue&amp;#40;&amp;quot;#{123:333,'abc':111, 'bbb':'Kim', 'other':'&amp;#91;0,2,3,4,5&amp;#93;'}&amp;quot;, context, new Object&amp;#40;&amp;#41;&amp;#41;;
+
+System.out.println&amp;#40;values2&amp;#41;;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;출력&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;모바일 웹앱
+&amp;#91;123, abc, 00oo&amp;#93;
+{123=333, abc=111, bbb=Kim, other=&amp;#91;0,2,3,4,5&amp;#93;}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Wed, 17 Oct 2012 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
+http://clonekim.github.io/posts/2012-05-23-vim-favorite-setting.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2012-05-23-vim-favorite-setting.html
+</link>
+<title>
+즐겨사용하는 VIM 설정
+</title>
+<description>
+&lt;p&gt;~./vimrc 또는 /etc/vim/vimrc.local&lt;/p&gt;&lt;pre&gt;&lt;code&gt;set autoindent
+set smartindent
+set shiftwidth=3
+set tabstop=3
+set title
+set nu
+set background=dark
+set nobackup
+set fileencoding=utf-8
+set nowrap
+set showmatch
+set ruler
+syntax on         
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Wed, 23 May 2012 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
+http://clonekim.github.io/posts/2012-02-03-ruby-some-basic.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2012-02-03-ruby-some-basic.html
+</link>
+<title>
+Ruby Some Basic
+</title>
+<description>
+&lt;p&gt;&lt;em&gt;json 생성&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;require 'json'
+jsonbody = JSON.generate&amp;#91;&amp;quot;message&amp;quot;=&amp;gt;&amp;quot;test&amp;quot;,&amp;quot;user&amp;quot;=&amp;gt;&amp;quot;user1&amp;quot;&amp;#93;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;rest-client을 이용한 예제&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;require 'rubygems'
+require 'rest&amp;#95;client'
+require 'json'
+
+jdata = JSON.generate&amp;#40;&amp;#91;&amp;quot;test&amp;quot;&amp;#93;&amp;#41;
+RestClient.put 'http://localhost:4567/users/123', jdata, {:content&amp;#95;type =&amp;gt; :json}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;net:http&quot;&gt;&lt;/a&gt;Net:HTTP&lt;/h2&gt;&lt;p&gt;&lt;em&gt;GET/PUT&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;require 'net/http'
+http = Net::HTTP.new&amp;#40;'www.data.com'&amp;#41;
+response = http.request&amp;#95;put&amp;#40;'/?access&amp;#95;token=123', jsonbody&amp;#41;
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;url = URI.parse&amp;#40;'http://localhost:3000/someservice/'&amp;#41;
+request = Net::HTTP::Post.new&amp;#40;url.path&amp;#41;
+request.body = &amp;quot;&amp;lt;?xml version='1.0' encoding='UTF-8'?&amp;gt;&amp;lt;somedata&amp;gt;&amp;lt;name&amp;gt;Test Name 1&amp;lt;/name&amp;gt;&amp;lt;description&amp;gt;Some data for Unit testing&amp;lt;/description&amp;gt;&amp;lt;/somedata&amp;gt;&amp;quot;
+response = Net::HTTP.start&amp;#40;url.host, url.port&amp;#41; {|http| http.request&amp;#40;request&amp;#41;}
+
+#Note this test PASSES!
+assert&amp;#95;equal '201 Created', response.get&amp;#95;fields&amp;#40;'Status'&amp;#41;&amp;#91;0&amp;#93;
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;require 'net/http'
+require 'uri'
+
+type = 'record'
+activity = 'query-data'
+
+xml&amp;#95;req =&amp;lt;&amp;lt;EOF
+&amp;lt;? xml version='1.0' ?&amp;gt;
+&amp;lt;DATASET&amp;gt;
+&amp;lt;SITE&amp;#95;ID&amp;gt;123456789&amp;lt;/SITE&amp;#95;ID&amp;gt;
+&amp;lt;MLID&amp;gt;987654321&amp;lt;/MLID&amp;gt;
+&amp;lt;DATA type='email'&amp;gt;user@somedomain.com&amp;lt;/DATA&amp;gt;
+&amp;lt;/DATASET&amp;gt;
+EOF
+
+
+req = &amp;quot;type=#{type}&amp;amp;activity=#{activity}&amp;amp;input=&amp;quot;
+req = req + URI.escape&amp;#40;xml&amp;#95;req&amp;#41;
+
+res = Net::HTTP.start&amp;#40;'www.uptilt.com'&amp;#41; { |http|
+  http.post&amp;#40;&amp;quot;/API/mailing&amp;#95;list.html&amp;quot;, req&amp;#41;
+}
+puts res.body
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;require 'net/http'
+require 'pp'
+
+http = Net::HTTP.new&amp;#40;'localhost', 8080&amp;#41;
+
+params = {
+  'Accept' =&amp;gt; 'application/xml'
+}
+
+resp = http.get&amp;#40;'/acerapp/say.app', params&amp;#41;
+
+pp resp.response
+pp resp.body
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;io&quot;&gt;&lt;/a&gt;IO&lt;/h2&gt;&lt;p&gt;&lt;em&gt;popen&lt;/em&gt;&lt;/p&gt;&lt;p&gt;IO.popen명령어를 사용해서 IO오브젝트를 얻는다&lt;br /&gt; get을 호출하면 출력결과를 볼 수 있다&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;IO.popen&amp;#40;&amp;quot;ping localhost&amp;quot;&amp;#41; do |io|
+  while io.gets
+    print $&amp;#95;
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;실행결과&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;PING localhost.localdomain &amp;#40;127.0.0.1&amp;#41; 56&amp;#40;84&amp;#41; bytes of data.
+64 bytes from localhost.localdomain &amp;#40;127.0.0.1&amp;#41;: icmp&amp;#95;seq=1 ttl=64 time=0.022 ms
+64 bytes from localhost.localdomain &amp;#40;127.0.0.1&amp;#41;: icmp&amp;#95;seq=2 ttl=64 time=0.023 ms
+64 bytes from localhost.localdomain &amp;#40;127.0.0.1&amp;#41;: icmp&amp;#95;seq=3 ttl=64 time=0.022 ms
+&amp;#94;C
+--- localhost.localdomain ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 1999ms
+rtt min/avg/max/mdev = 0.022/0.022/0.023/0.004 ms
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;pid를 얻어 프로세스를 닫는다.&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;io = IO.popen&amp;#40;&amp;quot;ping localhost&amp;quot;&amp;#41;
+sleep&amp;#40;3&amp;#41;
+Process.kill&amp;#40;&amp;quot;INT&amp;quot;, io.pid&amp;#41;
+print io.readlines
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Fri, 03 Feb 2012 00:00:00 +0900
 </pubDate>
 </item>
 </channel>

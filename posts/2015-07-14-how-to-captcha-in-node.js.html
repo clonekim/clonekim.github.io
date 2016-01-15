@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
     <meta charset="utf-8"/>
-    <title>On the Clojure: Posts Tagged &quot;vim&quot;</title>
+    <title>On the Clojure: Node.js로 Captcha</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700' rel='stylesheet'
           type='text/css'>
@@ -50,17 +50,80 @@
         <div class="col-lg-9">
             <div id="content">
                 
-<div id="posts-by-tag">
-    <div id="page-header">
-        <h2>Posts Tagged &quot;vim&quot;</h2>
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta" class="row">
+        <div class="col-lg-6">2015년 7월 14일 (화)</div>
+        
     </div>
-    <ul>
+    <h2>Node.js로 Captcha</h2>
+</div>
+<div>
     
-        <li>
-            <a href="/posts/2015-07-16-windows-vim.html">윈도우즈 Vim설정</a>
-        </li>
+    <p>canvas를 이용한 캡챠(captcha)를 생성하려고 한다.<br /> 사용하려는 패키지는 canvas-captcha이다</p><h2><a name="의존성&#95;설치"></a>의존성 설치</h2><pre><code>apt-get install libpango1.0-dev
+apt-get install libjpeg-dev
+apt-get install libgif-dev
+</code></pre><h2><a name="소스작성"></a>소스작성</h2><p><strong>captcha.js</strong></p><pre><code class="javascript">var captcha = require&#40;'canvas-captcha'&#41;
+    ,captchaOptions = {
+        charPool: &#40;'abcdefghijklmnopqrstuvwxyz' + 'abcdefghijklmnopqrstuvwxyz'.toUpperCase&#40;&#41; + '1234567890'&#41;.split&#40;''&#41; //char pool Array
+        ,size: {
+            width: 120
+            ,height: 52
+        } //image size
+        ,textPos: {
+            left: 15
+            ,top: 36
+        } //text drawing start position
+        ,rotate: .01 //text ratate
+        ,charLength: 5 //how many chars
+        //,font: '26px' //font size
+        ,strokeStyle: '#0088cc' //style
+        ,bgColor: '#eeeeee' //bg color
+        ,confusion: true //draw another group background text to mangle the text
+        //,cFont: '30px' //bg text style
+        ,cStrokeStyle: '#adc' //bg text color
+        ,cRotate: -.05 //bg text rotate
+    };
+
+exports.captcha = function&#40;req, res&#41; {
+    captcha&#40;captchaOptions, function&#40;err, data&#41; {
+        if&#40;err&#41; {
+            res.send&#40;err&#41;;
+        }
+        else {
+            console.log&#40;&quot;Generated Captcha -&gt; &quot;, data.captchaStr&#41;;
+            req.session.captcha = data.captchaStr;
+            res.end&#40;data.captchaImg&#41;
+        }
+    }&#41;
+};
+</code></pre>
+</div>
+
+<div id="post-tags">
+    <b>Tags: </b>
     
-    </ul>
+    <a href="/tags/captcha.html">captcha</a>
+    
+    <a href="/tags/javascript.html">javascript</a>
+    
+    <a href="/tags/node.js.html">node.js</a>
+    
+</div>
+
+
+    <div id="prev-next">
+        
+        <a href="/posts/2015-07-14-sinatra.html">&laquo; Sinatra 웹프로그래밍</a>
+        
+        
+        <a class="right" href="/posts/2015-07-02-angularjs.html">AngularJS &raquo;</a>
+        
+    </div>
+
+    
+
+
 </div>
 
             </div>
@@ -82,15 +145,15 @@
                     <h3>Recent Posts</h3>
                     <ul>
                         
+                        <li><a href="/posts/2016-01-14-clojurescript-gaming.html">Clojure(Script)로 게임제작</a></li>
+                        
                         <li><a href="/posts/2016-01-13-github-page.html">Github에 블로그제작</a></li>
                         
                         <li><a href="/posts/2015-09-25-get-started-clojure.html">Clojure 시작하기</a></li>
                         
-                        <li><a href="/posts/2015-09-25-using-jdbc-in-clojure.html">클로저에서 Jdbc사용</a></li>
+                        <li><a href="/posts/2015-09-25-jdbc-in-clojure.html">클로저에서 Jdbc사용</a></li>
                         
                         <li><a href="/posts/2015-09-23-freemarker-assign-tip.html">Freemarker assign팁</a></li>
-                        
-                        <li><a href="/posts/2015-09-10-oracle-jdbc.html">Oracle Jdbc Url</a></li>
                         
                     </ul>
                 </div>
@@ -102,13 +165,19 @@
                         
                         <li><a href="/tags/cryogen.html">cryogen</a></li>
                         
+                        <li><a href="/tags/imagemagick.html">imagemagick</a></li>
+                        
                         <li><a href="/tags/github.html">github</a></li>
                         
                         <li><a href="/tags/clojure.html">clojure</a></li>
                         
                         <li><a href="/tags/redmine.html">redmine</a></li>
                         
+                        <li><a href="/tags/raspberry.html">raspberry</a></li>
+                        
                         <li><a href="/tags/oracle.html">oracle</a></li>
+                        
+                        <li><a href="/tags/web programming.html">web programming</a></li>
                         
                         <li><a href="/tags/vi.html">vi</a></li>
                         
@@ -116,9 +185,21 @@
                         
                         <li><a href="/tags/java.html">java</a></li>
                         
+                        <li><a href="/tags/wiki.html">wiki</a></li>
+                        
+                        <li><a href="/tags/io.html">io</a></li>
+                        
+                        <li><a href="/tags/pi.html">pi</a></li>
+                        
+                        <li><a href="/tags/php.html">php</a></li>
+                        
                         <li><a href="/tags/mariadb.html">mariadb</a></li>
                         
                         <li><a href="/tags/freemarker.html">freemarker</a></li>
+                        
+                        <li><a href="/tags/OGNL.html">OGNL</a></li>
+                        
+                        <li><a href="/tags/nginx.html">nginx</a></li>
                         
                         <li><a href="/tags/ruby.html">ruby</a></li>
                         
@@ -126,17 +207,25 @@
                         
                         <li><a href="/tags/template.html">template</a></li>
                         
-                        <li><a href="/tags/vim.html">vim</a></li>
-                        
                         <li><a href="/tags/jruby.html">jruby</a></li>
+                        
+                        <li><a href="/tags/concurrent.html">concurrent</a></li>
                         
                         <li><a href="/tags/angularjs.html">angularjs</a></li>
                         
                         <li><a href="/tags/javascript.html">javascript</a></li>
                         
+                        <li><a href="/tags/microframework.html">microframework</a></li>
+                        
+                        <li><a href="/tags/proxy.html">proxy</a></li>
+                        
+                        <li><a href="/tags/game.html">game</a></li>
+                        
                         <li><a href="/tags/node.js.html">node.js</a></li>
                         
-                        <li><a href="/tags/sinatra.html">sinatra</a></li>
+                        <li><a href="/tags/taglib.html">taglib</a></li>
+                        
+                        <li><a href="/tags/jsp.html">jsp</a></li>
                         
                     </ul>
                 </div>
