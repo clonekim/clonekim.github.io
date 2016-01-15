@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
     <meta charset="utf-8"/>
-    <title>On the Clojure: Posts Tagged &quot;captcha&quot;</title>
+    <title>On the Clojure: 윈도우즈에 SVN서비스등록</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700' rel='stylesheet'
           type='text/css'>
@@ -50,21 +50,56 @@
         <div class="col-lg-9">
             <div id="content">
                 
-<div id="posts-by-tag">
-    <div id="page-header">
-        <h2>Posts Tagged &quot;captcha&quot;</h2>
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta" class="row">
+        <div class="col-lg-6">2013년 9월 24일 (화)</div>
+        
     </div>
-    <ul>
+    <h2>윈도우즈에 SVN서비스등록</h2>
+</div>
+<div>
     
-        <li>
-            <a href="/posts/2015-07-14-how-to-captcha-in-node.js.html">Node.js로 Captcha</a>
-        </li>
+    <h3><a name="svn서버를&#95;윈도우에서&#95;서비스로&#95;등록한다.<em>"></a>SVN서버를 윈도우에서 서비스로 등록한다.</em></h3><h4><a name="creating&#95;the&#95;repository"></a>Creating the Repository</h4><pre><code>svnadmin create c:\svn</code></pre><h4><a name="edit&#95;configuration"></a>Edit Configuration</h4><p>방금 생성한 레포지토리 디렉토리로 이동하여<br /> <code>conf\passwd</code> 에서</p><pre><code>아이디 = 패스워드 형식으로 등록
+ex&#41;
+test = 1234
+</code></pre><p><code>conf\svnserve.conf</code> 에서 아래와 같이 설정</p><pre><code>anon-access = read
+auth-access = write
+password-db = passwd
+</code></pre><h4><a name="register&#95;as&#95;a&#95;service"></a>Register as a Service</h4><pre><code>C:\Program Files\Subversion\bin\svnserve.exe --service --root c:\svn
+또는
+C:\&gt; sc create svn
+        binpath= &quot;C:\svn\bin\svnserve.exe --service -r C:\repos&quot;
+        displayname= &quot;Subversion Server&quot;
+        depend= Tcpip
+        start= auto
+
+C:\&gt;sc create svnserver binpath= &quot;C:\Program Files\Subversion\bin\svnserve.exe --service -r D:\svn&quot;  displayname= &quot;Subversion Server&quot; depend= Tcpip start= auto
+</code></pre>
+</div>
+
+<div id="post-tags">
+    <b>Tags: </b>
     
-        <li>
-            <a href="/posts/2015-02-01-imagemagick.html">ImageMagick</a>
-        </li>
+    <a href="/tags/svn.html">svn</a>
     
-    </ul>
+    <a href="/tags/windows.html">windows</a>
+    
+</div>
+
+
+    <div id="prev-next">
+        
+        <a href="/posts/2013-09-24-apache-taglib.html">&laquo; Apache Tag Lib</a>
+        
+        
+        <a class="right" href="/posts/2013-06-20-unsupported-classversion-error.html">자바 호환에러 &raquo;</a>
+        
+    </div>
+
+    
+
+
 </div>
 
             </div>

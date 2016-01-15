@@ -60,7 +60,7 @@
 </div>
 <div>
     
-    <p><a href='http://requirejs.org/'>RequireJS</a></p><p><em>log.js</em> 를 작성하고<br /> log라고 모듈을 정의한다</p><pre><code class="javascript">define&#40;'log', function&#40;&#41; {
+    <p><a href='http://requirejs.org/'>RequireJS</a></p><p>log라는 모듈을 작성한다</p><p><em>log.js</em></p><pre><code class="javascript">define&#40;'log', function&#40;&#41; {
 	
 	return function&#40;str&#41; {
 		console.log&#40;&quot;--&gt; &quot;, str&#41;;
@@ -102,11 +102,11 @@
   &lt;script src=&quot;js/boost.js&quot;&gt;&lt;/script&gt;
   &lt;script&gt;
    require&#40;&#91;'boost'&#93;, function&#40;Boost&#41; {
-       var boost = new Boost&#40;&#41;;
- 	   alert&#40;boost.version&#40;&#41;&#41;;
+	var boost = new Boost&#40;&#41;;
+	alert&#40;boost.version&#40;&#41;&#41;;
    }&#41;;
 &lt;/script&gt;
-</code></pre><p>IIFE(mmediately-Invoked Function Expression)를 적용하면<br /> new 생성자 없이 사용가능하다</p><pre><code class="javascript">define&#40;'boost', function&#40;&#41; {
+</code></pre><p><code>IIFE&#40;mmediately-Invoked Function Expression&#41;</code> 를 적용하면<br /> new 생성자 없이 사용가능하다</p><pre><code class="javascript">define&#40;'boost', function&#40;&#41; {
 	
 	var boost = &#40;function&#40;&#41;{
 		var version = &quot;1.0&quot;;
@@ -182,6 +182,8 @@
                     <h3>Tags</h3>
                     <ul>
                         
+                        <li><a href="/tags/svn.html">svn</a></li>
+                        
                         <li><a href="/tags/cryogen.html">cryogen</a></li>
                         
                         <li><a href="/tags/imagemagick.html">imagemagick</a></li>
@@ -219,6 +221,8 @@
                         <li><a href="/tags/OGNL.html">OGNL</a></li>
                         
                         <li><a href="/tags/nginx.html">nginx</a></li>
+                        
+                        <li><a href="/tags/windows.html">windows</a></li>
                         
                         <li><a href="/tags/ruby.html">ruby</a></li>
                         

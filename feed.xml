@@ -12,7 +12,7 @@ http://clonekim.github.io/
 This blog is generated using cryogen
 </description>
 <lastBuildDate>
-Fri, 15 Jan 2016 16:19:37 +0900
+Fri, 15 Jan 2016 16:37:05 +0900
 </lastBuildDate>
 <generator>
 clj-rss
@@ -827,7 +827,7 @@ http://clonekim.github.io/posts/2014-12-29-requirejs.html
 RequireJS 예제
 </title>
 <description>
-&lt;p&gt;&lt;a href='http://requirejs.org/'&gt;RequireJS&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;em&gt;log.js&lt;/em&gt; 를 작성하고&lt;br /&gt; log라고 모듈을 정의한다&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;define&amp;#40;'log', function&amp;#40;&amp;#41; {
+&lt;p&gt;&lt;a href='http://requirejs.org/'&gt;RequireJS&lt;/a&gt;&lt;/p&gt;&lt;p&gt;log라는 모듈을 작성한다&lt;/p&gt;&lt;p&gt;&lt;em&gt;log.js&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;define&amp;#40;'log', function&amp;#40;&amp;#41; {
 	
 	return function&amp;#40;str&amp;#41; {
 		console.log&amp;#40;&amp;quot;--&amp;gt; &amp;quot;, str&amp;#41;;
@@ -869,11 +869,11 @@ RequireJS 예제
   &amp;lt;script src=&amp;quot;js/boost.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
   &amp;lt;script&amp;gt;
    require&amp;#40;&amp;#91;'boost'&amp;#93;, function&amp;#40;Boost&amp;#41; {
-       var boost = new Boost&amp;#40;&amp;#41;;
- 	   alert&amp;#40;boost.version&amp;#40;&amp;#41;&amp;#41;;
+	var boost = new Boost&amp;#40;&amp;#41;;
+	alert&amp;#40;boost.version&amp;#40;&amp;#41;&amp;#41;;
    }&amp;#41;;
 &amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;IIFE(mmediately-Invoked Function Expression)를 적용하면&lt;br /&gt; new 생성자 없이 사용가능하다&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;define&amp;#40;'boost', function&amp;#40;&amp;#41; {
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;IIFE&amp;#40;mmediately-Invoked Function Expression&amp;#41;&lt;/code&gt; 를 적용하면&lt;br /&gt; new 생성자 없이 사용가능하다&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;define&amp;#40;'boost', function&amp;#40;&amp;#41; {
 	
 	var boost = &amp;#40;function&amp;#40;&amp;#41;{
 		var version = &amp;quot;1.0&amp;quot;;
@@ -1328,8 +1328,7 @@ http://clonekim.github.io/posts/2013-10-12-bigdecimal-java.html
 BigDecimal을 이용한 반올림
 </title>
 <description>
- &lt;pre&gt;&lt;code class=&quot;java&quot;&gt; 
-BigDecimal.ROUND&amp;#95;DOWN		// 내림
+ &lt;pre&gt;&lt;code class=&quot;java&quot;&gt;BigDecimal.ROUND&amp;#95;DOWN		// 내림
 BigDecimal.ROUND&amp;#95;HALF&amp;#95;UP 	// 반올림
 BigDecimal.ROUND&amp;#95;UP 		// 올림
 &lt;/code&gt;&lt;/pre&gt;
@@ -1686,6 +1685,41 @@ Tue, 24 Sep 2013 00:00:00 +0900
 </item>
 <item>
 <guid>
+http://clonekim.github.io/posts/2013-09-24-svn-as-windows-service.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2013-09-24-svn-as-windows-service.html
+</link>
+<title>
+윈도우즈에 SVN서비스등록
+</title>
+<description>
+&lt;h3&gt;&lt;a name=&quot;svn서버를&amp;#95;윈도우에서&amp;#95;서비스로&amp;#95;등록한다.&lt;em&gt;&quot;&gt;&lt;/a&gt;SVN서버를 윈도우에서 서비스로 등록한다.&lt;/em&gt;&lt;/h3&gt;&lt;h4&gt;&lt;a name=&quot;creating&amp;#95;the&amp;#95;repository&quot;&gt;&lt;/a&gt;Creating the Repository&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;svnadmin create c:\svn&lt;/code&gt;&lt;/pre&gt;&lt;h4&gt;&lt;a name=&quot;edit&amp;#95;configuration&quot;&gt;&lt;/a&gt;Edit Configuration&lt;/h4&gt;&lt;p&gt;방금 생성한 레포지토리 디렉토리로 이동하여&lt;br /&gt; &lt;code&gt;conf\passwd&lt;/code&gt; 에서&lt;/p&gt;&lt;pre&gt;&lt;code&gt;아이디 = 패스워드 형식으로 등록
+ex&amp;#41;
+test = 1234
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;conf\svnserve.conf&lt;/code&gt; 에서 아래와 같이 설정&lt;/p&gt;&lt;pre&gt;&lt;code&gt;anon-access = read
+auth-access = write
+password-db = passwd
+&lt;/code&gt;&lt;/pre&gt;&lt;h4&gt;&lt;a name=&quot;register&amp;#95;as&amp;#95;a&amp;#95;service&quot;&gt;&lt;/a&gt;Register as a Service&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;C:\Program Files\Subversion\bin\svnserve.exe --service --root c:\svn
+또는
+C:\&amp;gt; sc create svn
+        binpath= &amp;quot;C:\svn\bin\svnserve.exe --service -r C:\repos&amp;quot;
+        displayname= &amp;quot;Subversion Server&amp;quot;
+        depend= Tcpip
+        start= auto
+
+C:\&amp;gt;sc create svnserver binpath= &amp;quot;C:\Program Files\Subversion\bin\svnserve.exe --service -r D:\svn&amp;quot;  displayname= &amp;quot;Subversion Server&amp;quot; depend= Tcpip start= auto
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Tue, 24 Sep 2013 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
 http://clonekim.github.io/posts/2013-06-20-unsupported-classversion-error.html
 </guid>
 <link>
@@ -1697,7 +1731,12 @@ http://clonekim.github.io/posts/2013-06-20-unsupported-classversion-error.html
 <description>
 &lt;pre&gt;&lt;code&gt;java.lang.UnsupportedClassVersion&amp;#95;error
 &amp;#40;Unsupported major.minor version 51.0&amp;#41;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;하위버전의 클래스파일을 상위버전이 읽어들일때는 상관없지만&lt;br /&gt; 상위버전의 클래스파일을 하위버전이 읽어올때는 위와 같은 에러를 낸다&lt;/p&gt;&lt;p&gt;&lt;em&gt;에러 상세코드&lt;/em&gt;&lt;/p&gt;&lt;p&gt;version 52.0   컴파일 버전 : 1.8&lt;/p&gt;&lt;p&gt;version 51.0   컴파일 버전 : 1.7&lt;/p&gt;&lt;p&gt;version 50.0   컴파일 버전 : 1.6&lt;/p&gt;&lt;p&gt;version 49.0   컴파일 버전 : 1.5&lt;/p&gt;&lt;p&gt;version 48.0   컴파일 버전 : 1.4&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;하위버전의 클래스파일을 상위버전이 읽어들일때는 상관없지만&lt;br /&gt; 상위버전의 클래스파일을 하위버전이 읽어올때는 위와 같은 에러를 낸다&lt;/p&gt;&lt;p&gt;&lt;em&gt;에러 상세코드&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;version 52.0   컴파일 버전 : 1.8
+version 51.0   컴파일 버전 : 1.7
+version 50.0   컴파일 버전 : 1.6
+version 49.0   컴파일 버전 : 1.5
+version 48.0   컴파일 버전 : 1.4
+&lt;/code&gt;&lt;/pre&gt;
 </description>
 <enclosure>
 
