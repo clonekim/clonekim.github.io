@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
     <meta charset="utf-8"/>
-    <title>On the Clojure: Clojure 시작하기</title>
+    <title>(fn[] &quot;Good Day&quot;): Clojure 시작하기</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700' rel='stylesheet'
           type='text/css'>
@@ -23,7 +23,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/index.html">On the Clojure</a>
+            <a class="navbar-brand" href="/index.html">(fn[] &quot;Good Day&quot;)</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
@@ -59,8 +59,13 @@
     <h2>Clojure 시작하기</h2>
 </div>
 <div>
-    <ol class="content"><li><a href="#clojure_얻기">clojure 얻기</a></li><li><a href="#ide/tools">IDE/Tools</a></li><li><a href="#leiningen으로_시작하기">Leiningen으로 시작하기</a></li><li><a href="#project_생성">Project 생성</a></li><li><a href="#repl(read_eval_print_loop)_실행">REPL(Read Eval Print Loop) 실행</a></li><li><a href="#자료구조">자료구조</a></li><ol><li><a href="#list">List</a></li><li><a href="#vector">Vector</a></li><li><a href="#map">Map</a></li><li><a href="#set">Set</a></li></ol><li><a href="#binding">Binding</a></li><li><a href="#함수정의">함수정의</a></li><li><a href="#제어구문">제어구문</a></li><ol><li><a href="#if">if</a></li><li><a href="#when,when-let">when,when-let</a></li><li><a href="#cond,_case">cond, case</a></li></ol><li><a href="#그_밖의_expression">그 밖의 expression</a></li><ol><li><a href="#doto">doto</a></li><li><a href="#threading(-&gt;)">Threading(->)</a></li></ol><li><a href="#database">Database</a></li><li><a href="#java_interoperability">Java Interoperability</a></li><ol><li><a href="#import">Import</a></li><li><a href="#inner_class를_사용할_경우">Inner class를 사용할 경우</a></li></ol><li><a href="#web_programming">Web Programming</a></li><li><a href="#3rd_party_libraries">3rd Party Libraries</a></li><li><a href="#plugins">plugins</a></li><ol><li><a href="#lein-try_사용하기">lein-try 사용하기</a></li></ol></ol>
-    <p>JVM위에서 작동하는 함수형 프로그래밍이다</p><h2><a name="clojure&#95;얻기"></a>clojure 얻기</h2><p><a href='http://clojure.org'>http://clojure.org</a></p><h2><a name="ide/tools"></a>IDE/Tools</h2><ul><li><a href='http://lighttable.com'>LightTable</a></li><li><a href='https://cursiveclojure.com'>Cursive</a></li><li>Emacs</li></ul><h2><a name="leiningen으로&#95;시작하기"></a>Leiningen으로 시작하기</h2><p><a href='http://leiningen.org'>Leiningen</a> (레닝겐)은 클로져를 쉽게 시작하기 위한 빌드자동화 툴이다</p><p><img src="/img/clojure/lein-self-install.png" alt="Image 1" /></p><h2><a name="project&#95;생성"></a>Project 생성</h2><pre><code>lein new &#91;프로젝트명&#93;
+    <ol class="content"><li><a href="#clojure_얻기">clojure 얻기</a></li><li><a href="#ide/tools">IDE/Tools</a></li><li><a href="#leiningen으로_시작하기">Leiningen으로 시작하기</a></li><li><a href="#project_생성">Project 생성</a></li><li><a href="#프로젝트_의존성_추가">프로젝트 의존성 추가</a></li><li><a href="#repl(read_eval_print_loop)_실행">REPL(Read Eval Print Loop) 실행</a></li><li><a href="#자료구조">자료구조</a></li><ol><li><a href="#list">List</a></li><li><a href="#vector">Vector</a></li><li><a href="#map">Map</a></li><li><a href="#set">Set</a></li></ol><li><a href="#binding">Binding</a></li><li><a href="#함수정의">함수정의</a></li><li><a href="#제어구문">제어구문</a></li><ol><li><a href="#if">if</a></li><li><a href="#when,when-let">when,when-let</a></li><li><a href="#cond,_case">cond, case</a></li></ol><li><a href="#그_밖의_expression">그 밖의 expression</a></li><ol><li><a href="#doto">doto</a></li><li><a href="#threading(-&gt;)">Threading(->)</a></li></ol><li><a href="#database">Database</a></li><li><a href="#java_interoperability">Java Interoperability</a></li><ol><li><a href="#import">Import</a></li><li><a href="#inner_class를_사용할_경우">Inner class를 사용할 경우</a></li></ol><li><a href="#web_programming">Web Programming</a></li><li><a href="#3rd_party_libraries">3rd Party Libraries</a></li><li><a href="#plugins">plugins</a></li><ol><li><a href="#lein-try_사용하기">lein-try 사용하기</a></li></ol></ol>
+    <p>JVM위에서 작동하는 함수형 프로그래밍이다</p><h2><a name="clojure&#95;얻기"></a>clojure 얻기</h2><p><a href='http://clojure.org'>http://clojure.org</a></p><h2><a name="ide/tools"></a>IDE/Tools</h2><ul><li><a href='http://lighttable.com'>LightTable</a></li><li><a href='https://cursiveclojure.com'>Cursive</a></li><li>Emacs</li></ul><h2><a name="leiningen으로&#95;시작하기"></a>Leiningen으로 시작하기</h2><p><a href='http://leiningen.org'>Leiningen</a> (레닝겐)은 클로져를 쉽게 시작하기 위한 빌드자동화 툴이다</p><p>윈도우에서만 self-install해준다</p><p><img src="/img/clojure/lein-self-install.png" alt="Image 1" /></p><h2><a name="project&#95;생성"></a>Project 생성</h2><pre><code>lein new &#91;프로젝트명&#93;
+</code></pre><h2><a name="프로젝트&#95;의존성&#95;추가"></a>프로젝트 의존성 추가</h2><p>라이브러리는 아래의 저장소에서 검색이 가능하고<br /> 의존성에 추가하면 된다</p><ul><li><a href='https://clojars.org'>clojars</a></li><li><a href='http://mvnrepository.com'>Maven repository</a></li></ul><pre><code class="clojure"> :dependencies &#91;&#91;org.clojure/clojure &quot;1.7.0&quot;&#93;
+                &#91;groupId/artifactId &quot;version&quot;&#93;&#93;&#41;
+</code></pre><p>그외의 라이브러리 저장소로는 추가로 지정할수있다</p><pre><code class="clojure">  :repositories {
+       &quot;이름&quot; &quot;http://192.168.0.10:8081/nexus/content/repositories/thirdparty&quot;
+    }
 </code></pre><h2><a name="repl(read&#95;eval&#95;print&#95;loop)&#95;실행"></a>REPL(Read Eval Print Loop) 실행</h2><pre><code>lein repl
 </code></pre><p>REPL에서 클로저코드를 작성하고 바로 실행이 가능하다</p><pre><code class="clojure">user=&gt; &#40;+ 1 3&#41;
 4
@@ -345,10 +350,10 @@ defn shop-for-jams &#91;jam1 jam2&#93;
 
     <div id="prev-next">
         
-        <a href="/posts/2016-01-13-github-page.html">&laquo; Github에 블로그제작</a>
+        <a href="/posts/2015-09-25-jdbc-in-clojure.html">&laquo; 클로저에서 Jdbc사용</a>
         
         
-        <a class="right" href="/posts/2015-09-25-jdbc-in-clojure.html">클로저에서 Jdbc사용 &raquo;</a>
+        <a class="right" href="/posts/2015-09-23-freemarker-assign-tip.html">Freemarker assign팁 &raquo;</a>
         
     </div>
 
@@ -376,15 +381,15 @@ defn shop-for-jams &#91;jam1 jam2&#93;
                     <h3>Recent Posts</h3>
                     <ul>
                         
+                        <li><a href="/posts/2016-01-18-get-started-clojurescript.html">ClojureScript 시작하기</a></li>
+                        
                         <li><a href="/posts/2016-01-14-clojurescript-gaming.html">Clojure(Script)로 게임제작</a></li>
                         
                         <li><a href="/posts/2016-01-13-github-page.html">Github에 블로그제작</a></li>
                         
-                        <li><a href="/posts/2015-09-25-get-started-clojure.html">Clojure 시작하기</a></li>
-                        
                         <li><a href="/posts/2015-09-25-jdbc-in-clojure.html">클로저에서 Jdbc사용</a></li>
                         
-                        <li><a href="/posts/2015-09-23-freemarker-assign-tip.html">Freemarker assign팁</a></li>
+                        <li><a href="/posts/2015-09-25-get-started-clojure.html">Clojure 시작하기</a></li>
                         
                     </ul>
                 </div>
@@ -393,8 +398,6 @@ defn shop-for-jams &#91;jam1 jam2&#93;
                 <div id="tags">
                     <h3>Tags</h3>
                     <ul>
-                        
-                        <li><a href="/tags/svn.html">svn</a></li>
                         
                         <li><a href="/tags/cryogen.html">cryogen</a></li>
                         
