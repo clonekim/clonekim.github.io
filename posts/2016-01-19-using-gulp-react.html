@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
     <meta charset="utf-8"/>
-    <title>(fn[] &quot;Good Day&quot;): Java IO/NIO Tutorial</title>
+    <title>(fn[] &quot;Good Day&quot;): Gulp로 React빌드</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700' rel='stylesheet'
           type='text/css'>
@@ -53,32 +53,82 @@
 <div id="post">
     <div class="post-header">
     <div id="post-meta" class="row">
-        <div class="col-lg-6">2014년 1월 5일 (일)</div>
+        <div class="col-lg-6">2016년 1월 19일 (화)</div>
         
     </div>
-    <h2>Java IO/NIO Tutorial</h2>
+    <h2>Gulp로 React빌드</h2>
 </div>
 <div>
-    
-     <ul><li><a href='http://rox-xmlrpc.sourceforge.net/niotut/'>The Rox Java NIO Tutorial</a></li><li><a href='http://www.javaworld.com/article/2078654/java-se/java-se-five-ways-to-maximize-java-nio-and-nio-2.html'>Five ways to maximize Java NIO and NIO.2</a></li><li><a href='http://www.studytrails.com/java-io/non-blocking-io-multiplexing.jsp'>Java NIO - Non Blocking IO and Multiplexing</a></li><li><a href='http://www.java2s.com/Code/Java/Network-Protocol/AsimpleHTTPserverthatdisplaysinformationaboutallaccessibleprintersonthenetwork.htm'>A simple HTTP server that displays information about all accessible printers on the network</a></li></ul>
+    <ol class="content"><li><a href="#gulp와_함께_의존성설치">gulp와 함께 의존성설치</a></li><li><a href="#offline_transform">Offline Transform</a></li><li><a href="#참고">참고</a></li></ol>
+    <h2><a name="gulp와&#95;함께&#95;의존성설치"></a>gulp와 함께 의존성설치</h2><pre><code>npm install -g gulp
+</code></pre><p>react 개발에 필요한 라이브러리와<br /> 번들로 묶기위한 browserify를 설치</p><pre><code>npm install react --save-dev
+npm install react-dom --save-dev
+npm install browserify --save-dev
+npm install gulp --save-dev
+npm install vinyl-source-stream --save-dev
+npm install babelify --save-dev
+npm install babel-preset-react --save-dev
+</code></pre><p><em>gulpfile</em></p><pre><code class="javascript">var gulp = require&#40;'gulp'&#41;,
+	browserify = require&#40;'browserify'&#41;,
+	babelify = require&#40;'babelify'&#41;,
+	source = require&#40;'vinyl-source-stream'&#41;;
+
+gulp.task&#40;'default', function&#40;&#41; {
+
+	return browserify&#40;'./source/app.js'&#41;
+		.transform&#40;babelify, {presets: &#91;'react'&#93;}&#41;
+		.bundle&#40;&#41;
+		.pipe&#40;source&#40;'app.min.js'&#41;&#41;
+		.pipe&#40;gulp.dest&#40;'./build/'&#41;&#41;;
+}&#41;;
+</code></pre><p><em>app.js</em></p><pre><code class="javascript">var React = require&#40;'react'&#41;;
+var ReactDom = require&#40;'react-dom'&#41;;
+
+var MyComponent = React.createClass&#40;{
+	return: function&#40;&#41; {
+		return &#40;
+			&lt;h1&gt;Hello &lt;/h1&gt;
+			&#41;;
+	}
+
+}&#41;;
+</code></pre><p><em>build time</em></p><pre><code>$ gulp
+&#91;23:45:55&#93; Using gulpfile &#126;/react101/gulpfile.js
+&#91;23:45:55&#93; Starting 'default'...
+&#91;23:45:56&#93; Finished 'default' after 1.46 s
+</code></pre><h2><a name="offline&#95;transform"></a>Offline Transform</h2><p><em>jsx to javascript</em></p><pre><code>$ babel --presets react source --watch --out-dir build
+</code></pre><p><em>build/app.js</em></p><pre><code class="javascript">var React = require&#40;'react'&#41;;
+var ReactDom = require&#40;'react-dom'&#41;;
+
+var MyComponent = React.createClass&#40;{
+	displayName: 'MyComponent',
+
+	return: function &#40;&#41; {
+		return React.createElement&#40;
+			'h1',
+			null,
+			'Hello '
+		&#41;;
+	}
+
+}&#41;;
+</code></pre><h2><a name="참고"></a>참고</h2><ul><li><a href='https://www.npmjs.com/package/babelify'>babelify</a></li><li><a href='http://babeljs.io/'>Babel transform</a></li><li><a href='http://facebook.github.io/react/docs/getting-started.html#offline-transform'>Offline Transform</a></li></ul>
 </div>
 
 <div id="post-tags">
     <b>Tags: </b>
     
-    <a href="/tags/java.html">java</a>
+    <a href="/tags/javascript.html">javascript</a>
     
-    <a href="/tags/io.html">io</a>
+    <a href="/tags/react.html">react</a>
     
 </div>
 
 
     <div id="prev-next">
         
-        <a href="/posts/2014-03-02-uuid-in-javascript.html">&laquo; 자바스크립트로 UUID 생성</a>
         
-        
-        <a class="right" href="/posts/2013-10-12-bigdecimal-java.html">BigDecimal을 이용한 반올림 &raquo;</a>
+        <a class="right" href="/posts/2016-01-18-starting-clojurescript.html">ClojureScript 시작하기 &raquo;</a>
         
     </div>
 

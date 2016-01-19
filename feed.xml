@@ -12,17 +12,89 @@ http://clonekim.github.io/
 This blog is generated using cryogen
 </description>
 <lastBuildDate>
-Mon, 18 Jan 2016 22:54:45 +0900
+Wed, 20 Jan 2016 00:05:14 +0900
 </lastBuildDate>
 <generator>
 clj-rss
 </generator>
 <item>
 <guid>
-http://clonekim.github.io/posts/2016-01-18-get-started-clojurescript.html
+http://clonekim.github.io/posts/2016-01-19-using-gulp-react.html
 </guid>
 <link>
-http://clonekim.github.io/posts/2016-01-18-get-started-clojurescript.html
+http://clonekim.github.io/posts/2016-01-19-using-gulp-react.html
+</link>
+<title>
+Gulp로 React빌드
+</title>
+<description>
+&lt;h2&gt;&lt;a name=&quot;gulp와&amp;#95;함께&amp;#95;의존성설치&quot;&gt;&lt;/a&gt;gulp와 함께 의존성설치&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;npm install -g gulp
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;react 개발에 필요한 라이브러리와&lt;br /&gt; 번들로 묶기위한 browserify를 설치&lt;/p&gt;&lt;pre&gt;&lt;code&gt;npm install react --save-dev
+npm install react-dom --save-dev
+npm install browserify --save-dev
+npm install gulp --save-dev
+npm install vinyl-source-stream --save-dev
+npm install babelify --save-dev
+npm install babel-preset-react --save-dev
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;gulpfile&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;var gulp = require&amp;#40;'gulp'&amp;#41;,
+	browserify = require&amp;#40;'browserify'&amp;#41;,
+	babelify = require&amp;#40;'babelify'&amp;#41;,
+	source = require&amp;#40;'vinyl-source-stream'&amp;#41;;
+
+gulp.task&amp;#40;'default', function&amp;#40;&amp;#41; {
+
+	return browserify&amp;#40;'./source/app.js'&amp;#41;
+		.transform&amp;#40;babelify, {presets: &amp;#91;'react'&amp;#93;}&amp;#41;
+		.bundle&amp;#40;&amp;#41;
+		.pipe&amp;#40;source&amp;#40;'app.min.js'&amp;#41;&amp;#41;
+		.pipe&amp;#40;gulp.dest&amp;#40;'./build/'&amp;#41;&amp;#41;;
+}&amp;#41;;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;app.js&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;var React = require&amp;#40;'react'&amp;#41;;
+var ReactDom = require&amp;#40;'react-dom'&amp;#41;;
+
+var MyComponent = React.createClass&amp;#40;{
+	return: function&amp;#40;&amp;#41; {
+		return &amp;#40;
+			&amp;lt;h1&amp;gt;Hello &amp;lt;/h1&amp;gt;
+			&amp;#41;;
+	}
+
+}&amp;#41;;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;build time&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;$ gulp
+&amp;#91;23:45:55&amp;#93; Using gulpfile &amp;#126;/react101/gulpfile.js
+&amp;#91;23:45:55&amp;#93; Starting 'default'...
+&amp;#91;23:45:56&amp;#93; Finished 'default' after 1.46 s
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;offline&amp;#95;transform&quot;&gt;&lt;/a&gt;Offline Transform&lt;/h2&gt;&lt;p&gt;&lt;em&gt;jsx to javascript&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;$ babel --presets react source --watch --out-dir build
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;build/app.js&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;var React = require&amp;#40;'react'&amp;#41;;
+var ReactDom = require&amp;#40;'react-dom'&amp;#41;;
+
+var MyComponent = React.createClass&amp;#40;{
+	displayName: 'MyComponent',
+
+	return: function &amp;#40;&amp;#41; {
+		return React.createElement&amp;#40;
+			'h1',
+			null,
+			'Hello '
+		&amp;#41;;
+	}
+
+}&amp;#41;;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;참고&quot;&gt;&lt;/a&gt;참고&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://www.npmjs.com/package/babelify'&gt;babelify&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://babeljs.io/'&gt;Babel transform&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://facebook.github.io/react/docs/getting-started.html#offline-transform'&gt;Offline Transform&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Tue, 19 Jan 2016 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
+http://clonekim.github.io/posts/2016-01-18-starting-clojurescript.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2016-01-18-starting-clojurescript.html
 </link>
 <title>
 ClojureScript 시작하기
@@ -203,10 +275,10 @@ Fri, 25 Sep 2015 00:00:00 +0900
 </item>
 <item>
 <guid>
-http://clonekim.github.io/posts/2015-09-25-get-started-clojure.html
+http://clonekim.github.io/posts/2015-09-25-starting-clojure.html
 </guid>
 <link>
-http://clonekim.github.io/posts/2015-09-25-get-started-clojure.html
+http://clonekim.github.io/posts/2015-09-25-starting-clojure.html
 </link>
 <title>
 Clojure 시작하기
@@ -730,13 +802,198 @@ MariaDB &amp;#91;&amp;#40;none&amp;#41;&amp;#93;&amp;gt; start slave;
  Slave&amp;#95;IO&amp;#95;Running: Yes
  Slave&amp;#95;SQL&amp;#95;Running: Yes
 ...
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;참고&quot;&gt;&lt;/a&gt;참고&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://www.unixmen.com/setup-mariadb-master-slave-replication-in-centos-7'&gt;http://www.unixmen.com/setup-mariadb-master-slave-replication-in-centos-7&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;참고&quot;&gt;&lt;/a&gt;참고&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;http://www.unixmen.com/setup-mariadb-master-slave-replication-in-centos-7/&lt;/li&gt;&lt;/ul&gt;
 </description>
 <enclosure>
 
 </enclosure>
 <pubDate>
 Thu, 03 Sep 2015 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
+http://clonekim.github.io/posts/2015-07-29-starting-reactjs.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2015-07-29-starting-reactjs.html
+</link>
+<title>
+ReactJS 시작하기
+</title>
+<description>
+ &lt;h2&gt;&lt;a name=&quot;starter&amp;#95;kit으로&amp;#95;시작하기&quot;&gt;&lt;/a&gt;Starter Kit으로 시작하기&lt;/h2&gt;&lt;p&gt;&lt;em&gt;0.13.x를 기준으로 작성함&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;a href='http://facebook.github.io/react/downloads/react-0.13.3.zip'&gt;react-0.13.3.zip 다운로드&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;em&gt;hello React!&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;
+&amp;lt;head&amp;gt;
+  &amp;lt;script src=&amp;quot;build/react.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+  &amp;lt;script src=&amp;quot;build/JSXTransformer.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;/head&amp;gt;	
+&amp;lt;body&amp;gt;
+  &amp;lt;div id=&amp;quot;hello&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+    
+    &amp;lt;script type=&amp;quot;text/jsx&amp;quot;&amp;gt;
+	React.render&amp;#40;&amp;lt;h1&amp;gt;Hello, welcome to React!&amp;lt;/h1&amp;gt;,
+	document.getElementById&amp;#40;'hello'&amp;#41;&amp;#41;;
+    &amp;lt;/script&amp;gt;
+    
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;/img/react/hello.png&quot; alt=&quot;Hello React!&quot; /&gt;&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;jsx(javascript&amp;#95;xml)&quot;&gt;&lt;/a&gt;JSX(JavaScript XML)&lt;/h2&gt;&lt;p&gt;JSX(JavaScript XML)는 XML 과 유사한 문법을 가지는 자바스크립트이다.&lt;br /&gt; JSX 문법을 사용하기 위해서는 반드시 JSXTransformer.js가 필요하다&lt;br /&gt; 상세한 JSX syntaxt과 spec 은 아래를 참조할 것&lt;br /&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://facebook.github.io/react/docs/jsx-in-depth.html'&gt;http://facebook.github.io/react/docs/jsx-in-depth.html&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://facebook.github.io/jsx/'&gt;http://facebook.github.io/jsx/&lt;/a&gt; &lt;/li&gt;&lt;/ul&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;//Html
+&amp;lt;h1 class=&amp;quot;test&amp;quot;&amp;gt;Hello&amp;lt;/h1&amp;gt;
+
+//JSX
+&amp;lt;h1 className=&amp;quot;test&amp;quot;&amp;gt;Hello&amp;lt;/h1&amp;gt;
+
+var text= &amp;quot;Hello React!&amp;quot;;
+&amp;lt;h1&amp;gt;{text}&amp;lt;/h1&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;offline&amp;#95;transform&quot;&gt;&lt;/a&gt;OffLine Transform&lt;/h2&gt;&lt;p&gt;JSX 스크립트 필요없이 CommonJS스펙에 따른 빌드 방법이다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;npm install -g react-tools&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;아래와 같이 해당 소스가 있는 곳을 지정하면 소스가 변경될때마다 컴파일해서 순수한 자바스크립트로 빌드한다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;jsx --watch &amp;#91;디렉토리 소스명&amp;#93;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;component&quot;&gt;&lt;/a&gt;Component&lt;/h2&gt;&lt;p&gt;&lt;em&gt;작성 순서&lt;/em&gt;&lt;/p&gt;&lt;ol&gt;&lt;li&gt;클래스 생성&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;  var MainView = React.createClass&amp;#40;{}&amp;#41;;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;&lt;li&gt;렌더링에 포함&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;React.render&amp;#40;&amp;lt;MainView /&amp;gt;, document.body&amp;#41;;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;&lt;em&gt;render를 사용하여 화면에 출력한다&lt;/em&gt;&lt;/p&gt;&lt;p&gt;화면에 출력한다. 한번만 호출된다&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;React.render&amp;#40;&amp;#91;JSX syntaxt&amp;#93;, DOM element&amp;#41;
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;var MainView = React.createClass&amp;#40;{
+  render: function&amp;#40;&amp;#41; {
+    return React.DOM.div&amp;#40;{className: 'root'}, &amp;quot;My Div&amp;quot;&amp;#41;;
+  }
+}&amp;#41;;
+
+//아래는 JSX를 사용하여
+
+var MainView = React.createClass&amp;#40;{
+  render: function&amp;#40;&amp;#41; {
+       return &amp;lt;div className:&amp;quot;root&amp;quot;&amp;gt;My Div&amp;lt;/div&amp;gt;
+  }
+}&amp;#41;;
+
+React.render&amp;#40;&amp;lt;MainView /&amp;gt;, document.body&amp;#41;;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;컴포넌트는 다른 컴포넌트를 포함할 수 있다&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;var Row = React.createClass&amp;#40;{
+
+	render: function&amp;#40;&amp;#41; {
+		return &amp;lt;tr&amp;gt;&amp;lt;td&amp;gt;{this.props.name}&amp;lt;/td&amp;gt;&amp;lt;/tr&amp;gt;;
+	}
+}&amp;#41;;
+
+var Table = React.createClass&amp;#40;{
+
+	render: function&amp;#40;&amp;#41; {
+
+	var data = &amp;#91;&amp;#93;;
+	data.push&amp;#40;&amp;lt;Row name=&amp;quot;hello1&amp;quot;/&amp;gt;&amp;#41;;
+	data.push&amp;#40;&amp;lt;Row name=&amp;quot;hello2&amp;quot;/&amp;gt;&amp;#41;;
+	data.push&amp;#40;&amp;lt;Row name=&amp;quot;hello3&amp;quot;/&amp;gt;&amp;#41;;
+
+		return &amp;lt;table className=&amp;quot;table&amp;quot;&amp;gt;&amp;lt;thead&amp;gt;
+		  &amp;lt;tr&amp;gt;
+		    &amp;lt;th&amp;gt;Attribute&amp;lt;/th&amp;gt;
+		    &amp;lt;th&amp;gt;Value&amp;lt;/th&amp;gt;
+		  &amp;lt;/tr&amp;gt;
+		  &amp;lt;/thead&amp;gt;
+		  &amp;lt;tbody&amp;gt;{data}&amp;lt;/tbody&amp;gt;
+		  &amp;lt;/table&amp;gt;
+	}
+}&amp;#41;;
+
+React.render&amp;#40;&amp;lt;Table /&amp;gt;, document.getElementById&amp;#40;'hello'&amp;#41;&amp;#41;;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;/img/react/test03.png&quot; alt=&quot;React Table&quot; /&gt;&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;state&amp;#95;component&quot;&gt;&lt;/a&gt;State Component&lt;/h2&gt;&lt;p&gt;&lt;em&gt;입력폼 만들기&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;var input = React.createClass&amp;#40;{}&amp;#41;; //input는 html이므로 작동이 안된다. 아래처럼 수정할 것
+
+var Input = React.createClass&amp;#40;{
+  render: function&amp;#40;&amp;#41; {
+    return &amp;lt;input type=&amp;quot;text&amp;quot; value=&amp;quot;Hello there&amp;quot; /&amp;gt;;
+}&amp;#41;;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;초기값을 설정&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;var Input = React.createClass&amp;#40;{
+	getInitialState: function&amp;#40;&amp;#41; {				
+		return {abc: &amp;quot;Hello There!&amp;quot;};
+	},
+	
+	render: function&amp;#40;&amp;#41; {
+		return &amp;lt;Input type=&amp;quot;text&amp;quot; value={this.state.abc} /&amp;gt;;
+	}
+}&amp;#41;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;this.state는 컴포넌트의 상태값을 가지고 있다&lt;br /&gt; 동적으로 컴포넌트의 상태값을 바뀌기 위해서&lt;br /&gt; this.state에 변화를 주면 된다.&lt;/p&gt;&lt;p&gt;변화를 주기 위해서&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;this.setState&amp;#40; 데이터 &amp;#41;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;event&amp;#95;핸들러&quot;&gt;&lt;/a&gt;Event 핸들러&lt;/h2&gt;&lt;p&gt;text 입력창에 변화가 발생할 때마다 초기값으로 돌리는 예이다&lt;br /&gt; 결과는 입력값 수정이 불가능하게 된다&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;var Input = React.createClass&amp;#40;{
+	getInitialState: function&amp;#40;&amp;#41; {
+		return {abc: &amp;quot;Hello There!&amp;quot;};
+	},
+	handleEvent: function&amp;#40;e&amp;#41; {
+		this.setState&amp;#40;{abc: this.state.abc}&amp;#41;;
+	},
+	render: function&amp;#40;&amp;#41; {
+		return &amp;lt;input type=&amp;quot;text&amp;quot; value={this.state.abc} onChange={this.handleEvent}/&amp;gt;;
+	}
+}&amp;#41;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;/img/react/hello_there.png&quot; alt=&quot;Event Handler&quot; /&gt;&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;서버측&amp;#95;데이터&amp;#95;이용&quot;&gt;&lt;/a&gt;서버측 데이터 이용&lt;/h2&gt;&lt;p&gt;&lt;em&gt;작업 디렉토리 준비&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;$ mkdir react-json-example
+$ cd react-json-example
+$ python -m SimpleHTTPServer
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;서버에서 사용할 데이터를 미리 준비&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;code&gt;example.json&lt;/code&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;json&quot;&gt;&amp;#91;
+  { &amp;quot;author&amp;quot;: &amp;quot;Kim Dae Hee&amp;quot;, &amp;quot;title&amp;quot; : &amp;quot;자바스크립트로 배우는 vert.x&amp;quot; },
+  { &amp;quot;author&amp;quot;: &amp;quot;Kim Dae Hee&amp;quot;, &amp;quot;title&amp;quot; : &amp;quot;React.js + Spring Boot&amp;quot; }
+&amp;#93;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;test05.html&lt;/code&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;var Book = React.createClass&amp;#40;{
+   render: function&amp;#40;&amp;#41; {
+      console.log&amp;#40;&amp;quot;here!&amp;quot;&amp;#41;;
+      return &amp;#40;
+         &amp;lt;div&amp;gt;
+            &amp;lt;h4&amp;gt;도서명: {this.props.title}&amp;lt;/h4&amp;gt;
+            &amp;lt;p&amp;gt;저자:{this.props.author}&amp;lt;/p&amp;gt;
+         &amp;lt;/div&amp;gt;
+      &amp;#41;;
+   }
+}&amp;#41;;
+
+var BookList = React.createClass&amp;#40;{
+   render: function &amp;#40;&amp;#41; {
+      console.log&amp;#40;this.props.data&amp;#41;;
+
+      var nodes = this.props.data.map&amp;#40;function&amp;#40;item&amp;#41; {
+
+         return &amp;#40;
+            &amp;lt;Book author={item.author} title={item.title} /&amp;gt;
+         &amp;#41;;
+
+      }&amp;#41;;
+
+      return &amp;lt;div&amp;gt;{nodes}&amp;lt;/div&amp;gt;;
+   }
+
+}&amp;#41;;
+
+
+var BookView = React.createClass&amp;#40;{
+   getInitialState: function&amp;#40;&amp;#41; {
+      return {data: &amp;#91;&amp;#93;};
+   },
+   componentDidMount: function&amp;#40;&amp;#41; {
+      console.log&amp;#40;&amp;quot;fetch from server&amp;quot;&amp;#41;;
+
+      $.ajax&amp;#40;{
+         url: 'example.json',
+         dataType: 'json',
+         success: function&amp;#40;data&amp;#41; {
+            this.setState&amp;#40;{data:data}&amp;#41;;
+         }.bind&amp;#40;this&amp;#41;
+      }&amp;#41;;
+
+   },
+
+   render: function&amp;#40;&amp;#41; {
+
+      return &amp;#40;
+         &amp;lt;div&amp;gt;
+           &amp;lt;h1&amp;gt; Book List&amp;lt;/h1&amp;gt;
+           &amp;lt;BookList data={this.state.data} /&amp;gt;
+         &amp;lt;/div&amp;gt;
+      &amp;#41;;
+   }
+}&amp;#41;;
+
+React.render&amp;#40;&amp;lt;BookView /&amp;gt;, document.getElementById&amp;#40;'hello'&amp;#41;&amp;#41;;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;/img/react/test05.png&quot; alt=&quot;React Server Side&quot; /&gt;&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;참고&quot;&gt;&lt;/a&gt;참고&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;https://bitbucket.org/moondowner/facebook-react-thymeleaf-spring-mvc-example/src\&lt;/li&gt;&lt;li&gt;http://bloggar.aftonbladet.se/utvecklingsbloggen/2015/05/04/spring-io-isomorphic-react-applications-with-nashorn-and-spring-boot/&lt;/li&gt;&lt;li&gt;http://winterbe.com/posts/2015/02/16/isomorphic-react-webapps-on-the-jvm/&lt;/li&gt;&lt;li&gt;https://github.com/winterbe/spring-react-example&lt;/li&gt;&lt;/ul&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Wed, 29 Jul 2015 00:00:00 +0900
 </pubDate>
 </item>
 <item>
@@ -1639,7 +1896,7 @@ http://clonekim.github.io/posts/2013-10-10-javascript-pattern.html
 JavaScript 개발팁
 </title>
 <description>
-&lt;p&gt;&lt;em&gt;Module Pattern&lt;/em&gt;&lt;/p&gt;&lt;p&gt; 로직과 private 변수를 캡슐화하는 방법으로 아래와 같은 모듈패턴( 익명함수) 을 많이 사용한다.&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt; &amp;#40;function&amp;#40;&amp;#41; {
+&lt;p&gt;&lt;strong&gt;Module Pattern&lt;/strong&gt;&lt;/p&gt;&lt;p&gt; 로직과 private 변수를 캡슐화하는 방법으로 아래와 같은 모듈패턴( 익명함수) 을 많이 사용한다.&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt; &amp;#40;function&amp;#40;&amp;#41; {
   /&amp;#42; ... &amp;#42;/
  }&amp;#41;&amp;#40;&amp;#41;;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt; jQuery와 연동해서 사용할 경우 아래와 같이 파라미터를 전달하도록 한다.&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt; &amp;#40;function&amp;#40;$&amp;#41; {
@@ -1648,14 +1905,14 @@ JavaScript 개발팁
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;글로벌 변수를 전달해서 네임스페이스로 확장 할 수 있다.&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt; &amp;#40;function&amp;#40;$, exports&amp;#41; {
   exports.Foo = &amp;quot;wem&amp;quot;;
  }&amp;#41;&amp;#40;jQuery, window&amp;#41;;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;IIFE(mmediately-Invoked Function Expression)&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt; &amp;#40;function&amp;#40;&amp;#41; {
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;IIFE(mmediately-Invoked Function Expression)&lt;/strong&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt; &amp;#40;function&amp;#40;&amp;#41; {
    var mod = {};
     
  }&amp;#41;&amp;#40;&amp;#41;;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;window라는 식별자를 거치지 않고 전역변수를 접근하자&lt;br /&gt; 함수를 new와 생성자를 사용하지 않고 호출한 경우 this 는 전역객체 (window)가 된다.&lt;br /&gt; 그러므로 아래와 같은 패턴을 즉, 즉시 실행함수로 작성한다.&lt;br /&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;var global = &amp;#40;function&amp;#40;&amp;#41; {
  return this;
 }&amp;#40;&amp;#41;&amp;#41;;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;Type Casting&lt;/em&gt;&lt;/p&gt;&lt;p&gt;변수를 비교시 타입 캐스팅을 한다. 그러므로 아래는 true 반환한다.&lt;br /&gt; 암묵적 타입캐스팅을 방지 하기 위해서 ===와 !==를 사용해야 한다.&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;false == 0;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Type Casting&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;변수를 비교시 타입 캐스팅을 한다. 그러므로 아래는 true 반환한다.&lt;br /&gt; 암묵적 타입캐스팅을 방지 하기 위해서 ===와 !==를 사용해야 한다.&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;false == 0;
 &amp;quot;&amp;quot; == 0
 &lt;/code&gt;&lt;/pre&gt;&lt;/pre&gt;
 </description>
@@ -2205,7 +2462,7 @@ http://clonekim.github.io/posts/2012-10-17-ognl-in-java.html
 OGNL
 </title>
 <description>
- &lt;p&gt;&lt;em&gt;Maven&lt;/em&gt;  &lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt; &amp;lt;dependency&amp;gt;
+ &lt;p&gt;&lt;strong&gt;Maven&lt;/strong&gt;  &lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt; &amp;lt;dependency&amp;gt;
     &amp;lt;groupId&amp;gt;ognl&amp;lt;/groupId&amp;gt;
     &amp;lt;artifactId&amp;gt;ognl&amp;lt;/artifactId&amp;gt;
     &amp;lt;version&amp;gt;3.0.5&amp;lt;/version&amp;gt;
