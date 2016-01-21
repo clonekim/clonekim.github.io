@@ -12,7 +12,7 @@ http://clonekim.github.io/
 This blog is generated using cryogen
 </description>
 <lastBuildDate>
-Thu, 21 Jan 2016 09:30:00 +0900
+Thu, 21 Jan 2016 09:51:55 +0900
 </lastBuildDate>
 <generator>
 clj-rss
@@ -2654,6 +2654,31 @@ print io.readlines
 </enclosure>
 <pubDate>
 Fri, 03 Feb 2012 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
+http://clonekim.github.io/posts/2011-06-12-java-date-bug.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2011-06-12-java-date-bug.html
+</link>
+<title>
+Java Date에러
+</title>
+<description>
+&lt;h2&gt;&lt;a name=&quot;override&amp;#95;time&amp;#95;zone&quot;&gt;&lt;/a&gt;Override time zone&lt;/h2&gt;&lt;p&gt;생성한 Date 객체가&lt;br /&gt; 시스템이 KST가 아닌 자꾸 GMT로 출력 될 경우&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;java&quot;&gt;System.setProperty&amp;#40;&amp;quot;user.timezone&amp;quot;, &amp;quot;Asia/Seoul&amp;quot;&amp;#41;
+
+ex&amp;#41;
+System.setProperty&amp;#40;&amp;quot;user.timezone&amp;quot;, &amp;quot;UTC&amp;quot;&amp;#41;;
+TimeZone.setDefault&amp;#40;null&amp;#41;; //reset 하기 위해 반드시 필요함
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;서버를 구동시에 -D 옵션으로 설정할 것&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;참고&quot;&gt;&lt;/a&gt;참고&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://www.techrepublic.com/article/override-a-java-applications-time-zone/'&gt;Override a Java application's time zone&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://tutorials.jenkov.com/java-date-time/java-util-timezone.html'&gt;Java's java.util.TimeZone&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Sun, 12 Jun 2011 00:00:00 +0900
 </pubDate>
 </item>
 </channel>
