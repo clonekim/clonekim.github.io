@@ -218,6 +218,14 @@ http://clonekim.github.io/tags/oracle.html
 </url>
 <url>
 <loc>
+http://clonekim.github.io/tags/emacs.html
+</loc>
+<lastmod>
+2016-01-21
+</lastmod>
+</url>
+<url>
+<loc>
 http://clonekim.github.io/tags/web programming.html
 </loc>
 <lastmod>
@@ -435,6 +443,14 @@ http://clonekim.github.io/posts/2015-07-18-install-redmine.html
 <url>
 <loc>
 http://clonekim.github.io/posts/2016-01-18-starting-clojurescript.html
+</loc>
+<lastmod>
+2016-01-21
+</lastmod>
+</url>
+<url>
+<loc>
+http://clonekim.github.io/posts/2015-09-11-custom-emacs-setting.html
 </loc>
 <lastmod>
 2016-01-21

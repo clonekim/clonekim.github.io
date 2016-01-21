@@ -59,7 +59,7 @@
     <h2>Ring으로 웹프로그래밍</h2>
 </div>
 <div>
-    <ol class="content"><li><a href="#hello-ring_프로젝트_작성">Hello-Ring 프로젝트 작성</a></li><li><a href="#middleware">MiddleWare</a></li><ol><li><a href="#ring-json">ring-json</a></li></ol><li><a href="#routing">Routing</a></li><ol><li><a href="#compojure">Compojure</a></li><li><a href="#page_not_found">Page Not Found</a></li></ol><li><a href="#미들웨어를_적용한_소스">미들웨어를 적용한 소스</a></li><li><a href="#hiccup">Hiccup</a></li><li><a href="#plugins">Plugins</a></li><ol><li><a href="#lein-ring">lein-ring</a></li></ol><li><a href="#참고">참고</a></li></ol>
+    <ol class="content"><li><a href="#hello-ring_프로젝트_작성">Hello-Ring 프로젝트 작성</a></li><li><a href="#middleware">MiddleWare</a></li><ol><li><a href="#ring-json">ring-json</a></li></ol><li><a href="#routing">Routing</a></li><ol><li><a href="#compojure">Compojure</a></li><li><a href="#page_not_found">Page Not Found</a></li></ol><li><a href="#미들웨어를_적용한_소스">미들웨어를 적용한 소스</a></li><li><a href="#hiccup">Hiccup</a></li><li><a href="#jade">Jade</a></li><li><a href="#http-kit">Http-kit</a></li><li><a href="#plugins">Plugins</a></li><ol><li><a href="#lein-ring">lein-ring</a></li></ol><li><a href="#참고">참고</a></li></ol>
        <h2><a name="hello-ring&#95;프로젝트&#95;작성"></a>Hello-Ring 프로젝트 작성</h2><p><em>새로운 프로젝트를 생성한다</em>  </p><pre><code>lein new hello-ring</code></pre>   <br /><p><em>leiningen.clj</em></p><p>project.clj의 :dependencies에 임베디드 Jetty서버 추가</p><pre><code>&#91;ring/ring-jetty-adapter &quot;1.4.0&quot;&#93;
 </code></pre>  <br /><p>ring-jetty-adapter는 ring-core, ring-servlet, jetty-server를 의존성으로 가지고 있다</p><pre><code>ring-core: essential functions for handling parameters, cookies and more
 ring-devel: functions for developing and debugging Ring applications
@@ -177,7 +177,45 @@ ring-jetty-adapter: a Ring adapter that uses the Jetty webserver
 
 &#40;def -main &#91;&#93;
    &#40;run-jetty #'routes {:port 8080}&#41;   
-</code></pre><p>실제 html소스에서 공백이 제외된다</p><p><img src="/img/clojure/hiccup-html-source.png" alt="Hiccup Source" /></p><h2><a name="plugins"></a>Plugins</h2><h3><a name="lein-ring"></a>lein-ring</h3><p>Leiningen의 Ring 작업을 편하기 하기 위한 플러그인이다<br /> 즉 서버를 구동하거나 jar, war로 디플로이하는 하는 일이다</p><p><em>project.clj</em></p><pre><code class="clojure"> :plugins &#91;&#91;lein-ring &quot;0.8.13&quot;&#93;&#93;
+</code></pre><p>실제 html소스에서 공백이 제외된다</p><p><img src="/img/clojure/hiccup-html-source.png" alt="Hiccup Source" /></p><h2><a name="jade"></a>Jade</h2><p><a href='https://github.com/neuland/jade4j'>jade4</a>를 wrapper한 jade 뷰템플릿이다</p><p><em>leiningen</em></p><pre><code class="clojure">&#91;clj-jade &quot;0.1.7&quot;&#93;
+</code></pre><p><em>jade_config.clj</em></p><pre><code class="clojure">&#40;ns hello-ring.jade-config
+  &#40;:require
+    &#91;clj-jade.core :as jade&#93;
+    &#91;clojure.java.io :as io&#93;&#41;&#41;
+
+
+&#40;jade/configure {:template-dir &quot;public&quot;
+                 :pretty-print false
+                 :cache? true}&#41;
+
+</code></pre><p><em>core.clj</em></p><pre><code class="clojure">&#40;ns hello-ring.core
+
+  &#40;:use 
+    &#91;hello-ring.jade-config&#93;&#41;
+
+  &#40;:require
+    &#91;clj-jade.core :as jade&#93;&#41;&#41;
+
+
+&#40;defn index &#91;&#93;
+  &#40;jade/render &quot;index.jade&quot; {:title &quot;Hello World&quot;}&#41;
+</code></pre><p><em>public/index.jade</em></p><p>title값이 치환된다</p><pre><code>!!!5
+html
+    head
+        title= #{title}
+        link&#40;href=&quot;css/bootstrap.css&quot;, rel=&quot;stylesheet&quot;, type=&quot;text/css&quot;&#41;
+        link&#40;href=&quot;css/font-awesome.css&quot;, rel=&quot;stylesheet&quot;, type=&quot;text/css&quot;&#41;
+    body
+        nav&#40;class=&quot;navbar-default&quot;&#41;
+            div&#40;class=&quot;container&quot;&#41;
+...             
+</code></pre><h2><a name="http-kit"></a>Http-kit</h2><p><a href='http://www.http-kit.org/'>http://www.http-kit.org</a></p><p>jetty 에서 http-kit으로 변경</p><pre><code class="clojure">&#40;ns hello-ring.core 
+  &#40;:require &#91;ring.adapter.jetty :refer &#91;run-server&#93;&#93;&#41;
+...
+
+&#40;defn -main &#91;&#93;
+  &#40;run-server #'app {:port 8080}&#41;&#41;
+</code></pre><h2><a name="plugins"></a>Plugins</h2><h3><a name="lein-ring"></a>lein-ring</h3><p>Leiningen의 Ring 작업을 편하기 하기 위한 플러그인이다<br /> 즉 서버를 구동하거나 jar, war로 디플로이하는 하는 일이다</p><p><em>project.clj</em></p><pre><code class="clojure"> :plugins &#91;&#91;lein-ring &quot;0.8.13&quot;&#93;&#93;
  :ring {:handler hello-ring.core/app} ;;시작할 수 있는 핸들러를 지정
 </code></pre><p>바로 서버구동이 가능하고 기본적으로 3000 포트를 사용함<br /> 이제 서버측 코드를 수정하면 바로 적용이 된다</p><p><em>실행</em></p><pre><code>lein ring server</code></pre><h2><a name="참고"></a>참고</h2><ul><li><a href='https://github.com/ring-clojure/ring'>https://github.com/ring-clojure/ring</a></li><li><a href='https://github.com/weavejester/hiccup'>https://github.com/weavejester/hiccup</a></li><li><a href='https://github.com/revelytix/lein-ring'>https://github.com/revelytix/lein-ring</a></li></ul>
 </div>
@@ -194,7 +232,7 @@ ring-jetty-adapter: a Ring adapter that uses the Jetty webserver
 
     <div id="prev-next">
         
-        <a href="/posts/2015-09-23-freemarker-assign-tip.html">&laquo; Freemarker assign팁</a>
+        <a href="/posts/2015-09-11-custom-emacs-setting.html">&laquo; Clojure를 위한 Emacs 환경</a>
         
         
         <a class="right" href="/posts/2015-09-10-oracle-jdbc.html">Oracle Jdbc Url &raquo;</a>
@@ -276,6 +314,8 @@ ring-jetty-adapter: a Ring adapter that uses the Jetty webserver
                         <li><a href="/tags/php.html">php</a></li>
                         
                         <li><a href="/tags/mariadb.html">mariadb</a></li>
+                        
+                        <li><a href="/tags/emacs.html">emacs</a></li>
                         
                         <li><a href="/tags/freemarker.html">freemarker</a></li>
                         

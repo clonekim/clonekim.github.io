@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
     <meta charset="utf-8"/>
-    <title>(fn[] &quot;less is more&quot;): AngularJS 다국어처리</title>
+    <title>(fn[] &quot;less is more&quot;): Posts Tagged &quot;emacs&quot;</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700' rel='stylesheet'
           type='text/css'>
@@ -50,80 +50,17 @@
         <div class="col-lg-9">
             <div id="content">
                 
-<div id="post">
-    <div class="post-header">
-    <div id="post-meta" class="row">
-        <div class="col-lg-6">2015년 7월 2일 (목)</div>
-        
+<div id="posts-by-tag">
+    <div id="page-header">
+        <h2>Posts Tagged &quot;emacs&quot;</h2>
     </div>
-    <h2>AngularJS 다국어처리</h2>
-</div>
-<div>
+    <ul>
     
-    <p><img src="/img/angular/translation.png" alt="Translation Service" /></p><p><em>IndexController.js</em></p><pre><code class="javascript">module.exports = &#91;'$scope', '$cookies', 'TranslationService', function&#40;$scope, $cookies, TranslationService&#41; {
-    TranslationService.getLanguage&#40;$scope, $cookies&#41;;
-
-    $scope.multiLng = function&#40; lang &#41; {
-        $cookies.put&#40;&quot;lang&quot;, lang&#41;;
-        TranslationService.getLanguage&#40;$scope, $cookies&#41;;
-    }
-}&#93;;
-</code></pre><p><em>TranslationService.js</em></p><pre><code class="javascript">module.exports = &#91;'$http', function&#40;$http&#41; {
-
-	this.getLanguage = function&#40;$scope, $cookies, cbk&#41; {
-
-		var lang = $cookies.get&#40;'lang'&#41; || 'ko';
-		
-		$http&#40;{
-			method: 'GET',
-			url: '/js/locale&#95;' + lang +'.json'
-		}&#41;.success&#40;function&#40;response&#41; {
-		    $scope.translation = response;		    
-		    $scope.lang = lang;                    
-		}&#41;;
-	};
-}&#93;;
-</code></pre><p><em>locale_zh.js</em></p><pre><code class="json">{
-  &quot;online&#95;start&quot;: &quot;Online申请&quot;,
-  ...
-}  
-</code></pre><p><em>index.html</em></p><pre><code class="html">&lt;div class=&quot;text-center&quot; style=&quot;background-color:#f15c34;&quot;&gt;
-    &lt;a class=&quot;btn btn-default&quot; ng-click=&quot;multiLng&#40;'ko'&#41;&quot;&gt;한국어&lt;/a&gt;
-    &lt;a class=&quot;btn btn-default&quot; ng-click=&quot;multiLng&#40;'us'&#41;&quot;&gt;English&lt;/a&gt;
-    &lt;a class=&quot;btn btn-default&quot; ng-click=&quot;multiLng&#40;'zh'&#41;&quot;&gt;中國語&lt;/a&gt;
-&lt;/div&gt;
-</code></pre><p><img src="/img/angular/angular-i18n-header.png" alt="header" /></p><pre><code class="html">  &lt;div class=&quot;container&quot;&gt;
-    &lt;div class=&quot;row&quot;&gt;
-      &lt;div class=&quot;col-lg-12&quot;&gt;
-      	&lt;div&gt;
-         &lt;a class=&quot;btn r-btn btn-primary btn-xl&quot; href=&quot;#menu&quot;&gt;{{translation.online&#95;start}}&lt;/a&gt;
-       &lt;/div&gt;
- ...
-</code></pre><p><em>요청 파라미터가 ko 일때</em></p><p><img src="/img/angular/angular-i18n-btn-ko.png" alt="button" /></p><p><em>요청 파라미터가 zh 일때</em></p><p><img src="/img/angular/angular-i18n-btn-zh.png" alt="button" /></p>
-</div>
-
-<div id="post-tags">
-    <b>Tags: </b>
+        <li>
+            <a href="/posts/2015-09-11-custom-emacs-setting.html">Clojure를 위한 Emacs 환경</a>
+        </li>
     
-    <a href="/tags/angularjs.html">angularjs</a>
-    
-    <a href="/tags/javascript.html">javascript</a>
-    
-</div>
-
-
-    <div id="prev-next">
-        
-        <a href="/posts/2015-07-14-how-to-captcha-in-node.js.html">&laquo; Node.js로 Captcha</a>
-        
-        
-        <a class="right" href="/posts/2015-06-28-raspberrypi.html">RaspberryPi &raquo;</a>
-        
-    </div>
-
-    
-
-
+    </ul>
 </div>
 
             </div>
