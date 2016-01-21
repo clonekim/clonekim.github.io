@@ -3,7 +3,7 @@
 <channel>
 <atom:link href='http://clonekim.github.io/' rel='self' type='application/rss+xml'/>
 <title>
-(fn[] &quot;Good Day&quot;)
+(fn[] &quot;less is more&quot;)
 </title>
 <link>
 http://clonekim.github.io/
@@ -12,7 +12,7 @@ http://clonekim.github.io/
 This blog is generated using cryogen
 </description>
 <lastBuildDate>
-Wed, 20 Jan 2016 00:05:14 +0900
+Thu, 21 Jan 2016 09:26:18 +0900
 </lastBuildDate>
 <generator>
 clj-rss
@@ -236,41 +236,6 @@ git push -u origin master
 </enclosure>
 <pubDate>
 Wed, 13 Jan 2016 00:00:00 +0900
-</pubDate>
-</item>
-<item>
-<guid>
-http://clonekim.github.io/posts/2015-09-25-jdbc-in-clojure.html
-</guid>
-<link>
-http://clonekim.github.io/posts/2015-09-25-jdbc-in-clojure.html
-</link>
-<title>
-클로저에서 Jdbc사용
-</title>
-<description>
-&lt;p&gt; 클로저에서 JDBC(Java Database Connectivity) 를 사용하기 위한 가이드&lt;br /&gt;  몇몇 함수가 없어진 경우가 있기 때문에 소스보기로 확인할 것&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://clojure-doc.org/articles/ecosystem/java_jdbc/home.html'&gt;clojure-doc보기&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://github.com/clojure/java.jdbc/blob/java.jdbc-0.4.2/src/main/clojure/clojure/java/jdbc.clj'&gt;소스보기&lt;/a&gt;   &lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;leiningen&quot;&gt;&lt;/a&gt;leiningen&lt;/h2&gt; &lt;pre&gt;&lt;code&gt;&amp;#91;org.clojure/java.jdbc &amp;quot;0.4.2&amp;quot;&amp;#93;&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;간단한&amp;#95;예제&quot;&gt;&lt;/a&gt;간단한 예제&lt;/h2&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;&amp;#40;ns db-test.core
-	&amp;#40;:require &amp;#91;clojure.java.jdbc :as sql&amp;#93;&amp;#41;&amp;#41;	
-
-&amp;#40;def db
-  {:classname &amp;quot;com.mysql.jdbc.Driver&amp;quot;
-   :subprotocol &amp;quot;mysql&amp;quot;
-   :subname &amp;quot;//127.0.0.1:3306/test&amp;quot;
-   :user &amp;quot;xxx&amp;quot;
-   :password &amp;quot;xxxx&amp;quot; }&amp;#41;
-
-&amp;#40;defn get-user &amp;#91;&amp;#93;
-  &amp;#40;println &amp;#40;sql/query db &amp;#91;&amp;quot;select &amp;#42; from users&amp;quot;&amp;#93;&amp;#41;&amp;#41;&amp;#41; 
-
-&amp;#40;defn -main &amp;#91;&amp;#93; 
-  &amp;#40;get-user&amp;#41;&amp;#41;
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;참고&quot;&gt;&lt;/a&gt;참고&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://php-hackers.com/p/devn/hikari-cp'&gt;HikarCP를 사용하는 예&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://funcool.github.io/clojure.jdbc/latest'&gt;clojure.jdbc doc&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
-</description>
-<enclosure>
-
-</enclosure>
-<pubDate>
-Fri, 25 Sep 2015 00:00:00 +0900
 </pubDate>
 </item>
 <item>
@@ -562,6 +527,41 @@ defn shop-for-jams &amp;#91;jam1 jam2&amp;#93;
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;web&amp;#95;programming&quot;&gt;&lt;/a&gt;Web Programming&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://github.com/ring-clojure/ring'&gt;Ring&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://www.luminusweb.net'&gt;Luminus&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;3rd&amp;#95;party&amp;#95;libraries&quot;&gt;&lt;/a&gt;3rd Party Libraries&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;bouncer&lt;/li&gt;&lt;li&gt;validateur&lt;/li&gt;&lt;li&gt;SQLingvo&lt;/li&gt;&lt;li&gt;HoneySQL&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;plugins&quot;&gt;&lt;/a&gt;plugins&lt;/h2&gt;&lt;h3&gt;&lt;a name=&quot;lein-try&amp;#95;사용하기&quot;&gt;&lt;/a&gt;lein-try 사용하기&lt;/h3&gt;&lt;p&gt;아래 파일을 편집한다&lt;/p&gt;&lt;p&gt;${HOME}/.lein/profiles.clj&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;{:user {:plugins &amp;#91;&amp;#91;lein-try &amp;quot;0.4.3&amp;quot;&amp;#93;&amp;#93;}}
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;clj-time이라는 라이브러를 가지고 간단한 테스트 해볼때&lt;br /&gt; 아래와 같이 repl를 열수있다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;lein try clj-time
 &lt;/code&gt;&lt;/pre&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Fri, 25 Sep 2015 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
+http://clonekim.github.io/posts/2015-09-25-jdbc-in-clojure.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2015-09-25-jdbc-in-clojure.html
+</link>
+<title>
+클로저에서 Jdbc사용
+</title>
+<description>
+&lt;p&gt; 클로저에서 JDBC(Java Database Connectivity) 를 사용하기 위한 가이드&lt;br /&gt;  몇몇 함수가 없어진 경우가 있기 때문에 소스보기로 확인할 것&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://clojure-doc.org/articles/ecosystem/java_jdbc/home.html'&gt;clojure-doc보기&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://github.com/clojure/java.jdbc/blob/java.jdbc-0.4.2/src/main/clojure/clojure/java/jdbc.clj'&gt;소스보기&lt;/a&gt;   &lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;leiningen&quot;&gt;&lt;/a&gt;leiningen&lt;/h2&gt; &lt;pre&gt;&lt;code&gt;&amp;#91;org.clojure/java.jdbc &amp;quot;0.4.2&amp;quot;&amp;#93;&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;간단한&amp;#95;예제&quot;&gt;&lt;/a&gt;간단한 예제&lt;/h2&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;&amp;#40;ns db-test.core
+	&amp;#40;:require &amp;#91;clojure.java.jdbc :as sql&amp;#93;&amp;#41;&amp;#41;	
+
+&amp;#40;def db
+  {:classname &amp;quot;com.mysql.jdbc.Driver&amp;quot;
+   :subprotocol &amp;quot;mysql&amp;quot;
+   :subname &amp;quot;//127.0.0.1:3306/test&amp;quot;
+   :user &amp;quot;xxx&amp;quot;
+   :password &amp;quot;xxxx&amp;quot; }&amp;#41;
+
+&amp;#40;defn get-user &amp;#91;&amp;#93;
+  &amp;#40;println &amp;#40;sql/query db &amp;#91;&amp;quot;select &amp;#42; from users&amp;quot;&amp;#93;&amp;#41;&amp;#41;&amp;#41; 
+
+&amp;#40;defn -main &amp;#91;&amp;#93; 
+  &amp;#40;get-user&amp;#41;&amp;#41;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;참고&quot;&gt;&lt;/a&gt;참고&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://php-hackers.com/p/devn/hikari-cp'&gt;HikarCP를 사용하는 예&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://funcool.github.io/clojure.jdbc/latest'&gt;clojure.jdbc doc&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 </description>
 <enclosure>
 
@@ -1076,63 +1076,6 @@ Thu, 16 Jul 2015 00:00:00 +0900
 </item>
 <item>
 <guid>
-http://clonekim.github.io/posts/2015-07-14-how-to-captcha-in-node.js.html
-</guid>
-<link>
-http://clonekim.github.io/posts/2015-07-14-how-to-captcha-in-node.js.html
-</link>
-<title>
-Node.js로 Captcha
-</title>
-<description>
-&lt;p&gt;canvas를 이용한 캡챠(captcha)를 생성하려고 한다.&lt;br /&gt; 사용하려는 패키지는 canvas-captcha이다&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;의존성&amp;#95;설치&quot;&gt;&lt;/a&gt;의존성 설치&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;apt-get install libpango1.0-dev
-apt-get install libjpeg-dev
-apt-get install libgif-dev
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;소스작성&quot;&gt;&lt;/a&gt;소스작성&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;captcha.js&lt;/strong&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;var captcha = require&amp;#40;'canvas-captcha'&amp;#41;
-    ,captchaOptions = {
-        charPool: &amp;#40;'abcdefghijklmnopqrstuvwxyz' + 'abcdefghijklmnopqrstuvwxyz'.toUpperCase&amp;#40;&amp;#41; + '1234567890'&amp;#41;.split&amp;#40;''&amp;#41; //char pool Array
-        ,size: {
-            width: 120
-            ,height: 52
-        } //image size
-        ,textPos: {
-            left: 15
-            ,top: 36
-        } //text drawing start position
-        ,rotate: .01 //text ratate
-        ,charLength: 5 //how many chars
-        //,font: '26px' //font size
-        ,strokeStyle: '#0088cc' //style
-        ,bgColor: '#eeeeee' //bg color
-        ,confusion: true //draw another group background text to mangle the text
-        //,cFont: '30px' //bg text style
-        ,cStrokeStyle: '#adc' //bg text color
-        ,cRotate: -.05 //bg text rotate
-    };
-
-exports.captcha = function&amp;#40;req, res&amp;#41; {
-    captcha&amp;#40;captchaOptions, function&amp;#40;err, data&amp;#41; {
-        if&amp;#40;err&amp;#41; {
-            res.send&amp;#40;err&amp;#41;;
-        }
-        else {
-            console.log&amp;#40;&amp;quot;Generated Captcha -&amp;gt; &amp;quot;, data.captchaStr&amp;#41;;
-            req.session.captcha = data.captchaStr;
-            res.end&amp;#40;data.captchaImg&amp;#41;
-        }
-    }&amp;#41;
-};
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-<enclosure>
-
-</enclosure>
-<pubDate>
-Tue, 14 Jul 2015 00:00:00 +0900
-</pubDate>
-</item>
-<item>
-<guid>
 http://clonekim.github.io/posts/2015-07-14-sinatra.html
 </guid>
 <link>
@@ -1245,16 +1188,112 @@ Tue, 14 Jul 2015 00:00:00 +0900
 </item>
 <item>
 <guid>
+http://clonekim.github.io/posts/2015-07-14-how-to-captcha-in-node.js.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2015-07-14-how-to-captcha-in-node.js.html
+</link>
+<title>
+Node.js로 Captcha
+</title>
+<description>
+&lt;p&gt;canvas를 이용한 캡챠(captcha)를 생성하려고 한다.&lt;br /&gt; 사용하려는 패키지는 canvas-captcha이다&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;의존성&amp;#95;설치&quot;&gt;&lt;/a&gt;의존성 설치&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;apt-get install libpango1.0-dev
+apt-get install libjpeg-dev
+apt-get install libgif-dev
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;소스작성&quot;&gt;&lt;/a&gt;소스작성&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;captcha.js&lt;/strong&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;var captcha = require&amp;#40;'canvas-captcha'&amp;#41;
+    ,captchaOptions = {
+        charPool: &amp;#40;'abcdefghijklmnopqrstuvwxyz' + 'abcdefghijklmnopqrstuvwxyz'.toUpperCase&amp;#40;&amp;#41; + '1234567890'&amp;#41;.split&amp;#40;''&amp;#41; //char pool Array
+        ,size: {
+            width: 120
+            ,height: 52
+        } //image size
+        ,textPos: {
+            left: 15
+            ,top: 36
+        } //text drawing start position
+        ,rotate: .01 //text ratate
+        ,charLength: 5 //how many chars
+        //,font: '26px' //font size
+        ,strokeStyle: '#0088cc' //style
+        ,bgColor: '#eeeeee' //bg color
+        ,confusion: true //draw another group background text to mangle the text
+        //,cFont: '30px' //bg text style
+        ,cStrokeStyle: '#adc' //bg text color
+        ,cRotate: -.05 //bg text rotate
+    };
+
+exports.captcha = function&amp;#40;req, res&amp;#41; {
+    captcha&amp;#40;captchaOptions, function&amp;#40;err, data&amp;#41; {
+        if&amp;#40;err&amp;#41; {
+            res.send&amp;#40;err&amp;#41;;
+        }
+        else {
+            console.log&amp;#40;&amp;quot;Generated Captcha -&amp;gt; &amp;quot;, data.captchaStr&amp;#41;;
+            req.session.captcha = data.captchaStr;
+            res.end&amp;#40;data.captchaImg&amp;#41;
+        }
+    }&amp;#41;
+};
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Tue, 14 Jul 2015 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
 http://clonekim.github.io/posts/2015-07-02-angularjs.html
 </guid>
 <link>
 http://clonekim.github.io/posts/2015-07-02-angularjs.html
 </link>
 <title>
-AngularJS
+AngularJS 다국어처리
 </title>
 <description>
+&lt;p&gt;&lt;img src=&quot;/img/angular/translation.png&quot; alt=&quot;Translation Service&quot; /&gt;&lt;/p&gt;&lt;p&gt;&lt;em&gt;IndexController.js&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;module.exports = &amp;#91;'$scope', '$cookies', 'TranslationService', function&amp;#40;$scope, $cookies, TranslationService&amp;#41; {
+    TranslationService.getLanguage&amp;#40;$scope, $cookies&amp;#41;;
 
+    $scope.multiLng = function&amp;#40; lang &amp;#41; {
+        $cookies.put&amp;#40;&amp;quot;lang&amp;quot;, lang&amp;#41;;
+        TranslationService.getLanguage&amp;#40;$scope, $cookies&amp;#41;;
+    }
+}&amp;#93;;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;TranslationService.js&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;module.exports = &amp;#91;'$http', function&amp;#40;$http&amp;#41; {
+
+	this.getLanguage = function&amp;#40;$scope, $cookies, cbk&amp;#41; {
+
+		var lang = $cookies.get&amp;#40;'lang'&amp;#41; || 'ko';
+		
+		$http&amp;#40;{
+			method: 'GET',
+			url: '/js/locale&amp;#95;' + lang +'.json'
+		}&amp;#41;.success&amp;#40;function&amp;#40;response&amp;#41; {
+		    $scope.translation = response;		    
+		    $scope.lang = lang;                    
+		}&amp;#41;;
+	};
+}&amp;#93;;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;locale_zh.js&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;json&quot;&gt;{
+  &amp;quot;online&amp;#95;start&amp;quot;: &amp;quot;Online申请&amp;quot;,
+  ...
+}  
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;index.html&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&amp;lt;div class=&amp;quot;text-center&amp;quot; style=&amp;quot;background-color:#f15c34;&amp;quot;&amp;gt;
+    &amp;lt;a class=&amp;quot;btn btn-default&amp;quot; ng-click=&amp;quot;multiLng&amp;#40;'ko'&amp;#41;&amp;quot;&amp;gt;한국어&amp;lt;/a&amp;gt;
+    &amp;lt;a class=&amp;quot;btn btn-default&amp;quot; ng-click=&amp;quot;multiLng&amp;#40;'us'&amp;#41;&amp;quot;&amp;gt;English&amp;lt;/a&amp;gt;
+    &amp;lt;a class=&amp;quot;btn btn-default&amp;quot; ng-click=&amp;quot;multiLng&amp;#40;'zh'&amp;#41;&amp;quot;&amp;gt;中國語&amp;lt;/a&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;/img/angular/angular-i18n-header.png&quot; alt=&quot;header&quot; /&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;  &amp;lt;div class=&amp;quot;container&amp;quot;&amp;gt;
+    &amp;lt;div class=&amp;quot;row&amp;quot;&amp;gt;
+      &amp;lt;div class=&amp;quot;col-lg-12&amp;quot;&amp;gt;
+      	&amp;lt;div&amp;gt;
+         &amp;lt;a class=&amp;quot;btn r-btn btn-primary btn-xl&amp;quot; href=&amp;quot;#menu&amp;quot;&amp;gt;{{translation.online&amp;#95;start}}&amp;lt;/a&amp;gt;
+       &amp;lt;/div&amp;gt;
+ ...
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;요청 파라미터가 ko 일때&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;/img/angular/angular-i18n-btn-ko.png&quot; alt=&quot;button&quot; /&gt;&lt;/p&gt;&lt;p&gt;&lt;em&gt;요청 파라미터가 zh 일때&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;/img/angular/angular-i18n-btn-zh.png&quot; alt=&quot;button&quot; /&gt;&lt;/p&gt;
 </description>
 <enclosure>
 
@@ -2014,6 +2053,43 @@ Tue, 01 Oct 2013 00:00:00 +0900
 </item>
 <item>
 <guid>
+http://clonekim.github.io/posts/2013-09-27-jspwiki-install.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2013-09-27-jspwiki-install.html
+</link>
+<title>
+JSPWiki 설치
+</title>
+<description>
+&lt;p&gt;&lt;a href='http://jspwiki.apache.org/'&gt;Apache JSPWiki&lt;/a&gt;&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;설정&quot;&gt;&lt;/a&gt;설정&lt;/h2&gt;&lt;p&gt;&lt;em&gt;server.xml&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;&amp;lt;Connector address=&amp;quot;127.0.0.1&amp;quot; port=&amp;quot;8080&amp;quot; protocol=&amp;quot;org.apache.coyote.http11.Http11NioProtocol&amp;quot;
+               connectionTimeout=&amp;quot;20000&amp;quot;
+               maxThreads=&amp;quot;3&amp;quot; minSpareThreads=&amp;quot;2&amp;quot;
+               redirectPort=&amp;quot;8443&amp;quot; URIEncoding=&amp;quot;UTF-8&amp;quot;/&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;jspwiki.properties&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;jspwiki.baseURL= http://cloud9ine.cafe24.com/wiki
+jspwiki.fileSystemProvider.pageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/
+jspwiki.basicAttachmentProvider.storageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;jspwiki.policy&lt;/em&gt;&lt;/p&gt;&lt;p&gt;   Anonymous를 코멘트처리&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;nginx&amp;#95;연동&quot;&gt;&lt;/a&gt;Nginx 연동&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;upstream tomcat {
+    server 127.0.0.1:8080;
+}
+
+server {
+ ...
+  location /wiki {
+      proxy&amp;#95;pass http://tomcat;
+  }
+
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Fri, 27 Sep 2013 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
 http://clonekim.github.io/posts/2013-09-27-proxy-authentication.html
 </guid>
 <link>
@@ -2071,43 +2147,6 @@ Fri, 27 Sep 2013 00:00:00 +0900
 </item>
 <item>
 <guid>
-http://clonekim.github.io/posts/2013-09-27-jspwiki-install.html
-</guid>
-<link>
-http://clonekim.github.io/posts/2013-09-27-jspwiki-install.html
-</link>
-<title>
-JSPWiki 설치
-</title>
-<description>
-&lt;p&gt;&lt;a href='http://jspwiki.apache.org/'&gt;Apache JSPWiki&lt;/a&gt;&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;설정&quot;&gt;&lt;/a&gt;설정&lt;/h2&gt;&lt;p&gt;&lt;em&gt;server.xml&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;&amp;lt;Connector address=&amp;quot;127.0.0.1&amp;quot; port=&amp;quot;8080&amp;quot; protocol=&amp;quot;org.apache.coyote.http11.Http11NioProtocol&amp;quot;
-               connectionTimeout=&amp;quot;20000&amp;quot;
-               maxThreads=&amp;quot;3&amp;quot; minSpareThreads=&amp;quot;2&amp;quot;
-               redirectPort=&amp;quot;8443&amp;quot; URIEncoding=&amp;quot;UTF-8&amp;quot;/&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;jspwiki.properties&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;jspwiki.baseURL= http://cloud9ine.cafe24.com/wiki
-jspwiki.fileSystemProvider.pageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/
-jspwiki.basicAttachmentProvider.storageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;jspwiki.policy&lt;/em&gt;&lt;/p&gt;&lt;p&gt;   Anonymous를 코멘트처리&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;nginx&amp;#95;연동&quot;&gt;&lt;/a&gt;Nginx 연동&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;upstream tomcat {
-    server 127.0.0.1:8080;
-}
-
-server {
- ...
-  location /wiki {
-      proxy&amp;#95;pass http://tomcat;
-  }
-
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-<enclosure>
-
-</enclosure>
-<pubDate>
-Fri, 27 Sep 2013 00:00:00 +0900
-</pubDate>
-</item>
-<item>
-<guid>
 http://clonekim.github.io/posts/2013-09-27-jackson-json-processor.html
 </guid>
 <link>
@@ -2148,41 +2187,6 @@ JsonNode node = mapper.readTree&amp;#40;data&amp;#41;;
 </enclosure>
 <pubDate>
 Fri, 27 Sep 2013 00:00:00 +0900
-</pubDate>
-</item>
-<item>
-<guid>
-http://clonekim.github.io/posts/2013-09-24-svn-as-windows-service.html
-</guid>
-<link>
-http://clonekim.github.io/posts/2013-09-24-svn-as-windows-service.html
-</link>
-<title>
-윈도우즈에 SVN서비스등록
-</title>
-<description>
-&lt;h3&gt;&lt;a name=&quot;svn서버를&amp;#95;윈도우에서&amp;#95;서비스로&amp;#95;등록한다.&lt;em&gt;&quot;&gt;&lt;/a&gt;SVN서버를 윈도우에서 서비스로 등록한다.&lt;/em&gt;&lt;/h3&gt;&lt;h4&gt;&lt;a name=&quot;creating&amp;#95;the&amp;#95;repository&quot;&gt;&lt;/a&gt;Creating the Repository&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;svnadmin create c:\svn&lt;/code&gt;&lt;/pre&gt;&lt;h4&gt;&lt;a name=&quot;edit&amp;#95;configuration&quot;&gt;&lt;/a&gt;Edit Configuration&lt;/h4&gt;&lt;p&gt;방금 생성한 레포지토리 디렉토리로 이동하여&lt;br /&gt; &lt;code&gt;conf\passwd&lt;/code&gt; 에서&lt;/p&gt;&lt;pre&gt;&lt;code&gt;아이디 = 패스워드 형식으로 등록
-ex&amp;#41;
-test = 1234
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;conf\svnserve.conf&lt;/code&gt; 에서 아래와 같이 설정&lt;/p&gt;&lt;pre&gt;&lt;code&gt;anon-access = read
-auth-access = write
-password-db = passwd
-&lt;/code&gt;&lt;/pre&gt;&lt;h4&gt;&lt;a name=&quot;register&amp;#95;as&amp;#95;a&amp;#95;service&quot;&gt;&lt;/a&gt;Register as a Service&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;C:\Program Files\Subversion\bin\svnserve.exe --service --root c:\svn
-또는
-C:\&amp;gt; sc create svn
-        binpath= &amp;quot;C:\svn\bin\svnserve.exe --service -r C:\repos&amp;quot;
-        displayname= &amp;quot;Subversion Server&amp;quot;
-        depend= Tcpip
-        start= auto
-
-C:\&amp;gt;sc create svnserver binpath= &amp;quot;C:\Program Files\Subversion\bin\svnserve.exe --service -r D:\svn&amp;quot;  displayname= &amp;quot;Subversion Server&amp;quot; depend= Tcpip start= auto
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-<enclosure>
-
-</enclosure>
-<pubDate>
-Tue, 24 Sep 2013 00:00:00 +0900
 </pubDate>
 </item>
 <item>
@@ -2254,6 +2258,41 @@ Apache Tag Lib
 　　&amp;lt;/tr&amp;gt;
 &amp;lt;/c:forEach&amp;gt;
 &amp;lt;/table&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Tue, 24 Sep 2013 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
+http://clonekim.github.io/posts/2013-09-24-svn-as-windows-service.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2013-09-24-svn-as-windows-service.html
+</link>
+<title>
+윈도우즈에 SVN서비스등록
+</title>
+<description>
+&lt;h3&gt;&lt;a name=&quot;svn서버를&amp;#95;윈도우에서&amp;#95;서비스로&amp;#95;등록한다.&lt;em&gt;&quot;&gt;&lt;/a&gt;SVN서버를 윈도우에서 서비스로 등록한다.&lt;/em&gt;&lt;/h3&gt;&lt;h4&gt;&lt;a name=&quot;creating&amp;#95;the&amp;#95;repository&quot;&gt;&lt;/a&gt;Creating the Repository&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;svnadmin create c:\svn&lt;/code&gt;&lt;/pre&gt;&lt;h4&gt;&lt;a name=&quot;edit&amp;#95;configuration&quot;&gt;&lt;/a&gt;Edit Configuration&lt;/h4&gt;&lt;p&gt;방금 생성한 레포지토리 디렉토리로 이동하여&lt;br /&gt; &lt;code&gt;conf\passwd&lt;/code&gt; 에서&lt;/p&gt;&lt;pre&gt;&lt;code&gt;아이디 = 패스워드 형식으로 등록
+ex&amp;#41;
+test = 1234
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;conf\svnserve.conf&lt;/code&gt; 에서 아래와 같이 설정&lt;/p&gt;&lt;pre&gt;&lt;code&gt;anon-access = read
+auth-access = write
+password-db = passwd
+&lt;/code&gt;&lt;/pre&gt;&lt;h4&gt;&lt;a name=&quot;register&amp;#95;as&amp;#95;a&amp;#95;service&quot;&gt;&lt;/a&gt;Register as a Service&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;C:\Program Files\Subversion\bin\svnserve.exe --service --root c:\svn
+또는
+C:\&amp;gt; sc create svn
+        binpath= &amp;quot;C:\svn\bin\svnserve.exe --service -r C:\repos&amp;quot;
+        displayname= &amp;quot;Subversion Server&amp;quot;
+        depend= Tcpip
+        start= auto
+
+C:\&amp;gt;sc create svnserver binpath= &amp;quot;C:\Program Files\Subversion\bin\svnserve.exe --service -r D:\svn&amp;quot;  displayname= &amp;quot;Subversion Server&amp;quot; depend= Tcpip start= auto
 &lt;/code&gt;&lt;/pre&gt;
 </description>
 <enclosure>
