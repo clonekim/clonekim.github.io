@@ -67,10 +67,12 @@
 &#40;package-initialize&#41;
 </code></pre><p><em>package install</em></p><pre><code>M-x package-install &#91;RET&#93; cider &#91;RET&#93;</code></pre><p>현재 사용하고 있는 패키지</p><ul><li>cider</li><li>paredit</li><li>rainbow-delimiters</li><li>s</li><li>f</li><li>clojure-mode</li><li>clojure-mode-extra-font-locking</li><li>dash</li><li>ido-completing-read+</li><li>ido-ubiquitous</li><li>projectile</li><li>queue</li><li>seq</li><li>smex</li><li>spinner</li></ul><h2><a name="cider&#95;구동"></a>Cider 구동</h2><p><em>profiles.clj</em></p><p>.lein디렉토리이하에 작성한다 없을경우 파일생성</p><pre><code class="clojure">{:user 
  {:plugins 
-  &#91;&#91;cider/cider-nrepl &quot;0.10.0&quot;&#93;&#93;}}
+  &#91;&#91;cider/cider-nrepl &quot;0.10.0&quot;&#93;&#93;
+  :dependencies
+  &#91;&#91;org.clojure/tools.nrepl &quot;0.2.12&quot;&#93;&#93;}}
 {:repl
  {:dependencies
-  &#91;&#91;org.clojure/tools.nrepl &quot;0.2.12&quot;&#93;&#93;}}
+  &#91;&#91;org.clojure/tools.nrepl &quot;0.2.12&quot;&#93;&#93;}} 
 </code></pre><pre><code>M-x cider-jack-in
 </code></pre><p>단축키</p><pre><code>C-c M-j: cider-jack-in
 C-c C-k: compile
