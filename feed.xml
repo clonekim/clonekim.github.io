@@ -12,7 +12,7 @@ http://clonekim.github.io/
 This blog is generated using cryogen
 </description>
 <lastBuildDate>
-Thu, 21 Jan 2016 10:56:54 +0900
+Fri, 22 Jan 2016 09:57:50 +0900
 </lastBuildDate>
 <generator>
 clj-rss
@@ -249,7 +249,7 @@ http://clonekim.github.io/posts/2015-09-25-starting-clojure.html
 Clojure 시작하기
 </title>
 <description>
-&lt;p&gt;JVM위에서 작동하는 함수형 프로그래밍이다&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;clojure&amp;#95;얻기&quot;&gt;&lt;/a&gt;clojure 얻기&lt;/h2&gt;&lt;p&gt;&lt;a href='http://clojure.org'&gt;http://clojure.org&lt;/a&gt;&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;ide/tools&quot;&gt;&lt;/a&gt;IDE/Tools&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://lighttable.com'&gt;LightTable&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://cursiveclojure.com'&gt;Cursive&lt;/a&gt;&lt;/li&gt;&lt;li&gt;Emacs&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;leiningen으로&amp;#95;시작하기&quot;&gt;&lt;/a&gt;Leiningen으로 시작하기&lt;/h2&gt;&lt;p&gt;&lt;a href='http://leiningen.org'&gt;Leiningen&lt;/a&gt; (레닝겐)은 클로져를 쉽게 시작하기 위한 빌드자동화 툴이다&lt;/p&gt;&lt;p&gt;윈도우에서만 self-install해준다&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;/img/clojure/lein-self-install.png&quot; alt=&quot;Image 1&quot; /&gt;&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;project&amp;#95;생성&quot;&gt;&lt;/a&gt;Project 생성&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;lein new &amp;#91;프로젝트명&amp;#93;
+&lt;h2&gt;&lt;a name=&quot;clojure&amp;#95;란&quot;&gt;&lt;/a&gt;clojure 란&lt;/h2&gt;&lt;p&gt;Clojure는 Lisp의 계보를 잇는 최신의 함수형 언어이다&lt;br /&gt; JVM위에서 작동하고 자바의 방대한 라이브러리를 아무런 제약없이&lt;br /&gt; 사용할 수 있다.&lt;br /&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://www.techsuda.com/archives/1674'&gt;왜 클로저(Clojure)인가?&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://clojure.org'&gt;http://clojure.org&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;ide/tools&quot;&gt;&lt;/a&gt;IDE/Tools&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://lighttable.com'&gt;LightTable&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://cursiveclojure.com'&gt;Cursive&lt;/a&gt;&lt;/li&gt;&lt;li&gt;Emacs&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;leiningen으로&amp;#95;시작하기&quot;&gt;&lt;/a&gt;Leiningen으로 시작하기&lt;/h2&gt;&lt;p&gt;&lt;a href='http://leiningen.org'&gt;Leiningen&lt;/a&gt; (레닝겐)은 클로져를 쉽게 시작하기 위한 빌드자동화 툴이다&lt;/p&gt;&lt;p&gt;윈도우에서만 self-install해준다&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;/img/clojure/lein-self-install.png&quot; alt=&quot;Image 1&quot; /&gt;&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;project&amp;#95;생성&quot;&gt;&lt;/a&gt;Project 생성&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;lein new &amp;#91;프로젝트명&amp;#93;
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;프로젝트&amp;#95;의존성&amp;#95;추가&quot;&gt;&lt;/a&gt;프로젝트 의존성 추가&lt;/h2&gt;&lt;p&gt;라이브러리는 아래의 저장소에서 검색이 가능하고&lt;br /&gt; 의존성에 추가하면 된다&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://clojars.org'&gt;clojars&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://mvnrepository.com'&gt;Maven repository&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt; :dependencies &amp;#91;&amp;#91;org.clojure/clojure &amp;quot;1.7.0&amp;quot;&amp;#93;
                 &amp;#91;groupId/artifactId &amp;quot;version&amp;quot;&amp;#93;&amp;#93;&amp;#41;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;그외의 라이브러리 저장소로는 추가로 지정할수있다&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;  :repositories {
@@ -505,7 +505,7 @@ defn shop-for-jams &amp;#91;jam1 jam2&amp;#93;
       &amp;#40;.put &amp;quot;ver&amp;quot; &amp;quot;1.7&amp;quot;&amp;#41;&amp;#41;
 
 ;; {&amp;quot;name&amp;quot; &amp;quot;clojure&amp;quot; , &amp;quot;ver&amp;quot; &amp;quot;1.7&amp;quot;}
-&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;a name=&quot;threading(-&gt;)&quot;&gt;&lt;/a&gt;Threading(-&gt;)&lt;/h3&gt;&lt;p&gt;최종적으로 돌려주는 것은 해당 메서드가 적용된 것&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;&amp;#40;-&amp;gt; &amp;#40;java.util.HashMap.&amp;#41;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;a name=&quot;threading(-&gt;)&quot;&gt;&lt;/a&gt;Threading(-&gt;)&lt;/h3&gt;&lt;p&gt;최종적으로 돌려주는 것은 해당 함수(메서드)가 돌려주는 것&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;&amp;#40;-&amp;gt; &amp;#40;java.util.HashMap.&amp;#41;
     &amp;#40;.put &amp;quot;num&amp;quot; 1234&amp;#41;&amp;#41;
 ;; nil
 
@@ -524,7 +524,7 @@ defn shop-for-jams &amp;#91;jam1 jam2&amp;#93;
   }
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;&amp;#40;Robot$Radio.&amp;#41;
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;web&amp;#95;programming&quot;&gt;&lt;/a&gt;Web Programming&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://github.com/ring-clojure/ring'&gt;Ring&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://www.luminusweb.net'&gt;Luminus&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;3rd&amp;#95;party&amp;#95;libraries&quot;&gt;&lt;/a&gt;3rd Party Libraries&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;bouncer&lt;/li&gt;&lt;li&gt;validateur&lt;/li&gt;&lt;li&gt;SQLingvo&lt;/li&gt;&lt;li&gt;HoneySQL&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;plugins&quot;&gt;&lt;/a&gt;plugins&lt;/h2&gt;&lt;h3&gt;&lt;a name=&quot;lein-try&amp;#95;사용하기&quot;&gt;&lt;/a&gt;lein-try 사용하기&lt;/h3&gt;&lt;p&gt;아래 파일을 편집한다&lt;/p&gt;&lt;p&gt;${HOME}/.lein/profiles.clj&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;{:user {:plugins &amp;#91;&amp;#91;lein-try &amp;quot;0.4.3&amp;quot;&amp;#93;&amp;#93;}}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;web&amp;#95;programming&quot;&gt;&lt;/a&gt;Web Programming&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://github.com/ring-clojure/ring'&gt;Ring&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://www.luminusweb.net'&gt;Luminus&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;sql&quot;&gt;&lt;/a&gt;SQL&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://github.com/krisajenkins/yesql'&gt;yesql&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;3rd&amp;#95;party&amp;#95;libraries&quot;&gt;&lt;/a&gt;3rd Party Libraries&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;bouncer&lt;/li&gt;&lt;li&gt;validateur&lt;/li&gt;&lt;li&gt;SQLingvo&lt;/li&gt;&lt;li&gt;HoneySQL&lt;/li&gt;&lt;li&gt;&lt;a href='https://github.com/joelkuiper/yesparql'&gt;YeSPARQL&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;plugins&quot;&gt;&lt;/a&gt;plugins&lt;/h2&gt;&lt;h3&gt;&lt;a name=&quot;lein-try&amp;#95;사용하기&quot;&gt;&lt;/a&gt;lein-try 사용하기&lt;/h3&gt;&lt;p&gt;아래 파일을 편집한다&lt;/p&gt;&lt;p&gt;${HOME}/.lein/profiles.clj&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;{:user {:plugins &amp;#91;&amp;#91;lein-try &amp;quot;0.4.3&amp;quot;&amp;#93;&amp;#93;}}
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;clj-time이라는 라이브러를 가지고 간단한 테스트 해볼때&lt;br /&gt; 아래와 같이 repl를 열수있다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;lein try clj-time
 &lt;/code&gt;&lt;/pre&gt;
 </description>
@@ -611,7 +611,7 @@ Clojure를 위한 Emacs 환경
         '&amp;#40;&amp;quot;melpa-stable&amp;quot; . &amp;quot;http://stable.melpa.org/packages/&amp;quot;&amp;#41; t&amp;#41;
 
 &amp;#40;package-initialize&amp;#41;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;package install&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;M-x package-install &amp;#91;RET&amp;#93; cider &amp;#91;RET&amp;#93;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;현재 사용하고 있는 패키지&lt;/p&gt;&lt;ul&gt;&lt;li&gt;cider&lt;/li&gt;&lt;li&gt;paredit&lt;/li&gt;&lt;li&gt;rainbow-delimiters&lt;/li&gt;&lt;li&gt;s&lt;/li&gt;&lt;li&gt;f&lt;/li&gt;&lt;li&gt;clojure-mode&lt;/li&gt;&lt;li&gt;clojure-mode-extra-font-locking&lt;/li&gt;&lt;li&gt;dash&lt;/li&gt;&lt;li&gt;ido-completing-read+&lt;/li&gt;&lt;li&gt;ido-ubiquitous&lt;/li&gt;&lt;li&gt;projectile&lt;/li&gt;&lt;li&gt;queue&lt;/li&gt;&lt;li&gt;seq&lt;/li&gt;&lt;li&gt;smex&lt;/li&gt;&lt;li&gt;spinner&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;cider&amp;#95;구동&quot;&gt;&lt;/a&gt;Cider 구동&lt;/h2&gt;&lt;p&gt;&lt;em&gt;profiles.clj&lt;/em&gt;&lt;/p&gt;&lt;p&gt;.lein디렉토리이하에 작성한다 없을경우 파일생성&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;{:user 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;package install&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;M-x package-install &amp;#91;RET&amp;#93; cider &amp;#91;RET&amp;#93;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;현재 사용하고 있는 패키지&lt;/p&gt;&lt;ul&gt;&lt;li&gt;cider&lt;/li&gt;&lt;li&gt;paredit&lt;/li&gt;&lt;li&gt;rainbow-delimiters&lt;/li&gt;&lt;li&gt;s&lt;/li&gt;&lt;li&gt;f&lt;/li&gt;&lt;li&gt;clojure-mode&lt;/li&gt;&lt;li&gt;clojure-mode-extra-font-locking&lt;/li&gt;&lt;li&gt;dash&lt;/li&gt;&lt;li&gt;ido-completing-read+&lt;/li&gt;&lt;li&gt;ido-ubiquitous&lt;/li&gt;&lt;li&gt;projectile&lt;/li&gt;&lt;li&gt;queue&lt;/li&gt;&lt;li&gt;seq&lt;/li&gt;&lt;li&gt;smex&lt;/li&gt;&lt;li&gt;spinner&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;cider&amp;#95;구동&quot;&gt;&lt;/a&gt;Cider 구동&lt;/h2&gt;&lt;p&gt;&lt;em&gt;주의&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;Cider와 cider-nrepl의 버전이 맞아야함&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;profiles.clj&lt;/em&gt;&lt;/p&gt;&lt;p&gt;.lein디렉토리이하에 작성한다 없을경우 파일생성&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;{:user 
  {:plugins 
   &amp;#91;&amp;#91;cider/cider-nrepl &amp;quot;0.10.0&amp;quot;&amp;#93;&amp;#93;
   :dependencies
