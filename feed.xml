@@ -12,7 +12,7 @@ http://clonekim.github.io/
 This blog is generated using cryogen
 </description>
 <lastBuildDate>
-Fri, 22 Jan 2016 09:57:50 +0900
+Fri, 22 Jan 2016 10:26:31 +0900
 </lastBuildDate>
 <generator>
 clj-rss
@@ -512,7 +512,7 @@ defn shop-for-jams &amp;#91;jam1 jam2&amp;#93;
 &amp;#40;-&amp;gt; &amp;quot;aaaa&amp;quot;
     &amp;#40;.toUpperCase&amp;#41;&amp;#41;
 ;; &amp;quot;AAAA&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;database&quot;&gt;&lt;/a&gt;Database&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://clojure-doc.org/articles/ecosystem/java_jdbc/home.html'&gt;jdbc&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://sqlkorma.com/'&gt;SQL Korma&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://clojuremongodb.info'&gt;monger&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;java&amp;#95;interoperability&quot;&gt;&lt;/a&gt;Java Interoperability&lt;/h2&gt;&lt;p&gt;&lt;a href='http://clojure.org/reference/java_interop'&gt;Java Interop&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;import&quot;&gt;&lt;/a&gt;Import&lt;/h3&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;&amp;#40;:import java.awt.Panel
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;database&quot;&gt;&lt;/a&gt;Database&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://clojure-doc.org/articles/ecosystem/java_jdbc/home.html'&gt;jdbc&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://sqlkorma.com/'&gt;SQL Korma&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://clojuremongodb.info'&gt;monger&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://github.com/krisajenkins/yesql'&gt;yesql&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;java&amp;#95;interoperability&quot;&gt;&lt;/a&gt;Java Interoperability&lt;/h2&gt;&lt;p&gt;&lt;a href='http://clojure.org/reference/java_interop'&gt;Java Interop&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;import&quot;&gt;&lt;/a&gt;Import&lt;/h3&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;&amp;#40;:import java.awt.Panel
          java.util.Date&amp;#41;
 
 &amp;#40;:import &amp;#40;java.io Writer
@@ -524,9 +524,9 @@ defn shop-for-jams &amp;#91;jam1 jam2&amp;#93;
   }
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;&amp;#40;Robot$Radio.&amp;#41;
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;web&amp;#95;programming&quot;&gt;&lt;/a&gt;Web Programming&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://github.com/ring-clojure/ring'&gt;Ring&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://www.luminusweb.net'&gt;Luminus&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;sql&quot;&gt;&lt;/a&gt;SQL&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://github.com/krisajenkins/yesql'&gt;yesql&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;3rd&amp;#95;party&amp;#95;libraries&quot;&gt;&lt;/a&gt;3rd Party Libraries&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;bouncer&lt;/li&gt;&lt;li&gt;validateur&lt;/li&gt;&lt;li&gt;SQLingvo&lt;/li&gt;&lt;li&gt;HoneySQL&lt;/li&gt;&lt;li&gt;&lt;a href='https://github.com/joelkuiper/yesparql'&gt;YeSPARQL&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;plugins&quot;&gt;&lt;/a&gt;plugins&lt;/h2&gt;&lt;h3&gt;&lt;a name=&quot;lein-try&amp;#95;사용하기&quot;&gt;&lt;/a&gt;lein-try 사용하기&lt;/h3&gt;&lt;p&gt;아래 파일을 편집한다&lt;/p&gt;&lt;p&gt;${HOME}/.lein/profiles.clj&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;{:user {:plugins &amp;#91;&amp;#91;lein-try &amp;quot;0.4.3&amp;quot;&amp;#93;&amp;#93;}}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;web&amp;#95;programming&quot;&gt;&lt;/a&gt;Web Programming&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://github.com/ring-clojure/ring'&gt;Ring&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://www.luminusweb.net'&gt;Luminus&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;3rd&amp;#95;party&amp;#95;libraries&quot;&gt;&lt;/a&gt;3rd Party Libraries&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;bouncer&lt;/li&gt;&lt;li&gt;validateur&lt;/li&gt;&lt;li&gt;SQLingvo&lt;/li&gt;&lt;li&gt;HoneySQL&lt;/li&gt;&lt;li&gt;&lt;a href='https://github.com/joelkuiper/yesparql'&gt;YeSPARQL&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;plugins&quot;&gt;&lt;/a&gt;plugins&lt;/h2&gt;&lt;h3&gt;&lt;a name=&quot;lein-try&amp;#95;사용하기&quot;&gt;&lt;/a&gt;lein-try 사용하기&lt;/h3&gt;&lt;p&gt;아래 파일을 편집한다&lt;/p&gt;&lt;p&gt;${HOME}/.lein/profiles.clj&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;{:user {:plugins &amp;#91;&amp;#91;lein-try &amp;quot;0.4.3&amp;quot;&amp;#93;&amp;#93;}}
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;clj-time이라는 라이브러를 가지고 간단한 테스트 해볼때&lt;br /&gt; 아래와 같이 repl를 열수있다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;lein try clj-time
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;참고&quot;&gt;&lt;/a&gt;참고&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://en.wikibooks.org/wiki/Clojure_Programming/Examples/API_Examples/Function_Tools'&gt;Clojure Programming/Examples/API Examples/Function Tools&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://clojure-doc.org/articles/language/functions.html'&gt;Functions in Clojure&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://aphyr.com/posts/303-clojure-from-the-ground-up-functions'&gt;Clojure from the ground up&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://clojure.org/about/functional_programming'&gt;Functional Programming&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 </description>
 <enclosure>
 
