@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
     <meta charset="utf-8"/>
-    <title>(fn[] &quot;less is more&quot;): Posts Tagged &quot;jdbc&quot;</title>
+    <title>(fn[] &quot;less is more&quot;): clojurescript에서 jquery사용</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700' rel='stylesheet'
           type='text/css'>
@@ -50,21 +50,63 @@
         <div class="col-lg-9">
             <div id="content">
                 
-<div id="posts-by-tag">
-    <div id="page-header">
-        <h2>Posts Tagged &quot;jdbc&quot;</h2>
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta" class="row">
+        <div class="col-lg-6">2015년 9월 20일 (일)</div>
+        
     </div>
-    <ul>
+    <h2>clojurescript에서 jquery사용</h2>
+</div>
+<div>
     
-        <li>
-            <a href="/posts/2015-09-25-jdbc-in-clojure.html">클로저에서 Jdbc사용</a>
-        </li>
+    <p><em>view.clj</em>  </p><pre><code class="clojure">&#40;defn view-layout &#91;&amp; content&#93;
+  &#40;html
+      &#91;:head
+           &#91;:meta {:http-equiv &quot;Content-type&quot;
+                        :content &quot;text/html; charset=utf-8&quot;}&#93;
+           &#91;:title &quot;Project-Name&quot;&#93;&#93;
+      &#91;:body content&#93;&#41;&#41;
+
+&#40;defn view-content &#91;&#93;
+  &#40;view-layout
+       &#91;:h2 &quot;Project-Name&quot;&#93;
+       &#91;:p {:id &quot;clickhere&quot;} &quot;Get yourself a nice alert by clicking here.&quot;&#93;
+       &#91;:script {:src &quot;/js/jquery-1.10.2.min.js&quot;}&#93;
+       &#91;:script {:src &quot;/js/cljs.js&quot;}&#93;&#41;&#41;
+</code></pre><p><em>hello.cljs</em></p><pre><code class="clojure">&#40;:require &#91;jayq.core :as jq&#93;&#41;
+&#40;:use &#91;jayq.core :only &#91;$&#93;&#93;&#41;
+
+;;
+;; $&#40;&quot;#btn&quot;&#41;.click&#40;function&#40;&#41; {alert&#40;&quot;Hi!&quot;&#41;; }&#41;;
+;;
+
+&#40;jq/bind &#40;$ &quot;#btn&quot;&#41; :click &#40;fn &#91;&#93; &#40;js/alert &quot;Hi!&quot;&#41;&#41;&#41;
+</code></pre><pre><code>lein cljsbuild once
+lein run
+</code></pre><h2><a name="참고"></a>참고</h2><ul><li><a href='http://www.slideshare.net/maedaunderscore/clojurescript'>ClojureScriptという選択肢</a></li><li><a href='http://qiita.com/mizchi/items/f64b7620cd93a4d5b157'>ClojureScript入門</a></li></ul>
+</div>
+
+<div id="post-tags">
+    <b>Tags: </b>
     
-        <li>
-            <a href="/posts/2015-09-10-oracle-jdbc.html">Oracle Jdbc Url</a>
-        </li>
+    <a href="/tags/clojurescript.html">clojurescript</a>
     
-    </ul>
+</div>
+
+
+    <div id="prev-next">
+        
+        <a href="/posts/2015-09-23-freemarker-assign-tip.html">&laquo; Freemarker assign팁</a>
+        
+        
+        <a class="right" href="/posts/2015-09-11-custom-emacs-setting.html">Clojure를 위한 Emacs 환경 &raquo;</a>
+        
+    </div>
+
+    
+
+
 </div>
 
             </div>

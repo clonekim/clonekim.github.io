@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
     <meta charset="utf-8"/>
-    <title>(fn[] &quot;less is more&quot;): Posts Tagged &quot;jdbc&quot;</title>
+    <title>(fn[] &quot;less is more&quot;): beefy 팁</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700' rel='stylesheet'
           type='text/css'>
@@ -50,21 +50,65 @@
         <div class="col-lg-9">
             <div id="content">
                 
-<div id="posts-by-tag">
-    <div id="page-header">
-        <h2>Posts Tagged &quot;jdbc&quot;</h2>
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta" class="row">
+        <div class="col-lg-6">2015년 2월 3일 (화)</div>
+        
     </div>
-    <ul>
+    <h2>beefy 팁</h2>
+</div>
+<div>
     
-        <li>
-            <a href="/posts/2015-09-25-jdbc-in-clojure.html">클로저에서 Jdbc사용</a>
-        </li>
+     <p>a local development server designed to work with browserify.</p><ul><li>can live reload your browser when your code changes (if you want)</li><li>works with whatever version of browserify or watchify; globally installed or  locally installed to <code>node&#95;modules/</code>.</li><li>will spit compile errors out into the browser so you don't have that  1-2 seconds of cognitive dissonance and profound ennui that follows  refreshing the page only to get a blank screen.</li><li>will spit out a default <code>index.html</code> for missing routes so you don't  need to even muck about with HTML to get started</li><li>serves up static files with grace and aplomb (and also appropriate  mimetypes)</li><li>is designed to fall away gracefully, as your project gets bigger.</li><li>love you, unconditionally</li></ul><p><em>의존성 설치</em></p><pre><code>npm install --save jquery
+npm install --save backbone
+npm install --save-dev beefy
+npm install --save-dev browserify
+</code></pre><p><em>package.json</em></p><pre><code class="json"> &quot;scripts&quot;: {
+    &quot;start&quot; : &quot;beefy index.js:bundle.js --live&quot;,
+     &quot;bundle&quot;: &quot;browserify index.js -o bundle.js&quot;
+  },
+</code></pre><p><em>main.js</em></p><pre><code class="javascript">
+var Backbone = require&#40;'backbone'&#41;;
+var $ = require&#40;'jquery'&#41;;
+Backbone.$ = $;
+
+module.exports = Backbone.View.extend&#40;{
+
+  initialize: function&#40;&#41;{
+    this.render&#40;&#41;;
+  },
+
+  render: function&#40;&#41;{
+    $&#40;'body'&#41;.prepend&#40;'&lt;p&gt;Hello There&lt;/p&gt;'&#41;;
+  }
+}&#41;;
+</code></pre><p><em>index.js</em></p><pre><code class="javascript"> var Main = require&#40;'./main'&#41;;
+ new Main&#40;&#41;;
+</code></pre><p><em>실행</em></p><pre><code>npm start
+</code></pre>웹브라우저로 http://127.0.0.1:9966를 접근해보라<br />Hello There라는 문구를 볼수 있다<br /><code>소스</code>가 수정되면 <code>웹브라우저</code>도 새로고침이 된다!
+</div>
+
+<div id="post-tags">
+    <b>Tags: </b>
     
-        <li>
-            <a href="/posts/2015-09-10-oracle-jdbc.html">Oracle Jdbc Url</a>
-        </li>
+    <a href="/tags/node.js.html">node.js</a>
     
-    </ul>
+</div>
+
+
+    <div id="prev-next">
+        
+        <a href="/posts/2015-06-28-raspberrypi.html">&laquo; RaspberryPi</a>
+        
+        
+        <a class="right" href="/posts/2015-02-01-imagemagick.html">ImageMagick &raquo;</a>
+        
+    </div>
+
+    
+
+
 </div>
 
             </div>

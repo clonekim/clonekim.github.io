@@ -82,7 +82,7 @@ ring-jetty-adapter: a Ring adapter that uses the Jetty webserver
 2015-09-11 16:02:19.133:INFO:oejs.Server:nREPL-worker-0: jetty-9.2.10.v20150310
 2015-09-11 16:02:19.153:INFO:oejs.ServerConnector:nREPL-worker-0: Started ServerConnector@31de707e{HTTP/1.1}{0.0.0.0:8080}
 2015-09-11 16:02:19.154:INFO:oejs.Server:nREPL-worker-0: Started @12408ms
-</code></pre><h2><a name="middleware"></a>MiddleWare</h2><h3><a name="ring-json"></a>ring-json</h3><p><em>leiningen</em></p><pre><code>&#91;ring/ring-json &quot;0.4.0&quot;&#93;</code></pre><p><em>wrap-json-response</em></p><p>json으로 응답한다</p><pre><code class="clojure">&#40;ns hello-ring.core
+</code></pre><h2><a name="middleware"></a>MiddleWare</h2><h3><a name="ring-json"></a>ring-json</h3><p><em>leiningen</em></p><pre><code>&#91;ring/ring-json &quot;0.4.0&quot;&#93;</code></pre><p><em>응답을 json으로 처리</em></p><p>요청 결과를 JSON을 보내기 위해서 일부러 Content-Type를 설정 하는 것 보다<br /> response 그런 기능을 삽입하는 것이다</p><p>ring.middleware.json의 wrap-json-response를 사용한다</p><pre><code class="clojure">&#40;ns hello-ring.core
 	&#40;:use &#91;ring.adapter.jetty&#93;
          &#91;ring.middleware.json :only &#91;wrap-json-response&#93;&#93;
          &#91;ring.util.response :as response&#93;&#41;&#41;
@@ -95,7 +95,28 @@ ring-jetty-adapter: a Ring adapter that uses the Jetty webserver
 
 &#40;defn -main &#91;&#93;
 	&#40;run-jetty app-handler {:port 3000}&#41;&#41;
-</code></pre><p><img src="/img/clojure/json-resp.png" alt="json-resp" /></p><p><em>json-body,json-params</em></p><p>body자체를 json으로 받거나 요청파라미터를 처리할 경우에<br /> ring.middleware.json 의 wrap-json-body, wrap-json-params이 필요함<br /> 반드시 Content-Type이 application/json 일 경우에만 반응함</p><pre><code>&#40;POST &quot;/confirm&quot; req
+</code></pre><p><img src="/img/clojure/json-resp.png" alt="json-resp" /></p><p><em>request를 json으로 다루기</em></p><p>body자체를 json으로 받거나 요청파라미터를 처리할 경우에<br /> ring.middleware.json 의 wrap-json-body, wrap-json-params이 필요함<br /> 반드시 Content-Type이 application/json 일 경우에만 반응함</p><pre><code>&#40;POST &quot;/confirm&quot; req
+  &#40;let &#91;name &#40;get-in req &#91;:params &quot;name&quot;&#93;&#41;&#93;
+  &#40;response {:desc &#40;str &quot;The name you sent to me was &quot; name&#41;}&#41;&#41;&#41;
+
+&#40;POST &quot;/&quot; req
+  &#40;println &#40;get &#40;:body req&#41; &quot;age&quot;&#41;&#41;&#41;  
+</code></pre><p>curl를 이용해서 request 를 보내보자</p><pre><code class="bash">curl -H &quot;Content-Type: application/json&quot; -X POST -d '{&quot;age&quot; : 20}' http://127.0.0.1:8080
+</code></pre><p>post로 json 데이터를 보낼 경우 body를 출력시<br /> PersistentArrayMap 로 나타난다<br /> <a href='https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get'>clojure.core/get</a> 으로 값 취득한다</p><p><em>json request를 param으로 읽기</em></p><p>ring.middleware.json 의  wrap-json-params이 필요함<br /> 반드시 Content-Type이 application/json 일 경우에만 반응함</p><pre><code class="bash">curl -H &quot;Content-Type: application/json&quot; -X POST -d '{&quot;age&quot; : 20, &quot;name&quot;: &quot;kim&quot;}' http://127.0.0.1:8080/confirm
+</code></pre><pre><code class="clojure">
+&#40;POST &quot;/confirm&quot; {p :params}
+  &#40;println p&#41;&#41; ; {age 20, name kim} 으로 출력
+
+;위와 같음
+&#40;POST &quot;/confirm&quot; {model :json-params}
+   &#40;println &#40;get model &quot;name&quot;&#41;&#41;; =&gt; 20
+   
+;파라미터를 인자로 받음
+&#40;POST &quot;/confirm&quot; &#91;name age&#93;
+...
+
+; request를 그대로 사용
+&#40;POST &quot;/confirm&quot; req
   &#40;let &#91;name &#40;get-in req &#91;:params &quot;name&quot;&#93;&#41;&#93;
   &#40;response {:desc &#40;str &quot;The name you sent to me was &quot; name&#41;}&#41;&#41;&#41;
 </code></pre><h2><a name="routing"></a>Routing</h2><h3><a name="compojure"></a>Compojure</h3><pre><code class="clojure">&#40;ns hello-ring.core
@@ -217,7 +238,7 @@ html
   &#40;run-server #'app {:port 8080}&#41;&#41;
 </code></pre><h2><a name="plugins"></a>Plugins</h2><h3><a name="lein-ring"></a>lein-ring</h3><p>Leiningen의 Ring 작업을 편하기 하기 위한 플러그인이다<br /> 즉 서버를 구동하거나 jar, war로 디플로이하는 하는 일이다</p><p><em>project.clj</em></p><pre><code class="clojure"> :plugins &#91;&#91;lein-ring &quot;0.8.13&quot;&#93;&#93;
  :ring {:handler hello-ring.core/app} ;;시작할 수 있는 핸들러를 지정
-</code></pre><p>바로 서버구동이 가능하고 기본적으로 3000 포트를 사용함<br /> 이제 서버측 코드를 수정하면 바로 적용이 된다</p><p><em>실행</em></p><pre><code>lein ring server</code></pre><h2><a name="참고"></a>참고</h2><ul><li><a href='https://github.com/ring-clojure/ring'>https://github.com/ring-clojure/ring</a></li><li><a href='https://github.com/weavejester/hiccup'>https://github.com/weavejester/hiccup</a></li><li><a href='https://github.com/revelytix/lein-ring'>https://github.com/revelytix/lein-ring</a></li></ul>
+</code></pre><p>바로 서버구동이 가능하고 기본적으로 3000 포트를 사용함<br /> 이제 서버측 코드를 수정하면 바로 적용이 된다</p><p><em>실행</em></p><pre><code>lein ring server</code></pre><h2><a name="참고"></a>참고</h2><ul><li><a href='https://github.com/ring-clojure/ring'>https://github.com/ring-clojure/ring</a></li><li><a href='https://github.com/weavejester/hiccup'>https://github.com/weavejester/hiccup</a></li><li><a href='https://github.com/revelytix/lein-ring'>https://github.com/revelytix/lein-ring</a></li><li><a href='liquidz.github.io/2011/12/practical-compojure.html'>実践(?)Compojure</a></li><li><a href='https://github.com/technomancy/shouter'>shouter</a></li></ul>
 </div>
 
 <div id="post-tags">
@@ -271,7 +292,7 @@ html
                         
                         <li><a href="/posts/2016-01-13-github-page.html">Github에 블로그제작</a></li>
                         
-                        <li><a href="/posts/2015-09-25-starting-clojure.html">Clojure 시작하기</a></li>
+                        <li><a href="/posts/2015-09-25-jdbc-in-clojure.html">클로저에서 Jdbc사용</a></li>
                         
                     </ul>
                 </div>
@@ -301,11 +322,17 @@ html
                         
                         <li><a href="/tags/vi.html">vi</a></li>
                         
+                        <li><a href="/tags/gulp.html">gulp</a></li>
+                        
                         <li><a href="/tags/captcha.html">captcha</a></li>
                         
                         <li><a href="/tags/java.html">java</a></li>
                         
                         <li><a href="/tags/wiki.html">wiki</a></li>
+                        
+                        <li><a href="/tags/io.html">io</a></li>
+                        
+                        <li><a href="/tags/pi.html">pi</a></li>
                         
                         <li><a href="/tags/php.html">php</a></li>
                         
@@ -325,6 +352,8 @@ html
                         
                         <li><a href="/tags/jdbc.html">jdbc</a></li>
                         
+                        <li><a href="/tags/template.html">template</a></li>
+                        
                         <li><a href="/tags/jruby.html">jruby</a></li>
                         
                         <li><a href="/tags/concurrent.html">concurrent</a></li>
@@ -332,6 +361,8 @@ html
                         <li><a href="/tags/angularjs.html">angularjs</a></li>
                         
                         <li><a href="/tags/javascript.html">javascript</a></li>
+                        
+                        <li><a href="/tags/microframework.html">microframework</a></li>
                         
                         <li><a href="/tags/proxy.html">proxy</a></li>
                         
@@ -342,6 +373,8 @@ html
                         <li><a href="/tags/react.html">react</a></li>
                         
                         <li><a href="/tags/taglib.html">taglib</a></li>
+                        
+                        <li><a href="/tags/clojurescript.html">clojurescript</a></li>
                         
                         <li><a href="/tags/jsp.html">jsp</a></li>
                         

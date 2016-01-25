@@ -59,8 +59,8 @@
     <h2>Clojure 시작하기</h2>
 </div>
 <div>
-    <ol class="content"><li><a href="#clojure_란">clojure 란</a></li><li><a href="#ide/tools">IDE/Tools</a></li><li><a href="#leiningen으로_시작하기">Leiningen으로 시작하기</a></li><li><a href="#project_생성">Project 생성</a></li><li><a href="#프로젝트_의존성_추가">프로젝트 의존성 추가</a></li><li><a href="#repl(read_eval_print_loop)_실행">REPL(Read Eval Print Loop) 실행</a></li><li><a href="#자료구조">자료구조</a></li><ol><li><a href="#list">List</a></li><li><a href="#vector">Vector</a></li><li><a href="#map">Map</a></li><li><a href="#set">Set</a></li></ol><li><a href="#binding">Binding</a></li><li><a href="#함수정의">함수정의</a></li><li><a href="#제어구문">제어구문</a></li><ol><li><a href="#if">if</a></li><li><a href="#when,when-let">when,when-let</a></li><li><a href="#cond,_case">cond, case</a></li></ol><li><a href="#그_밖의_expression">그 밖의 expression</a></li><ol><li><a href="#doto">doto</a></li><li><a href="#threading(-&gt;)">Threading(->)</a></li></ol><li><a href="#database">Database</a></li><li><a href="#java_interoperability">Java Interoperability</a></li><ol><li><a href="#import">Import</a></li><li><a href="#inner_class를_사용할_경우">Inner class를 사용할 경우</a></li></ol><li><a href="#web_programming">Web Programming</a></li><li><a href="#3rd_party_libraries">3rd Party Libraries</a></li><li><a href="#plugins">plugins</a></li><ol><li><a href="#lein-try_사용하기">lein-try 사용하기</a></li></ol><li><a href="#참고">참고</a></li></ol>
-    <h2><a name="clojure&#95;란"></a>clojure 란</h2><p>Clojure는 Lisp의 계보를 잇는 최신의 함수형 언어이다<br /> JVM위에서 작동하고 자바의 방대한 라이브러리를 아무런 제약없이<br /> 사용할 수 있다.<br /></p><ul><li><a href='http://www.techsuda.com/archives/1674'>왜 클로저(Clojure)인가?</a></li><li><a href='http://clojure.org'>http://clojure.org</a></li></ul><h2><a name="ide/tools"></a>IDE/Tools</h2><ul><li><a href='http://lighttable.com'>LightTable</a></li><li><a href='https://cursiveclojure.com'>Cursive</a></li><li>Emacs</li></ul><h2><a name="leiningen으로&#95;시작하기"></a>Leiningen으로 시작하기</h2><p><a href='http://leiningen.org'>Leiningen</a> (레닝겐)은 클로져를 쉽게 시작하기 위한 빌드자동화 툴이다</p><p>윈도우에서만 self-install해준다</p><p><img src="/img/clojure/lein-self-install.png" alt="Image 1" /></p><h2><a name="project&#95;생성"></a>Project 생성</h2><pre><code>lein new &#91;프로젝트명&#93;
+    <ol class="content"><li><a href="#clojure_얻기">clojure 얻기</a></li><li><a href="#ide/tools">IDE/Tools</a></li><li><a href="#leiningen으로_시작하기">Leiningen으로 시작하기</a></li><li><a href="#project_생성">Project 생성</a></li><li><a href="#프로젝트_의존성_추가">프로젝트 의존성 추가</a></li><li><a href="#repl(read_eval_print_loop)_실행">REPL(Read Eval Print Loop) 실행</a></li><li><a href="#자료구조">자료구조</a></li><ol><li><a href="#list">List</a></li><li><a href="#vector">Vector</a></li><li><a href="#map">Map</a></li><li><a href="#set">Set</a></li></ol><li><a href="#binding">Binding</a></li><li><a href="#함수정의">함수정의</a></li><li><a href="#제어구문">제어구문</a></li><ol><li><a href="#if">if</a></li><li><a href="#when,when-let">when,when-let</a></li><li><a href="#cond,_case">cond, case</a></li></ol><li><a href="#그_밖의_expression">그 밖의 expression</a></li><ol><li><a href="#doto">doto</a></li><li><a href="#threading(-&gt;)">Threading(->)</a></li></ol><li><a href="#database">Database</a></li><li><a href="#java_interoperability">Java Interoperability</a></li><ol><li><a href="#import">Import</a></li><li><a href="#inner_class를_사용할_경우">Inner class를 사용할 경우</a></li><li><a href="#try..catch">try..catch</a></li></ol><li><a href="#web_programming">Web Programming</a></li><li><a href="#3rd_party_libraries">3rd Party Libraries</a></li><li><a href="#plugins">plugins</a></li><ol><li><a href="#lein-try_사용하기">lein-try 사용하기</a></li></ol></ol>
+    <p>JVM위에서 작동하는 함수형 프로그래밍이다</p><h2><a name="clojure&#95;얻기"></a>clojure 얻기</h2><p><a href='http://clojure.org'>http://clojure.org</a></p><h2><a name="ide/tools"></a>IDE/Tools</h2><ul><li><a href='http://lighttable.com'>LightTable</a></li><li><a href='https://cursiveclojure.com'>Cursive</a></li><li>Emacs</li></ul><h2><a name="leiningen으로&#95;시작하기"></a>Leiningen으로 시작하기</h2><p><a href='http://leiningen.org'>Leiningen</a> (레닝겐)은 클로져를 쉽게 시작하기 위한 빌드자동화 툴이다</p><p>윈도우에서만 self-install해준다</p><p><img src="/img/clojure/lein-self-install.png" alt="Image 1" /></p><h2><a name="project&#95;생성"></a>Project 생성</h2><pre><code>lein new &#91;프로젝트명&#93;
 </code></pre><h2><a name="프로젝트&#95;의존성&#95;추가"></a>프로젝트 의존성 추가</h2><p>라이브러리는 아래의 저장소에서 검색이 가능하고<br /> 의존성에 추가하면 된다</p><ul><li><a href='https://clojars.org'>clojars</a></li><li><a href='http://mvnrepository.com'>Maven repository</a></li></ul><pre><code class="clojure"> :dependencies &#91;&#91;org.clojure/clojure &quot;1.7.0&quot;&#93;
                 &#91;groupId/artifactId &quot;version&quot;&#93;&#93;&#41;
 </code></pre><p>그외의 라이브러리 저장소로는 추가로 지정할수있다</p><pre><code class="clojure">  :repositories {
@@ -316,14 +316,14 @@ defn shop-for-jams &#91;jam1 jam2&#93;
       &#40;.put &quot;ver&quot; &quot;1.7&quot;&#41;&#41;
 
 ;; {&quot;name&quot; &quot;clojure&quot; , &quot;ver&quot; &quot;1.7&quot;}
-</code></pre><h3><a name="threading(->)"></a>Threading(->)</h3><p>최종적으로 돌려주는 것은 해당 함수(메서드)가 돌려주는 것</p><pre><code class="clojure">&#40;-&gt; &#40;java.util.HashMap.&#41;
+</code></pre><h3><a name="threading(->)"></a>Threading(->)</h3><p>최종적으로 돌려주는 것은 해당 메서드가 적용된 것</p><pre><code class="clojure">&#40;-&gt; &#40;java.util.HashMap.&#41;
     &#40;.put &quot;num&quot; 1234&#41;&#41;
 ;; nil
 
 &#40;-&gt; &quot;aaaa&quot;
     &#40;.toUpperCase&#41;&#41;
 ;; &quot;AAAA&quot;
-</code></pre><h2><a name="database"></a>Database</h2><ul><li><a href='http://clojure-doc.org/articles/ecosystem/java_jdbc/home.html'>jdbc</a></li><li><a href='http://sqlkorma.com/'>SQL Korma</a></li><li><a href='http://clojuremongodb.info'>monger</a></li><li><a href='https://github.com/krisajenkins/yesql'>yesql</a></li></ul><h2><a name="java&#95;interoperability"></a>Java Interoperability</h2><p><a href='http://clojure.org/reference/java_interop'>Java Interop</a></p><h3><a name="import"></a>Import</h3><pre><code class="clojure">&#40;:import java.awt.Panel
+</code></pre><h2><a name="database"></a>Database</h2><ul><li><a href='http://clojure-doc.org/articles/ecosystem/java_jdbc/home.html'>jdbc</a></li><li><a href='http://sqlkorma.com/'>SQL Korma</a></li><li><a href='http://clojuremongodb.info'>monger</a></li></ul><h2><a name="java&#95;interoperability"></a>Java Interoperability</h2><p><a href='http://clojure.org/reference/java_interop'>Java Interop</a></p><h3><a name="import"></a>Import</h3><pre><code class="clojure">&#40;:import java.awt.Panel
          java.util.Date&#41;
 
 &#40;:import &#40;java.io Writer
@@ -335,9 +335,15 @@ defn shop-for-jams &#91;jam1 jam2&#93;
   }
 }
 </code></pre><pre><code>&#40;Robot$Radio.&#41;
-</code></pre><h2><a name="web&#95;programming"></a>Web Programming</h2><ul><li><a href='https://github.com/ring-clojure/ring'>Ring</a></li><li><a href='http://www.luminusweb.net'>Luminus</a></li></ul><h2><a name="3rd&#95;party&#95;libraries"></a>3rd Party Libraries</h2><ul><li>bouncer</li><li>validateur</li><li>SQLingvo</li><li>HoneySQL</li><li><a href='https://github.com/joelkuiper/yesparql'>YeSPARQL</a></li></ul><h2><a name="plugins"></a>plugins</h2><h3><a name="lein-try&#95;사용하기"></a>lein-try 사용하기</h3><p>아래 파일을 편집한다</p><p>${HOME}/.lein/profiles.clj</p><pre><code class="clojure">{:user {:plugins &#91;&#91;lein-try &quot;0.4.3&quot;&#93;&#93;}}
+</code></pre><h3><a name="try..catch"></a>try..catch</h3><pre><code class="clojure"> &#40;try
+    &#40;Integer/parseInt s&#41;
+    &#40;catch NumberFormatException e
+      &#40;.printStackTrace e&#41;&#41;
+    &#40;finally
+      &#40;println &quot;Attempted to parse as integer: &quot; s&#41;&#41;&#41;
+</code></pre><h2><a name="web&#95;programming"></a>Web Programming</h2><ul><li><a href='https://github.com/ring-clojure/ring'>Ring</a></li><li><a href='http://www.luminusweb.net'>Luminus</a></li></ul><h2><a name="3rd&#95;party&#95;libraries"></a>3rd Party Libraries</h2><ul><li>bouncer</li><li>validateur</li><li>SQLingvo</li><li>HoneySQL</li></ul><h2><a name="plugins"></a>plugins</h2><h3><a name="lein-try&#95;사용하기"></a>lein-try 사용하기</h3><p>아래 파일을 편집한다</p><p>${HOME}/.lein/profiles.clj</p><pre><code class="clojure">{:user {:plugins &#91;&#91;lein-try &quot;0.4.3&quot;&#93;&#93;}}
 </code></pre><p>clj-time이라는 라이브러를 가지고 간단한 테스트 해볼때<br /> 아래와 같이 repl를 열수있다</p><pre><code>lein try clj-time
-</code></pre><h2><a name="참고"></a>참고</h2><ul><li><a href='https://en.wikibooks.org/wiki/Clojure_Programming/Examples/API_Examples/Function_Tools'>Clojure Programming/Examples/API Examples/Function Tools</a></li><li><a href='http://clojure-doc.org/articles/language/functions.html'>Functions in Clojure</a></li><li><a href='https://aphyr.com/posts/303-clojure-from-the-ground-up-functions'>Clojure from the ground up</a></li><li><a href='http://clojure.org/about/functional_programming'>Functional Programming</a></li></ul>
+</code></pre>
 </div>
 
 <div id="post-tags">
@@ -350,10 +356,10 @@ defn shop-for-jams &#91;jam1 jam2&#93;
 
     <div id="prev-next">
         
-        <a href="/posts/2016-01-13-github-page.html">&laquo; Github에 블로그제작</a>
+        <a href="/posts/2015-09-25-jdbc-in-clojure.html">&laquo; 클로저에서 Jdbc사용</a>
         
         
-        <a class="right" href="/posts/2015-09-25-jdbc-in-clojure.html">클로저에서 Jdbc사용 &raquo;</a>
+        <a class="right" href="/posts/2015-09-23-freemarker-assign-tip.html">Freemarker assign팁 &raquo;</a>
         
     </div>
 
@@ -389,7 +395,7 @@ defn shop-for-jams &#91;jam1 jam2&#93;
                         
                         <li><a href="/posts/2016-01-13-github-page.html">Github에 블로그제작</a></li>
                         
-                        <li><a href="/posts/2015-09-25-starting-clojure.html">Clojure 시작하기</a></li>
+                        <li><a href="/posts/2015-09-25-jdbc-in-clojure.html">클로저에서 Jdbc사용</a></li>
                         
                     </ul>
                 </div>
@@ -419,11 +425,17 @@ defn shop-for-jams &#91;jam1 jam2&#93;
                         
                         <li><a href="/tags/vi.html">vi</a></li>
                         
+                        <li><a href="/tags/gulp.html">gulp</a></li>
+                        
                         <li><a href="/tags/captcha.html">captcha</a></li>
                         
                         <li><a href="/tags/java.html">java</a></li>
                         
                         <li><a href="/tags/wiki.html">wiki</a></li>
+                        
+                        <li><a href="/tags/io.html">io</a></li>
+                        
+                        <li><a href="/tags/pi.html">pi</a></li>
                         
                         <li><a href="/tags/php.html">php</a></li>
                         
@@ -443,6 +455,8 @@ defn shop-for-jams &#91;jam1 jam2&#93;
                         
                         <li><a href="/tags/jdbc.html">jdbc</a></li>
                         
+                        <li><a href="/tags/template.html">template</a></li>
+                        
                         <li><a href="/tags/jruby.html">jruby</a></li>
                         
                         <li><a href="/tags/concurrent.html">concurrent</a></li>
@@ -450,6 +464,8 @@ defn shop-for-jams &#91;jam1 jam2&#93;
                         <li><a href="/tags/angularjs.html">angularjs</a></li>
                         
                         <li><a href="/tags/javascript.html">javascript</a></li>
+                        
+                        <li><a href="/tags/microframework.html">microframework</a></li>
                         
                         <li><a href="/tags/proxy.html">proxy</a></li>
                         
@@ -460,6 +476,8 @@ defn shop-for-jams &#91;jam1 jam2&#93;
                         <li><a href="/tags/react.html">react</a></li>
                         
                         <li><a href="/tags/taglib.html">taglib</a></li>
+                        
+                        <li><a href="/tags/clojurescript.html">clojurescript</a></li>
                         
                         <li><a href="/tags/jsp.html">jsp</a></li>
                         

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
     <meta charset="utf-8"/>
-    <title>(fn[] &quot;less is more&quot;): Posts Tagged &quot;jdbc&quot;</title>
+    <title>(fn[] &quot;less is more&quot;): backbone + handlebar + gulp 팁</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700' rel='stylesheet'
           type='text/css'>
@@ -50,21 +50,106 @@
         <div class="col-lg-9">
             <div id="content">
                 
-<div id="posts-by-tag">
-    <div id="page-header">
-        <h2>Posts Tagged &quot;jdbc&quot;</h2>
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta" class="row">
+        <div class="col-lg-6">2014년 10월 3일 (금)</div>
+        
     </div>
-    <ul>
+    <h2>backbone + handlebar + gulp 팁</h2>
+</div>
+<div>
     
-        <li>
-            <a href="/posts/2015-09-25-jdbc-in-clojure.html">클로저에서 Jdbc사용</a>
-        </li>
+     <p>백본과 핸들바를 사용해서 소스를 컴파일 후<br /> 정해진 경로로 결과물을 내보내자.<br /> 핸들바를 사용하지 않을려면 <a href='https://github.com/substack/brfs'>brfs</a>도 고려해보자</p><p><em>패키지 설치</em></p><pre><code>npm install --global gulp
+npm install --save-dev gulp
+npm install --save-dev browserify
+npm install --save-dev vinyl-source-stream
+npm install --save handlebars
+npm install --save hbsfy
+</code></pre><p><em>gulpfile.js</em></p><pre><code class="javascript">var gulp = require&#40;'gulp'&#41;,
+	browserify = require&#40;'browserify'&#41;,
+	source = require&#40;'vinyl-source-stream'&#41;,
+	hbsfy = require&#40;'hbsfy'&#41;;
+
+gulp.task&#40;'build', function&#40;&#41; {
+	var b = browserify&#40;'./js/app.js', {debug:true}&#41;;
+	return b.transform&#40;hbsfy&#41;
+		 .bundle&#40;&#41;
+		 .pipe&#40;source&#40;'app.js'&#41;&#41;
+		 .pipe&#40;gulp.dest&#40;'/home/alpha/public/js'&#41;&#41;;
+}&#41;;
+
+
+gulp.task&#40;'watch', function&#40;&#41; {
+	gulp.watch&#40;'./js/&#42;&#42;/&#42;.js', &#91;'build'&#93;&#41;;
+	gulp.watch&#40;'./templates/&#42;.hbs', &#91;'build'&#93;&#41;;
+}&#41;;
+</code></pre><p><em>app.js</em></p><pre><code class="javascript">var Backbone = require&#40;'backbone'&#41;;
+var $ = require&#40;'jquery'&#41;;
+var HomeView = require&#40;'./views/home'&#41;;
+
+var Router = Backbone.Router.extend&#40;{
+
+	
+		routes: {
+			'': 'start'
+		},
+		
+		start: function&#40;&#41; {
+			console.log&#40;'start!'&#41;;
+			$&#40;&quot;.container&quot;&#41;.html&#40;new HomeView&#40;&#41;.render&#40;&#41;.el&#41;;
+		}
+		
+}&#41;;
+
+var router = new Router&#40;&#41;;
+Backbone.history.start&#40;&#41;;
+</code></pre><p><em>views/home.js</em></p><pre><code class="javascript">var Backbone = require&#40;'backbone'&#41;;
+var $ = require&#40;'jquery'&#41;;
+Backbone.$ = $;
+
+
+var HomeView = Backbone.View.extend&#40;{
+	initialize: function&#40;&#41; {
+		this.template = require&#40;'../../templates/home.hbs'&#41;;
+	},
+	
+	render: function&#40;&#41; {
+		this.$el.html&#40;this.template&#40;{name: 'Hello There!'}&#41;&#41;;
+		console.log&#40;&quot;home render&quot;&#41;;
+		return this;
+	}
+}&#41;;
+
+module.exports = HomeView;
+</code></pre><p><em>templates/home.hbs</em></p><pre><code class="html">&lt;h1&gt;
+  {{name}}
+&lt;/h1&gt;
+</code></pre>
+</div>
+
+<div id="post-tags">
+    <b>Tags: </b>
     
-        <li>
-            <a href="/posts/2015-09-10-oracle-jdbc.html">Oracle Jdbc Url</a>
-        </li>
+    <a href="/tags/gulp.html">gulp</a>
     
-    </ul>
+    <a href="/tags/node.js.html">node.js</a>
+    
+</div>
+
+
+    <div id="prev-next">
+        
+        <a href="/posts/2014-11-10-angularjs-tip.html">&laquo; AngularJS Tips</a>
+        
+        
+        <a class="right" href="/posts/2014-03-02-uuid-in-javascript.html">자바스크립트로 UUID 생성 &raquo;</a>
+        
+    </div>
+
+    
+
+
 </div>
 
             </div>

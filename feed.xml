@@ -12,7 +12,7 @@ http://clonekim.github.io/
 This blog is generated using cryogen
 </description>
 <lastBuildDate>
-Fri, 22 Jan 2016 10:26:31 +0900
+Mon, 25 Jan 2016 23:20:07 +0900
 </lastBuildDate>
 <generator>
 clj-rss
@@ -240,6 +240,41 @@ Wed, 13 Jan 2016 00:00:00 +0900
 </item>
 <item>
 <guid>
+http://clonekim.github.io/posts/2015-09-25-jdbc-in-clojure.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2015-09-25-jdbc-in-clojure.html
+</link>
+<title>
+클로저에서 Jdbc사용
+</title>
+<description>
+&lt;p&gt; 클로저에서 JDBC(Java Database Connectivity) 를 사용하기 위한 가이드&lt;br /&gt;  몇몇 함수가 없어진 경우가 있기 때문에 소스보기로 확인할 것&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://clojure-doc.org/articles/ecosystem/java_jdbc/home.html'&gt;clojure-doc보기&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://github.com/clojure/java.jdbc/blob/java.jdbc-0.4.2/src/main/clojure/clojure/java/jdbc.clj'&gt;소스보기&lt;/a&gt;   &lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;leiningen&quot;&gt;&lt;/a&gt;leiningen&lt;/h2&gt; &lt;pre&gt;&lt;code&gt;&amp;#91;org.clojure/java.jdbc &amp;quot;0.4.2&amp;quot;&amp;#93;&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;간단한&amp;#95;예제&quot;&gt;&lt;/a&gt;간단한 예제&lt;/h2&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;&amp;#40;ns db-test.core
+	&amp;#40;:require &amp;#91;clojure.java.jdbc :as sql&amp;#93;&amp;#41;&amp;#41;	
+
+&amp;#40;def db
+  {:classname &amp;quot;com.mysql.jdbc.Driver&amp;quot;
+   :subprotocol &amp;quot;mysql&amp;quot;
+   :subname &amp;quot;//127.0.0.1:3306/test&amp;quot;
+   :user &amp;quot;xxx&amp;quot;
+   :password &amp;quot;xxxx&amp;quot; }&amp;#41;
+
+&amp;#40;defn get-user &amp;#91;&amp;#93;
+  &amp;#40;println &amp;#40;sql/query db &amp;#91;&amp;quot;select &amp;#42; from users&amp;quot;&amp;#93;&amp;#41;&amp;#41;&amp;#41; 
+
+&amp;#40;defn -main &amp;#91;&amp;#93; 
+  &amp;#40;get-user&amp;#41;&amp;#41;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;참고&quot;&gt;&lt;/a&gt;참고&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://php-hackers.com/p/devn/hikari-cp'&gt;HikarCP를 사용하는 예&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://funcool.github.io/clojure.jdbc/latest'&gt;clojure.jdbc doc&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Fri, 25 Sep 2015 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
 http://clonekim.github.io/posts/2015-09-25-starting-clojure.html
 </guid>
 <link>
@@ -249,7 +284,7 @@ http://clonekim.github.io/posts/2015-09-25-starting-clojure.html
 Clojure 시작하기
 </title>
 <description>
-&lt;h2&gt;&lt;a name=&quot;clojure&amp;#95;란&quot;&gt;&lt;/a&gt;clojure 란&lt;/h2&gt;&lt;p&gt;Clojure는 Lisp의 계보를 잇는 최신의 함수형 언어이다&lt;br /&gt; JVM위에서 작동하고 자바의 방대한 라이브러리를 아무런 제약없이&lt;br /&gt; 사용할 수 있다.&lt;br /&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://www.techsuda.com/archives/1674'&gt;왜 클로저(Clojure)인가?&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://clojure.org'&gt;http://clojure.org&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;ide/tools&quot;&gt;&lt;/a&gt;IDE/Tools&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://lighttable.com'&gt;LightTable&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://cursiveclojure.com'&gt;Cursive&lt;/a&gt;&lt;/li&gt;&lt;li&gt;Emacs&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;leiningen으로&amp;#95;시작하기&quot;&gt;&lt;/a&gt;Leiningen으로 시작하기&lt;/h2&gt;&lt;p&gt;&lt;a href='http://leiningen.org'&gt;Leiningen&lt;/a&gt; (레닝겐)은 클로져를 쉽게 시작하기 위한 빌드자동화 툴이다&lt;/p&gt;&lt;p&gt;윈도우에서만 self-install해준다&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;/img/clojure/lein-self-install.png&quot; alt=&quot;Image 1&quot; /&gt;&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;project&amp;#95;생성&quot;&gt;&lt;/a&gt;Project 생성&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;lein new &amp;#91;프로젝트명&amp;#93;
+&lt;p&gt;JVM위에서 작동하는 함수형 프로그래밍이다&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;clojure&amp;#95;얻기&quot;&gt;&lt;/a&gt;clojure 얻기&lt;/h2&gt;&lt;p&gt;&lt;a href='http://clojure.org'&gt;http://clojure.org&lt;/a&gt;&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;ide/tools&quot;&gt;&lt;/a&gt;IDE/Tools&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://lighttable.com'&gt;LightTable&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://cursiveclojure.com'&gt;Cursive&lt;/a&gt;&lt;/li&gt;&lt;li&gt;Emacs&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;leiningen으로&amp;#95;시작하기&quot;&gt;&lt;/a&gt;Leiningen으로 시작하기&lt;/h2&gt;&lt;p&gt;&lt;a href='http://leiningen.org'&gt;Leiningen&lt;/a&gt; (레닝겐)은 클로져를 쉽게 시작하기 위한 빌드자동화 툴이다&lt;/p&gt;&lt;p&gt;윈도우에서만 self-install해준다&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;/img/clojure/lein-self-install.png&quot; alt=&quot;Image 1&quot; /&gt;&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;project&amp;#95;생성&quot;&gt;&lt;/a&gt;Project 생성&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;lein new &amp;#91;프로젝트명&amp;#93;
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;프로젝트&amp;#95;의존성&amp;#95;추가&quot;&gt;&lt;/a&gt;프로젝트 의존성 추가&lt;/h2&gt;&lt;p&gt;라이브러리는 아래의 저장소에서 검색이 가능하고&lt;br /&gt; 의존성에 추가하면 된다&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://clojars.org'&gt;clojars&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://mvnrepository.com'&gt;Maven repository&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt; :dependencies &amp;#91;&amp;#91;org.clojure/clojure &amp;quot;1.7.0&amp;quot;&amp;#93;
                 &amp;#91;groupId/artifactId &amp;quot;version&amp;quot;&amp;#93;&amp;#93;&amp;#41;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;그외의 라이브러리 저장소로는 추가로 지정할수있다&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;  :repositories {
@@ -505,14 +540,14 @@ defn shop-for-jams &amp;#91;jam1 jam2&amp;#93;
       &amp;#40;.put &amp;quot;ver&amp;quot; &amp;quot;1.7&amp;quot;&amp;#41;&amp;#41;
 
 ;; {&amp;quot;name&amp;quot; &amp;quot;clojure&amp;quot; , &amp;quot;ver&amp;quot; &amp;quot;1.7&amp;quot;}
-&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;a name=&quot;threading(-&gt;)&quot;&gt;&lt;/a&gt;Threading(-&gt;)&lt;/h3&gt;&lt;p&gt;최종적으로 돌려주는 것은 해당 함수(메서드)가 돌려주는 것&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;&amp;#40;-&amp;gt; &amp;#40;java.util.HashMap.&amp;#41;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;a name=&quot;threading(-&gt;)&quot;&gt;&lt;/a&gt;Threading(-&gt;)&lt;/h3&gt;&lt;p&gt;최종적으로 돌려주는 것은 해당 메서드가 적용된 것&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;&amp;#40;-&amp;gt; &amp;#40;java.util.HashMap.&amp;#41;
     &amp;#40;.put &amp;quot;num&amp;quot; 1234&amp;#41;&amp;#41;
 ;; nil
 
 &amp;#40;-&amp;gt; &amp;quot;aaaa&amp;quot;
     &amp;#40;.toUpperCase&amp;#41;&amp;#41;
 ;; &amp;quot;AAAA&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;database&quot;&gt;&lt;/a&gt;Database&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://clojure-doc.org/articles/ecosystem/java_jdbc/home.html'&gt;jdbc&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://sqlkorma.com/'&gt;SQL Korma&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://clojuremongodb.info'&gt;monger&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://github.com/krisajenkins/yesql'&gt;yesql&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;java&amp;#95;interoperability&quot;&gt;&lt;/a&gt;Java Interoperability&lt;/h2&gt;&lt;p&gt;&lt;a href='http://clojure.org/reference/java_interop'&gt;Java Interop&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;import&quot;&gt;&lt;/a&gt;Import&lt;/h3&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;&amp;#40;:import java.awt.Panel
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;database&quot;&gt;&lt;/a&gt;Database&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://clojure-doc.org/articles/ecosystem/java_jdbc/home.html'&gt;jdbc&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://sqlkorma.com/'&gt;SQL Korma&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://clojuremongodb.info'&gt;monger&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;java&amp;#95;interoperability&quot;&gt;&lt;/a&gt;Java Interoperability&lt;/h2&gt;&lt;p&gt;&lt;a href='http://clojure.org/reference/java_interop'&gt;Java Interop&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;import&quot;&gt;&lt;/a&gt;Import&lt;/h3&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;&amp;#40;:import java.awt.Panel
          java.util.Date&amp;#41;
 
 &amp;#40;:import &amp;#40;java.io Writer
@@ -524,44 +559,15 @@ defn shop-for-jams &amp;#91;jam1 jam2&amp;#93;
   }
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;&amp;#40;Robot$Radio.&amp;#41;
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;web&amp;#95;programming&quot;&gt;&lt;/a&gt;Web Programming&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://github.com/ring-clojure/ring'&gt;Ring&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://www.luminusweb.net'&gt;Luminus&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;3rd&amp;#95;party&amp;#95;libraries&quot;&gt;&lt;/a&gt;3rd Party Libraries&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;bouncer&lt;/li&gt;&lt;li&gt;validateur&lt;/li&gt;&lt;li&gt;SQLingvo&lt;/li&gt;&lt;li&gt;HoneySQL&lt;/li&gt;&lt;li&gt;&lt;a href='https://github.com/joelkuiper/yesparql'&gt;YeSPARQL&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;plugins&quot;&gt;&lt;/a&gt;plugins&lt;/h2&gt;&lt;h3&gt;&lt;a name=&quot;lein-try&amp;#95;사용하기&quot;&gt;&lt;/a&gt;lein-try 사용하기&lt;/h3&gt;&lt;p&gt;아래 파일을 편집한다&lt;/p&gt;&lt;p&gt;${HOME}/.lein/profiles.clj&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;{:user {:plugins &amp;#91;&amp;#91;lein-try &amp;quot;0.4.3&amp;quot;&amp;#93;&amp;#93;}}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;a name=&quot;try..catch&quot;&gt;&lt;/a&gt;try..catch&lt;/h3&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt; &amp;#40;try
+    &amp;#40;Integer/parseInt s&amp;#41;
+    &amp;#40;catch NumberFormatException e
+      &amp;#40;.printStackTrace e&amp;#41;&amp;#41;
+    &amp;#40;finally
+      &amp;#40;println &amp;quot;Attempted to parse as integer: &amp;quot; s&amp;#41;&amp;#41;&amp;#41;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;web&amp;#95;programming&quot;&gt;&lt;/a&gt;Web Programming&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://github.com/ring-clojure/ring'&gt;Ring&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://www.luminusweb.net'&gt;Luminus&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;3rd&amp;#95;party&amp;#95;libraries&quot;&gt;&lt;/a&gt;3rd Party Libraries&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;bouncer&lt;/li&gt;&lt;li&gt;validateur&lt;/li&gt;&lt;li&gt;SQLingvo&lt;/li&gt;&lt;li&gt;HoneySQL&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;plugins&quot;&gt;&lt;/a&gt;plugins&lt;/h2&gt;&lt;h3&gt;&lt;a name=&quot;lein-try&amp;#95;사용하기&quot;&gt;&lt;/a&gt;lein-try 사용하기&lt;/h3&gt;&lt;p&gt;아래 파일을 편집한다&lt;/p&gt;&lt;p&gt;${HOME}/.lein/profiles.clj&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;{:user {:plugins &amp;#91;&amp;#91;lein-try &amp;quot;0.4.3&amp;quot;&amp;#93;&amp;#93;}}
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;clj-time이라는 라이브러를 가지고 간단한 테스트 해볼때&lt;br /&gt; 아래와 같이 repl를 열수있다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;lein try clj-time
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;참고&quot;&gt;&lt;/a&gt;참고&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://en.wikibooks.org/wiki/Clojure_Programming/Examples/API_Examples/Function_Tools'&gt;Clojure Programming/Examples/API Examples/Function Tools&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://clojure-doc.org/articles/language/functions.html'&gt;Functions in Clojure&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://aphyr.com/posts/303-clojure-from-the-ground-up-functions'&gt;Clojure from the ground up&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://clojure.org/about/functional_programming'&gt;Functional Programming&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
-</description>
-<enclosure>
-
-</enclosure>
-<pubDate>
-Fri, 25 Sep 2015 00:00:00 +0900
-</pubDate>
-</item>
-<item>
-<guid>
-http://clonekim.github.io/posts/2015-09-25-jdbc-in-clojure.html
-</guid>
-<link>
-http://clonekim.github.io/posts/2015-09-25-jdbc-in-clojure.html
-</link>
-<title>
-클로저에서 Jdbc사용
-</title>
-<description>
-&lt;p&gt; 클로저에서 JDBC(Java Database Connectivity) 를 사용하기 위한 가이드&lt;br /&gt;  몇몇 함수가 없어진 경우가 있기 때문에 소스보기로 확인할 것&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://clojure-doc.org/articles/ecosystem/java_jdbc/home.html'&gt;clojure-doc보기&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://github.com/clojure/java.jdbc/blob/java.jdbc-0.4.2/src/main/clojure/clojure/java/jdbc.clj'&gt;소스보기&lt;/a&gt;   &lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;leiningen&quot;&gt;&lt;/a&gt;leiningen&lt;/h2&gt; &lt;pre&gt;&lt;code&gt;&amp;#91;org.clojure/java.jdbc &amp;quot;0.4.2&amp;quot;&amp;#93;&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;간단한&amp;#95;예제&quot;&gt;&lt;/a&gt;간단한 예제&lt;/h2&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;&amp;#40;ns db-test.core
-	&amp;#40;:require &amp;#91;clojure.java.jdbc :as sql&amp;#93;&amp;#41;&amp;#41;	
-
-&amp;#40;def db
-  {:classname &amp;quot;com.mysql.jdbc.Driver&amp;quot;
-   :subprotocol &amp;quot;mysql&amp;quot;
-   :subname &amp;quot;//127.0.0.1:3306/test&amp;quot;
-   :user &amp;quot;xxx&amp;quot;
-   :password &amp;quot;xxxx&amp;quot; }&amp;#41;
-
-&amp;#40;defn get-user &amp;#91;&amp;#93;
-  &amp;#40;println &amp;#40;sql/query db &amp;#91;&amp;quot;select &amp;#42; from users&amp;quot;&amp;#93;&amp;#41;&amp;#41;&amp;#41; 
-
-&amp;#40;defn -main &amp;#91;&amp;#93; 
-  &amp;#40;get-user&amp;#41;&amp;#41;
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;참고&quot;&gt;&lt;/a&gt;참고&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://php-hackers.com/p/devn/hikari-cp'&gt;HikarCP를 사용하는 예&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://funcool.github.io/clojure.jdbc/latest'&gt;clojure.jdbc doc&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+&lt;/code&gt;&lt;/pre&gt;
 </description>
 <enclosure>
 
@@ -593,6 +599,50 @@ ${telephone&amp;#91;0..3&amp;#93;}-${telephone&amp;#91;4..7&amp;#93;} //1588-123
 </enclosure>
 <pubDate>
 Wed, 23 Sep 2015 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
+http://clonekim.github.io/posts/2015-09-20-using-jquery-in-clojurescript.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2015-09-20-using-jquery-in-clojurescript.html
+</link>
+<title>
+clojurescript에서 jquery사용
+</title>
+<description>
+&lt;p&gt;&lt;em&gt;view.clj&lt;/em&gt;  &lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;&amp;#40;defn view-layout &amp;#91;&amp;amp; content&amp;#93;
+  &amp;#40;html
+      &amp;#91;:head
+           &amp;#91;:meta {:http-equiv &amp;quot;Content-type&amp;quot;
+                        :content &amp;quot;text/html; charset=utf-8&amp;quot;}&amp;#93;
+           &amp;#91;:title &amp;quot;Project-Name&amp;quot;&amp;#93;&amp;#93;
+      &amp;#91;:body content&amp;#93;&amp;#41;&amp;#41;
+
+&amp;#40;defn view-content &amp;#91;&amp;#93;
+  &amp;#40;view-layout
+       &amp;#91;:h2 &amp;quot;Project-Name&amp;quot;&amp;#93;
+       &amp;#91;:p {:id &amp;quot;clickhere&amp;quot;} &amp;quot;Get yourself a nice alert by clicking here.&amp;quot;&amp;#93;
+       &amp;#91;:script {:src &amp;quot;/js/jquery-1.10.2.min.js&amp;quot;}&amp;#93;
+       &amp;#91;:script {:src &amp;quot;/js/cljs.js&amp;quot;}&amp;#93;&amp;#41;&amp;#41;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;hello.cljs&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;&amp;#40;:require &amp;#91;jayq.core :as jq&amp;#93;&amp;#41;
+&amp;#40;:use &amp;#91;jayq.core :only &amp;#91;$&amp;#93;&amp;#93;&amp;#41;
+
+;;
+;; $&amp;#40;&amp;quot;#btn&amp;quot;&amp;#41;.click&amp;#40;function&amp;#40;&amp;#41; {alert&amp;#40;&amp;quot;Hi!&amp;quot;&amp;#41;; }&amp;#41;;
+;;
+
+&amp;#40;jq/bind &amp;#40;$ &amp;quot;#btn&amp;quot;&amp;#41; :click &amp;#40;fn &amp;#91;&amp;#93; &amp;#40;js/alert &amp;quot;Hi!&amp;quot;&amp;#41;&amp;#41;&amp;#41;
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;lein cljsbuild once
+lein run
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;참고&quot;&gt;&lt;/a&gt;참고&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://www.slideshare.net/maedaunderscore/clojurescript'&gt;ClojureScriptという選択肢&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://qiita.com/mizchi/items/f64b7620cd93a4d5b157'&gt;ClojureScript入門&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Sun, 20 Sep 2015 00:00:00 +0900
 </pubDate>
 </item>
 <item>
@@ -665,7 +715,7 @@ ring-jetty-adapter: a Ring adapter that uses the Jetty webserver
 2015-09-11 16:02:19.133:INFO:oejs.Server:nREPL-worker-0: jetty-9.2.10.v20150310
 2015-09-11 16:02:19.153:INFO:oejs.ServerConnector:nREPL-worker-0: Started ServerConnector@31de707e{HTTP/1.1}{0.0.0.0:8080}
 2015-09-11 16:02:19.154:INFO:oejs.Server:nREPL-worker-0: Started @12408ms
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;middleware&quot;&gt;&lt;/a&gt;MiddleWare&lt;/h2&gt;&lt;h3&gt;&lt;a name=&quot;ring-json&quot;&gt;&lt;/a&gt;ring-json&lt;/h3&gt;&lt;p&gt;&lt;em&gt;leiningen&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;&amp;#91;ring/ring-json &amp;quot;0.4.0&amp;quot;&amp;#93;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;wrap-json-response&lt;/em&gt;&lt;/p&gt;&lt;p&gt;json으로 응답한다&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;&amp;#40;ns hello-ring.core
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;middleware&quot;&gt;&lt;/a&gt;MiddleWare&lt;/h2&gt;&lt;h3&gt;&lt;a name=&quot;ring-json&quot;&gt;&lt;/a&gt;ring-json&lt;/h3&gt;&lt;p&gt;&lt;em&gt;leiningen&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;&amp;#91;ring/ring-json &amp;quot;0.4.0&amp;quot;&amp;#93;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;응답을 json으로 처리&lt;/em&gt;&lt;/p&gt;&lt;p&gt;요청 결과를 JSON을 보내기 위해서 일부러 Content-Type를 설정 하는 것 보다&lt;br /&gt; response 그런 기능을 삽입하는 것이다&lt;/p&gt;&lt;p&gt;ring.middleware.json의 wrap-json-response를 사용한다&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;&amp;#40;ns hello-ring.core
 	&amp;#40;:use &amp;#91;ring.adapter.jetty&amp;#93;
          &amp;#91;ring.middleware.json :only &amp;#91;wrap-json-response&amp;#93;&amp;#93;
          &amp;#91;ring.util.response :as response&amp;#93;&amp;#41;&amp;#41;
@@ -678,7 +728,28 @@ ring-jetty-adapter: a Ring adapter that uses the Jetty webserver
 
 &amp;#40;defn -main &amp;#91;&amp;#93;
 	&amp;#40;run-jetty app-handler {:port 3000}&amp;#41;&amp;#41;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;/img/clojure/json-resp.png&quot; alt=&quot;json-resp&quot; /&gt;&lt;/p&gt;&lt;p&gt;&lt;em&gt;json-body,json-params&lt;/em&gt;&lt;/p&gt;&lt;p&gt;body자체를 json으로 받거나 요청파라미터를 처리할 경우에&lt;br /&gt; ring.middleware.json 의 wrap-json-body, wrap-json-params이 필요함&lt;br /&gt; 반드시 Content-Type이 application/json 일 경우에만 반응함&lt;/p&gt;&lt;pre&gt;&lt;code&gt;&amp;#40;POST &amp;quot;/confirm&amp;quot; req
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;/img/clojure/json-resp.png&quot; alt=&quot;json-resp&quot; /&gt;&lt;/p&gt;&lt;p&gt;&lt;em&gt;request를 json으로 다루기&lt;/em&gt;&lt;/p&gt;&lt;p&gt;body자체를 json으로 받거나 요청파라미터를 처리할 경우에&lt;br /&gt; ring.middleware.json 의 wrap-json-body, wrap-json-params이 필요함&lt;br /&gt; 반드시 Content-Type이 application/json 일 경우에만 반응함&lt;/p&gt;&lt;pre&gt;&lt;code&gt;&amp;#40;POST &amp;quot;/confirm&amp;quot; req
+  &amp;#40;let &amp;#91;name &amp;#40;get-in req &amp;#91;:params &amp;quot;name&amp;quot;&amp;#93;&amp;#41;&amp;#93;
+  &amp;#40;response {:desc &amp;#40;str &amp;quot;The name you sent to me was &amp;quot; name&amp;#41;}&amp;#41;&amp;#41;&amp;#41;
+
+&amp;#40;POST &amp;quot;/&amp;quot; req
+  &amp;#40;println &amp;#40;get &amp;#40;:body req&amp;#41; &amp;quot;age&amp;quot;&amp;#41;&amp;#41;&amp;#41;  
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;curl를 이용해서 request 를 보내보자&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;curl -H &amp;quot;Content-Type: application/json&amp;quot; -X POST -d '{&amp;quot;age&amp;quot; : 20}' http://127.0.0.1:8080
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;post로 json 데이터를 보낼 경우 body를 출력시&lt;br /&gt; PersistentArrayMap 로 나타난다&lt;br /&gt; &lt;a href='https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get'&gt;clojure.core/get&lt;/a&gt; 으로 값 취득한다&lt;/p&gt;&lt;p&gt;&lt;em&gt;json request를 param으로 읽기&lt;/em&gt;&lt;/p&gt;&lt;p&gt;ring.middleware.json 의  wrap-json-params이 필요함&lt;br /&gt; 반드시 Content-Type이 application/json 일 경우에만 반응함&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;curl -H &amp;quot;Content-Type: application/json&amp;quot; -X POST -d '{&amp;quot;age&amp;quot; : 20, &amp;quot;name&amp;quot;: &amp;quot;kim&amp;quot;}' http://127.0.0.1:8080/confirm
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;
+&amp;#40;POST &amp;quot;/confirm&amp;quot; {p :params}
+  &amp;#40;println p&amp;#41;&amp;#41; ; {age 20, name kim} 으로 출력
+
+;위와 같음
+&amp;#40;POST &amp;quot;/confirm&amp;quot; {model :json-params}
+   &amp;#40;println &amp;#40;get model &amp;quot;name&amp;quot;&amp;#41;&amp;#41;; =&amp;gt; 20
+   
+;파라미터를 인자로 받음
+&amp;#40;POST &amp;quot;/confirm&amp;quot; &amp;#91;name age&amp;#93;
+...
+
+; request를 그대로 사용
+&amp;#40;POST &amp;quot;/confirm&amp;quot; req
   &amp;#40;let &amp;#91;name &amp;#40;get-in req &amp;#91;:params &amp;quot;name&amp;quot;&amp;#93;&amp;#41;&amp;#93;
   &amp;#40;response {:desc &amp;#40;str &amp;quot;The name you sent to me was &amp;quot; name&amp;#41;}&amp;#41;&amp;#41;&amp;#41;
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;routing&quot;&gt;&lt;/a&gt;Routing&lt;/h2&gt;&lt;h3&gt;&lt;a name=&quot;compojure&quot;&gt;&lt;/a&gt;Compojure&lt;/h3&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;&amp;#40;ns hello-ring.core
@@ -800,7 +871,7 @@ html
   &amp;#40;run-server #'app {:port 8080}&amp;#41;&amp;#41;
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;plugins&quot;&gt;&lt;/a&gt;Plugins&lt;/h2&gt;&lt;h3&gt;&lt;a name=&quot;lein-ring&quot;&gt;&lt;/a&gt;lein-ring&lt;/h3&gt;&lt;p&gt;Leiningen의 Ring 작업을 편하기 하기 위한 플러그인이다&lt;br /&gt; 즉 서버를 구동하거나 jar, war로 디플로이하는 하는 일이다&lt;/p&gt;&lt;p&gt;&lt;em&gt;project.clj&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt; :plugins &amp;#91;&amp;#91;lein-ring &amp;quot;0.8.13&amp;quot;&amp;#93;&amp;#93;
  :ring {:handler hello-ring.core/app} ;;시작할 수 있는 핸들러를 지정
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;바로 서버구동이 가능하고 기본적으로 3000 포트를 사용함&lt;br /&gt; 이제 서버측 코드를 수정하면 바로 적용이 된다&lt;/p&gt;&lt;p&gt;&lt;em&gt;실행&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;lein ring server&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;참고&quot;&gt;&lt;/a&gt;참고&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://github.com/ring-clojure/ring'&gt;https://github.com/ring-clojure/ring&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://github.com/weavejester/hiccup'&gt;https://github.com/weavejester/hiccup&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://github.com/revelytix/lein-ring'&gt;https://github.com/revelytix/lein-ring&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;바로 서버구동이 가능하고 기본적으로 3000 포트를 사용함&lt;br /&gt; 이제 서버측 코드를 수정하면 바로 적용이 된다&lt;/p&gt;&lt;p&gt;&lt;em&gt;실행&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;lein ring server&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;참고&quot;&gt;&lt;/a&gt;참고&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://github.com/ring-clojure/ring'&gt;https://github.com/ring-clojure/ring&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://github.com/weavejester/hiccup'&gt;https://github.com/weavejester/hiccup&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://github.com/revelytix/lein-ring'&gt;https://github.com/revelytix/lein-ring&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='liquidz.github.io/2011/12/practical-compojure.html'&gt;実践(?)Compojure&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://github.com/technomancy/shouter'&gt;shouter&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 </description>
 <enclosure>
 
@@ -1151,6 +1222,63 @@ Thu, 16 Jul 2015 00:00:00 +0900
 </item>
 <item>
 <guid>
+http://clonekim.github.io/posts/2015-07-14-how-to-captcha-in-node.js.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2015-07-14-how-to-captcha-in-node.js.html
+</link>
+<title>
+Node.js로 Captcha
+</title>
+<description>
+&lt;p&gt;canvas를 이용한 캡챠(captcha)를 생성하려고 한다.&lt;br /&gt; 사용하려는 패키지는 canvas-captcha이다&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;의존성&amp;#95;설치&quot;&gt;&lt;/a&gt;의존성 설치&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;apt-get install libpango1.0-dev
+apt-get install libjpeg-dev
+apt-get install libgif-dev
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;소스작성&quot;&gt;&lt;/a&gt;소스작성&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;captcha.js&lt;/strong&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;var captcha = require&amp;#40;'canvas-captcha'&amp;#41;
+    ,captchaOptions = {
+        charPool: &amp;#40;'abcdefghijklmnopqrstuvwxyz' + 'abcdefghijklmnopqrstuvwxyz'.toUpperCase&amp;#40;&amp;#41; + '1234567890'&amp;#41;.split&amp;#40;''&amp;#41; //char pool Array
+        ,size: {
+            width: 120
+            ,height: 52
+        } //image size
+        ,textPos: {
+            left: 15
+            ,top: 36
+        } //text drawing start position
+        ,rotate: .01 //text ratate
+        ,charLength: 5 //how many chars
+        //,font: '26px' //font size
+        ,strokeStyle: '#0088cc' //style
+        ,bgColor: '#eeeeee' //bg color
+        ,confusion: true //draw another group background text to mangle the text
+        //,cFont: '30px' //bg text style
+        ,cStrokeStyle: '#adc' //bg text color
+        ,cRotate: -.05 //bg text rotate
+    };
+
+exports.captcha = function&amp;#40;req, res&amp;#41; {
+    captcha&amp;#40;captchaOptions, function&amp;#40;err, data&amp;#41; {
+        if&amp;#40;err&amp;#41; {
+            res.send&amp;#40;err&amp;#41;;
+        }
+        else {
+            console.log&amp;#40;&amp;quot;Generated Captcha -&amp;gt; &amp;quot;, data.captchaStr&amp;#41;;
+            req.session.captcha = data.captchaStr;
+            res.end&amp;#40;data.captchaImg&amp;#41;
+        }
+    }&amp;#41;
+};
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Tue, 14 Jul 2015 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
 http://clonekim.github.io/posts/2015-07-14-sinatra.html
 </guid>
 <link>
@@ -1253,63 +1381,6 @@ jruby -S warble config
    config.jar&amp;#95;name = &amp;quot;app&amp;quot;
 end  
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;이제 war파일을 작성하면 app.war 라는 파일이 보일것이다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;jruby -S warble&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;참고&quot;&gt;&lt;/a&gt;참고&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://www.rubyinside.com/sinatra-29-links-and-resources-for-a-quicker-easier-way-to-build-webapps-1371.html'&gt;Sinatra: 29 Links and Resources For A Quicker, Easier Way to Build Webapps&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://aligach.net/diary/20110307.html'&gt; 今さらSinatra最低限メモ&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://www7b.biglobe.ne.jp/~makandat/gg_sites/Sinatra_Diary_01.html'&gt;Sinatra 日記&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
-</description>
-<enclosure>
-
-</enclosure>
-<pubDate>
-Tue, 14 Jul 2015 00:00:00 +0900
-</pubDate>
-</item>
-<item>
-<guid>
-http://clonekim.github.io/posts/2015-07-14-how-to-captcha-in-node.js.html
-</guid>
-<link>
-http://clonekim.github.io/posts/2015-07-14-how-to-captcha-in-node.js.html
-</link>
-<title>
-Node.js로 Captcha
-</title>
-<description>
-&lt;p&gt;canvas를 이용한 캡챠(captcha)를 생성하려고 한다.&lt;br /&gt; 사용하려는 패키지는 canvas-captcha이다&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;의존성&amp;#95;설치&quot;&gt;&lt;/a&gt;의존성 설치&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;apt-get install libpango1.0-dev
-apt-get install libjpeg-dev
-apt-get install libgif-dev
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;소스작성&quot;&gt;&lt;/a&gt;소스작성&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;captcha.js&lt;/strong&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;var captcha = require&amp;#40;'canvas-captcha'&amp;#41;
-    ,captchaOptions = {
-        charPool: &amp;#40;'abcdefghijklmnopqrstuvwxyz' + 'abcdefghijklmnopqrstuvwxyz'.toUpperCase&amp;#40;&amp;#41; + '1234567890'&amp;#41;.split&amp;#40;''&amp;#41; //char pool Array
-        ,size: {
-            width: 120
-            ,height: 52
-        } //image size
-        ,textPos: {
-            left: 15
-            ,top: 36
-        } //text drawing start position
-        ,rotate: .01 //text ratate
-        ,charLength: 5 //how many chars
-        //,font: '26px' //font size
-        ,strokeStyle: '#0088cc' //style
-        ,bgColor: '#eeeeee' //bg color
-        ,confusion: true //draw another group background text to mangle the text
-        //,cFont: '30px' //bg text style
-        ,cStrokeStyle: '#adc' //bg text color
-        ,cRotate: -.05 //bg text rotate
-    };
-
-exports.captcha = function&amp;#40;req, res&amp;#41; {
-    captcha&amp;#40;captchaOptions, function&amp;#40;err, data&amp;#41; {
-        if&amp;#40;err&amp;#41; {
-            res.send&amp;#40;err&amp;#41;;
-        }
-        else {
-            console.log&amp;#40;&amp;quot;Generated Captcha -&amp;gt; &amp;quot;, data.captchaStr&amp;#41;;
-            req.session.captcha = data.captchaStr;
-            res.end&amp;#40;data.captchaImg&amp;#41;
-        }
-    }&amp;#41;
-};
-&lt;/code&gt;&lt;/pre&gt;
 </description>
 <enclosure>
 
@@ -1450,6 +1521,52 @@ Sun, 28 Jun 2015 00:00:00 +0900
 </item>
 <item>
 <guid>
+http://clonekim.github.io/posts/2015-02-03-beefy-tip.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2015-02-03-beefy-tip.html
+</link>
+<title>
+beefy 팁
+</title>
+<description>
+ &lt;p&gt;a local development server designed to work with browserify.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;can live reload your browser when your code changes (if you want)&lt;/li&gt;&lt;li&gt;works with whatever version of browserify or watchify; globally installed or  locally installed to &lt;code&gt;node&amp;#95;modules/&lt;/code&gt;.&lt;/li&gt;&lt;li&gt;will spit compile errors out into the browser so you don't have that  1-2 seconds of cognitive dissonance and profound ennui that follows  refreshing the page only to get a blank screen.&lt;/li&gt;&lt;li&gt;will spit out a default &lt;code&gt;index.html&lt;/code&gt; for missing routes so you don't  need to even muck about with HTML to get started&lt;/li&gt;&lt;li&gt;serves up static files with grace and aplomb (and also appropriate  mimetypes)&lt;/li&gt;&lt;li&gt;is designed to fall away gracefully, as your project gets bigger.&lt;/li&gt;&lt;li&gt;love you, unconditionally&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;em&gt;의존성 설치&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;npm install --save jquery
+npm install --save backbone
+npm install --save-dev beefy
+npm install --save-dev browserify
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;package.json&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;json&quot;&gt; &amp;quot;scripts&amp;quot;: {
+    &amp;quot;start&amp;quot; : &amp;quot;beefy index.js:bundle.js --live&amp;quot;,
+     &amp;quot;bundle&amp;quot;: &amp;quot;browserify index.js -o bundle.js&amp;quot;
+  },
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;main.js&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;
+var Backbone = require&amp;#40;'backbone'&amp;#41;;
+var $ = require&amp;#40;'jquery'&amp;#41;;
+Backbone.$ = $;
+
+module.exports = Backbone.View.extend&amp;#40;{
+
+  initialize: function&amp;#40;&amp;#41;{
+    this.render&amp;#40;&amp;#41;;
+  },
+
+  render: function&amp;#40;&amp;#41;{
+    $&amp;#40;'body'&amp;#41;.prepend&amp;#40;'&amp;lt;p&amp;gt;Hello There&amp;lt;/p&amp;gt;'&amp;#41;;
+  }
+}&amp;#41;;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;index.js&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt; var Main = require&amp;#40;'./main'&amp;#41;;
+ new Main&amp;#40;&amp;#41;;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;실행&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;npm start
+&lt;/code&gt;&lt;/pre&gt;웹브라우저로 http://127.0.0.1:9966를 접근해보라&lt;br /&gt;Hello There라는 문구를 볼수 있다&lt;br /&gt;&lt;code&gt;소스&lt;/code&gt;가 수정되면 &lt;code&gt;웹브라우저&lt;/code&gt;도 새로고침이 된다!
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Tue, 03 Feb 2015 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
 http://clonekim.github.io/posts/2015-02-01-imagemagick.html
 </guid>
 <link>
@@ -1466,6 +1583,10 @@ convert &amp;#91;Image 1&amp;#93; -thumbnail 100x70 &amp;#91;Result Image&amp;#9
 
 ex&amp;#41;
 composite -geometry +02+30 person.jpg background.jpg profile.jpg 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;Image Info&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;identify -format '%wx%h %m %b %n' &amp;#91;file&amp;#93;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;box 필터&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;convert &amp;#91;file&amp;#93; -scale &amp;#91;n&amp;#93;% -filter box -resize &amp;#91;size&amp;#93;! &amp;#91;file&amp;#93;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;inline 이미지 생성&lt;/em&gt;&lt;/p&gt;&lt;p&gt;png 로 이미지를 생성하되 :- 또는 png:fd:1 를 사용하면 표준 출력 장치(모니터) 로 내보냄&lt;/p&gt;&lt;pre&gt;&lt;code&gt; convert -size 300x300 -background &amp;quot;#c0c0c0&amp;quot; -fill &amp;quot;#FFFF00&amp;quot; caption:&amp;quot;Hello&amp;quot; png:-
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;표준 출력 장치로 내보는 것을 base64로 파이프처리&lt;/p&gt;&lt;pre&gt;&lt;code&gt;convert -size 300x300 -background &amp;quot;#c0c0c0&amp;quot; -fill &amp;quot;#FFFF00&amp;quot; caption:&amp;quot;Hello&amp;quot; png:- | base64 -i - 
 &lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://ameblo.jp/itboy/entry-10593629105.html'&gt;ImageMagickを使ってコマンドラインからCAPTCHAを作ってみる&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://alexandrotommy.wordpress.com/tag/quebrar-captcha/'&gt;Quebrar Captcha&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://www.fmwconcepts.com/imagemagick/captcha/index.php'&gt;Fred's ImageMagick Scripts&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 </description>
 <enclosure>
@@ -1920,6 +2041,91 @@ Mon, 10 Nov 2014 00:00:00 +0900
 </item>
 <item>
 <guid>
+http://clonekim.github.io/posts/2014-10-03-backbone_handlebar_gulp_tip.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2014-10-03-backbone_handlebar_gulp_tip.html
+</link>
+<title>
+backbone + handlebar + gulp 팁
+</title>
+<description>
+ &lt;p&gt;백본과 핸들바를 사용해서 소스를 컴파일 후&lt;br /&gt; 정해진 경로로 결과물을 내보내자.&lt;br /&gt; 핸들바를 사용하지 않을려면 &lt;a href='https://github.com/substack/brfs'&gt;brfs&lt;/a&gt;도 고려해보자&lt;/p&gt;&lt;p&gt;&lt;em&gt;패키지 설치&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;npm install --global gulp
+npm install --save-dev gulp
+npm install --save-dev browserify
+npm install --save-dev vinyl-source-stream
+npm install --save handlebars
+npm install --save hbsfy
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;gulpfile.js&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;var gulp = require&amp;#40;'gulp'&amp;#41;,
+	browserify = require&amp;#40;'browserify'&amp;#41;,
+	source = require&amp;#40;'vinyl-source-stream'&amp;#41;,
+	hbsfy = require&amp;#40;'hbsfy'&amp;#41;;
+
+gulp.task&amp;#40;'build', function&amp;#40;&amp;#41; {
+	var b = browserify&amp;#40;'./js/app.js', {debug:true}&amp;#41;;
+	return b.transform&amp;#40;hbsfy&amp;#41;
+		 .bundle&amp;#40;&amp;#41;
+		 .pipe&amp;#40;source&amp;#40;'app.js'&amp;#41;&amp;#41;
+		 .pipe&amp;#40;gulp.dest&amp;#40;'/home/alpha/public/js'&amp;#41;&amp;#41;;
+}&amp;#41;;
+
+
+gulp.task&amp;#40;'watch', function&amp;#40;&amp;#41; {
+	gulp.watch&amp;#40;'./js/&amp;#42;&amp;#42;/&amp;#42;.js', &amp;#91;'build'&amp;#93;&amp;#41;;
+	gulp.watch&amp;#40;'./templates/&amp;#42;.hbs', &amp;#91;'build'&amp;#93;&amp;#41;;
+}&amp;#41;;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;app.js&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;var Backbone = require&amp;#40;'backbone'&amp;#41;;
+var $ = require&amp;#40;'jquery'&amp;#41;;
+var HomeView = require&amp;#40;'./views/home'&amp;#41;;
+
+var Router = Backbone.Router.extend&amp;#40;{
+
+	
+		routes: {
+			'': 'start'
+		},
+		
+		start: function&amp;#40;&amp;#41; {
+			console.log&amp;#40;'start!'&amp;#41;;
+			$&amp;#40;&amp;quot;.container&amp;quot;&amp;#41;.html&amp;#40;new HomeView&amp;#40;&amp;#41;.render&amp;#40;&amp;#41;.el&amp;#41;;
+		}
+		
+}&amp;#41;;
+
+var router = new Router&amp;#40;&amp;#41;;
+Backbone.history.start&amp;#40;&amp;#41;;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;views/home.js&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;var Backbone = require&amp;#40;'backbone'&amp;#41;;
+var $ = require&amp;#40;'jquery'&amp;#41;;
+Backbone.$ = $;
+
+
+var HomeView = Backbone.View.extend&amp;#40;{
+	initialize: function&amp;#40;&amp;#41; {
+		this.template = require&amp;#40;'../../templates/home.hbs'&amp;#41;;
+	},
+	
+	render: function&amp;#40;&amp;#41; {
+		this.$el.html&amp;#40;this.template&amp;#40;{name: 'Hello There!'}&amp;#41;&amp;#41;;
+		console.log&amp;#40;&amp;quot;home render&amp;quot;&amp;#41;;
+		return this;
+	}
+}&amp;#41;;
+
+module.exports = HomeView;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;templates/home.hbs&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&amp;lt;h1&amp;gt;
+  {{name}}
+&amp;lt;/h1&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Fri, 03 Oct 2014 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
 http://clonekim.github.io/posts/2014-03-02-uuid-in-javascript.html
 </guid>
 <link>
@@ -2128,43 +2334,6 @@ Tue, 01 Oct 2013 00:00:00 +0900
 </item>
 <item>
 <guid>
-http://clonekim.github.io/posts/2013-09-27-jspwiki-install.html
-</guid>
-<link>
-http://clonekim.github.io/posts/2013-09-27-jspwiki-install.html
-</link>
-<title>
-JSPWiki 설치
-</title>
-<description>
-&lt;p&gt;&lt;a href='http://jspwiki.apache.org/'&gt;Apache JSPWiki&lt;/a&gt;&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;설정&quot;&gt;&lt;/a&gt;설정&lt;/h2&gt;&lt;p&gt;&lt;em&gt;server.xml&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;&amp;lt;Connector address=&amp;quot;127.0.0.1&amp;quot; port=&amp;quot;8080&amp;quot; protocol=&amp;quot;org.apache.coyote.http11.Http11NioProtocol&amp;quot;
-               connectionTimeout=&amp;quot;20000&amp;quot;
-               maxThreads=&amp;quot;3&amp;quot; minSpareThreads=&amp;quot;2&amp;quot;
-               redirectPort=&amp;quot;8443&amp;quot; URIEncoding=&amp;quot;UTF-8&amp;quot;/&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;jspwiki.properties&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;jspwiki.baseURL= http://cloud9ine.cafe24.com/wiki
-jspwiki.fileSystemProvider.pageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/
-jspwiki.basicAttachmentProvider.storageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;jspwiki.policy&lt;/em&gt;&lt;/p&gt;&lt;p&gt;   Anonymous를 코멘트처리&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;nginx&amp;#95;연동&quot;&gt;&lt;/a&gt;Nginx 연동&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;upstream tomcat {
-    server 127.0.0.1:8080;
-}
-
-server {
- ...
-  location /wiki {
-      proxy&amp;#95;pass http://tomcat;
-  }
-
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-<enclosure>
-
-</enclosure>
-<pubDate>
-Fri, 27 Sep 2013 00:00:00 +0900
-</pubDate>
-</item>
-<item>
-<guid>
 http://clonekim.github.io/posts/2013-09-27-proxy-authentication.html
 </guid>
 <link>
@@ -2222,6 +2391,43 @@ Fri, 27 Sep 2013 00:00:00 +0900
 </item>
 <item>
 <guid>
+http://clonekim.github.io/posts/2013-09-27-jspwiki-install.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2013-09-27-jspwiki-install.html
+</link>
+<title>
+JSPWiki 설치
+</title>
+<description>
+&lt;p&gt;&lt;a href='http://jspwiki.apache.org/'&gt;Apache JSPWiki&lt;/a&gt;&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;설정&quot;&gt;&lt;/a&gt;설정&lt;/h2&gt;&lt;p&gt;&lt;em&gt;server.xml&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;&amp;lt;Connector address=&amp;quot;127.0.0.1&amp;quot; port=&amp;quot;8080&amp;quot; protocol=&amp;quot;org.apache.coyote.http11.Http11NioProtocol&amp;quot;
+               connectionTimeout=&amp;quot;20000&amp;quot;
+               maxThreads=&amp;quot;3&amp;quot; minSpareThreads=&amp;quot;2&amp;quot;
+               redirectPort=&amp;quot;8443&amp;quot; URIEncoding=&amp;quot;UTF-8&amp;quot;/&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;jspwiki.properties&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;jspwiki.baseURL= http://cloud9ine.cafe24.com/wiki
+jspwiki.fileSystemProvider.pageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/
+jspwiki.basicAttachmentProvider.storageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;jspwiki.policy&lt;/em&gt;&lt;/p&gt;&lt;p&gt;   Anonymous를 코멘트처리&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;nginx&amp;#95;연동&quot;&gt;&lt;/a&gt;Nginx 연동&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;upstream tomcat {
+    server 127.0.0.1:8080;
+}
+
+server {
+ ...
+  location /wiki {
+      proxy&amp;#95;pass http://tomcat;
+  }
+
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Fri, 27 Sep 2013 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
 http://clonekim.github.io/posts/2013-09-27-jackson-json-processor.html
 </guid>
 <link>
@@ -2262,6 +2468,41 @@ JsonNode node = mapper.readTree&amp;#40;data&amp;#41;;
 </enclosure>
 <pubDate>
 Fri, 27 Sep 2013 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
+http://clonekim.github.io/posts/2013-09-24-svn-as-windows-service.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2013-09-24-svn-as-windows-service.html
+</link>
+<title>
+윈도우즈에 SVN서비스등록
+</title>
+<description>
+&lt;h3&gt;&lt;a name=&quot;svn서버를&amp;#95;윈도우에서&amp;#95;서비스로&amp;#95;등록한다.&lt;em&gt;&quot;&gt;&lt;/a&gt;SVN서버를 윈도우에서 서비스로 등록한다.&lt;/em&gt;&lt;/h3&gt;&lt;h4&gt;&lt;a name=&quot;creating&amp;#95;the&amp;#95;repository&quot;&gt;&lt;/a&gt;Creating the Repository&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;svnadmin create c:\svn&lt;/code&gt;&lt;/pre&gt;&lt;h4&gt;&lt;a name=&quot;edit&amp;#95;configuration&quot;&gt;&lt;/a&gt;Edit Configuration&lt;/h4&gt;&lt;p&gt;방금 생성한 레포지토리 디렉토리로 이동하여&lt;br /&gt; &lt;code&gt;conf\passwd&lt;/code&gt; 에서&lt;/p&gt;&lt;pre&gt;&lt;code&gt;아이디 = 패스워드 형식으로 등록
+ex&amp;#41;
+test = 1234
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;conf\svnserve.conf&lt;/code&gt; 에서 아래와 같이 설정&lt;/p&gt;&lt;pre&gt;&lt;code&gt;anon-access = read
+auth-access = write
+password-db = passwd
+&lt;/code&gt;&lt;/pre&gt;&lt;h4&gt;&lt;a name=&quot;register&amp;#95;as&amp;#95;a&amp;#95;service&quot;&gt;&lt;/a&gt;Register as a Service&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;C:\Program Files\Subversion\bin\svnserve.exe --service --root c:\svn
+또는
+C:\&amp;gt; sc create svn
+        binpath= &amp;quot;C:\svn\bin\svnserve.exe --service -r C:\repos&amp;quot;
+        displayname= &amp;quot;Subversion Server&amp;quot;
+        depend= Tcpip
+        start= auto
+
+C:\&amp;gt;sc create svnserver binpath= &amp;quot;C:\Program Files\Subversion\bin\svnserve.exe --service -r D:\svn&amp;quot;  displayname= &amp;quot;Subversion Server&amp;quot; depend= Tcpip start= auto
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Tue, 24 Sep 2013 00:00:00 +0900
 </pubDate>
 </item>
 <item>
@@ -2333,41 +2574,6 @@ Apache Tag Lib
 　　&amp;lt;/tr&amp;gt;
 &amp;lt;/c:forEach&amp;gt;
 &amp;lt;/table&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-<enclosure>
-
-</enclosure>
-<pubDate>
-Tue, 24 Sep 2013 00:00:00 +0900
-</pubDate>
-</item>
-<item>
-<guid>
-http://clonekim.github.io/posts/2013-09-24-svn-as-windows-service.html
-</guid>
-<link>
-http://clonekim.github.io/posts/2013-09-24-svn-as-windows-service.html
-</link>
-<title>
-윈도우즈에 SVN서비스등록
-</title>
-<description>
-&lt;h3&gt;&lt;a name=&quot;svn서버를&amp;#95;윈도우에서&amp;#95;서비스로&amp;#95;등록한다.&lt;em&gt;&quot;&gt;&lt;/a&gt;SVN서버를 윈도우에서 서비스로 등록한다.&lt;/em&gt;&lt;/h3&gt;&lt;h4&gt;&lt;a name=&quot;creating&amp;#95;the&amp;#95;repository&quot;&gt;&lt;/a&gt;Creating the Repository&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;svnadmin create c:\svn&lt;/code&gt;&lt;/pre&gt;&lt;h4&gt;&lt;a name=&quot;edit&amp;#95;configuration&quot;&gt;&lt;/a&gt;Edit Configuration&lt;/h4&gt;&lt;p&gt;방금 생성한 레포지토리 디렉토리로 이동하여&lt;br /&gt; &lt;code&gt;conf\passwd&lt;/code&gt; 에서&lt;/p&gt;&lt;pre&gt;&lt;code&gt;아이디 = 패스워드 형식으로 등록
-ex&amp;#41;
-test = 1234
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;conf\svnserve.conf&lt;/code&gt; 에서 아래와 같이 설정&lt;/p&gt;&lt;pre&gt;&lt;code&gt;anon-access = read
-auth-access = write
-password-db = passwd
-&lt;/code&gt;&lt;/pre&gt;&lt;h4&gt;&lt;a name=&quot;register&amp;#95;as&amp;#95;a&amp;#95;service&quot;&gt;&lt;/a&gt;Register as a Service&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;C:\Program Files\Subversion\bin\svnserve.exe --service --root c:\svn
-또는
-C:\&amp;gt; sc create svn
-        binpath= &amp;quot;C:\svn\bin\svnserve.exe --service -r C:\repos&amp;quot;
-        displayname= &amp;quot;Subversion Server&amp;quot;
-        depend= Tcpip
-        start= auto
-
-C:\&amp;gt;sc create svnserver binpath= &amp;quot;C:\Program Files\Subversion\bin\svnserve.exe --service -r D:\svn&amp;quot;  displayname= &amp;quot;Subversion Server&amp;quot; depend= Tcpip start= auto
 &lt;/code&gt;&lt;/pre&gt;
 </description>
 <enclosure>
