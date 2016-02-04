@@ -53,74 +53,35 @@
 <div id="post">
     <div class="post-header">
     <div id="post-meta" class="row">
-        <div class="col-lg-6">2016년 1월 19일 (화)</div>
+        <div class="col-lg-6">2016년 2월 4일 (목)</div>
         
     </div>
-    <h2>Gulp로 React빌드</h2>
+    <h2>민트리눅스 설치 후 해야 할 것</h2>
 </div>
 <div>
-    <ol class="content"><li><a href="#gulp와_함께_의존성설치">gulp와 함께 의존성설치</a></li><li><a href="#offline_transform">Offline Transform</a></li><li><a href="#참고">참고</a></li></ol>
-    <h2><a name="gulp와&#95;함께&#95;의존성설치"></a>gulp와 함께 의존성설치</h2><pre><code>npm install -g gulp
-</code></pre><p>react 개발에 필요한 라이브러리와<br /> 번들로 묶기위한 browserify를 설치</p><pre><code>npm install react --save-dev
-npm install react-dom --save-dev
-npm install browserify --save-dev
-npm install gulp --save-dev
-npm install vinyl-source-stream --save-dev
-npm install babelify --save-dev
-npm install babel-preset-react --save-dev
-</code></pre><p><em>gulpfile</em></p><pre><code class="javascript">var gulp = require&#40;'gulp'&#41;,
-	browserify = require&#40;'browserify'&#41;,
-	babelify = require&#40;'babelify'&#41;,
-	source = require&#40;'vinyl-source-stream'&#41;;
-
-gulp.task&#40;'default', function&#40;&#41; {
-
-	return browserify&#40;'./source/app.js'&#41;
-		.transform&#40;babelify, {presets: &#91;'react'&#93;}&#41;
-		.bundle&#40;&#41;
-		.pipe&#40;source&#40;'app.min.js'&#41;&#41;
-		.pipe&#40;gulp.dest&#40;'./build/'&#41;&#41;;
-}&#41;;
-</code></pre><p><em>app.js</em></p><pre><code class="javascript">var React = require&#40;'react'&#41;;
-var ReactDom = require&#40;'react-dom'&#41;;
-
-var MyComponent = React.createClass&#40;{
-	return: function&#40;&#41; {
-		return &#40;
-			&lt;h1&gt;Hello &lt;/h1&gt;
-			&#41;;
-	}
-
-}&#41;;
-</code></pre><p><em>build time</em></p><pre><code>$ gulp
-&#91;23:45:55&#93; Using gulpfile &#126;/react101/gulpfile.js
-&#91;23:45:55&#93; Starting 'default'...
-&#91;23:45:56&#93; Finished 'default' after 1.46 s
-</code></pre><h2><a name="offline&#95;transform"></a>Offline Transform</h2><p><em>jsx to javascript</em></p><pre><code>$ babel --presets react source --watch --out-dir build
-</code></pre><p><em>build/app.js</em></p><pre><code class="javascript">var React = require&#40;'react'&#41;;
-var ReactDom = require&#40;'react-dom'&#41;;
-
-var MyComponent = React.createClass&#40;{
-	displayName: 'MyComponent',
-
-	return: function &#40;&#41; {
-		return React.createElement&#40;
-			'h1',
-			null,
-			'Hello '
-		&#41;;
-	}
-
-}&#41;;
-</code></pre><h2><a name="참고"></a>참고</h2><ul><li><a href='https://www.npmjs.com/package/babelify'>babelify</a></li><li><a href='http://babeljs.io/'>Babel transform</a></li><li><a href='http://facebook.github.io/react/docs/getting-started.html#offline-transform'>Offline Transform</a></li></ul>
+    
+    <p><em>Install Mint theme, background</em></p><pre><code>sudo apt-get install mate-themes
+sudo apt-get install mate-backgrounds
+</code></pre><p><em>Install Oracle Java</em></p><pre><code>sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java8-installer
+</code></pre><p><em>Install MariaDB </em> </p><pre><code>sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db
+sudo add-apt-repository 'deb http://ftp.kaist.ac.kr/mariadb/repo/10.1/ubuntu trusty main'
+sudo apt-get update
+sudo apt-get install mariadb-server-10.1
+</code></pre><p><em>Install Redis</em></p><pre><code>sudo add-apt-repository -y ppa:rwky/redis
+sudo apt-get update
+sudo apt-get install redis-server
+</code></pre><p><em>Install Putty tool</em></p><pre><code>sudo apt-get install putty-tools
+</code></pre><p><em>Install Libvirt</em></p><pre><code>sudo apt-get install -y virt-manager libvirt-bin qemu-kvm
+</code></pre><p><em>SDK Man</em></p><pre><code>curl -s get.sdkman.io | bash
+</code></pre>
 </div>
 
 <div id="post-tags">
     <b>Tags: </b>
     
-    <a href="/tags/javascript.html">javascript</a>
-    
-    <a href="/tags/react.html">react</a>
+    <a href="/tags/linux.html">linux</a>
     
 </div>
 
@@ -130,7 +91,7 @@ var MyComponent = React.createClass&#40;{
     <div id="prev-next">
         
         
-        <a class="right" href="/posts/2016-01-18-starting-clojurescript.html">ClojureScript 시작하기 &raquo;</a>
+        <a class="right" href="/posts/2016-01-19-using-gulp-react.html">Gulp로 React빌드 &raquo;</a>
         
     </div>
 </div>
@@ -154,6 +115,8 @@ var MyComponent = React.createClass&#40;{
                     <h3>Recent Posts</h3>
                     <ul>
                         
+                        <li><a href="/posts/2016-02-04-first-thing-todo-after-install-linux.html">민트리눅스 설치 후 해야 할 것</a></li>
+                        
                         <li><a href="/posts/2016-01-19-using-gulp-react.html">Gulp로 React빌드</a></li>
                         
                         <li><a href="/posts/2016-01-18-starting-clojurescript.html">ClojureScript 시작하기</a></li>
@@ -161,8 +124,6 @@ var MyComponent = React.createClass&#40;{
                         <li><a href="/posts/2016-01-14-clojurescript-gaming.html">Clojure(Script)로 게임제작</a></li>
                         
                         <li><a href="/posts/2016-01-13-github-page.html">Github에 블로그제작</a></li>
-                        
-                        <li><a href="/posts/2015-09-25-jdbc-in-clojure.html">클로저에서 Jdbc사용</a></li>
                         
                     </ul>
                 </div>
@@ -193,6 +154,8 @@ var MyComponent = React.createClass&#40;{
                         <li><a href="/tags/vi.html">vi</a></li>
                         
                         <li><a href="/tags/gulp.html">gulp</a></li>
+                        
+                        <li><a href="/tags/linux.html">linux</a></li>
                         
                         <li><a href="/tags/captcha.html">captcha</a></li>
                         

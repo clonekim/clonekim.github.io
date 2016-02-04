@@ -12,11 +12,46 @@ http://clonekim.github.io/
 This blog is generated using cryogen
 </description>
 <lastBuildDate>
-Mon, 25 Jan 2016 23:20:07 +0900
+Thu, 04 Feb 2016 09:04:54 +0900
 </lastBuildDate>
 <generator>
 clj-rss
 </generator>
+<item>
+<guid>
+http://clonekim.github.io/posts/2016-02-04-first-thing-todo-after-install-linux.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2016-02-04-first-thing-todo-after-install-linux.html
+</link>
+<title>
+민트리눅스 설치 후 해야 할 것
+</title>
+<description>
+&lt;p&gt;&lt;em&gt;Install Mint theme, background&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;sudo apt-get install mate-themes
+sudo apt-get install mate-backgrounds
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;Install Oracle Java&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java8-installer
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;Install MariaDB &lt;/em&gt; &lt;/p&gt;&lt;pre&gt;&lt;code&gt;sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db
+sudo add-apt-repository 'deb http://ftp.kaist.ac.kr/mariadb/repo/10.1/ubuntu trusty main'
+sudo apt-get update
+sudo apt-get install mariadb-server-10.1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;Install Redis&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;sudo add-apt-repository -y ppa:rwky/redis
+sudo apt-get update
+sudo apt-get install redis-server
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;Install Putty tool&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;sudo apt-get install putty-tools
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;Install Libvirt&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;sudo apt-get install -y virt-manager libvirt-bin qemu-kvm
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;SDK Man&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;curl -s get.sdkman.io | bash
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Thu, 04 Feb 2016 00:00:00 +0900
+</pubDate>
+</item>
 <item>
 <guid>
 http://clonekim.github.io/posts/2016-01-19-using-gulp-react.html
@@ -647,43 +682,6 @@ Sun, 20 Sep 2015 00:00:00 +0900
 </item>
 <item>
 <guid>
-http://clonekim.github.io/posts/2015-09-11-custom-emacs-setting.html
-</guid>
-<link>
-http://clonekim.github.io/posts/2015-09-11-custom-emacs-setting.html
-</link>
-<title>
-Clojure를 위한 Emacs 환경
-</title>
-<description>
-&lt;p&gt;&lt;strong&gt;Emacs 24를 기준으로 작성&lt;/strong&gt;&lt;br /&gt; 현재 사용중인 환경은 &lt;a href='custom-emacs.tgz'&gt;custom-emacs.tgz&lt;/a&gt;&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;package&amp;#95;install&quot;&gt;&lt;/a&gt;Package Install&lt;/h2&gt;&lt;p&gt;&lt;em&gt;init.el&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;&amp;#40;require 'package&amp;#41;
-&amp;#40;add-to-list 'package-archives
-        '&amp;#40;&amp;quot;melpa-stable&amp;quot; . &amp;quot;http://stable.melpa.org/packages/&amp;quot;&amp;#41; t&amp;#41;
-
-&amp;#40;package-initialize&amp;#41;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;package install&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;M-x package-install &amp;#91;RET&amp;#93; cider &amp;#91;RET&amp;#93;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;현재 사용하고 있는 패키지&lt;/p&gt;&lt;ul&gt;&lt;li&gt;cider&lt;/li&gt;&lt;li&gt;paredit&lt;/li&gt;&lt;li&gt;rainbow-delimiters&lt;/li&gt;&lt;li&gt;s&lt;/li&gt;&lt;li&gt;f&lt;/li&gt;&lt;li&gt;clojure-mode&lt;/li&gt;&lt;li&gt;clojure-mode-extra-font-locking&lt;/li&gt;&lt;li&gt;dash&lt;/li&gt;&lt;li&gt;ido-completing-read+&lt;/li&gt;&lt;li&gt;ido-ubiquitous&lt;/li&gt;&lt;li&gt;projectile&lt;/li&gt;&lt;li&gt;queue&lt;/li&gt;&lt;li&gt;seq&lt;/li&gt;&lt;li&gt;smex&lt;/li&gt;&lt;li&gt;spinner&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;cider&amp;#95;구동&quot;&gt;&lt;/a&gt;Cider 구동&lt;/h2&gt;&lt;p&gt;&lt;em&gt;주의&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;Cider와 cider-nrepl의 버전이 맞아야함&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;profiles.clj&lt;/em&gt;&lt;/p&gt;&lt;p&gt;.lein디렉토리이하에 작성한다 없을경우 파일생성&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;{:user 
- {:plugins 
-  &amp;#91;&amp;#91;cider/cider-nrepl &amp;quot;0.10.0&amp;quot;&amp;#93;&amp;#93;
-  :dependencies
-  &amp;#91;&amp;#91;org.clojure/tools.nrepl &amp;quot;0.2.12&amp;quot;&amp;#93;&amp;#93;}}
-{:repl
- {:dependencies
-  &amp;#91;&amp;#91;org.clojure/tools.nrepl &amp;quot;0.2.12&amp;quot;&amp;#93;&amp;#93;}} 
-&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;M-x cider-jack-in
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;단축키&lt;/p&gt;&lt;pre&gt;&lt;code&gt;C-c M-j: cider-jack-in
-C-c C-k: compile
-C-c M-n: 현재 작업중인 namespace로 변경
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;theme&quot;&gt;&lt;/a&gt;Theme&lt;/h2&gt;&lt;p&gt;&lt;em&gt;Tron theme&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;/img/emacs/my-emacs-screen.png&quot; alt=&quot;My Emacs Screen&quot; /&gt;&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;참고&quot;&gt;&lt;/a&gt;참고&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://www.braveclojure.com/basic-emacs/#Interlude__Emacs_Windows_and_Frames'&gt;Clojure for the Brave and True&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://git.framasoft.org/distopico/distopico-dotemacs/blob/eff44c828f7f5ec1a227156ebea2f8eb4b18e61c/themes/tron-theme.el'&gt;Tron theme&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
-</description>
-<enclosure>
-
-</enclosure>
-<pubDate>
-Fri, 11 Sep 2015 00:00:00 +0900
-</pubDate>
-</item>
-<item>
-<guid>
 http://clonekim.github.io/posts/2015-09-11-ring-web-programming.html
 </guid>
 <link>
@@ -872,6 +870,43 @@ html
 &lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;plugins&quot;&gt;&lt;/a&gt;Plugins&lt;/h2&gt;&lt;h3&gt;&lt;a name=&quot;lein-ring&quot;&gt;&lt;/a&gt;lein-ring&lt;/h3&gt;&lt;p&gt;Leiningen의 Ring 작업을 편하기 하기 위한 플러그인이다&lt;br /&gt; 즉 서버를 구동하거나 jar, war로 디플로이하는 하는 일이다&lt;/p&gt;&lt;p&gt;&lt;em&gt;project.clj&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt; :plugins &amp;#91;&amp;#91;lein-ring &amp;quot;0.8.13&amp;quot;&amp;#93;&amp;#93;
  :ring {:handler hello-ring.core/app} ;;시작할 수 있는 핸들러를 지정
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;바로 서버구동이 가능하고 기본적으로 3000 포트를 사용함&lt;br /&gt; 이제 서버측 코드를 수정하면 바로 적용이 된다&lt;/p&gt;&lt;p&gt;&lt;em&gt;실행&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;lein ring server&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;참고&quot;&gt;&lt;/a&gt;참고&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://github.com/ring-clojure/ring'&gt;https://github.com/ring-clojure/ring&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://github.com/weavejester/hiccup'&gt;https://github.com/weavejester/hiccup&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://github.com/revelytix/lein-ring'&gt;https://github.com/revelytix/lein-ring&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='liquidz.github.io/2011/12/practical-compojure.html'&gt;実践(?)Compojure&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://github.com/technomancy/shouter'&gt;shouter&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Fri, 11 Sep 2015 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
+http://clonekim.github.io/posts/2015-09-11-custom-emacs-setting.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2015-09-11-custom-emacs-setting.html
+</link>
+<title>
+Clojure를 위한 Emacs 환경
+</title>
+<description>
+&lt;p&gt;&lt;strong&gt;Emacs 24를 기준으로 작성&lt;/strong&gt;&lt;br /&gt; 현재 사용중인 환경은 &lt;a href='custom-emacs.tgz'&gt;custom-emacs.tgz&lt;/a&gt;&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;package&amp;#95;install&quot;&gt;&lt;/a&gt;Package Install&lt;/h2&gt;&lt;p&gt;&lt;em&gt;init.el&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;&amp;#40;require 'package&amp;#41;
+&amp;#40;add-to-list 'package-archives
+        '&amp;#40;&amp;quot;melpa-stable&amp;quot; . &amp;quot;http://stable.melpa.org/packages/&amp;quot;&amp;#41; t&amp;#41;
+
+&amp;#40;package-initialize&amp;#41;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;package install&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;M-x package-install &amp;#91;RET&amp;#93; cider &amp;#91;RET&amp;#93;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;현재 사용하고 있는 패키지&lt;/p&gt;&lt;ul&gt;&lt;li&gt;cider&lt;/li&gt;&lt;li&gt;paredit&lt;/li&gt;&lt;li&gt;rainbow-delimiters&lt;/li&gt;&lt;li&gt;s&lt;/li&gt;&lt;li&gt;f&lt;/li&gt;&lt;li&gt;clojure-mode&lt;/li&gt;&lt;li&gt;clojure-mode-extra-font-locking&lt;/li&gt;&lt;li&gt;dash&lt;/li&gt;&lt;li&gt;ido-completing-read+&lt;/li&gt;&lt;li&gt;ido-ubiquitous&lt;/li&gt;&lt;li&gt;projectile&lt;/li&gt;&lt;li&gt;queue&lt;/li&gt;&lt;li&gt;seq&lt;/li&gt;&lt;li&gt;smex&lt;/li&gt;&lt;li&gt;spinner&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;cider&amp;#95;구동&quot;&gt;&lt;/a&gt;Cider 구동&lt;/h2&gt;&lt;p&gt;&lt;em&gt;주의&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;Cider와 cider-nrepl의 버전이 맞아야함&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;profiles.clj&lt;/em&gt;&lt;/p&gt;&lt;p&gt;.lein디렉토리이하에 작성한다 없을경우 파일생성&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;{:user 
+ {:plugins 
+  &amp;#91;&amp;#91;cider/cider-nrepl &amp;quot;0.10.0&amp;quot;&amp;#93;&amp;#93;
+  :dependencies
+  &amp;#91;&amp;#91;org.clojure/tools.nrepl &amp;quot;0.2.12&amp;quot;&amp;#93;&amp;#93;}}
+{:repl
+ {:dependencies
+  &amp;#91;&amp;#91;org.clojure/tools.nrepl &amp;quot;0.2.12&amp;quot;&amp;#93;&amp;#93;}} 
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;M-x cider-jack-in
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;단축키&lt;/p&gt;&lt;pre&gt;&lt;code&gt;C-c M-j: cider-jack-in
+C-c C-k: compile
+C-c M-n: 현재 작업중인 namespace로 변경
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;theme&quot;&gt;&lt;/a&gt;Theme&lt;/h2&gt;&lt;p&gt;&lt;em&gt;Tron theme&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;/img/emacs/my-emacs-screen.png&quot; alt=&quot;My Emacs Screen&quot; /&gt;&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;참고&quot;&gt;&lt;/a&gt;참고&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://www.braveclojure.com/basic-emacs/#Interlude__Emacs_Windows_and_Frames'&gt;Clojure for the Brave and True&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://git.framasoft.org/distopico/distopico-dotemacs/blob/eff44c828f7f5ec1a227156ebea2f8eb4b18e61c/themes/tron-theme.el'&gt;Tron theme&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 </description>
 <enclosure>
 
@@ -2334,6 +2369,87 @@ Tue, 01 Oct 2013 00:00:00 +0900
 </item>
 <item>
 <guid>
+http://clonekim.github.io/posts/2013-09-27-jackson-json-processor.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2013-09-27-jackson-json-processor.html
+</link>
+<title>
+Jackson JSON Processor
+</title>
+<description>
+&lt;h2&gt;&lt;a name=&quot;parsing&amp;#95;option&quot;&gt;&lt;/a&gt;Parsing option&lt;/h2&gt;&lt;pre&gt;&lt;code class=&quot;java&quot;&gt;String data = &amp;quot;&amp;#91;{'text':'PROJECT','id':'00156','leaf':true}&amp;#93;&amp;quot;;
+
+
+ObjectMapper mapper = new ObjectMapper&amp;#40;&amp;#41;;
+mapper.configure&amp;#40;JsonParser.Feature.ALLOW&amp;#95;SINGLE&amp;#95;QUOTES, true&amp;#41;;
+
+JsonNode node = mapper.readTree&amp;#40;data&amp;#41;;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;annotation&quot;&gt;&lt;/a&gt;Annotation&lt;/h2&gt;&lt;p&gt;&lt;em&gt;JsonSerialize &lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;java&quot;&gt;	@JsonSerialize&amp;#40;using=JsonDateSerializer.class&amp;#41;
+	public Date getCreationDate&amp;#40;&amp;#41; {
+		return creationDate;
+	}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;JsonDateSerializer.java&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;java&quot;&gt;public class JsonDateSerializer extends JsonSerializer&amp;lt;Date&amp;gt; {
+
+    private static final SimpleDateFormat dateFormat = new SimpleDateFormat&amp;#40;&amp;quot;yyyy-MM-dd HH:mm:ss&amp;quot;&amp;#41;; 
+	  
+	@Override
+	public void serialize&amp;#40;Date date, JsonGenerator json, SerializerProvider provider&amp;#41;
+			throws IOException, JsonProcessingException {
+		
+		String formattedDate = dateFormat.format&amp;#40;date&amp;#41;;
+		json.writeString&amp;#40;formattedDate&amp;#41;;
+	}
+
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://wiki.fasterxml.com/JacksonHome'&gt;Jackson JSON Processor Wiki&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Fri, 27 Sep 2013 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
+http://clonekim.github.io/posts/2013-09-27-jspwiki-install.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2013-09-27-jspwiki-install.html
+</link>
+<title>
+JSPWiki 설치
+</title>
+<description>
+&lt;p&gt;&lt;a href='http://jspwiki.apache.org/'&gt;Apache JSPWiki&lt;/a&gt;&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;설정&quot;&gt;&lt;/a&gt;설정&lt;/h2&gt;&lt;p&gt;&lt;em&gt;server.xml&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;&amp;lt;Connector address=&amp;quot;127.0.0.1&amp;quot; port=&amp;quot;8080&amp;quot; protocol=&amp;quot;org.apache.coyote.http11.Http11NioProtocol&amp;quot;
+               connectionTimeout=&amp;quot;20000&amp;quot;
+               maxThreads=&amp;quot;3&amp;quot; minSpareThreads=&amp;quot;2&amp;quot;
+               redirectPort=&amp;quot;8443&amp;quot; URIEncoding=&amp;quot;UTF-8&amp;quot;/&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;jspwiki.properties&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;jspwiki.baseURL= http://cloud9ine.cafe24.com/wiki
+jspwiki.fileSystemProvider.pageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/
+jspwiki.basicAttachmentProvider.storageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;jspwiki.policy&lt;/em&gt;&lt;/p&gt;&lt;p&gt;   Anonymous를 코멘트처리&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;nginx&amp;#95;연동&quot;&gt;&lt;/a&gt;Nginx 연동&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;upstream tomcat {
+    server 127.0.0.1:8080;
+}
+
+server {
+ ...
+  location /wiki {
+      proxy&amp;#95;pass http://tomcat;
+  }
+
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Fri, 27 Sep 2013 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
 http://clonekim.github.io/posts/2013-09-27-proxy-authentication.html
 </guid>
 <link>
@@ -2387,122 +2503,6 @@ public class ProxyAuthenticator extends Authenticator {
 </enclosure>
 <pubDate>
 Fri, 27 Sep 2013 00:00:00 +0900
-</pubDate>
-</item>
-<item>
-<guid>
-http://clonekim.github.io/posts/2013-09-27-jspwiki-install.html
-</guid>
-<link>
-http://clonekim.github.io/posts/2013-09-27-jspwiki-install.html
-</link>
-<title>
-JSPWiki 설치
-</title>
-<description>
-&lt;p&gt;&lt;a href='http://jspwiki.apache.org/'&gt;Apache JSPWiki&lt;/a&gt;&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;설정&quot;&gt;&lt;/a&gt;설정&lt;/h2&gt;&lt;p&gt;&lt;em&gt;server.xml&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;&amp;lt;Connector address=&amp;quot;127.0.0.1&amp;quot; port=&amp;quot;8080&amp;quot; protocol=&amp;quot;org.apache.coyote.http11.Http11NioProtocol&amp;quot;
-               connectionTimeout=&amp;quot;20000&amp;quot;
-               maxThreads=&amp;quot;3&amp;quot; minSpareThreads=&amp;quot;2&amp;quot;
-               redirectPort=&amp;quot;8443&amp;quot; URIEncoding=&amp;quot;UTF-8&amp;quot;/&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;jspwiki.properties&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;jspwiki.baseURL= http://cloud9ine.cafe24.com/wiki
-jspwiki.fileSystemProvider.pageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/
-jspwiki.basicAttachmentProvider.storageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;jspwiki.policy&lt;/em&gt;&lt;/p&gt;&lt;p&gt;   Anonymous를 코멘트처리&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;nginx&amp;#95;연동&quot;&gt;&lt;/a&gt;Nginx 연동&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;upstream tomcat {
-    server 127.0.0.1:8080;
-}
-
-server {
- ...
-  location /wiki {
-      proxy&amp;#95;pass http://tomcat;
-  }
-
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-<enclosure>
-
-</enclosure>
-<pubDate>
-Fri, 27 Sep 2013 00:00:00 +0900
-</pubDate>
-</item>
-<item>
-<guid>
-http://clonekim.github.io/posts/2013-09-27-jackson-json-processor.html
-</guid>
-<link>
-http://clonekim.github.io/posts/2013-09-27-jackson-json-processor.html
-</link>
-<title>
-Jackson JSON Processor
-</title>
-<description>
-&lt;h2&gt;&lt;a name=&quot;parsing&amp;#95;option&quot;&gt;&lt;/a&gt;Parsing option&lt;/h2&gt;&lt;pre&gt;&lt;code class=&quot;java&quot;&gt;String data = &amp;quot;&amp;#91;{'text':'PROJECT','id':'00156','leaf':true}&amp;#93;&amp;quot;;
-
-
-ObjectMapper mapper = new ObjectMapper&amp;#40;&amp;#41;;
-mapper.configure&amp;#40;JsonParser.Feature.ALLOW&amp;#95;SINGLE&amp;#95;QUOTES, true&amp;#41;;
-
-JsonNode node = mapper.readTree&amp;#40;data&amp;#41;;
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;annotation&quot;&gt;&lt;/a&gt;Annotation&lt;/h2&gt;&lt;p&gt;&lt;em&gt;JsonSerialize &lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;java&quot;&gt;	@JsonSerialize&amp;#40;using=JsonDateSerializer.class&amp;#41;
-	public Date getCreationDate&amp;#40;&amp;#41; {
-		return creationDate;
-	}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;JsonDateSerializer.java&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;java&quot;&gt;public class JsonDateSerializer extends JsonSerializer&amp;lt;Date&amp;gt; {
-
-    private static final SimpleDateFormat dateFormat = new SimpleDateFormat&amp;#40;&amp;quot;yyyy-MM-dd HH:mm:ss&amp;quot;&amp;#41;; 
-	  
-	@Override
-	public void serialize&amp;#40;Date date, JsonGenerator json, SerializerProvider provider&amp;#41;
-			throws IOException, JsonProcessingException {
-		
-		String formattedDate = dateFormat.format&amp;#40;date&amp;#41;;
-		json.writeString&amp;#40;formattedDate&amp;#41;;
-	}
-
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://wiki.fasterxml.com/JacksonHome'&gt;Jackson JSON Processor Wiki&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
-</description>
-<enclosure>
-
-</enclosure>
-<pubDate>
-Fri, 27 Sep 2013 00:00:00 +0900
-</pubDate>
-</item>
-<item>
-<guid>
-http://clonekim.github.io/posts/2013-09-24-svn-as-windows-service.html
-</guid>
-<link>
-http://clonekim.github.io/posts/2013-09-24-svn-as-windows-service.html
-</link>
-<title>
-윈도우즈에 SVN서비스등록
-</title>
-<description>
-&lt;h3&gt;&lt;a name=&quot;svn서버를&amp;#95;윈도우에서&amp;#95;서비스로&amp;#95;등록한다.&lt;em&gt;&quot;&gt;&lt;/a&gt;SVN서버를 윈도우에서 서비스로 등록한다.&lt;/em&gt;&lt;/h3&gt;&lt;h4&gt;&lt;a name=&quot;creating&amp;#95;the&amp;#95;repository&quot;&gt;&lt;/a&gt;Creating the Repository&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;svnadmin create c:\svn&lt;/code&gt;&lt;/pre&gt;&lt;h4&gt;&lt;a name=&quot;edit&amp;#95;configuration&quot;&gt;&lt;/a&gt;Edit Configuration&lt;/h4&gt;&lt;p&gt;방금 생성한 레포지토리 디렉토리로 이동하여&lt;br /&gt; &lt;code&gt;conf\passwd&lt;/code&gt; 에서&lt;/p&gt;&lt;pre&gt;&lt;code&gt;아이디 = 패스워드 형식으로 등록
-ex&amp;#41;
-test = 1234
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;conf\svnserve.conf&lt;/code&gt; 에서 아래와 같이 설정&lt;/p&gt;&lt;pre&gt;&lt;code&gt;anon-access = read
-auth-access = write
-password-db = passwd
-&lt;/code&gt;&lt;/pre&gt;&lt;h4&gt;&lt;a name=&quot;register&amp;#95;as&amp;#95;a&amp;#95;service&quot;&gt;&lt;/a&gt;Register as a Service&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;C:\Program Files\Subversion\bin\svnserve.exe --service --root c:\svn
-또는
-C:\&amp;gt; sc create svn
-        binpath= &amp;quot;C:\svn\bin\svnserve.exe --service -r C:\repos&amp;quot;
-        displayname= &amp;quot;Subversion Server&amp;quot;
-        depend= Tcpip
-        start= auto
-
-C:\&amp;gt;sc create svnserver binpath= &amp;quot;C:\Program Files\Subversion\bin\svnserve.exe --service -r D:\svn&amp;quot;  displayname= &amp;quot;Subversion Server&amp;quot; depend= Tcpip start= auto
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-<enclosure>
-
-</enclosure>
-<pubDate>
-Tue, 24 Sep 2013 00:00:00 +0900
 </pubDate>
 </item>
 <item>
@@ -2574,6 +2574,41 @@ Apache Tag Lib
 　　&amp;lt;/tr&amp;gt;
 &amp;lt;/c:forEach&amp;gt;
 &amp;lt;/table&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Tue, 24 Sep 2013 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
+http://clonekim.github.io/posts/2013-09-24-svn-as-windows-service.html
+</guid>
+<link>
+http://clonekim.github.io/posts/2013-09-24-svn-as-windows-service.html
+</link>
+<title>
+윈도우즈에 SVN서비스등록
+</title>
+<description>
+&lt;h3&gt;&lt;a name=&quot;svn서버를&amp;#95;윈도우에서&amp;#95;서비스로&amp;#95;등록한다.&lt;em&gt;&quot;&gt;&lt;/a&gt;SVN서버를 윈도우에서 서비스로 등록한다.&lt;/em&gt;&lt;/h3&gt;&lt;h4&gt;&lt;a name=&quot;creating&amp;#95;the&amp;#95;repository&quot;&gt;&lt;/a&gt;Creating the Repository&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;svnadmin create c:\svn&lt;/code&gt;&lt;/pre&gt;&lt;h4&gt;&lt;a name=&quot;edit&amp;#95;configuration&quot;&gt;&lt;/a&gt;Edit Configuration&lt;/h4&gt;&lt;p&gt;방금 생성한 레포지토리 디렉토리로 이동하여&lt;br /&gt; &lt;code&gt;conf\passwd&lt;/code&gt; 에서&lt;/p&gt;&lt;pre&gt;&lt;code&gt;아이디 = 패스워드 형식으로 등록
+ex&amp;#41;
+test = 1234
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;conf\svnserve.conf&lt;/code&gt; 에서 아래와 같이 설정&lt;/p&gt;&lt;pre&gt;&lt;code&gt;anon-access = read
+auth-access = write
+password-db = passwd
+&lt;/code&gt;&lt;/pre&gt;&lt;h4&gt;&lt;a name=&quot;register&amp;#95;as&amp;#95;a&amp;#95;service&quot;&gt;&lt;/a&gt;Register as a Service&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;C:\Program Files\Subversion\bin\svnserve.exe --service --root c:\svn
+또는
+C:\&amp;gt; sc create svn
+        binpath= &amp;quot;C:\svn\bin\svnserve.exe --service -r C:\repos&amp;quot;
+        displayname= &amp;quot;Subversion Server&amp;quot;
+        depend= Tcpip
+        start= auto
+
+C:\&amp;gt;sc create svnserver binpath= &amp;quot;C:\Program Files\Subversion\bin\svnserve.exe --service -r D:\svn&amp;quot;  displayname= &amp;quot;Subversion Server&amp;quot; depend= Tcpip start= auto
 &lt;/code&gt;&lt;/pre&gt;
 </description>
 <enclosure>
