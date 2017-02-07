@@ -6,7 +6,7 @@ body {
     color: #333;
     background-color: #f2f2f2;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .container {
@@ -114,6 +114,8 @@ pre {
     overflow-x: auto;
 }
 pre code {
+    display: block;
+    padding: 0.5em;
     overflow-wrap: normal;
     white-space: pre;
 }
