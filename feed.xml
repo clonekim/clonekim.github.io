@@ -1,22 +1,157 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <rss version='2.0' xmlns:atom='http://www.w3.org/2005/Atom'>
 <channel>
-<atom:link href='http://clonekim.github.io' rel='self' type='application/rss+xml'/>
+<atom:link href='http://clonekim.github.io/' rel='self' type='application/rss+xml'/>
 <title>
-(fn [] &quot;less is more&quot;)
+(fn[] &quot;less is more&quot;)
 </title>
 <link>
-http://clonekim.github.io
+http://clonekim.github.io/
 </link>
 <description>
 This blog is generated using cryogen
 </description>
 <lastBuildDate>
-Tue, 07 Feb 2017 10:43:57 +0900
+Mon, 27 Mar 2017 10:09:17 +0900
 </lastBuildDate>
 <generator>
 clj-rss
 </generator>
+<item>
+<guid>
+http://clonekim.github.io/posts/2017-01-02-angular-jsonp/
+</guid>
+<link>
+http://clonekim.github.io/posts/2017-01-02-angular-jsonp/
+</link>
+<title>
+Angular 1.6 사용
+</title>
+<description>
+&lt;p&gt;&lt;strong&gt;angular 1.6 이상적용&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;em&gt;PREFIX&lt;/em&gt;&lt;/p&gt;&lt;p&gt;이제 기본값으로 !가 붙는다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;.config&amp;#40;&amp;#91;'$locationProvider', function&amp;#40;$locationProvider&amp;#41;{
+ $locationProvider.hashPrefix&amp;#40;''&amp;#41;;
+}&amp;#93;&amp;#41;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;JSONP&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;$http.json&amp;#40;url, {jsonpCallbackParam: 'callback'}&amp;#41;
+.then&amp;#40;function&amp;#40;res&amp;#41; {
+ 
+  ...
+}&amp;#41;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Mon, 02 Jan 2017 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
+http://clonekim.github.io/posts/2016-05-07-emacs-package/
+</guid>
+<link>
+http://clonekim.github.io/posts/2016-05-07-emacs-package/
+</link>
+<title>
+Emacs를 쓰면서
+</title>
+<description>
+&lt;h3 id=&quot;mode-icons-mode&quot;&gt;mode-icons-mode&lt;/h3&gt;&lt;p&gt;&lt;em&gt;init.el&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;'&amp;#40;mode-icons-mode t&amp;#41;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;js-mode&quot;&gt;js-mode&lt;/h3&gt;&lt;p&gt;&lt;em&gt;setup-js.el&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;&amp;#40;add-to-list 'auto-mode-alist '&amp;#40;&amp;quot;\\.js$&amp;quot; . js-mode&amp;#41;&amp;#41;
+&amp;#40;add-hook 'js-mode-hook 'subword-mode&amp;#41;
+&amp;#40;add-hook 'html-mode-hook 'subword-mode&amp;#41;
+
+&amp;#40;setq js-indent-level 2&amp;#41;
+&amp;#40;eval-after-load &amp;quot;sgml-mode&amp;quot;
+  '&amp;#40;progn
+     &amp;#40;require 'tagedit&amp;#41;
+     &amp;#40;tagedit-add-paredit-like-keybindings&amp;#41;
+     &amp;#40;add-hook 'html-mode-hook &amp;#40;lambda &amp;#40;&amp;#41; &amp;#40;tagedit-mode 1&amp;#41;&amp;#41;&amp;#41;&amp;#41;&amp;#41;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;web-mode&quot;&gt;web-mode&lt;/h3&gt;&lt;p&gt;&lt;em&gt;web.el&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;&amp;#40;require 'web-mode&amp;#41;
+
+&amp;#40;add-to-list 'auto-mode-alist '&amp;#40;&amp;quot;\\.html?\\'&amp;quot; . web-mode&amp;#41;&amp;#41;
+&amp;#40;add-to-list 'auto-mode-alist '&amp;#40;&amp;quot;\\.&amp;#91;aj&amp;#93;sp\\'&amp;quot; . web-mode&amp;#41;&amp;#41;
+&amp;#40;add-to-list 'auto-mode-alist '&amp;#40;&amp;quot;\\.mustache\\'&amp;quot; . web-mode&amp;#41;&amp;#41;
+&amp;#40;add-to-list 'auto-mode-alist '&amp;#40;&amp;quot;\\.ftl\\'&amp;quot; . web-mode&amp;#41;&amp;#41;
+&amp;#40;add-to-list 'auto-mode-alist '&amp;#40;&amp;quot;\\.vue\\'&amp;quot; . web-mode&amp;#41;&amp;#41;
+
+&amp;#40;defun my-web-mode-hook &amp;#40;&amp;#41;
+  &amp;#40;setq web-mode-markup-indent-offset 2&amp;#41;
+  &amp;#40;setq web-mode-css-indent-offset 2&amp;#41;
+  &amp;#40;setq web-mode-code-indent-offset 2&amp;#41;&amp;#41;
+
+&amp;#40;add-hook 'web-mode-hook 'my-web-mode-hook&amp;#41;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;neo-mode&quot;&gt;neo-mode&lt;/h3&gt;&lt;p&gt;&lt;em&gt;neo.el&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;&amp;#40;require 'neotree&amp;#41;
+&amp;#40;global-set-key &amp;#91;f8&amp;#93; 'neotree-toggle&amp;#41;
+
+&amp;#40;defun neotree-project-dir &amp;#40;&amp;#41;
+  &amp;quot;Open NeoTree using the git root.&amp;quot;
+  &amp;#40;interactive&amp;#41;
+  &amp;#40;let &amp;#40;&amp;#40;file-name &amp;#40;buffer-file-name&amp;#41;&amp;#41;&amp;#41;
+    &amp;#40;if file-name
+        &amp;#40;progn
+          &amp;#40;neotree-find file-name&amp;#41;&amp;#41;
+      &amp;#40;message &amp;quot;Could not find git project root.&amp;quot;&amp;#41;&amp;#41;&amp;#41;&amp;#41;
+
+&amp;#40;global-set-key &amp;#91;f8&amp;#93; 'neotree-toggle&amp;#41;
+&amp;#40;global-set-key &amp;#40;kbd &amp;quot;C-c C-p&amp;quot;&amp;#41; 'neotree-project-dir&amp;#41;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;emmet-mode&quot;&gt;emmet-mode&lt;/h3&gt;&lt;p&gt;&lt;em&gt;emmet.el&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;&amp;#40;require 'emmet-mode&amp;#41;
+&amp;#40;add-hook 'sgml-mode-hook 'emmet-mode&amp;#41;
+&amp;#40;add-hook 'css-mode-hook  'emmet-mode&amp;#41;
+&amp;#40;add-hook 'emmet-mode-hook &amp;#40;lambda &amp;#40;&amp;#41; 
+                             &amp;#40;setq emmet-indentation 2&amp;#41;
+                             ;; &amp;#40;setq emmet-indent-after-insert nill&amp;#41;
+                             &amp;#41;&amp;#41;
+
+&amp;#40;add-to-list 'auto-mode-alist '&amp;#40;&amp;quot;\\.html?\\'&amp;quot; . emmet-mode&amp;#41;&amp;#41;
+&amp;#40;add-to-list 'auto-mode-alist '&amp;#40;&amp;quot;\\.ftl\\'&amp;quot; . emmet-mode&amp;#41;&amp;#41;
+&amp;#40;add-to-list 'auto-mode-alist '&amp;#40;&amp;quot;\\.vue\\'&amp;quot; . emmet-mode&amp;#41;&amp;#41;
+&amp;#40;add-to-list 'auto-mode-alist '&amp;#40;&amp;quot;\\.mustache\\'&amp;quot; . emmet-mode&amp;#41;&amp;#41;
+&amp;#40;eval-after-load &amp;quot;emmet-mode&amp;quot;
+  '&amp;#40;define-key emmet-mode-keymap &amp;#40;kbd &amp;quot;C-j&amp;quot;&amp;#41; nil&amp;#41;&amp;#41;
+&amp;#40;keyboard-translate ?\C-i ?\H-i&amp;#41;
+&amp;#40;define-key emmet-mode-keymap &amp;#40;kbd &amp;quot;H-i&amp;quot;&amp;#41; 'emmet-expand-line&amp;#41;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Sat, 07 May 2016 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
+http://clonekim.github.io/posts/2016-03-01-docker-start/
+</guid>
+<link>
+http://clonekim.github.io/posts/2016-03-01-docker-start/
+</link>
+<title>
+Docker 시작하기
+</title>
+<description>
+&lt;h2 id=&quot;docker&amp;#95;시작하기&quot;&gt;Docker 시작하기&lt;/h2&gt;&lt;p&gt;&lt;em&gt;이미지다운로드&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;$ docker pull &amp;#91;이미지이름&amp;#93;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;컨테이너 생성&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;$ docker run --name &amp;#91;컨테이너이름&amp;#93;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;컨테이너로 접속&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;$ docker exec -it &amp;#91;컨테이너&amp;#93; bash
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;컨테이너 시작/재시작&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;$ docker start &amp;#91;컨테이너이름&amp;#93;
+$ docker stop  &amp;#91;컨테이너이름&amp;#93;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;mysql&amp;#95;사용하기&quot;&gt;MySQL 사용하기&lt;/h2&gt;&lt;p&gt;mysql이미지를 다운로드와 함께 컨테이너 시작하기&lt;/p&gt;&lt;pre&gt;&lt;code&gt;$ docker run --name mysql -e MYSQL&amp;#95;ROOT&amp;#95;PASSWORD=root -p 3306:3306 -d mysql
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;컨테이너확인&lt;/p&gt;&lt;pre&gt;&lt;code&gt;$ docker ps
+
+
+CONTAINER ID        IMAGE                 COMMAND                  CREATED             STATUS              PORTS                                                                                               NAMES
+cf5fbb3d49b1        mysql                 &amp;quot;docker-entrypoint...&amp;quot;   34 minutes ago      Up 34 minutes       0.0.0.0:3306-&amp;gt;3306/tcp                                                                              mysql
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Tue, 01 Mar 2016 00:00:00 +0900
+</pubDate>
+</item>
 <item>
 <guid>
 http://clonekim.github.io/posts/2016-01-19-using-gulp-react/
@@ -251,39 +386,39 @@ Quick Start Guide
 <description>
 &lt;p&gt;This intro only documents a subset of Cryogen's features. For additional documentation please see the &lt;a href='http://cryogenweb.org'&gt;cryogen site&lt;/a&gt;.&lt;/p&gt;&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;Blog posts and pages with Markdown (default) or AsciiDoc&lt;/li&gt;&lt;li&gt;Tags&lt;/li&gt;&lt;li&gt;Table of contents generation&lt;/li&gt;&lt;li&gt;Plain HTML page templates&lt;/li&gt;&lt;li&gt;Code syntax highlighting&lt;/li&gt;&lt;li&gt;Disqus support&lt;/li&gt;&lt;li&gt;Sitemap generation&lt;/li&gt;&lt;li&gt;RSS feed generation&lt;/li&gt;&lt;li&gt;Sass/SCSS compilation&lt;/li&gt;&lt;li&gt;Klipse Integration&lt;/li&gt;&lt;/ul&gt;&lt;h2 id=&quot;prerequisites&quot;&gt;Prerequisites&lt;/h2&gt;&lt;p&gt;You will need &lt;a href='https://github.com/technomancy/leiningen'&gt;Leiningen&lt;/a&gt; 2.5.0 or above installed.&lt;/p&gt;&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;&lt;h3 id=&quot;creating&amp;#95;a&amp;#95;new&amp;#95;site&quot;&gt;Creating a New Site&lt;/h3&gt;&lt;p&gt;A new site can be created using the Cryogen template as follows:&lt;/p&gt;&lt;pre&gt;&lt;code&gt;lein new cryogen my-blog
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;running&amp;#95;the&amp;#95;server&quot;&gt;Running the Server&lt;/h3&gt;&lt;p&gt;The web server can be started from the &lt;code&gt;my-blog&lt;/code&gt; directory using the &lt;code&gt;lein-ring&lt;/code&gt; plugin:&lt;/p&gt;&lt;pre&gt;&lt;code&gt;lein ring server
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The server will watch for changes in the &lt;code&gt;resources/templates&lt;/code&gt; folder and recompile the content automatically.&lt;/p&gt;&lt;h3 id=&quot;site&amp;#95;configuration&quot;&gt;Site Configuration&lt;/h3&gt;&lt;p&gt;The site configuration file is found at &lt;code&gt;templates/config.edn&lt;/code&gt;, this file looks as follows:&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;{:site-title         &amp;quot;My Awesome Blog&amp;quot;
- :author             &amp;quot;Bob Bobbert&amp;quot;
- :description        &amp;quot;This blog is awesome&amp;quot;
- :site-url           &amp;quot;http://blogawesome.com/&amp;quot;
- :post-root          &amp;quot;posts&amp;quot;
- :page-root          &amp;quot;pages&amp;quot;
- :post-root-uri      &amp;quot;posts-output&amp;quot;
- :page-root-uri      &amp;quot;pages-output&amp;quot;
- :tag-root-uri       &amp;quot;tags-output&amp;quot;
- :author-root-uri    &amp;quot;authors-output&amp;quot;
- :blog-prefix        &amp;quot;/blog&amp;quot;
- :rss-name           &amp;quot;feed.xml&amp;quot;
- :rss-filters        &amp;#91;&amp;quot;cryogen&amp;quot;&amp;#93;
- :recent-posts       3
- :post-date-format   &amp;quot;yyyy-MM-dd&amp;quot;
- :sass-src           nil
- :sass-dest          nil
- :sass-path          &amp;quot;sass&amp;quot;
- :compass-path       &amp;quot;compass&amp;quot;
- :theme              &amp;quot;blue&amp;quot;
- :resources          &amp;#91;&amp;quot;img&amp;quot;&amp;#93;
- :keep-files         &amp;#91;&amp;quot;.git&amp;quot;&amp;#93;
- :disqus?            false
- :disqus-shortname   &amp;quot;&amp;quot;
- :ignored-files      &amp;#91;#&amp;quot;\.#.&amp;#42;&amp;quot; #&amp;quot;.&amp;#42;\.swp$&amp;quot;&amp;#93;
- :posts-per-page     5
- :blocks-per-preview 2
- :previews?          false
- :clean-urls?        true
- :hide-future-posts? true
- :klipse             {}
- :debug?             false}
-
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The server will watch for changes in the &lt;code&gt;resources/templates&lt;/code&gt; folder and recompile the content automatically.&lt;/p&gt;&lt;h3 id=&quot;site&amp;#95;configuration&quot;&gt;Site Configuration&lt;/h3&gt;&lt;p&gt;The site configuration file is found at &lt;code&gt;templates/config.edn&lt;/code&gt;, this file looks as follows:&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;{:site-title           &amp;quot;My Awesome Blog&amp;quot;
+ :author               &amp;quot;Bob Bobbert&amp;quot;
+ :description          &amp;quot;This blog is awesome&amp;quot;
+ :site-url             &amp;quot;http://blogawesome.com/&amp;quot;
+ :post-root            &amp;quot;posts&amp;quot;
+ :page-root            &amp;quot;pages&amp;quot;
+ :post-root-uri        &amp;quot;posts-output&amp;quot;
+ :page-root-uri        &amp;quot;pages-output&amp;quot;
+ :tag-root-uri         &amp;quot;tags-output&amp;quot;
+ :author-root-uri      &amp;quot;authors-output&amp;quot;
+ :blog-prefix          &amp;quot;/blog&amp;quot;
+ :rss-name             &amp;quot;feed.xml&amp;quot;
+ :rss-filters          &amp;#91;&amp;quot;cryogen&amp;quot;&amp;#93;
+ :recent-posts         3
+ :post-date-format     &amp;quot;yyyy-MM-dd&amp;quot;
+ :archive-group-format &amp;quot;yyyy MMMM&amp;quot;
+ :sass-src             &amp;quot;&amp;quot;
+ :sass-dest            &amp;quot;&amp;quot;
+ :sass-path            &amp;quot;sass&amp;quot;
+ :compass-path         &amp;quot;compass&amp;quot;
+ :theme                &amp;quot;blue&amp;quot;
+ :resources            &amp;#91;&amp;quot;img&amp;quot;&amp;#93;
+ :keep-files           &amp;#91;&amp;quot;.git&amp;quot;&amp;#93;
+ :disqus?              false
+ :disqus-shortname     &amp;quot;&amp;quot;
+ :ignored-files        &amp;#91;#&amp;quot;\.#.&amp;#42;&amp;quot; #&amp;quot;.&amp;#42;\.swp$&amp;quot;&amp;#93;
+ :posts-per-page       5
+ :blocks-per-preview   2
+ :previews?            false
+ :clean-urls?          true
+ :hide-future-posts?   true
+ :klipse               {}
+ :debug?               false}
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;For information about each key please see the &lt;a href='http://cryogenweb.org/docs/configuration.html'&gt;&quot;Configuration&quot;&lt;/a&gt; portion of the Cryogen documentation site.&lt;/p&gt;&lt;h3 id=&quot;switching&amp;#95;between&amp;#95;markdown&amp;#95;and&amp;#95;asciidoc&quot;&gt;Switching between Markdown and AsciiDoc&lt;/h3&gt;&lt;p&gt;Cryogen comes with Markdown support as default. If you want to use AsciiDoc instead, open the &lt;code&gt;project.clj&lt;/code&gt; in your created blog (e.g. &lt;code&gt;my-blog&lt;/code&gt;), and change the line in &lt;code&gt;:dependencies&lt;/code&gt; that says &lt;code&gt;cryogen-markdown&lt;/code&gt; to &lt;code&gt;cryogen-asciidoc&lt;/code&gt;. Instead of looking for files ending in &lt;code&gt;.md&lt;/code&gt; in the &lt;code&gt;resources/templates/md&lt;/code&gt; directory, the compiler will now look for files ending in &lt;code&gt;.asc&lt;/code&gt; in the &lt;code&gt;resources/templates/asc&lt;/code&gt; directory.&lt;/p&gt;&lt;h3 id=&quot;selecting&amp;#95;a&amp;#95;theme&quot;&gt;Selecting a Theme&lt;/h3&gt;&lt;p&gt;The Cryogen template comes with two themes in the &lt;code&gt;resources/templates/themes&lt;/code&gt; folder. To change your blog's theme, change the value of the &lt;code&gt;:theme&lt;/code&gt; key in &lt;code&gt;config.edn&lt;/code&gt;.&lt;/p&gt;&lt;h3 id=&quot;customizing&amp;#95;layouts&quot;&gt;Customizing Layouts&lt;/h3&gt;&lt;p&gt;Cryogen uses &lt;a href='https://github.com/yogthos/Selmer'&gt;Selmer&lt;/a&gt; templating engine for layouts. Please refer to its documentation to see the supported tags and filters for the layouts.&lt;/p&gt;&lt;p&gt;The layouts are contained in the &lt;code&gt;resources/templates/themes/{theme}/html&lt;/code&gt; folder of the project. By default, the &lt;code&gt;base.html&lt;/code&gt; layout is used to provide the general layout for the site. This is where you would add static resources such as CSS and JavaScript assets as well as define headers and footers for your site.&lt;/p&gt;&lt;p&gt;Each page layout should have a name that matches the &lt;code&gt;:layout&lt;/code&gt; key in the page metadata and end with &lt;code&gt;.html&lt;/code&gt;. Page layouts extend the base layout and should only contain the content relevant to the page inside the &lt;code&gt;content&lt;/code&gt; block. For example, the &lt;code&gt;tag&lt;/code&gt; layout is located in &lt;code&gt;tag.html&lt;/code&gt; and looks as follows:&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;{% extends &amp;quot;templates/html/layouts/base.html&amp;quot; %}
 {% block content %}
 &amp;lt;div id=&amp;quot;posts-by-tag&amp;quot;&amp;gt;
@@ -318,41 +453,6 @@ Quick Start Guide
 </enclosure>
 <pubDate>
 Thu, 07 Jan 2016 00:00:00 +0900
-</pubDate>
-</item>
-<item>
-<guid>
-http://clonekim.github.io/posts/2015-09-25-jdbc-in-clojure/
-</guid>
-<link>
-http://clonekim.github.io/posts/2015-09-25-jdbc-in-clojure/
-</link>
-<title>
-클로저에서 Jdbc사용
-</title>
-<description>
-&lt;p&gt; 클로저에서 JDBC(Java Database Connectivity) 를 사용하기 위한 가이드&lt;br /&gt;  몇몇 함수가 없어진 경우가 있기 때문에 소스보기로 확인할 것&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://clojure-doc.org/articles/ecosystem/java_jdbc/home.html'&gt;clojure-doc보기&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://github.com/clojure/java.jdbc/blob/java.jdbc-0.4.2/src/main/clojure/clojure/java/jdbc.clj'&gt;소스보기&lt;/a&gt;   &lt;/li&gt;&lt;/ul&gt;&lt;h2 id=&quot;leiningen&quot;&gt;leiningen&lt;/h2&gt; &lt;pre&gt;&lt;code&gt;&amp;#91;org.clojure/java.jdbc &amp;quot;0.4.2&amp;quot;&amp;#93;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;간단한&amp;#95;예제&quot;&gt;간단한 예제&lt;/h2&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;&amp;#40;ns db-test.core
-	&amp;#40;:require &amp;#91;clojure.java.jdbc :as sql&amp;#93;&amp;#41;&amp;#41;	
-
-&amp;#40;def db
-  {:classname &amp;quot;com.mysql.jdbc.Driver&amp;quot;
-   :subprotocol &amp;quot;mysql&amp;quot;
-   :subname &amp;quot;//127.0.0.1:3306/test&amp;quot;
-   :user &amp;quot;xxx&amp;quot;
-   :password &amp;quot;xxxx&amp;quot; }&amp;#41;
-
-&amp;#40;defn get-user &amp;#91;&amp;#93;
-  &amp;#40;println &amp;#40;sql/query db &amp;#91;&amp;quot;select &amp;#42; from users&amp;quot;&amp;#93;&amp;#41;&amp;#41;&amp;#41; 
-
-&amp;#40;defn -main &amp;#91;&amp;#93; 
-  &amp;#40;get-user&amp;#41;&amp;#41;
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;참고&quot;&gt;참고&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://php-hackers.com/p/devn/hikari-cp'&gt;HikarCP를 사용하는 예&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://funcool.github.io/clojure.jdbc/latest'&gt;clojure.jdbc doc&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
-</description>
-<enclosure>
-
-</enclosure>
-<pubDate>
-Fri, 25 Sep 2015 00:00:00 +0900
 </pubDate>
 </item>
 <item>
@@ -660,6 +760,41 @@ Fri, 25 Sep 2015 00:00:00 +0900
 </item>
 <item>
 <guid>
+http://clonekim.github.io/posts/2015-09-25-jdbc-in-clojure/
+</guid>
+<link>
+http://clonekim.github.io/posts/2015-09-25-jdbc-in-clojure/
+</link>
+<title>
+클로저에서 Jdbc사용
+</title>
+<description>
+&lt;p&gt; 클로저에서 JDBC(Java Database Connectivity) 를 사용하기 위한 가이드&lt;br /&gt;  몇몇 함수가 없어진 경우가 있기 때문에 소스보기로 확인할 것&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://clojure-doc.org/articles/ecosystem/java_jdbc/home.html'&gt;clojure-doc보기&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://github.com/clojure/java.jdbc/blob/java.jdbc-0.4.2/src/main/clojure/clojure/java/jdbc.clj'&gt;소스보기&lt;/a&gt;   &lt;/li&gt;&lt;/ul&gt;&lt;h2 id=&quot;leiningen&quot;&gt;leiningen&lt;/h2&gt; &lt;pre&gt;&lt;code&gt;&amp;#91;org.clojure/java.jdbc &amp;quot;0.4.2&amp;quot;&amp;#93;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;간단한&amp;#95;예제&quot;&gt;간단한 예제&lt;/h2&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;&amp;#40;ns db-test.core
+	&amp;#40;:require &amp;#91;clojure.java.jdbc :as sql&amp;#93;&amp;#41;&amp;#41;	
+
+&amp;#40;def db
+  {:classname &amp;quot;com.mysql.jdbc.Driver&amp;quot;
+   :subprotocol &amp;quot;mysql&amp;quot;
+   :subname &amp;quot;//127.0.0.1:3306/test&amp;quot;
+   :user &amp;quot;xxx&amp;quot;
+   :password &amp;quot;xxxx&amp;quot; }&amp;#41;
+
+&amp;#40;defn get-user &amp;#91;&amp;#93;
+  &amp;#40;println &amp;#40;sql/query db &amp;#91;&amp;quot;select &amp;#42; from users&amp;quot;&amp;#93;&amp;#41;&amp;#41;&amp;#41; 
+
+&amp;#40;defn -main &amp;#91;&amp;#93; 
+  &amp;#40;get-user&amp;#41;&amp;#41;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;참고&quot;&gt;참고&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://php-hackers.com/p/devn/hikari-cp'&gt;HikarCP를 사용하는 예&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://funcool.github.io/clojure.jdbc/latest'&gt;clojure.jdbc doc&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Fri, 25 Sep 2015 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
 http://clonekim.github.io/posts/2015-09-23-freemarker-assign-tip/
 </guid>
 <link>
@@ -725,43 +860,6 @@ lein run
 </enclosure>
 <pubDate>
 Sun, 20 Sep 2015 00:00:00 +0900
-</pubDate>
-</item>
-<item>
-<guid>
-http://clonekim.github.io/posts/2015-09-11-custom-emacs-setting/
-</guid>
-<link>
-http://clonekim.github.io/posts/2015-09-11-custom-emacs-setting/
-</link>
-<title>
-Clojure를 위한 Emacs 환경
-</title>
-<description>
-&lt;p&gt;&lt;strong&gt;Emacs 24를 기준으로 작성&lt;/strong&gt;&lt;br /&gt; 현재 사용중인 환경은 &lt;a href='custom-emacs.tgz'&gt;custom-emacs.tgz&lt;/a&gt;&lt;/p&gt;&lt;h2 id=&quot;package&amp;#95;install&quot;&gt;Package Install&lt;/h2&gt;&lt;p&gt;&lt;em&gt;init.el&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;&amp;#40;require 'package&amp;#41;
-&amp;#40;add-to-list 'package-archives
-        '&amp;#40;&amp;quot;melpa-stable&amp;quot; . &amp;quot;http://stable.melpa.org/packages/&amp;quot;&amp;#41; t&amp;#41;
-
-&amp;#40;package-initialize&amp;#41;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;package install&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;M-x package-install &amp;#91;RET&amp;#93; cider &amp;#91;RET&amp;#93;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;현재 사용하고 있는 패키지&lt;/p&gt;&lt;ul&gt;&lt;li&gt;cider&lt;/li&gt;&lt;li&gt;paredit&lt;/li&gt;&lt;li&gt;rainbow-delimiters&lt;/li&gt;&lt;li&gt;s&lt;/li&gt;&lt;li&gt;f&lt;/li&gt;&lt;li&gt;clojure-mode&lt;/li&gt;&lt;li&gt;clojure-mode-extra-font-locking&lt;/li&gt;&lt;li&gt;dash&lt;/li&gt;&lt;li&gt;ido-completing-read+&lt;/li&gt;&lt;li&gt;ido-ubiquitous&lt;/li&gt;&lt;li&gt;projectile&lt;/li&gt;&lt;li&gt;queue&lt;/li&gt;&lt;li&gt;seq&lt;/li&gt;&lt;li&gt;smex&lt;/li&gt;&lt;li&gt;spinner&lt;/li&gt;&lt;/ul&gt;&lt;h2 id=&quot;cider&amp;#95;구동&quot;&gt;Cider 구동&lt;/h2&gt;&lt;p&gt;&lt;em&gt;주의&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;Cider와 cider-nrepl의 버전이 맞아야함&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;profiles.clj&lt;/em&gt;&lt;/p&gt;&lt;p&gt;.lein디렉토리이하에 작성한다 없을경우 파일생성&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;{:user 
- {:plugins 
-  &amp;#91;&amp;#91;cider/cider-nrepl &amp;quot;0.10.0&amp;quot;&amp;#93;&amp;#93;
-  :dependencies
-  &amp;#91;&amp;#91;org.clojure/tools.nrepl &amp;quot;0.2.12&amp;quot;&amp;#93;&amp;#93;}}
-{:repl
- {:dependencies
-  &amp;#91;&amp;#91;org.clojure/tools.nrepl &amp;quot;0.2.12&amp;quot;&amp;#93;&amp;#93;}} 
-&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;M-x cider-jack-in
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;단축키&lt;/p&gt;&lt;pre&gt;&lt;code&gt;C-c M-j: cider-jack-in
-C-c C-k: compile
-C-c M-n: 현재 작업중인 namespace로 변경
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;theme&quot;&gt;Theme&lt;/h2&gt;&lt;p&gt;&lt;em&gt;Tron theme&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;/img/emacs/my-emacs-screen.png&quot; alt=&quot;My Emacs Screen&quot; /&gt;&lt;/p&gt;&lt;h2 id=&quot;참고&quot;&gt;참고&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://www.braveclojure.com/basic-emacs/#Interlude__Emacs_Windows_and_Frames'&gt;Clojure for the Brave and True&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://git.framasoft.org/distopico/distopico-dotemacs/blob/eff44c828f7f5ec1a227156ebea2f8eb4b18e61c/themes/tron-theme.el'&gt;Tron theme&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
-</description>
-<enclosure>
-
-</enclosure>
-<pubDate>
-Fri, 11 Sep 2015 00:00:00 +0900
 </pubDate>
 </item>
 <item>
@@ -954,6 +1052,43 @@ html
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;plugins&quot;&gt;Plugins&lt;/h2&gt;&lt;h3 id=&quot;lein-ring&quot;&gt;lein-ring&lt;/h3&gt;&lt;p&gt;Leiningen의 Ring 작업을 편하기 하기 위한 플러그인이다&lt;br /&gt; 즉 서버를 구동하거나 jar, war로 디플로이하는 하는 일이다&lt;/p&gt;&lt;p&gt;&lt;em&gt;project.clj&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt; :plugins &amp;#91;&amp;#91;lein-ring &amp;quot;0.8.13&amp;quot;&amp;#93;&amp;#93;
  :ring {:handler hello-ring.core/app} ;;시작할 수 있는 핸들러를 지정
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;바로 서버구동이 가능하고 기본적으로 3000 포트를 사용함&lt;br /&gt; 이제 서버측 코드를 수정하면 바로 적용이 된다&lt;/p&gt;&lt;p&gt;&lt;em&gt;실행&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;lein ring server&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;참고&quot;&gt;참고&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://github.com/ring-clojure/ring'&gt;https://github.com/ring-clojure/ring&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://github.com/weavejester/hiccup'&gt;https://github.com/weavejester/hiccup&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://github.com/revelytix/lein-ring'&gt;https://github.com/revelytix/lein-ring&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='liquidz.github.io/2011/12/practical-compojure.html'&gt;実践(?)Compojure&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://github.com/technomancy/shouter'&gt;shouter&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Fri, 11 Sep 2015 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
+http://clonekim.github.io/posts/2015-09-11-custom-emacs-setting/
+</guid>
+<link>
+http://clonekim.github.io/posts/2015-09-11-custom-emacs-setting/
+</link>
+<title>
+Clojure를 위한 Emacs 환경
+</title>
+<description>
+&lt;p&gt;&lt;strong&gt;Emacs 24를 기준으로 작성&lt;/strong&gt;&lt;br /&gt; 현재 사용중인 환경은 &lt;a href='custom-emacs.tgz'&gt;custom-emacs.tgz&lt;/a&gt;&lt;/p&gt;&lt;h2 id=&quot;package&amp;#95;install&quot;&gt;Package Install&lt;/h2&gt;&lt;p&gt;&lt;em&gt;init.el&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;&amp;#40;require 'package&amp;#41;
+&amp;#40;add-to-list 'package-archives
+        '&amp;#40;&amp;quot;melpa-stable&amp;quot; . &amp;quot;http://stable.melpa.org/packages/&amp;quot;&amp;#41; t&amp;#41;
+
+&amp;#40;package-initialize&amp;#41;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;package install&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;M-x package-install &amp;#91;RET&amp;#93; cider &amp;#91;RET&amp;#93;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;현재 사용하고 있는 패키지&lt;/p&gt;&lt;ul&gt;&lt;li&gt;cider&lt;/li&gt;&lt;li&gt;paredit&lt;/li&gt;&lt;li&gt;rainbow-delimiters&lt;/li&gt;&lt;li&gt;s&lt;/li&gt;&lt;li&gt;f&lt;/li&gt;&lt;li&gt;clojure-mode&lt;/li&gt;&lt;li&gt;clojure-mode-extra-font-locking&lt;/li&gt;&lt;li&gt;dash&lt;/li&gt;&lt;li&gt;ido-completing-read+&lt;/li&gt;&lt;li&gt;ido-ubiquitous&lt;/li&gt;&lt;li&gt;projectile&lt;/li&gt;&lt;li&gt;queue&lt;/li&gt;&lt;li&gt;seq&lt;/li&gt;&lt;li&gt;smex&lt;/li&gt;&lt;li&gt;spinner&lt;/li&gt;&lt;/ul&gt;&lt;h2 id=&quot;cider&amp;#95;구동&quot;&gt;Cider 구동&lt;/h2&gt;&lt;p&gt;&lt;em&gt;주의&lt;/em&gt;&lt;/p&gt;&lt;pre&gt;&lt;code&gt;Cider와 cider-nrepl의 버전이 맞아야함&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;profiles.clj&lt;/em&gt;&lt;/p&gt;&lt;p&gt;.lein디렉토리이하에 작성한다 없을경우 파일생성&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;{:user 
+ {:plugins 
+  &amp;#91;&amp;#91;cider/cider-nrepl &amp;quot;0.10.0&amp;quot;&amp;#93;&amp;#93;
+  :dependencies
+  &amp;#91;&amp;#91;org.clojure/tools.nrepl &amp;quot;0.2.12&amp;quot;&amp;#93;&amp;#93;}}
+{:repl
+ {:dependencies
+  &amp;#91;&amp;#91;org.clojure/tools.nrepl &amp;quot;0.2.12&amp;quot;&amp;#93;&amp;#93;}} 
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;M-x cider-jack-in
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;단축키&lt;/p&gt;&lt;pre&gt;&lt;code&gt;C-c M-j: cider-jack-in
+C-c C-k: compile
+C-c M-n: 현재 작업중인 namespace로 변경
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;theme&quot;&gt;Theme&lt;/h2&gt;&lt;p&gt;&lt;em&gt;Tron theme&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;/img/emacs/my-emacs-screen.png&quot; alt=&quot;My Emacs Screen&quot; /&gt;&lt;/p&gt;&lt;h2 id=&quot;참고&quot;&gt;참고&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://www.braveclojure.com/basic-emacs/#Interlude__Emacs_Windows_and_Frames'&gt;Clojure for the Brave and True&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://git.framasoft.org/distopico/distopico-dotemacs/blob/eff44c828f7f5ec1a227156ebea2f8eb4b18e61c/themes/tron-theme.el'&gt;Tron theme&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 </description>
 <enclosure>
 
@@ -1304,63 +1439,6 @@ Thu, 16 Jul 2015 00:00:00 +0900
 </item>
 <item>
 <guid>
-http://clonekim.github.io/posts/2015-07-14-how-to-captcha-in-node.js/
-</guid>
-<link>
-http://clonekim.github.io/posts/2015-07-14-how-to-captcha-in-node.js/
-</link>
-<title>
-Node.js로 Captcha
-</title>
-<description>
-&lt;p&gt;canvas를 이용한 캡챠(captcha)를 생성하려고 한다.&lt;br /&gt; 사용하려는 패키지는 canvas-captcha이다&lt;/p&gt;&lt;h2 id=&quot;의존성&amp;#95;설치&quot;&gt;의존성 설치&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;apt-get install libpango1.0-dev
-apt-get install libjpeg-dev
-apt-get install libgif-dev
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;소스작성&quot;&gt;소스작성&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;captcha.js&lt;/strong&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;var captcha = require&amp;#40;'canvas-captcha'&amp;#41;
-    ,captchaOptions = {
-        charPool: &amp;#40;'abcdefghijklmnopqrstuvwxyz' + 'abcdefghijklmnopqrstuvwxyz'.toUpperCase&amp;#40;&amp;#41; + '1234567890'&amp;#41;.split&amp;#40;''&amp;#41; //char pool Array
-        ,size: {
-            width: 120
-            ,height: 52
-        } //image size
-        ,textPos: {
-            left: 15
-            ,top: 36
-        } //text drawing start position
-        ,rotate: .01 //text ratate
-        ,charLength: 5 //how many chars
-        //,font: '26px' //font size
-        ,strokeStyle: '#0088cc' //style
-        ,bgColor: '#eeeeee' //bg color
-        ,confusion: true //draw another group background text to mangle the text
-        //,cFont: '30px' //bg text style
-        ,cStrokeStyle: '#adc' //bg text color
-        ,cRotate: -.05 //bg text rotate
-    };
-
-exports.captcha = function&amp;#40;req, res&amp;#41; {
-    captcha&amp;#40;captchaOptions, function&amp;#40;err, data&amp;#41; {
-        if&amp;#40;err&amp;#41; {
-            res.send&amp;#40;err&amp;#41;;
-        }
-        else {
-            console.log&amp;#40;&amp;quot;Generated Captcha -&amp;gt; &amp;quot;, data.captchaStr&amp;#41;;
-            req.session.captcha = data.captchaStr;
-            res.end&amp;#40;data.captchaImg&amp;#41;
-        }
-    }&amp;#41;
-};
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-<enclosure>
-
-</enclosure>
-<pubDate>
-Tue, 14 Jul 2015 00:00:00 +0900
-</pubDate>
-</item>
-<item>
-<guid>
 http://clonekim.github.io/posts/2015-07-14-sinatra/
 </guid>
 <link>
@@ -1463,6 +1541,63 @@ jruby -S warble config
    config.jar&amp;#95;name = &amp;quot;app&amp;quot;
 end  
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;이제 war파일을 작성하면 app.war 라는 파일이 보일것이다&lt;/p&gt;&lt;pre&gt;&lt;code&gt;jruby -S warble&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;참고&quot;&gt;참고&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://www.rubyinside.com/sinatra-29-links-and-resources-for-a-quicker-easier-way-to-build-webapps-1371.html'&gt;Sinatra: 29 Links and Resources For A Quicker, Easier Way to Build Webapps&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://aligach.net/diary/20110307.html'&gt; 今さらSinatra最低限メモ&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://www7b.biglobe.ne.jp/~makandat/gg_sites/Sinatra_Diary_01.html'&gt;Sinatra 日記&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Tue, 14 Jul 2015 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
+http://clonekim.github.io/posts/2015-07-14-how-to-captcha-in-node.js/
+</guid>
+<link>
+http://clonekim.github.io/posts/2015-07-14-how-to-captcha-in-node.js/
+</link>
+<title>
+Node.js로 Captcha
+</title>
+<description>
+&lt;p&gt;canvas를 이용한 캡챠(captcha)를 생성하려고 한다.&lt;br /&gt; 사용하려는 패키지는 canvas-captcha이다&lt;/p&gt;&lt;h2 id=&quot;의존성&amp;#95;설치&quot;&gt;의존성 설치&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;apt-get install libpango1.0-dev
+apt-get install libjpeg-dev
+apt-get install libgif-dev
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;소스작성&quot;&gt;소스작성&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;captcha.js&lt;/strong&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;var captcha = require&amp;#40;'canvas-captcha'&amp;#41;
+    ,captchaOptions = {
+        charPool: &amp;#40;'abcdefghijklmnopqrstuvwxyz' + 'abcdefghijklmnopqrstuvwxyz'.toUpperCase&amp;#40;&amp;#41; + '1234567890'&amp;#41;.split&amp;#40;''&amp;#41; //char pool Array
+        ,size: {
+            width: 120
+            ,height: 52
+        } //image size
+        ,textPos: {
+            left: 15
+            ,top: 36
+        } //text drawing start position
+        ,rotate: .01 //text ratate
+        ,charLength: 5 //how many chars
+        //,font: '26px' //font size
+        ,strokeStyle: '#0088cc' //style
+        ,bgColor: '#eeeeee' //bg color
+        ,confusion: true //draw another group background text to mangle the text
+        //,cFont: '30px' //bg text style
+        ,cStrokeStyle: '#adc' //bg text color
+        ,cRotate: -.05 //bg text rotate
+    };
+
+exports.captcha = function&amp;#40;req, res&amp;#41; {
+    captcha&amp;#40;captchaOptions, function&amp;#40;err, data&amp;#41; {
+        if&amp;#40;err&amp;#41; {
+            res.send&amp;#40;err&amp;#41;;
+        }
+        else {
+            console.log&amp;#40;&amp;quot;Generated Captcha -&amp;gt; &amp;quot;, data.captchaStr&amp;#41;;
+            req.session.captcha = data.captchaStr;
+            res.end&amp;#40;data.captchaImg&amp;#41;
+        }
+    }&amp;#41;
+};
+&lt;/code&gt;&lt;/pre&gt;
 </description>
 <enclosure>
 
@@ -2123,6 +2258,26 @@ Mon, 10 Nov 2014 00:00:00 +0900
 </item>
 <item>
 <guid>
+http://clonekim.github.io/posts/2014-11-04-second-post/
+</guid>
+<link>
+http://clonekim.github.io/posts/2014-11-04-second-post/
+</link>
+<title>
+Yet Another Post
+</title>
+<description>
+&lt;h3 id=&quot;this&amp;#95;post&amp;#95;so&amp;#95;fetch&quot;&gt;This Post So Fetch&lt;/h3&gt;&lt;p&gt;some more stuff happened&lt;/p&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Tue, 04 Nov 2014 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
 http://clonekim.github.io/posts/2014-10-03-backbone_handlebar_gulp_tip/
 </guid>
 <link>
@@ -2204,6 +2359,26 @@ module.exports = HomeView;
 </enclosure>
 <pubDate>
 Fri, 03 Oct 2014 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
+http://clonekim.github.io/posts/2014-03-10-first-post/
+</guid>
+<link>
+http://clonekim.github.io/posts/2014-03-10-first-post/
+</link>
+<title>
+A Post
+</title>
+<description>
+&lt;h3 id=&quot;this&amp;#95;post&amp;#95;not&amp;#95;fetch&amp;#95;enough&quot;&gt;This Post Not Fetch Enough&lt;/h3&gt;&lt;p&gt;some stuff happened&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;and a quote appeared &lt;/p&gt;&lt;/blockquote&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Mon, 10 Mar 2014 00:00:00 +0900
 </pubDate>
 </item>
 <item>
@@ -2554,6 +2729,41 @@ Fri, 27 Sep 2013 00:00:00 +0900
 </item>
 <item>
 <guid>
+http://clonekim.github.io/posts/2013-09-24-svn-as-windows-service/
+</guid>
+<link>
+http://clonekim.github.io/posts/2013-09-24-svn-as-windows-service/
+</link>
+<title>
+윈도우즈에 SVN서비스등록
+</title>
+<description>
+&lt;h3 id=&quot;svn서버를&amp;#95;윈도우에서&amp;#95;서비스로&amp;#95;등록한다.&lt;em&gt;&quot;&gt;SVN서버를 윈도우에서 서비스로 등록한다.&lt;/em&gt;&lt;/h3&gt;&lt;h4 id=&quot;creating&amp;#95;the&amp;#95;repository&quot;&gt;Creating the Repository&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;svnadmin create c:\svn&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&quot;edit&amp;#95;configuration&quot;&gt;Edit Configuration&lt;/h4&gt;&lt;p&gt;방금 생성한 레포지토리 디렉토리로 이동하여&lt;br /&gt; &lt;code&gt;conf\passwd&lt;/code&gt; 에서&lt;/p&gt;&lt;pre&gt;&lt;code&gt;아이디 = 패스워드 형식으로 등록
+ex&amp;#41;
+test = 1234
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;conf\svnserve.conf&lt;/code&gt; 에서 아래와 같이 설정&lt;/p&gt;&lt;pre&gt;&lt;code&gt;anon-access = read
+auth-access = write
+password-db = passwd
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&quot;register&amp;#95;as&amp;#95;a&amp;#95;service&quot;&gt;Register as a Service&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;C:\Program Files\Subversion\bin\svnserve.exe --service --root c:\svn
+또는
+C:\&amp;gt; sc create svn
+        binpath= &amp;quot;C:\svn\bin\svnserve.exe --service -r C:\repos&amp;quot;
+        displayname= &amp;quot;Subversion Server&amp;quot;
+        depend= Tcpip
+        start= auto
+
+C:\&amp;gt;sc create svnserver binpath= &amp;quot;C:\Program Files\Subversion\bin\svnserve.exe --service -r D:\svn&amp;quot;  displayname= &amp;quot;Subversion Server&amp;quot; depend= Tcpip start= auto
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Tue, 24 Sep 2013 00:00:00 +0900
+</pubDate>
+</item>
+<item>
+<guid>
 http://clonekim.github.io/posts/2013-09-24-apache-taglib/
 </guid>
 <link>
@@ -2621,41 +2831,6 @@ Apache Tag Lib
 　　&amp;lt;/tr&amp;gt;
 &amp;lt;/c:forEach&amp;gt;
 &amp;lt;/table&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-<enclosure>
-
-</enclosure>
-<pubDate>
-Tue, 24 Sep 2013 00:00:00 +0900
-</pubDate>
-</item>
-<item>
-<guid>
-http://clonekim.github.io/posts/2013-09-24-svn-as-windows-service/
-</guid>
-<link>
-http://clonekim.github.io/posts/2013-09-24-svn-as-windows-service/
-</link>
-<title>
-윈도우즈에 SVN서비스등록
-</title>
-<description>
-&lt;h3 id=&quot;svn서버를&amp;#95;윈도우에서&amp;#95;서비스로&amp;#95;등록한다.&lt;em&gt;&quot;&gt;SVN서버를 윈도우에서 서비스로 등록한다.&lt;/em&gt;&lt;/h3&gt;&lt;h4 id=&quot;creating&amp;#95;the&amp;#95;repository&quot;&gt;Creating the Repository&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;svnadmin create c:\svn&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&quot;edit&amp;#95;configuration&quot;&gt;Edit Configuration&lt;/h4&gt;&lt;p&gt;방금 생성한 레포지토리 디렉토리로 이동하여&lt;br /&gt; &lt;code&gt;conf\passwd&lt;/code&gt; 에서&lt;/p&gt;&lt;pre&gt;&lt;code&gt;아이디 = 패스워드 형식으로 등록
-ex&amp;#41;
-test = 1234
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;conf\svnserve.conf&lt;/code&gt; 에서 아래와 같이 설정&lt;/p&gt;&lt;pre&gt;&lt;code&gt;anon-access = read
-auth-access = write
-password-db = passwd
-&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&quot;register&amp;#95;as&amp;#95;a&amp;#95;service&quot;&gt;Register as a Service&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;C:\Program Files\Subversion\bin\svnserve.exe --service --root c:\svn
-또는
-C:\&amp;gt; sc create svn
-        binpath= &amp;quot;C:\svn\bin\svnserve.exe --service -r C:\repos&amp;quot;
-        displayname= &amp;quot;Subversion Server&amp;quot;
-        depend= Tcpip
-        start= auto
-
-C:\&amp;gt;sc create svnserver binpath= &amp;quot;C:\Program Files\Subversion\bin\svnserve.exe --service -r D:\svn&amp;quot;  displayname= &amp;quot;Subversion Server&amp;quot; depend= Tcpip start= auto
 &lt;/code&gt;&lt;/pre&gt;
 </description>
 <enclosure>

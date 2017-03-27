@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
     <meta charset="utf-8"/>
-    <title>(fn [] &quot;less is more&quot;)</title>
+    <title>(fn[] &quot;less is more&quot;)</title>
     <link rel="canonical" href="http://clonekim.github.io/">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700' rel='stylesheet'
@@ -11,7 +11,6 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css">
     <link href="css/screen.css" rel="stylesheet" type="text/css" />
-    <script id="dsq-count-scr" src="//clonekim-github-io.disqus.com/count.js" async></script>
 </head>
 <body>
 
@@ -25,7 +24,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">(fn [] &quot;less is more&quot;)</a>
+            <a class="navbar-brand" href="/">(fn[] &quot;less is more&quot;)</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
@@ -55,88 +54,43 @@
 <div id="post">
     <div class="post-header">
     <div id="post-meta" class="row">
-        <div class="col-lg-6">2016년 1월 19일 (화)</div>
+        <div class="col-lg-6">2017년 1월 2일 (월)</div>
         
     </div>
-    <h2>Gulp로 React빌드</h2>
+    <h2>Angular 1.6 사용</h2>
 </div>
 <div>
-    <ol class="content"><li><a href="#gulp와_함께_의존성설치">gulp와 함께 의존성설치</a></li><li><a href="#offline_transform">Offline Transform</a></li><li><a href="#참고">참고</a></li></ol>
-    <h2 id="gulp와&#95;함께&#95;의존성설치">gulp와 함께 의존성설치</h2><pre><code>npm install -g gulp
-</code></pre><p>react 개발에 필요한 라이브러리와<br /> 번들로 묶기위한 browserify를 설치</p><pre><code>npm install react --save-dev
-npm install react-dom --save-dev
-npm install browserify --save-dev
-npm install gulp --save-dev
-npm install vinyl-source-stream --save-dev
-npm install babelify --save-dev
-npm install babel-preset-react --save-dev
-</code></pre><p><em>gulpfile</em></p><pre><code class="javascript">var gulp = require&#40;'gulp'&#41;,
-	browserify = require&#40;'browserify'&#41;,
-	babelify = require&#40;'babelify'&#41;,
-	source = require&#40;'vinyl-source-stream'&#41;;
+    
+    <p><strong>angular 1.6 이상적용</strong></p><p><em>PREFIX</em></p><p>이제 기본값으로 !가 붙는다</p><pre><code>.config&#40;&#91;'$locationProvider', function&#40;$locationProvider&#41;{
+ $locationProvider.hashPrefix&#40;''&#41;;
+}&#93;&#41;
 
-gulp.task&#40;'default', function&#40;&#41; {
-
-	return browserify&#40;'./source/app.js'&#41;
-		.transform&#40;babelify, {presets: &#91;'react'&#93;}&#41;
-		.bundle&#40;&#41;
-		.pipe&#40;source&#40;'app.min.js'&#41;&#41;
-		.pipe&#40;gulp.dest&#40;'./build/'&#41;&#41;;
-}&#41;;
-</code></pre><p><em>app.js</em></p><pre><code class="javascript">var React = require&#40;'react'&#41;;
-var ReactDom = require&#40;'react-dom'&#41;;
-
-var MyComponent = React.createClass&#40;{
-	return: function&#40;&#41; {
-		return &#40;
-			&lt;h1&gt;Hello &lt;/h1&gt;
-			&#41;;
-	}
-
-}&#41;;
-</code></pre><p><em>build time</em></p><pre><code>$ gulp
-&#91;23:45:55&#93; Using gulpfile &#126;/react101/gulpfile.js
-&#91;23:45:55&#93; Starting 'default'...
-&#91;23:45:56&#93; Finished 'default' after 1.46 s
-</code></pre><h2 id="offline&#95;transform">Offline Transform</h2><p><em>jsx to javascript</em></p><pre><code>$ babel --presets react source --watch --out-dir build
-</code></pre><p><em>build/app.js</em></p><pre><code class="javascript">var React = require&#40;'react'&#41;;
-var ReactDom = require&#40;'react-dom'&#41;;
-
-var MyComponent = React.createClass&#40;{
-	displayName: 'MyComponent',
-
-	return: function &#40;&#41; {
-		return React.createElement&#40;
-			'h1',
-			null,
-			'Hello '
-		&#41;;
-	}
-
-}&#41;;
-</code></pre><h2 id="참고">참고</h2><ul><li><a href='https://www.npmjs.com/package/babelify'>babelify</a></li><li><a href='http://babeljs.io/'>Babel transform</a></li><li><a href='http://facebook.github.io/react/docs/getting-started.html#offline-transform'>Offline Transform</a></li></ul>
+</code></pre><p><em>JSONP</em></p><pre><code>$http.json&#40;url, {jsonpCallbackParam: 'callback'}&#41;
+.then&#40;function&#40;res&#41; {
+ 
+  ...
+}&#41;
+</code></pre>
 </div>
 
 <div id="post-tags">
     <b>Tags: </b>
     
-    <a href="/tags/javascript/">javascript</a>
-    
-    <a href="/tags/react/">react</a>
+    <a href="/tags/angular/">angular</a>
     
 </div>
 
 
     
     <div id="comments">
-        <a href="/posts/2016-01-19-using-gulp-react/#disqus_thread">코멘트 남기기</a>
+        <a href="/posts/2017-01-02-angular-jsonp/#disqus_thread">View Comments</a>
     </div>
     
 
     <div id="prev-next">
         
         
-        <a class="right" href="/posts/2016-01-18-starting-clojurescript/">ClojureScript 시작하기 &raquo;</a>
+        <a class="right" href="/posts/2016-05-07-emacs-package/">Emacs를 쓰면서 &raquo;</a>
         
     </div>
 </div>
@@ -151,7 +105,9 @@ var MyComponent = React.createClass&#40;{
                     <li><a href="http://cryogenweb.org/docs/home.html">Cryogen Docs</a></li>
                     <li><a href="http://carmenla.me/blog/archives">Carmen's Blog</a></li>
                     
-                    <li><a href="/pages/quick-guide/">Quick Start Guide</a></li>
+                    <li><a href="/pages/guick-guide/">Quick Start Guide</a></li>
+                    
+                    <li><a href="/pages/another-page/">Another Page</a></li>
                     
                 </ul>
                 
@@ -159,15 +115,15 @@ var MyComponent = React.createClass&#40;{
                     <h3>Recent Posts</h3>
                     <ul>
                         
+                        <li><a href="/posts/2017-01-02-angular-jsonp/">Angular 1.6 사용</a></li>
+                        
+                        <li><a href="/posts/2016-05-07-emacs-package/">Emacs를 쓰면서</a></li>
+                        
+                        <li><a href="/posts/2016-03-01-docker-start/">Docker 시작하기</a></li>
+                        
                         <li><a href="/posts/2016-01-19-using-gulp-react/">Gulp로 React빌드</a></li>
                         
                         <li><a href="/posts/2016-01-18-starting-clojurescript/">ClojureScript 시작하기</a></li>
-                        
-                        <li><a href="/posts/2016-01-14-clojurescript-gaming/">Clojure(Script)로 게임제작</a></li>
-                        
-                        <li><a href="/posts/2016-01-13-github-page/">Github에 블로그제작</a></li>
-                        
-                        <li><a href="/posts/2016-01-07-docs/">Quick Start Guide</a></li>
                         
                     </ul>
                 </div>
@@ -178,6 +134,8 @@ var MyComponent = React.createClass&#40;{
                     <ul>
                         
                         <li><a href="/tags/svn/">svn</a></li>
+                        
+                        <li><a href="/tags/very fetch/">very fetch</a></li>
                         
                         <li><a href="/tags/cryogen/">cryogen</a></li>
                         
@@ -227,6 +185,10 @@ var MyComponent = React.createClass&#40;{
                         
                         <li><a href="/tags/jdbc/">jdbc</a></li>
                         
+                        <li><a href="/tags/docker/">docker</a></li>
+                        
+                        <li><a href="/tags/angular/">angular</a></li>
+                        
                         <li><a href="/tags/template/">template</a></li>
                         
                         <li><a href="/tags/jruby/">jruby</a></li>
@@ -240,6 +202,8 @@ var MyComponent = React.createClass&#40;{
                         <li><a href="/tags/microframework/">microframework</a></li>
                         
                         <li><a href="/tags/proxy/">proxy</a></li>
+                        
+                        <li><a href="/tags/not fetch/">not fetch</a></li>
                         
                         <li><a href="/tags/game/">game</a></li>
                         
@@ -259,7 +223,7 @@ var MyComponent = React.createClass&#40;{
             </div>
         </div>
     </div>
-    <footer>Copyright &copy; 2017 Daehee Kim
+    <footer>Copyright &copy; 2017 DAEHEE KIM
         <p style="text-align: center;">Powered by <a href="http://cryogenweb.org">Cryogen</a></p></footer>
 </div>
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
