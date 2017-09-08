@@ -1,0 +1,483 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="DAEHEE KIM" />
+<meta name="description" content="Personal blog." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.26" />
+
+<link rel="canonical" href="http://clonekim.github.io/">
+<base href="http://clonekim.github.io/" />
+<meta property="og:title" content="Less is more" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://clonekim.github.io/" />
+
+
+
+<meta property="og:updated_time" content="2013-10-10T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Less is more"/>
+<meta name="twitter:description" content=""/>
+
+
+
+<meta itemprop="name" content="Less is more">
+<meta itemprop="description" content="">
+
+
+
+<link rel="stylesheet" href="css/layout.css" />
+<link rel="stylesheet" href="css/color-dark.css" />
+
+
+
+<title>
+
+
+     Less is more 
+
+</title>
+
+<script src="js/highlight.min.js"></script>
+<link rel="stylesheet" href="css/tomorrow-night.min.css" />
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="http://clonekim.github.io/">Less is more</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="/post/"><div class="nav-item-title">Posts</div></a>
+    
+
+  </nav>
+</div>
+
+  
+<div class="social-links-header">
+
+  
+
+  
+  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+</div>
+
+
+</header>
+
+
+<main>
+
+
+  
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2013/10/javascript-%EA%B0%9C%EB%B0%9C%ED%8C%81/'> JavaScript 개발팁</a> </h2>
+    <div class="meta">
+      Oct 10, 2013
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/javascript">#javascript</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> Module Pattern
+로직과 private 변수를 캡슐화하는 방법으로 아래와 같은 모듈패턴( 익명함수) 을 많이 사용한다.
+(function() { /* ... */ })();  jQuery와 연동해서 사용할 경우 아래와 같이 파라미터를 전달하도록 한다.
+(function($) { /* ... */ })(jQuery);  글로벌 변수를 전달해서 네임스페이스로 확장 할 수 있다.
+(function($, exports) { exports.Foo = &quot;wem&quot;; })(jQuery, window);  IIFE(mmediately-Invoked Function Expression)
+(function() { var mod = {}; })();  window라는 식별자를 거치지 않고 전역변수를 접근하자 </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2013/10/javascript-%EA%B0%9C%EB%B0%9C%ED%8C%81/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2013/10/java.util.concurrent/'> java.util.concurrent</a> </h2>
+    <div class="meta">
+      Oct 1, 2013
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/java">#java</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> 쓰레드 생성은 시스템에 따라 제한됨 쓰레드풀을 사용할 수 있는 패키지가 있음 Future는 메서드를 비동기로 실행 후 나중에 결과를 받을 수 있음  import java.math.BigDecimal; import java.util.ArrayList; import java.util.List; import java.util.concurrent.Callable; import java.util.concurrent.ExecutionException; import java.util.concurrent.ExecutorService; import java.util.concurrent.Executors; import java.util.concurrent.Future; public class CallableTest { public static void main(String[] args) { callableTest(); } private static class Result { Long in; BigDecimal out; Result(final Long in, final BigDecimal out) { this.in = in; this. </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2013/10/java.util.concurrent/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2013/09/jspwiki-%EC%84%A4%EC%B9%98/'> JSPWiki 설치</a> </h2>
+    <div class="meta">
+      Sep 27, 2013
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/wiki">#wiki</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary">  Apache JSPWiki
+설정 server.xml
+&lt;Connector address=&quot;127.0.0.1&quot; port=&quot;8080&quot; protocol=&quot;org.apache.coyote.http11.Http11NioProtocol&quot; connectionTimeout=&quot;20000&quot; maxThreads=&quot;3&quot; minSpareThreads=&quot;2&quot; redirectPort=&quot;8443&quot; URIEncoding=&quot;UTF-8&quot;/&gt;  jspwiki.properties
+jspwiki.baseURL= http://cloud9ine.cafe24.com/wiki jspwiki.fileSystemProvider.pageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/ jspwiki.basicAttachmentProvider.storageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/  jspwiki.policy
+Anonymous를 코멘트처리
+Nginx 연동 upstream tomcat { server 127.0.0.1:8080; } server { ... location /wiki { proxy_pass http://tomcat; }   </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2013/09/jspwiki-%EC%84%A4%EC%B9%98/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2013/09/jackson-json-processor/'> Jackson JSON Processor</a> </h2>
+    <div class="meta">
+      Sep 27, 2013
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/java">#java</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary">  Parsing option String data = &quot;[{'text':'PROJECT','id':'00156','leaf':true}]&quot;; ObjectMapper mapper = new ObjectMapper(); mapper.configure(JsonParser.Feature.ALLOW_SINGLE_QUOTES, true); JsonNode node = mapper.readTree(data);  Annotation *JsonSerialize *
+@JsonSerialize(using=JsonDateSerializer.class) public Date getCreationDate() { return creationDate; }  JsonDateSerializer.java
+public class JsonDateSerializer extends JsonSerializer&lt;Date&gt; { private static final SimpleDateFormat dateFormat = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;); @Override public void serialize(Date date, JsonGenerator json, SerializerProvider provider) throws IOException, JsonProcessingException { String formattedDate = dateFormat.format(date); json.writeString(formattedDate); } }   Jackson JSON Processor Wiki   </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2013/09/jackson-json-processor/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2013/09/%ED%94%84%EB%A1%9D%EC%8B%9C%EC%84%9C%EB%B2%84-%EC%9D%B8%EC%A6%9D%EC%97%90%EB%9F%AC/'> 프록시서버 인증에러</a> </h2>
+    <div class="meta">
+      Sep 27, 2013
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/java">#java</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> HttpURLConnecton를 이용해서 프록시설정하고 다운로드할 데이터가 있었으나 인증에러를 발생
+java.net.Authenticator를 구현해야함
+import java.net.Authenticator; import java.net.MalformedURLException; import java.net.PasswordAuthentication; import java.net.URL; public class ProxyAuthenticator extends Authenticator { private String proxyhost; private String userid; private String password; public ProxyAuthenticator(String proxyhost, String userid, String password) { this.proxyhost = proxyhost; this.userid = userid; this.password = password; } @Override public URL getRequestingURL() { if (this.proxyhost == null) return null; try { return new URL(this.proxyhost); } catch (MalformedURLException e) { return null; } } @Override protected RequestorType getRequestorType() { return RequestorType. </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2013/09/%ED%94%84%EB%A1%9D%EC%8B%9C%EC%84%9C%EB%B2%84-%EC%9D%B8%EC%A6%9D%EC%97%90%EB%9F%AC/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2013/09/apache-tag-lib/'> Apache Tag Lib</a> </h2>
+    <div class="meta">
+      Sep 24, 2013
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/jsp">#jsp</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> Maven &lt;groupId&gt;jstl&lt;/groupId&gt; &lt;artifactId&gt;jstl&lt;/artifactId&gt; &lt;version&gt;1.2&lt;/version&gt;  태그를 사용하기 위한 선언 &lt;%@ taglib prefix=&quot;c&quot; uri=&quot;http://java.sun.com/jsp/jstl/core&quot;%&gt; &lt;%@ taglib prefix=&quot;fn&quot; uri=&quot;http://java.sun.com/jsp/jstl/functions&quot; %&gt; &lt;%@ taglib prefix=&quot;fmt&quot; uri=&quot;http://java.sun.com/jsp/jstl/fmt&quot;%&gt;  param test.jsp?name=1234 일 경우
+${param.변수} 로 획득할 수 있다.
+${param.name}으로 알수 있겠다.
+core set &lt;c:set var=&quot;string&quot; value=&quot;값&quot;/&gt; &lt;c:set var=&quot;string&quot; value=&quot;${변수.프로퍼티}&quot;/&gt;  out &lt;c:out value=&quot;${fn:substring(string,0,50)}&quot; default=&quot;초기값&quot;/&gt; &lt;c:out value=&quot;안녕하세요&quot; /&gt;  test &lt;c:if test=&quot;${변수가 존재하면}&quot;&gt; ..처리 &lt;/c:if&gt; &lt;c:if test=&quot;${변수 &lt; 숫자 }&quot;&gt; ..처리 &lt;/c:if&gt; &lt;c:if test=&quot;${변수 &lt; true}&quot;&gt; . </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2013/09/apache-tag-lib/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2013/09/%EC%9C%88%EB%8F%84%EC%9A%B0%EC%A6%88%EC%97%90-svn%EC%84%9C%EB%B9%84%EC%8A%A4%EB%93%B1%EB%A1%9D/'> 윈도우즈에 SVN서비스등록</a> </h2>
+    <div class="meta">
+      Sep 24, 2013
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/svn">#svn</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> ###SVN서버를 윈도우에서 서비스로 등록한다.*
+Creating the Repository svnadmin create c:\svn  Edit Configuration 방금 생성한 레포지토리 디렉토리로 이동하여
+conf\passwd 에서
+아이디 = 패스워드 형식으로 등록 ex) test = 1234  conf\svnserve.conf 에서 아래와 같이 설정
+anon-access = read auth-access = write password-db = passwd  Register as a Service C:\Program Files\Subversion\bin\svnserve.exe --service --root c:\svn 또는 C:\&gt; sc create svn binpath= &quot;C:\svn\bin\svnserve.exe --service -r C:\repos&quot; displayname= &quot;Subversion Server&quot; depend= Tcpip start= auto C:\&gt;sc create svnserver binpath= &quot;C:\Program Files\Subversion\bin\svnserve. </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2013/09/%EC%9C%88%EB%8F%84%EC%9A%B0%EC%A6%88%EC%97%90-svn%EC%84%9C%EB%B9%84%EC%8A%A4%EB%93%B1%EB%A1%9D/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2013/06/%EC%9E%90%EB%B0%94-%ED%98%B8%ED%99%98%EC%97%90%EB%9F%AC/'> 자바 호환에러</a> </h2>
+    <div class="meta">
+      Jun 20, 2013
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/java">#java</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> java.lang.UnsupportedClassVersion_error (Unsupported major.minor version 51.0)  하위버전의 클래스파일을 상위버전이 읽어들일때는 상관없지만
+상위버전의 클래스파일을 하위버전이 읽어올때는 위와 같은 에러를 낸다
+에러 상세코드
+version 52.0 컴파일 버전 : 1.8 version 51.0 컴파일 버전 : 1.7 version 50.0 컴파일 버전 : 1.6 version 49.0 컴파일 버전 : 1.5 version 48.0 컴파일 버전 : 1.4   </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2013/06/%EC%9E%90%EB%B0%94-%ED%98%B8%ED%99%98%EC%97%90%EB%9F%AC/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2013/06/java-compile-option/'> Java Compile Option</a> </h2>
+    <div class="meta">
+      Jun 16, 2013
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/java">#java</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> -Dfile.encoding=[Character Set] -Dclient.encoding.override=[Character Set]   </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2013/06/java-compile-option/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2013/05/php-fpm/'> PHP FPM</a> </h2>
+    <div class="meta">
+      May 13, 2013
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/php">#php</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/nginx">#nginx</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> PHP Install apt-get install php5-fpm php5-mongo php5-mysql  /etc/php5/fpm/php.ini
+; This directive determines whether or not PHP will recognize code between ; &lt;? and ?&gt; tags as PHP source which should be processed as such. It is ; generally recommended that &lt;?php and ?&gt; should be used and that this feature ; should be disabled, as enabling it may result in issues when generating XML ; documents, however this remains supported for backward compatibility reasons. </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2013/05/php-fpm/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+
+
+<div class="page-nav">
+  <div class="page-prev">
+    
+        <a href="/page/3/" title="Previous page" > &lt;&lt; </a>
+    
+  </div>
+
+  <div class="page-num">
+    4/5
+  </div>
+
+  <div class="page-next">
+    
+    <a href="/page/5/" title="Next page"> >> </a>
+    
+  </div>
+</div> 
+
+
+</main>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+
+  
+  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="http://clonekim.github.io/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright">  </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</body>
+</html>
+

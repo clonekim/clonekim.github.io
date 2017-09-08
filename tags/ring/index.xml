@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ring on Less is more</title>
+    <link>http://clonekim.github.io/tags/ring/</link>
+    <description>Recent content in Ring on Less is more</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko</language>
+    <lastBuildDate>Fri, 11 Sep 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://clonekim.github.io/tags/ring/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ring으로 웹프로그래밍</title>
+      <link>http://clonekim.github.io/2015/09/ring%EC%9C%BC%EB%A1%9C-%EC%9B%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/</link>
+      <pubDate>Fri, 11 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://clonekim.github.io/2015/09/ring%EC%9C%BC%EB%A1%9C-%EC%9B%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/</guid>
+      <description>Hello-Ring 프로젝트 작성 새로운 프로젝트를 생성한다
+lein new hello-ring  leiningen.clj
+project.clj의 :dependencies에 임베디드 Jetty서버 추가
+[ring/ring-jetty-adapter &amp;quot;1.4.0&amp;quot;]  ring-jetty-adapter는 ring-core, ring-servlet, jetty-server를 의존성으로 가지고 있다
+ring-core: essential functions for handling parameters, cookies and more ring-devel: functions for developing and debugging Ring applications ring-servlet: construct Java servlets from Ring handlers ring-jetty-adapter: a Ring adapter that uses the Jetty webserver  hello_ring.core
+(ns hello-ring.core (:use [ring.adapter.jetty])) (defn app-handler [request] {:status 200 :header {&amp;quot;Content-Type&amp;quot; &amp;quot;text/html&amp;quot;} :body &amp;quot;Hello Ring&amp;quot;}) (defn -main [] (run-jetty app-handler {:port 8080}))  실행</description>
+    </item>
+    
+  </channel>
+</rss>

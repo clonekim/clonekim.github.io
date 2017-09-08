@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="DAEHEE KIM" />
+<meta name="description" content="Personal blog." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.26" />
+
+<link rel="canonical" href="http://clonekim.github.io/2016/01/gulp%EB%A1%9C-react%EB%B9%8C%EB%93%9C/">
+<base href="http://clonekim.github.io/" />
+<meta property="og:title" content="Gulp로 React빌드" />
+<meta property="og:description" content="gulp와 함께 의존성설치 npm install -g gulp  react 개발에 필요한 라이브러리와
+번들로 묶기위한 browserify를 설치
+npm install react --save-dev npm install react-dom --save-dev npm install browserify --save-dev npm install gulp --save-dev npm install vinyl-source-stream --save-dev npm install babelify --save-dev npm install babel-preset-react --save-dev  gulpfile
+var gulp = require(&#39;gulp&#39;), browserify = require(&#39;browserify&#39;), babelify = require(&#39;babelify&#39;), source = require(&#39;vinyl-source-stream&#39;); gulp.task(&#39;default&#39;, function() { return browserify(&#39;./source/app.js&#39;) .transform(babelify, {presets: [&#39;react&#39;]}) .bundle() .pipe(source(&#39;app.min.js&#39;)) ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://clonekim.github.io/2016/01/gulp%EB%A1%9C-react%EB%B9%8C%EB%93%9C/" />
+
+
+
+<meta property="article:published_time" content="2016-01-19T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2016-01-19T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Gulp로 React빌드"/>
+<meta name="twitter:description" content="gulp와 함께 의존성설치 npm install -g gulp  react 개발에 필요한 라이브러리와
+번들로 묶기위한 browserify를 설치
+npm install react --save-dev npm install react-dom --save-dev npm install browserify --save-dev npm install gulp --save-dev npm install vinyl-source-stream --save-dev npm install babelify --save-dev npm install babel-preset-react --save-dev  gulpfile
+var gulp = require(&#39;gulp&#39;), browserify = require(&#39;browserify&#39;), babelify = require(&#39;babelify&#39;), source = require(&#39;vinyl-source-stream&#39;); gulp.task(&#39;default&#39;, function() { return browserify(&#39;./source/app.js&#39;) .transform(babelify, {presets: [&#39;react&#39;]}) .bundle() .pipe(source(&#39;app.min.js&#39;)) ."/>
+
+
+
+<meta itemprop="name" content="Gulp로 React빌드">
+<meta itemprop="description" content="gulp와 함께 의존성설치 npm install -g gulp  react 개발에 필요한 라이브러리와
+번들로 묶기위한 browserify를 설치
+npm install react --save-dev npm install react-dom --save-dev npm install browserify --save-dev npm install gulp --save-dev npm install vinyl-source-stream --save-dev npm install babelify --save-dev npm install babel-preset-react --save-dev  gulpfile
+var gulp = require(&#39;gulp&#39;), browserify = require(&#39;browserify&#39;), babelify = require(&#39;babelify&#39;), source = require(&#39;vinyl-source-stream&#39;); gulp.task(&#39;default&#39;, function() { return browserify(&#39;./source/app.js&#39;) .transform(babelify, {presets: [&#39;react&#39;]}) .bundle() .pipe(source(&#39;app.min.js&#39;)) .">
+
+
+<meta itemprop="dateModified" content="2016-01-19T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="156">
+
+
+
+<meta itemprop="keywords" content="react.js," />
+
+
+<link rel="stylesheet" href="css/layout.css" />
+<link rel="stylesheet" href="css/color-dark.css" />
+
+
+
+<title>
+
+
+     Gulp로 React빌드 
+
+</title>
+
+<script src="js/highlight.min.js"></script>
+<link rel="stylesheet" href="css/tomorrow-night.min.css" />
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="http://clonekim.github.io/">Less is more</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item active" href="/post/"><div class="nav-item-title">Posts</div></a>
+    
+
+  </nav>
+</div>
+
+  
+<div class="social-links-header">
+
+  
+
+  
+  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Gulp로 React빌드 </h1>
+    <div class="content"> 
+
+<h2 id="gulp와-함께-의존성설치">gulp와 함께 의존성설치</h2>
+
+<pre><code>npm install -g gulp
+</code></pre>
+
+<p>react 개발에 필요한 라이브러리와<br />
+번들로 묶기위한 browserify를 설치</p>
+
+<pre><code>npm install react --save-dev
+npm install react-dom --save-dev
+npm install browserify --save-dev
+npm install gulp --save-dev
+npm install vinyl-source-stream --save-dev
+npm install babelify --save-dev
+npm install babel-preset-react --save-dev
+</code></pre>
+
+<p><em>gulpfile</em></p>
+
+<pre><code class="language-javascript">var gulp = require('gulp'),
+	browserify = require('browserify'),
+	babelify = require('babelify'),
+	source = require('vinyl-source-stream');
+
+gulp.task('default', function() {
+
+	return browserify('./source/app.js')
+		.transform(babelify, {presets: ['react']})
+		.bundle()
+		.pipe(source('app.min.js'))
+		.pipe(gulp.dest('./build/'));
+});
+</code></pre>
+
+<p><em>app.js</em></p>
+
+<pre><code class="language-javascript">var React = require('react');
+var ReactDom = require('react-dom');
+
+var MyComponent = React.createClass({
+	return: function() {
+		return (
+			&lt;h1&gt;Hello &lt;/h1&gt;
+			);
+	}
+
+});
+</code></pre>
+
+<p><em>build time</em></p>
+
+<pre><code>$ gulp
+[23:45:55] Using gulpfile ~/react101/gulpfile.js
+[23:45:55] Starting 'default'...
+[23:45:56] Finished 'default' after 1.46 s
+</code></pre>
+
+<h2 id="offline-transform">Offline Transform</h2>
+
+<p><em>jsx to javascript</em></p>
+
+<pre><code>$ babel --presets react source --watch --out-dir build
+</code></pre>
+
+<p><em>build/app.js</em></p>
+
+<pre><code class="language-javascript">var React = require('react');
+var ReactDom = require('react-dom');
+
+var MyComponent = React.createClass({
+	displayName: 'MyComponent',
+
+	return: function () {
+		return React.createElement(
+			'h1',
+			null,
+			'Hello '
+		);
+	}
+
+});
+</code></pre>
+
+<h2 id="참고">참고</h2>
+
+<ul>
+<li><a href="https://www.npmjs.com/package/babelify">babelify</a></li>
+<li><a href="http://babeljs.io/">Babel transform</a></li>
+<li><a href="http://facebook.github.io/react/docs/getting-started.html#offline-transform">Offline Transform</a></li>
+</ul>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/react.js">#react.js</a>
+      </div>
+    
+</div>
+
+    <div class="date"> Jan 19, 2016 </div>
+  </div>
+
+</footer>
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'clonekim-github-io';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+
+  
+  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="http://clonekim.github.io/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright">  </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</body>
+</html>
+

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="DAEHEE KIM" />
+<meta name="description" content="Personal blog." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.26" />
+
+<link rel="canonical" href="http://clonekim.github.io/2015/09/clojure%EB%A5%BC-%EC%9C%84%ED%95%9C-emacs-%ED%99%98%EA%B2%BD/">
+<base href="http://clonekim.github.io/" />
+<meta property="og:title" content="Clojure를 위한 Emacs 환경" />
+<meta property="og:description" content="Emacs 24를 기준으로 작성
+현재 사용중인 환경은 custom-emacs.tgz
+Package Install init.el
+(require &#39;package) (add-to-list &#39;package-archives &#39;(&quot;melpa-stable&quot; . &quot;http://stable.melpa.org/packages/&quot;) t) (package-initialize)  package install
+M-x package-install [RET] cider [RET]  현재 사용하고 있는 패키지
+ cider paredit rainbow-delimiters s f clojure-mode clojure-mode-extra-font-locking dash ido-completing-read&#43; ido-ubiquitous projectile queue seq smex spinner  Cider 구동 주의
+Cider와 cider-nrepl의 버전이 맞아야함  profiles.clj
+.lein디렉토리이하에 작성한다 없을경우 파일생성
+{:user {:plugins [[cider/cider-nrepl &quot;0.10.0&quot;]] :dependencies [[org.clojure/tools.nrepl &quot;0." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://clonekim.github.io/2015/09/clojure%EB%A5%BC-%EC%9C%84%ED%95%9C-emacs-%ED%99%98%EA%B2%BD/" />
+
+
+
+<meta property="article:published_time" content="2015-09-11T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2015-09-11T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Clojure를 위한 Emacs 환경"/>
+<meta name="twitter:description" content="Emacs 24를 기준으로 작성
+현재 사용중인 환경은 custom-emacs.tgz
+Package Install init.el
+(require &#39;package) (add-to-list &#39;package-archives &#39;(&quot;melpa-stable&quot; . &quot;http://stable.melpa.org/packages/&quot;) t) (package-initialize)  package install
+M-x package-install [RET] cider [RET]  현재 사용하고 있는 패키지
+ cider paredit rainbow-delimiters s f clojure-mode clojure-mode-extra-font-locking dash ido-completing-read&#43; ido-ubiquitous projectile queue seq smex spinner  Cider 구동 주의
+Cider와 cider-nrepl의 버전이 맞아야함  profiles.clj
+.lein디렉토리이하에 작성한다 없을경우 파일생성
+{:user {:plugins [[cider/cider-nrepl &quot;0.10.0&quot;]] :dependencies [[org.clojure/tools.nrepl &quot;0."/>
+
+
+
+<meta itemprop="name" content="Clojure를 위한 Emacs 환경">
+<meta itemprop="description" content="Emacs 24를 기준으로 작성
+현재 사용중인 환경은 custom-emacs.tgz
+Package Install init.el
+(require &#39;package) (add-to-list &#39;package-archives &#39;(&quot;melpa-stable&quot; . &quot;http://stable.melpa.org/packages/&quot;) t) (package-initialize)  package install
+M-x package-install [RET] cider [RET]  현재 사용하고 있는 패키지
+ cider paredit rainbow-delimiters s f clojure-mode clojure-mode-extra-font-locking dash ido-completing-read&#43; ido-ubiquitous projectile queue seq smex spinner  Cider 구동 주의
+Cider와 cider-nrepl의 버전이 맞아야함  profiles.clj
+.lein디렉토리이하에 작성한다 없을경우 파일생성
+{:user {:plugins [[cider/cider-nrepl &quot;0.10.0&quot;]] :dependencies [[org.clojure/tools.nrepl &quot;0.">
+
+
+<meta itemprop="dateModified" content="2015-09-11T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="96">
+
+
+
+<meta itemprop="keywords" content="emacs,clojure," />
+
+
+<link rel="stylesheet" href="css/layout.css" />
+<link rel="stylesheet" href="css/color-dark.css" />
+
+
+
+<title>
+
+
+     Clojure를 위한 Emacs 환경 
+
+</title>
+
+<script src="js/highlight.min.js"></script>
+<link rel="stylesheet" href="css/tomorrow-night.min.css" />
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="http://clonekim.github.io/">Less is more</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item active" href="/post/"><div class="nav-item-title">Posts</div></a>
+    
+
+  </nav>
+</div>
+
+  
+<div class="social-links-header">
+
+  
+
+  
+  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Clojure를 위한 Emacs 환경 </h1>
+    <div class="content"> 
+
+<p><strong>Emacs 24를 기준으로 작성</strong><br />
+현재 사용중인 환경은 <a href="custom-emacs.tgz">custom-emacs.tgz</a></p>
+
+<h2 id="package-install">Package Install</h2>
+
+<p><em>init.el</em></p>
+
+<pre><code class="language-clojure">(require 'package)
+(add-to-list 'package-archives
+        '(&quot;melpa-stable&quot; . &quot;http://stable.melpa.org/packages/&quot;) t)
+
+(package-initialize)
+</code></pre>
+
+<p><em>package install</em></p>
+
+<pre><code>M-x package-install [RET] cider [RET]
+</code></pre>
+
+<p>현재 사용하고 있는 패키지</p>
+
+<ul>
+<li>cider</li>
+<li>paredit</li>
+<li>rainbow-delimiters</li>
+<li>s</li>
+<li>f</li>
+<li>clojure-mode</li>
+<li>clojure-mode-extra-font-locking</li>
+<li>dash</li>
+<li>ido-completing-read+</li>
+<li>ido-ubiquitous</li>
+<li>projectile</li>
+<li>queue</li>
+<li>seq</li>
+<li>smex</li>
+<li>spinner</li>
+</ul>
+
+<h2 id="cider-구동">Cider 구동</h2>
+
+<p><em>주의</em></p>
+
+<pre><code>Cider와 cider-nrepl의 버전이 맞아야함
+</code></pre>
+
+<p><em>profiles.clj</em></p>
+
+<p>.lein디렉토리이하에 작성한다 없을경우 파일생성</p>
+
+<pre><code class="language-clojure">{:user 
+ {:plugins 
+  [[cider/cider-nrepl &quot;0.10.0&quot;]]
+  :dependencies
+  [[org.clojure/tools.nrepl &quot;0.2.12&quot;]]}}
+{:repl
+ {:dependencies
+  [[org.clojure/tools.nrepl &quot;0.2.12&quot;]]}} 
+</code></pre>
+
+<pre><code>M-x cider-jack-in
+</code></pre>
+
+<p>단축키</p>
+
+<pre><code>C-c M-j: cider-jack-in
+C-c C-k: compile
+C-c M-n: 현재 작업중인 namespace로 변경
+</code></pre>
+
+<h2 id="theme">Theme</h2>
+
+<p><em>Tron theme</em></p>
+
+<p><img src="/img/emacs/my-emacs-screen.png" alt="My Emacs Screen" /></p>
+
+<h2 id="참고">참고</h2>
+
+<ul>
+<li><a href="http://www.braveclojure.com/basic-emacs/#Interlude__Emacs_Windows_and_Frames">Clojure for the Brave and True</a></li>
+<li><a href="https://git.framasoft.org/distopico/distopico-dotemacs/blob/eff44c828f7f5ec1a227156ebea2f8eb4b18e61c/themes/tron-theme.el">Tron theme</a></li>
+</ul>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/emacs">#emacs</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/clojure">#clojure</a>
+      </div>
+    
+</div>
+
+    <div class="date"> Sep 11, 2015 </div>
+  </div>
+
+</footer>
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'clonekim-github-io';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+
+  
+  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="http://clonekim.github.io/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright">  </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</body>
+</html>
+

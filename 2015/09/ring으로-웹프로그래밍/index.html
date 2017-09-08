@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="DAEHEE KIM" />
+<meta name="description" content="Personal blog." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.26" />
+
+<link rel="canonical" href="http://clonekim.github.io/2015/09/ring%EC%9C%BC%EB%A1%9C-%EC%9B%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/">
+<base href="http://clonekim.github.io/" />
+<meta property="og:title" content="Ring으로 웹프로그래밍" />
+<meta property="og:description" content="Hello-Ring 프로젝트 작성 새로운 프로젝트를 생성한다
+lein new hello-ring  leiningen.clj
+project.clj의 :dependencies에 임베디드 Jetty서버 추가
+[ring/ring-jetty-adapter &quot;1.4.0&quot;]  ring-jetty-adapter는 ring-core, ring-servlet, jetty-server를 의존성으로 가지고 있다
+ring-core: essential functions for handling parameters, cookies and more ring-devel: functions for developing and debugging Ring applications ring-servlet: construct Java servlets from Ring handlers ring-jetty-adapter: a Ring adapter that uses the Jetty webserver  hello_ring.core
+(ns hello-ring.core (:use [ring.adapter.jetty])) (defn app-handler [request] {:status 200 :header {&quot;Content-Type&quot; &quot;text/html&quot;} :body &quot;Hello Ring&quot;}) (defn -main [] (run-jetty app-handler {:port 8080}))  실행" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://clonekim.github.io/2015/09/ring%EC%9C%BC%EB%A1%9C-%EC%9B%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/" />
+
+
+
+<meta property="article:published_time" content="2015-09-11T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2015-09-11T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Ring으로 웹프로그래밍"/>
+<meta name="twitter:description" content="Hello-Ring 프로젝트 작성 새로운 프로젝트를 생성한다
+lein new hello-ring  leiningen.clj
+project.clj의 :dependencies에 임베디드 Jetty서버 추가
+[ring/ring-jetty-adapter &quot;1.4.0&quot;]  ring-jetty-adapter는 ring-core, ring-servlet, jetty-server를 의존성으로 가지고 있다
+ring-core: essential functions for handling parameters, cookies and more ring-devel: functions for developing and debugging Ring applications ring-servlet: construct Java servlets from Ring handlers ring-jetty-adapter: a Ring adapter that uses the Jetty webserver  hello_ring.core
+(ns hello-ring.core (:use [ring.adapter.jetty])) (defn app-handler [request] {:status 200 :header {&quot;Content-Type&quot; &quot;text/html&quot;} :body &quot;Hello Ring&quot;}) (defn -main [] (run-jetty app-handler {:port 8080}))  실행"/>
+
+
+
+<meta itemprop="name" content="Ring으로 웹프로그래밍">
+<meta itemprop="description" content="Hello-Ring 프로젝트 작성 새로운 프로젝트를 생성한다
+lein new hello-ring  leiningen.clj
+project.clj의 :dependencies에 임베디드 Jetty서버 추가
+[ring/ring-jetty-adapter &quot;1.4.0&quot;]  ring-jetty-adapter는 ring-core, ring-servlet, jetty-server를 의존성으로 가지고 있다
+ring-core: essential functions for handling parameters, cookies and more ring-devel: functions for developing and debugging Ring applications ring-servlet: construct Java servlets from Ring handlers ring-jetty-adapter: a Ring adapter that uses the Jetty webserver  hello_ring.core
+(ns hello-ring.core (:use [ring.adapter.jetty])) (defn app-handler [request] {:status 200 :header {&quot;Content-Type&quot; &quot;text/html&quot;} :body &quot;Hello Ring&quot;}) (defn -main [] (run-jetty app-handler {:port 8080}))  실행">
+
+
+<meta itemprop="dateModified" content="2015-09-11T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="706">
+
+
+
+<meta itemprop="keywords" content="clojure,ring," />
+
+
+<link rel="stylesheet" href="css/layout.css" />
+<link rel="stylesheet" href="css/color-dark.css" />
+
+
+
+<title>
+
+
+     Ring으로 웹프로그래밍 
+
+</title>
+
+<script src="js/highlight.min.js"></script>
+<link rel="stylesheet" href="css/tomorrow-night.min.css" />
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="http://clonekim.github.io/">Less is more</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item active" href="/post/"><div class="nav-item-title">Posts</div></a>
+    
+
+  </nav>
+</div>
+
+  
+<div class="social-links-header">
+
+  
+
+  
+  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Ring으로 웹프로그래밍 </h1>
+    <div class="content"> 
+
+<h2 id="hello-ring-프로젝트-작성">Hello-Ring 프로젝트 작성</h2>
+
+<p><em>새로운 프로젝트를 생성한다</em></p>
+
+<pre><code>lein new hello-ring
+</code></pre>
+
+<p><em>leiningen.clj</em></p>
+
+<p>project.clj의 :dependencies에 임베디드 Jetty서버 추가</p>
+
+<pre><code>[ring/ring-jetty-adapter &quot;1.4.0&quot;]
+</code></pre>
+
+<p>ring-jetty-adapter는 ring-core, ring-servlet, jetty-server를 의존성으로 가지고 있다</p>
+
+<pre><code>ring-core: essential functions for handling parameters, cookies and more
+ring-devel: functions for developing and debugging Ring applications
+ring-servlet: construct Java servlets from Ring handlers
+ring-jetty-adapter: a Ring adapter that uses the Jetty webserver
+</code></pre>
+
+<p><em>hello_ring.core</em></p>
+
+<pre><code class="language-clojure">(ns hello-ring.core
+	(:use [ring.adapter.jetty]))
+
+
+(defn app-handler [request]
+   {:status 200
+    :header {&quot;Content-Type&quot; &quot;text/html&quot;}
+    :body &quot;Hello Ring&quot;})
+
+
+(defn -main []
+   (run-jetty app-handler {:port 8080}))
+</code></pre>
+
+<p><em>실행</em></p>
+
+<p><img src="/img/clojure/ring-start.png" alt="Hello Ring" /></p>
+
+<pre><code>lein run -m hello-ring.core
+...
+2015-09-11 16:02:19.133:INFO:oejs.Server:nREPL-worker-0: jetty-9.2.10.v20150310
+2015-09-11 16:02:19.153:INFO:oejs.ServerConnector:nREPL-worker-0: Started ServerConnector@31de707e{HTTP/1.1}{0.0.0.0:8080}
+2015-09-11 16:02:19.154:INFO:oejs.Server:nREPL-worker-0: Started @12408ms
+</code></pre>
+
+<h2 id="middleware">MiddleWare</h2>
+
+<h3 id="ring-json">ring-json</h3>
+
+<p><em>leiningen</em></p>
+
+<pre><code>[ring/ring-json &quot;0.4.0&quot;]
+</code></pre>
+
+<p><em>응답을 json으로 처리</em></p>
+
+<p>요청 결과를 JSON을 보내기 위해서 일부러 Content-Type를 설정 하는 것 보다<br />
+response 그런 기능을 삽입하는 것이다</p>
+
+<p>ring.middleware.json의 wrap-json-response를 사용한다</p>
+
+<pre><code class="language-clojure">(ns hello-ring.core
+	(:use [ring.adapter.jetty]
+         [ring.middleware.json :only [wrap-json-response]]
+         [ring.util.response :as response]))
+
+(defn app-handler [request]
+	(response {:name &quot;Hello&quot; }))
+
+(def app-handler
+	(wrap-json-response app-handler))
+
+(defn -main []
+	(run-jetty app-handler {:port 3000}))
+</code></pre>
+
+<p><img src="/img/clojure/json-resp.png" alt="json-resp" /></p>
+
+<p><em>request를 json으로 다루기</em></p>
+
+<p>body자체를 json으로 받거나 요청파라미터를 처리할 경우에<br />
+ring.middleware.json 의 wrap-json-body, wrap-json-params이 필요함<br />
+반드시 Content-Type이 application/json 일 경우에만 반응함</p>
+
+<pre><code>(POST &quot;/confirm&quot; req
+  (let [name (get-in req [:params &quot;name&quot;])]
+  (response {:desc (str &quot;The name you sent to me was &quot; name)})))
+
+(POST &quot;/&quot; req
+  (println (get (:body req) &quot;age&quot;)))  
+</code></pre>
+
+<p>curl를 이용해서 request 를 보내보자</p>
+
+<pre><code class="language-bash">curl -H &quot;Content-Type: application/json&quot; -X POST -d '{&quot;age&quot; : 20}' http://127.0.0.1:8080
+</code></pre>
+
+<p>post로 json 데이터를 보낼 경우 body를 출력시<br />
+PersistentArrayMap 로 나타난다<br />
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get">clojure.core/get</a> 으로 값 취득한다</p>
+
+<p><em>json request를 param으로 읽기</em></p>
+
+<p>ring.middleware.json 의  wrap-json-params이 필요함<br />
+반드시 Content-Type이 application/json 일 경우에만 반응함</p>
+
+<pre><code class="language-bash">curl -H &quot;Content-Type: application/json&quot; -X POST -d '{&quot;age&quot; : 20, &quot;name&quot;: &quot;kim&quot;}' http://127.0.0.1:8080/confirm
+</code></pre>
+
+<pre><code class="language-clojure">
+(POST &quot;/confirm&quot; {p :params}
+  (println p)) ; {age 20, name kim} 으로 출력
+
+;위와 같음
+(POST &quot;/confirm&quot; {model :json-params}
+   (println (get model &quot;name&quot;)); =&gt; 20
+   
+;파라미터를 인자로 받음
+(POST &quot;/confirm&quot; [name age]
+...
+
+; request를 그대로 사용
+(POST &quot;/confirm&quot; req
+  (let [name (get-in req [:params &quot;name&quot;])]
+  (response {:desc (str &quot;The name you sent to me was &quot; name)})))
+</code></pre>
+
+<h2 id="routing">Routing</h2>
+
+<h3 id="compojure">Compojure</h3>
+
+<pre><code class="language-clojure">(ns hello-ring.core
+	(:require [compojure.core :refer [defroutes GET]]
+		  [ring.adapter.jetty :as ring]))
+
+
+(defroutes routes
+	(GET &quot;/&quot; [] &quot;&lt;h1&gt;Compojure111&lt;/h1&gt;&quot;)
+	(POST &quot;/login&quot; req
+		(let [id (get (:params req) :id)
+		      passwd (get (:params req) :passwd)]
+		(str &quot;Your Id: &quot; id &quot; Password: &quot; passwd))))
+
+(defn -main []
+	(ring/run-jetty #'routes {:port 8080 :join? false}))
+</code></pre>
+
+<h3 id="page-not-found">Page Not Found</h3>
+
+<pre><code>(ns hello-ring.core
+   (:require [compojure.core :refer :all]
+	     [compojure.route :as route]
+	     [ring.adapter.jetty :as ring]))
+
+...
+(defroutes app
+  (GET &quot;/&quot; [] (index))
+  (route/not-found &quot;&lt;h1&gt;Page not found&lt;/h1&gt;&quot;))
+
+(defn -main []
+  (ring/run-jetty #'app {:port 8080 :join? false}))
+</code></pre>
+
+<h2 id="미들웨어를-적용한-소스">미들웨어를 적용한 소스</h2>
+
+<pre><code>(ns hello-ring.core
+	(:use
+		[ring.util.response :as response])
+		
+	(:require
+		[compojure.core :refer :all]
+		[compojure.route :as route]
+		[ring.middleware.json :refer [wrap-json-response wrap-json-body wrap-json-params]]
+		[ring.middleware.defaults :refer [wrap-defaults site-defaults]]))
+	
+(defroutes app-routes
+	(GET &quot;/&quot; [] (str &quot;Hello &quot; &quot;Clojure&quot;))
+	(GET &quot;/what-my-ip&quot; req (response {:name &quot;Hello&quot; :ip (:remote-addr req)}))
+	(POST &quot;/login&quot; req 
+	   (let [id (get (:params req) :id)
+	         passwd (get (:params req) :passwd)]	          
+	      (response {:id id :passwd passwd})))
+	      
+	(POST &quot;/confirm&quot; req
+		let [name (get-in req [:params &quot;name&quot;])]
+		(response {:desc (str &quot;The name you sent to me was &quot; name)}))		
+	(route/not-found &quot;Page not found&quot;))
+
+
+(def app-routes
+	(-&gt; app-routes		
+	  (wrap-json-body {:keywords? true :bigdecimals? true})
+		wrap-json-params
+		wrap-json-response))
+
+(def app
+	(wrap-defaults app-routes (assoc-in site-defaults [:security :anti-forgery] false)))
+</code></pre>
+
+<h2 id="hiccup">Hiccup</h2>
+
+<p><em>leiningen</em></p>
+
+<pre><code>[hiccup &quot;1.0.5&quot;]
+</code></pre>
+
+<p><em>repl에서 바로 테스트</em></p>
+
+<pre><code class="language-clojure">(require '[hiccup.core :as h])
+(h/html [:h1 &quot;Hello World&quot;])
+;; &lt;h1&gt;Hello World&lt;/h1&gt;&quot;
+</code></pre>
+
+<p><em>ring에서 사용해보자</em></p>
+
+<pre><code class="language-clojure">(ns hello-ring.core
+   (:require [compojure.core :refer [defroutes GET]]
+	     [ring.adapter.jetty :refer [run-jetty]]
+	     [hiccup.page :as page]))
+
+(defn index []
+   (page/html5
+	[:head
+	   [&quot;title&quot;: &quot;Hiccup test&quot;]]
+	[:body
+	   [:div {:id &quot;content&quot;} &quot;Hello World&quot;]] ))
+
+	
+(defroutes routes
+   (GET &quot;/&quot; [] (index)))
+
+(def -main []
+   (run-jetty #'routes {:port 8080})   
+</code></pre>
+
+<p>실제 html소스에서 공백이 제외된다</p>
+
+<p><img src="/img/clojure/hiccup-html-source.png" alt="Hiccup Source" /></p>
+
+<h2 id="jade">Jade</h2>
+
+<p><a href="https://github.com/neuland/jade4j">jade4</a>를 wrapper한 jade 뷰템플릿이다</p>
+
+<p><em>leiningen</em></p>
+
+<pre><code class="language-clojure">[clj-jade &quot;0.1.7&quot;]
+</code></pre>
+
+<p><em>jade_config.clj</em></p>
+
+<pre><code class="language-clojure">(ns hello-ring.jade-config
+  (:require
+    [clj-jade.core :as jade]
+    [clojure.java.io :as io]))
+
+
+(jade/configure {:template-dir &quot;public&quot;
+                 :pretty-print false
+                 :cache? true})
+
+</code></pre>
+
+<p><em>core.clj</em></p>
+
+<pre><code class="language-clojure">(ns hello-ring.core
+
+  (:use 
+    [hello-ring.jade-config])
+
+  (:require
+    [clj-jade.core :as jade]))
+
+
+(defn index []
+  (jade/render &quot;index.jade&quot; {&quot;title&quot;: &quot;Hello World&quot;})
+</code></pre>
+
+<p><em>public/index.jade</em></p>
+
+<p>title값이 치환된다</p>
+
+<pre><code>!!!5
+html
+    head
+        title= #{title}
+        link(href=&quot;css/bootstrap.css&quot;, rel=&quot;stylesheet&quot;, type=&quot;text/css&quot;)
+        link(href=&quot;css/font-awesome.css&quot;, rel=&quot;stylesheet&quot;, type=&quot;text/css&quot;)
+    body
+        nav(class=&quot;navbar-default&quot;)
+            div(class=&quot;container&quot;)
+...             
+</code></pre>
+
+<h2 id="http-kit">Http-kit</h2>
+
+<p><a href="http://www.http-kit.org/">http://www.http-kit.org</a></p>
+
+<p>jetty 에서 http-kit으로 변경</p>
+
+<pre><code class="language-clojure">(ns hello-ring.core 
+  (:require [ring.adapter.jetty :refer [run-server]])
+...
+
+(defn -main []
+  (run-server #'app {:port 8080}))
+</code></pre>
+
+<h2 id="plugins">Plugins</h2>
+
+<h3 id="lein-ring">lein-ring</h3>
+
+<p>Leiningen의 Ring 작업을 편하기 하기 위한 플러그인이다<br />
+즉 서버를 구동하거나 jar, war로 디플로이하는 하는 일이다</p>
+
+<p><em>project.clj</em></p>
+
+<pre><code class="language-clojure"> :plugins [[lein-ring &quot;0.8.13&quot;]]
+ :ring {:handler hello-ring.core/app} ;;시작할 수 있는 핸들러를 지정
+</code></pre>
+
+<p>바로 서버구동이 가능하고 기본적으로 3000 포트를 사용함<br />
+이제 서버측 코드를 수정하면 바로 적용이 된다</p>
+
+<p><em>실행</em></p>
+
+<pre><code>lein ring server
+</code></pre>
+
+<h2 id="참고">참고</h2>
+
+<ul>
+<li><a href="https://github.com/ring-clojure/ring">https://github.com/ring-clojure/ring</a></li>
+<li><a href="https://github.com/weavejester/hiccup">https://github.com/weavejester/hiccup</a></li>
+<li><a href="https://github.com/revelytix/lein-ring">https://github.com/revelytix/lein-ring</a></li>
+<li><a href="liquidz.github.io/2011/12/practical-compojure.html">実践(?)Compojure</a></li>
+<li><a href="https://github.com/technomancy/shouter">shouter</a></li>
+</ul>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/clojure">#clojure</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/ring">#ring</a>
+      </div>
+    
+</div>
+
+    <div class="date"> Sep 11, 2015 </div>
+  </div>
+
+</footer>
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'clonekim-github-io';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+
+  
+  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="http://clonekim.github.io/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright">  </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</body>
+</html>
+

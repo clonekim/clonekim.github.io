@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="DAEHEE KIM" />
+<meta name="description" content="Personal blog." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.26" />
+
+<link rel="canonical" href="http://clonekim.github.io/post/2015-07-14-how-to-captcha-in-node.js/">
+<base href="http://clonekim.github.io/" />
+<meta property="og:title" content="Node.js로 Captcha" />
+<meta property="og:description" content="canvas를 이용한 캡챠(captcha)를 생성하려고 한다.
+사용하려는 패키지는 canvas-captcha이다
+의존성 설치 apt-get install libpango1.0-dev apt-get install libjpeg-dev apt-get install libgif-dev  소스작성 captcha.js
+var captcha = require(&#39;canvas-captcha&#39;) ,captchaOptions = { charPool: (&#39;abcdefghijklmnopqrstuvwxyz&#39; &#43; &#39;abcdefghijklmnopqrstuvwxyz&#39;.toUpperCase() &#43; &#39;1234567890&#39;).split(&#39;&#39;) //char pool Array ,size: { width: 120 ,height: 52 } //image size ,textPos: { left: 15 ,top: 36 } //text drawing start position ,rotate: .01 //text ratate ,charLength: 5 //how many chars //,font: &#39;26px&#39; //font size ,strokeStyle: &#39;#0088cc&#39; //style ,bgColor: &#39;#eeeeee&#39; //bg color ,confusion: true //draw another group background text to mangle the text //,cFont: &#39;30px&#39; //bg text style ,cStrokeStyle: &#39;#adc&#39; //bg text color ,cRotate: -." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://clonekim.github.io/post/2015-07-14-how-to-captcha-in-node.js/" />
+
+
+
+<meta property="article:published_time" content="2015-07-14T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2015-07-14T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Node.js로 Captcha"/>
+<meta name="twitter:description" content="canvas를 이용한 캡챠(captcha)를 생성하려고 한다.
+사용하려는 패키지는 canvas-captcha이다
+의존성 설치 apt-get install libpango1.0-dev apt-get install libjpeg-dev apt-get install libgif-dev  소스작성 captcha.js
+var captcha = require(&#39;canvas-captcha&#39;) ,captchaOptions = { charPool: (&#39;abcdefghijklmnopqrstuvwxyz&#39; &#43; &#39;abcdefghijklmnopqrstuvwxyz&#39;.toUpperCase() &#43; &#39;1234567890&#39;).split(&#39;&#39;) //char pool Array ,size: { width: 120 ,height: 52 } //image size ,textPos: { left: 15 ,top: 36 } //text drawing start position ,rotate: .01 //text ratate ,charLength: 5 //how many chars //,font: &#39;26px&#39; //font size ,strokeStyle: &#39;#0088cc&#39; //style ,bgColor: &#39;#eeeeee&#39; //bg color ,confusion: true //draw another group background text to mangle the text //,cFont: &#39;30px&#39; //bg text style ,cStrokeStyle: &#39;#adc&#39; //bg text color ,cRotate: -."/>
+
+
+
+<meta itemprop="name" content="Node.js로 Captcha">
+<meta itemprop="description" content="canvas를 이용한 캡챠(captcha)를 생성하려고 한다.
+사용하려는 패키지는 canvas-captcha이다
+의존성 설치 apt-get install libpango1.0-dev apt-get install libjpeg-dev apt-get install libgif-dev  소스작성 captcha.js
+var captcha = require(&#39;canvas-captcha&#39;) ,captchaOptions = { charPool: (&#39;abcdefghijklmnopqrstuvwxyz&#39; &#43; &#39;abcdefghijklmnopqrstuvwxyz&#39;.toUpperCase() &#43; &#39;1234567890&#39;).split(&#39;&#39;) //char pool Array ,size: { width: 120 ,height: 52 } //image size ,textPos: { left: 15 ,top: 36 } //text drawing start position ,rotate: .01 //text ratate ,charLength: 5 //how many chars //,font: &#39;26px&#39; //font size ,strokeStyle: &#39;#0088cc&#39; //style ,bgColor: &#39;#eeeeee&#39; //bg color ,confusion: true //draw another group background text to mangle the text //,cFont: &#39;30px&#39; //bg text style ,cStrokeStyle: &#39;#adc&#39; //bg text color ,cRotate: -.">
+
+
+<meta itemprop="dateModified" content="2015-07-14T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="131">
+
+
+
+<meta itemprop="keywords" content="node.js,captcha," />
+
+
+<link rel="stylesheet" href="css/layout.css" />
+<link rel="stylesheet" href="css/color-dark.css" />
+
+
+
+<title>
+
+
+     Node.js로 Captcha 
+
+</title>
+
+<script src="js/highlight.min.js"></script>
+<link rel="stylesheet" href="css/tomorrow-night.min.css" />
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="http://clonekim.github.io/">Less is more</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item active" href="/post/"><div class="nav-item-title">Posts</div></a>
+    
+
+  </nav>
+</div>
+
+  
+<div class="social-links-header">
+
+  
+
+  
+  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Node.js로 Captcha </h1>
+    <div class="content"> 
+
+<p>canvas를 이용한 캡챠(captcha)를 생성하려고 한다.<br />
+사용하려는 패키지는 canvas-captcha이다</p>
+
+<h2 id="의존성-설치">의존성 설치</h2>
+
+<pre><code>apt-get install libpango1.0-dev
+apt-get install libjpeg-dev
+apt-get install libgif-dev
+</code></pre>
+
+<h2 id="소스작성">소스작성</h2>
+
+<p><strong>captcha.js</strong></p>
+
+<pre><code class="language-javascript">var captcha = require('canvas-captcha')
+    ,captchaOptions = {
+        charPool: ('abcdefghijklmnopqrstuvwxyz' + 'abcdefghijklmnopqrstuvwxyz'.toUpperCase() + '1234567890').split('') //char pool Array
+        ,size: {
+            width: 120
+            ,height: 52
+        } //image size
+        ,textPos: {
+            left: 15
+            ,top: 36
+        } //text drawing start position
+        ,rotate: .01 //text ratate
+        ,charLength: 5 //how many chars
+        //,font: '26px' //font size
+        ,strokeStyle: '#0088cc' //style
+        ,bgColor: '#eeeeee' //bg color
+        ,confusion: true //draw another group background text to mangle the text
+        //,cFont: '30px' //bg text style
+        ,cStrokeStyle: '#adc' //bg text color
+        ,cRotate: -.05 //bg text rotate
+    };
+
+exports.captcha = function(req, res) {
+    captcha(captchaOptions, function(err, data) {
+        if(err) {
+            res.send(err);
+        }
+        else {
+            console.log(&quot;Generated Captcha -&gt; &quot;, data.captchaStr);
+            req.session.captcha = data.captchaStr;
+            res.end(data.captchaImg)
+        }
+    })
+};
+</code></pre>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/node.js">#node.js</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/captcha">#captcha</a>
+      </div>
+    
+</div>
+
+    <div class="date"> Jul 14, 2015 </div>
+  </div>
+
+</footer>
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'clonekim-github-io';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+
+  
+  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="http://clonekim.github.io/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright">  </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</body>
+</html>
+

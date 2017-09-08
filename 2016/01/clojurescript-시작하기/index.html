@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="DAEHEE KIM" />
+<meta name="description" content="Personal blog." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.26" />
+
+<link rel="canonical" href="http://clonekim.github.io/2016/01/clojurescript-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/">
+<base href="http://clonekim.github.io/" />
+<meta property="og:title" content="ClojureScript 시작하기" />
+<meta property="og:description" content="프로젝트 설정 leiningen
+[org.clojure/clojurescript &quot;1.7.228&quot;]  plugin
+[lein-cljsbuild &quot;1.1.2&quot;]  project.clj
+(defproject hello-ring &quot;0.1.0-SNAPSHOT&quot; :description &quot;FIXME: write description&quot; :url &quot;http://example.com/FIXME&quot; :license {:name &quot;Eclipse Public License&quot; :url &quot;http://www.eclipse.org/legal/epl-v10.html&quot;} :dependencies [[org.clojure/clojure &quot;1.7.0&quot;] [org.clojure/clojurescript &quot;1.7.228&quot;] [ring/ring-core &quot;1.4.0&quot;] [ring/ring-defaults &quot;0.1.5&quot;] [ring/ring-json &quot;0.4.0&quot;] [ring/ring-jetty-adapter &quot;1.4.0&quot;] [compojure &quot;1.4.0&quot;]] :plugins [[lein-cljsbuild &quot;1.1.2&quot;] [lein-ring &quot;0.9.7&quot;]] :cljsbuild {:builds {:main {:source-paths [&quot;src-cljs&quot;] :compiler {:output-to &quot;resources/public/js/app.js&quot; :output-dir &quot;resources/public/out&quot; :optimizations :simple :pretty-print true}}}} :ring {:handler hello-ring.core/app} :main hello-ring.core)  cljs소스를 src-cljs라는 경로로 선택했다" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://clonekim.github.io/2016/01/clojurescript-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/" />
+
+
+
+<meta property="article:published_time" content="2016-01-18T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2016-01-18T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="ClojureScript 시작하기"/>
+<meta name="twitter:description" content="프로젝트 설정 leiningen
+[org.clojure/clojurescript &quot;1.7.228&quot;]  plugin
+[lein-cljsbuild &quot;1.1.2&quot;]  project.clj
+(defproject hello-ring &quot;0.1.0-SNAPSHOT&quot; :description &quot;FIXME: write description&quot; :url &quot;http://example.com/FIXME&quot; :license {:name &quot;Eclipse Public License&quot; :url &quot;http://www.eclipse.org/legal/epl-v10.html&quot;} :dependencies [[org.clojure/clojure &quot;1.7.0&quot;] [org.clojure/clojurescript &quot;1.7.228&quot;] [ring/ring-core &quot;1.4.0&quot;] [ring/ring-defaults &quot;0.1.5&quot;] [ring/ring-json &quot;0.4.0&quot;] [ring/ring-jetty-adapter &quot;1.4.0&quot;] [compojure &quot;1.4.0&quot;]] :plugins [[lein-cljsbuild &quot;1.1.2&quot;] [lein-ring &quot;0.9.7&quot;]] :cljsbuild {:builds {:main {:source-paths [&quot;src-cljs&quot;] :compiler {:output-to &quot;resources/public/js/app.js&quot; :output-dir &quot;resources/public/out&quot; :optimizations :simple :pretty-print true}}}} :ring {:handler hello-ring.core/app} :main hello-ring.core)  cljs소스를 src-cljs라는 경로로 선택했다"/>
+
+
+
+<meta itemprop="name" content="ClojureScript 시작하기">
+<meta itemprop="description" content="프로젝트 설정 leiningen
+[org.clojure/clojurescript &quot;1.7.228&quot;]  plugin
+[lein-cljsbuild &quot;1.1.2&quot;]  project.clj
+(defproject hello-ring &quot;0.1.0-SNAPSHOT&quot; :description &quot;FIXME: write description&quot; :url &quot;http://example.com/FIXME&quot; :license {:name &quot;Eclipse Public License&quot; :url &quot;http://www.eclipse.org/legal/epl-v10.html&quot;} :dependencies [[org.clojure/clojure &quot;1.7.0&quot;] [org.clojure/clojurescript &quot;1.7.228&quot;] [ring/ring-core &quot;1.4.0&quot;] [ring/ring-defaults &quot;0.1.5&quot;] [ring/ring-json &quot;0.4.0&quot;] [ring/ring-jetty-adapter &quot;1.4.0&quot;] [compojure &quot;1.4.0&quot;]] :plugins [[lein-cljsbuild &quot;1.1.2&quot;] [lein-ring &quot;0.9.7&quot;]] :cljsbuild {:builds {:main {:source-paths [&quot;src-cljs&quot;] :compiler {:output-to &quot;resources/public/js/app.js&quot; :output-dir &quot;resources/public/out&quot; :optimizations :simple :pretty-print true}}}} :ring {:handler hello-ring.core/app} :main hello-ring.core)  cljs소스를 src-cljs라는 경로로 선택했다">
+
+
+<meta itemprop="dateModified" content="2016-01-18T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="253">
+
+
+
+<meta itemprop="keywords" content="clojurescript," />
+
+
+<link rel="stylesheet" href="css/layout.css" />
+<link rel="stylesheet" href="css/color-dark.css" />
+
+
+
+<title>
+
+
+     ClojureScript 시작하기 
+
+</title>
+
+<script src="js/highlight.min.js"></script>
+<link rel="stylesheet" href="css/tomorrow-night.min.css" />
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="http://clonekim.github.io/">Less is more</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item active" href="/post/"><div class="nav-item-title">Posts</div></a>
+    
+
+  </nav>
+</div>
+
+  
+<div class="social-links-header">
+
+  
+
+  
+  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> ClojureScript 시작하기 </h1>
+    <div class="content"> 
+
+<h2 id="프로젝트-설정">프로젝트 설정</h2>
+
+<p><em>leiningen</em></p>
+
+<pre><code class="language-clojure">[org.clojure/clojurescript &quot;1.7.228&quot;]
+</code></pre>
+
+<p><em>plugin</em></p>
+
+<pre><code class="language-clojure">[lein-cljsbuild &quot;1.1.2&quot;]
+</code></pre>
+
+<p><em>project.clj</em></p>
+
+<pre><code class="language-clojure">(defproject hello-ring &quot;0.1.0-SNAPSHOT&quot;
+  :description &quot;FIXME: write description&quot;
+  :url &quot;http://example.com/FIXME&quot;
+  :license {:name &quot;Eclipse Public License&quot;
+            :url &quot;http://www.eclipse.org/legal/epl-v10.html&quot;}
+  :dependencies [[org.clojure/clojure &quot;1.7.0&quot;]
+                 [org.clojure/clojurescript &quot;1.7.228&quot;]
+                 [ring/ring-core &quot;1.4.0&quot;]
+                 [ring/ring-defaults &quot;0.1.5&quot;]
+                 [ring/ring-json &quot;0.4.0&quot;]
+                 [ring/ring-jetty-adapter &quot;1.4.0&quot;]
+                 [compojure &quot;1.4.0&quot;]]
+  :plugins [[lein-cljsbuild &quot;1.1.2&quot;]
+            [lein-ring &quot;0.9.7&quot;]]
+  :cljsbuild {:builds {:main {:source-paths [&quot;src-cljs&quot;]
+                              :compiler {:output-to &quot;resources/public/js/app.js&quot;
+                              	        :output-dir &quot;resources/public/out&quot;
+                                        :optimizations :simple
+                                        :pretty-print true}}}}
+  :ring {:handler hello-ring.core/app}
+  :main hello-ring.core)
+</code></pre>
+
+<p>cljs소스를 src-cljs라는 경로로 선택했다<br />
+디렉토리를 만들어야한다</p>
+
+<pre><code>~hello-ring $ mkdir src-cljs
+</code></pre>
+
+<dl>
+<dt><strong>주의</strong></dt>
+</dl>
+
+<p>:none으로 설정 시 <a href="https://developers.google.com/closure/library/">Google Closure Library</a> 스크립트가 포함되지 않는다.<br />
+의존성까지 컴파일 결과에 포함하려면 :none이외의 설정으로 할것</p>
+
+<pre><code class="language-clojure">:optimizations :none
+</code></pre>
+
+<p><img src="/img/clojure/goog-not-found.png" alt="Goog not found" /></p>
+
+<h2 id="클라이언트-측">클라이언트 측</h2>
+
+<p><em>src-cljs/hello/app.cljs</em></p>
+
+<p>반드시 네임스페이스를 가져야한다</p>
+
+<pre><code class="language-clojure">(ns hello.app)
+
+(defn set-html! [el content]
+  (set! (.-innerHTML el) content))
+
+(defn main []
+  (let [content &quot;Hello world from ClojureScript&quot;
+        element (js/document.getElementById &quot;main&quot;)]
+    (set-html! element content)))
+
+(main)
+</code></pre>
+
+<h2 id="서버측">서버측</h2>
+
+<p><em>hello_ring/core.clj</em></p>
+
+<pre><code class="language-clojure">(ns hello-ring.core
+  (:use [ring.util.response])
+  (:require [compojure.core :refer :all]
+            [compojure.route :as route]
+            [ring.middleware.defaults :refer [wrap-defaults site-defaults]]
+            [ring.middleware.json :refer [wrap-json-response
+                                          wrap-json-body
+                                          wrap-json-params]]
+            [hiccup.page :as page]
+            [ring.adapter.jetty :refer [run-jetty]])
+
+  (:gen-class))
+
+(defroutes app-routes
+  (GET &quot;/&quot; []
+       (page/html5 
+        [:head
+         [:meta {:http-equiv &quot;X-UA-Compatible&quot; :content &quot;IE=edge&quot;}]]
+        [:body
+         [:div {:id &quot;main&quot;}
+          [:button {:type &quot;button&quot; :id &quot;button01&quot;} &quot;Click Here!&quot;]]
+         (page/include-js &quot;js/app.js&quot;)]))
+  (route/not-found &quot;&lt;h1&gt;Page not found&lt;/h1&gt;&quot;))
+
+(def app
+  (-&gt; app-routes
+      wrap-json-body
+      wrap-json-params
+      wrap-json-response
+      (wrap-defaults (assoc-in site-defaults [:security :anti-forgery] false))))
+
+(defn -main []
+  (run-jetty #'app {:port 8080}))
+
+</code></pre>
+
+<h2 id="서버시작">서버시작</h2>
+
+<pre><code>lein ring server
+</code></pre>
+
+<p>다른 터미널을 열어서<br />
+src-cljs/app.cljs를 자바스크립트로 컴파일한다<br />
+한번만 컴파일한다</p>
+
+<pre><code>lein cljsbuild once
+</code></pre>
+
+<p>만약 소스를 주시하면서 변경 시마다 컴파일하려면</p>
+
+<pre><code>lein cljsbuild auto
+</code></pre>
+
+<p>이제 브라우저로 접근해보자</p>
+
+<p><img src="/img/clojure/run-clojurescript.png" alt="Run ClojureScript" /></p>
+
+<h2 id="참고">참고</h2>
+
+<ul>
+<li><a href="https://www.niwi.nz/cljs-workshop/">ClojureScript Tutorial</a></li>
+<li><a href="http://blog.jonharrington.org/clojurescript-and-closure-ui/">Clojurescript and Closure UI Tutorial</a></li>
+<li><a href="http://lukevanderhart.com/2011/09/30/using-javascript-and-clojurescript.html">Using JavaScript libraries in ClojureScript</a></li>
+<li><a href="http://swannodette.github.io/2013/11/07/clojurescript-101/">ClojureScript 101</a></li>
+<li><a href="https://github.com/clojure/clojurescript/wiki/Dependencies">ClojureScript Dependencies</a></li>
+<li><a href="http://astashov.github.io/blog/2014/07/30/perfect-clojurescript-development-environment-with-vim/">Perfect ClojureScript Development Environment With Vim</a></li>
+</ul>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/clojurescript">#clojurescript</a>
+      </div>
+    
+</div>
+
+    <div class="date"> Jan 18, 2016 </div>
+  </div>
+
+</footer>
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'clonekim-github-io';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+
+  
+  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="http://clonekim.github.io/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright">  </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</body>
+</html>
+

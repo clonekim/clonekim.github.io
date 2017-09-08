@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on Less is more</title>
+    <link>http://clonekim.github.io/tags/docker/</link>
+    <description>Recent content in Docker on Less is more</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko</language>
+    <lastBuildDate>Tue, 01 Mar 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://clonekim.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Docker 시작하기</title>
+      <link>http://clonekim.github.io/2016/03/docker-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/</link>
+      <pubDate>Tue, 01 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://clonekim.github.io/2016/03/docker-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/</guid>
+      <description>Docker 시작하기 이미지다운로드
+$ docker pull [이미지이름]  컨테이너 생성
+$ docker run --name [컨테이너이름]  컨테이너로 접속
+$ docker exec -it [컨테이너] bash  컨테이너 시작/재시작
+$ docker start [컨테이너이름] $ docker stop [컨테이너이름]  MySQL 사용하기 mysql이미지를 다운로드와 함께 컨테이너 시작하기
+$ docker run --name mysql -e MYSQL_ROOT_PASSWORD=root -p 3306:3306 -d mysql  컨테이너확인
+$ docker ps CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES cf5fbb3d49b1 mysql &amp;quot;docker-entrypoint.</description>
+    </item>
+    
+  </channel>
+</rss>

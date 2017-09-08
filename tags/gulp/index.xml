@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gulp on Less is more</title>
+    <link>http://clonekim.github.io/tags/gulp/</link>
+    <description>Recent content in Gulp on Less is more</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko</language>
+    <lastBuildDate>Fri, 03 Oct 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://clonekim.github.io/tags/gulp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>backbone &#43; handlebar &#43; gulp 팁</title>
+      <link>http://clonekim.github.io/2014/10/backbone---handlebar---gulp-%ED%8C%81/</link>
+      <pubDate>Fri, 03 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://clonekim.github.io/2014/10/backbone---handlebar---gulp-%ED%8C%81/</guid>
+      <description>백본과 핸들바를 사용해서 소스를 컴파일 후
+정해진 경로로 결과물을 내보내자.
+핸들바를 사용하지 않을려면 brfs도 고려해보자
+패키지 설치
+npm install --global gulp npm install --save-dev gulp npm install --save-dev browserify npm install --save-dev vinyl-source-stream npm install --save handlebars npm install --save hbsfy  gulpfile.js
+var gulp = require(&#39;gulp&#39;), browserify = require(&#39;browserify&#39;), source = require(&#39;vinyl-source-stream&#39;), hbsfy = require(&#39;hbsfy&#39;); gulp.task(&#39;build&#39;, function() { var b = browserify(&#39;./js/app.js&#39;, {debug:true}); return b.transform(hbsfy) .bundle() .pipe(source(&#39;app.js&#39;)) .pipe(gulp.dest(&#39;/home/alpha/public/js&#39;)); }); gulp.</description>
+    </item>
+    
+  </channel>
+</rss>

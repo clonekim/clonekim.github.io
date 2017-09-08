@@ -1,779 +1,428 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
-<url>
-<loc>
-http://clonekim.github.io/404.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/archives/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/authors/DAEHEE KIM/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/pages/about/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/pages/another-page/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/pages/guick-guide/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2011-06-12-java-date-bug/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2012-02-03-ruby-some-basic/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2012-05-23-vim-favorite-setting/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2012-10-17-ognl-in-java/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2013-05-13-phpfpm-nginx/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2013-06-16-java-compile-option/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2013-06-20-unsupported-classversion-error/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2013-09-24-apache-taglib/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2013-09-24-svn-as-windows-service/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2013-09-27-jackson-json-processor/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2013-09-27-jspwiki-install/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2013-09-27-proxy-authentication/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2013-10-01-java-concurrent/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2013-10-10-javascript-pattern/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2013-10-12-bigdecimal-java/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2014-01-05-java-ionio-tutorial/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2014-03-02-uuid-in-javascript/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2014-03-10-first-post/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2014-10-03-backbone_handlebar_gulp_tip/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2014-11-04-second-post/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2014-11-10-angularjs-tip/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2014-12-29-requirejs/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2015-02-01-imagemagick/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2015-02-03-beefy-tip/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2015-06-28-raspberrypi/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2015-07-02-angularjs/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2015-07-14-how-to-captcha-in-node.js/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2015-07-14-sinatra/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2015-07-16-windows-vim/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2015-07-18-install-redmine/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2015-07-29-starting-reactjs/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2015-09-03-mariadb-replication-using-gtid/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2015-09-10-oracle-jdbc/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2015-09-11-custom-emacs-setting/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2015-09-11-ring-web-programming/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2015-09-20-using-jquery-in-clojurescript/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2015-09-23-freemarker-assign-tip/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2015-09-25-jdbc-in-clojure/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2015-09-25-starting-clojure/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2016-01-07-docs/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2016-01-13-github-page/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2016-01-14-clojurescript-gaming/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2016-01-18-starting-clojurescript/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2016-01-19-using-gulp-react/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2016-03-01-docker-start/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2016-05-07-emacs-package/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/posts/2017-01-02-angular-jsonp/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/angular/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/angularjs/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/captcha/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/clojure/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/clojurescript/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/concurrent/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/cryogen/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/docker/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/emacs/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/freemarker/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/game/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/github/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/gulp/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/imagemagick/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/io/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/java/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/javascript/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/jdbc/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/jruby/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/jsp/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/mariadb/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/microframework/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/nginx/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/node.js/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/not fetch/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/OGNL/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/oracle/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/php/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/pi/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/proxy/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/raspberry/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/react/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/redmine/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/ruby/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/svn/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/taglib/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/template/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/very fetch/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/vi/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/web programming/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/wiki/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
-<url>
-<loc>
-http://clonekim.github.io/tags/windows/index.html
-</loc>
-<lastmod>
-2017-03-27
-</lastmod>
-</url>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://clonekim.github.io/2017/01/angular-1.6-%EC%82%AC%EC%9A%A9/</loc>
+    <lastmod>2017-01-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2016/05/emacs%EB%A5%BC-%EC%93%B0%EB%A9%B4%EC%84%9C/</loc>
+    <lastmod>2016-05-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2016/03/docker-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/</loc>
+    <lastmod>2016-03-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2016/01/gulp%EB%A1%9C-react%EB%B9%8C%EB%93%9C/</loc>
+    <lastmod>2016-01-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2016/01/clojurescript-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/</loc>
+    <lastmod>2016-01-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2016/01/clojurescript%EB%A1%9C-%EA%B2%8C%EC%9E%84%EC%A0%9C%EC%9E%91/</loc>
+    <lastmod>2016-01-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2016/01/github%EC%97%90-%EB%B8%94%EB%A1%9C%EA%B7%B8%EC%A0%9C%EC%9E%91/</loc>
+    <lastmod>2016-01-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2015/09/clojure-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/</loc>
+    <lastmod>2015-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2015/09/%ED%81%B4%EB%A1%9C%EC%A0%80%EC%97%90%EC%84%9C-jdbc/</loc>
+    <lastmod>2015-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2015/09/freemarker-assign%ED%8C%81/</loc>
+    <lastmod>2015-09-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2015/09/clojurescript%EC%97%90%EC%84%9C-jquery%EC%82%AC%EC%9A%A9/</loc>
+    <lastmod>2015-09-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2015/09/clojure%EB%A5%BC-%EC%9C%84%ED%95%9C-emacs-%ED%99%98%EA%B2%BD/</loc>
+    <lastmod>2015-09-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2015/09/oracle-jdbc-url/</loc>
+    <lastmod>2015-09-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2015/09/ring%EC%9C%BC%EB%A1%9C-%EC%9B%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/</loc>
+    <lastmod>2015-09-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2015/09/gtid%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-mariadb-replication/</loc>
+    <lastmod>2015-09-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2015/07/reactjs-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/</loc>
+    <lastmod>2015-07-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2015/07/redmine3-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/</loc>
+    <lastmod>2015-07-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2015/07/%EC%9C%88%EB%8F%84%EC%9A%B0%EC%A6%88-vim%EC%84%A4%EC%A0%95/</loc>
+    <lastmod>2015-07-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2015/07/node.js%EB%A1%9C-captcha/</loc>
+    <lastmod>2015-07-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2015/07/sinatra-%EC%9B%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/</loc>
+    <lastmod>2015-07-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2015/07/angularjs-%EB%8B%A4%EA%B5%AD%EC%96%B4%EC%B2%98%EB%A6%AC/</loc>
+    <lastmod>2015-07-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2015/06/raspberrypi/</loc>
+    <lastmod>2015-06-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2015/02/beefy-%ED%8C%81/</loc>
+    <lastmod>2015-02-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2015/02/imagemagick/</loc>
+    <lastmod>2015-02-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2014/12/requirejs-%EC%98%88%EC%A0%9C/</loc>
+    <lastmod>2014-12-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2014/11/angularjs-tips/</loc>
+    <lastmod>2014-11-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2014/10/backbone---handlebar---gulp-%ED%8C%81/</loc>
+    <lastmod>2014-10-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2014/03/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A1%9C-uuid-%EC%83%9D%EC%84%B1/</loc>
+    <lastmod>2014-03-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2014/01/java-io/nio-tutorial/</loc>
+    <lastmod>2014-01-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2013/10/bigdecimal%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%B0%98%EC%98%AC%EB%A6%BC/</loc>
+    <lastmod>2013-10-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2013/10/javascript-%EA%B0%9C%EB%B0%9C%ED%8C%81/</loc>
+    <lastmod>2013-10-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2013/10/java.util.concurrent/</loc>
+    <lastmod>2013-10-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2013/09/jspwiki-%EC%84%A4%EC%B9%98/</loc>
+    <lastmod>2013-09-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2013/09/jackson-json-processor/</loc>
+    <lastmod>2013-09-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2013/09/%ED%94%84%EB%A1%9D%EC%8B%9C%EC%84%9C%EB%B2%84-%EC%9D%B8%EC%A6%9D%EC%97%90%EB%9F%AC/</loc>
+    <lastmod>2013-09-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2013/09/apache-tag-lib/</loc>
+    <lastmod>2013-09-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2013/09/%EC%9C%88%EB%8F%84%EC%9A%B0%EC%A6%88%EC%97%90-svn%EC%84%9C%EB%B9%84%EC%8A%A4%EB%93%B1%EB%A1%9D/</loc>
+    <lastmod>2013-09-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2013/06/%EC%9E%90%EB%B0%94-%ED%98%B8%ED%99%98%EC%97%90%EB%9F%AC/</loc>
+    <lastmod>2013-06-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2013/06/java-compile-option/</loc>
+    <lastmod>2013-06-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2013/05/php-fpm/</loc>
+    <lastmod>2013-05-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2012/05/%EC%A6%90%EA%B2%A8%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-vim-%EC%84%A4%EC%A0%95/</loc>
+    <lastmod>2012-05-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2012/02/ruby-some-basic/</loc>
+    <lastmod>2012-02-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2012/01/ognl/</loc>
+    <lastmod>2012-01-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/2011/06/java-date%EC%97%90%EB%9F%AC/</loc>
+    <lastmod>2011-06-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/tags/angularjs/</loc>
+    <lastmod>2017-01-02T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/tags/backbone/</loc>
+    <lastmod>2014-10-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/tags/captcha/</loc>
+    <lastmod>2015-07-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/tags/clojure/</loc>
+    <lastmod>2016-01-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/tags/clojurescript/</loc>
+    <lastmod>2016-01-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/tags/cryogen/</loc>
+    <lastmod>2016-01-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/tags/docker/</loc>
+    <lastmod>2016-03-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/tags/emacs/</loc>
+    <lastmod>2016-05-07T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/tags/freemarker/</loc>
+    <lastmod>2015-09-23T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/tags/game/</loc>
+    <lastmod>2016-01-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/tags/github/</loc>
+    <lastmod>2016-01-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/tags/gulp/</loc>
+    <lastmod>2014-10-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/tags/imagemagick/</loc>
+    <lastmod>2015-02-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/tags/java/</loc>
+    <lastmod>2015-09-23T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/tags/javascript/</loc>
+    <lastmod>2015-02-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/tags/jruby/</loc>
+    <lastmod>2015-07-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/tags/jsp/</loc>
+    <lastmod>2013-09-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/</loc>
+    <lastmod>2017-01-02T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/tags/mariadb/</loc>
+    <lastmod>2015-09-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/tags/nginx/</loc>
+    <lastmod>2013-05-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/tags/node.js/</loc>
+    <lastmod>2015-07-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/tags/oracle/</loc>
+    <lastmod>2015-09-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/tags/php/</loc>
+    <lastmod>2013-05-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/post/</loc>
+    <lastmod>2017-01-02T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/tags/raspberry/</loc>
+    <lastmod>2015-06-28T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/tags/react.js/</loc>
+    <lastmod>2016-01-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/tags/redmine/</loc>
+    <lastmod>2015-07-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/tags/ring/</loc>
+    <lastmod>2015-09-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/tags/ruby/</loc>
+    <lastmod>2012-02-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/tags/svn/</loc>
+    <lastmod>2013-09-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/tags/</loc>
+    <lastmod>2017-01-02T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/tags/vi/</loc>
+    <lastmod>2015-07-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://clonekim.github.io/tags/wiki/</loc>
+    <lastmod>2013-09-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
 </urlset>

@@ -1,244 +1,503 @@
+
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<html lang="ko">
+
 <head>
-    <meta charset="utf-8"/>
-    <title>(fn[] &quot;less is more&quot;)</title>
-    <link rel="canonical" href="http://clonekim.github.io/">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href='http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700' rel='stylesheet'
-          type='text/css'>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css">
-    <link href="css/screen.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
+<meta charset="utf-8" />
+<meta name="author" content="DAEHEE KIM" />
+<meta name="description" content="Personal blog." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.26" />
+
+<link rel="canonical" href="http://clonekim.github.io/">
+<base href="http://clonekim.github.io/" />
+<meta property="og:title" content="Less is more" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://clonekim.github.io/" />
 
 
-<nav class="navbar navbar-default">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">(fn[] &quot;less is more&quot;)</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li  class="active" ><a href="/">Home</a></li>
-                <li
-                ><a href="/archives/">Archives</a></li>
-                
-                <li
-                >
-                <a href="/pages/about/">About</a>
-                </li>
-                
-                <li><a href="/feed.xml">RSS</a></li>
-            </ul>
-        </div><!--/.nav-collapse -->
-    </div><!--/.container-fluid -->
-</nav>
+
+<meta property="og:updated_time" content="2017-01-02T00:00:00&#43;00:00"/>
 
 
-<div class="container">
 
 
-    <div class="row">
-        <div class="col-lg-9">
-            <div id="content">
-                
-<div id="post">
-    <div class="post-header">
-    <div id="post-meta" class="row">
-        <div class="col-lg-6">2017년 1월 2일 (월)</div>
-        
-    </div>
-    <h2>Angular 1.6 사용</h2>
-</div>
-<div>
-    
-    <p><strong>angular 1.6 이상적용</strong></p><p><em>PREFIX</em></p><p>이제 기본값으로 !가 붙는다</p><pre><code>.config&#40;&#91;'$locationProvider', function&#40;$locationProvider&#41;{
- $locationProvider.hashPrefix&#40;''&#41;;
-}&#93;&#41;
-
-</code></pre><p><em>JSONP</em></p><pre><code>$http.json&#40;url, {jsonpCallbackParam: 'callback'}&#41;
-.then&#40;function&#40;res&#41; {
- 
-  ...
-}&#41;
-</code></pre>
-</div>
-
-<div id="post-tags">
-    <b>Tags: </b>
-    
-    <a href="/tags/angular/">angular</a>
-    
-</div>
 
 
-    
-    <div id="comments">
-        <a href="/posts/2017-01-02-angular-jsonp/#disqus_thread">View Comments</a>
-    </div>
-    
 
-    <div id="prev-next">
-        
-        
-        <a class="right" href="/posts/2016-05-07-emacs-package/">Emacs를 쓰면서 &raquo;</a>
-        
-    </div>
-</div>
 
-            </div>
-        </div>
 
-        <div class="col-md-3">
-            <div id="sidebar">
-                <h3>Links</h3>
-                <ul id="links">
-                    <li><a href="http://cryogenweb.org/docs/home.html">Cryogen Docs</a></li>
-                    <li><a href="http://carmenla.me/blog/archives">Carmen's Blog</a></li>
-                    
-                    <li><a href="/pages/guick-guide/">Quick Start Guide</a></li>
-                    
-                    <li><a href="/pages/another-page/">Another Page</a></li>
-                    
-                </ul>
-                
-                <div id="recent">
-                    <h3>Recent Posts</h3>
-                    <ul>
-                        
-                        <li><a href="/posts/2017-01-02-angular-jsonp/">Angular 1.6 사용</a></li>
-                        
-                        <li><a href="/posts/2016-05-07-emacs-package/">Emacs를 쓰면서</a></li>
-                        
-                        <li><a href="/posts/2016-03-01-docker-start/">Docker 시작하기</a></li>
-                        
-                        <li><a href="/posts/2016-01-19-using-gulp-react/">Gulp로 React빌드</a></li>
-                        
-                        <li><a href="/posts/2016-01-18-starting-clojurescript/">ClojureScript 시작하기</a></li>
-                        
-                    </ul>
-                </div>
-                
-                
-                <div id="tags">
-                    <h3>Tags</h3>
-                    <ul>
-                        
-                        <li><a href="/tags/svn/">svn</a></li>
-                        
-                        <li><a href="/tags/very fetch/">very fetch</a></li>
-                        
-                        <li><a href="/tags/cryogen/">cryogen</a></li>
-                        
-                        <li><a href="/tags/imagemagick/">imagemagick</a></li>
-                        
-                        <li><a href="/tags/github/">github</a></li>
-                        
-                        <li><a href="/tags/clojure/">clojure</a></li>
-                        
-                        <li><a href="/tags/redmine/">redmine</a></li>
-                        
-                        <li><a href="/tags/raspberry/">raspberry</a></li>
-                        
-                        <li><a href="/tags/oracle/">oracle</a></li>
-                        
-                        <li><a href="/tags/web programming/">web programming</a></li>
-                        
-                        <li><a href="/tags/vi/">vi</a></li>
-                        
-                        <li><a href="/tags/gulp/">gulp</a></li>
-                        
-                        <li><a href="/tags/captcha/">captcha</a></li>
-                        
-                        <li><a href="/tags/java/">java</a></li>
-                        
-                        <li><a href="/tags/wiki/">wiki</a></li>
-                        
-                        <li><a href="/tags/io/">io</a></li>
-                        
-                        <li><a href="/tags/pi/">pi</a></li>
-                        
-                        <li><a href="/tags/php/">php</a></li>
-                        
-                        <li><a href="/tags/mariadb/">mariadb</a></li>
-                        
-                        <li><a href="/tags/emacs/">emacs</a></li>
-                        
-                        <li><a href="/tags/freemarker/">freemarker</a></li>
-                        
-                        <li><a href="/tags/OGNL/">OGNL</a></li>
-                        
-                        <li><a href="/tags/nginx/">nginx</a></li>
-                        
-                        <li><a href="/tags/windows/">windows</a></li>
-                        
-                        <li><a href="/tags/ruby/">ruby</a></li>
-                        
-                        <li><a href="/tags/jdbc/">jdbc</a></li>
-                        
-                        <li><a href="/tags/docker/">docker</a></li>
-                        
-                        <li><a href="/tags/angular/">angular</a></li>
-                        
-                        <li><a href="/tags/template/">template</a></li>
-                        
-                        <li><a href="/tags/jruby/">jruby</a></li>
-                        
-                        <li><a href="/tags/concurrent/">concurrent</a></li>
-                        
-                        <li><a href="/tags/angularjs/">angularjs</a></li>
-                        
-                        <li><a href="/tags/javascript/">javascript</a></li>
-                        
-                        <li><a href="/tags/microframework/">microframework</a></li>
-                        
-                        <li><a href="/tags/proxy/">proxy</a></li>
-                        
-                        <li><a href="/tags/not fetch/">not fetch</a></li>
-                        
-                        <li><a href="/tags/game/">game</a></li>
-                        
-                        <li><a href="/tags/node.js/">node.js</a></li>
-                        
-                        <li><a href="/tags/react/">react</a></li>
-                        
-                        <li><a href="/tags/taglib/">taglib</a></li>
-                        
-                        <li><a href="/tags/clojurescript/">clojurescript</a></li>
-                        
-                        <li><a href="/tags/jsp/">jsp</a></li>
-                        
-                    </ul>
-                </div>
-                
-            </div>
-        </div>
-    </div>
-    <footer>Copyright &copy; 2017 DAEHEE KIM
-        <p style="text-align: center;">Powered by <a href="http://cryogenweb.org">Cryogen</a></p></footer>
-</div>
-<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="js/highlight.pack.js" type="text/javascript"></script>
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Less is more"/>
+<meta name="twitter:description" content=""/>
+
+
+
+<meta itemprop="name" content="Less is more">
+<meta itemprop="description" content="">
+
+
+
+<link rel="stylesheet" href="css/layout.css" />
+<link rel="stylesheet" href="css/color-dark.css" />
+
+
+
+<title>
+
+
+     Less is more 
+
+</title>
+
+<script src="js/highlight.min.js"></script>
+<link rel="stylesheet" href="css/tomorrow-night.min.css" />
 <script>hljs.initHighlightingOnLoad();</script>
- <link rel="stylesheet" type="text/css" href=nil>
-<script>
-window.klipse_settings = null;
-</script>
-<script src=nil></script> 
- <link rel="stylesheet" type="text/css" href=nil>
-<script>
-window.klipse_settings = null;
-</script>
-<script src=nil></script> 
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="http://clonekim.github.io/">Less is more</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="/post/"><div class="nav-item-title">Posts</div></a>
+    
+
+  </nav>
+</div>
+
+  
+<div class="social-links-header">
+
+  
+
+  
+  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+</div>
+
+
+</header>
+
+
+<main>
+
+
+  
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2017/01/angular-1.6-%EC%82%AC%EC%9A%A9/'> Angular 1.6 사용</a> </h2>
+    <div class="meta">
+      Jan 2, 2017
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/angularjs">#angularjs</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> angular 1.6 이상적용
+PREFIX
+이제 기본값으로 !가 붙는다
+.config(['$locationProvider', function($locationProvider){ $locationProvider.hashPrefix(''); }])  JSONP
+$http.json(url, {jsonpCallbackParam: 'callback'}) .then(function(res) { ... })   </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2017/01/angular-1.6-%EC%82%AC%EC%9A%A9/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2016/05/emacs%EB%A5%BC-%EC%93%B0%EB%A9%B4%EC%84%9C/'> Emacs를 쓰면서</a> </h2>
+    <div class="meta">
+      May 7, 2016
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/emacs">#emacs</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> mode-icons-mode init.el
+'(mode-icons-mode t)  js-mode setup-js.el
+(add-to-list 'auto-mode-alist '(&quot;\\.js$&quot; . js-mode)) (add-hook 'js-mode-hook 'subword-mode) (add-hook 'html-mode-hook 'subword-mode) (setq js-indent-level 2) (eval-after-load &quot;sgml-mode&quot; '(progn (require 'tagedit) (tagedit-add-paredit-like-keybindings) (add-hook 'html-mode-hook (lambda () (tagedit-mode 1)))))  web-mode web.el
+(require 'web-mode) (add-to-list 'auto-mode-alist '(&quot;\\.html?\\'&quot; . web-mode)) (add-to-list 'auto-mode-alist '(&quot;\\.[aj]sp\\'&quot; . web-mode)) (add-to-list 'auto-mode-alist '(&quot;\\.mustache\\'&quot; . web-mode)) (add-to-list 'auto-mode-alist '(&quot;\\.ftl\\'&quot; . web-mode)) (add-to-list 'auto-mode-alist '(&quot;\\.vue\\'&quot; . web-mode)) (defun my-web-mode-hook () (setq web-mode-markup-indent-offset 2) (setq web-mode-css-indent-offset 2) (setq web-mode-code-indent-offset 2)) (add-hook 'web-mode-hook 'my-web-mode-hook)  neo-mode neo. </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2016/05/emacs%EB%A5%BC-%EC%93%B0%EB%A9%B4%EC%84%9C/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2016/03/docker-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/'> Docker 시작하기</a> </h2>
+    <div class="meta">
+      Mar 1, 2016
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/docker">#docker</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> Docker 시작하기 이미지다운로드
+$ docker pull [이미지이름]  컨테이너 생성
+$ docker run --name [컨테이너이름]  컨테이너로 접속
+$ docker exec -it [컨테이너] bash  컨테이너 시작/재시작
+$ docker start [컨테이너이름] $ docker stop [컨테이너이름]  MySQL 사용하기 mysql이미지를 다운로드와 함께 컨테이너 시작하기
+$ docker run --name mysql -e MYSQL_ROOT_PASSWORD=root -p 3306:3306 -d mysql  컨테이너확인
+$ docker ps CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES cf5fbb3d49b1 mysql &quot;docker-entrypoint. </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2016/03/docker-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2016/01/gulp%EB%A1%9C-react%EB%B9%8C%EB%93%9C/'> Gulp로 React빌드</a> </h2>
+    <div class="meta">
+      Jan 19, 2016
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/react.js">#react.js</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> gulp와 함께 의존성설치 npm install -g gulp  react 개발에 필요한 라이브러리와
+번들로 묶기위한 browserify를 설치
+npm install react --save-dev npm install react-dom --save-dev npm install browserify --save-dev npm install gulp --save-dev npm install vinyl-source-stream --save-dev npm install babelify --save-dev npm install babel-preset-react --save-dev  gulpfile
+var gulp = require('gulp'), browserify = require('browserify'), babelify = require('babelify'), source = require('vinyl-source-stream'); gulp.task('default', function() { return browserify('./source/app.js') .transform(babelify, {presets: ['react']}) .bundle() .pipe(source('app.min.js')) . </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2016/01/gulp%EB%A1%9C-react%EB%B9%8C%EB%93%9C/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2016/01/clojurescript-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/'> ClojureScript 시작하기</a> </h2>
+    <div class="meta">
+      Jan 18, 2016
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/clojurescript">#clojurescript</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> 프로젝트 설정 leiningen
+[org.clojure/clojurescript &quot;1.7.228&quot;]  plugin
+[lein-cljsbuild &quot;1.1.2&quot;]  project.clj
+(defproject hello-ring &quot;0.1.0-SNAPSHOT&quot; :description &quot;FIXME: write description&quot; :url &quot;http://example.com/FIXME&quot; :license {:name &quot;Eclipse Public License&quot; :url &quot;http://www.eclipse.org/legal/epl-v10.html&quot;} :dependencies [[org.clojure/clojure &quot;1.7.0&quot;] [org.clojure/clojurescript &quot;1.7.228&quot;] [ring/ring-core &quot;1.4.0&quot;] [ring/ring-defaults &quot;0.1.5&quot;] [ring/ring-json &quot;0.4.0&quot;] [ring/ring-jetty-adapter &quot;1.4.0&quot;] [compojure &quot;1.4.0&quot;]] :plugins [[lein-cljsbuild &quot;1.1.2&quot;] [lein-ring &quot;0.9.7&quot;]] :cljsbuild {:builds {:main {:source-paths [&quot;src-cljs&quot;] :compiler {:output-to &quot;resources/public/js/app.js&quot; :output-dir &quot;resources/public/out&quot; :optimizations :simple :pretty-print true}}}} :ring {:handler hello-ring.core/app} :main hello-ring.core)  cljs소스를 src-cljs라는 경로로 선택했다 </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2016/01/clojurescript-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2016/01/clojurescript%EB%A1%9C-%EA%B2%8C%EC%9E%84%EC%A0%9C%EC%9E%91/'> Clojure(Script)로 게임제작</a> </h2>
+    <div class="meta">
+      Jan 14, 2016
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/clojure">#clojure</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/game">#game</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> PARENS OF THE DEAD </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2016/01/clojurescript%EB%A1%9C-%EA%B2%8C%EC%9E%84%EC%A0%9C%EC%9E%91/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2016/01/github%EC%97%90-%EB%B8%94%EB%A1%9C%EA%B7%B8%EC%A0%9C%EC%9E%91/'> Github에 블로그제작</a> </h2>
+    <div class="meta">
+      Jan 13, 2016
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/github">#github</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/cryogen">#cryogen</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> 깃허브에 계정만들기 먼저 github.com에 가입하고 저장소를 만든다
+저장소는 계정명.github.io라고 작성한다. 자세한 것은 GitHub Page를 살펴볼 것
+lein 설치 leiningen 을 설치한다
+프로젝트를 생성한다 cryogen템플릿을 이용해서 블로그 프로젝트를 생성한다
+lein new cryogen my-blog cd my-blog  git clone한다 public 디렉토리는 없기때문에 작성한다
+예) git@github.com:[계정명]/[생성한 저장소] [target 디렉토리]
+mkdir resources/public git clone git@github.com:clonekim/clonekim.github.io.git resources/public  config.edn 편집 resources/templates/config.edn를 편집한다
+내용중 아래와 같이 &ldquo;&ldquo;으로 설정한다
+:blog-prefix &quot;&quot;  서버 시작 아래 명령어로 서버를 시작한다 </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2016/01/github%EC%97%90-%EB%B8%94%EB%A1%9C%EA%B7%B8%EC%A0%9C%EC%9E%91/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2015/09/clojure-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/'> Clojure 시작하기</a> </h2>
+    <div class="meta">
+      Sep 25, 2015
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/clojure">#clojure</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> JVM위에서 작동하는 함수형 프로그래밍이다
+clojure 얻기 http://clojure.org
+IDE/Tools  LightTable Cursive Emacs  Leiningen으로 시작하기 Leiningen (레닝겐)은 클로져를 쉽게 시작하기 위한 빌드자동화 툴이다
+윈도우에서만 self-install해준다
+Project 생성 lein new [프로젝트명]  프로젝트 의존성 추가 라이브러리는 아래의 저장소에서 검색이 가능하고
+의존성에 추가하면 된다
+ clojars Maven repository  :dependencies [[org.clojure/clojure &quot;1.7.0&quot;] [groupId/artifactId &quot;version&quot;]])  그외의 라이브러리 저장소로는 추가로 지정할수있다
+:repositories { &quot;이름&quot; &quot;http://192.168.0.10:8081/nexus/content/repositories/thirdparty&quot; }  REPL(Read Eval Print Loop) 실행 lein repl  REPL에서 클로저코드를 작성하고 바로 실행이 가능하다 </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2015/09/clojure-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2015/09/%ED%81%B4%EB%A1%9C%EC%A0%80%EC%97%90%EC%84%9C-jdbc/'> 클로저에서 Jdbc</a> </h2>
+    <div class="meta">
+      Sep 25, 2015
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/clojure">#clojure</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary">  클로저에서 JDBC(Java Database Connectivity) 를 사용하기 위한 가이드
+몇몇 함수가 없어진 경우가 있기 때문에 소스보기로 확인할 것
+ clojure-doc보기 소스보기   leiningen [org.clojure/java.jdbc &quot;0.4.2&quot;]  간단한 예제 (ns db-test.core (:require [clojure.java.jdbc :as sql]))	(def db {:classname &quot;com.mysql.jdbc.Driver&quot; :subprotocol &quot;mysql&quot; :subname &quot;//127.0.0.1:3306/test&quot; :user &quot;xxx&quot; :password &quot;xxxx&quot; }) (defn get-user [] (println (sql/query db [&quot;select * from users&quot;]))) (defn -main [] (get-user))  참고  HikarCP를 사용하는 예 clojure.jdbc doc   </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2015/09/%ED%81%B4%EB%A1%9C%EC%A0%80%EC%97%90%EC%84%9C-jdbc/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2015/09/freemarker-assign%ED%8C%81/'> Freemarker assign팁</a> </h2>
+    <div class="meta">
+      Sep 23, 2015
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/java">#java</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/freemarker">#freemarker</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> 변수 x에 42를 할당하고 이것은 명백히 Number 타입이다
+&lt;#assign x=42 /&gt;  String타입으로 변환할 수 있다
+${x?string} ${x?string[0..1]}  .(dot)가 들어간 변수도 사용할 수 있다
+&lt;#assign telephone=&quot;${site\\.telephone?string}&quot; /&gt; //15881234 ${telephone[0..3]}-${telephone[4..7]} //1588-1234   </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2015/09/freemarker-assign%ED%8C%81/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+
+
+<div class="page-nav">
+  <div class="page-prev">
+    
+  </div>
+
+  <div class="page-num">
+    1/5
+  </div>
+
+  <div class="page-next">
+    
+    <a href="/page/2/" title="Next page"> >> </a>
+    
+  </div>
+</div> 
+
+
+</main>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+
+  
+  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="http://clonekim.github.io/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright">  </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
 </body>
 </html>
+

@@ -1,0 +1,491 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="DAEHEE KIM" />
+<meta name="description" content="Personal blog." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.26" />
+
+<link rel="canonical" href="http://clonekim.github.io/">
+<base href="http://clonekim.github.io/" />
+<meta property="og:title" content="Less is more" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://clonekim.github.io/" />
+
+
+
+<meta property="og:updated_time" content="2015-07-02T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Less is more"/>
+<meta name="twitter:description" content=""/>
+
+
+
+<meta itemprop="name" content="Less is more">
+<meta itemprop="description" content="">
+
+
+
+<link rel="stylesheet" href="css/layout.css" />
+<link rel="stylesheet" href="css/color-dark.css" />
+
+
+
+<title>
+
+
+     Less is more 
+
+</title>
+
+<script src="js/highlight.min.js"></script>
+<link rel="stylesheet" href="css/tomorrow-night.min.css" />
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="http://clonekim.github.io/">Less is more</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="/post/"><div class="nav-item-title">Posts</div></a>
+    
+
+  </nav>
+</div>
+
+  
+<div class="social-links-header">
+
+  
+
+  
+  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+</div>
+
+
+</header>
+
+
+<main>
+
+
+  
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2015/07/angularjs-%EB%8B%A4%EA%B5%AD%EC%96%B4%EC%B2%98%EB%A6%AC/'> AngularJS 다국어처리</a> </h2>
+    <div class="meta">
+      Jul 2, 2015
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/angularjs">#angularjs</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> IndexController.js
+module.exports = ['$scope', '$cookies', 'TranslationService', function($scope, $cookies, TranslationService) { TranslationService.getLanguage($scope, $cookies); $scope.multiLng = function( lang ) { $cookies.put(&quot;lang&quot;, lang); TranslationService.getLanguage($scope, $cookies); } }];  TranslationService.js
+module.exports = ['$http', function($http) { this.getLanguage = function($scope, $cookies, cbk) { var lang = $cookies.get('lang') || 'ko'; $http({ method: 'GET', url: '/js/locale_' + lang +'.json' }).success(function(response) { $scope.translation = response;	$scope.lang = lang; }); }; }];  locale_zh.js
+{ &quot;online_start&quot;: &quot;Online申请&quot;, ... }  index. </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2015/07/angularjs-%EB%8B%A4%EA%B5%AD%EC%96%B4%EC%B2%98%EB%A6%AC/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2015/06/raspberrypi/'> RaspberryPi</a> </h2>
+    <div class="meta">
+      Jun 28, 2015
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/raspberry">#raspberry</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> 준비  라즈베리파이2 microSD카드 (8G이상) HDMI케이블 LAN케이블 (카테고리3 이상) AC어댑터( USB단자출력 1A, 최소 700mA)  USB 3.0 : 5V, 900mA USB 2.0 : 5V, 500mA https://ko.wikipedia.org/wiki/USB  microUSB케이블 (A,B타입) 키보드,마우스 (USB연결)  구입  라즈베리파이2 with 고급 투명케이스 C + 방열판 셋트 RPi Camera &copy;  하드웨어 살펴보기 정면
+뒷면
+1) SoC (CPU), 메모리
+2) 전원단자
+3) USB포트
+4) HDMI포트
+7) 컴포지트출력, 오디오출력
+8) DSI (Display Serial Interface)
+9) 랜포트 </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2015/06/raspberrypi/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2015/02/beefy-%ED%8C%81/'> beefy 팁</a> </h2>
+    <div class="meta">
+      Feb 3, 2015
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/javascript">#javascript</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> a local development server designed to work with browserify.
+ can live reload your browser when your code changes (if you want) works with whatever version of browserify or watchify; globally installed or locally installed to node_modules/. will spit compile errors out into the browser so you don&rsquo;t have that 1-2 seconds of cognitive dissonance and profound ennui that follows refreshing the page only to get a blank screen. will spit out a default index. </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2015/02/beefy-%ED%8C%81/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2015/02/imagemagick/'> ImageMagick</a> </h2>
+    <div class="meta">
+      Feb 1, 2015
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/imagemagick">#imagemagick</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/captcha">#captcha</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> Thumbnail
+convert [Image 1] -thumbnail 50% [Result Image] or convert [Image 1] -thumbnail 100x70 [Result Image]  Composite
+composite -geometry +[x]+[y] [Image 1] [Image 2] [Result Image] ex) composite -geometry +02+30 person.jpg background.jpg profile.jpg  Image Info
+identify -format '%wx%h %m %b %n' [file]  box 필터
+convert [file] -scale [n]% -filter box -resize [size]! [file]  inline 이미지 생성
+png 로 이미지를 생성하되 :- 또는 png:fd:1 를 사용하면 표준 출력 장치(모니터) 로 내보냄 </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2015/02/imagemagick/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2014/12/requirejs-%EC%98%88%EC%A0%9C/'> RequireJS 예제</a> </h2>
+    <div class="meta">
+      Dec 29, 2014
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/javascript">#javascript</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> RequireJS
+log라는 모듈을 작성한다
+log.js
+define('log', function() { return function(str) { console.log(&quot;--&gt; &quot;, str); } });  &lt;!DOCTYPE html&gt; &lt;html lang=&quot;ko&quot;&gt; &lt;head&gt; &lt;script src=&quot;requirejs/2.1.15/require.js&quot;&gt;&lt;/script&gt; &lt;script src=&quot;js/log.js&quot;&gt;&lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;script&gt; require(['log'], function(log) { log(&quot;Hello !&quot;); }); &lt;/script&gt; &lt;/body&gt; &lt;/html&gt;  프로토타입으로 작성한 boost.js
+define('boost', function() { function Boost() { } Boost.prototype.version = function() { return &quot;1.0&quot;; }; return Boost; });  &lt;!DOCTYPE html&gt; &lt;html lang=&quot;ko&quot;&gt; &lt;head&gt; &lt;script src=&quot;requirejs/2.1.15/require.js&quot;&gt;&lt;/script&gt; &lt;script src=&quot;js/boost.js&quot;&gt;&lt;/script&gt; &lt;script&gt; require(['boost'], function(Boost) { var boost = new Boost(); alert(boost. </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2014/12/requirejs-%EC%98%88%EC%A0%9C/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2014/11/angularjs-tips/'> AngularJS Tips</a> </h2>
+    <div class="meta">
+      Nov 10, 2014
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/angularjs">#angularjs</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> 개발 정보
+버젼 1.2.26를 사용
+scope 계층화 &lt;!DOCTYPE html&gt; &lt;html lang=&quot;ko&quot; ng-app=&quot;app&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;utf-8&quot;&gt; &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt; &lt;title&gt;Services and Modules&lt;/title&gt; &lt;link rel=&quot;stylesheet&quot; href=&quot;bootstrap/css/bootstrap.css&quot; /&gt; &lt;link rel=&quot;stylesheet&quot; href=&quot;bootstrap/css/bootstrap-theme.css&quot; /&gt; &lt;script type=&quot;text/javascript&quot; src=&quot;jquery/jquery.js&quot;&gt;&lt;/script&gt; &lt;script type=&quot;text/javascript&quot; src=&quot;jquery-ui/jquery-ui.js&quot;&gt;&lt;/script&gt; &lt;script type=&quot;text/javascript&quot; src=&quot;angular/angular.js&quot;&gt;&lt;/script&gt; &lt;script&gt; angular.module(&quot;app&quot;, []) .controller(&quot;ParentController&quot;, ['$scope', function($scope) { $scope.value = 'parent value'; $scope.getUpperValue = function () { return angular.uppercase($scope.value); } }]) .controller(&quot;ChildController&quot;,[ '$scope', function($scope) { $scope.newValue = 'child value'; }]); &lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;div ng-controller=&quot;ParentController&quot;&gt; &lt;h3&gt;parent&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;value: {{value}}&lt;/li&gt; &lt;li&gt;Upper: {{getUpperValue()}}&lt;/li&gt; &lt;li&gt;newValue: {{newValue}} &lt;/li&gt; &lt;/ul&gt; &lt;/div&gt; &lt;div ng-controller=&quot;ChildController&quot;&gt; &lt;h3&gt;parent&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;value: {{value}}&lt;/li&gt; &lt;li&gt;Upper: {{getUpperValue()}}&lt;/li&gt; &lt;li&gt;newValue: {{newValue}} &lt;/li&gt; &lt;/ul&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt;  제대로 된 결과를 보려면 </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2014/11/angularjs-tips/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2014/10/backbone---handlebar---gulp-%ED%8C%81/'> backbone &#43; handlebar &#43; gulp 팁</a> </h2>
+    <div class="meta">
+      Oct 3, 2014
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/backbone">#backbone</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/gulp">#gulp</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> 백본과 핸들바를 사용해서 소스를 컴파일 후
+정해진 경로로 결과물을 내보내자.
+핸들바를 사용하지 않을려면 brfs도 고려해보자
+패키지 설치
+npm install --global gulp npm install --save-dev gulp npm install --save-dev browserify npm install --save-dev vinyl-source-stream npm install --save handlebars npm install --save hbsfy  gulpfile.js
+var gulp = require('gulp'), browserify = require('browserify'), source = require('vinyl-source-stream'), hbsfy = require('hbsfy'); gulp.task('build', function() { var b = browserify('./js/app.js', {debug:true}); return b.transform(hbsfy) .bundle() .pipe(source('app.js')) .pipe(gulp.dest('/home/alpha/public/js')); }); gulp. </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2014/10/backbone---handlebar---gulp-%ED%8C%81/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2014/03/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A1%9C-uuid-%EC%83%9D%EC%84%B1/'> 자바스크립트로 UUID 생성</a> </h2>
+    <div class="meta">
+      Mar 2, 2014
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/javascript">#javascript</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> RFC4122
+return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) { var r = Math.random()*16|0, v = c === 'x' ? r : (r&amp;0x3|0x8); return v.toString(16); });  var s = []; var hexDigits = &quot;0123456789abcdef&quot;; for (var i = 0; i &lt; 36; i++) { s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1); } s[14] = &quot;4&quot;; s[19] = hexDigits.substr((s[19] &amp; 0x3) | 0x8, 1); s[8] = s[13] = s[18] = s[23] = &quot;-&quot;; var uuid = s. </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2014/03/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A1%9C-uuid-%EC%83%9D%EC%84%B1/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2014/01/java-io/nio-tutorial/'> Java IO/NIO Tutorial</a> </h2>
+    <div class="meta">
+      Jan 5, 2014
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/java">#java</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary">  The Rox Java NIO Tutorial Five ways to maximize Java NIO and NIO.2 Java NIO - Non Blocking IO and Multiplexing A simple HTTP server that displays information about all accessible printers on the network   </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2014/01/java-io/nio-tutorial/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2013/10/bigdecimal%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%B0%98%EC%98%AC%EB%A6%BC/'> BigDecimal을 이용한 반올림</a> </h2>
+    <div class="meta">
+      Oct 12, 2013
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/java">#java</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> BigDecimal.ROUND_DOWN	// 내림 BigDecimal.ROUND_HALF_UP // 반올림 BigDecimal.ROUND_UP // 올림   </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2013/10/bigdecimal%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%B0%98%EC%98%AC%EB%A6%BC/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+
+
+<div class="page-nav">
+  <div class="page-prev">
+    
+        <a href="/page/2/" title="Previous page" > &lt;&lt; </a>
+    
+  </div>
+
+  <div class="page-num">
+    3/5
+  </div>
+
+  <div class="page-next">
+    
+    <a href="/page/4/" title="Next page"> >> </a>
+    
+  </div>
+</div> 
+
+
+</main>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+
+  
+  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="http://clonekim.github.io/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright">  </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</body>
+</html>
+

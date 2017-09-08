@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="DAEHEE KIM" />
+<meta name="description" content="Personal blog." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.26" />
+
+<link rel="canonical" href="http://clonekim.github.io/2015/07/angularjs-%EB%8B%A4%EA%B5%AD%EC%96%B4%EC%B2%98%EB%A6%AC/">
+<base href="http://clonekim.github.io/" />
+<meta property="og:title" content="AngularJS 다국어처리" />
+<meta property="og:description" content="IndexController.js
+module.exports = [&#39;$scope&#39;, &#39;$cookies&#39;, &#39;TranslationService&#39;, function($scope, $cookies, TranslationService) { TranslationService.getLanguage($scope, $cookies); $scope.multiLng = function( lang ) { $cookies.put(&quot;lang&quot;, lang); TranslationService.getLanguage($scope, $cookies); } }];  TranslationService.js
+module.exports = [&#39;$http&#39;, function($http) { this.getLanguage = function($scope, $cookies, cbk) { var lang = $cookies.get(&#39;lang&#39;) || &#39;ko&#39;; $http({ method: &#39;GET&#39;, url: &#39;/js/locale_&#39; &#43; lang &#43;&#39;.json&#39; }).success(function(response) { $scope.translation = response;	$scope.lang = lang; }); }; }];  locale_zh.js
+{ &quot;online_start&quot;: &quot;Online申请&quot;, ... }  index." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://clonekim.github.io/2015/07/angularjs-%EB%8B%A4%EA%B5%AD%EC%96%B4%EC%B2%98%EB%A6%AC/" />
+
+
+
+<meta property="article:published_time" content="2015-07-02T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2015-07-02T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="AngularJS 다국어처리"/>
+<meta name="twitter:description" content="IndexController.js
+module.exports = [&#39;$scope&#39;, &#39;$cookies&#39;, &#39;TranslationService&#39;, function($scope, $cookies, TranslationService) { TranslationService.getLanguage($scope, $cookies); $scope.multiLng = function( lang ) { $cookies.put(&quot;lang&quot;, lang); TranslationService.getLanguage($scope, $cookies); } }];  TranslationService.js
+module.exports = [&#39;$http&#39;, function($http) { this.getLanguage = function($scope, $cookies, cbk) { var lang = $cookies.get(&#39;lang&#39;) || &#39;ko&#39;; $http({ method: &#39;GET&#39;, url: &#39;/js/locale_&#39; &#43; lang &#43;&#39;.json&#39; }).success(function(response) { $scope.translation = response;	$scope.lang = lang; }); }; }];  locale_zh.js
+{ &quot;online_start&quot;: &quot;Online申请&quot;, ... }  index."/>
+
+
+
+<meta itemprop="name" content="AngularJS 다국어처리">
+<meta itemprop="description" content="IndexController.js
+module.exports = [&#39;$scope&#39;, &#39;$cookies&#39;, &#39;TranslationService&#39;, function($scope, $cookies, TranslationService) { TranslationService.getLanguage($scope, $cookies); $scope.multiLng = function( lang ) { $cookies.put(&quot;lang&quot;, lang); TranslationService.getLanguage($scope, $cookies); } }];  TranslationService.js
+module.exports = [&#39;$http&#39;, function($http) { this.getLanguage = function($scope, $cookies, cbk) { var lang = $cookies.get(&#39;lang&#39;) || &#39;ko&#39;; $http({ method: &#39;GET&#39;, url: &#39;/js/locale_&#39; &#43; lang &#43;&#39;.json&#39; }).success(function(response) { $scope.translation = response;	$scope.lang = lang; }); }; }];  locale_zh.js
+{ &quot;online_start&quot;: &quot;Online申请&quot;, ... }  index.">
+
+
+<meta itemprop="dateModified" content="2015-07-02T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="107">
+
+
+
+<meta itemprop="keywords" content="angularjs," />
+
+
+<link rel="stylesheet" href="css/layout.css" />
+<link rel="stylesheet" href="css/color-dark.css" />
+
+
+
+<title>
+
+
+     AngularJS 다국어처리 
+
+</title>
+
+<script src="js/highlight.min.js"></script>
+<link rel="stylesheet" href="css/tomorrow-night.min.css" />
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="http://clonekim.github.io/">Less is more</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item active" href="/post/"><div class="nav-item-title">Posts</div></a>
+    
+
+  </nav>
+</div>
+
+  
+<div class="social-links-header">
+
+  
+
+  
+  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> AngularJS 다국어처리 </h1>
+    <div class="content"> <p><img src="/img/angular/translation.png" alt="Translation Service" /></p>
+
+<p><em>IndexController.js</em></p>
+
+<pre><code class="language-javascript">module.exports = ['$scope', '$cookies', 'TranslationService', function($scope, $cookies, TranslationService) {
+    TranslationService.getLanguage($scope, $cookies);
+
+    $scope.multiLng = function( lang ) {
+        $cookies.put(&quot;lang&quot;, lang);
+        TranslationService.getLanguage($scope, $cookies);
+    }
+}];
+</code></pre>
+
+<p><em>TranslationService.js</em></p>
+
+<pre><code class="language-javascript">module.exports = ['$http', function($http) {
+
+	this.getLanguage = function($scope, $cookies, cbk) {
+
+		var lang = $cookies.get('lang') || 'ko';
+		
+		$http({
+			method: 'GET',
+			url: '/js/locale_' + lang +'.json'
+		}).success(function(response) {
+		    $scope.translation = response;		    
+		    $scope.lang = lang;                    
+		});
+	};
+}];
+</code></pre>
+
+<p><em>locale_zh.js</em></p>
+
+<pre><code class="language-json">{
+  &quot;online_start&quot;: &quot;Online申请&quot;,
+  ...
+}  
+</code></pre>
+
+<p><em>index.html</em></p>
+
+<pre><code class="language-html">&lt;div class=&quot;text-center&quot; style=&quot;background-color:#f15c34;&quot;&gt;
+    &lt;a class=&quot;btn btn-default&quot; ng-click=&quot;multiLng('ko')&quot;&gt;한국어&lt;/a&gt;
+    &lt;a class=&quot;btn btn-default&quot; ng-click=&quot;multiLng('us')&quot;&gt;English&lt;/a&gt;
+    &lt;a class=&quot;btn btn-default&quot; ng-click=&quot;multiLng('zh')&quot;&gt;中國語&lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p><img src="/img/angular/angular-i18n-header.png" alt="header" /></p>
+
+<pre><code class="language-html">  &lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-lg-12&quot;&gt;
+      	&lt;div&gt;
+         &lt;a class=&quot;btn r-btn btn-primary btn-xl&quot; href=&quot;#menu&quot;&gt;{{translation.online_start}}&lt;/a&gt;
+       &lt;/div&gt;
+ ...
+</code></pre>
+
+<p><em>요청 파라미터가 ko 일때</em></p>
+
+<p><img src="/img/angular/angular-i18n-btn-ko.png" alt="button" /></p>
+
+<p><em>요청 파라미터가 zh 일때</em></p>
+
+<p><img src="/img/angular/angular-i18n-btn-zh.png" alt="button" /></p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/angularjs">#angularjs</a>
+      </div>
+    
+</div>
+
+    <div class="date"> Jul 2, 2015 </div>
+  </div>
+
+</footer>
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'clonekim-github-io';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+
+  
+  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="http://clonekim.github.io/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright">  </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</body>
+</html>
+

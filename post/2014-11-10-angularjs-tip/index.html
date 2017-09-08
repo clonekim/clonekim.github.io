@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="DAEHEE KIM" />
+<meta name="description" content="Personal blog." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.26" />
+
+<link rel="canonical" href="http://clonekim.github.io/post/2014-11-10-angularjs-tip/">
+<base href="http://clonekim.github.io/" />
+<meta property="og:title" content="AngularJS Tips" />
+<meta property="og:description" content="개발 정보
+버젼 1.2.26를 사용
+scope 계층화 &lt;!DOCTYPE html&gt; &lt;html lang=&quot;ko&quot; ng-app=&quot;app&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;utf-8&quot;&gt; &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt; &lt;title&gt;Services and Modules&lt;/title&gt; &lt;link rel=&quot;stylesheet&quot; href=&quot;bootstrap/css/bootstrap.css&quot; /&gt; &lt;link rel=&quot;stylesheet&quot; href=&quot;bootstrap/css/bootstrap-theme.css&quot; /&gt; &lt;script type=&quot;text/javascript&quot; src=&quot;jquery/jquery.js&quot;&gt;&lt;/script&gt; &lt;script type=&quot;text/javascript&quot; src=&quot;jquery-ui/jquery-ui.js&quot;&gt;&lt;/script&gt; &lt;script type=&quot;text/javascript&quot; src=&quot;angular/angular.js&quot;&gt;&lt;/script&gt; &lt;script&gt; angular.module(&quot;app&quot;, []) .controller(&quot;ParentController&quot;, [&#39;$scope&#39;, function($scope) { $scope.value = &#39;parent value&#39;; $scope.getUpperValue = function () { return angular.uppercase($scope.value); } }]) .controller(&quot;ChildController&quot;,[ &#39;$scope&#39;, function($scope) { $scope.newValue = &#39;child value&#39;; }]); &lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;div ng-controller=&quot;ParentController&quot;&gt; &lt;h3&gt;parent&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;value: {{value}}&lt;/li&gt; &lt;li&gt;Upper: {{getUpperValue()}}&lt;/li&gt; &lt;li&gt;newValue: {{newValue}} &lt;/li&gt; &lt;/ul&gt; &lt;/div&gt; &lt;div ng-controller=&quot;ChildController&quot;&gt; &lt;h3&gt;parent&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;value: {{value}}&lt;/li&gt; &lt;li&gt;Upper: {{getUpperValue()}}&lt;/li&gt; &lt;li&gt;newValue: {{newValue}} &lt;/li&gt; &lt;/ul&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt;  제대로 된 결과를 보려면" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://clonekim.github.io/post/2014-11-10-angularjs-tip/" />
+
+
+
+<meta property="article:published_time" content="2014-11-10T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2014-11-10T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="AngularJS Tips"/>
+<meta name="twitter:description" content="개발 정보
+버젼 1.2.26를 사용
+scope 계층화 &lt;!DOCTYPE html&gt; &lt;html lang=&quot;ko&quot; ng-app=&quot;app&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;utf-8&quot;&gt; &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt; &lt;title&gt;Services and Modules&lt;/title&gt; &lt;link rel=&quot;stylesheet&quot; href=&quot;bootstrap/css/bootstrap.css&quot; /&gt; &lt;link rel=&quot;stylesheet&quot; href=&quot;bootstrap/css/bootstrap-theme.css&quot; /&gt; &lt;script type=&quot;text/javascript&quot; src=&quot;jquery/jquery.js&quot;&gt;&lt;/script&gt; &lt;script type=&quot;text/javascript&quot; src=&quot;jquery-ui/jquery-ui.js&quot;&gt;&lt;/script&gt; &lt;script type=&quot;text/javascript&quot; src=&quot;angular/angular.js&quot;&gt;&lt;/script&gt; &lt;script&gt; angular.module(&quot;app&quot;, []) .controller(&quot;ParentController&quot;, [&#39;$scope&#39;, function($scope) { $scope.value = &#39;parent value&#39;; $scope.getUpperValue = function () { return angular.uppercase($scope.value); } }]) .controller(&quot;ChildController&quot;,[ &#39;$scope&#39;, function($scope) { $scope.newValue = &#39;child value&#39;; }]); &lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;div ng-controller=&quot;ParentController&quot;&gt; &lt;h3&gt;parent&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;value: {{value}}&lt;/li&gt; &lt;li&gt;Upper: {{getUpperValue()}}&lt;/li&gt; &lt;li&gt;newValue: {{newValue}} &lt;/li&gt; &lt;/ul&gt; &lt;/div&gt; &lt;div ng-controller=&quot;ChildController&quot;&gt; &lt;h3&gt;parent&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;value: {{value}}&lt;/li&gt; &lt;li&gt;Upper: {{getUpperValue()}}&lt;/li&gt; &lt;li&gt;newValue: {{newValue}} &lt;/li&gt; &lt;/ul&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt;  제대로 된 결과를 보려면"/>
+
+
+
+<meta itemprop="name" content="AngularJS Tips">
+<meta itemprop="description" content="개발 정보
+버젼 1.2.26를 사용
+scope 계층화 &lt;!DOCTYPE html&gt; &lt;html lang=&quot;ko&quot; ng-app=&quot;app&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;utf-8&quot;&gt; &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt; &lt;title&gt;Services and Modules&lt;/title&gt; &lt;link rel=&quot;stylesheet&quot; href=&quot;bootstrap/css/bootstrap.css&quot; /&gt; &lt;link rel=&quot;stylesheet&quot; href=&quot;bootstrap/css/bootstrap-theme.css&quot; /&gt; &lt;script type=&quot;text/javascript&quot; src=&quot;jquery/jquery.js&quot;&gt;&lt;/script&gt; &lt;script type=&quot;text/javascript&quot; src=&quot;jquery-ui/jquery-ui.js&quot;&gt;&lt;/script&gt; &lt;script type=&quot;text/javascript&quot; src=&quot;angular/angular.js&quot;&gt;&lt;/script&gt; &lt;script&gt; angular.module(&quot;app&quot;, []) .controller(&quot;ParentController&quot;, [&#39;$scope&#39;, function($scope) { $scope.value = &#39;parent value&#39;; $scope.getUpperValue = function () { return angular.uppercase($scope.value); } }]) .controller(&quot;ChildController&quot;,[ &#39;$scope&#39;, function($scope) { $scope.newValue = &#39;child value&#39;; }]); &lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;div ng-controller=&quot;ParentController&quot;&gt; &lt;h3&gt;parent&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;value: {{value}}&lt;/li&gt; &lt;li&gt;Upper: {{getUpperValue()}}&lt;/li&gt; &lt;li&gt;newValue: {{newValue}} &lt;/li&gt; &lt;/ul&gt; &lt;/div&gt; &lt;div ng-controller=&quot;ChildController&quot;&gt; &lt;h3&gt;parent&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;value: {{value}}&lt;/li&gt; &lt;li&gt;Upper: {{getUpperValue()}}&lt;/li&gt; &lt;li&gt;newValue: {{newValue}} &lt;/li&gt; &lt;/ul&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt;  제대로 된 결과를 보려면">
+
+
+<meta itemprop="dateModified" content="2014-11-10T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="934">
+
+
+
+<meta itemprop="keywords" content="angularjs," />
+
+
+<link rel="stylesheet" href="css/layout.css" />
+<link rel="stylesheet" href="css/color-dark.css" />
+
+
+
+<title>
+
+
+     AngularJS Tips 
+
+</title>
+
+<script src="js/highlight.min.js"></script>
+<link rel="stylesheet" href="css/tomorrow-night.min.css" />
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="http://clonekim.github.io/">Less is more</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item active" href="/post/"><div class="nav-item-title">Posts</div></a>
+    
+
+  </nav>
+</div>
+
+  
+<div class="social-links-header">
+
+  
+
+  
+  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> AngularJS Tips </h1>
+    <div class="content"> 
+
+<p><em>개발 정보</em></p>
+
+<p>버젼 1.2.26를 사용</p>
+
+<h2 id="scope-계층화">scope 계층화</h2>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ko&quot; ng-app=&quot;app&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Services and Modules&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;bootstrap/css/bootstrap.css&quot; /&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;bootstrap/css/bootstrap-theme.css&quot; /&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;jquery/jquery.js&quot;&gt;&lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;jquery-ui/jquery-ui.js&quot;&gt;&lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;angular/angular.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        angular.module(&quot;app&quot;, [])
+        .controller(&quot;ParentController&quot;,  ['$scope', function($scope) {
+            $scope.value = 'parent value';
+            $scope.getUpperValue = function () {
+                return angular.uppercase($scope.value);
+            }
+        }])
+        .controller(&quot;ChildController&quot;,[ '$scope', function($scope) {
+            $scope.newValue = 'child value';
+
+        }]);
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div ng-controller=&quot;ParentController&quot;&gt;
+        &lt;h3&gt;parent&lt;/h3&gt;
+        &lt;ul&gt;
+            &lt;li&gt;value: {{value}}&lt;/li&gt;
+            &lt;li&gt;Upper: {{getUpperValue()}}&lt;/li&gt;
+            &lt;li&gt;newValue: {{newValue}} &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+
+    &lt;div ng-controller=&quot;ChildController&quot;&gt;
+        &lt;h3&gt;parent&lt;/h3&gt;
+        &lt;ul&gt;
+            &lt;li&gt;value: {{value}}&lt;/li&gt;
+            &lt;li&gt;Upper: {{getUpperValue()}}&lt;/li&gt;
+            &lt;li&gt;newValue: {{newValue}} &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p><img src="/img/angular/picture504-1.png" alt="picture504-1.png" /></p>
+
+<p>제대로 된 결과를 보려면</p>
+
+<pre><code class="language-html">   &lt;div ng-controller=&quot;ParentController&quot;&gt;
+        &lt;h3&gt;parent&lt;/h3&gt;
+        &lt;ul&gt;
+            &lt;li&gt;value: {{value}}&lt;/li&gt;
+            &lt;li&gt;Upper: {{getUpperValue()}}&lt;/li&gt;
+            &lt;li&gt;newValue: {{newValue}} &lt;/li&gt;
+        &lt;/ul&gt;
+		&lt;div ng-controller=&quot;ChildController&quot;&gt; &lt;!-- 부모밑으로 들어가도록 한다 --&gt;
+			&lt;h3&gt;child&lt;/h3&gt;
+			&lt;ul&gt;
+				&lt;li&gt;value: {{value}}&lt;/li&gt;
+				&lt;li&gt;Upper: {{getUpperValue()}}&lt;/li&gt;
+				&lt;li&gt;newValue: {{newValue}} &lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/div&gt;
+    &lt;/div&gt;
+</code></pre>
+
+<p><img src="/img/angular/picture85-1.png" alt="picture85-1.png" /></p>
+
+<pre><code class="language-html">
+&lt;script&gt;
+        angular.module(&quot;app&quot;, [])
+        .controller(&quot;ParentController&quot;,  ['$scope', function($scope) {
+            $scope.value = 128
+            $scope.increment = function () {
+				this.value++;
+            }
+        }])
+        .controller(&quot;ChildController&quot;,[ '$scope', function($scope) {
+			$scope.decrement = function () {
+				this.value--;
+			}
+
+        }]);
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div ng-controller=&quot;ParentController&quot;&gt;
+        &lt;h3&gt;parent&lt;/h3&gt;
+        
+		&lt;p&gt;value: {{value}} &lt;/p&gt;
+		&lt;button ng-click=&quot;increment()&quot;&gt; increment&lt;/button&gt;
+
+		&lt;div ng-controller=&quot;ChildController&quot;&gt;
+		   &lt;h3&gt;child&lt;/h3&gt;
+		    &lt;p&gt;value: {{value}} &lt;/p&gt;
+			&lt;button ng-click=&quot;decrement()&quot;&gt; decrement&lt;/button&gt;
+		&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+
+<p><img src="/img/angular/picture860-1.png" alt="picture860-1.png" /></p>
+
+<p>부모 영역의 버튼을 클릭 시 함께 증가한다. 하지만 자식영역의 버튼을 클릭한 순간<br />
+자식 영역의 값만 감소하게 된다.</p>
+
+<p>자식 영역에서 부모영역의 값을 감소하도록 하려면 아래와 같이 수정한다.</p>
+
+<pre><code class="language-javascript">  angular.module(&quot;app&quot;, [])
+        .controller(&quot;ParentController&quot;,  ['$scope', function($scope) {
+            $scope.value = 128
+			$scope.data = { value: 456};
+            $scope.increment = function () {
+				this.value++;
+            }
+        }])
+        .controller(&quot;ChildController&quot;,[ '$scope', function($scope) {
+
+			$scope.decrement = function () {
+				$scope.data.value = 654;
+				$scope.$parent.value--;
+			}
+
+        }]);
+</code></pre>
+
+<h2 id="service">Service</h2>
+
+<p>공통적으로 두루 사용되는 재사용 가능한 함수의 모임이다.<br />
+문서에는 cross-cutting concerns를 위해서 제작되었다고 기술되었다.<br />
+즉, 로깅, 보안, 기타 네트워크등등 의 재사용가능한 함수들이다.</p>
+
+<p><a href="https://code.angularjs.org/1.2.26/docs/guide/services">https://code.angularjs.org/1.2.26/docs/guide/services</a></p>
+
+<p>위에 api 문서에 보면 미리 정의된 서비스를 볼 수 있다.</p>
+
+<h2 id="module">Module</h2>
+
+<p>모듈의 주된 2가지의 Role은 다음과 같다</p>
+
+<ol>
+<li>ng-app 디렉티브를 사용해서 html에 적용 가능한 어플리케이션을 정의</li>
+<li>서비스나 디렉티브, 필터등 재사용가능한 것을 정의</li>
+</ol>
+
+<h3 id="간단한-예제">간단한 예제</h3>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ko&quot; ng-app=&quot;exampleApp&quot;&gt;
+&lt;head&gt;
+	&lt;meta charset=&quot;utf-8&quot;&gt;
+	&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+	&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+	&lt;title&gt;Services and Modules&lt;/title&gt;
+	&lt;link rel=&quot;stylesheet&quot; href=&quot;bootstrap/3.3.0/css/bootstrap.min.css&quot;&gt;
+	
+	&lt;!--[if lt IE 9]&gt;
+      &lt;script src=&quot;https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src=&quot;https://oss.maxcdn.com/respond/1.4.2/respond.min.js&quot;&gt;&lt;/script&gt;
+    &lt;![endif]--&gt;
+		
+	&lt;script src=&quot;jquery/1.11.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+	&lt;script src=&quot;bootstrap/3.3.0/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+	&lt;script src=&quot;angularjs/1.2.26/angular.min.js&quot;&gt;&lt;/script&gt;
+	&lt;script&gt;
+		angular.module(&quot;exampleApp&quot;, [])
+		.controller(&quot;defaultCtrl&quot;, function($scope) {
+			$scope.data = {
+				cities: [&quot;London&quot;, &quot;New York&quot;, &quot;Paris&quot;],
+				totalClicks: 0
+			};
+
+			$scope.$watch(&quot;data.totalClicks&quot;, function(newVal) {
+				console.log(&quot;Total click count: &quot; + newVal);
+			});		
+		})
+		.directive(&quot;triButton&quot;, function() {
+			
+			return {
+				scope: { counter: &quot;=counter&quot; },
+				link: function(scope, element, attrs) {
+					element.on(&quot;click&quot;, function(event) {
+						console.log(&quot;Button click: &quot; + event.target.innerText);
+						scope.$apply(function() {
+							scope.counter++;
+						});
+					});
+				}
+			}
+		
+		});
+	&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body ng-controller=&quot;defaultCtrl&quot;&gt;
+	&lt;div class=&quot;well&quot;&gt;
+		&lt;div class=&quot;btn-group&quot; tri-button counter=&quot;data.totalClicks&quot; source=&quot;data.cities&quot;&gt;
+			&lt;button class=&quot;btn btn-default&quot; ng-repeat=&quot;city in data.cities&quot;&gt;
+				{{city}}
+			&lt;/button&gt;
+		&lt;/div&gt;
+		&lt;h5&gt; Total Clicks: {{data.totalClicks}}&lt;/h5&gt;
+	&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>클릭 시 클릭횟수를 출력합니다.</p>
+
+<p><img src="/img/angular/example.png" alt="example.png" /></p>
+
+<h2 id="directive-를-분리하자">Directive 를 분리하자</h2>
+
+<p><strong>example2.html</strong></p>
+
+<pre><code class="language-javascript">	&lt;script&gt;
+		angular.module(&quot;exampleApp&quot;, [])
+		.controller(&quot;defaultCtrl&quot;, function($scope) {
+			$scope.data = {
+				cities: [&quot;London&quot;, &quot;New York&quot;, &quot;Paris&quot;],
+				totalClicks: 0
+			};
+
+			$scope.$watch(&quot;data.totalClicks&quot;, function(newVal) {
+				console.log(&quot;Total click count: &quot; + newVal);
+			});		
+		});
+	&lt;/script&gt;
+        &lt;script src=&quot;js/custom-dir.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<p><strong>custom-dir.js</strong></p>
+
+<pre><code class="language-javascript">angular.module(&quot;customDirective&quot;)
+.directive(&quot;triButton&quot;, function() {
+	return {
+		scope: { counter: &quot;=counter&quot; },
+		link: function(scope, element, attrs) {
+			element.on(&quot;click&quot;, function(event) {
+				console.log(&quot;Button click: &quot; + event.target.innerText);
+				scope.$apply(function() {
+					scope.counter++;
+				});
+			});
+		}
+	}
+
+});
+</code></pre>
+
+<h2 id="directive를-새-모듈로-구성">Directive를 새 모듈로 구성</h2>
+
+<p><strong>example3.html</strong></p>
+
+<pre><code class="language-javascript">    &lt;script src=&quot;js/custom-dir.js&quot;&gt;&lt;/script&gt;
+	&lt;script&gt;
+		angular.module(&quot;exampleApp&quot;, [&quot;customDirective&quot;]) // added customDirective module as a dependency
+		.controller(&quot;defaultCtrl&quot;, function($scope) {
+			$scope.data = {
+				cities: [&quot;London&quot;, &quot;New York&quot;, &quot;Paris&quot;],
+				totalClicks: 0
+			};
+
+			$scope.$watch(&quot;data.totalClicks&quot;, function(newVal) {
+				console.log(&quot;Total click count: &quot; + newVal);
+			});		
+		});
+	&lt;/script&gt;
+</code></pre>
+
+<pre>
+<code class="js">
+angular.module("customDirective",[])
+.directive("triButton", function() {
+    return {
+        scope: { counter: "=counter" },
+        link: function(scope, element, attrs) {
+            element.on("click", function(event) {
+                console.log("Button click: " + event.target.innerText);
+                scope.$apply(function() {
+                    scope.counter++;
+                });
+            });
+        }
+    }
+
+});
+</code>
+</pre>
+
+<h2 id="서비스-사용하기">서비스 사용하기</h2>
+
+<h3 id="factory-메서드를-사용해서-구현">Factory 메서드를 사용해서 구현</h3>
+
+<p><strong>custom-srv.js</strong></p>
+
+<pre><code class="language-javascript">angular.module(&quot;customService&quot;, [])
+.factory(&quot;logService&quot;, function() {
+	
+	var messageCount = 0;
+
+	return {
+		log: function(msg) {
+			console.log(&quot;(LOG + &quot; + messageCount++ + &quot;) &quot; + msg);
+		}
+	};
+
+});
+</code></pre>
+
+<p><strong>custom-dir.js</strong></p>
+
+<pre><code class="language-javascript">angular.module(&quot;customDirective&quot;, [&quot;customService&quot;])
+.directive(&quot;triButton&quot;, function(logService) {
+	return {
+		scope: { counter: &quot;=counter&quot; },
+		link: function(scope, element, attrs) {
+			element.on(&quot;click&quot;, function(event) {
+				logService.log(&quot;Button click: &quot; + event.target.innerText);
+				scope.$apply(function() {
+					scope.counter++;
+				});
+			});
+		}
+	}
+
+});
+</code></pre>
+
+<p><strong>example4.html</strong></p>
+
+<pre><code class="language-javascript">	&lt;script src=&quot;js/custom-dir.js&quot;&gt;&lt;/script&gt;
+	&lt;script src=&quot;js/custom-srv.js&quot;&gt;&lt;/script&gt;
+	&lt;script&gt;
+		angular.module(&quot;exampleApp&quot;, [&quot;customDirective&quot;, &quot;customService&quot;])
+		.controller(&quot;defaultCtrl&quot;, function($scope, logService) {
+			$scope.data = {
+				cities: [&quot;London&quot;, &quot;New York&quot;, &quot;Paris&quot;],
+				totalClicks: 0
+			};
+
+			$scope.$watch(&quot;data.totalClicks&quot;, function(newVal) {
+				logService.log(&quot;Total click count: &quot; + newVal);
+			});		
+		});
+	&lt;/script&gt;
+</code></pre>
+
+<p>!example4.png!</p>
+
+<h3 id="service-method를-사용해서-구현">Service Method를 사용해서 구현</h3>
+
+<p><strong>custom-logger.js</strong></p>
+
+<pre><code class="language-javascript">var baseLogger = function() {
+        console.log(&quot;init!!&quot;);
+	this.messageCount = 0;
+	this.log = function(msg) {
+		console.log(this.msgType + &quot;: &quot; + (this.messageCount++) + &quot; &quot; + msg);
+	}
+};
+
+var debugLogger = function() {};
+debugLogger.prototype = new baseLogger();
+debugLogger.prototype.msgType = &quot;Debug&quot;;
+
+var errorLogger = function() {};
+errorLogger.prototype = new baseLogger();
+errorLogger.prototype.msgType = &quot;Error&quot;;
+
+angular.module(&quot;customService&quot;,[])
+.service(&quot;logService&quot;, debugLogger)  //서비스 생성자 메서드를 이용해서 구현, 즉  angularjs에서 apply메서드를 호출하기 때문에 생성자를 만들어야 한다.
+.service(&quot;errorService&quot;, errorLogger);
+</code></pre>
+
+<p><strong>example5.html</strong></p>
+
+<pre><code class="language-javascript">	&lt;script src=&quot;js/custom-logger.js&quot;&gt;&lt;/script&gt;
+	&lt;script&gt;
+		angular.module(&quot;exampleApp&quot;, [&quot;customDirective&quot;, &quot;customService&quot;])
+		.controller(&quot;defaultCtrl&quot;, function($scope, logService) {
+			$scope.data = {
+				cities: [&quot;London&quot;, &quot;New York&quot;, &quot;Paris&quot;],
+				totalClicks: 0
+			};
+
+			$scope.$watch(&quot;data.totalClicks&quot;, function(newVal) {
+				logService.log(&quot;Total click count: &quot; + newVal);
+			});		
+		});
+	&lt;/script&gt;
+</code></pre>
+
+<p>!example5.png!</p>
+
+<p>아래와 같이 사용한다면 메서드 Override하게 될 것이다.</p>
+
+<pre>
+<code class="js">
+    <script src="js/custom-dir.js"></script>
+    <script src="js/custom-logger.js"></script>
+    <script src="js/custom-srv.js"></script>
+
+</code>
+</pre>
+
+<h3 id="provider-메서드를-이용해서-구현">Provider 메서드를 이용해서 구현</h3>
+
+<p>Provider를 이용하면 config메서드를 사용하여 설정정보를 전달 할 수 있다.</p>
+
+<p><strong>custom-provider.js</strong></p>
+
+<pre><code class="language-javascript">angular.module(&quot;customService&quot;, [])
+.provider(&quot;logService&quot;, function() {
+
+	var counter = true;
+	var debug = true;
+
+	return {
+		messageCounterEnabled: function(setting) {
+			if(angular.isDefined(setting)) {
+				counter = setting;
+				return this;
+			}else {
+				return counter;
+			}
+		},
+
+		debugEnabled: function(setting) {
+			if(angular.isDefined(setting)) {
+				debug = setting;
+				return this;
+			}else {
+				return debug;
+			}
+		},
+
+		$get: function() {
+			return {
+				messageCount: 0,
+				log: function(msg) {
+					if(debug) {
+						console.log(&quot;(LOG +&quot; + (counter? this.messageCount++ : &quot;&quot;) + &quot;) &quot; + msg);						
+					}
+				}
+			};
+		}
+	}
+});
+</code></pre>
+
+<p><strong>example6.html</strong></p>
+
+<p>이제 로그가 출력되지 않는다.</p>
+
+<pre><code class="language-javascript">&lt;script src=&quot;js/custom-dir.js&quot;&gt;&lt;/script&gt;
+	&lt;script src=&quot;js/custom-provider.js&quot;&gt;&lt;/script&gt;
+	&lt;script&gt;
+		angular.module(&quot;exampleApp&quot;, [&quot;customDirective&quot;, &quot;customService&quot;])
+		.config( function(logServiceProvider){
+			logServiceProvider.debugEnabled(false).messageCounterEnabled(false);
+		})
+		.controller(&quot;defaultCtrl&quot;, function($scope, logService) {
+			$scope.data = {
+				cities: [&quot;London&quot;, &quot;New York&quot;, &quot;Paris&quot;],
+				totalClicks: 0
+			};
+
+			$scope.$watch(&quot;data.totalClicks&quot;, function(newVal) {
+				logService.log(&quot;Total click count: &quot; + newVal);
+			});		
+		});
+	&lt;/script&gt;
+</code></pre>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/angularjs">#angularjs</a>
+      </div>
+    
+</div>
+
+    <div class="date"> Nov 10, 2014 </div>
+  </div>
+
+</footer>
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'clonekim-github-io';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+
+  
+  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="http://clonekim.github.io/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright">  </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</body>
+</html>
+
