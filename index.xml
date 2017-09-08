@@ -6,10 +6,34 @@
     <description>Recent content on Less is more</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
-    <lastBuildDate>Mon, 02 Jan 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 09 Sep 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://clonekim.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Web개발을 위한 Emacs설정</title>
+      <link>http://clonekim.github.io/2017/09/web%EA%B0%9C%EB%B0%9C%EC%9D%84-%EC%9C%84%ED%95%9C-emacs%EC%84%A4%EC%A0%95/</link>
+      <pubDate>Sat, 09 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://clonekim.github.io/2017/09/web%EA%B0%9C%EB%B0%9C%EC%9D%84-%EC%9C%84%ED%95%9C-emacs%EC%84%A4%EC%A0%95/</guid>
+      <description>전에 사용하는 web.el를 개선하였다.
+auto-complete 패키지를 사용하여 자동완성이 될것이다
+(require &#39;web-mode) (require &#39;auto-complete) (ac-config-default) (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.html?\\&#39;&amp;quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.[aj]sp\\&#39;&amp;quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.mustache\\&#39;&amp;quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.ftl\\&#39;&amp;quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.vue\\&#39;&amp;quot; . web-mode)) (defun my-web-mode-hook () (setq web-mode-markup-indent-offset 2) (setq web-mode-css-indent-offset 2) (setq web-mode-code-indent-offset 2) (setq web-mode-enable-current-element-highlight t) (setq web-mode-enable-current-column-highlight t) (setq web-mode-ac-sources-alist &#39;((&amp;quot;css&amp;quot; . (ac-source-css-property)) (&amp;quot;html&amp;quot; . (ac-source-words-in-buffer ac-source-abbrev))))) (add-hook &#39;web-mode-hook &#39;my-web-mode-hook) (add-hook &#39;web-mode-before-auto-complete-hooks &#39;(lambda () (let ((web-mode-cur-language (web-mode-language-at-pos))) (if (string= web-mode-cur-language &amp;quot;html&amp;quot;) (setq emmet-use-css-transform t) (setq emmet-use-css-transform nil)) (if (string= web-mode-cur-language &amp;quot;css&amp;quot;) (setq emmet-use-css-transform t) (setq emmet-use-css-transform nil)))))  </description>
+    </item>
+    
+    <item>
+      <title>Freemarker를 Clojure에서</title>
+      <link>http://clonekim.github.io/2017/07/freemarker%EB%A5%BC-clojure%EC%97%90%EC%84%9C/</link>
+      <pubDate>Fri, 14 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://clonekim.github.io/2017/07/freemarker%EB%A5%BC-clojure%EC%97%90%EC%84%9C/</guid>
+      <description>참고소스
+ [freemarker-clj &amp;quot;0.1.0&amp;quot;]  freemarker-clj
+템플릿 초기화 템플릿리소스는 해당 디렉토리로 초기화한다
+(defn gen-config [&amp;amp; {:keys [shared] :or {shared {}}}] (let [cfg (doto (Configuration.) (.setDirectoryForTemplateLoading (file &amp;quot;/Users/bonjour/git/cms/resources/public/ftl&amp;quot;)) (.setDefaultEncoding &amp;quot;UTF-8&amp;quot;) (.setObjectWrapper (DefaultObjectWrapper.)))] (doseq [[k v] (map-&amp;gt;model shared)] (.setSharedVariable ^Configuration cfg ^String k v)) cfg))  아래와 같이 템플릿로더를 직접구현해서도 가능하다
+(ns freemarker.template (:require [clojure.tools.logging :as log] [clojure.java.io :refer [file]] [freemarker.shim :refer [map-&amp;gt;model]]) (:import [freemarker.template Configuration DefaultObjectWrapper TemplateMethodModel] [java.io StringWriter])) (def DBTemplateLoader (proxy [freemarker.</description>
+    </item>
     
     <item>
       <title>Angular 1.6 사용</title>

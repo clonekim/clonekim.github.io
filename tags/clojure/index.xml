@@ -6,10 +6,23 @@
     <description>Recent content in Clojure on Less is more</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
-    <lastBuildDate>Thu, 14 Jan 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 14 Jul 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://clonekim.github.io/tags/clojure/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Freemarker를 Clojure에서</title>
+      <link>http://clonekim.github.io/2017/07/freemarker%EB%A5%BC-clojure%EC%97%90%EC%84%9C/</link>
+      <pubDate>Fri, 14 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://clonekim.github.io/2017/07/freemarker%EB%A5%BC-clojure%EC%97%90%EC%84%9C/</guid>
+      <description>참고소스
+ [freemarker-clj &amp;quot;0.1.0&amp;quot;]  freemarker-clj
+템플릿 초기화 템플릿리소스는 해당 디렉토리로 초기화한다
+(defn gen-config [&amp;amp; {:keys [shared] :or {shared {}}}] (let [cfg (doto (Configuration.) (.setDirectoryForTemplateLoading (file &amp;quot;/Users/bonjour/git/cms/resources/public/ftl&amp;quot;)) (.setDefaultEncoding &amp;quot;UTF-8&amp;quot;) (.setObjectWrapper (DefaultObjectWrapper.)))] (doseq [[k v] (map-&amp;gt;model shared)] (.setSharedVariable ^Configuration cfg ^String k v)) cfg))  아래와 같이 템플릿로더를 직접구현해서도 가능하다
+(ns freemarker.template (:require [clojure.tools.logging :as log] [clojure.java.io :refer [file]] [freemarker.shim :refer [map-&amp;gt;model]]) (:import [freemarker.template Configuration DefaultObjectWrapper TemplateMethodModel] [java.io StringWriter])) (def DBTemplateLoader (proxy [freemarker.</description>
+    </item>
     
     <item>
       <title>Clojure(Script)로 게임제작</title>

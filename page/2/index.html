@@ -19,7 +19,7 @@
 
 
 
-<meta property="og:updated_time" content="2015-09-20T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2015-09-25T00:00:00&#43;00:00"/>
 
 
 
@@ -105,6 +105,73 @@
 
 
   
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2015/09/%ED%81%B4%EB%A1%9C%EC%A0%80%EC%97%90%EC%84%9C-jdbc/'> 클로저에서 Jdbc</a> </h2>
+    <div class="meta">
+      Sep 25, 2015
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/clojure">#clojure</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary">  클로저에서 JDBC(Java Database Connectivity) 를 사용하기 위한 가이드
+몇몇 함수가 없어진 경우가 있기 때문에 소스보기로 확인할 것
+ clojure-doc보기 소스보기   leiningen [org.clojure/java.jdbc &quot;0.4.2&quot;]  간단한 예제 (ns db-test.core (:require [clojure.java.jdbc :as sql]))	(def db {:classname &quot;com.mysql.jdbc.Driver&quot; :subprotocol &quot;mysql&quot; :subname &quot;//127.0.0.1:3306/test&quot; :user &quot;xxx&quot; :password &quot;xxxx&quot; }) (defn get-user [] (println (sql/query db [&quot;select * from users&quot;]))) (defn -main [] (get-user))  참고  HikarCP를 사용하는 예 clojure.jdbc doc   </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2015/09/%ED%81%B4%EB%A1%9C%EC%A0%80%EC%97%90%EC%84%9C-jdbc/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2015/09/freemarker-assign%ED%8C%81/'> Freemarker assign팁</a> </h2>
+    <div class="meta">
+      Sep 23, 2015
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/java">#java</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/freemarker">#freemarker</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> 변수 x에 42를 할당하고 이것은 명백히 Number 타입이다
+&lt;#assign x=42 /&gt;  String타입으로 변환할 수 있다
+${x?string} ${x?string[0..1]}  .(dot)가 들어간 변수도 사용할 수 있다
+&lt;#assign telephone=&quot;${site\\.telephone?string}&quot; /&gt; //15881234 ${telephone[0..3]}-${telephone[4..7]} //1588-1234   </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2015/09/freemarker-assign%ED%8C%81/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
     <article class="post-preview">
 
   <header>
@@ -379,73 +446,6 @@ Ctrl +^ 입력시 바로 이전 탐색창으로 이동한다. </div>
   <footer>
   <div class="rmore">
     <a href='http://clonekim.github.io/2015/07/%EC%9C%88%EB%8F%84%EC%9A%B0%EC%A6%88-vim%EC%84%A4%EC%A0%95/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2015/07/node.js%EB%A1%9C-captcha/'> Node.js로 Captcha</a> </h2>
-    <div class="meta">
-      Jul 14, 2015
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="/tags/node.js">#node.js</a>
-      </div>
-    
-      <div class="tag">
-        <a href="/tags/captcha">#captcha</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary"> canvas를 이용한 캡챠(captcha)를 생성하려고 한다.
-사용하려는 패키지는 canvas-captcha이다
-의존성 설치 apt-get install libpango1.0-dev apt-get install libjpeg-dev apt-get install libgif-dev  소스작성 captcha.js
-var captcha = require('canvas-captcha') ,captchaOptions = { charPool: ('abcdefghijklmnopqrstuvwxyz' + 'abcdefghijklmnopqrstuvwxyz'.toUpperCase() + '1234567890').split('') //char pool Array ,size: { width: 120 ,height: 52 } //image size ,textPos: { left: 15 ,top: 36 } //text drawing start position ,rotate: .01 //text ratate ,charLength: 5 //how many chars //,font: '26px' //font size ,strokeStyle: '#0088cc' //style ,bgColor: '#eeeeee' //bg color ,confusion: true //draw another group background text to mangle the text //,cFont: '30px' //bg text style ,cStrokeStyle: '#adc' //bg text color ,cRotate: -. </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='http://clonekim.github.io/2015/07/node.js%EB%A1%9C-captcha/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2015/07/sinatra-%EC%9B%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/'> Sinatra 웹프로그래밍</a> </h2>
-    <div class="meta">
-      Jul 14, 2015
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="/tags/jruby">#jruby</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary"> 설치 jruby -S gem install sinatra  Hello Ruby require 'rubygems' require 'sinatra' get '/' do 'Hello Jruby' end  라우터 get, post, put, delete를 사용할 수있다
-get '/' do end  요청파라미터 /?name=foo 로 요청 시 아래와 같이
-post '/' do puts params['name'] end  본문으로 Json를 요청받을 경우 post '/' do payload = JSON.parse(request.body.read) puts payload status 201 end  응답하기 문자열, html, json, 바이너리 등의 모든 컨텐츠로 응답가능하다 </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='http://clonekim.github.io/2015/07/sinatra-%EC%9B%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/'><nobr>Read more ...</nobr></a>
   </div>
   </footer>
 

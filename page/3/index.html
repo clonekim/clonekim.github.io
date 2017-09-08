@@ -19,7 +19,7 @@
 
 
 
-<meta property="og:updated_time" content="2015-07-02T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2015-07-14T00:00:00&#43;00:00"/>
 
 
 
@@ -105,6 +105,73 @@
 
 
   
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2015/07/node.js%EB%A1%9C-captcha/'> Node.js로 Captcha</a> </h2>
+    <div class="meta">
+      Jul 14, 2015
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/node.js">#node.js</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/captcha">#captcha</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> canvas를 이용한 캡챠(captcha)를 생성하려고 한다.
+사용하려는 패키지는 canvas-captcha이다
+의존성 설치 apt-get install libpango1.0-dev apt-get install libjpeg-dev apt-get install libgif-dev  소스작성 captcha.js
+var captcha = require('canvas-captcha') ,captchaOptions = { charPool: ('abcdefghijklmnopqrstuvwxyz' + 'abcdefghijklmnopqrstuvwxyz'.toUpperCase() + '1234567890').split('') //char pool Array ,size: { width: 120 ,height: 52 } //image size ,textPos: { left: 15 ,top: 36 } //text drawing start position ,rotate: .01 //text ratate ,charLength: 5 //how many chars //,font: '26px' //font size ,strokeStyle: '#0088cc' //style ,bgColor: '#eeeeee' //bg color ,confusion: true //draw another group background text to mangle the text //,cFont: '30px' //bg text style ,cStrokeStyle: '#adc' //bg text color ,cRotate: -. </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2015/07/node.js%EB%A1%9C-captcha/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2015/07/sinatra-%EC%9B%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/'> Sinatra 웹프로그래밍</a> </h2>
+    <div class="meta">
+      Jul 14, 2015
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/jruby">#jruby</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> 설치 jruby -S gem install sinatra  Hello Ruby require 'rubygems' require 'sinatra' get '/' do 'Hello Jruby' end  라우터 get, post, put, delete를 사용할 수있다
+get '/' do end  요청파라미터 /?name=foo 로 요청 시 아래와 같이
+post '/' do puts params['name'] end  본문으로 Json를 요청받을 경우 post '/' do payload = JSON.parse(request.body.read) puts payload status 201 end  응답하기 문자열, html, json, 바이너리 등의 모든 컨텐츠로 응답가능하다 </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2015/07/sinatra-%EC%9B%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
     <article class="post-preview">
 
   <header>
@@ -368,64 +435,6 @@ return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) { var
   <footer>
   <div class="rmore">
     <a href='http://clonekim.github.io/2014/03/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A1%9C-uuid-%EC%83%9D%EC%84%B1/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2014/01/java-io/nio-tutorial/'> Java IO/NIO Tutorial</a> </h2>
-    <div class="meta">
-      Jan 5, 2014
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="/tags/java">#java</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary">  The Rox Java NIO Tutorial Five ways to maximize Java NIO and NIO.2 Java NIO - Non Blocking IO and Multiplexing A simple HTTP server that displays information about all accessible printers on the network   </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='http://clonekim.github.io/2014/01/java-io/nio-tutorial/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2013/10/bigdecimal%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%B0%98%EC%98%AC%EB%A6%BC/'> BigDecimal을 이용한 반올림</a> </h2>
-    <div class="meta">
-      Oct 12, 2013
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="/tags/java">#java</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary"> BigDecimal.ROUND_DOWN	// 내림 BigDecimal.ROUND_HALF_UP // 반올림 BigDecimal.ROUND_UP // 올림   </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='http://clonekim.github.io/2013/10/bigdecimal%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%B0%98%EC%98%AC%EB%A6%BC/'><nobr>Read more ...</nobr></a>
   </div>
   </footer>
 

@@ -19,7 +19,7 @@
 
 
 
-<meta property="og:updated_time" content="2017-01-02T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2017-09-09T00:00:00&#43;00:00"/>
 
 
 
@@ -105,6 +105,70 @@
 
 
   
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2017/09/web%EA%B0%9C%EB%B0%9C%EC%9D%84-%EC%9C%84%ED%95%9C-emacs%EC%84%A4%EC%A0%95/'> Web개발을 위한 Emacs설정</a> </h2>
+    <div class="meta">
+      Sep 9, 2017
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/emacs">#emacs</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> 전에 사용하는 web.el를 개선하였다.
+auto-complete 패키지를 사용하여 자동완성이 될것이다
+(require 'web-mode) (require 'auto-complete) (ac-config-default) (add-to-list 'auto-mode-alist '(&quot;\\.html?\\'&quot; . web-mode)) (add-to-list 'auto-mode-alist '(&quot;\\.[aj]sp\\'&quot; . web-mode)) (add-to-list 'auto-mode-alist '(&quot;\\.mustache\\'&quot; . web-mode)) (add-to-list 'auto-mode-alist '(&quot;\\.ftl\\'&quot; . web-mode)) (add-to-list 'auto-mode-alist '(&quot;\\.vue\\'&quot; . web-mode)) (defun my-web-mode-hook () (setq web-mode-markup-indent-offset 2) (setq web-mode-css-indent-offset 2) (setq web-mode-code-indent-offset 2) (setq web-mode-enable-current-element-highlight t) (setq web-mode-enable-current-column-highlight t) (setq web-mode-ac-sources-alist '((&quot;css&quot; . (ac-source-css-property)) (&quot;html&quot; . (ac-source-words-in-buffer ac-source-abbrev))))) (add-hook 'web-mode-hook 'my-web-mode-hook) (add-hook 'web-mode-before-auto-complete-hooks '(lambda () (let ((web-mode-cur-language (web-mode-language-at-pos))) (if (string= web-mode-cur-language &quot;html&quot;) (setq emmet-use-css-transform t) (setq emmet-use-css-transform nil)) (if (string= web-mode-cur-language &quot;css&quot;) (setq emmet-use-css-transform t) (setq emmet-use-css-transform nil)))))   </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2017/09/web%EA%B0%9C%EB%B0%9C%EC%9D%84-%EC%9C%84%ED%95%9C-emacs%EC%84%A4%EC%A0%95/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2017/07/freemarker%EB%A5%BC-clojure%EC%97%90%EC%84%9C/'> Freemarker를 Clojure에서</a> </h2>
+    <div class="meta">
+      Jul 14, 2017
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/clojure">#clojure</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> 참고소스
+ [freemarker-clj &quot;0.1.0&quot;]  freemarker-clj
+템플릿 초기화 템플릿리소스는 해당 디렉토리로 초기화한다
+(defn gen-config [&amp; {:keys [shared] :or {shared {}}}] (let [cfg (doto (Configuration.) (.setDirectoryForTemplateLoading (file &quot;/Users/bonjour/git/cms/resources/public/ftl&quot;)) (.setDefaultEncoding &quot;UTF-8&quot;) (.setObjectWrapper (DefaultObjectWrapper.)))] (doseq [[k v] (map-&gt;model shared)] (.setSharedVariable ^Configuration cfg ^String k v)) cfg))  아래와 같이 템플릿로더를 직접구현해서도 가능하다
+(ns freemarker.template (:require [clojure.tools.logging :as log] [clojure.java.io :refer [file]] [freemarker.shim :refer [map-&gt;model]]) (:import [freemarker.template Configuration DefaultObjectWrapper TemplateMethodModel] [java.io StringWriter])) (def DBTemplateLoader (proxy [freemarker. </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2017/07/freemarker%EB%A5%BC-clojure%EC%97%90%EC%84%9C/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
     <article class="post-preview">
 
   <header>
@@ -373,73 +437,6 @@ Project 생성 lein new [프로젝트명]  프로젝트 의존성 추가 라이�
   <footer>
   <div class="rmore">
     <a href='http://clonekim.github.io/2015/09/clojure-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2015/09/%ED%81%B4%EB%A1%9C%EC%A0%80%EC%97%90%EC%84%9C-jdbc/'> 클로저에서 Jdbc</a> </h2>
-    <div class="meta">
-      Sep 25, 2015
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="/tags/clojure">#clojure</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary">  클로저에서 JDBC(Java Database Connectivity) 를 사용하기 위한 가이드
-몇몇 함수가 없어진 경우가 있기 때문에 소스보기로 확인할 것
- clojure-doc보기 소스보기   leiningen [org.clojure/java.jdbc &quot;0.4.2&quot;]  간단한 예제 (ns db-test.core (:require [clojure.java.jdbc :as sql]))	(def db {:classname &quot;com.mysql.jdbc.Driver&quot; :subprotocol &quot;mysql&quot; :subname &quot;//127.0.0.1:3306/test&quot; :user &quot;xxx&quot; :password &quot;xxxx&quot; }) (defn get-user [] (println (sql/query db [&quot;select * from users&quot;]))) (defn -main [] (get-user))  참고  HikarCP를 사용하는 예 clojure.jdbc doc   </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='http://clonekim.github.io/2015/09/%ED%81%B4%EB%A1%9C%EC%A0%80%EC%97%90%EC%84%9C-jdbc/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2015/09/freemarker-assign%ED%8C%81/'> Freemarker assign팁</a> </h2>
-    <div class="meta">
-      Sep 23, 2015
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="/tags/java">#java</a>
-      </div>
-    
-      <div class="tag">
-        <a href="/tags/freemarker">#freemarker</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary"> 변수 x에 42를 할당하고 이것은 명백히 Number 타입이다
-&lt;#assign x=42 /&gt;  String타입으로 변환할 수 있다
-${x?string} ${x?string[0..1]}  .(dot)가 들어간 변수도 사용할 수 있다
-&lt;#assign telephone=&quot;${site\\.telephone?string}&quot; /&gt; //15881234 ${telephone[0..3]}-${telephone[4..7]} //1588-1234   </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='http://clonekim.github.io/2015/09/freemarker-assign%ED%8C%81/'><nobr>Read more ...</nobr></a>
   </div>
   </footer>
 
