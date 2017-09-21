@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jsp on Less is more</title>
-    <link>http://clonekim.github.io/tags/jsp/</link>
+    <link>http://localhost:1313/tags/jsp/</link>
     <description>Recent content in Jsp on Less is more</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
     <lastBuildDate>Tue, 24 Sep 2013 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://clonekim.github.io/tags/jsp/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:1313/tags/jsp/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Apache Tag Lib</title>
-      <link>http://clonekim.github.io/2013/09/apache-tag-lib/</link>
+      <link>http://localhost:1313/2013/09/apache-tag-lib/</link>
       <pubDate>Tue, 24 Sep 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2013/09/apache-tag-lib/</guid>
+      <guid>http://localhost:1313/2013/09/apache-tag-lib/</guid>
       <description>Maven &amp;lt;groupId&amp;gt;jstl&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jstl&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.2&amp;lt;/version&amp;gt;  태그를 사용하기 위한 선언 &amp;lt;%@ taglib prefix=&amp;quot;c&amp;quot; uri=&amp;quot;http://java.sun.com/jsp/jstl/core&amp;quot;%&amp;gt; &amp;lt;%@ taglib prefix=&amp;quot;fn&amp;quot; uri=&amp;quot;http://java.sun.com/jsp/jstl/functions&amp;quot; %&amp;gt; &amp;lt;%@ taglib prefix=&amp;quot;fmt&amp;quot; uri=&amp;quot;http://java.sun.com/jsp/jstl/fmt&amp;quot;%&amp;gt;  param test.jsp?name=1234 일 경우
 ${param.변수} 로 획득할 수 있다.
 ${param.name}으로 알수 있겠다.

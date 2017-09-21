@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Freemarker on Less is more</title>
-    <link>http://clonekim.github.io/tags/freemarker/</link>
+    <link>http://localhost:1313/tags/freemarker/</link>
     <description>Recent content in Freemarker on Less is more</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
     <lastBuildDate>Wed, 23 Sep 2015 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://clonekim.github.io/tags/freemarker/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:1313/tags/freemarker/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Freemarker assign팁</title>
-      <link>http://clonekim.github.io/2015/09/freemarker-assign%ED%8C%81/</link>
+      <link>http://localhost:1313/2015/09/freemarker-assign%ED%8C%81/</link>
       <pubDate>Wed, 23 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2015/09/freemarker-assign%ED%8C%81/</guid>
+      <guid>http://localhost:1313/2015/09/freemarker-assign%ED%8C%81/</guid>
       <description>변수 x에 42를 할당하고 이것은 명백히 Number 타입이다
 &amp;lt;#assign x=42 /&amp;gt;  String타입으로 변환할 수 있다
 ${x?string} ${x?string[0..1]}  .(dot)가 들어간 변수도 사용할 수 있다

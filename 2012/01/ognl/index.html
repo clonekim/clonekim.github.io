@@ -7,17 +7,17 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.26" />
+<meta name="generator" content="Hugo 0.27.1" />
 
-<link rel="canonical" href="http://clonekim.github.io/2012/01/ognl/">
-<base href="http://clonekim.github.io/" />
+<link rel="canonical" href="http://localhost:1313/2012/01/ognl/">
+<base href="http://localhost:1313/" />
 <meta property="og:title" content="OGNL" />
 <meta property="og:description" content="Maven
 &lt;dependency&gt; &lt;groupId&gt;ognl&lt;/groupId&gt; &lt;artifactId&gt;ognl&lt;/artifactId&gt; &lt;version&gt;3.0.5&lt;/version&gt; &lt;/dependency&gt;  소스
 Map&lt;String, Object&gt; map = new HashMap&lt;String, Object&gt;(); map.put(&quot;book&quot;, &quot;모바일 웹앱&quot;); System.out.println(Ognl.getValue(Ognl.parseExpression(&quot;book&quot;), map)); Map context = new HashMap(); List&lt;String&gt; values1 = (List)Ognl.getValue(&quot;{123,&#39;abc&#39;,&#39;00oo&#39;}&quot;, context, new Object()); System.out.println(values1); Map values2 = (Map) Ognl.getValue(&quot;#{123:333,&#39;abc&#39;:111, &#39;bbb&#39;:&#39;Kim&#39;, &#39;other&#39;:&#39;[0,2,3,4,5]&#39;}&quot;, context, new Object()); System.out.println(values2);  출력
 모바일 웹앱 [123, abc, 00oo] {123=333, abc=111, bbb=Kim, other=[0,2,3,4,5]}  " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://clonekim.github.io/2012/01/ognl/" />
+<meta property="og:url" content="http://localhost:1313/2012/01/ognl/" />
 
 
 
@@ -84,7 +84,7 @@ Map&lt;String, Object&gt; map = new HashMap&lt;String, Object&gt;(); map.put(&qu
 
   <nav>
     <div class="siteTitle">
-      <a href="http://clonekim.github.io/">Less is more</a>
+      <a href="http://localhost:1313/">Less is more</a>
     </div> 
 
     
@@ -215,7 +215,7 @@ System.out.println(values2);
   
 
   <div class="social-link">
-  <a href="http://clonekim.github.io/index.xml" target="_blank">RSS</a>
+  <a href="http://localhost:1313/index.xml" target="_blank">RSS</a>
   </div>
 
 </div>
@@ -229,6 +229,6 @@ System.out.println(values2);
 
   </footer>
 
-</body>
+<script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10"></' + 'script>')</script></body>
 </html>
 

@@ -7,16 +7,16 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.26" />
+<meta name="generator" content="Hugo 0.27.1" />
 
-<link rel="canonical" href="http://clonekim.github.io/2013/09/%ED%94%84%EB%A1%9D%EC%8B%9C%EC%84%9C%EB%B2%84-%EC%9D%B8%EC%A6%9D%EC%97%90%EB%9F%AC/">
-<base href="http://clonekim.github.io/" />
+<link rel="canonical" href="http://localhost:1313/2013/09/%ED%94%84%EB%A1%9D%EC%8B%9C%EC%84%9C%EB%B2%84-%EC%9D%B8%EC%A6%9D%EC%97%90%EB%9F%AC/">
+<base href="http://localhost:1313/" />
 <meta property="og:title" content="프록시서버 인증에러" />
 <meta property="og:description" content="HttpURLConnecton를 이용해서 프록시설정하고 다운로드할 데이터가 있었으나 인증에러를 발생
 java.net.Authenticator를 구현해야함
 import java.net.Authenticator; import java.net.MalformedURLException; import java.net.PasswordAuthentication; import java.net.URL; public class ProxyAuthenticator extends Authenticator { private String proxyhost; private String userid; private String password; public ProxyAuthenticator(String proxyhost, String userid, String password) { this.proxyhost = proxyhost; this.userid = userid; this.password = password; } @Override public URL getRequestingURL() { if (this.proxyhost == null) return null; try { return new URL(this.proxyhost); } catch (MalformedURLException e) { return null; } } @Override protected RequestorType getRequestorType() { return RequestorType." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://clonekim.github.io/2013/09/%ED%94%84%EB%A1%9D%EC%8B%9C%EC%84%9C%EB%B2%84-%EC%9D%B8%EC%A6%9D%EC%97%90%EB%9F%AC/" />
+<meta property="og:url" content="http://localhost:1313/2013/09/%ED%94%84%EB%A1%9D%EC%8B%9C%EC%84%9C%EB%B2%84-%EC%9D%B8%EC%A6%9D%EC%97%90%EB%9F%AC/" />
 
 
 
@@ -81,7 +81,7 @@ import java.net.Authenticator; import java.net.MalformedURLException; import jav
 
   <nav>
     <div class="siteTitle">
-      <a href="http://clonekim.github.io/">Less is more</a>
+      <a href="http://localhost:1313/">Less is more</a>
     </div> 
 
     
@@ -220,7 +220,7 @@ public class ProxyAuthenticator extends Authenticator {
   
 
   <div class="social-link">
-  <a href="http://clonekim.github.io/index.xml" target="_blank">RSS</a>
+  <a href="http://localhost:1313/index.xml" target="_blank">RSS</a>
   </div>
 
 </div>
@@ -234,6 +234,6 @@ public class ProxyAuthenticator extends Authenticator {
 
   </footer>
 
-</body>
+<script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10"></' + 'script>')</script></body>
 </html>
 

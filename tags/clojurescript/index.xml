@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clojurescript on Less is more</title>
-    <link>http://clonekim.github.io/tags/clojurescript/</link>
+    <link>http://localhost:1313/tags/clojurescript/</link>
     <description>Recent content in Clojurescript on Less is more</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
     <lastBuildDate>Mon, 18 Jan 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://clonekim.github.io/tags/clojurescript/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:1313/tags/clojurescript/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>ClojureScript 시작하기</title>
-      <link>http://clonekim.github.io/2016/01/clojurescript-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/</link>
+      <link>http://localhost:1313/2016/01/clojurescript-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/</link>
       <pubDate>Mon, 18 Jan 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2016/01/clojurescript-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/</guid>
+      <guid>http://localhost:1313/2016/01/clojurescript-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/</guid>
       <description>프로젝트 설정 leiningen
 [org.clojure/clojurescript &amp;quot;1.7.228&amp;quot;]  plugin
 [lein-cljsbuild &amp;quot;1.1.2&amp;quot;]  project.clj
@@ -25,10 +25,10 @@
     
     <item>
       <title>clojurescript에서 jquery사용</title>
-      <link>http://clonekim.github.io/2015/09/clojurescript%EC%97%90%EC%84%9C-jquery%EC%82%AC%EC%9A%A9/</link>
+      <link>http://localhost:1313/2015/09/clojurescript%EC%97%90%EC%84%9C-jquery%EC%82%AC%EC%9A%A9/</link>
       <pubDate>Sun, 20 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2015/09/clojurescript%EC%97%90%EC%84%9C-jquery%EC%82%AC%EC%9A%A9/</guid>
+      <guid>http://localhost:1313/2015/09/clojurescript%EC%97%90%EC%84%9C-jquery%EC%82%AC%EC%9A%A9/</guid>
       <description> view.clj
 (defn view-layout [&amp;amp; content] (html [:head [:meta {:http-equiv &amp;quot;Content-type&amp;quot; :content &amp;quot;text/html; charset=utf-8&amp;quot;}] [&amp;quot;title&amp;quot;: &amp;quot;Project-Name&amp;quot;]] [:body content])) (defn view-content [] (view-layout [:h2 &amp;quot;Project-Name&amp;quot;] [:p {:id &amp;quot;clickhere&amp;quot;} &amp;quot;Get yourself a nice alert by clicking here.&amp;quot;] [:script {:src &amp;quot;/js/jquery-1.10.2.min.js&amp;quot;}] [:script {:src &amp;quot;/js/cljs.js&amp;quot;}]))  hello.cljs
 (:require [jayq.core :as jq]) (:use [jayq.core :only [$]]) ;; ;; $(&amp;quot;#btn&amp;quot;).click(function() {alert(&amp;quot;Hi!&amp;quot;); }); ;; (jq/bind ($ &amp;quot;#btn&amp;quot;) :click (fn [] (js/alert &amp;quot;Hi!&amp;quot;)))  lein cljsbuild once lein run  참고  ClojureScriptという選択肢 ClojureScript入門  </description>

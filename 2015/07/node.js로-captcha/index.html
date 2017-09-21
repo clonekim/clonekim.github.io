@@ -7,17 +7,17 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.26" />
+<meta name="generator" content="Hugo 0.27.1" />
 
-<link rel="canonical" href="http://clonekim.github.io/2015/07/node.js%EB%A1%9C-captcha/">
-<base href="http://clonekim.github.io/" />
+<link rel="canonical" href="http://localhost:1313/2015/07/node.js%EB%A1%9C-captcha/">
+<base href="http://localhost:1313/" />
 <meta property="og:title" content="Node.js로 Captcha" />
 <meta property="og:description" content="canvas를 이용한 캡챠(captcha)를 생성하려고 한다.
 사용하려는 패키지는 canvas-captcha이다
 의존성 설치 apt-get install libpango1.0-dev apt-get install libjpeg-dev apt-get install libgif-dev  소스작성 captcha.js
 var captcha = require(&#39;canvas-captcha&#39;) ,captchaOptions = { charPool: (&#39;abcdefghijklmnopqrstuvwxyz&#39; &#43; &#39;abcdefghijklmnopqrstuvwxyz&#39;.toUpperCase() &#43; &#39;1234567890&#39;).split(&#39;&#39;) //char pool Array ,size: { width: 120 ,height: 52 } //image size ,textPos: { left: 15 ,top: 36 } //text drawing start position ,rotate: .01 //text ratate ,charLength: 5 //how many chars //,font: &#39;26px&#39; //font size ,strokeStyle: &#39;#0088cc&#39; //style ,bgColor: &#39;#eeeeee&#39; //bg color ,confusion: true //draw another group background text to mangle the text //,cFont: &#39;30px&#39; //bg text style ,cStrokeStyle: &#39;#adc&#39; //bg text color ,cRotate: -." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://clonekim.github.io/2015/07/node.js%EB%A1%9C-captcha/" />
+<meta property="og:url" content="http://localhost:1313/2015/07/node.js%EB%A1%9C-captcha/" />
 
 
 
@@ -84,7 +84,7 @@ var captcha = require(&#39;canvas-captcha&#39;) ,captchaOptions = { charPool: (&
 
   <nav>
     <div class="siteTitle">
-      <a href="http://clonekim.github.io/">Less is more</a>
+      <a href="http://localhost:1313/">Less is more</a>
     </div> 
 
     
@@ -237,7 +237,7 @@ exports.captcha = function(req, res) {
   
 
   <div class="social-link">
-  <a href="http://clonekim.github.io/index.xml" target="_blank">RSS</a>
+  <a href="http://localhost:1313/index.xml" target="_blank">RSS</a>
   </div>
 
 </div>
@@ -251,6 +251,6 @@ exports.captcha = function(req, res) {
 
   </footer>
 
-</body>
+<script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10"></' + 'script>')</script></body>
 </html>
 

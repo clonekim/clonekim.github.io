@@ -8,18 +8,18 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.26" />
+<meta name="generator" content="Hugo 0.27.1" />
 
-<link rel="canonical" href="http://clonekim.github.io/">
-<base href="http://clonekim.github.io/" />
+<link rel="canonical" href="http://localhost:1313/">
+<base href="http://localhost:1313/" />
 <meta property="og:title" content="Less is more" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http://clonekim.github.io/" />
+<meta property="og:url" content="http://localhost:1313/" />
 
 
 
-<meta property="og:updated_time" content="2015-09-25T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2016-01-13T00:00:00&#43;00:00"/>
 
 
 
@@ -67,7 +67,7 @@
 
   <nav>
     <div class="siteTitle">
-      <a href="http://clonekim.github.io/">Less is more</a>
+      <a href="http://localhost:1313/">Less is more</a>
     </div> 
 
     
@@ -108,7 +108,84 @@
     <article class="post-preview">
 
   <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2015/09/%ED%81%B4%EB%A1%9C%EC%A0%80%EC%97%90%EC%84%9C-jdbc/'> 클로저에서 Jdbc</a> </h2>
+    <h2 class="title"> <a href='http://localhost:1313/2016/01/github%EC%97%90-%EB%B8%94%EB%A1%9C%EA%B7%B8%EC%A0%9C%EC%9E%91/'> Github에 블로그제작</a> </h2>
+    <div class="meta">
+      Jan 13, 2016
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/github">#github</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/cryogen">#cryogen</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> 깃허브에 계정만들기 먼저 github.com에 가입하고 저장소를 만든다
+저장소는 계정명.github.io라고 작성한다. 자세한 것은 GitHub Page를 살펴볼 것
+lein 설치 leiningen 을 설치한다
+프로젝트를 생성한다 cryogen템플릿을 이용해서 블로그 프로젝트를 생성한다
+lein new cryogen my-blog cd my-blog  git clone한다 public 디렉토리는 없기때문에 작성한다
+예) git@github.com:[계정명]/[생성한 저장소] [target 디렉토리]
+mkdir resources/public git clone git@github.com:clonekim/clonekim.github.io.git resources/public  config.edn 편집 resources/templates/config.edn를 편집한다
+내용중 아래와 같이 &ldquo;&ldquo;으로 설정한다
+:blog-prefix &quot;&quot;  서버 시작 아래 명령어로 서버를 시작한다 </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://localhost:1313/2016/01/github%EC%97%90-%EB%B8%94%EB%A1%9C%EA%B7%B8%EC%A0%9C%EC%9E%91/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://localhost:1313/2015/09/clojure-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/'> Clojure 시작하기</a> </h2>
+    <div class="meta">
+      Sep 25, 2015
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/clojure">#clojure</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> JVM위에서 작동하는 함수형 프로그래밍이다
+clojure 얻기 http://clojure.org
+IDE/Tools  LightTable Cursive Emacs  Leiningen으로 시작하기 Leiningen (레닝겐)은 클로져를 쉽게 시작하기 위한 빌드자동화 툴이다
+윈도우에서만 self-install해준다
+Project 생성 lein new [프로젝트명]  프로젝트 의존성 추가 라이브러리는 아래의 저장소에서 검색이 가능하고
+의존성에 추가하면 된다
+ clojars Maven repository  :dependencies [[org.clojure/clojure &quot;1.7.0&quot;] [groupId/artifactId &quot;version&quot;]])  그외의 라이브러리 저장소로는 추가로 지정할수있다
+:repositories { &quot;이름&quot; &quot;http://192.168.0.10:8081/nexus/content/repositories/thirdparty&quot; }  REPL(Read Eval Print Loop) 실행 lein repl  REPL에서 클로저코드를 작성하고 바로 실행이 가능하다 </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://localhost:1313/2015/09/clojure-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://localhost:1313/2015/09/%ED%81%B4%EB%A1%9C%EC%A0%80%EC%97%90%EC%84%9C-jdbc/'> 클로저에서 Jdbc</a> </h2>
     <div class="meta">
       Sep 25, 2015
     </div>
@@ -129,7 +206,7 @@
 
   <footer>
   <div class="rmore">
-    <a href='http://clonekim.github.io/2015/09/%ED%81%B4%EB%A1%9C%EC%A0%80%EC%97%90%EC%84%9C-jdbc/'><nobr>Read more ...</nobr></a>
+    <a href='http://localhost:1313/2015/09/%ED%81%B4%EB%A1%9C%EC%A0%80%EC%97%90%EC%84%9C-jdbc/'><nobr>Read more ...</nobr></a>
   </div>
   </footer>
 
@@ -139,7 +216,7 @@
     <article class="post-preview">
 
   <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2015/09/freemarker-assign%ED%8C%81/'> Freemarker assign팁</a> </h2>
+    <h2 class="title"> <a href='http://localhost:1313/2015/09/freemarker-assign%ED%8C%81/'> Freemarker assign팁</a> </h2>
     <div class="meta">
       Sep 23, 2015
     </div>
@@ -165,7 +242,7 @@ ${x?string} ${x?string[0..1]}  .(dot)가 들어간 변수도 사용할 수 있�
 
   <footer>
   <div class="rmore">
-    <a href='http://clonekim.github.io/2015/09/freemarker-assign%ED%8C%81/'><nobr>Read more ...</nobr></a>
+    <a href='http://localhost:1313/2015/09/freemarker-assign%ED%8C%81/'><nobr>Read more ...</nobr></a>
   </div>
   </footer>
 
@@ -175,7 +252,7 @@ ${x?string} ${x?string[0..1]}  .(dot)가 들어간 변수도 사용할 수 있�
     <article class="post-preview">
 
   <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2015/09/clojurescript%EC%97%90%EC%84%9C-jquery%EC%82%AC%EC%9A%A9/'> clojurescript에서 jquery사용</a> </h2>
+    <h2 class="title"> <a href='http://localhost:1313/2015/09/clojurescript%EC%97%90%EC%84%9C-jquery%EC%82%AC%EC%9A%A9/'> clojurescript에서 jquery사용</a> </h2>
     <div class="meta">
       Sep 20, 2015
     </div>
@@ -196,7 +273,7 @@ ${x?string} ${x?string[0..1]}  .(dot)가 들어간 변수도 사용할 수 있�
 
   <footer>
   <div class="rmore">
-    <a href='http://clonekim.github.io/2015/09/clojurescript%EC%97%90%EC%84%9C-jquery%EC%82%AC%EC%9A%A9/'><nobr>Read more ...</nobr></a>
+    <a href='http://localhost:1313/2015/09/clojurescript%EC%97%90%EC%84%9C-jquery%EC%82%AC%EC%9A%A9/'><nobr>Read more ...</nobr></a>
   </div>
   </footer>
 
@@ -206,7 +283,7 @@ ${x?string} ${x?string[0..1]}  .(dot)가 들어간 변수도 사용할 수 있�
     <article class="post-preview">
 
   <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2015/09/clojure%EB%A5%BC-%EC%9C%84%ED%95%9C-emacs-%ED%99%98%EA%B2%BD/'> Clojure를 위한 Emacs 환경</a> </h2>
+    <h2 class="title"> <a href='http://localhost:1313/2015/09/clojure%EB%A5%BC-%EC%9C%84%ED%95%9C-emacs-%ED%99%98%EA%B2%BD/'> Clojure를 위한 Emacs 환경</a> </h2>
     <div class="meta">
       Sep 11, 2015
     </div>
@@ -237,7 +314,7 @@ Cider와 cider-nrepl의 버전이 맞아야함  profiles.clj
 
   <footer>
   <div class="rmore">
-    <a href='http://clonekim.github.io/2015/09/clojure%EB%A5%BC-%EC%9C%84%ED%95%9C-emacs-%ED%99%98%EA%B2%BD/'><nobr>Read more ...</nobr></a>
+    <a href='http://localhost:1313/2015/09/clojure%EB%A5%BC-%EC%9C%84%ED%95%9C-emacs-%ED%99%98%EA%B2%BD/'><nobr>Read more ...</nobr></a>
   </div>
   </footer>
 
@@ -247,7 +324,7 @@ Cider와 cider-nrepl의 버전이 맞아야함  profiles.clj
     <article class="post-preview">
 
   <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2015/09/oracle-jdbc-url/'> Oracle Jdbc Url</a> </h2>
+    <h2 class="title"> <a href='http://localhost:1313/2015/09/oracle-jdbc-url/'> Oracle Jdbc Url</a> </h2>
     <div class="meta">
       Sep 11, 2015
     </div>
@@ -273,7 +350,7 @@ oracle.jdbc.driver.OracleDriver에서 oracle.jdbc.OracleDriver 로 바꿀 것
 
   <footer>
   <div class="rmore">
-    <a href='http://clonekim.github.io/2015/09/oracle-jdbc-url/'><nobr>Read more ...</nobr></a>
+    <a href='http://localhost:1313/2015/09/oracle-jdbc-url/'><nobr>Read more ...</nobr></a>
   </div>
   </footer>
 
@@ -283,7 +360,7 @@ oracle.jdbc.driver.OracleDriver에서 oracle.jdbc.OracleDriver 로 바꿀 것
     <article class="post-preview">
 
   <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2015/09/ring%EC%9C%BC%EB%A1%9C-%EC%9B%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/'> Ring으로 웹프로그래밍</a> </h2>
+    <h2 class="title"> <a href='http://localhost:1313/2015/09/ring%EC%9C%BC%EB%A1%9C-%EC%9B%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/'> Ring으로 웹프로그래밍</a> </h2>
     <div class="meta">
       Sep 11, 2015
     </div>
@@ -311,7 +388,7 @@ ring-core: essential functions for handling parameters, cookies and more ring-de
 
   <footer>
   <div class="rmore">
-    <a href='http://clonekim.github.io/2015/09/ring%EC%9C%BC%EB%A1%9C-%EC%9B%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/'><nobr>Read more ...</nobr></a>
+    <a href='http://localhost:1313/2015/09/ring%EC%9C%BC%EB%A1%9C-%EC%9B%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/'><nobr>Read more ...</nobr></a>
   </div>
   </footer>
 
@@ -321,7 +398,7 @@ ring-core: essential functions for handling parameters, cookies and more ring-de
     <article class="post-preview">
 
   <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2015/09/gtid%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-mariadb-replication/'> GTID를 이용한 Mariadb Replication</a> </h2>
+    <h2 class="title"> <a href='http://localhost:1313/2015/09/gtid%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-mariadb-replication/'> GTID를 이용한 Mariadb Replication</a> </h2>
     <div class="meta">
       Sep 3, 2015
     </div>
@@ -344,7 +421,7 @@ vm003: slave
 
   <footer>
   <div class="rmore">
-    <a href='http://clonekim.github.io/2015/09/gtid%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-mariadb-replication/'><nobr>Read more ...</nobr></a>
+    <a href='http://localhost:1313/2015/09/gtid%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-mariadb-replication/'><nobr>Read more ...</nobr></a>
   </div>
   </footer>
 
@@ -354,7 +431,7 @@ vm003: slave
     <article class="post-preview">
 
   <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2015/07/reactjs-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/'> ReactJS 시작하기</a> </h2>
+    <h2 class="title"> <a href='http://localhost:1313/2015/07/reactjs-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/'> ReactJS 시작하기</a> </h2>
     <div class="meta">
       Jul 29, 2015
     </div>
@@ -379,73 +456,7 @@ JSX 문법을 사용하기 위해서는 반드시 JSXTransformer.js가 필요하
 
   <footer>
   <div class="rmore">
-    <a href='http://clonekim.github.io/2015/07/reactjs-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2015/07/redmine3-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/'> Redmine3 설치하기</a> </h2>
-    <div class="meta">
-      Jul 18, 2015
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="/tags/redmine">#redmine</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary"> 설치환경  redmine-3.0.4 centos 6.6 redmine install가이드  RVM 설치 rvm.io 에 대하여
-rvm을 이용하여 루비를 버젼별로 설치및 관리할 수 있다
-rvm install ruby rvm gemset create redmine rvm gemset use redmine  의존성 라이브러리 CentOS 의존성
-redmine 설치 $ cd redmine-x.x.x $ gem install bundler $ bundle install --without development test  Thin Gemfile을 수정하여 thin을 최상단에 추가
-다시 번들로 라이브러리 설치
-bundle install --without development test  아래 파일을 /etc/thin/redmine. </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='http://clonekim.github.io/2015/07/redmine3-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2015/07/%EC%9C%88%EB%8F%84%EC%9A%B0%EC%A6%88-vim%EC%84%A4%EC%A0%95/'> 윈도우즈 Vim설정</a> </h2>
-    <div class="meta">
-      Jul 16, 2015
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="/tags/vi">#vi</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary"> vi를 윈도우즈에서 사용하기 위한 가이드
-설치  http://www.vim.org http://www.vim.org/download.php  설정 아래 파일을 C:\Users[계정명]_vimrc 에 위치한다
-set nu set autoindent set nobackup set showcmd set ruler set enc=utf-8 set fencs=euckr,cp949,utf-8 set tabstop=3 set nowrap set lines=30 columns=140 lang mes en_US source $VIMRUNTIME/delmenu.vim source $VIMRUNTIME/menu.vim  Explore 명령모드에서 :Explore로 입력하면 탐색창모드로 전환한다. 특정파일을 선택 시 편집할 수 있고
-Ctrl +^ 입력시 바로 이전 탐색창으로 이동한다. </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='http://clonekim.github.io/2015/07/%EC%9C%88%EB%8F%84%EC%9A%B0%EC%A6%88-vim%EC%84%A4%EC%A0%95/'><nobr>Read more ...</nobr></a>
+    <a href='http://localhost:1313/2015/07/reactjs-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/'><nobr>Read more ...</nobr></a>
   </div>
   </footer>
 
@@ -492,7 +503,7 @@ Ctrl +^ 입력시 바로 이전 탐색창으로 이동한다. </div>
   
 
   <div class="social-link">
-  <a href="http://clonekim.github.io/index.xml" target="_blank">RSS</a>
+  <a href="http://localhost:1313/index.xml" target="_blank">RSS</a>
   </div>
 
 </div>
@@ -506,6 +517,6 @@ Ctrl +^ 입력시 바로 이전 탐색창으로 이동한다. </div>
 
   </footer>
 
-</body>
+<script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10"></' + 'script>')</script></body>
 </html>
 

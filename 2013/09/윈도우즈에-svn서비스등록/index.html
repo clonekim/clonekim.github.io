@@ -7,10 +7,10 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.26" />
+<meta name="generator" content="Hugo 0.27.1" />
 
-<link rel="canonical" href="http://clonekim.github.io/2013/09/%EC%9C%88%EB%8F%84%EC%9A%B0%EC%A6%88%EC%97%90-svn%EC%84%9C%EB%B9%84%EC%8A%A4%EB%93%B1%EB%A1%9D/">
-<base href="http://clonekim.github.io/" />
+<link rel="canonical" href="http://localhost:1313/2013/09/%EC%9C%88%EB%8F%84%EC%9A%B0%EC%A6%88%EC%97%90-svn%EC%84%9C%EB%B9%84%EC%8A%A4%EB%93%B1%EB%A1%9D/">
+<base href="http://localhost:1313/" />
 <meta property="og:title" content="윈도우즈에 SVN서비스등록" />
 <meta property="og:description" content="###SVN서버를 윈도우에서 서비스로 등록한다.*
 Creating the Repository svnadmin create c:\svn  Edit Configuration 방금 생성한 레포지토리 디렉토리로 이동하여
@@ -18,7 +18,7 @@ conf\passwd 에서
 아이디 = 패스워드 형식으로 등록 ex) test = 1234  conf\svnserve.conf 에서 아래와 같이 설정
 anon-access = read auth-access = write password-db = passwd  Register as a Service C:\Program Files\Subversion\bin\svnserve.exe --service --root c:\svn 또는 C:\&gt; sc create svn binpath= &quot;C:\svn\bin\svnserve.exe --service -r C:\repos&quot; displayname= &quot;Subversion Server&quot; depend= Tcpip start= auto C:\&gt;sc create svnserver binpath= &quot;C:\Program Files\Subversion\bin\svnserve." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://clonekim.github.io/2013/09/%EC%9C%88%EB%8F%84%EC%9A%B0%EC%A6%88%EC%97%90-svn%EC%84%9C%EB%B9%84%EC%8A%A4%EB%93%B1%EB%A1%9D/" />
+<meta property="og:url" content="http://localhost:1313/2013/09/%EC%9C%88%EB%8F%84%EC%9A%B0%EC%A6%88%EC%97%90-svn%EC%84%9C%EB%B9%84%EC%8A%A4%EB%93%B1%EB%A1%9D/" />
 
 
 
@@ -87,7 +87,7 @@ anon-access = read auth-access = write password-db = passwd  Register as a Servi
 
   <nav>
     <div class="siteTitle">
-      <a href="http://clonekim.github.io/">Less is more</a>
+      <a href="http://localhost:1313/">Less is more</a>
     </div> 
 
     
@@ -223,7 +223,7 @@ C:\&gt;sc create svnserver binpath= &quot;C:\Program Files\Subversion\bin\svnser
   
 
   <div class="social-link">
-  <a href="http://clonekim.github.io/index.xml" target="_blank">RSS</a>
+  <a href="http://localhost:1313/index.xml" target="_blank">RSS</a>
   </div>
 
 </div>
@@ -237,6 +237,6 @@ C:\&gt;sc create svnserver binpath= &quot;C:\Program Files\Subversion\bin\svnser
 
   </footer>
 
-</body>
+<script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10"></' + 'script>')</script></body>
 </html>
 

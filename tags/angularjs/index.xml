@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Angularjs on Less is more</title>
-    <link>http://clonekim.github.io/tags/angularjs/</link>
+    <link>http://localhost:1313/tags/angularjs/</link>
     <description>Recent content in Angularjs on Less is more</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
     <lastBuildDate>Mon, 02 Jan 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://clonekim.github.io/tags/angularjs/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:1313/tags/angularjs/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Angular 1.6 사용</title>
-      <link>http://clonekim.github.io/2017/01/angular-1.6-%EC%82%AC%EC%9A%A9/</link>
+      <link>http://localhost:1313/2017/01/angular-1.6-%EC%82%AC%EC%9A%A9/</link>
       <pubDate>Mon, 02 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2017/01/angular-1.6-%EC%82%AC%EC%9A%A9/</guid>
+      <guid>http://localhost:1313/2017/01/angular-1.6-%EC%82%AC%EC%9A%A9/</guid>
       <description>angular 1.6 이상적용
 PREFIX
 이제 기본값으로 !가 붙는다
@@ -26,10 +26,10 @@ $http.json(url, {jsonpCallbackParam: &#39;callback&#39;}) .then(function(res) { 
     
     <item>
       <title>AngularJS 다국어처리</title>
-      <link>http://clonekim.github.io/2015/07/angularjs-%EB%8B%A4%EA%B5%AD%EC%96%B4%EC%B2%98%EB%A6%AC/</link>
+      <link>http://localhost:1313/2015/07/angularjs-%EB%8B%A4%EA%B5%AD%EC%96%B4%EC%B2%98%EB%A6%AC/</link>
       <pubDate>Thu, 02 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2015/07/angularjs-%EB%8B%A4%EA%B5%AD%EC%96%B4%EC%B2%98%EB%A6%AC/</guid>
+      <guid>http://localhost:1313/2015/07/angularjs-%EB%8B%A4%EA%B5%AD%EC%96%B4%EC%B2%98%EB%A6%AC/</guid>
       <description>IndexController.js
 module.exports = [&#39;$scope&#39;, &#39;$cookies&#39;, &#39;TranslationService&#39;, function($scope, $cookies, TranslationService) { TranslationService.getLanguage($scope, $cookies); $scope.multiLng = function( lang ) { $cookies.put(&amp;quot;lang&amp;quot;, lang); TranslationService.getLanguage($scope, $cookies); } }];  TranslationService.js
 module.exports = [&#39;$http&#39;, function($http) { this.getLanguage = function($scope, $cookies, cbk) { var lang = $cookies.get(&#39;lang&#39;) || &#39;ko&#39;; $http({ method: &#39;GET&#39;, url: &#39;/js/locale_&#39; + lang +&#39;.json&#39; }).success(function(response) { $scope.translation = response;	$scope.lang = lang; }); }; }];  locale_zh.js
@@ -38,10 +38,10 @@ module.exports = [&#39;$http&#39;, function($http) { this.getLanguage = function
     
     <item>
       <title>AngularJS Tips</title>
-      <link>http://clonekim.github.io/2014/11/angularjs-tips/</link>
+      <link>http://localhost:1313/2014/11/angularjs-tips/</link>
       <pubDate>Mon, 10 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2014/11/angularjs-tips/</guid>
+      <guid>http://localhost:1313/2014/11/angularjs-tips/</guid>
       <description>개발 정보
 버젼 1.2.26를 사용
 scope 계층화 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;ko&amp;quot; ng-app=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt; &amp;lt;meta http-equiv=&amp;quot;X-UA-Compatible&amp;quot; content=&amp;quot;IE=edge&amp;quot;&amp;gt; &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0&amp;quot;&amp;gt; &amp;lt;title&amp;gt;Services and Modules&amp;lt;/title&amp;gt; &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;bootstrap/css/bootstrap.css&amp;quot; /&amp;gt; &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;bootstrap/css/bootstrap-theme.css&amp;quot; /&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;jquery/jquery.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;jquery-ui/jquery-ui.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;angular/angular.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; angular.module(&amp;quot;app&amp;quot;, []) .controller(&amp;quot;ParentController&amp;quot;, [&#39;$scope&#39;, function($scope) { $scope.value = &#39;parent value&#39;; $scope.getUpperValue = function () { return angular.uppercase($scope.value); } }]) .controller(&amp;quot;ChildController&amp;quot;,[ &#39;$scope&#39;, function($scope) { $scope.newValue = &#39;child value&#39;; }]); &amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div ng-controller=&amp;quot;ParentController&amp;quot;&amp;gt; &amp;lt;h3&amp;gt;parent&amp;lt;/h3&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;value: {{value}}&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;Upper: {{getUpperValue()}}&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;newValue: {{newValue}} &amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div ng-controller=&amp;quot;ChildController&amp;quot;&amp;gt; &amp;lt;h3&amp;gt;parent&amp;lt;/h3&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;value: {{value}}&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;Upper: {{getUpperValue()}}&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;newValue: {{newValue}} &amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;  제대로 된 결과를 보려면</description>

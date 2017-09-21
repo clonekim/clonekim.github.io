@@ -7,17 +7,17 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.26" />
+<meta name="generator" content="Hugo 0.27.1" />
 
-<link rel="canonical" href="http://clonekim.github.io/2016/01/gulp%EB%A1%9C-react%EB%B9%8C%EB%93%9C/">
-<base href="http://clonekim.github.io/" />
+<link rel="canonical" href="http://localhost:1313/2016/01/gulp%EB%A1%9C-react%EB%B9%8C%EB%93%9C/">
+<base href="http://localhost:1313/" />
 <meta property="og:title" content="Gulp로 React빌드" />
 <meta property="og:description" content="gulp와 함께 의존성설치 npm install -g gulp  react 개발에 필요한 라이브러리와
 번들로 묶기위한 browserify를 설치
 npm install react --save-dev npm install react-dom --save-dev npm install browserify --save-dev npm install gulp --save-dev npm install vinyl-source-stream --save-dev npm install babelify --save-dev npm install babel-preset-react --save-dev  gulpfile
 var gulp = require(&#39;gulp&#39;), browserify = require(&#39;browserify&#39;), babelify = require(&#39;babelify&#39;), source = require(&#39;vinyl-source-stream&#39;); gulp.task(&#39;default&#39;, function() { return browserify(&#39;./source/app.js&#39;) .transform(babelify, {presets: [&#39;react&#39;]}) .bundle() .pipe(source(&#39;app.min.js&#39;)) ." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://clonekim.github.io/2016/01/gulp%EB%A1%9C-react%EB%B9%8C%EB%93%9C/" />
+<meta property="og:url" content="http://localhost:1313/2016/01/gulp%EB%A1%9C-react%EB%B9%8C%EB%93%9C/" />
 
 
 
@@ -84,7 +84,7 @@ var gulp = require(&#39;gulp&#39;), browserify = require(&#39;browserify&#39;), 
 
   <nav>
     <div class="siteTitle">
-      <a href="http://clonekim.github.io/">Less is more</a>
+      <a href="http://localhost:1313/">Less is more</a>
     </div> 
 
     
@@ -274,7 +274,7 @@ var MyComponent = React.createClass({
   
 
   <div class="social-link">
-  <a href="http://clonekim.github.io/index.xml" target="_blank">RSS</a>
+  <a href="http://localhost:1313/index.xml" target="_blank">RSS</a>
   </div>
 
 </div>
@@ -288,6 +288,6 @@ var MyComponent = React.createClass({
 
   </footer>
 
-</body>
+<script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10"></' + 'script>')</script></body>
 </html>
 

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Captcha on Less is more</title>
-    <link>http://clonekim.github.io/tags/captcha/</link>
+    <link>http://localhost:1313/tags/captcha/</link>
     <description>Recent content in Captcha on Less is more</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
     <lastBuildDate>Tue, 14 Jul 2015 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://clonekim.github.io/tags/captcha/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:1313/tags/captcha/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Node.js로 Captcha</title>
-      <link>http://clonekim.github.io/2015/07/node.js%EB%A1%9C-captcha/</link>
+      <link>http://localhost:1313/2015/07/node.js%EB%A1%9C-captcha/</link>
       <pubDate>Tue, 14 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2015/07/node.js%EB%A1%9C-captcha/</guid>
+      <guid>http://localhost:1313/2015/07/node.js%EB%A1%9C-captcha/</guid>
       <description>canvas를 이용한 캡챠(captcha)를 생성하려고 한다.
 사용하려는 패키지는 canvas-captcha이다
 의존성 설치 apt-get install libpango1.0-dev apt-get install libjpeg-dev apt-get install libgif-dev  소스작성 captcha.js
@@ -25,10 +25,10 @@ var captcha = require(&#39;canvas-captcha&#39;) ,captchaOptions = { charPool: (&
     
     <item>
       <title>ImageMagick</title>
-      <link>http://clonekim.github.io/2015/02/imagemagick/</link>
+      <link>http://localhost:1313/2015/02/imagemagick/</link>
       <pubDate>Sun, 01 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2015/02/imagemagick/</guid>
+      <guid>http://localhost:1313/2015/02/imagemagick/</guid>
       <description>Thumbnail
 convert [Image 1] -thumbnail 50% [Result Image] or convert [Image 1] -thumbnail 100x70 [Result Image]  Composite
 composite -geometry +[x]+[y] [Image 1] [Image 2] [Result Image] ex) composite -geometry +02+30 person.jpg background.jpg profile.jpg  Image Info

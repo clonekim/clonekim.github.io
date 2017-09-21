@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Wiki on Less is more</title>
-    <link>http://clonekim.github.io/tags/wiki/</link>
+    <link>http://localhost:1313/tags/wiki/</link>
     <description>Recent content in Wiki on Less is more</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
     <lastBuildDate>Fri, 27 Sep 2013 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://clonekim.github.io/tags/wiki/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:1313/tags/wiki/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>JSPWiki 설치</title>
-      <link>http://clonekim.github.io/2013/09/jspwiki-%EC%84%A4%EC%B9%98/</link>
+      <link>http://localhost:1313/2013/09/jspwiki-%EC%84%A4%EC%B9%98/</link>
       <pubDate>Fri, 27 Sep 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2013/09/jspwiki-%EC%84%A4%EC%B9%98/</guid>
+      <guid>http://localhost:1313/2013/09/jspwiki-%EC%84%A4%EC%B9%98/</guid>
       <description> Apache JSPWiki
 설정 server.xml
 &amp;lt;Connector address=&amp;quot;127.0.0.1&amp;quot; port=&amp;quot;8080&amp;quot; protocol=&amp;quot;org.apache.coyote.http11.Http11NioProtocol&amp;quot; connectionTimeout=&amp;quot;20000&amp;quot; maxThreads=&amp;quot;3&amp;quot; minSpareThreads=&amp;quot;2&amp;quot; redirectPort=&amp;quot;8443&amp;quot; URIEncoding=&amp;quot;UTF-8&amp;quot;/&amp;gt;  jspwiki.properties

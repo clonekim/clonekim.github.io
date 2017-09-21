@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Emacs on Less is more</title>
-    <link>http://clonekim.github.io/tags/emacs/</link>
+    <link>http://localhost:1313/tags/emacs/</link>
     <description>Recent content in Emacs on Less is more</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
     <lastBuildDate>Sat, 09 Sep 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://clonekim.github.io/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:1313/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Web개발을 위한 Emacs설정</title>
-      <link>http://clonekim.github.io/2017/09/web%EA%B0%9C%EB%B0%9C%EC%9D%84-%EC%9C%84%ED%95%9C-emacs%EC%84%A4%EC%A0%95/</link>
+      <link>http://localhost:1313/2017/09/web%EA%B0%9C%EB%B0%9C%EC%9D%84-%EC%9C%84%ED%95%9C-emacs%EC%84%A4%EC%A0%95/</link>
       <pubDate>Sat, 09 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2017/09/web%EA%B0%9C%EB%B0%9C%EC%9D%84-%EC%9C%84%ED%95%9C-emacs%EC%84%A4%EC%A0%95/</guid>
+      <guid>http://localhost:1313/2017/09/web%EA%B0%9C%EB%B0%9C%EC%9D%84-%EC%9C%84%ED%95%9C-emacs%EC%84%A4%EC%A0%95/</guid>
       <description>전에 사용하는 web.el를 개선하였다.
 auto-complete 패키지를 사용하여 자동완성이 될것이다
 (require &#39;web-mode) (require &#39;auto-complete) (ac-config-default) (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.html?\\&#39;&amp;quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.[aj]sp\\&#39;&amp;quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.mustache\\&#39;&amp;quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.ftl\\&#39;&amp;quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.vue\\&#39;&amp;quot; . web-mode)) (defun my-web-mode-hook () (setq web-mode-markup-indent-offset 2) (setq web-mode-css-indent-offset 2) (setq web-mode-code-indent-offset 2) (setq web-mode-enable-current-element-highlight t) (setq web-mode-enable-current-column-highlight t) (setq web-mode-ac-sources-alist &#39;((&amp;quot;css&amp;quot; . (ac-source-css-property)) (&amp;quot;html&amp;quot; . (ac-source-words-in-buffer ac-source-abbrev))))) (add-hook &#39;web-mode-hook &#39;my-web-mode-hook) (add-hook &#39;web-mode-before-auto-complete-hooks &#39;(lambda () (let ((web-mode-cur-language (web-mode-language-at-pos))) (if (string= web-mode-cur-language &amp;quot;html&amp;quot;) (setq emmet-use-css-transform t) (setq emmet-use-css-transform nil)) (if (string= web-mode-cur-language &amp;quot;css&amp;quot;) (setq emmet-use-css-transform t) (setq emmet-use-css-transform nil)))))  </description>
@@ -24,10 +24,10 @@ auto-complete 패키지를 사용하여 자동완성이 될것이다
     
     <item>
       <title>Emacs를 쓰면서</title>
-      <link>http://clonekim.github.io/2016/05/emacs%EB%A5%BC-%EC%93%B0%EB%A9%B4%EC%84%9C/</link>
+      <link>http://localhost:1313/2016/05/emacs%EB%A5%BC-%EC%93%B0%EB%A9%B4%EC%84%9C/</link>
       <pubDate>Sat, 07 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2016/05/emacs%EB%A5%BC-%EC%93%B0%EB%A9%B4%EC%84%9C/</guid>
+      <guid>http://localhost:1313/2016/05/emacs%EB%A5%BC-%EC%93%B0%EB%A9%B4%EC%84%9C/</guid>
       <description>mode-icons-mode init.el
 &#39;(mode-icons-mode t)  js-mode setup-js.el
 (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.js$&amp;quot; . js-mode)) (add-hook &#39;js-mode-hook &#39;subword-mode) (add-hook &#39;html-mode-hook &#39;subword-mode) (setq js-indent-level 2) (eval-after-load &amp;quot;sgml-mode&amp;quot; &#39;(progn (require &#39;tagedit) (tagedit-add-paredit-like-keybindings) (add-hook &#39;html-mode-hook (lambda () (tagedit-mode 1)))))  web-mode web.el
@@ -36,10 +36,10 @@ auto-complete 패키지를 사용하여 자동완성이 될것이다
     
     <item>
       <title>Clojure를 위한 Emacs 환경</title>
-      <link>http://clonekim.github.io/2015/09/clojure%EB%A5%BC-%EC%9C%84%ED%95%9C-emacs-%ED%99%98%EA%B2%BD/</link>
+      <link>http://localhost:1313/2015/09/clojure%EB%A5%BC-%EC%9C%84%ED%95%9C-emacs-%ED%99%98%EA%B2%BD/</link>
       <pubDate>Fri, 11 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2015/09/clojure%EB%A5%BC-%EC%9C%84%ED%95%9C-emacs-%ED%99%98%EA%B2%BD/</guid>
+      <guid>http://localhost:1313/2015/09/clojure%EB%A5%BC-%EC%9C%84%ED%95%9C-emacs-%ED%99%98%EA%B2%BD/</guid>
       <description>Emacs 24를 기준으로 작성
 현재 사용중인 환경은 custom-emacs.tgz
 Package Install init.el

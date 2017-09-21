@@ -7,16 +7,16 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.26" />
+<meta name="generator" content="Hugo 0.27.1" />
 
-<link rel="canonical" href="http://clonekim.github.io/2017/09/web%EA%B0%9C%EB%B0%9C%EC%9D%84-%EC%9C%84%ED%95%9C-emacs%EC%84%A4%EC%A0%95/">
-<base href="http://clonekim.github.io/" />
+<link rel="canonical" href="http://localhost:1313/2017/09/web%EA%B0%9C%EB%B0%9C%EC%9D%84-%EC%9C%84%ED%95%9C-emacs%EC%84%A4%EC%A0%95/">
+<base href="http://localhost:1313/" />
 <meta property="og:title" content="Web개발을 위한 Emacs설정" />
 <meta property="og:description" content="전에 사용하는 web.el를 개선하였다.
 auto-complete 패키지를 사용하여 자동완성이 될것이다
 (require &#39;web-mode) (require &#39;auto-complete) (ac-config-default) (add-to-list &#39;auto-mode-alist &#39;(&quot;\\.html?\\&#39;&quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&quot;\\.[aj]sp\\&#39;&quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&quot;\\.mustache\\&#39;&quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&quot;\\.ftl\\&#39;&quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&quot;\\.vue\\&#39;&quot; . web-mode)) (defun my-web-mode-hook () (setq web-mode-markup-indent-offset 2) (setq web-mode-css-indent-offset 2) (setq web-mode-code-indent-offset 2) (setq web-mode-enable-current-element-highlight t) (setq web-mode-enable-current-column-highlight t) (setq web-mode-ac-sources-alist &#39;((&quot;css&quot; . (ac-source-css-property)) (&quot;html&quot; . (ac-source-words-in-buffer ac-source-abbrev))))) (add-hook &#39;web-mode-hook &#39;my-web-mode-hook) (add-hook &#39;web-mode-before-auto-complete-hooks &#39;(lambda () (let ((web-mode-cur-language (web-mode-language-at-pos))) (if (string= web-mode-cur-language &quot;html&quot;) (setq emmet-use-css-transform t) (setq emmet-use-css-transform nil)) (if (string= web-mode-cur-language &quot;css&quot;) (setq emmet-use-css-transform t) (setq emmet-use-css-transform nil)))))  " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://clonekim.github.io/2017/09/web%EA%B0%9C%EB%B0%9C%EC%9D%84-%EC%9C%84%ED%95%9C-emacs%EC%84%A4%EC%A0%95/" />
+<meta property="og:url" content="http://localhost:1313/2017/09/web%EA%B0%9C%EB%B0%9C%EC%9D%84-%EC%9C%84%ED%95%9C-emacs%EC%84%A4%EC%A0%95/" />
 
 
 
@@ -81,7 +81,7 @@ auto-complete 패키지를 사용하여 자동완성이 될것이다
 
   <nav>
     <div class="siteTitle">
-      <a href="http://clonekim.github.io/">Less is more</a>
+      <a href="http://localhost:1313/">Less is more</a>
     </div> 
 
     
@@ -213,7 +213,7 @@ auto-complete 패키지를 사용하여 자동완성이 될것이다</p>
   
 
   <div class="social-link">
-  <a href="http://clonekim.github.io/index.xml" target="_blank">RSS</a>
+  <a href="http://localhost:1313/index.xml" target="_blank">RSS</a>
   </div>
 
 </div>
@@ -227,6 +227,6 @@ auto-complete 패키지를 사용하여 자동완성이 될것이다</p>
 
   </footer>
 
-</body>
+<script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10"></' + 'script>')</script></body>
 </html>
 

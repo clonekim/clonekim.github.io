@@ -7,17 +7,17 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.26" />
+<meta name="generator" content="Hugo 0.27.1" />
 
-<link rel="canonical" href="http://clonekim.github.io/2012/02/ruby-some-basic/">
-<base href="http://clonekim.github.io/" />
+<link rel="canonical" href="http://localhost:1313/2012/02/ruby-some-basic/">
+<base href="http://localhost:1313/" />
 <meta property="og:title" content="Ruby Some Basic" />
 <meta property="og:description" content="json 생성
 require &#39;json&#39; jsonbody = JSON.generate[&quot;message&quot;=&gt;&quot;test&quot;,&quot;user&quot;=&gt;&quot;user1&quot;]  rest-client을 이용한 예제
 require &#39;rubygems&#39; require &#39;rest_client&#39; require &#39;json&#39; jdata = JSON.generate([&quot;test&quot;]) RestClient.put &#39;http://localhost:4567/users/123&#39;, jdata, {:content_type =&gt; :json}  Net:HTTP GET/PUT
 require &#39;net/http&#39; http = Net::HTTP.new(&#39;www.data.com&#39;) response = http.request_put(&#39;/?access_token=123&#39;, jsonbody)  url = URI.parse(&#39;http://localhost:3000/someservice/&#39;) request = Net::HTTP::Post.new(url.path) request.body = &quot;&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;&lt;somedata&gt;&lt;name&gt;Test Name 1&lt;/name&gt;&lt;description&gt;Some data for Unit testing&lt;/description&gt;&lt;/somedata&gt;&quot; response = Net::HTTP.start(url.host, url.port) {|http| http.request(request)} #Note this test PASSES! assert_equal &#39;201 Created&#39;, response." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://clonekim.github.io/2012/02/ruby-some-basic/" />
+<meta property="og:url" content="http://localhost:1313/2012/02/ruby-some-basic/" />
 
 
 
@@ -84,7 +84,7 @@ require &#39;net/http&#39; http = Net::HTTP.new(&#39;www.data.com&#39;) response
 
   <nav>
     <div class="siteTitle">
-      <a href="http://clonekim.github.io/">Less is more</a>
+      <a href="http://localhost:1313/">Less is more</a>
     </div> 
 
     
@@ -291,7 +291,7 @@ print io.readlines
   
 
   <div class="social-link">
-  <a href="http://clonekim.github.io/index.xml" target="_blank">RSS</a>
+  <a href="http://localhost:1313/index.xml" target="_blank">RSS</a>
   </div>
 
 </div>
@@ -305,6 +305,6 @@ print io.readlines
 
   </footer>
 
-</body>
+<script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10"></' + 'script>')</script></body>
 </html>
 

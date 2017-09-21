@@ -7,16 +7,16 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.26" />
+<meta name="generator" content="Hugo 0.27.1" />
 
-<link rel="canonical" href="http://clonekim.github.io/2013/09/jackson-json-processor/">
-<base href="http://clonekim.github.io/" />
+<link rel="canonical" href="http://localhost:1313/2013/09/jackson-json-processor/">
+<base href="http://localhost:1313/" />
 <meta property="og:title" content="Jackson JSON Processor" />
 <meta property="og:description" content=" Parsing option String data = &quot;[{&#39;text&#39;:&#39;PROJECT&#39;,&#39;id&#39;:&#39;00156&#39;,&#39;leaf&#39;:true}]&quot;; ObjectMapper mapper = new ObjectMapper(); mapper.configure(JsonParser.Feature.ALLOW_SINGLE_QUOTES, true); JsonNode node = mapper.readTree(data);  Annotation *JsonSerialize *
 @JsonSerialize(using=JsonDateSerializer.class) public Date getCreationDate() { return creationDate; }  JsonDateSerializer.java
 public class JsonDateSerializer extends JsonSerializer&lt;Date&gt; { private static final SimpleDateFormat dateFormat = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;); @Override public void serialize(Date date, JsonGenerator json, SerializerProvider provider) throws IOException, JsonProcessingException { String formattedDate = dateFormat.format(date); json.writeString(formattedDate); } }   Jackson JSON Processor Wiki  " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://clonekim.github.io/2013/09/jackson-json-processor/" />
+<meta property="og:url" content="http://localhost:1313/2013/09/jackson-json-processor/" />
 
 
 
@@ -81,7 +81,7 @@ public class JsonDateSerializer extends JsonSerializer&lt;Date&gt; { private sta
 
   <nav>
     <div class="siteTitle">
-      <a href="http://clonekim.github.io/">Less is more</a>
+      <a href="http://localhost:1313/">Less is more</a>
     </div> 
 
     
@@ -222,7 +222,7 @@ JsonNode node = mapper.readTree(data);
   
 
   <div class="social-link">
-  <a href="http://clonekim.github.io/index.xml" target="_blank">RSS</a>
+  <a href="http://localhost:1313/index.xml" target="_blank">RSS</a>
   </div>
 
 </div>
@@ -236,6 +236,6 @@ JsonNode node = mapper.readTree(data);
 
   </footer>
 
-</body>
+<script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10"></' + 'script>')</script></body>
 </html>
 

@@ -7,10 +7,10 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.26" />
+<meta name="generator" content="Hugo 0.27.1" />
 
-<link rel="canonical" href="http://clonekim.github.io/2014/12/requirejs-%EC%98%88%EC%A0%9C/">
-<base href="http://clonekim.github.io/" />
+<link rel="canonical" href="http://localhost:1313/2014/12/requirejs-%EC%98%88%EC%A0%9C/">
+<base href="http://localhost:1313/" />
 <meta property="og:title" content="RequireJS 예제" />
 <meta property="og:description" content="RequireJS
 log라는 모듈을 작성한다
@@ -18,7 +18,7 @@ log.js
 define(&#39;log&#39;, function() { return function(str) { console.log(&quot;--&gt; &quot;, str); } });  &lt;!DOCTYPE html&gt; &lt;html lang=&quot;ko&quot;&gt; &lt;head&gt; &lt;script src=&quot;requirejs/2.1.15/require.js&quot;&gt;&lt;/script&gt; &lt;script src=&quot;js/log.js&quot;&gt;&lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;script&gt; require([&#39;log&#39;], function(log) { log(&quot;Hello !&quot;); }); &lt;/script&gt; &lt;/body&gt; &lt;/html&gt;  프로토타입으로 작성한 boost.js
 define(&#39;boost&#39;, function() { function Boost() { } Boost.prototype.version = function() { return &quot;1.0&quot;; }; return Boost; });  &lt;!DOCTYPE html&gt; &lt;html lang=&quot;ko&quot;&gt; &lt;head&gt; &lt;script src=&quot;requirejs/2.1.15/require.js&quot;&gt;&lt;/script&gt; &lt;script src=&quot;js/boost.js&quot;&gt;&lt;/script&gt; &lt;script&gt; require([&#39;boost&#39;], function(Boost) { var boost = new Boost(); alert(boost." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://clonekim.github.io/2014/12/requirejs-%EC%98%88%EC%A0%9C/" />
+<meta property="og:url" content="http://localhost:1313/2014/12/requirejs-%EC%98%88%EC%A0%9C/" />
 
 
 
@@ -87,7 +87,7 @@ define(&#39;boost&#39;, function() { function Boost() { } Boost.prototype.versio
 
   <nav>
     <div class="siteTitle">
-      <a href="http://clonekim.github.io/">Less is more</a>
+      <a href="http://localhost:1313/">Less is more</a>
     </div> 
 
     
@@ -265,7 +265,7 @@ new 생성자 없이 사용가능하다</p>
   
 
   <div class="social-link">
-  <a href="http://clonekim.github.io/index.xml" target="_blank">RSS</a>
+  <a href="http://localhost:1313/index.xml" target="_blank">RSS</a>
   </div>
 
 </div>
@@ -279,6 +279,6 @@ new 생성자 없이 사용가능하다</p>
 
   </footer>
 
-</body>
+<script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10"></' + 'script>')</script></body>
 </html>
 

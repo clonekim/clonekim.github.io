@@ -7,10 +7,10 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.26" />
+<meta name="generator" content="Hugo 0.27.1" />
 
-<link rel="canonical" href="http://clonekim.github.io/2017/07/freemarker%EB%A5%BC-clojure%EC%97%90%EC%84%9C/">
-<base href="http://clonekim.github.io/" />
+<link rel="canonical" href="http://localhost:1313/2017/07/freemarker%EB%A5%BC-clojure%EC%97%90%EC%84%9C/">
+<base href="http://localhost:1313/" />
 <meta property="og:title" content="Freemarker를 Clojure에서" />
 <meta property="og:description" content="참고소스
  [freemarker-clj &quot;0.1.0&quot;]  freemarker-clj
@@ -18,7 +18,7 @@
 (defn gen-config [&amp; {:keys [shared] :or {shared {}}}] (let [cfg (doto (Configuration.) (.setDirectoryForTemplateLoading (file &quot;/Users/bonjour/git/cms/resources/public/ftl&quot;)) (.setDefaultEncoding &quot;UTF-8&quot;) (.setObjectWrapper (DefaultObjectWrapper.)))] (doseq [[k v] (map-&gt;model shared)] (.setSharedVariable ^Configuration cfg ^String k v)) cfg))  아래와 같이 템플릿로더를 직접구현해서도 가능하다
 (ns freemarker.template (:require [clojure.tools.logging :as log] [clojure.java.io :refer [file]] [freemarker.shim :refer [map-&gt;model]]) (:import [freemarker.template Configuration DefaultObjectWrapper TemplateMethodModel] [java.io StringWriter])) (def DBTemplateLoader (proxy [freemarker." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://clonekim.github.io/2017/07/freemarker%EB%A5%BC-clojure%EC%97%90%EC%84%9C/" />
+<meta property="og:url" content="http://localhost:1313/2017/07/freemarker%EB%A5%BC-clojure%EC%97%90%EC%84%9C/" />
 
 
 
@@ -87,7 +87,7 @@
 
   <nav>
     <div class="siteTitle">
-      <a href="http://clonekim.github.io/">Less is more</a>
+      <a href="http://localhost:1313/">Less is more</a>
     </div> 
 
     
@@ -252,7 +252,7 @@
   
 
   <div class="social-link">
-  <a href="http://clonekim.github.io/index.xml" target="_blank">RSS</a>
+  <a href="http://localhost:1313/index.xml" target="_blank">RSS</a>
   </div>
 
 </div>
@@ -266,6 +266,6 @@
 
   </footer>
 
-</body>
+<script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10"></' + 'script>')</script></body>
 </html>
 

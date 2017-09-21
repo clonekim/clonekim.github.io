@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ruby on Less is more</title>
-    <link>http://clonekim.github.io/tags/ruby/</link>
+    <link>http://localhost:1313/tags/ruby/</link>
     <description>Recent content in Ruby on Less is more</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
     <lastBuildDate>Fri, 03 Feb 2012 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://clonekim.github.io/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:1313/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Ruby Some Basic</title>
-      <link>http://clonekim.github.io/2012/02/ruby-some-basic/</link>
+      <link>http://localhost:1313/2012/02/ruby-some-basic/</link>
       <pubDate>Fri, 03 Feb 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2012/02/ruby-some-basic/</guid>
+      <guid>http://localhost:1313/2012/02/ruby-some-basic/</guid>
       <description>json 생성
 require &#39;json&#39; jsonbody = JSON.generate[&amp;quot;message&amp;quot;=&amp;gt;&amp;quot;test&amp;quot;,&amp;quot;user&amp;quot;=&amp;gt;&amp;quot;user1&amp;quot;]  rest-client을 이용한 예제
 require &#39;rubygems&#39; require &#39;rest_client&#39; require &#39;json&#39; jdata = JSON.generate([&amp;quot;test&amp;quot;]) RestClient.put &#39;http://localhost:4567/users/123&#39;, jdata, {:content_type =&amp;gt; :json}  Net:HTTP GET/PUT

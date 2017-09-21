@@ -2,21 +2,43 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Less is more</title>
-    <link>http://clonekim.github.io/post/</link>
+    <link>http://localhost:1313/post/</link>
     <description>Recent content in Posts on Less is more</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
-    <lastBuildDate>Sat, 09 Sep 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 22 Sep 2017 01:10:18 +0900</lastBuildDate>
     
-	<atom:link href="http://clonekim.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Gtk Version</title>
+      <link>http://localhost:1313/2017/09/gtk-version/</link>
+      <pubDate>Fri, 22 Sep 2017 01:10:18 +0900</pubDate>
+      
+      <guid>http://localhost:1313/2017/09/gtk-version/</guid>
+      <description>$ dpkg --get-selections | grep gtk  $ dpkg-query -W libgtk-3-0 libgtk-3-0:amd64 3.18.9-1ubuntu3.3  </description>
+    </item>
+    
+    <item>
+      <title>Gnome Desktop</title>
+      <link>http://localhost:1313/2017/09/gnome-desktop/</link>
+      <pubDate>Fri, 22 Sep 2017 00:27:04 +0900</pubDate>
+      
+      <guid>http://localhost:1313/2017/09/gnome-desktop/</guid>
+      <description>Gnome 데스크탑 을 사용중이다.
+문제는 터미널창이 겹쳐질때 구분이 안간다
+아래와 같이 css를 작성하면 해결된다.
+~./config/gtk3.0/gtk.css
+.window-frame { border: 1px solid gray; }  단축키 Alt +F2 입력하고 프롬프트창에 r 이라고 입력 할것</description>
+    </item>
+    
+    <item>
       <title>Web개발을 위한 Emacs설정</title>
-      <link>http://clonekim.github.io/2017/09/web%EA%B0%9C%EB%B0%9C%EC%9D%84-%EC%9C%84%ED%95%9C-emacs%EC%84%A4%EC%A0%95/</link>
+      <link>http://localhost:1313/2017/09/web%EA%B0%9C%EB%B0%9C%EC%9D%84-%EC%9C%84%ED%95%9C-emacs%EC%84%A4%EC%A0%95/</link>
       <pubDate>Sat, 09 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2017/09/web%EA%B0%9C%EB%B0%9C%EC%9D%84-%EC%9C%84%ED%95%9C-emacs%EC%84%A4%EC%A0%95/</guid>
+      <guid>http://localhost:1313/2017/09/web%EA%B0%9C%EB%B0%9C%EC%9D%84-%EC%9C%84%ED%95%9C-emacs%EC%84%A4%EC%A0%95/</guid>
       <description>전에 사용하는 web.el를 개선하였다.
 auto-complete 패키지를 사용하여 자동완성이 될것이다
 (require &#39;web-mode) (require &#39;auto-complete) (ac-config-default) (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.html?\\&#39;&amp;quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.[aj]sp\\&#39;&amp;quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.mustache\\&#39;&amp;quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.ftl\\&#39;&amp;quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.vue\\&#39;&amp;quot; . web-mode)) (defun my-web-mode-hook () (setq web-mode-markup-indent-offset 2) (setq web-mode-css-indent-offset 2) (setq web-mode-code-indent-offset 2) (setq web-mode-enable-current-element-highlight t) (setq web-mode-enable-current-column-highlight t) (setq web-mode-ac-sources-alist &#39;((&amp;quot;css&amp;quot; . (ac-source-css-property)) (&amp;quot;html&amp;quot; . (ac-source-words-in-buffer ac-source-abbrev))))) (add-hook &#39;web-mode-hook &#39;my-web-mode-hook) (add-hook &#39;web-mode-before-auto-complete-hooks &#39;(lambda () (let ((web-mode-cur-language (web-mode-language-at-pos))) (if (string= web-mode-cur-language &amp;quot;html&amp;quot;) (setq emmet-use-css-transform t) (setq emmet-use-css-transform nil)) (if (string= web-mode-cur-language &amp;quot;css&amp;quot;) (setq emmet-use-css-transform t) (setq emmet-use-css-transform nil)))))  </description>
@@ -24,10 +46,10 @@ auto-complete 패키지를 사용하여 자동완성이 될것이다
     
     <item>
       <title>Freemarker를 Clojure에서</title>
-      <link>http://clonekim.github.io/2017/07/freemarker%EB%A5%BC-clojure%EC%97%90%EC%84%9C/</link>
+      <link>http://localhost:1313/2017/07/freemarker%EB%A5%BC-clojure%EC%97%90%EC%84%9C/</link>
       <pubDate>Fri, 14 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2017/07/freemarker%EB%A5%BC-clojure%EC%97%90%EC%84%9C/</guid>
+      <guid>http://localhost:1313/2017/07/freemarker%EB%A5%BC-clojure%EC%97%90%EC%84%9C/</guid>
       <description>참고소스
  [freemarker-clj &amp;quot;0.1.0&amp;quot;]  freemarker-clj
 템플릿 초기화 템플릿리소스는 해당 디렉토리로 초기화한다
@@ -37,10 +59,10 @@ auto-complete 패키지를 사용하여 자동완성이 될것이다
     
     <item>
       <title>Angular 1.6 사용</title>
-      <link>http://clonekim.github.io/2017/01/angular-1.6-%EC%82%AC%EC%9A%A9/</link>
+      <link>http://localhost:1313/2017/01/angular-1.6-%EC%82%AC%EC%9A%A9/</link>
       <pubDate>Mon, 02 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2017/01/angular-1.6-%EC%82%AC%EC%9A%A9/</guid>
+      <guid>http://localhost:1313/2017/01/angular-1.6-%EC%82%AC%EC%9A%A9/</guid>
       <description>angular 1.6 이상적용
 PREFIX
 이제 기본값으로 !가 붙는다
@@ -50,10 +72,10 @@ $http.json(url, {jsonpCallbackParam: &#39;callback&#39;}) .then(function(res) { 
     
     <item>
       <title>Emacs를 쓰면서</title>
-      <link>http://clonekim.github.io/2016/05/emacs%EB%A5%BC-%EC%93%B0%EB%A9%B4%EC%84%9C/</link>
+      <link>http://localhost:1313/2016/05/emacs%EB%A5%BC-%EC%93%B0%EB%A9%B4%EC%84%9C/</link>
       <pubDate>Sat, 07 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2016/05/emacs%EB%A5%BC-%EC%93%B0%EB%A9%B4%EC%84%9C/</guid>
+      <guid>http://localhost:1313/2016/05/emacs%EB%A5%BC-%EC%93%B0%EB%A9%B4%EC%84%9C/</guid>
       <description>mode-icons-mode init.el
 &#39;(mode-icons-mode t)  js-mode setup-js.el
 (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.js$&amp;quot; . js-mode)) (add-hook &#39;js-mode-hook &#39;subword-mode) (add-hook &#39;html-mode-hook &#39;subword-mode) (setq js-indent-level 2) (eval-after-load &amp;quot;sgml-mode&amp;quot; &#39;(progn (require &#39;tagedit) (tagedit-add-paredit-like-keybindings) (add-hook &#39;html-mode-hook (lambda () (tagedit-mode 1)))))  web-mode web.el
@@ -62,10 +84,10 @@ $http.json(url, {jsonpCallbackParam: &#39;callback&#39;}) .then(function(res) { 
     
     <item>
       <title>Docker 시작하기</title>
-      <link>http://clonekim.github.io/2016/03/docker-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/</link>
+      <link>http://localhost:1313/2016/03/docker-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/</link>
       <pubDate>Tue, 01 Mar 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2016/03/docker-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/</guid>
+      <guid>http://localhost:1313/2016/03/docker-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/</guid>
       <description>Docker 시작하기 이미지다운로드
 $ docker pull [이미지이름]  컨테이너 생성
 $ docker run --name [컨테이너이름]  컨테이너로 접속
@@ -77,10 +99,10 @@ $ docker ps CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES cf5fbb3d49b1 m
     
     <item>
       <title>Gulp로 React빌드</title>
-      <link>http://clonekim.github.io/2016/01/gulp%EB%A1%9C-react%EB%B9%8C%EB%93%9C/</link>
+      <link>http://localhost:1313/2016/01/gulp%EB%A1%9C-react%EB%B9%8C%EB%93%9C/</link>
       <pubDate>Tue, 19 Jan 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2016/01/gulp%EB%A1%9C-react%EB%B9%8C%EB%93%9C/</guid>
+      <guid>http://localhost:1313/2016/01/gulp%EB%A1%9C-react%EB%B9%8C%EB%93%9C/</guid>
       <description>gulp와 함께 의존성설치 npm install -g gulp  react 개발에 필요한 라이브러리와
 번들로 묶기위한 browserify를 설치
 npm install react --save-dev npm install react-dom --save-dev npm install browserify --save-dev npm install gulp --save-dev npm install vinyl-source-stream --save-dev npm install babelify --save-dev npm install babel-preset-react --save-dev  gulpfile
@@ -89,10 +111,10 @@ var gulp = require(&#39;gulp&#39;), browserify = require(&#39;browserify&#39;), 
     
     <item>
       <title>ClojureScript 시작하기</title>
-      <link>http://clonekim.github.io/2016/01/clojurescript-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/</link>
+      <link>http://localhost:1313/2016/01/clojurescript-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/</link>
       <pubDate>Mon, 18 Jan 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2016/01/clojurescript-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/</guid>
+      <guid>http://localhost:1313/2016/01/clojurescript-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/</guid>
       <description>프로젝트 설정 leiningen
 [org.clojure/clojurescript &amp;quot;1.7.228&amp;quot;]  plugin
 [lein-cljsbuild &amp;quot;1.1.2&amp;quot;]  project.clj
@@ -101,19 +123,19 @@ var gulp = require(&#39;gulp&#39;), browserify = require(&#39;browserify&#39;), 
     
     <item>
       <title>Clojure(Script)로 게임제작</title>
-      <link>http://clonekim.github.io/2016/01/clojurescript%EB%A1%9C-%EA%B2%8C%EC%9E%84%EC%A0%9C%EC%9E%91/</link>
+      <link>http://localhost:1313/2016/01/clojurescript%EB%A1%9C-%EA%B2%8C%EC%9E%84%EC%A0%9C%EC%9E%91/</link>
       <pubDate>Thu, 14 Jan 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2016/01/clojurescript%EB%A1%9C-%EA%B2%8C%EC%9E%84%EC%A0%9C%EC%9E%91/</guid>
+      <guid>http://localhost:1313/2016/01/clojurescript%EB%A1%9C-%EA%B2%8C%EC%9E%84%EC%A0%9C%EC%9E%91/</guid>
       <description>PARENS OF THE DEAD</description>
     </item>
     
     <item>
       <title>Github에 블로그제작</title>
-      <link>http://clonekim.github.io/2016/01/github%EC%97%90-%EB%B8%94%EB%A1%9C%EA%B7%B8%EC%A0%9C%EC%9E%91/</link>
+      <link>http://localhost:1313/2016/01/github%EC%97%90-%EB%B8%94%EB%A1%9C%EA%B7%B8%EC%A0%9C%EC%9E%91/</link>
       <pubDate>Wed, 13 Jan 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2016/01/github%EC%97%90-%EB%B8%94%EB%A1%9C%EA%B7%B8%EC%A0%9C%EC%9E%91/</guid>
+      <guid>http://localhost:1313/2016/01/github%EC%97%90-%EB%B8%94%EB%A1%9C%EA%B7%B8%EC%A0%9C%EC%9E%91/</guid>
       <description>깃허브에 계정만들기 먼저 github.com에 가입하고 저장소를 만든다
 저장소는 계정명.github.io라고 작성한다. 자세한 것은 GitHub Page를 살펴볼 것
 lein 설치 leiningen 을 설치한다
@@ -127,10 +149,10 @@ mkdir resources/public git clone git@github.com:clonekim/clonekim.github.io.git 
     
     <item>
       <title>Clojure 시작하기</title>
-      <link>http://clonekim.github.io/2015/09/clojure-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/</link>
+      <link>http://localhost:1313/2015/09/clojure-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/</link>
       <pubDate>Fri, 25 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2015/09/clojure-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/</guid>
+      <guid>http://localhost:1313/2015/09/clojure-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/</guid>
       <description>JVM위에서 작동하는 함수형 프로그래밍이다
 clojure 얻기 http://clojure.org
 IDE/Tools  LightTable Cursive Emacs  Leiningen으로 시작하기 Leiningen (레닝겐)은 클로져를 쉽게 시작하기 위한 빌드자동화 툴이다
@@ -143,10 +165,10 @@ Project 생성 lein new [프로젝트명]  프로젝트 의존성 추가 라이�
     
     <item>
       <title>클로저에서 Jdbc</title>
-      <link>http://clonekim.github.io/2015/09/%ED%81%B4%EB%A1%9C%EC%A0%80%EC%97%90%EC%84%9C-jdbc/</link>
+      <link>http://localhost:1313/2015/09/%ED%81%B4%EB%A1%9C%EC%A0%80%EC%97%90%EC%84%9C-jdbc/</link>
       <pubDate>Fri, 25 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2015/09/%ED%81%B4%EB%A1%9C%EC%A0%80%EC%97%90%EC%84%9C-jdbc/</guid>
+      <guid>http://localhost:1313/2015/09/%ED%81%B4%EB%A1%9C%EC%A0%80%EC%97%90%EC%84%9C-jdbc/</guid>
       <description> 클로저에서 JDBC(Java Database Connectivity) 를 사용하기 위한 가이드
 몇몇 함수가 없어진 경우가 있기 때문에 소스보기로 확인할 것
  clojure-doc보기 소스보기   leiningen [org.clojure/java.jdbc &amp;quot;0.4.2&amp;quot;]  간단한 예제 (ns db-test.core (:require [clojure.java.jdbc :as sql]))	(def db {:classname &amp;quot;com.mysql.jdbc.Driver&amp;quot; :subprotocol &amp;quot;mysql&amp;quot; :subname &amp;quot;//127.0.0.1:3306/test&amp;quot; :user &amp;quot;xxx&amp;quot; :password &amp;quot;xxxx&amp;quot; }) (defn get-user [] (println (sql/query db [&amp;quot;select * from users&amp;quot;]))) (defn -main [] (get-user))  참고  HikarCP를 사용하는 예 clojure.jdbc doc  </description>
@@ -154,10 +176,10 @@ Project 생성 lein new [프로젝트명]  프로젝트 의존성 추가 라이�
     
     <item>
       <title>Freemarker assign팁</title>
-      <link>http://clonekim.github.io/2015/09/freemarker-assign%ED%8C%81/</link>
+      <link>http://localhost:1313/2015/09/freemarker-assign%ED%8C%81/</link>
       <pubDate>Wed, 23 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2015/09/freemarker-assign%ED%8C%81/</guid>
+      <guid>http://localhost:1313/2015/09/freemarker-assign%ED%8C%81/</guid>
       <description>변수 x에 42를 할당하고 이것은 명백히 Number 타입이다
 &amp;lt;#assign x=42 /&amp;gt;  String타입으로 변환할 수 있다
 ${x?string} ${x?string[0..1]}  .(dot)가 들어간 변수도 사용할 수 있다
@@ -166,10 +188,10 @@ ${x?string} ${x?string[0..1]}  .(dot)가 들어간 변수도 사용할 수 있�
     
     <item>
       <title>clojurescript에서 jquery사용</title>
-      <link>http://clonekim.github.io/2015/09/clojurescript%EC%97%90%EC%84%9C-jquery%EC%82%AC%EC%9A%A9/</link>
+      <link>http://localhost:1313/2015/09/clojurescript%EC%97%90%EC%84%9C-jquery%EC%82%AC%EC%9A%A9/</link>
       <pubDate>Sun, 20 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2015/09/clojurescript%EC%97%90%EC%84%9C-jquery%EC%82%AC%EC%9A%A9/</guid>
+      <guid>http://localhost:1313/2015/09/clojurescript%EC%97%90%EC%84%9C-jquery%EC%82%AC%EC%9A%A9/</guid>
       <description> view.clj
 (defn view-layout [&amp;amp; content] (html [:head [:meta {:http-equiv &amp;quot;Content-type&amp;quot; :content &amp;quot;text/html; charset=utf-8&amp;quot;}] [&amp;quot;title&amp;quot;: &amp;quot;Project-Name&amp;quot;]] [:body content])) (defn view-content [] (view-layout [:h2 &amp;quot;Project-Name&amp;quot;] [:p {:id &amp;quot;clickhere&amp;quot;} &amp;quot;Get yourself a nice alert by clicking here.&amp;quot;] [:script {:src &amp;quot;/js/jquery-1.10.2.min.js&amp;quot;}] [:script {:src &amp;quot;/js/cljs.js&amp;quot;}]))  hello.cljs
 (:require [jayq.core :as jq]) (:use [jayq.core :only [$]]) ;; ;; $(&amp;quot;#btn&amp;quot;).click(function() {alert(&amp;quot;Hi!&amp;quot;); }); ;; (jq/bind ($ &amp;quot;#btn&amp;quot;) :click (fn [] (js/alert &amp;quot;Hi!&amp;quot;)))  lein cljsbuild once lein run  참고  ClojureScriptという選択肢 ClojureScript入門  </description>
@@ -177,10 +199,10 @@ ${x?string} ${x?string[0..1]}  .(dot)가 들어간 변수도 사용할 수 있�
     
     <item>
       <title>Clojure를 위한 Emacs 환경</title>
-      <link>http://clonekim.github.io/2015/09/clojure%EB%A5%BC-%EC%9C%84%ED%95%9C-emacs-%ED%99%98%EA%B2%BD/</link>
+      <link>http://localhost:1313/2015/09/clojure%EB%A5%BC-%EC%9C%84%ED%95%9C-emacs-%ED%99%98%EA%B2%BD/</link>
       <pubDate>Fri, 11 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2015/09/clojure%EB%A5%BC-%EC%9C%84%ED%95%9C-emacs-%ED%99%98%EA%B2%BD/</guid>
+      <guid>http://localhost:1313/2015/09/clojure%EB%A5%BC-%EC%9C%84%ED%95%9C-emacs-%ED%99%98%EA%B2%BD/</guid>
       <description>Emacs 24를 기준으로 작성
 현재 사용중인 환경은 custom-emacs.tgz
 Package Install init.el
@@ -194,10 +216,10 @@ Cider와 cider-nrepl의 버전이 맞아야함  profiles.clj
     
     <item>
       <title>Oracle Jdbc Url</title>
-      <link>http://clonekim.github.io/2015/09/oracle-jdbc-url/</link>
+      <link>http://localhost:1313/2015/09/oracle-jdbc-url/</link>
       <pubDate>Fri, 11 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2015/09/oracle-jdbc-url/</guid>
+      <guid>http://localhost:1313/2015/09/oracle-jdbc-url/</guid>
       <description>JDBC URL syntax
 jdbc:oracle:thin:@[HOST][:PORT]:SID jdbc:oracle:thin:@//[HOST][:PORT]/SERVICE  Hikari Pool를 사용 시 아래와 같이 경고메시지가 나타나면
 oracle.jdbc.driver.OracleDriver에서 oracle.jdbc.OracleDriver 로 바꿀 것
@@ -206,10 +228,10 @@ oracle.jdbc.driver.OracleDriver에서 oracle.jdbc.OracleDriver 로 바꿀 것
     
     <item>
       <title>Ring으로 웹프로그래밍</title>
-      <link>http://clonekim.github.io/2015/09/ring%EC%9C%BC%EB%A1%9C-%EC%9B%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/</link>
+      <link>http://localhost:1313/2015/09/ring%EC%9C%BC%EB%A1%9C-%EC%9B%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/</link>
       <pubDate>Fri, 11 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2015/09/ring%EC%9C%BC%EB%A1%9C-%EC%9B%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/</guid>
+      <guid>http://localhost:1313/2015/09/ring%EC%9C%BC%EB%A1%9C-%EC%9B%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/</guid>
       <description>Hello-Ring 프로젝트 작성 새로운 프로젝트를 생성한다
 lein new hello-ring  leiningen.clj
 project.clj의 :dependencies에 임베디드 Jetty서버 추가
@@ -220,10 +242,10 @@ ring-core: essential functions for handling parameters, cookies and more ring-de
     
     <item>
       <title>GTID를 이용한 Mariadb Replication</title>
-      <link>http://clonekim.github.io/2015/09/gtid%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-mariadb-replication/</link>
+      <link>http://localhost:1313/2015/09/gtid%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-mariadb-replication/</link>
       <pubDate>Thu, 03 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2015/09/gtid%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-mariadb-replication/</guid>
+      <guid>http://localhost:1313/2015/09/gtid%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-mariadb-replication/</guid>
       <description>개요  클라이언트가 마스터노드에게 쓰기 트랜잭션을 요청한다 바이너리로그가 업데이트된다 (바이너리로그에는 디비의 이벤트도 포함된다) 슬레이브가 마스터로부터 정보를 전달받는다 슬레이브는 이 정보를 릴레이로그에 첨부한다 슬레이브 SQL 스레이드는 릴레이로그에 있는 명령문을 수행반복한다  복제메커니즘
  표준복제: 각 노드는 자신만의 트랜잭션 ID를 갖는다 글로벌 트랜잭션(GTID, Global Transaction ID): 모든 노드는 같은 트랜잭션 ID를 갖는다 (MariaDB 10부터 가능)  환경 vm002: master
 vm003: slave
@@ -233,10 +255,10 @@ vm003: slave
     
     <item>
       <title>ReactJS 시작하기</title>
-      <link>http://clonekim.github.io/2015/07/reactjs-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/</link>
+      <link>http://localhost:1313/2015/07/reactjs-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/</link>
       <pubDate>Wed, 29 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2015/07/reactjs-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/</guid>
+      <guid>http://localhost:1313/2015/07/reactjs-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/</guid>
       <description>Starter Kit으로 시작하기 0.13.x를 기준으로 작성함
 react-0.13.3.zip 다운로드
 hello React!
@@ -248,10 +270,10 @@ JSX 문법을 사용하기 위해서는 반드시 JSXTransformer.js가 필요하
     
     <item>
       <title>Redmine3 설치하기</title>
-      <link>http://clonekim.github.io/2015/07/redmine3-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/</link>
+      <link>http://localhost:1313/2015/07/redmine3-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/</link>
       <pubDate>Sat, 18 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2015/07/redmine3-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/</guid>
+      <guid>http://localhost:1313/2015/07/redmine3-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/</guid>
       <description>설치환경  redmine-3.0.4 centos 6.6 redmine install가이드  RVM 설치 rvm.io 에 대하여
 rvm을 이용하여 루비를 버젼별로 설치및 관리할 수 있다
 rvm install ruby rvm gemset create redmine rvm gemset use redmine  의존성 라이브러리 CentOS 의존성
@@ -262,10 +284,10 @@ bundle install --without development test  아래 파일을 /etc/thin/redmine.</
     
     <item>
       <title>윈도우즈 Vim설정</title>
-      <link>http://clonekim.github.io/2015/07/%EC%9C%88%EB%8F%84%EC%9A%B0%EC%A6%88-vim%EC%84%A4%EC%A0%95/</link>
+      <link>http://localhost:1313/2015/07/%EC%9C%88%EB%8F%84%EC%9A%B0%EC%A6%88-vim%EC%84%A4%EC%A0%95/</link>
       <pubDate>Thu, 16 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2015/07/%EC%9C%88%EB%8F%84%EC%9A%B0%EC%A6%88-vim%EC%84%A4%EC%A0%95/</guid>
+      <guid>http://localhost:1313/2015/07/%EC%9C%88%EB%8F%84%EC%9A%B0%EC%A6%88-vim%EC%84%A4%EC%A0%95/</guid>
       <description>vi를 윈도우즈에서 사용하기 위한 가이드
 설치  http://www.vim.org http://www.vim.org/download.php  설정 아래 파일을 C:\Users[계정명]_vimrc 에 위치한다
 set nu set autoindent set nobackup set showcmd set ruler set enc=utf-8 set fencs=euckr,cp949,utf-8 set tabstop=3 set nowrap set lines=30 columns=140 lang mes en_US source $VIMRUNTIME/delmenu.vim source $VIMRUNTIME/menu.vim  Explore 명령모드에서 :Explore로 입력하면 탐색창모드로 전환한다. 특정파일을 선택 시 편집할 수 있고
@@ -274,10 +296,10 @@ Ctrl +^ 입력시 바로 이전 탐색창으로 이동한다.</description>
     
     <item>
       <title>Node.js로 Captcha</title>
-      <link>http://clonekim.github.io/2015/07/node.js%EB%A1%9C-captcha/</link>
+      <link>http://localhost:1313/2015/07/node.js%EB%A1%9C-captcha/</link>
       <pubDate>Tue, 14 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2015/07/node.js%EB%A1%9C-captcha/</guid>
+      <guid>http://localhost:1313/2015/07/node.js%EB%A1%9C-captcha/</guid>
       <description>canvas를 이용한 캡챠(captcha)를 생성하려고 한다.
 사용하려는 패키지는 canvas-captcha이다
 의존성 설치 apt-get install libpango1.0-dev apt-get install libjpeg-dev apt-get install libgif-dev  소스작성 captcha.js
@@ -286,10 +308,10 @@ var captcha = require(&#39;canvas-captcha&#39;) ,captchaOptions = { charPool: (&
     
     <item>
       <title>Sinatra 웹프로그래밍</title>
-      <link>http://clonekim.github.io/2015/07/sinatra-%EC%9B%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/</link>
+      <link>http://localhost:1313/2015/07/sinatra-%EC%9B%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/</link>
       <pubDate>Tue, 14 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2015/07/sinatra-%EC%9B%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/</guid>
+      <guid>http://localhost:1313/2015/07/sinatra-%EC%9B%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/</guid>
       <description>설치 jruby -S gem install sinatra  Hello Ruby require &#39;rubygems&#39; require &#39;sinatra&#39; get &#39;/&#39; do &#39;Hello Jruby&#39; end  라우터 get, post, put, delete를 사용할 수있다
 get &#39;/&#39; do end  요청파라미터 /?name=foo 로 요청 시 아래와 같이
 post &#39;/&#39; do puts params[&#39;name&#39;] end  본문으로 Json를 요청받을 경우 post &#39;/&#39; do payload = JSON.parse(request.body.read) puts payload status 201 end  응답하기 문자열, html, json, 바이너리 등의 모든 컨텐츠로 응답가능하다</description>
@@ -297,10 +319,10 @@ post &#39;/&#39; do puts params[&#39;name&#39;] end  본문으로 Json를 요청
     
     <item>
       <title>AngularJS 다국어처리</title>
-      <link>http://clonekim.github.io/2015/07/angularjs-%EB%8B%A4%EA%B5%AD%EC%96%B4%EC%B2%98%EB%A6%AC/</link>
+      <link>http://localhost:1313/2015/07/angularjs-%EB%8B%A4%EA%B5%AD%EC%96%B4%EC%B2%98%EB%A6%AC/</link>
       <pubDate>Thu, 02 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2015/07/angularjs-%EB%8B%A4%EA%B5%AD%EC%96%B4%EC%B2%98%EB%A6%AC/</guid>
+      <guid>http://localhost:1313/2015/07/angularjs-%EB%8B%A4%EA%B5%AD%EC%96%B4%EC%B2%98%EB%A6%AC/</guid>
       <description>IndexController.js
 module.exports = [&#39;$scope&#39;, &#39;$cookies&#39;, &#39;TranslationService&#39;, function($scope, $cookies, TranslationService) { TranslationService.getLanguage($scope, $cookies); $scope.multiLng = function( lang ) { $cookies.put(&amp;quot;lang&amp;quot;, lang); TranslationService.getLanguage($scope, $cookies); } }];  TranslationService.js
 module.exports = [&#39;$http&#39;, function($http) { this.getLanguage = function($scope, $cookies, cbk) { var lang = $cookies.get(&#39;lang&#39;) || &#39;ko&#39;; $http({ method: &#39;GET&#39;, url: &#39;/js/locale_&#39; + lang +&#39;.json&#39; }).success(function(response) { $scope.translation = response;	$scope.lang = lang; }); }; }];  locale_zh.js
@@ -309,10 +331,10 @@ module.exports = [&#39;$http&#39;, function($http) { this.getLanguage = function
     
     <item>
       <title>RaspberryPi</title>
-      <link>http://clonekim.github.io/2015/06/raspberrypi/</link>
+      <link>http://localhost:1313/2015/06/raspberrypi/</link>
       <pubDate>Sun, 28 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2015/06/raspberrypi/</guid>
+      <guid>http://localhost:1313/2015/06/raspberrypi/</guid>
       <description>준비  라즈베리파이2 microSD카드 (8G이상) HDMI케이블 LAN케이블 (카테고리3 이상) AC어댑터( USB단자출력 1A, 최소 700mA)  USB 3.0 : 5V, 900mA USB 2.0 : 5V, 500mA https://ko.wikipedia.org/wiki/USB  microUSB케이블 (A,B타입) 키보드,마우스 (USB연결)  구입  라즈베리파이2 with 고급 투명케이스 C + 방열판 셋트 RPi Camera &amp;copy;  하드웨어 살펴보기 정면
 뒷면
 1) SoC (CPU), 메모리
@@ -326,20 +348,20 @@ module.exports = [&#39;$http&#39;, function($http) { this.getLanguage = function
     
     <item>
       <title>beefy 팁</title>
-      <link>http://clonekim.github.io/2015/02/beefy-%ED%8C%81/</link>
+      <link>http://localhost:1313/2015/02/beefy-%ED%8C%81/</link>
       <pubDate>Tue, 03 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2015/02/beefy-%ED%8C%81/</guid>
+      <guid>http://localhost:1313/2015/02/beefy-%ED%8C%81/</guid>
       <description>a local development server designed to work with browserify.
  can live reload your browser when your code changes (if you want) works with whatever version of browserify or watchify; globally installed or locally installed to node_modules/. will spit compile errors out into the browser so you don&amp;rsquo;t have that 1-2 seconds of cognitive dissonance and profound ennui that follows refreshing the page only to get a blank screen. will spit out a default index.</description>
     </item>
     
     <item>
       <title>ImageMagick</title>
-      <link>http://clonekim.github.io/2015/02/imagemagick/</link>
+      <link>http://localhost:1313/2015/02/imagemagick/</link>
       <pubDate>Sun, 01 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2015/02/imagemagick/</guid>
+      <guid>http://localhost:1313/2015/02/imagemagick/</guid>
       <description>Thumbnail
 convert [Image 1] -thumbnail 50% [Result Image] or convert [Image 1] -thumbnail 100x70 [Result Image]  Composite
 composite -geometry +[x]+[y] [Image 1] [Image 2] [Result Image] ex) composite -geometry +02+30 person.jpg background.jpg profile.jpg  Image Info
@@ -350,10 +372,10 @@ png 로 이미지를 생성하되 :- 또는 png:fd:1 를 사용하면 표준 출
     
     <item>
       <title>RequireJS 예제</title>
-      <link>http://clonekim.github.io/2014/12/requirejs-%EC%98%88%EC%A0%9C/</link>
+      <link>http://localhost:1313/2014/12/requirejs-%EC%98%88%EC%A0%9C/</link>
       <pubDate>Mon, 29 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2014/12/requirejs-%EC%98%88%EC%A0%9C/</guid>
+      <guid>http://localhost:1313/2014/12/requirejs-%EC%98%88%EC%A0%9C/</guid>
       <description>RequireJS
 log라는 모듈을 작성한다
 log.js
@@ -363,10 +385,10 @@ define(&#39;boost&#39;, function() { function Boost() { } Boost.prototype.versio
     
     <item>
       <title>AngularJS Tips</title>
-      <link>http://clonekim.github.io/2014/11/angularjs-tips/</link>
+      <link>http://localhost:1313/2014/11/angularjs-tips/</link>
       <pubDate>Mon, 10 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2014/11/angularjs-tips/</guid>
+      <guid>http://localhost:1313/2014/11/angularjs-tips/</guid>
       <description>개발 정보
 버젼 1.2.26를 사용
 scope 계층화 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;ko&amp;quot; ng-app=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt; &amp;lt;meta http-equiv=&amp;quot;X-UA-Compatible&amp;quot; content=&amp;quot;IE=edge&amp;quot;&amp;gt; &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0&amp;quot;&amp;gt; &amp;lt;title&amp;gt;Services and Modules&amp;lt;/title&amp;gt; &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;bootstrap/css/bootstrap.css&amp;quot; /&amp;gt; &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;bootstrap/css/bootstrap-theme.css&amp;quot; /&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;jquery/jquery.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;jquery-ui/jquery-ui.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;angular/angular.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; angular.module(&amp;quot;app&amp;quot;, []) .controller(&amp;quot;ParentController&amp;quot;, [&#39;$scope&#39;, function($scope) { $scope.value = &#39;parent value&#39;; $scope.getUpperValue = function () { return angular.uppercase($scope.value); } }]) .controller(&amp;quot;ChildController&amp;quot;,[ &#39;$scope&#39;, function($scope) { $scope.newValue = &#39;child value&#39;; }]); &amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div ng-controller=&amp;quot;ParentController&amp;quot;&amp;gt; &amp;lt;h3&amp;gt;parent&amp;lt;/h3&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;value: {{value}}&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;Upper: {{getUpperValue()}}&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;newValue: {{newValue}} &amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div ng-controller=&amp;quot;ChildController&amp;quot;&amp;gt; &amp;lt;h3&amp;gt;parent&amp;lt;/h3&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;value: {{value}}&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;Upper: {{getUpperValue()}}&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;newValue: {{newValue}} &amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;  제대로 된 결과를 보려면</description>
@@ -374,10 +396,10 @@ scope 계층화 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;ko&amp
     
     <item>
       <title>backbone &#43; handlebar &#43; gulp 팁</title>
-      <link>http://clonekim.github.io/2014/10/backbone---handlebar---gulp-%ED%8C%81/</link>
+      <link>http://localhost:1313/2014/10/backbone---handlebar---gulp-%ED%8C%81/</link>
       <pubDate>Fri, 03 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2014/10/backbone---handlebar---gulp-%ED%8C%81/</guid>
+      <guid>http://localhost:1313/2014/10/backbone---handlebar---gulp-%ED%8C%81/</guid>
       <description>백본과 핸들바를 사용해서 소스를 컴파일 후
 정해진 경로로 결과물을 내보내자.
 핸들바를 사용하지 않을려면 brfs도 고려해보자
@@ -388,38 +410,38 @@ var gulp = require(&#39;gulp&#39;), browserify = require(&#39;browserify&#39;), 
     
     <item>
       <title>자바스크립트로 UUID 생성</title>
-      <link>http://clonekim.github.io/2014/03/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A1%9C-uuid-%EC%83%9D%EC%84%B1/</link>
+      <link>http://localhost:1313/2014/03/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A1%9C-uuid-%EC%83%9D%EC%84%B1/</link>
       <pubDate>Sun, 02 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2014/03/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A1%9C-uuid-%EC%83%9D%EC%84%B1/</guid>
+      <guid>http://localhost:1313/2014/03/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A1%9C-uuid-%EC%83%9D%EC%84%B1/</guid>
       <description>RFC4122
 return &#39;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&#39;.replace(/[xy]/g, function(c) { var r = Math.random()*16|0, v = c === &#39;x&#39; ? r : (r&amp;amp;0x3|0x8); return v.toString(16); });  var s = []; var hexDigits = &amp;quot;0123456789abcdef&amp;quot;; for (var i = 0; i &amp;lt; 36; i++) { s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1); } s[14] = &amp;quot;4&amp;quot;; s[19] = hexDigits.substr((s[19] &amp;amp; 0x3) | 0x8, 1); s[8] = s[13] = s[18] = s[23] = &amp;quot;-&amp;quot;; var uuid = s.</description>
     </item>
     
     <item>
       <title>Java IO/NIO Tutorial</title>
-      <link>http://clonekim.github.io/2014/01/java-io/nio-tutorial/</link>
+      <link>http://localhost:1313/2014/01/java-io/nio-tutorial/</link>
       <pubDate>Sun, 05 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2014/01/java-io/nio-tutorial/</guid>
+      <guid>http://localhost:1313/2014/01/java-io/nio-tutorial/</guid>
       <description> The Rox Java NIO Tutorial Five ways to maximize Java NIO and NIO.2 Java NIO - Non Blocking IO and Multiplexing A simple HTTP server that displays information about all accessible printers on the network  </description>
     </item>
     
     <item>
       <title>BigDecimal을 이용한 반올림</title>
-      <link>http://clonekim.github.io/2013/10/bigdecimal%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%B0%98%EC%98%AC%EB%A6%BC/</link>
+      <link>http://localhost:1313/2013/10/bigdecimal%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%B0%98%EC%98%AC%EB%A6%BC/</link>
       <pubDate>Sat, 12 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2013/10/bigdecimal%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%B0%98%EC%98%AC%EB%A6%BC/</guid>
+      <guid>http://localhost:1313/2013/10/bigdecimal%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%B0%98%EC%98%AC%EB%A6%BC/</guid>
       <description>BigDecimal.ROUND_DOWN	// 내림 BigDecimal.ROUND_HALF_UP // 반올림 BigDecimal.ROUND_UP // 올림  </description>
     </item>
     
     <item>
       <title>JavaScript 개발팁</title>
-      <link>http://clonekim.github.io/2013/10/javascript-%EA%B0%9C%EB%B0%9C%ED%8C%81/</link>
+      <link>http://localhost:1313/2013/10/javascript-%EA%B0%9C%EB%B0%9C%ED%8C%81/</link>
       <pubDate>Thu, 10 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2013/10/javascript-%EA%B0%9C%EB%B0%9C%ED%8C%81/</guid>
+      <guid>http://localhost:1313/2013/10/javascript-%EA%B0%9C%EB%B0%9C%ED%8C%81/</guid>
       <description>Module Pattern
 로직과 private 변수를 캡슐화하는 방법으로 아래와 같은 모듈패턴( 익명함수) 을 많이 사용한다.
 (function() { /* ... */ })();  jQuery와 연동해서 사용할 경우 아래와 같이 파라미터를 전달하도록 한다.
@@ -430,19 +452,19 @@ return &#39;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&#39;.replace(/[xy]/g, function(
     
     <item>
       <title>java.util.concurrent</title>
-      <link>http://clonekim.github.io/2013/10/java.util.concurrent/</link>
+      <link>http://localhost:1313/2013/10/java.util.concurrent/</link>
       <pubDate>Tue, 01 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2013/10/java.util.concurrent/</guid>
+      <guid>http://localhost:1313/2013/10/java.util.concurrent/</guid>
       <description>쓰레드 생성은 시스템에 따라 제한됨 쓰레드풀을 사용할 수 있는 패키지가 있음 Future는 메서드를 비동기로 실행 후 나중에 결과를 받을 수 있음  import java.math.BigDecimal; import java.util.ArrayList; import java.util.List; import java.util.concurrent.Callable; import java.util.concurrent.ExecutionException; import java.util.concurrent.ExecutorService; import java.util.concurrent.Executors; import java.util.concurrent.Future; public class CallableTest { public static void main(String[] args) { callableTest(); } private static class Result { Long in; BigDecimal out; Result(final Long in, final BigDecimal out) { this.in = in; this.</description>
     </item>
     
     <item>
       <title>JSPWiki 설치</title>
-      <link>http://clonekim.github.io/2013/09/jspwiki-%EC%84%A4%EC%B9%98/</link>
+      <link>http://localhost:1313/2013/09/jspwiki-%EC%84%A4%EC%B9%98/</link>
       <pubDate>Fri, 27 Sep 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2013/09/jspwiki-%EC%84%A4%EC%B9%98/</guid>
+      <guid>http://localhost:1313/2013/09/jspwiki-%EC%84%A4%EC%B9%98/</guid>
       <description> Apache JSPWiki
 설정 server.xml
 &amp;lt;Connector address=&amp;quot;127.0.0.1&amp;quot; port=&amp;quot;8080&amp;quot; protocol=&amp;quot;org.apache.coyote.http11.Http11NioProtocol&amp;quot; connectionTimeout=&amp;quot;20000&amp;quot; maxThreads=&amp;quot;3&amp;quot; minSpareThreads=&amp;quot;2&amp;quot; redirectPort=&amp;quot;8443&amp;quot; URIEncoding=&amp;quot;UTF-8&amp;quot;/&amp;gt;  jspwiki.properties
@@ -453,10 +475,10 @@ Nginx 연동 upstream tomcat { server 127.0.0.1:8080; } server { ... location /w
     
     <item>
       <title>Jackson JSON Processor</title>
-      <link>http://clonekim.github.io/2013/09/jackson-json-processor/</link>
+      <link>http://localhost:1313/2013/09/jackson-json-processor/</link>
       <pubDate>Fri, 27 Sep 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2013/09/jackson-json-processor/</guid>
+      <guid>http://localhost:1313/2013/09/jackson-json-processor/</guid>
       <description> Parsing option String data = &amp;quot;[{&#39;text&#39;:&#39;PROJECT&#39;,&#39;id&#39;:&#39;00156&#39;,&#39;leaf&#39;:true}]&amp;quot;; ObjectMapper mapper = new ObjectMapper(); mapper.configure(JsonParser.Feature.ALLOW_SINGLE_QUOTES, true); JsonNode node = mapper.readTree(data);  Annotation *JsonSerialize *
 @JsonSerialize(using=JsonDateSerializer.class) public Date getCreationDate() { return creationDate; }  JsonDateSerializer.java
 public class JsonDateSerializer extends JsonSerializer&amp;lt;Date&amp;gt; { private static final SimpleDateFormat dateFormat = new SimpleDateFormat(&amp;quot;yyyy-MM-dd HH:mm:ss&amp;quot;); @Override public void serialize(Date date, JsonGenerator json, SerializerProvider provider) throws IOException, JsonProcessingException { String formattedDate = dateFormat.format(date); json.writeString(formattedDate); } }   Jackson JSON Processor Wiki  </description>
@@ -464,10 +486,10 @@ public class JsonDateSerializer extends JsonSerializer&amp;lt;Date&amp;gt; { pri
     
     <item>
       <title>프록시서버 인증에러</title>
-      <link>http://clonekim.github.io/2013/09/%ED%94%84%EB%A1%9D%EC%8B%9C%EC%84%9C%EB%B2%84-%EC%9D%B8%EC%A6%9D%EC%97%90%EB%9F%AC/</link>
+      <link>http://localhost:1313/2013/09/%ED%94%84%EB%A1%9D%EC%8B%9C%EC%84%9C%EB%B2%84-%EC%9D%B8%EC%A6%9D%EC%97%90%EB%9F%AC/</link>
       <pubDate>Fri, 27 Sep 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2013/09/%ED%94%84%EB%A1%9D%EC%8B%9C%EC%84%9C%EB%B2%84-%EC%9D%B8%EC%A6%9D%EC%97%90%EB%9F%AC/</guid>
+      <guid>http://localhost:1313/2013/09/%ED%94%84%EB%A1%9D%EC%8B%9C%EC%84%9C%EB%B2%84-%EC%9D%B8%EC%A6%9D%EC%97%90%EB%9F%AC/</guid>
       <description>HttpURLConnecton를 이용해서 프록시설정하고 다운로드할 데이터가 있었으나 인증에러를 발생
 java.net.Authenticator를 구현해야함
 import java.net.Authenticator; import java.net.MalformedURLException; import java.net.PasswordAuthentication; import java.net.URL; public class ProxyAuthenticator extends Authenticator { private String proxyhost; private String userid; private String password; public ProxyAuthenticator(String proxyhost, String userid, String password) { this.proxyhost = proxyhost; this.userid = userid; this.password = password; } @Override public URL getRequestingURL() { if (this.proxyhost == null) return null; try { return new URL(this.proxyhost); } catch (MalformedURLException e) { return null; } } @Override protected RequestorType getRequestorType() { return RequestorType.</description>
@@ -475,10 +497,10 @@ import java.net.Authenticator; import java.net.MalformedURLException; import jav
     
     <item>
       <title>Apache Tag Lib</title>
-      <link>http://clonekim.github.io/2013/09/apache-tag-lib/</link>
+      <link>http://localhost:1313/2013/09/apache-tag-lib/</link>
       <pubDate>Tue, 24 Sep 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2013/09/apache-tag-lib/</guid>
+      <guid>http://localhost:1313/2013/09/apache-tag-lib/</guid>
       <description>Maven &amp;lt;groupId&amp;gt;jstl&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jstl&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.2&amp;lt;/version&amp;gt;  태그를 사용하기 위한 선언 &amp;lt;%@ taglib prefix=&amp;quot;c&amp;quot; uri=&amp;quot;http://java.sun.com/jsp/jstl/core&amp;quot;%&amp;gt; &amp;lt;%@ taglib prefix=&amp;quot;fn&amp;quot; uri=&amp;quot;http://java.sun.com/jsp/jstl/functions&amp;quot; %&amp;gt; &amp;lt;%@ taglib prefix=&amp;quot;fmt&amp;quot; uri=&amp;quot;http://java.sun.com/jsp/jstl/fmt&amp;quot;%&amp;gt;  param test.jsp?name=1234 일 경우
 ${param.변수} 로 획득할 수 있다.
 ${param.name}으로 알수 있겠다.
@@ -487,10 +509,10 @@ core set &amp;lt;c:set var=&amp;quot;string&amp;quot; value=&amp;quot;값&amp;qu
     
     <item>
       <title>윈도우즈에 SVN서비스등록</title>
-      <link>http://clonekim.github.io/2013/09/%EC%9C%88%EB%8F%84%EC%9A%B0%EC%A6%88%EC%97%90-svn%EC%84%9C%EB%B9%84%EC%8A%A4%EB%93%B1%EB%A1%9D/</link>
+      <link>http://localhost:1313/2013/09/%EC%9C%88%EB%8F%84%EC%9A%B0%EC%A6%88%EC%97%90-svn%EC%84%9C%EB%B9%84%EC%8A%A4%EB%93%B1%EB%A1%9D/</link>
       <pubDate>Tue, 24 Sep 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2013/09/%EC%9C%88%EB%8F%84%EC%9A%B0%EC%A6%88%EC%97%90-svn%EC%84%9C%EB%B9%84%EC%8A%A4%EB%93%B1%EB%A1%9D/</guid>
+      <guid>http://localhost:1313/2013/09/%EC%9C%88%EB%8F%84%EC%9A%B0%EC%A6%88%EC%97%90-svn%EC%84%9C%EB%B9%84%EC%8A%A4%EB%93%B1%EB%A1%9D/</guid>
       <description>###SVN서버를 윈도우에서 서비스로 등록한다.*
 Creating the Repository svnadmin create c:\svn  Edit Configuration 방금 생성한 레포지토리 디렉토리로 이동하여
 conf\passwd 에서
@@ -500,10 +522,10 @@ anon-access = read auth-access = write password-db = passwd  Register as a Servi
     
     <item>
       <title>자바 호환에러</title>
-      <link>http://clonekim.github.io/2013/06/%EC%9E%90%EB%B0%94-%ED%98%B8%ED%99%98%EC%97%90%EB%9F%AC/</link>
+      <link>http://localhost:1313/2013/06/%EC%9E%90%EB%B0%94-%ED%98%B8%ED%99%98%EC%97%90%EB%9F%AC/</link>
       <pubDate>Thu, 20 Jun 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2013/06/%EC%9E%90%EB%B0%94-%ED%98%B8%ED%99%98%EC%97%90%EB%9F%AC/</guid>
+      <guid>http://localhost:1313/2013/06/%EC%9E%90%EB%B0%94-%ED%98%B8%ED%99%98%EC%97%90%EB%9F%AC/</guid>
       <description>java.lang.UnsupportedClassVersion_error (Unsupported major.minor version 51.0)  하위버전의 클래스파일을 상위버전이 읽어들일때는 상관없지만
 상위버전의 클래스파일을 하위버전이 읽어올때는 위와 같은 에러를 낸다
 에러 상세코드
@@ -512,39 +534,39 @@ version 52.0 컴파일 버전 : 1.8 version 51.0 컴파일 버전 : 1.7 version 
     
     <item>
       <title>Java Compile Option</title>
-      <link>http://clonekim.github.io/2013/06/java-compile-option/</link>
+      <link>http://localhost:1313/2013/06/java-compile-option/</link>
       <pubDate>Sun, 16 Jun 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2013/06/java-compile-option/</guid>
+      <guid>http://localhost:1313/2013/06/java-compile-option/</guid>
       <description>-Dfile.encoding=[Character Set] -Dclient.encoding.override=[Character Set]  </description>
     </item>
     
     <item>
       <title>PHP FPM</title>
-      <link>http://clonekim.github.io/2013/05/php-fpm/</link>
+      <link>http://localhost:1313/2013/05/php-fpm/</link>
       <pubDate>Mon, 13 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2013/05/php-fpm/</guid>
+      <guid>http://localhost:1313/2013/05/php-fpm/</guid>
       <description>PHP Install apt-get install php5-fpm php5-mongo php5-mysql  /etc/php5/fpm/php.ini
 ; This directive determines whether or not PHP will recognize code between ; &amp;lt;? and ?&amp;gt; tags as PHP source which should be processed as such. It is ; generally recommended that &amp;lt;?php and ?&amp;gt; should be used and that this feature ; should be disabled, as enabling it may result in issues when generating XML ; documents, however this remains supported for backward compatibility reasons.</description>
     </item>
     
     <item>
       <title>즐겨사용하는 VIM 설정</title>
-      <link>http://clonekim.github.io/2012/05/%EC%A6%90%EA%B2%A8%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-vim-%EC%84%A4%EC%A0%95/</link>
+      <link>http://localhost:1313/2012/05/%EC%A6%90%EA%B2%A8%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-vim-%EC%84%A4%EC%A0%95/</link>
       <pubDate>Wed, 23 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2012/05/%EC%A6%90%EA%B2%A8%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-vim-%EC%84%A4%EC%A0%95/</guid>
+      <guid>http://localhost:1313/2012/05/%EC%A6%90%EA%B2%A8%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-vim-%EC%84%A4%EC%A0%95/</guid>
       <description>~./vimrc 또는 /etc/vim/vimrc.local
 set autoindent set smartindent set shiftwidth=3 set tabstop=3 set title set nu set background=dark set nobackup set fileencoding=utf-8 set nowrap set showmatch set ruler syntax on  </description>
     </item>
     
     <item>
       <title>Ruby Some Basic</title>
-      <link>http://clonekim.github.io/2012/02/ruby-some-basic/</link>
+      <link>http://localhost:1313/2012/02/ruby-some-basic/</link>
       <pubDate>Fri, 03 Feb 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2012/02/ruby-some-basic/</guid>
+      <guid>http://localhost:1313/2012/02/ruby-some-basic/</guid>
       <description>json 생성
 require &#39;json&#39; jsonbody = JSON.generate[&amp;quot;message&amp;quot;=&amp;gt;&amp;quot;test&amp;quot;,&amp;quot;user&amp;quot;=&amp;gt;&amp;quot;user1&amp;quot;]  rest-client을 이용한 예제
 require &#39;rubygems&#39; require &#39;rest_client&#39; require &#39;json&#39; jdata = JSON.generate([&amp;quot;test&amp;quot;]) RestClient.put &#39;http://localhost:4567/users/123&#39;, jdata, {:content_type =&amp;gt; :json}  Net:HTTP GET/PUT
@@ -553,10 +575,10 @@ require &#39;net/http&#39; http = Net::HTTP.new(&#39;www.data.com&#39;) response
     
     <item>
       <title>OGNL</title>
-      <link>http://clonekim.github.io/2012/01/ognl/</link>
+      <link>http://localhost:1313/2012/01/ognl/</link>
       <pubDate>Tue, 17 Jan 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2012/01/ognl/</guid>
+      <guid>http://localhost:1313/2012/01/ognl/</guid>
       <description>Maven
 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;ognl&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;ognl&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.0.5&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  소스
 Map&amp;lt;String, Object&amp;gt; map = new HashMap&amp;lt;String, Object&amp;gt;(); map.put(&amp;quot;book&amp;quot;, &amp;quot;모바일 웹앱&amp;quot;); System.out.println(Ognl.getValue(Ognl.parseExpression(&amp;quot;book&amp;quot;), map)); Map context = new HashMap(); List&amp;lt;String&amp;gt; values1 = (List)Ognl.getValue(&amp;quot;{123,&#39;abc&#39;,&#39;00oo&#39;}&amp;quot;, context, new Object()); System.out.println(values1); Map values2 = (Map) Ognl.getValue(&amp;quot;#{123:333,&#39;abc&#39;:111, &#39;bbb&#39;:&#39;Kim&#39;, &#39;other&#39;:&#39;[0,2,3,4,5]&#39;}&amp;quot;, context, new Object()); System.out.println(values2);  출력
@@ -565,10 +587,10 @@ Map&amp;lt;String, Object&amp;gt; map = new HashMap&amp;lt;String, Object&amp;gt
     
     <item>
       <title>Java Date에러</title>
-      <link>http://clonekim.github.io/2011/06/java-date%EC%97%90%EB%9F%AC/</link>
+      <link>http://localhost:1313/2011/06/java-date%EC%97%90%EB%9F%AC/</link>
       <pubDate>Sun, 12 Jun 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2011/06/java-date%EC%97%90%EB%9F%AC/</guid>
+      <guid>http://localhost:1313/2011/06/java-date%EC%97%90%EB%9F%AC/</guid>
       <description> Override time zone 생성한 Date 객체가 KST가 아닌 자꾸 GMT로 출력 될 경우
 System.setProperty(&amp;quot;user.timezone&amp;quot;, &amp;quot;Asia/Seoul&amp;quot;) ex) System.setProperty(&amp;quot;user.timezone&amp;quot;, &amp;quot;UTC&amp;quot;); TimeZone.setDefault(null); //reset 하기 위해 반드시 필요함  서버를 구동시에 -D 옵션으로 설정할 것
 참고  Override a Java application&amp;rsquo;s time zone Java&amp;rsquo;s java.util.TimeZone  </description>
