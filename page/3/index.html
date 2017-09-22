@@ -19,7 +19,7 @@
 
 
 
-<meta property="og:updated_time" content="2015-07-14T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2015-07-18T00:00:00&#43;00:00"/>
 
 
 
@@ -105,6 +105,72 @@
 
 
   
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2015/07/redmine3-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/'> Redmine3 설치하기</a> </h2>
+    <div class="meta">
+      Jul 18, 2015
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/redmine">#redmine</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> 설치환경  redmine-3.0.4 centos 6.6 redmine install가이드  RVM 설치 rvm.io 에 대하여
+rvm을 이용하여 루비를 버젼별로 설치및 관리할 수 있다
+rvm install ruby rvm gemset create redmine rvm gemset use redmine  의존성 라이브러리 CentOS 의존성
+redmine 설치 $ cd redmine-x.x.x $ gem install bundler $ bundle install --without development test  Thin Gemfile을 수정하여 thin을 최상단에 추가
+다시 번들로 라이브러리 설치
+bundle install --without development test  아래 파일을 /etc/thin/redmine. </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2015/07/redmine3-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2015/07/%EC%9C%88%EB%8F%84%EC%9A%B0%EC%A6%88-vim%EC%84%A4%EC%A0%95/'> 윈도우즈 Vim설정</a> </h2>
+    <div class="meta">
+      Jul 16, 2015
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/vi">#vi</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> vi를 윈도우즈에서 사용하기 위한 가이드
+설치  http://www.vim.org http://www.vim.org/download.php  설정 아래 파일을 C:\Users[계정명]_vimrc 에 위치한다
+set nu set autoindent set nobackup set showcmd set ruler set enc=utf-8 set fencs=euckr,cp949,utf-8 set tabstop=3 set nowrap set lines=30 columns=140 lang mes en_US source $VIMRUNTIME/delmenu.vim source $VIMRUNTIME/menu.vim  Explore 명령모드에서 :Explore로 입력하면 탐색창모드로 전환한다. 특정파일을 선택 시 편집할 수 있고
+Ctrl +^ 입력시 바로 이전 탐색창으로 이동한다. </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2015/07/%EC%9C%88%EB%8F%84%EC%9A%B0%EC%A6%88-vim%EC%84%A4%EC%A0%95/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
     <article class="post-preview">
 
   <header>
@@ -367,74 +433,6 @@ scope 계층화 &lt;!DOCTYPE html&gt; &lt;html lang=&quot;ko&quot; ng-app=&quot;
   <footer>
   <div class="rmore">
     <a href='http://clonekim.github.io/2014/11/angularjs-tips/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2014/10/backbone---handlebar---gulp-%ED%8C%81/'> backbone &#43; handlebar &#43; gulp 팁</a> </h2>
-    <div class="meta">
-      Oct 3, 2014
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="/tags/backbone">#backbone</a>
-      </div>
-    
-      <div class="tag">
-        <a href="/tags/gulp">#gulp</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary"> 백본과 핸들바를 사용해서 소스를 컴파일 후
-정해진 경로로 결과물을 내보내자.
-핸들바를 사용하지 않을려면 brfs도 고려해보자
-패키지 설치
-npm install --global gulp npm install --save-dev gulp npm install --save-dev browserify npm install --save-dev vinyl-source-stream npm install --save handlebars npm install --save hbsfy  gulpfile.js
-var gulp = require('gulp'), browserify = require('browserify'), source = require('vinyl-source-stream'), hbsfy = require('hbsfy'); gulp.task('build', function() { var b = browserify('./js/app.js', {debug:true}); return b.transform(hbsfy) .bundle() .pipe(source('app.js')) .pipe(gulp.dest('/home/alpha/public/js')); }); gulp. </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='http://clonekim.github.io/2014/10/backbone---handlebar---gulp-%ED%8C%81/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2014/03/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A1%9C-uuid-%EC%83%9D%EC%84%B1/'> 자바스크립트로 UUID 생성</a> </h2>
-    <div class="meta">
-      Mar 2, 2014
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="/tags/javascript">#javascript</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary"> RFC4122
-return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) { var r = Math.random()*16|0, v = c === 'x' ? r : (r&amp;0x3|0x8); return v.toString(16); });  var s = []; var hexDigits = &quot;0123456789abcdef&quot;; for (var i = 0; i &lt; 36; i++) { s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1); } s[14] = &quot;4&quot;; s[19] = hexDigits.substr((s[19] &amp; 0x3) | 0x8, 1); s[8] = s[13] = s[18] = s[23] = &quot;-&quot;; var uuid = s. </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='http://clonekim.github.io/2014/03/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A1%9C-uuid-%EC%83%9D%EC%84%B1/'><nobr>Read more ...</nobr></a>
   </div>
   </footer>
 

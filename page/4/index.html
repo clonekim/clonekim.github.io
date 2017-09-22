@@ -19,7 +19,7 @@
 
 
 
-<meta property="og:updated_time" content="2014-01-05T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2014-10-03T00:00:00&#43;00:00"/>
 
 
 
@@ -105,6 +105,74 @@
 
 
   
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2014/10/backbone---handlebar---gulp-%ED%8C%81/'> backbone &#43; handlebar &#43; gulp 팁</a> </h2>
+    <div class="meta">
+      Oct 3, 2014
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/backbone">#backbone</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/gulp">#gulp</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> 백본과 핸들바를 사용해서 소스를 컴파일 후
+정해진 경로로 결과물을 내보내자.
+핸들바를 사용하지 않을려면 brfs도 고려해보자
+패키지 설치
+npm install --global gulp npm install --save-dev gulp npm install --save-dev browserify npm install --save-dev vinyl-source-stream npm install --save handlebars npm install --save hbsfy  gulpfile.js
+var gulp = require('gulp'), browserify = require('browserify'), source = require('vinyl-source-stream'), hbsfy = require('hbsfy'); gulp.task('build', function() { var b = browserify('./js/app.js', {debug:true}); return b.transform(hbsfy) .bundle() .pipe(source('app.js')) .pipe(gulp.dest('/home/alpha/public/js')); }); gulp. </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2014/10/backbone---handlebar---gulp-%ED%8C%81/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2014/03/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A1%9C-uuid-%EC%83%9D%EC%84%B1/'> 자바스크립트로 UUID 생성</a> </h2>
+    <div class="meta">
+      Mar 2, 2014
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/javascript">#javascript</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> RFC4122
+return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) { var r = Math.random()*16|0, v = c === 'x' ? r : (r&amp;0x3|0x8); return v.toString(16); });  var s = []; var hexDigits = &quot;0123456789abcdef&quot;; for (var i = 0; i &lt; 36; i++) { s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1); } s[14] = &quot;4&quot;; s[19] = hexDigits.substr((s[19] &amp; 0x3) | 0x8, 1); s[8] = s[13] = s[18] = s[23] = &quot;-&quot;; var uuid = s. </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2014/03/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A1%9C-uuid-%EC%83%9D%EC%84%B1/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
     <article class="post-preview">
 
   <header>
@@ -348,71 +416,6 @@ core set &lt;c:set var=&quot;string&quot; value=&quot;값&quot;/&gt; &lt;c:set v
   <footer>
   <div class="rmore">
     <a href='http://clonekim.github.io/2013/09/apache-tag-lib/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2013/09/%EC%9C%88%EB%8F%84%EC%9A%B0%EC%A6%88%EC%97%90-svn%EC%84%9C%EB%B9%84%EC%8A%A4%EB%93%B1%EB%A1%9D/'> 윈도우즈에 SVN서비스등록</a> </h2>
-    <div class="meta">
-      Sep 24, 2013
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="/tags/svn">#svn</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary"> ###SVN서버를 윈도우에서 서비스로 등록한다.*
-Creating the Repository svnadmin create c:\svn  Edit Configuration 방금 생성한 레포지토리 디렉토리로 이동하여
-conf\passwd 에서
-아이디 = 패스워드 형식으로 등록 ex) test = 1234  conf\svnserve.conf 에서 아래와 같이 설정
-anon-access = read auth-access = write password-db = passwd  Register as a Service C:\Program Files\Subversion\bin\svnserve.exe --service --root c:\svn 또는 C:\&gt; sc create svn binpath= &quot;C:\svn\bin\svnserve.exe --service -r C:\repos&quot; displayname= &quot;Subversion Server&quot; depend= Tcpip start= auto C:\&gt;sc create svnserver binpath= &quot;C:\Program Files\Subversion\bin\svnserve. </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='http://clonekim.github.io/2013/09/%EC%9C%88%EB%8F%84%EC%9A%B0%EC%A6%88%EC%97%90-svn%EC%84%9C%EB%B9%84%EC%8A%A4%EB%93%B1%EB%A1%9D/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2013/06/%EC%9E%90%EB%B0%94-%ED%98%B8%ED%99%98%EC%97%90%EB%9F%AC/'> 자바 호환에러</a> </h2>
-    <div class="meta">
-      Jun 20, 2013
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="/tags/java">#java</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary"> java.lang.UnsupportedClassVersion_error (Unsupported major.minor version 51.0)  하위버전의 클래스파일을 상위버전이 읽어들일때는 상관없지만
-상위버전의 클래스파일을 하위버전이 읽어올때는 위와 같은 에러를 낸다
-에러 상세코드
-version 52.0 컴파일 버전 : 1.8 version 51.0 컴파일 버전 : 1.7 version 50.0 컴파일 버전 : 1.6 version 49.0 컴파일 버전 : 1.5 version 48.0 컴파일 버전 : 1.4   </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='http://clonekim.github.io/2013/06/%EC%9E%90%EB%B0%94-%ED%98%B8%ED%99%98%EC%97%90%EB%9F%AC/'><nobr>Read more ...</nobr></a>
   </div>
   </footer>
 
