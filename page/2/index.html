@@ -12,14 +12,14 @@
 
 <link rel="canonical" href="http://clonekim.github.io/">
 <base href="http://clonekim.github.io/" />
-<meta property="og:title" content="Less is more" />
+<meta property="og:title" content="(fn [] &#34;Less is more&#34;)" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://clonekim.github.io/" />
 
 
 
-<meta property="og:updated_time" content="2016-01-13T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2015-09-11T00:00:00&#43;00:00"/>
 
 
 
@@ -30,12 +30,12 @@
 
 
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Less is more"/>
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="(fn [] &#34;Less is more&#34;)"/>
 <meta name="twitter:description" content=""/>
 
 
 
-<meta itemprop="name" content="Less is more">
+<meta itemprop="name" content="(fn [] &#34;Less is more&#34;)">
 <meta itemprop="description" content="">
 
 
@@ -48,7 +48,7 @@
 <title>
 
 
-     Less is more 
+     (fn [] &#34;Less is more&#34;) 
 
 </title>
 
@@ -67,7 +67,7 @@
 
   <nav>
     <div class="siteTitle">
-      <a href="http://clonekim.github.io/">Less is more</a>
+      <a href="http://clonekim.github.io/">(fn [] &#34;Less is more&#34;)</a>
     </div> 
 
     
@@ -105,258 +105,6 @@
 
 
   
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2016/01/github%EC%97%90-%EB%B8%94%EB%A1%9C%EA%B7%B8%EC%A0%9C%EC%9E%91/'> Github에 블로그제작</a> </h2>
-    <div class="meta">
-      Jan 13, 2016
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="/tags/github">#github</a>
-      </div>
-    
-      <div class="tag">
-        <a href="/tags/cryogen">#cryogen</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary"> 깃허브에 계정만들기 먼저 github.com에 가입하고 저장소를 만든다
-저장소는 계정명.github.io라고 작성한다. 자세한 것은 GitHub Page를 살펴볼 것
-lein 설치 leiningen 을 설치한다
-프로젝트를 생성한다 cryogen템플릿을 이용해서 블로그 프로젝트를 생성한다
-lein new cryogen my-blog cd my-blog  git clone한다 public 디렉토리는 없기때문에 작성한다
-예) git@github.com:[계정명]/[생성한 저장소] [target 디렉토리]
-mkdir resources/public git clone git@github.com:clonekim/clonekim.github.io.git resources/public  config.edn 편집 resources/templates/config.edn를 편집한다
-내용중 아래와 같이 &ldquo;&ldquo;으로 설정한다
-:blog-prefix &quot;&quot;  서버 시작 아래 명령어로 서버를 시작한다 </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='http://clonekim.github.io/2016/01/github%EC%97%90-%EB%B8%94%EB%A1%9C%EA%B7%B8%EC%A0%9C%EC%9E%91/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2015/09/clojure-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/'> Clojure 시작하기</a> </h2>
-    <div class="meta">
-      Sep 25, 2015
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="/tags/clojure">#clojure</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary"> JVM위에서 작동하는 함수형 프로그래밍이다
-clojure 얻기 http://clojure.org
-IDE/Tools  LightTable Cursive Emacs  Leiningen으로 시작하기 Leiningen (레닝겐)은 클로져를 쉽게 시작하기 위한 빌드자동화 툴이다
-윈도우에서만 self-install해준다
-Project 생성 lein new [프로젝트명]  프로젝트 의존성 추가 라이브러리는 아래의 저장소에서 검색이 가능하고
-의존성에 추가하면 된다
- clojars Maven repository  :dependencies [[org.clojure/clojure &quot;1.7.0&quot;] [groupId/artifactId &quot;version&quot;]])  그외의 라이브러리 저장소로는 추가로 지정할수있다
-:repositories { &quot;이름&quot; &quot;http://192.168.0.10:8081/nexus/content/repositories/thirdparty&quot; }  REPL(Read Eval Print Loop) 실행 lein repl  REPL에서 클로저코드를 작성하고 바로 실행이 가능하다 </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='http://clonekim.github.io/2015/09/clojure-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2015/09/%ED%81%B4%EB%A1%9C%EC%A0%80%EC%97%90%EC%84%9C-jdbc/'> 클로저에서 Jdbc</a> </h2>
-    <div class="meta">
-      Sep 25, 2015
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="/tags/clojure">#clojure</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary">  클로저에서 JDBC(Java Database Connectivity) 를 사용하기 위한 가이드
-몇몇 함수가 없어진 경우가 있기 때문에 소스보기로 확인할 것
- clojure-doc보기 소스보기   leiningen [org.clojure/java.jdbc &quot;0.4.2&quot;]  간단한 예제 (ns db-test.core (:require [clojure.java.jdbc :as sql]))	(def db {:classname &quot;com.mysql.jdbc.Driver&quot; :subprotocol &quot;mysql&quot; :subname &quot;//127.0.0.1:3306/test&quot; :user &quot;xxx&quot; :password &quot;xxxx&quot; }) (defn get-user [] (println (sql/query db [&quot;select * from users&quot;]))) (defn -main [] (get-user))  참고  HikarCP를 사용하는 예 clojure.jdbc doc   </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='http://clonekim.github.io/2015/09/%ED%81%B4%EB%A1%9C%EC%A0%80%EC%97%90%EC%84%9C-jdbc/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2015/09/freemarker-assign%ED%8C%81/'> Freemarker assign팁</a> </h2>
-    <div class="meta">
-      Sep 23, 2015
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="/tags/java">#java</a>
-      </div>
-    
-      <div class="tag">
-        <a href="/tags/freemarker">#freemarker</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary"> 변수 x에 42를 할당하고 이것은 명백히 Number 타입이다
-&lt;#assign x=42 /&gt;  String타입으로 변환할 수 있다
-${x?string} ${x?string[0..1]}  .(dot)가 들어간 변수도 사용할 수 있다
-&lt;#assign telephone=&quot;${site\\.telephone?string}&quot; /&gt; //15881234 ${telephone[0..3]}-${telephone[4..7]} //1588-1234   </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='http://clonekim.github.io/2015/09/freemarker-assign%ED%8C%81/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2015/09/clojurescript%EC%97%90%EC%84%9C-jquery%EC%82%AC%EC%9A%A9/'> clojurescript에서 jquery사용</a> </h2>
-    <div class="meta">
-      Sep 20, 2015
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="/tags/clojurescript">#clojurescript</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary">  view.clj
-(defn view-layout [&amp; content] (html [:head [:meta {:http-equiv &quot;Content-type&quot; :content &quot;text/html; charset=utf-8&quot;}] [&quot;title&quot;: &quot;Project-Name&quot;]] [:body content])) (defn view-content [] (view-layout [:h2 &quot;Project-Name&quot;] [:p {:id &quot;clickhere&quot;} &quot;Get yourself a nice alert by clicking here.&quot;] [:script {:src &quot;/js/jquery-1.10.2.min.js&quot;}] [:script {:src &quot;/js/cljs.js&quot;}]))  hello.cljs
-(:require [jayq.core :as jq]) (:use [jayq.core :only [$]]) ;; ;; $(&quot;#btn&quot;).click(function() {alert(&quot;Hi!&quot;); }); ;; (jq/bind ($ &quot;#btn&quot;) :click (fn [] (js/alert &quot;Hi!&quot;)))  lein cljsbuild once lein run  참고  ClojureScriptという選択肢 ClojureScript入門   </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='http://clonekim.github.io/2015/09/clojurescript%EC%97%90%EC%84%9C-jquery%EC%82%AC%EC%9A%A9/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2015/09/clojure%EB%A5%BC-%EC%9C%84%ED%95%9C-emacs-%ED%99%98%EA%B2%BD/'> Clojure를 위한 Emacs 환경</a> </h2>
-    <div class="meta">
-      Sep 11, 2015
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="/tags/emacs">#emacs</a>
-      </div>
-    
-      <div class="tag">
-        <a href="/tags/clojure">#clojure</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary"> Emacs 24를 기준으로 작성
-현재 사용중인 환경은 custom-emacs.tgz
-Package Install init.el
-(require 'package) (add-to-list 'package-archives '(&quot;melpa-stable&quot; . &quot;http://stable.melpa.org/packages/&quot;) t) (package-initialize)  package install
-M-x package-install [RET] cider [RET]  현재 사용하고 있는 패키지
- cider paredit rainbow-delimiters s f clojure-mode clojure-mode-extra-font-locking dash ido-completing-read+ ido-ubiquitous projectile queue seq smex spinner  Cider 구동 주의
-Cider와 cider-nrepl의 버전이 맞아야함  profiles.clj
-.lein디렉토리이하에 작성한다 없을경우 파일생성
-{:user {:plugins [[cider/cider-nrepl &quot;0.10.0&quot;]] :dependencies [[org.clojure/tools.nrepl &quot;0. </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='http://clonekim.github.io/2015/09/clojure%EB%A5%BC-%EC%9C%84%ED%95%9C-emacs-%ED%99%98%EA%B2%BD/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2015/09/oracle-jdbc-url/'> Oracle Jdbc Url</a> </h2>
-    <div class="meta">
-      Sep 11, 2015
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="/tags/java">#java</a>
-      </div>
-    
-      <div class="tag">
-        <a href="/tags/oracle">#oracle</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary"> JDBC URL syntax
-jdbc:oracle:thin:@[HOST][:PORT]:SID jdbc:oracle:thin:@//[HOST][:PORT]/SERVICE  Hikari Pool를 사용 시 아래와 같이 경고메시지가 나타나면
-oracle.jdbc.driver.OracleDriver에서 oracle.jdbc.OracleDriver 로 바꿀 것
-2015-09-10 WARN (main) [DriverDataSource(&lt;init&gt;:68)] Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation. 2015-09-10 DEBUG (main) [PoolUtilities(getAndSetNetworkTimeout:198)] HikariPool-0 - Connection.setNetworkTimeout() not supported   JDBC - Oracle FAQ Database JDBC Developer&rsquo;s Guide and Reference   </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='http://clonekim.github.io/2015/09/oracle-jdbc-url/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
     <article class="post-preview">
 
   <header>
@@ -463,6 +211,563 @@ JSX 문법을 사용하기 위해서는 반드시 JSXTransformer.js가 필요하
 </article>
 
 
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2015/07/redmine3-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/'> Redmine3 설치하기</a> </h2>
+    <div class="meta">
+      Jul 18, 2015
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/redmine">#redmine</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> 설치환경  redmine-3.0.4 centos 6.6 redmine install가이드  RVM 설치 rvm.io 에 대하여
+rvm을 이용하여 루비를 버젼별로 설치및 관리할 수 있다
+rvm install ruby rvm gemset create redmine rvm gemset use redmine  의존성 라이브러리 CentOS 의존성
+redmine 설치 $ cd redmine-x.x.x $ gem install bundler $ bundle install --without development test  Thin Gemfile을 수정하여 thin을 최상단에 추가
+다시 번들로 라이브러리 설치
+bundle install --without development test  아래 파일을 /etc/thin/redmine. </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2015/07/redmine3-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2015/07/%EC%9C%88%EB%8F%84%EC%9A%B0%EC%A6%88-vim%EC%84%A4%EC%A0%95/'> 윈도우즈 Vim설정</a> </h2>
+    <div class="meta">
+      Jul 16, 2015
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/vi">#vi</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> vi를 윈도우즈에서 사용하기 위한 가이드
+설치  http://www.vim.org http://www.vim.org/download.php  설정 아래 파일을 C:\Users[계정명]_vimrc 에 위치한다
+set nu set autoindent set nobackup set showcmd set ruler set enc=utf-8 set fencs=euckr,cp949,utf-8 set tabstop=3 set nowrap set lines=30 columns=140 lang mes en_US source $VIMRUNTIME/delmenu.vim source $VIMRUNTIME/menu.vim  Explore 명령모드에서 :Explore로 입력하면 탐색창모드로 전환한다. 특정파일을 선택 시 편집할 수 있고
+Ctrl +^ 입력시 바로 이전 탐색창으로 이동한다. </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2015/07/%EC%9C%88%EB%8F%84%EC%9A%B0%EC%A6%88-vim%EC%84%A4%EC%A0%95/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2015/07/node.js%EB%A1%9C-captcha/'> Node.js로 Captcha</a> </h2>
+    <div class="meta">
+      Jul 14, 2015
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/node.js">#node.js</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/captcha">#captcha</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> canvas를 이용한 캡챠(captcha)를 생성하려고 한다.
+사용하려는 패키지는 canvas-captcha이다
+의존성 설치 apt-get install libpango1.0-dev apt-get install libjpeg-dev apt-get install libgif-dev  소스작성 captcha.js
+var captcha = require('canvas-captcha') ,captchaOptions = { charPool: ('abcdefghijklmnopqrstuvwxyz' + 'abcdefghijklmnopqrstuvwxyz'.toUpperCase() + '1234567890').split('') //char pool Array ,size: { width: 120 ,height: 52 } //image size ,textPos: { left: 15 ,top: 36 } //text drawing start position ,rotate: .01 //text ratate ,charLength: 5 //how many chars //,font: '26px' //font size ,strokeStyle: '#0088cc' //style ,bgColor: '#eeeeee' //bg color ,confusion: true //draw another group background text to mangle the text //,cFont: '30px' //bg text style ,cStrokeStyle: '#adc' //bg text color ,cRotate: -. </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2015/07/node.js%EB%A1%9C-captcha/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2015/07/sinatra-%EC%9B%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/'> Sinatra 웹프로그래밍</a> </h2>
+    <div class="meta">
+      Jul 14, 2015
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/jruby">#jruby</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> 설치 jruby -S gem install sinatra  Hello Ruby require 'rubygems' require 'sinatra' get '/' do 'Hello Jruby' end  라우터 get, post, put, delete를 사용할 수있다
+get '/' do end  요청파라미터 /?name=foo 로 요청 시 아래와 같이
+post '/' do puts params['name'] end  본문으로 Json를 요청받을 경우 post '/' do payload = JSON.parse(request.body.read) puts payload status 201 end  응답하기 문자열, html, json, 바이너리 등의 모든 컨텐츠로 응답가능하다 </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2015/07/sinatra-%EC%9B%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2015/07/angularjs-%EB%8B%A4%EA%B5%AD%EC%96%B4%EC%B2%98%EB%A6%AC/'> AngularJS 다국어처리</a> </h2>
+    <div class="meta">
+      Jul 2, 2015
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/angularjs">#angularjs</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> IndexController.js
+module.exports = ['$scope', '$cookies', 'TranslationService', function($scope, $cookies, TranslationService) { TranslationService.getLanguage($scope, $cookies); $scope.multiLng = function( lang ) { $cookies.put(&quot;lang&quot;, lang); TranslationService.getLanguage($scope, $cookies); } }];  TranslationService.js
+module.exports = ['$http', function($http) { this.getLanguage = function($scope, $cookies, cbk) { var lang = $cookies.get('lang') || 'ko'; $http({ method: 'GET', url: '/js/locale_' + lang +'.json' }).success(function(response) { $scope.translation = response;	$scope.lang = lang; }); }; }];  locale_zh.js
+{ &quot;online_start&quot;: &quot;Online申请&quot;, ... }  index. </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2015/07/angularjs-%EB%8B%A4%EA%B5%AD%EC%96%B4%EC%B2%98%EB%A6%AC/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2015/06/raspberrypi/'> RaspberryPi</a> </h2>
+    <div class="meta">
+      Jun 28, 2015
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/raspberry">#raspberry</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> 준비  라즈베리파이2 microSD카드 (8G이상) HDMI케이블 LAN케이블 (카테고리3 이상) AC어댑터( USB단자출력 1A, 최소 700mA)  USB 3.0 : 5V, 900mA USB 2.0 : 5V, 500mA https://ko.wikipedia.org/wiki/USB  microUSB케이블 (A,B타입) 키보드,마우스 (USB연결)  구입  라즈베리파이2 with 고급 투명케이스 C + 방열판 셋트 RPi Camera &copy;  하드웨어 살펴보기 정면
+뒷면
+1) SoC (CPU), 메모리
+2) 전원단자
+3) USB포트
+4) HDMI포트
+7) 컴포지트출력, 오디오출력
+8) DSI (Display Serial Interface)
+9) 랜포트 </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2015/06/raspberrypi/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2015/02/beefy-%ED%8C%81/'> beefy 팁</a> </h2>
+    <div class="meta">
+      Feb 3, 2015
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/javascript">#javascript</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> a local development server designed to work with browserify.
+ can live reload your browser when your code changes (if you want) works with whatever version of browserify or watchify; globally installed or locally installed to node_modules/. will spit compile errors out into the browser so you don&rsquo;t have that 1-2 seconds of cognitive dissonance and profound ennui that follows refreshing the page only to get a blank screen. will spit out a default index. </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2015/02/beefy-%ED%8C%81/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2015/02/imagemagick/'> ImageMagick</a> </h2>
+    <div class="meta">
+      Feb 1, 2015
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/imagemagick">#imagemagick</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/captcha">#captcha</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> Thumbnail
+convert [Image 1] -thumbnail 50% [Result Image] or convert [Image 1] -thumbnail 100x70 [Result Image]  Composite
+composite -geometry +[x]+[y] [Image 1] [Image 2] [Result Image] ex) composite -geometry +02+30 person.jpg background.jpg profile.jpg  Image Info
+identify -format '%wx%h %m %b %n' [file]  box 필터
+convert [file] -scale [n]% -filter box -resize [size]! [file]  inline 이미지 생성
+png 로 이미지를 생성하되 :- 또는 png:fd:1 를 사용하면 표준 출력 장치(모니터) 로 내보냄 </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2015/02/imagemagick/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2014/12/requirejs-%EC%98%88%EC%A0%9C/'> RequireJS 예제</a> </h2>
+    <div class="meta">
+      Dec 29, 2014
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/javascript">#javascript</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> RequireJS
+log라는 모듈을 작성한다
+log.js
+define('log', function() { return function(str) { console.log(&quot;--&gt; &quot;, str); } });  &lt;!DOCTYPE html&gt; &lt;html lang=&quot;ko&quot;&gt; &lt;head&gt; &lt;script src=&quot;requirejs/2.1.15/require.js&quot;&gt;&lt;/script&gt; &lt;script src=&quot;js/log.js&quot;&gt;&lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;script&gt; require(['log'], function(log) { log(&quot;Hello !&quot;); }); &lt;/script&gt; &lt;/body&gt; &lt;/html&gt;  프로토타입으로 작성한 boost.js
+define('boost', function() { function Boost() { } Boost.prototype.version = function() { return &quot;1.0&quot;; }; return Boost; });  &lt;!DOCTYPE html&gt; &lt;html lang=&quot;ko&quot;&gt; &lt;head&gt; &lt;script src=&quot;requirejs/2.1.15/require.js&quot;&gt;&lt;/script&gt; &lt;script src=&quot;js/boost.js&quot;&gt;&lt;/script&gt; &lt;script&gt; require(['boost'], function(Boost) { var boost = new Boost(); alert(boost. </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2014/12/requirejs-%EC%98%88%EC%A0%9C/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2014/11/angularjs-tips/'> AngularJS Tips</a> </h2>
+    <div class="meta">
+      Nov 10, 2014
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/angularjs">#angularjs</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> 개발 정보
+버젼 1.2.26를 사용
+scope 계층화 &lt;!DOCTYPE html&gt; &lt;html lang=&quot;ko&quot; ng-app=&quot;app&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;utf-8&quot;&gt; &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt; &lt;title&gt;Services and Modules&lt;/title&gt; &lt;link rel=&quot;stylesheet&quot; href=&quot;bootstrap/css/bootstrap.css&quot; /&gt; &lt;link rel=&quot;stylesheet&quot; href=&quot;bootstrap/css/bootstrap-theme.css&quot; /&gt; &lt;script type=&quot;text/javascript&quot; src=&quot;jquery/jquery.js&quot;&gt;&lt;/script&gt; &lt;script type=&quot;text/javascript&quot; src=&quot;jquery-ui/jquery-ui.js&quot;&gt;&lt;/script&gt; &lt;script type=&quot;text/javascript&quot; src=&quot;angular/angular.js&quot;&gt;&lt;/script&gt; &lt;script&gt; angular.module(&quot;app&quot;, []) .controller(&quot;ParentController&quot;, ['$scope', function($scope) { $scope.value = 'parent value'; $scope.getUpperValue = function () { return angular.uppercase($scope.value); } }]) .controller(&quot;ChildController&quot;,[ '$scope', function($scope) { $scope.newValue = 'child value'; }]); &lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;div ng-controller=&quot;ParentController&quot;&gt; &lt;h3&gt;parent&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;value: {{value}}&lt;/li&gt; &lt;li&gt;Upper: {{getUpperValue()}}&lt;/li&gt; &lt;li&gt;newValue: {{newValue}} &lt;/li&gt; &lt;/ul&gt; &lt;/div&gt; &lt;div ng-controller=&quot;ChildController&quot;&gt; &lt;h3&gt;parent&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;value: {{value}}&lt;/li&gt; &lt;li&gt;Upper: {{getUpperValue()}}&lt;/li&gt; &lt;li&gt;newValue: {{newValue}} &lt;/li&gt; &lt;/ul&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt;  제대로 된 결과를 보려면 </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2014/11/angularjs-tips/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2014/10/backbone---handlebar---gulp-%ED%8C%81/'> backbone &#43; handlebar &#43; gulp 팁</a> </h2>
+    <div class="meta">
+      Oct 3, 2014
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/backbone">#backbone</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/gulp">#gulp</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> 백본과 핸들바를 사용해서 소스를 컴파일 후
+정해진 경로로 결과물을 내보내자.
+핸들바를 사용하지 않을려면 brfs도 고려해보자
+패키지 설치
+npm install --global gulp npm install --save-dev gulp npm install --save-dev browserify npm install --save-dev vinyl-source-stream npm install --save handlebars npm install --save hbsfy  gulpfile.js
+var gulp = require('gulp'), browserify = require('browserify'), source = require('vinyl-source-stream'), hbsfy = require('hbsfy'); gulp.task('build', function() { var b = browserify('./js/app.js', {debug:true}); return b.transform(hbsfy) .bundle() .pipe(source('app.js')) .pipe(gulp.dest('/home/alpha/public/js')); }); gulp. </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2014/10/backbone---handlebar---gulp-%ED%8C%81/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2014/03/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A1%9C-uuid-%EC%83%9D%EC%84%B1/'> 자바스크립트로 UUID 생성</a> </h2>
+    <div class="meta">
+      Mar 2, 2014
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/javascript">#javascript</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> RFC4122
+return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) { var r = Math.random()*16|0, v = c === 'x' ? r : (r&amp;0x3|0x8); return v.toString(16); });  var s = []; var hexDigits = &quot;0123456789abcdef&quot;; for (var i = 0; i &lt; 36; i++) { s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1); } s[14] = &quot;4&quot;; s[19] = hexDigits.substr((s[19] &amp; 0x3) | 0x8, 1); s[8] = s[13] = s[18] = s[23] = &quot;-&quot;; var uuid = s. </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2014/03/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A1%9C-uuid-%EC%83%9D%EC%84%B1/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2014/01/java-io/nio-tutorial/'> Java IO/NIO Tutorial</a> </h2>
+    <div class="meta">
+      Jan 5, 2014
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/java">#java</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary">  The Rox Java NIO Tutorial Five ways to maximize Java NIO and NIO.2 Java NIO - Non Blocking IO and Multiplexing A simple HTTP server that displays information about all accessible printers on the network   </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2014/01/java-io/nio-tutorial/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2013/10/bigdecimal%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%B0%98%EC%98%AC%EB%A6%BC/'> BigDecimal을 이용한 반올림</a> </h2>
+    <div class="meta">
+      Oct 12, 2013
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/java">#java</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> BigDecimal.ROUND_DOWN	// 내림 BigDecimal.ROUND_HALF_UP // 반올림 BigDecimal.ROUND_UP // 올림   </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2013/10/bigdecimal%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%B0%98%EC%98%AC%EB%A6%BC/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2013/10/javascript-%EA%B0%9C%EB%B0%9C%ED%8C%81/'> JavaScript 개발팁</a> </h2>
+    <div class="meta">
+      Oct 10, 2013
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/javascript">#javascript</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> Module Pattern
+로직과 private 변수를 캡슐화하는 방법으로 아래와 같은 모듈패턴( 익명함수) 을 많이 사용한다.
+(function() { /* ... */ })();  jQuery와 연동해서 사용할 경우 아래와 같이 파라미터를 전달하도록 한다.
+(function($) { /* ... */ })(jQuery);  글로벌 변수를 전달해서 네임스페이스로 확장 할 수 있다.
+(function($, exports) { exports.Foo = &quot;wem&quot;; })(jQuery, window);  IIFE(mmediately-Invoked Function Expression)
+(function() { var mod = {}; })();  window라는 식별자를 거치지 않고 전역변수를 접근하자 </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2013/10/javascript-%EA%B0%9C%EB%B0%9C%ED%8C%81/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2013/10/java.util.concurrent/'> java.util.concurrent</a> </h2>
+    <div class="meta">
+      Oct 1, 2013
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/java">#java</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> 쓰레드 생성은 시스템에 따라 제한됨 쓰레드풀을 사용할 수 있는 패키지가 있음 Future는 메서드를 비동기로 실행 후 나중에 결과를 받을 수 있음  import java.math.BigDecimal; import java.util.ArrayList; import java.util.List; import java.util.concurrent.Callable; import java.util.concurrent.ExecutionException; import java.util.concurrent.ExecutorService; import java.util.concurrent.Executors; import java.util.concurrent.Future; public class CallableTest { public static void main(String[] args) { callableTest(); } private static class Result { Long in; BigDecimal out; Result(final Long in, final BigDecimal out) { this.in = in; this. </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2013/10/java.util.concurrent/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2013/09/jspwiki-%EC%84%A4%EC%B9%98/'> JSPWiki 설치</a> </h2>
+    <div class="meta">
+      Sep 27, 2013
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/wiki">#wiki</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary">  Apache JSPWiki
+설정 server.xml
+&lt;Connector address=&quot;127.0.0.1&quot; port=&quot;8080&quot; protocol=&quot;org.apache.coyote.http11.Http11NioProtocol&quot; connectionTimeout=&quot;20000&quot; maxThreads=&quot;3&quot; minSpareThreads=&quot;2&quot; redirectPort=&quot;8443&quot; URIEncoding=&quot;UTF-8&quot;/&gt;  jspwiki.properties
+jspwiki.baseURL= http://cloud9ine.cafe24.com/wiki jspwiki.fileSystemProvider.pageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/ jspwiki.basicAttachmentProvider.storageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/  jspwiki.policy
+Anonymous를 코멘트처리
+Nginx 연동 upstream tomcat { server 127.0.0.1:8080; } server { ... location /wiki { proxy_pass http://tomcat; }   </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2013/09/jspwiki-%EC%84%A4%EC%B9%98/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
 
 
 <div class="page-nav">
@@ -473,7 +778,7 @@ JSX 문법을 사용하기 위해서는 반드시 JSXTransformer.js가 필요하
   </div>
 
   <div class="page-num">
-    2/5
+    2/3
   </div>
 
   <div class="page-next">

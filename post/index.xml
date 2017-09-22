@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Less is more</title>
+    <title>Posts on (fn [] &#34;Less is more&#34;)</title>
     <link>http://clonekim.github.io/post/</link>
-    <description>Recent content in Posts on Less is more</description>
+    <description>Recent content in Posts on (fn [] &#34;Less is more&#34;)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
     <lastBuildDate>Fri, 22 Sep 2017 01:10:18 +0900</lastBuildDate>
@@ -45,6 +45,16 @@ auto-complete 패키지를 사용하여 자동완성이 될것이다
     </item>
     
     <item>
+      <title>AWS S3 Part 2</title>
+      <link>http://clonekim.github.io/2017/07/aws-s3-part-2/</link>
+      <pubDate>Wed, 26 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://clonekim.github.io/2017/07/aws-s3-part-2/</guid>
+      <description> S3 Condition Referer를 참조해서 리소스제한
+{ &amp;quot;Version&amp;quot;: &amp;quot;2012-10-17&amp;quot;, &amp;quot;Id&amp;quot;: &amp;quot;Policy1463129932149&amp;quot;, &amp;quot;Statement&amp;quot;: [ { &amp;quot;Sid&amp;quot;: &amp;quot;Stmt1463129927965&amp;quot;, &amp;quot;Effect&amp;quot;: &amp;quot;Allow&amp;quot;, &amp;quot;Principal&amp;quot;: { &amp;quot;AWS&amp;quot;: &amp;quot;*&amp;quot; }, &amp;quot;Action&amp;quot;: &amp;quot;s3:GetObject&amp;quot;, &amp;quot;Resource&amp;quot;: &amp;quot;arn:aws:s3:::your-bucket/*&amp;quot;, &amp;quot;Condition&amp;quot;: { &amp;quot;StringLike&amp;quot;: { &amp;quot;aws:Referer&amp;quot;: [ &amp;quot;http://yoursite/*&amp;quot;, &amp;quot;http://*.yoursite/*&amp;quot; ] } } } ] }  </description>
+    </item>
+    
+    <item>
       <title>Freemarker를 Clojure에서</title>
       <link>http://clonekim.github.io/2017/07/freemarker%EB%A5%BC-clojure%EC%97%90%EC%84%9C/</link>
       <pubDate>Fri, 14 Jul 2017 00:00:00 +0000</pubDate>
@@ -71,6 +81,21 @@ $http.json(url, {jsonpCallbackParam: &#39;callback&#39;}) .then(function(res) { 
     </item>
     
     <item>
+      <title>AWS Elastick Beanstalk 1</title>
+      <link>http://clonekim.github.io/2016/05/aws-elastick-beanstalk-1/</link>
+      <pubDate>Thu, 12 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://clonekim.github.io/2016/05/aws-elastick-beanstalk-1/</guid>
+      <description>awsebcli 설치 linux
+$ sudo apt install python3-pip $ pip3 install awsebcli  MacOS
+$ brew install python3 $ sudo pip3 install awsebcli  pip가 업데이드안되어서 설치가 안될경우에는
+$ sudo pip3 install --upgrade pip  설치 시 sudo 를 사용하지 않고 로컬(자신의 홈디렉토리)에 설치 할경우에는
+&amp;ndash;user 파라미터를 사용하면 .local/bin 에 설치된다.
+그외에 추가로 setuptools를 환경에 따라 요구할 수 있다.
+eb 초기화 $ mkdir eb $ cd eb $ eb init  초기화를 실행하면 자신의 홈디렉토리에 .</description>
+    </item>
+    
+    <item>
       <title>Emacs를 쓰면서</title>
       <link>http://clonekim.github.io/2016/05/emacs%EB%A5%BC-%EC%93%B0%EB%A9%B4%EC%84%9C/</link>
       <pubDate>Sat, 07 May 2016 00:00:00 +0000</pubDate>
@@ -80,6 +105,21 @@ $http.json(url, {jsonpCallbackParam: &#39;callback&#39;}) .then(function(res) { 
 &#39;(mode-icons-mode t)  js-mode setup-js.el
 (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.js$&amp;quot; . js-mode)) (add-hook &#39;js-mode-hook &#39;subword-mode) (add-hook &#39;html-mode-hook &#39;subword-mode) (setq js-indent-level 2) (eval-after-load &amp;quot;sgml-mode&amp;quot; &#39;(progn (require &#39;tagedit) (tagedit-add-paredit-like-keybindings) (add-hook &#39;html-mode-hook (lambda () (tagedit-mode 1)))))  web-mode web.el
 (require &#39;web-mode) (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.html?\\&#39;&amp;quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.[aj]sp\\&#39;&amp;quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.mustache\\&#39;&amp;quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.ftl\\&#39;&amp;quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.vue\\&#39;&amp;quot; . web-mode)) (defun my-web-mode-hook () (setq web-mode-markup-indent-offset 2) (setq web-mode-css-indent-offset 2) (setq web-mode-code-indent-offset 2)) (add-hook &#39;web-mode-hook &#39;my-web-mode-hook)  neo-mode neo.</description>
+    </item>
+    
+    <item>
+      <title>AWS S3 Part 1</title>
+      <link>http://clonekim.github.io/2016/04/aws-s3-part-1/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://clonekim.github.io/2016/04/aws-s3-part-1/</guid>
+      <description> S3 버킷 작성  콘솔로 로그인한다 S3로 이동한다 Bucket(버킷)을 생성한다
+해당 버킷은 해당 리젼에서 유일무이해야 한다  정적 리소스 호스팅  버킷을 만든다
+ 퍼미션에서 버킷정책(Bucket policy)을 작성한다
+ AWS Policy Generator를 통해
+권한을 작성한다(포맷은 JSON)
+ Policy 작성
+     Select type of policy S3 bucket policy     Principal AWS:*   Action getObject   ARN arn:aws:s3:::[bucket name]/*    </description>
     </item>
     
     <item>
@@ -93,7 +133,7 @@ $ docker pull [이미지이름]  컨테이너 생성
 $ docker run --name [컨테이너이름]  컨테이너로 접속
 $ docker exec -it [컨테이너] bash  컨테이너 시작/재시작
 $ docker start [컨테이너이름] $ docker stop [컨테이너이름]  MySQL 사용하기 mysql이미지를 다운로드와 함께 컨테이너 시작하기
-$ docker run --name mysql -e MYSQL_ROOT_PASSWORD=root -p 3306:3306 -d mysql  컨테이너확인
+$ docker run --name mysql -e MYSQL_ROOT_PASSWORD=root -e TZ=Asia/Seoul -p 3306:3306 -d mysql --character-set-server=utf8  컨테이너확인
 $ docker ps CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES cf5fbb3d49b1 mysql &amp;quot;docker-entrypoint.</description>
     </item>
     
@@ -479,7 +519,7 @@ Nginx 연동 upstream tomcat { server 127.0.0.1:8080; } server { ... location /w
       <pubDate>Fri, 27 Sep 2013 00:00:00 +0000</pubDate>
       
       <guid>http://clonekim.github.io/2013/09/jackson-json-processor/</guid>
-      <description> Parsing option String data = &amp;quot;[{&#39;text&#39;:&#39;PROJECT&#39;,&#39;id&#39;:&#39;00156&#39;,&#39;leaf&#39;:true}]&amp;quot;; ObjectMapper mapper = new ObjectMapper(); mapper.configure(JsonParser.Feature.ALLOW_SINGLE_QUOTES, true); JsonNode node = mapper.readTree(data);  Annotation *JsonSerialize *
+      <description> Parsing option String data = &amp;quot;[{&#39;text&#39;:&#39;PROJECT&#39;,&#39;id&#39;:&#39;00156&#39;,&#39;leaf&#39;:true}]&amp;quot;; ObjectMapper mapper = new ObjectMapper(); mapper.configure(JsonParser.Feature.ALLOW_SINGLE_QUOTES, true); JsonNode node = mapper.readTree(data);  Annotation JsonSerialize
 @JsonSerialize(using=JsonDateSerializer.class) public Date getCreationDate() { return creationDate; }  JsonDateSerializer.java
 public class JsonDateSerializer extends JsonSerializer&amp;lt;Date&amp;gt; { private static final SimpleDateFormat dateFormat = new SimpleDateFormat(&amp;quot;yyyy-MM-dd HH:mm:ss&amp;quot;); @Override public void serialize(Date date, JsonGenerator json, SerializerProvider provider) throws IOException, JsonProcessingException { String formattedDate = dateFormat.format(date); json.writeString(formattedDate); } }   Jackson JSON Processor Wiki  </description>
     </item>

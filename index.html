@@ -12,7 +12,7 @@
 
 <link rel="canonical" href="http://clonekim.github.io/">
 <base href="http://clonekim.github.io/" />
-<meta property="og:title" content="Less is more" />
+<meta property="og:title" content="(fn [] &#34;Less is more&#34;)" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://clonekim.github.io/" />
@@ -30,12 +30,12 @@
 
 
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Less is more"/>
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="(fn [] &#34;Less is more&#34;)"/>
 <meta name="twitter:description" content=""/>
 
 
 
-<meta itemprop="name" content="Less is more">
+<meta itemprop="name" content="(fn [] &#34;Less is more&#34;)">
 <meta itemprop="description" content="">
 
 
@@ -48,7 +48,7 @@
 <title>
 
 
-     Less is more 
+     (fn [] &#34;Less is more&#34;) 
 
 </title>
 
@@ -67,7 +67,7 @@
 
   <nav>
     <div class="siteTitle">
-      <a href="http://clonekim.github.io/">Less is more</a>
+      <a href="http://clonekim.github.io/">(fn [] &#34;Less is more&#34;)</a>
     </div> 
 
     
@@ -193,6 +193,36 @@ auto-complete 패키지를 사용하여 자동완성이 될것이다
     <article class="post-preview">
 
   <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2017/07/aws-s3-part-2/'> AWS S3 Part 2</a> </h2>
+    <div class="meta">
+      Jul 26, 2017
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/aws">#aws</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary">  S3 Condition Referer를 참조해서 리소스제한
+{ &quot;Version&quot;: &quot;2012-10-17&quot;, &quot;Id&quot;: &quot;Policy1463129932149&quot;, &quot;Statement&quot;: [ { &quot;Sid&quot;: &quot;Stmt1463129927965&quot;, &quot;Effect&quot;: &quot;Allow&quot;, &quot;Principal&quot;: { &quot;AWS&quot;: &quot;*&quot; }, &quot;Action&quot;: &quot;s3:GetObject&quot;, &quot;Resource&quot;: &quot;arn:aws:s3:::your-bucket/*&quot;, &quot;Condition&quot;: { &quot;StringLike&quot;: { &quot;aws:Referer&quot;: [ &quot;http://yoursite/*&quot;, &quot;http://*.yoursite/*&quot; ] } } } ] }   </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2017/07/aws-s3-part-2/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
     <h2 class="title"> <a href='http://clonekim.github.io/2017/07/freemarker%EB%A5%BC-clojure%EC%97%90%EC%84%9C/'> Freemarker를 Clojure에서</a> </h2>
     <div class="meta">
       Jul 14, 2017
@@ -259,6 +289,41 @@ $http.json(url, {jsonpCallbackParam: 'callback'}) .then(function(res) { ... })  
     <article class="post-preview">
 
   <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2016/05/aws-elastick-beanstalk-1/'> AWS Elastick Beanstalk 1</a> </h2>
+    <div class="meta">
+      May 12, 2016
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/aws">#aws</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> awsebcli 설치 linux
+$ sudo apt install python3-pip $ pip3 install awsebcli  MacOS
+$ brew install python3 $ sudo pip3 install awsebcli  pip가 업데이드안되어서 설치가 안될경우에는
+$ sudo pip3 install --upgrade pip  설치 시 sudo 를 사용하지 않고 로컬(자신의 홈디렉토리)에 설치 할경우에는
+&ndash;user 파라미터를 사용하면 .local/bin 에 설치된다.
+그외에 추가로 setuptools를 환경에 따라 요구할 수 있다.
+eb 초기화 $ mkdir eb $ cd eb $ eb init  초기화를 실행하면 자신의 홈디렉토리에 . </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2016/05/aws-elastick-beanstalk-1/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
     <h2 class="title"> <a href='http://clonekim.github.io/2016/05/emacs%EB%A5%BC-%EC%93%B0%EB%A9%B4%EC%84%9C/'> Emacs를 쓰면서</a> </h2>
     <div class="meta">
       May 7, 2016
@@ -291,6 +356,41 @@ $http.json(url, {jsonpCallbackParam: 'callback'}) .then(function(res) { ... })  
     <article class="post-preview">
 
   <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2016/04/aws-s3-part-1/'> AWS S3 Part 1</a> </h2>
+    <div class="meta">
+      Apr 20, 2016
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/aws">#aws</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary">  S3 버킷 작성  콘솔로 로그인한다 S3로 이동한다 Bucket(버킷)을 생성한다
+해당 버킷은 해당 리젼에서 유일무이해야 한다  정적 리소스 호스팅  버킷을 만든다
+ 퍼미션에서 버킷정책(Bucket policy)을 작성한다
+ AWS Policy Generator를 통해
+권한을 작성한다(포맷은 JSON)
+ Policy 작성
+     Select type of policy S3 bucket policy     Principal AWS:*   Action getObject   ARN arn:aws:s3:::[bucket name]/*     </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2016/04/aws-s3-part-1/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
     <h2 class="title"> <a href='http://clonekim.github.io/2016/03/docker-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/'> Docker 시작하기</a> </h2>
     <div class="meta">
       Mar 1, 2016
@@ -311,7 +411,7 @@ $ docker pull [이미지이름]  컨테이너 생성
 $ docker run --name [컨테이너이름]  컨테이너로 접속
 $ docker exec -it [컨테이너] bash  컨테이너 시작/재시작
 $ docker start [컨테이너이름] $ docker stop [컨테이너이름]  MySQL 사용하기 mysql이미지를 다운로드와 함께 컨테이너 시작하기
-$ docker run --name mysql -e MYSQL_ROOT_PASSWORD=root -p 3306:3306 -d mysql  컨테이너확인
+$ docker run --name mysql -e MYSQL_ROOT_PASSWORD=root -e TZ=Asia/Seoul -p 3306:3306 -d mysql --character-set-server=utf8  컨테이너확인
 $ docker ps CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES cf5fbb3d49b1 mysql &quot;docker-entrypoint. </div>
 
   <footer>
@@ -420,6 +520,258 @@ var gulp = require('gulp'), browserify = require('browserify'), babelify = requi
 </article>
 
 
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2016/01/github%EC%97%90-%EB%B8%94%EB%A1%9C%EA%B7%B8%EC%A0%9C%EC%9E%91/'> Github에 블로그제작</a> </h2>
+    <div class="meta">
+      Jan 13, 2016
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/github">#github</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/cryogen">#cryogen</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> 깃허브에 계정만들기 먼저 github.com에 가입하고 저장소를 만든다
+저장소는 계정명.github.io라고 작성한다. 자세한 것은 GitHub Page를 살펴볼 것
+lein 설치 leiningen 을 설치한다
+프로젝트를 생성한다 cryogen템플릿을 이용해서 블로그 프로젝트를 생성한다
+lein new cryogen my-blog cd my-blog  git clone한다 public 디렉토리는 없기때문에 작성한다
+예) git@github.com:[계정명]/[생성한 저장소] [target 디렉토리]
+mkdir resources/public git clone git@github.com:clonekim/clonekim.github.io.git resources/public  config.edn 편집 resources/templates/config.edn를 편집한다
+내용중 아래와 같이 &ldquo;&ldquo;으로 설정한다
+:blog-prefix &quot;&quot;  서버 시작 아래 명령어로 서버를 시작한다 </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2016/01/github%EC%97%90-%EB%B8%94%EB%A1%9C%EA%B7%B8%EC%A0%9C%EC%9E%91/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2015/09/clojure-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/'> Clojure 시작하기</a> </h2>
+    <div class="meta">
+      Sep 25, 2015
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/clojure">#clojure</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> JVM위에서 작동하는 함수형 프로그래밍이다
+clojure 얻기 http://clojure.org
+IDE/Tools  LightTable Cursive Emacs  Leiningen으로 시작하기 Leiningen (레닝겐)은 클로져를 쉽게 시작하기 위한 빌드자동화 툴이다
+윈도우에서만 self-install해준다
+Project 생성 lein new [프로젝트명]  프로젝트 의존성 추가 라이브러리는 아래의 저장소에서 검색이 가능하고
+의존성에 추가하면 된다
+ clojars Maven repository  :dependencies [[org.clojure/clojure &quot;1.7.0&quot;] [groupId/artifactId &quot;version&quot;]])  그외의 라이브러리 저장소로는 추가로 지정할수있다
+:repositories { &quot;이름&quot; &quot;http://192.168.0.10:8081/nexus/content/repositories/thirdparty&quot; }  REPL(Read Eval Print Loop) 실행 lein repl  REPL에서 클로저코드를 작성하고 바로 실행이 가능하다 </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2015/09/clojure-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2015/09/%ED%81%B4%EB%A1%9C%EC%A0%80%EC%97%90%EC%84%9C-jdbc/'> 클로저에서 Jdbc</a> </h2>
+    <div class="meta">
+      Sep 25, 2015
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/clojure">#clojure</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary">  클로저에서 JDBC(Java Database Connectivity) 를 사용하기 위한 가이드
+몇몇 함수가 없어진 경우가 있기 때문에 소스보기로 확인할 것
+ clojure-doc보기 소스보기   leiningen [org.clojure/java.jdbc &quot;0.4.2&quot;]  간단한 예제 (ns db-test.core (:require [clojure.java.jdbc :as sql]))	(def db {:classname &quot;com.mysql.jdbc.Driver&quot; :subprotocol &quot;mysql&quot; :subname &quot;//127.0.0.1:3306/test&quot; :user &quot;xxx&quot; :password &quot;xxxx&quot; }) (defn get-user [] (println (sql/query db [&quot;select * from users&quot;]))) (defn -main [] (get-user))  참고  HikarCP를 사용하는 예 clojure.jdbc doc   </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2015/09/%ED%81%B4%EB%A1%9C%EC%A0%80%EC%97%90%EC%84%9C-jdbc/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2015/09/freemarker-assign%ED%8C%81/'> Freemarker assign팁</a> </h2>
+    <div class="meta">
+      Sep 23, 2015
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/java">#java</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/freemarker">#freemarker</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> 변수 x에 42를 할당하고 이것은 명백히 Number 타입이다
+&lt;#assign x=42 /&gt;  String타입으로 변환할 수 있다
+${x?string} ${x?string[0..1]}  .(dot)가 들어간 변수도 사용할 수 있다
+&lt;#assign telephone=&quot;${site\\.telephone?string}&quot; /&gt; //15881234 ${telephone[0..3]}-${telephone[4..7]} //1588-1234   </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2015/09/freemarker-assign%ED%8C%81/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2015/09/clojurescript%EC%97%90%EC%84%9C-jquery%EC%82%AC%EC%9A%A9/'> clojurescript에서 jquery사용</a> </h2>
+    <div class="meta">
+      Sep 20, 2015
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/clojurescript">#clojurescript</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary">  view.clj
+(defn view-layout [&amp; content] (html [:head [:meta {:http-equiv &quot;Content-type&quot; :content &quot;text/html; charset=utf-8&quot;}] [&quot;title&quot;: &quot;Project-Name&quot;]] [:body content])) (defn view-content [] (view-layout [:h2 &quot;Project-Name&quot;] [:p {:id &quot;clickhere&quot;} &quot;Get yourself a nice alert by clicking here.&quot;] [:script {:src &quot;/js/jquery-1.10.2.min.js&quot;}] [:script {:src &quot;/js/cljs.js&quot;}]))  hello.cljs
+(:require [jayq.core :as jq]) (:use [jayq.core :only [$]]) ;; ;; $(&quot;#btn&quot;).click(function() {alert(&quot;Hi!&quot;); }); ;; (jq/bind ($ &quot;#btn&quot;) :click (fn [] (js/alert &quot;Hi!&quot;)))  lein cljsbuild once lein run  참고  ClojureScriptという選択肢 ClojureScript入門   </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2015/09/clojurescript%EC%97%90%EC%84%9C-jquery%EC%82%AC%EC%9A%A9/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2015/09/clojure%EB%A5%BC-%EC%9C%84%ED%95%9C-emacs-%ED%99%98%EA%B2%BD/'> Clojure를 위한 Emacs 환경</a> </h2>
+    <div class="meta">
+      Sep 11, 2015
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/emacs">#emacs</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/clojure">#clojure</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> Emacs 24를 기준으로 작성
+현재 사용중인 환경은 custom-emacs.tgz
+Package Install init.el
+(require 'package) (add-to-list 'package-archives '(&quot;melpa-stable&quot; . &quot;http://stable.melpa.org/packages/&quot;) t) (package-initialize)  package install
+M-x package-install [RET] cider [RET]  현재 사용하고 있는 패키지
+ cider paredit rainbow-delimiters s f clojure-mode clojure-mode-extra-font-locking dash ido-completing-read+ ido-ubiquitous projectile queue seq smex spinner  Cider 구동 주의
+Cider와 cider-nrepl의 버전이 맞아야함  profiles.clj
+.lein디렉토리이하에 작성한다 없을경우 파일생성
+{:user {:plugins [[cider/cider-nrepl &quot;0.10.0&quot;]] :dependencies [[org.clojure/tools.nrepl &quot;0. </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2015/09/clojure%EB%A5%BC-%EC%9C%84%ED%95%9C-emacs-%ED%99%98%EA%B2%BD/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2015/09/oracle-jdbc-url/'> Oracle Jdbc Url</a> </h2>
+    <div class="meta">
+      Sep 11, 2015
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/java">#java</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/oracle">#oracle</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> JDBC URL syntax
+jdbc:oracle:thin:@[HOST][:PORT]:SID jdbc:oracle:thin:@//[HOST][:PORT]/SERVICE  Hikari Pool를 사용 시 아래와 같이 경고메시지가 나타나면
+oracle.jdbc.driver.OracleDriver에서 oracle.jdbc.OracleDriver 로 바꿀 것
+2015-09-10 WARN (main) [DriverDataSource(&lt;init&gt;:68)] Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation. 2015-09-10 DEBUG (main) [PoolUtilities(getAndSetNetworkTimeout:198)] HikariPool-0 - Connection.setNetworkTimeout() not supported   JDBC - Oracle FAQ Database JDBC Developer&rsquo;s Guide and Reference   </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2015/09/oracle-jdbc-url/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
 
 
 <div class="page-nav">
@@ -428,7 +780,7 @@ var gulp = require('gulp'), browserify = require('browserify'), babelify = requi
   </div>
 
   <div class="page-num">
-    1/5
+    1/3
   </div>
 
   <div class="page-next">
