@@ -108,6 +108,42 @@
     <article class="post-preview">
 
   <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2015/09/oracle-jdbc-url/'> Oracle Jdbc Url</a> </h2>
+    <div class="meta">
+      Sep 11, 2015
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/java">#java</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/oracle">#oracle</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> JDBC URL syntax
+jdbc:oracle:thin:@[HOST][:PORT]:SID jdbc:oracle:thin:@//[HOST][:PORT]/SERVICE  Hikari Pool를 사용 시 아래와 같이 경고메시지가 나타나면
+oracle.jdbc.driver.OracleDriver에서 oracle.jdbc.OracleDriver 로 바꿀 것
+2015-09-10 WARN (main) [DriverDataSource(&lt;init&gt;:68)] Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation. 2015-09-10 DEBUG (main) [PoolUtilities(getAndSetNetworkTimeout:198)] HikariPool-0 - Connection.setNetworkTimeout() not supported   JDBC - Oracle FAQ Database JDBC Developer&rsquo;s Guide and Reference   </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2015/09/oracle-jdbc-url/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
     <h2 class="title"> <a href='http://clonekim.github.io/2015/09/ring%EC%9C%BC%EB%A1%9C-%EC%9B%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/'> Ring으로 웹프로그래밍</a> </h2>
     <div class="meta">
       Sep 11, 2015
@@ -728,40 +764,6 @@ return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) { var
   <footer>
   <div class="rmore">
     <a href='http://clonekim.github.io/2013/10/java.util.concurrent/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2013/09/jspwiki-%EC%84%A4%EC%B9%98/'> JSPWiki 설치</a> </h2>
-    <div class="meta">
-      Sep 27, 2013
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="/tags/wiki">#wiki</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary">  Apache JSPWiki
-설정 server.xml
-&lt;Connector address=&quot;127.0.0.1&quot; port=&quot;8080&quot; protocol=&quot;org.apache.coyote.http11.Http11NioProtocol&quot; connectionTimeout=&quot;20000&quot; maxThreads=&quot;3&quot; minSpareThreads=&quot;2&quot; redirectPort=&quot;8443&quot; URIEncoding=&quot;UTF-8&quot;/&gt;  jspwiki.properties
-jspwiki.baseURL= http://cloud9ine.cafe24.com/wiki jspwiki.fileSystemProvider.pageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/ jspwiki.basicAttachmentProvider.storageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/  jspwiki.policy
-Anonymous를 코멘트처리
-Nginx 연동 upstream tomcat { server 127.0.0.1:8080; } server { ... location /wiki { proxy_pass http://tomcat; }   </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='http://clonekim.github.io/2013/09/jspwiki-%EC%84%A4%EC%B9%98/'><nobr>Read more ...</nobr></a>
   </div>
   </footer>
 

@@ -45,6 +45,17 @@ auto-complete 패키지를 사용하여 자동완성이 될것이다
     </item>
     
     <item>
+      <title>Deployd</title>
+      <link>http://clonekim.github.io/2017/08/deployd/</link>
+      <pubDate>Mon, 21 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://clonekim.github.io/2017/08/deployd/</guid>
+      <description> 몽고디비를 이용한 JSON Dummy 서버툴이다.
+설치 $ npm install -g deployd  몽고디비
+$ docker run --name deployd-mongo -d mongo -p 27017:27017  Deployd 실행 $ dpd create [project name] $ cd [project name] $ dpd -H localhost -P 27017 -d  </description>
+    </item>
+    
+    <item>
       <title>AWS S3 Part 2</title>
       <link>http://clonekim.github.io/2017/07/aws-s3-part-2/</link>
       <pubDate>Wed, 26 Jul 2017 00:00:00 +0000</pubDate>
