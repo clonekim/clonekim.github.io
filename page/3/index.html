@@ -12,14 +12,14 @@
 
 <link rel="canonical" href="http://clonekim.github.io/">
 <base href="http://clonekim.github.io/" />
-<meta property="og:title" content="Less is more" />
+<meta property="og:title" content="(fn [] &#34;Less is more&#34;)" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://clonekim.github.io/" />
 
 
 
-<meta property="og:updated_time" content="2015-07-02T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2013-09-27T00:00:00&#43;00:00"/>
 
 
 
@@ -30,12 +30,12 @@
 
 
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Less is more"/>
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="(fn [] &#34;Less is more&#34;)"/>
 <meta name="twitter:description" content=""/>
 
 
 
-<meta itemprop="name" content="Less is more">
+<meta itemprop="name" content="(fn [] &#34;Less is more&#34;)">
 <meta itemprop="description" content="">
 
 
@@ -48,7 +48,7 @@
 <title>
 
 
-     Less is more 
+     (fn [] &#34;Less is more&#34;) 
 
 </title>
 
@@ -67,7 +67,7 @@
 
   <nav>
     <div class="siteTitle">
-      <a href="http://clonekim.github.io/">Less is more</a>
+      <a href="http://clonekim.github.io/">(fn [] &#34;Less is more&#34;)</a>
     </div> 
 
     
@@ -108,29 +108,31 @@
     <article class="post-preview">
 
   <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2015/07/angularjs-%EB%8B%A4%EA%B5%AD%EC%96%B4%EC%B2%98%EB%A6%AC/'> AngularJS 다국어처리</a> </h2>
+    <h2 class="title"> <a href='http://clonekim.github.io/2013/09/jspwiki-%EC%84%A4%EC%B9%98/'> JSPWiki 설치</a> </h2>
     <div class="meta">
-      Jul 2, 2015
+      Sep 27, 2013
     </div>
     
 <div class="tags">
     
       <div class="tag">
-        <a href="/tags/angularjs">#angularjs</a>
+        <a href="/tags/wiki">#wiki</a>
       </div>
     
 </div>
 
   </header>
 
-  <div class="summary"> IndexController.js
-module.exports = ['$scope', '$cookies', 'TranslationService', function($scope, $cookies, TranslationService) { TranslationService.getLanguage($scope, $cookies); $scope.multiLng = function( lang ) { $cookies.put(&quot;lang&quot;, lang); TranslationService.getLanguage($scope, $cookies); } }];  TranslationService.js
-module.exports = ['$http', function($http) { this.getLanguage = function($scope, $cookies, cbk) { var lang = $cookies.get('lang') || 'ko'; $http({ method: 'GET', url: '/js/locale_' + lang +'.json' }).success(function(response) { $scope.translation = response;	$scope.lang = lang; }); }; }];  locale_zh.js
-{ &quot;online_start&quot;: &quot;Online申请&quot;, ... }  index. </div>
+  <div class="summary">  Apache JSPWiki
+설정 server.xml
+&lt;Connector address=&quot;127.0.0.1&quot; port=&quot;8080&quot; protocol=&quot;org.apache.coyote.http11.Http11NioProtocol&quot; connectionTimeout=&quot;20000&quot; maxThreads=&quot;3&quot; minSpareThreads=&quot;2&quot; redirectPort=&quot;8443&quot; URIEncoding=&quot;UTF-8&quot;/&gt;  jspwiki.properties
+jspwiki.baseURL= http://cloud9ine.cafe24.com/wiki jspwiki.fileSystemProvider.pageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/ jspwiki.basicAttachmentProvider.storageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/  jspwiki.policy
+Anonymous를 코멘트처리
+Nginx 연동 upstream tomcat { server 127.0.0.1:8080; } server { ... location /wiki { proxy_pass http://tomcat; }   </div>
 
   <footer>
   <div class="rmore">
-    <a href='http://clonekim.github.io/2015/07/angularjs-%EB%8B%A4%EA%B5%AD%EC%96%B4%EC%B2%98%EB%A6%AC/'><nobr>Read more ...</nobr></a>
+    <a href='http://clonekim.github.io/2013/09/jspwiki-%EC%84%A4%EC%B9%98/'><nobr>Read more ...</nobr></a>
   </div>
   </footer>
 
@@ -140,246 +142,9 @@ module.exports = ['$http', function($http) { this.getLanguage = function($scope,
     <article class="post-preview">
 
   <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2015/06/raspberrypi/'> RaspberryPi</a> </h2>
+    <h2 class="title"> <a href='http://clonekim.github.io/2013/09/jackson-json-processor/'> Jackson JSON Processor</a> </h2>
     <div class="meta">
-      Jun 28, 2015
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="/tags/raspberry">#raspberry</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary"> 준비  라즈베리파이2 microSD카드 (8G이상) HDMI케이블 LAN케이블 (카테고리3 이상) AC어댑터( USB단자출력 1A, 최소 700mA)  USB 3.0 : 5V, 900mA USB 2.0 : 5V, 500mA https://ko.wikipedia.org/wiki/USB  microUSB케이블 (A,B타입) 키보드,마우스 (USB연결)  구입  라즈베리파이2 with 고급 투명케이스 C + 방열판 셋트 RPi Camera &copy;  하드웨어 살펴보기 정면
-뒷면
-1) SoC (CPU), 메모리
-2) 전원단자
-3) USB포트
-4) HDMI포트
-7) 컴포지트출력, 오디오출력
-8) DSI (Display Serial Interface)
-9) 랜포트 </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='http://clonekim.github.io/2015/06/raspberrypi/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2015/02/beefy-%ED%8C%81/'> beefy 팁</a> </h2>
-    <div class="meta">
-      Feb 3, 2015
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="/tags/javascript">#javascript</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary"> a local development server designed to work with browserify.
- can live reload your browser when your code changes (if you want) works with whatever version of browserify or watchify; globally installed or locally installed to node_modules/. will spit compile errors out into the browser so you don&rsquo;t have that 1-2 seconds of cognitive dissonance and profound ennui that follows refreshing the page only to get a blank screen. will spit out a default index. </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='http://clonekim.github.io/2015/02/beefy-%ED%8C%81/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2015/02/imagemagick/'> ImageMagick</a> </h2>
-    <div class="meta">
-      Feb 1, 2015
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="/tags/imagemagick">#imagemagick</a>
-      </div>
-    
-      <div class="tag">
-        <a href="/tags/captcha">#captcha</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary"> Thumbnail
-convert [Image 1] -thumbnail 50% [Result Image] or convert [Image 1] -thumbnail 100x70 [Result Image]  Composite
-composite -geometry +[x]+[y] [Image 1] [Image 2] [Result Image] ex) composite -geometry +02+30 person.jpg background.jpg profile.jpg  Image Info
-identify -format '%wx%h %m %b %n' [file]  box 필터
-convert [file] -scale [n]% -filter box -resize [size]! [file]  inline 이미지 생성
-png 로 이미지를 생성하되 :- 또는 png:fd:1 를 사용하면 표준 출력 장치(모니터) 로 내보냄 </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='http://clonekim.github.io/2015/02/imagemagick/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2014/12/requirejs-%EC%98%88%EC%A0%9C/'> RequireJS 예제</a> </h2>
-    <div class="meta">
-      Dec 29, 2014
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="/tags/javascript">#javascript</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary"> RequireJS
-log라는 모듈을 작성한다
-log.js
-define('log', function() { return function(str) { console.log(&quot;--&gt; &quot;, str); } });  &lt;!DOCTYPE html&gt; &lt;html lang=&quot;ko&quot;&gt; &lt;head&gt; &lt;script src=&quot;requirejs/2.1.15/require.js&quot;&gt;&lt;/script&gt; &lt;script src=&quot;js/log.js&quot;&gt;&lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;script&gt; require(['log'], function(log) { log(&quot;Hello !&quot;); }); &lt;/script&gt; &lt;/body&gt; &lt;/html&gt;  프로토타입으로 작성한 boost.js
-define('boost', function() { function Boost() { } Boost.prototype.version = function() { return &quot;1.0&quot;; }; return Boost; });  &lt;!DOCTYPE html&gt; &lt;html lang=&quot;ko&quot;&gt; &lt;head&gt; &lt;script src=&quot;requirejs/2.1.15/require.js&quot;&gt;&lt;/script&gt; &lt;script src=&quot;js/boost.js&quot;&gt;&lt;/script&gt; &lt;script&gt; require(['boost'], function(Boost) { var boost = new Boost(); alert(boost. </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='http://clonekim.github.io/2014/12/requirejs-%EC%98%88%EC%A0%9C/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2014/11/angularjs-tips/'> AngularJS Tips</a> </h2>
-    <div class="meta">
-      Nov 10, 2014
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="/tags/angularjs">#angularjs</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary"> 개발 정보
-버젼 1.2.26를 사용
-scope 계층화 &lt;!DOCTYPE html&gt; &lt;html lang=&quot;ko&quot; ng-app=&quot;app&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;utf-8&quot;&gt; &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt; &lt;title&gt;Services and Modules&lt;/title&gt; &lt;link rel=&quot;stylesheet&quot; href=&quot;bootstrap/css/bootstrap.css&quot; /&gt; &lt;link rel=&quot;stylesheet&quot; href=&quot;bootstrap/css/bootstrap-theme.css&quot; /&gt; &lt;script type=&quot;text/javascript&quot; src=&quot;jquery/jquery.js&quot;&gt;&lt;/script&gt; &lt;script type=&quot;text/javascript&quot; src=&quot;jquery-ui/jquery-ui.js&quot;&gt;&lt;/script&gt; &lt;script type=&quot;text/javascript&quot; src=&quot;angular/angular.js&quot;&gt;&lt;/script&gt; &lt;script&gt; angular.module(&quot;app&quot;, []) .controller(&quot;ParentController&quot;, ['$scope', function($scope) { $scope.value = 'parent value'; $scope.getUpperValue = function () { return angular.uppercase($scope.value); } }]) .controller(&quot;ChildController&quot;,[ '$scope', function($scope) { $scope.newValue = 'child value'; }]); &lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;div ng-controller=&quot;ParentController&quot;&gt; &lt;h3&gt;parent&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;value: {{value}}&lt;/li&gt; &lt;li&gt;Upper: {{getUpperValue()}}&lt;/li&gt; &lt;li&gt;newValue: {{newValue}} &lt;/li&gt; &lt;/ul&gt; &lt;/div&gt; &lt;div ng-controller=&quot;ChildController&quot;&gt; &lt;h3&gt;parent&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;value: {{value}}&lt;/li&gt; &lt;li&gt;Upper: {{getUpperValue()}}&lt;/li&gt; &lt;li&gt;newValue: {{newValue}} &lt;/li&gt; &lt;/ul&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt;  제대로 된 결과를 보려면 </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='http://clonekim.github.io/2014/11/angularjs-tips/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2014/10/backbone---handlebar---gulp-%ED%8C%81/'> backbone &#43; handlebar &#43; gulp 팁</a> </h2>
-    <div class="meta">
-      Oct 3, 2014
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="/tags/backbone">#backbone</a>
-      </div>
-    
-      <div class="tag">
-        <a href="/tags/gulp">#gulp</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary"> 백본과 핸들바를 사용해서 소스를 컴파일 후
-정해진 경로로 결과물을 내보내자.
-핸들바를 사용하지 않을려면 brfs도 고려해보자
-패키지 설치
-npm install --global gulp npm install --save-dev gulp npm install --save-dev browserify npm install --save-dev vinyl-source-stream npm install --save handlebars npm install --save hbsfy  gulpfile.js
-var gulp = require('gulp'), browserify = require('browserify'), source = require('vinyl-source-stream'), hbsfy = require('hbsfy'); gulp.task('build', function() { var b = browserify('./js/app.js', {debug:true}); return b.transform(hbsfy) .bundle() .pipe(source('app.js')) .pipe(gulp.dest('/home/alpha/public/js')); }); gulp. </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='http://clonekim.github.io/2014/10/backbone---handlebar---gulp-%ED%8C%81/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2014/03/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A1%9C-uuid-%EC%83%9D%EC%84%B1/'> 자바스크립트로 UUID 생성</a> </h2>
-    <div class="meta">
-      Mar 2, 2014
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="/tags/javascript">#javascript</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary"> RFC4122
-return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) { var r = Math.random()*16|0, v = c === 'x' ? r : (r&amp;0x3|0x8); return v.toString(16); });  var s = []; var hexDigits = &quot;0123456789abcdef&quot;; for (var i = 0; i &lt; 36; i++) { s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1); } s[14] = &quot;4&quot;; s[19] = hexDigits.substr((s[19] &amp; 0x3) | 0x8, 1); s[8] = s[13] = s[18] = s[23] = &quot;-&quot;; var uuid = s. </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='http://clonekim.github.io/2014/03/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A1%9C-uuid-%EC%83%9D%EC%84%B1/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2014/01/java-io/nio-tutorial/'> Java IO/NIO Tutorial</a> </h2>
-    <div class="meta">
-      Jan 5, 2014
+      Sep 27, 2013
     </div>
     
 <div class="tags">
@@ -392,11 +157,13 @@ return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) { var
 
   </header>
 
-  <div class="summary">  The Rox Java NIO Tutorial Five ways to maximize Java NIO and NIO.2 Java NIO - Non Blocking IO and Multiplexing A simple HTTP server that displays information about all accessible printers on the network   </div>
+  <div class="summary">  Parsing option String data = &quot;[{'text':'PROJECT','id':'00156','leaf':true}]&quot;; ObjectMapper mapper = new ObjectMapper(); mapper.configure(JsonParser.Feature.ALLOW_SINGLE_QUOTES, true); JsonNode node = mapper.readTree(data);  Annotation JsonSerialize
+@JsonSerialize(using=JsonDateSerializer.class) public Date getCreationDate() { return creationDate; }  JsonDateSerializer.java
+public class JsonDateSerializer extends JsonSerializer&lt;Date&gt; { private static final SimpleDateFormat dateFormat = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;); @Override public void serialize(Date date, JsonGenerator json, SerializerProvider provider) throws IOException, JsonProcessingException { String formattedDate = dateFormat.format(date); json.writeString(formattedDate); } }   Jackson JSON Processor Wiki   </div>
 
   <footer>
   <div class="rmore">
-    <a href='http://clonekim.github.io/2014/01/java-io/nio-tutorial/'><nobr>Read more ...</nobr></a>
+    <a href='http://clonekim.github.io/2013/09/jackson-json-processor/'><nobr>Read more ...</nobr></a>
   </div>
   </footer>
 
@@ -406,9 +173,9 @@ return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) { var
     <article class="post-preview">
 
   <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2013/10/bigdecimal%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%B0%98%EC%98%AC%EB%A6%BC/'> BigDecimal을 이용한 반올림</a> </h2>
+    <h2 class="title"> <a href='http://clonekim.github.io/2013/09/%ED%94%84%EB%A1%9D%EC%8B%9C%EC%84%9C%EB%B2%84-%EC%9D%B8%EC%A6%9D%EC%97%90%EB%9F%AC/'> 프록시서버 인증에러</a> </h2>
     <div class="meta">
-      Oct 12, 2013
+      Sep 27, 2013
     </div>
     
 <div class="tags">
@@ -421,11 +188,298 @@ return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) { var
 
   </header>
 
-  <div class="summary"> BigDecimal.ROUND_DOWN	// 내림 BigDecimal.ROUND_HALF_UP // 반올림 BigDecimal.ROUND_UP // 올림   </div>
+  <div class="summary"> HttpURLConnecton를 이용해서 프록시설정하고 다운로드할 데이터가 있었으나 인증에러를 발생
+java.net.Authenticator를 구현해야함
+import java.net.Authenticator; import java.net.MalformedURLException; import java.net.PasswordAuthentication; import java.net.URL; public class ProxyAuthenticator extends Authenticator { private String proxyhost; private String userid; private String password; public ProxyAuthenticator(String proxyhost, String userid, String password) { this.proxyhost = proxyhost; this.userid = userid; this.password = password; } @Override public URL getRequestingURL() { if (this.proxyhost == null) return null; try { return new URL(this.proxyhost); } catch (MalformedURLException e) { return null; } } @Override protected RequestorType getRequestorType() { return RequestorType. </div>
 
   <footer>
   <div class="rmore">
-    <a href='http://clonekim.github.io/2013/10/bigdecimal%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%B0%98%EC%98%AC%EB%A6%BC/'><nobr>Read more ...</nobr></a>
+    <a href='http://clonekim.github.io/2013/09/%ED%94%84%EB%A1%9D%EC%8B%9C%EC%84%9C%EB%B2%84-%EC%9D%B8%EC%A6%9D%EC%97%90%EB%9F%AC/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2013/09/apache-tag-lib/'> Apache Tag Lib</a> </h2>
+    <div class="meta">
+      Sep 24, 2013
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/jsp">#jsp</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> Maven &lt;groupId&gt;jstl&lt;/groupId&gt; &lt;artifactId&gt;jstl&lt;/artifactId&gt; &lt;version&gt;1.2&lt;/version&gt;  태그를 사용하기 위한 선언 &lt;%@ taglib prefix=&quot;c&quot; uri=&quot;http://java.sun.com/jsp/jstl/core&quot;%&gt; &lt;%@ taglib prefix=&quot;fn&quot; uri=&quot;http://java.sun.com/jsp/jstl/functions&quot; %&gt; &lt;%@ taglib prefix=&quot;fmt&quot; uri=&quot;http://java.sun.com/jsp/jstl/fmt&quot;%&gt;  param test.jsp?name=1234 일 경우
+${param.변수} 로 획득할 수 있다.
+${param.name}으로 알수 있겠다.
+core set &lt;c:set var=&quot;string&quot; value=&quot;값&quot;/&gt; &lt;c:set var=&quot;string&quot; value=&quot;${변수.프로퍼티}&quot;/&gt;  out &lt;c:out value=&quot;${fn:substring(string,0,50)}&quot; default=&quot;초기값&quot;/&gt; &lt;c:out value=&quot;안녕하세요&quot; /&gt;  test &lt;c:if test=&quot;${변수가 존재하면}&quot;&gt; ..처리 &lt;/c:if&gt; &lt;c:if test=&quot;${변수 &lt; 숫자 }&quot;&gt; ..처리 &lt;/c:if&gt; &lt;c:if test=&quot;${변수 &lt; true}&quot;&gt; . </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2013/09/apache-tag-lib/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2013/09/%EC%9C%88%EB%8F%84%EC%9A%B0%EC%A6%88%EC%97%90-svn%EC%84%9C%EB%B9%84%EC%8A%A4%EB%93%B1%EB%A1%9D/'> 윈도우즈에 SVN서비스등록</a> </h2>
+    <div class="meta">
+      Sep 24, 2013
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/svn">#svn</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> ###SVN서버를 윈도우에서 서비스로 등록한다.*
+Creating the Repository svnadmin create c:\svn  Edit Configuration 방금 생성한 레포지토리 디렉토리로 이동하여
+conf\passwd 에서
+아이디 = 패스워드 형식으로 등록 ex) test = 1234  conf\svnserve.conf 에서 아래와 같이 설정
+anon-access = read auth-access = write password-db = passwd  Register as a Service C:\Program Files\Subversion\bin\svnserve.exe --service --root c:\svn 또는 C:\&gt; sc create svn binpath= &quot;C:\svn\bin\svnserve.exe --service -r C:\repos&quot; displayname= &quot;Subversion Server&quot; depend= Tcpip start= auto C:\&gt;sc create svnserver binpath= &quot;C:\Program Files\Subversion\bin\svnserve. </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2013/09/%EC%9C%88%EB%8F%84%EC%9A%B0%EC%A6%88%EC%97%90-svn%EC%84%9C%EB%B9%84%EC%8A%A4%EB%93%B1%EB%A1%9D/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2013/06/%EC%9E%90%EB%B0%94-%ED%98%B8%ED%99%98%EC%97%90%EB%9F%AC/'> 자바 호환에러</a> </h2>
+    <div class="meta">
+      Jun 20, 2013
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/java">#java</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> java.lang.UnsupportedClassVersion_error (Unsupported major.minor version 51.0)  하위버전의 클래스파일을 상위버전이 읽어들일때는 상관없지만
+상위버전의 클래스파일을 하위버전이 읽어올때는 위와 같은 에러를 낸다
+에러 상세코드
+version 52.0 컴파일 버전 : 1.8 version 51.0 컴파일 버전 : 1.7 version 50.0 컴파일 버전 : 1.6 version 49.0 컴파일 버전 : 1.5 version 48.0 컴파일 버전 : 1.4   </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2013/06/%EC%9E%90%EB%B0%94-%ED%98%B8%ED%99%98%EC%97%90%EB%9F%AC/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2013/06/java-compile-option/'> Java Compile Option</a> </h2>
+    <div class="meta">
+      Jun 16, 2013
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/java">#java</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> -Dfile.encoding=[Character Set] -Dclient.encoding.override=[Character Set]   </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2013/06/java-compile-option/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2013/05/php-fpm/'> PHP FPM</a> </h2>
+    <div class="meta">
+      May 13, 2013
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/php">#php</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/nginx">#nginx</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> PHP Install apt-get install php5-fpm php5-mongo php5-mysql  /etc/php5/fpm/php.ini
+; This directive determines whether or not PHP will recognize code between ; &lt;? and ?&gt; tags as PHP source which should be processed as such. It is ; generally recommended that &lt;?php and ?&gt; should be used and that this feature ; should be disabled, as enabling it may result in issues when generating XML ; documents, however this remains supported for backward compatibility reasons. </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2013/05/php-fpm/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2012/05/%EC%A6%90%EA%B2%A8%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-vim-%EC%84%A4%EC%A0%95/'> 즐겨사용하는 VIM 설정</a> </h2>
+    <div class="meta">
+      May 23, 2012
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/vi">#vi</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> ~./vimrc 또는 /etc/vim/vimrc.local
+set autoindent set smartindent set shiftwidth=3 set tabstop=3 set title set nu set background=dark set nobackup set fileencoding=utf-8 set nowrap set showmatch set ruler syntax on   </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2012/05/%EC%A6%90%EA%B2%A8%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-vim-%EC%84%A4%EC%A0%95/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2012/02/ruby-some-basic/'> Ruby Some Basic</a> </h2>
+    <div class="meta">
+      Feb 3, 2012
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/ruby">#ruby</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> json 생성
+require 'json' jsonbody = JSON.generate[&quot;message&quot;=&gt;&quot;test&quot;,&quot;user&quot;=&gt;&quot;user1&quot;]  rest-client을 이용한 예제
+require 'rubygems' require 'rest_client' require 'json' jdata = JSON.generate([&quot;test&quot;]) RestClient.put 'http://localhost:4567/users/123', jdata, {:content_type =&gt; :json}  Net:HTTP GET/PUT
+require 'net/http' http = Net::HTTP.new('www.data.com') response = http.request_put('/?access_token=123', jsonbody)  url = URI.parse('http://localhost:3000/someservice/') request = Net::HTTP::Post.new(url.path) request.body = &quot;&lt;?xml version='1.0' encoding='UTF-8'?&gt;&lt;somedata&gt;&lt;name&gt;Test Name 1&lt;/name&gt;&lt;description&gt;Some data for Unit testing&lt;/description&gt;&lt;/somedata&gt;&quot; response = Net::HTTP.start(url.host, url.port) {|http| http.request(request)} #Note this test PASSES! assert_equal '201 Created', response. </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2012/02/ruby-some-basic/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2012/01/ognl/'> OGNL</a> </h2>
+    <div class="meta">
+      Jan 17, 2012
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/java">#java</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> Maven
+&lt;dependency&gt; &lt;groupId&gt;ognl&lt;/groupId&gt; &lt;artifactId&gt;ognl&lt;/artifactId&gt; &lt;version&gt;3.0.5&lt;/version&gt; &lt;/dependency&gt;  소스
+Map&lt;String, Object&gt; map = new HashMap&lt;String, Object&gt;(); map.put(&quot;book&quot;, &quot;모바일 웹앱&quot;); System.out.println(Ognl.getValue(Ognl.parseExpression(&quot;book&quot;), map)); Map context = new HashMap(); List&lt;String&gt; values1 = (List)Ognl.getValue(&quot;{123,'abc','00oo'}&quot;, context, new Object()); System.out.println(values1); Map values2 = (Map) Ognl.getValue(&quot;#{123:333,'abc':111, 'bbb':'Kim', 'other':'[0,2,3,4,5]'}&quot;, context, new Object()); System.out.println(values2);  출력
+모바일 웹앱 [123, abc, 00oo] {123=333, abc=111, bbb=Kim, other=[0,2,3,4,5]}   </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2012/01/ognl/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2011/06/java-date%EC%97%90%EB%9F%AC/'> Java Date에러</a> </h2>
+    <div class="meta">
+      Jun 12, 2011
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/java">#java</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary">  Override time zone 생성한 Date 객체가 KST가 아닌 자꾸 GMT로 출력 될 경우
+System.setProperty(&quot;user.timezone&quot;, &quot;Asia/Seoul&quot;) ex) System.setProperty(&quot;user.timezone&quot;, &quot;UTC&quot;); TimeZone.setDefault(null); //reset 하기 위해 반드시 필요함  서버를 구동시에 -D 옵션으로 설정할 것
+참고  Override a Java application&rsquo;s time zone Java&rsquo;s java.util.TimeZone   </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2011/06/java-date%EC%97%90%EB%9F%AC/'><nobr>Read more ...</nobr></a>
   </div>
   </footer>
 
@@ -442,12 +496,10 @@ return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) { var
   </div>
 
   <div class="page-num">
-    3/5
+    3/3
   </div>
 
   <div class="page-next">
-    
-    <a href="/page/4/" title="Next page"> >> </a>
     
   </div>
 </div> 

@@ -17,7 +17,7 @@ $ docker pull [이미지이름]  컨테이너 생성
 $ docker run --name [컨테이너이름]  컨테이너로 접속
 $ docker exec -it [컨테이너] bash  컨테이너 시작/재시작
 $ docker start [컨테이너이름] $ docker stop [컨테이너이름]  MySQL 사용하기 mysql이미지를 다운로드와 함께 컨테이너 시작하기
-$ docker run --name mysql -e MYSQL_ROOT_PASSWORD=root -p 3306:3306 -d mysql  컨테이너확인
+$ docker run --name mysql -e MYSQL_ROOT_PASSWORD=root -e TZ=Asia/Seoul -p 3306:3306 -d mysql --character-set-server=utf8  컨테이너확인
 $ docker ps CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES cf5fbb3d49b1 mysql &quot;docker-entrypoint." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://clonekim.github.io/2016/03/docker-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/" />
@@ -43,7 +43,7 @@ $ docker pull [이미지이름]  컨테이너 생성
 $ docker run --name [컨테이너이름]  컨테이너로 접속
 $ docker exec -it [컨테이너] bash  컨테이너 시작/재시작
 $ docker start [컨테이너이름] $ docker stop [컨테이너이름]  MySQL 사용하기 mysql이미지를 다운로드와 함께 컨테이너 시작하기
-$ docker run --name mysql -e MYSQL_ROOT_PASSWORD=root -p 3306:3306 -d mysql  컨테이너확인
+$ docker run --name mysql -e MYSQL_ROOT_PASSWORD=root -e TZ=Asia/Seoul -p 3306:3306 -d mysql --character-set-server=utf8  컨테이너확인
 $ docker ps CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES cf5fbb3d49b1 mysql &quot;docker-entrypoint."/>
 
 
@@ -54,12 +54,12 @@ $ docker pull [이미지이름]  컨테이너 생성
 $ docker run --name [컨테이너이름]  컨테이너로 접속
 $ docker exec -it [컨테이너] bash  컨테이너 시작/재시작
 $ docker start [컨테이너이름] $ docker stop [컨테이너이름]  MySQL 사용하기 mysql이미지를 다운로드와 함께 컨테이너 시작하기
-$ docker run --name mysql -e MYSQL_ROOT_PASSWORD=root -p 3306:3306 -d mysql  컨테이너확인
+$ docker run --name mysql -e MYSQL_ROOT_PASSWORD=root -e TZ=Asia/Seoul -p 3306:3306 -d mysql --character-set-server=utf8  컨테이너확인
 $ docker ps CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES cf5fbb3d49b1 mysql &quot;docker-entrypoint.">
 
 
 <meta itemprop="dateModified" content="2016-03-01T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="73">
+<meta itemprop="wordCount" content="76">
 
 
 
@@ -93,7 +93,7 @@ $ docker ps CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES cf5fbb3d49b1 m
 
   <nav>
     <div class="siteTitle">
-      <a href="http://clonekim.github.io/">Less is more</a>
+      <a href="http://clonekim.github.io/">(fn [] &#34;Less is more&#34;)</a>
     </div> 
 
     
@@ -158,7 +158,7 @@ $ docker stop  [컨테이너이름]
 
 <p>mysql이미지를 다운로드와 함께 컨테이너 시작하기</p>
 
-<pre><code>$ docker run --name mysql -e MYSQL_ROOT_PASSWORD=root -p 3306:3306 -d mysql
+<pre><code>$ docker run --name mysql -e MYSQL_ROOT_PASSWORD=root -e TZ=Asia/Seoul -p 3306:3306 -d mysql --character-set-server=utf8
 </code></pre>
 
 <p>컨테이너확인</p>

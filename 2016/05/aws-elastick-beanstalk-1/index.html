@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="DAEHEE KIM" />
+<meta name="description" content="Personal blog." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.26" />
+
+<link rel="canonical" href="http://clonekim.github.io/2016/05/aws-elastick-beanstalk-1/">
+<base href="http://clonekim.github.io/" />
+<meta property="og:title" content="AWS Elastick Beanstalk 1" />
+<meta property="og:description" content="awsebcli 설치 linux
+$ sudo apt install python3-pip $ pip3 install awsebcli  MacOS
+$ brew install python3 $ sudo pip3 install awsebcli  pip가 업데이드안되어서 설치가 안될경우에는
+$ sudo pip3 install --upgrade pip  설치 시 sudo 를 사용하지 않고 로컬(자신의 홈디렉토리)에 설치 할경우에는
+&ndash;user 파라미터를 사용하면 .local/bin 에 설치된다.
+그외에 추가로 setuptools를 환경에 따라 요구할 수 있다.
+eb 초기화 $ mkdir eb $ cd eb $ eb init  초기화를 실행하면 자신의 홈디렉토리에 ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://clonekim.github.io/2016/05/aws-elastick-beanstalk-1/" />
+
+
+
+<meta property="article:published_time" content="2016-05-12T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2016-05-12T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="AWS Elastick Beanstalk 1"/>
+<meta name="twitter:description" content="awsebcli 설치 linux
+$ sudo apt install python3-pip $ pip3 install awsebcli  MacOS
+$ brew install python3 $ sudo pip3 install awsebcli  pip가 업데이드안되어서 설치가 안될경우에는
+$ sudo pip3 install --upgrade pip  설치 시 sudo 를 사용하지 않고 로컬(자신의 홈디렉토리)에 설치 할경우에는
+&ndash;user 파라미터를 사용하면 .local/bin 에 설치된다.
+그외에 추가로 setuptools를 환경에 따라 요구할 수 있다.
+eb 초기화 $ mkdir eb $ cd eb $ eb init  초기화를 실행하면 자신의 홈디렉토리에 ."/>
+
+
+
+<meta itemprop="name" content="AWS Elastick Beanstalk 1">
+<meta itemprop="description" content="awsebcli 설치 linux
+$ sudo apt install python3-pip $ pip3 install awsebcli  MacOS
+$ brew install python3 $ sudo pip3 install awsebcli  pip가 업데이드안되어서 설치가 안될경우에는
+$ sudo pip3 install --upgrade pip  설치 시 sudo 를 사용하지 않고 로컬(자신의 홈디렉토리)에 설치 할경우에는
+&ndash;user 파라미터를 사용하면 .local/bin 에 설치된다.
+그외에 추가로 setuptools를 환경에 따라 요구할 수 있다.
+eb 초기화 $ mkdir eb $ cd eb $ eb init  초기화를 실행하면 자신의 홈디렉토리에 .">
+
+
+<meta itemprop="dateModified" content="2016-05-12T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="300">
+
+
+
+<meta itemprop="keywords" content="aws," />
+
+
+<link rel="stylesheet" href="css/layout.css" />
+<link rel="stylesheet" href="css/color-dark.css" />
+
+
+
+<title>
+
+
+     AWS Elastick Beanstalk 1 
+
+</title>
+
+<script src="js/highlight.min.js"></script>
+<link rel="stylesheet" href="css/tomorrow-night.min.css" />
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="http://clonekim.github.io/">(fn [] &#34;Less is more&#34;)</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item active" href="/post/"><div class="nav-item-title">Posts</div></a>
+    
+
+  </nav>
+</div>
+
+  
+<div class="social-links-header">
+
+  
+
+  
+  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> AWS Elastick Beanstalk 1 </h1>
+    <div class="content"> 
+
+<h2 id="awsebcli-설치">awsebcli 설치</h2>
+
+<p><em>linux</em></p>
+
+<pre><code>$ sudo apt install python3-pip
+$ pip3 install awsebcli
+</code></pre>
+
+<p><em>MacOS</em></p>
+
+<pre><code>$ brew install python3
+$ sudo pip3 install awsebcli
+</code></pre>
+
+<p>pip가 업데이드안되어서 설치가 안될경우에는</p>
+
+<pre><code>$ sudo pip3 install --upgrade pip
+</code></pre>
+
+<p>설치 시 sudo 를 사용하지 않고 로컬(자신의 홈디렉토리)에 설치 할경우에는<br />
+&ndash;user 파라미터를 사용하면 .local/bin 에 설치된다.<br />
+그외에 추가로 setuptools를 환경에 따라 요구할 수 있다.</p>
+
+<h2 id="eb-초기화">eb 초기화</h2>
+
+<pre><code>$ mkdir eb
+$ cd eb
+$ eb init
+</code></pre>
+
+<p><img src="/img/aws/picture946-1.png" alt="" /></p>
+
+<p>초기화를 실행하면 자신의 홈디렉토리에 .aws 라는 디렉토리가 생기므로 지워선 안된다.</p>
+
+<h2 id="environment-configuration">Environment Configuration</h2>
+
+<h3 id="nginx">Nginx</h3>
+
+<p><img src="/img/aws/picture291-2.png" alt="" /></p>
+
+<p><em>nginx.conf</em></p>
+
+<p>eb에서 기본으로 설정된 파일을 복사한것임</p>
+
+<pre><code># Elastic Beanstalk Nginx Configuration File
+ 
+user                    nginx;
+error_log               /var/log/nginx/error.log warn;
+pid                     /var/run/nginx.pid;
+worker_processes        auto;
+ 
+events {
+    worker_connections  1024;
+}
+ 
+http {
+    include       /etc/nginx/mime.types;
+    default_type  application/octet-stream;
+ 
+    log_format  main  '$remote_addr - $remote_user [$time_local] &quot;$request&quot; '
+                      '$status $body_bytes_sent &quot;$http_referer&quot; '
+                      '&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;';
+ 
+    map $http_upgrade $connection_upgrade {
+        default     &quot;upgrade&quot;;
+    }
+ 
+    include       conf.d/*.conf;
+ 
+}
+</code></pre>
+
+<p><em>web.conf</em></p>
+
+<pre><code>upstream backend {
+    server 127.0.0.1:5000;
+    keepalive 32;
+}
+
+server {
+    listen       80;
+    server_name  admin.oho.co.kr;
+    access_log  /var/log/nginx/web.log  main;
+
+    client_header_timeout 60;
+    client_body_timeout   60;
+    client_max_body_size  200M;
+    keepalive_timeout     60;
+    gzip                  on;
+    gzip_comp_level       4;
+    root                  /var/app/current/public;
+    
+    location ~* /(images|css|fonts)/*$ {
+        expires 7d;
+        access_log off;
+        break;
+    }
+
+    location ~* \.(html?|css|js)$ {
+        expires -1;
+        access_log off;
+        add_header Cache-Control no-cache;
+        break;
+    }
+
+    location / {
+        try_files           $uri @backend;
+    }
+                 
+    location @backend {        
+        proxy_set_header    Connection          $connection_upgrade;
+        proxy_set_header    Upgrade             $http_upgrade;
+        proxy_set_header    Host                $host;
+        proxy_set_header    X-Real-IP           $remote_addr;
+        proxy_set_header    X-Forwarded-For     $proxy_add_x_forwarded_for;
+        proxy_pass          http://backend;
+        proxy_http_version  1.1;
+        proxy_redirect      off;
+    }
+}
+</code></pre>
+
+<h3 id="linux-server">Linux Server</h3>
+
+<pre><code>.ebextensions/
+├── 00_timezone.config
+├── 01_yum.config
+└── nginx
+    ├── conf.d
+    │   └── web.conf
+    └── nginx.conf
+</code></pre>
+
+<p><em>00_timezone.config</em></p>
+
+<pre><code>commands:
+ set_time_zone:
+  command: ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime
+</code></pre>
+
+<p><em>01_yum.config</em></p>
+
+<pre><code>commands:
+  yum-install:
+    command: yum install -y ld-linux.so.2
+</code></pre>
+
+<h2 id="eb-deploy">eb deploy</h2>
+
+<p><img src="/img/aws/picture778-1.png" alt="" /></p>
+
+<p>Java로 개발하고 Fat Jar를 생성했다<br />
+배포하기 위해 Procfile를 작성한다</p>
+
+<p><em>Procfile</em></p>
+
+<pre><code>web: java -Dserver.home=/var/app/current -Djava.library.path=/var/app/current/bin -jar start.jar
+</code></pre>
+
+<p>EB 사용가능한 환경보기</p>
+
+<pre><code>$ eb list
+</code></pre>
+
+<p>배포할 어플리케이션 환경을 선택한다</p>
+
+<pre><code>$ eb use ecfront
+</code></pre>
+
+<p>배포명령어를 입력한다</p>
+
+<pre><code>$ eb deploy
+</code></pre>
+
+<h3 id="참고">참고</h3>
+
+<ul>
+<li><a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html">https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html</a></li>
+<li><a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customize-containers.html">http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customize-containers.html</a></li>
+<li><a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/java-se-platform.html">http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/java-se-platform.html</a></li>
+<li><a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customize-containers-ec2.html">http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customize-containers-ec2.html</a></li>
+<li><a href="https://stackoverflow.com/questions/25399685/amazon-elastic-beanstalk-change-timezone">https://stackoverflow.com/questions/25399685/amazon-elastic-beanstalk-change-timezone</a></li>
+<li><a href="https://github.com/wolfg1969/elastic-beanstalk-nginx-uwsgi-django">https://github.com/wolfg1969/elastic-beanstalk-nginx-uwsgi-django</a></li>
+</ul>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/aws">#aws</a>
+      </div>
+    
+</div>
+
+    <div class="date"> May 12, 2016 </div>
+  </div>
+
+</footer>
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'clonekim-github-io';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+
+  
+  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="http://clonekim.github.io/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright">  </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</body>
+</html>
+
