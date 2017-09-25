@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Android on Less is more</title>
+    <link>http://clonekim.github.io/tags/android/</link>
+    <description>Recent content in Android on Less is more</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko</language>
+    <lastBuildDate>Tue, 19 Sep 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://clonekim.github.io/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Android sdkmanager</title>
+      <link>http://clonekim.github.io/2017/09/android-sdkmanager/</link>
+      <pubDate>Tue, 19 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://clonekim.github.io/2017/09/android-sdkmanager/</guid>
+      <description>sdkmanager &amp;quot;tools&amp;quot; &amp;quot;platform-tools&amp;quot; &amp;quot;platforms;android-25&amp;quot; &amp;quot;build-tools;25.0.2&amp;quot; &amp;quot;extras;android;m2repository&amp;quot; &amp;quot;extras;google;m2repository&amp;quot; sdkmanager &amp;quot;system-images;android-25;google_apis:x86&amp;quot;  </description>
+    </item>
+    
+  </channel>
+</rss>
