@@ -320,6 +320,37 @@ $http.json(url, {jsonpCallbackParam: 'callback'}) .then(function(res) { ... })  
     <article class="post-preview">
 
   <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2016/09/clojurescript%EC%97%90%EC%84%9C-jquery%EC%82%AC%EC%9A%A9/'> clojurescript에서 jquery사용</a> </h2>
+    <div class="meta">
+      Sep 20, 2016
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/clojurescript">#clojurescript</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary">  view.clj
+(defn view-layout [&amp; content] (html [:head [:meta {:http-equiv &quot;Content-type&quot; :content &quot;text/html; charset=utf-8&quot;}] [&quot;title&quot;: &quot;Project-Name&quot;]] [:body content])) (defn view-content [] (view-layout [:h2 &quot;Project-Name&quot;] [:p {:id &quot;clickhere&quot;} &quot;Get yourself a nice alert by clicking here.&quot;] [:script {:src &quot;/js/jquery-1.10.2.min.js&quot;}] [:script {:src &quot;/js/cljs.js&quot;}]))  hello.cljs
+(:require [jayq.core :as jq]) (:use [jayq.core :only [$]]) ;; ;; $(&quot;#btn&quot;).click(function() {alert(&quot;Hi!&quot;); }); ;; (jq/bind ($ &quot;#btn&quot;) :click (fn [] (js/alert &quot;Hi!&quot;)))  lein cljsbuild once lein run  참고  ClojureScriptという選択肢 ClojureScript入門   </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2016/09/clojurescript%EC%97%90%EC%84%9C-jquery%EC%82%AC%EC%9A%A9/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
     <h2 class="title"> <a href='http://clonekim.github.io/2016/05/aws-elastick-beanstalk-1/'> AWS Elastick Beanstalk 1</a> </h2>
     <div class="meta">
       May 12, 2016
@@ -689,37 +720,6 @@ ${x?string} ${x?string[0..1]}  .(dot)가 들어간 변수도 사용할 수 있�
   <footer>
   <div class="rmore">
     <a href='http://clonekim.github.io/2015/09/freemarker-assign%ED%8C%81/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2015/09/clojurescript%EC%97%90%EC%84%9C-jquery%EC%82%AC%EC%9A%A9/'> clojurescript에서 jquery사용</a> </h2>
-    <div class="meta">
-      Sep 20, 2015
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="/tags/clojurescript">#clojurescript</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary">  view.clj
-(defn view-layout [&amp; content] (html [:head [:meta {:http-equiv &quot;Content-type&quot; :content &quot;text/html; charset=utf-8&quot;}] [&quot;title&quot;: &quot;Project-Name&quot;]] [:body content])) (defn view-content [] (view-layout [:h2 &quot;Project-Name&quot;] [:p {:id &quot;clickhere&quot;} &quot;Get yourself a nice alert by clicking here.&quot;] [:script {:src &quot;/js/jquery-1.10.2.min.js&quot;}] [:script {:src &quot;/js/cljs.js&quot;}]))  hello.cljs
-(:require [jayq.core :as jq]) (:use [jayq.core :only [$]]) ;; ;; $(&quot;#btn&quot;).click(function() {alert(&quot;Hi!&quot;); }); ;; (jq/bind ($ &quot;#btn&quot;) :click (fn [] (js/alert &quot;Hi!&quot;)))  lein cljsbuild once lein run  참고  ClojureScriptという選択肢 ClojureScript入門   </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='http://clonekim.github.io/2015/09/clojurescript%EC%97%90%EC%84%9C-jquery%EC%82%AC%EC%9A%A9/'><nobr>Read more ...</nobr></a>
   </div>
   </footer>
 
