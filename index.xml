@@ -34,6 +34,15 @@
     </item>
     
     <item>
+      <title>Android sdkmanager</title>
+      <link>http://clonekim.github.io/2017/09/android-sdkmanager/</link>
+      <pubDate>Tue, 19 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://clonekim.github.io/2017/09/android-sdkmanager/</guid>
+      <description>sdkmanager &amp;quot;tools&amp;quot; &amp;quot;platform-tools&amp;quot; &amp;quot;platforms;android-25&amp;quot; &amp;quot;build-tools;25.0.2&amp;quot; &amp;quot;extras;android;m2repository&amp;quot; &amp;quot;extras;google;m2repository&amp;quot; sdkmanager &amp;quot;system-images;android-25;google_apis:x86&amp;quot;  </description>
+    </item>
+    
+    <item>
       <title>Web개발을 위한 Emacs설정</title>
       <link>http://clonekim.github.io/2017/09/web%EA%B0%9C%EB%B0%9C%EC%9D%84-%EC%9C%84%ED%95%9C-emacs%EC%84%A4%EC%A0%95/</link>
       <pubDate>Sat, 09 Sep 2017 00:00:00 +0000</pubDate>
