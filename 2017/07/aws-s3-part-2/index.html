@@ -7,7 +7,7 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.26" />
+<meta name="generator" content="Hugo 0.30" />
 
 <link rel="canonical" href="http://clonekim.github.io/2017/07/aws-s3-part-2/">
 <base href="http://clonekim.github.io/" />
@@ -20,6 +20,7 @@
 
 
 <meta property="article:published_time" content="2017-07-26T00:00:00&#43;00:00"/>
+
 <meta property="article:modified_time" content="2017-07-26T00:00:00&#43;00:00"/>
 
 
@@ -43,6 +44,7 @@
 { &quot;Version&quot;: &quot;2012-10-17&quot;, &quot;Id&quot;: &quot;Policy1463129932149&quot;, &quot;Statement&quot;: [ { &quot;Sid&quot;: &quot;Stmt1463129927965&quot;, &quot;Effect&quot;: &quot;Allow&quot;, &quot;Principal&quot;: { &quot;AWS&quot;: &quot;*&quot; }, &quot;Action&quot;: &quot;s3:GetObject&quot;, &quot;Resource&quot;: &quot;arn:aws:s3:::your-bucket/*&quot;, &quot;Condition&quot;: { &quot;StringLike&quot;: { &quot;aws:Referer&quot;: [ &quot;http://yoursite/*&quot;, &quot;http://*.yoursite/*&quot; ] } } } ] }  ">
 
 
+<meta itemprop="datePublished" content="2017-07-26T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2017-07-26T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="40">
 

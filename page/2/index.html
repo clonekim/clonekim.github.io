@@ -8,7 +8,7 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.26" />
+<meta name="generator" content="Hugo 0.30" />
 
 <link rel="canonical" href="http://clonekim.github.io/">
 <base href="http://clonekim.github.io/" />
@@ -19,7 +19,7 @@
 
 
 
-<meta property="og:updated_time" content="2015-09-11T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2015-09-25T00:00:00&#43;00:00"/>
 
 
 
@@ -105,6 +105,73 @@
 
 
   
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2015/09/%ED%81%B4%EB%A1%9C%EC%A0%80%EC%97%90%EC%84%9C-jdbc/'> 클로저에서 Jdbc</a> </h2>
+    <div class="meta">
+      Sep 25, 2015
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/clojure">#clojure</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary">  클로저에서 JDBC(Java Database Connectivity) 를 사용하기 위한 가이드
+몇몇 함수가 없어진 경우가 있기 때문에 소스보기로 확인할 것
+ clojure-doc보기 소스보기   leiningen [org.clojure/java.jdbc &quot;0.4.2&quot;]  간단한 예제 (ns db-test.core (:require [clojure.java.jdbc :as sql]))	(def db {:classname &quot;com.mysql.jdbc.Driver&quot; :subprotocol &quot;mysql&quot; :subname &quot;//127.0.0.1:3306/test&quot; :user &quot;xxx&quot; :password &quot;xxxx&quot; }) (defn get-user [] (println (sql/query db [&quot;select * from users&quot;]))) (defn -main [] (get-user))  참고  HikarCP를 사용하는 예 clojure.jdbc doc   </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2015/09/%ED%81%B4%EB%A1%9C%EC%A0%80%EC%97%90%EC%84%9C-jdbc/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2015/09/freemarker-assign%ED%8C%81/'> Freemarker assign팁</a> </h2>
+    <div class="meta">
+      Sep 23, 2015
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/java">#java</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/freemarker">#freemarker</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> 변수 x에 42를 할당하고 이것은 명백히 Number 타입이다
+&lt;#assign x=42 /&gt;  String타입으로 변환할 수 있다
+${x?string} ${x?string[0..1]}  .(dot)가 들어간 변수도 사용할 수 있다
+&lt;#assign telephone=&quot;${site\\.telephone?string}&quot; /&gt; //15881234 ${telephone[0..3]}-${telephone[4..7]} //1588-1234   </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2015/09/freemarker-assign%ED%8C%81/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
     <article class="post-preview">
 
   <header>
@@ -713,69 +780,6 @@ return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) { var
   <footer>
   <div class="rmore">
     <a href='http://clonekim.github.io/2014/01/java-io/nio-tutorial/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2013/10/bigdecimal%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%B0%98%EC%98%AC%EB%A6%BC/'> BigDecimal을 이용한 반올림</a> </h2>
-    <div class="meta">
-      Oct 12, 2013
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="/tags/java">#java</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary"> BigDecimal.ROUND_DOWN	// 내림 BigDecimal.ROUND_HALF_UP // 반올림 BigDecimal.ROUND_UP // 올림   </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='http://clonekim.github.io/2013/10/bigdecimal%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%B0%98%EC%98%AC%EB%A6%BC/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2013/10/javascript-%EA%B0%9C%EB%B0%9C%ED%8C%81/'> JavaScript 개발팁</a> </h2>
-    <div class="meta">
-      Oct 10, 2013
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="/tags/javascript">#javascript</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary"> Module Pattern
-로직과 private 변수를 캡슐화하는 방법으로 아래와 같은 모듈패턴( 익명함수) 을 많이 사용한다.
-(function() { /* ... */ })();  jQuery와 연동해서 사용할 경우 아래와 같이 파라미터를 전달하도록 한다.
-(function($) { /* ... */ })(jQuery);  글로벌 변수를 전달해서 네임스페이스로 확장 할 수 있다.
-(function($, exports) { exports.Foo = &quot;wem&quot;; })(jQuery, window);  IIFE(mmediately-Invoked Function Expression)
-(function() { var mod = {}; })();  window라는 식별자를 거치지 않고 전역변수를 접근하자 </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='http://clonekim.github.io/2013/10/javascript-%EA%B0%9C%EB%B0%9C%ED%8C%81/'><nobr>Read more ...</nobr></a>
   </div>
   </footer>
 

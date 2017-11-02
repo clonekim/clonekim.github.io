@@ -7,7 +7,7 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.26" />
+<meta name="generator" content="Hugo 0.30" />
 
 <link rel="canonical" href="http://clonekim.github.io/2013/09/%ED%94%84%EB%A1%9D%EC%8B%9C%EC%84%9C%EB%B2%84-%EC%9D%B8%EC%A6%9D%EC%97%90%EB%9F%AC/">
 <base href="http://clonekim.github.io/" />
@@ -21,6 +21,7 @@ import java.net.Authenticator; import java.net.MalformedURLException; import jav
 
 
 <meta property="article:published_time" content="2013-09-27T00:00:00&#43;00:00"/>
+
 <meta property="article:modified_time" content="2013-09-27T00:00:00&#43;00:00"/>
 
 
@@ -46,6 +47,7 @@ java.net.Authenticator를 구현해야함
 import java.net.Authenticator; import java.net.MalformedURLException; import java.net.PasswordAuthentication; import java.net.URL; public class ProxyAuthenticator extends Authenticator { private String proxyhost; private String userid; private String password; public ProxyAuthenticator(String proxyhost, String userid, String password) { this.proxyhost = proxyhost; this.userid = userid; this.password = password; } @Override public URL getRequestingURL() { if (this.proxyhost == null) return null; try { return new URL(this.proxyhost); } catch (MalformedURLException e) { return null; } } @Override protected RequestorType getRequestorType() { return RequestorType.">
 
 
+<meta itemprop="datePublished" content="2013-09-27T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2013-09-27T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="105">
 

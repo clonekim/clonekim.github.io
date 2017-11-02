@@ -6,10 +6,31 @@
     <description>Recent content in Posts on (fn [] &#34;Less is more&#34;)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
-    <lastBuildDate>Fri, 22 Sep 2017 01:10:18 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 02 Nov 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://clonekim.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Emacs에서 Golang 를 위한 에디팅</title>
+      <link>http://clonekim.github.io/2017/11/emacs%EC%97%90%EC%84%9C-golang-%EB%A5%BC-%EC%9C%84%ED%95%9C-%EC%97%90%EB%94%94%ED%8C%85/</link>
+      <pubDate>Thu, 02 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://clonekim.github.io/2017/11/emacs%EC%97%90%EC%84%9C-golang-%EB%A5%BC-%EC%9C%84%ED%95%9C-%EC%97%90%EB%94%94%ED%8C%85/</guid>
+      <description>설치 go get명령어로 아래와 같이 필요한 유틸리티(명령어)를 설치해야 한다
+$ go get github.com/golang/lint/golint  github.com/nsf/gocode github.com/k0kubun/pp github.com/golang/lint/golint github.com/rogpeppe/godef github.com/dougm/goflymake golang.org/x/tools/cmd/godoc 또는 golang.org/x/tools/cmd/...  필요한 패키지 direx ;;디렉토리 트리 보여줌 popwin ;;direx를 다른창으로 열어줌 auto-complete ;;자동완성 flycheck ;;오류체크 flymake-go go-mode go-autocomplete go-eldoc ;;상태줄에 godoc간단히 보여줌  go.el
+.bash_profile에 GOPATH가 설정되어야함
+(add-to-list &#39;load-path (concat (getenv &amp;quot;GOPATH&amp;quot;) &amp;quot;/src/github.com/golang/lint/misc/emacs&amp;quot;)) (add-to-list &#39;load-path (concat (getenv &amp;quot;GOPATH&amp;quot;) &amp;quot;/src/github.com/dougm/goflymake&amp;quot;)) (require &#39;direx) (require &#39;go-mode) (require &#39;go-flymake) (require &#39;go-flycheck) (require &#39;go-autocomplete) (require &#39;auto-complete-config) (global-set-key (kbd &amp;quot;C-x C-j&amp;quot;) &#39;direx:jump-to-directory-other-window) (ac-config-default) (if (not (string-match &amp;quot;go&amp;quot; compile-command)) (set (make-local-variable &#39;compile-command) &amp;quot;go build -v &amp;amp;&amp;amp; go test -v &amp;amp;&amp;amp; go vet&amp;quot;)) (add-hook &#39;go-mode-hook (lambda () (go-eldoc-setup) (add-hook &#39;before-save-hook &#39;gofmt-before-save) (local-set-key (kbd &amp;quot;C-c C-r&amp;quot;) &#39;go-remove-unused-imports) (local-set-key (kbd &amp;quot;C-c C-a&amp;quot;) &#39;go-import-add) (local-set-key (kbd &amp;quot;C-c C-g&amp;quot;) &#39;go-goto-imports) (local-set-key (kbd &amp;quot;C-c C-f&amp;quot;) &#39;gofmt) (local-set-key (kbd &amp;quot;M-.</description>
+    </item>
+    
+    <item>
+      <title>Go Repl</title>
+      <link>http://clonekim.github.io/2017/11/go-repl/</link>
+      <pubDate>Thu, 02 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://clonekim.github.io/2017/11/go-repl/</guid>
+      <description>$ go get github.com/motemen/gore  $ gore -autoimport gore version 0.2.6 :help for help gore&amp;gt; fmt.Println(&amp;quot;Hello World&amp;quot;) Hello World 12 &amp;lt;nil&amp;gt; gore&amp;gt;  </description>
+    </item>
     
     <item>
       <title>Gtk Version</title>

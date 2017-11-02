@@ -7,7 +7,7 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.26" />
+<meta name="generator" content="Hugo 0.30" />
 
 <link rel="canonical" href="http://clonekim.github.io/2014/10/backbone---handlebar---gulp-%ED%8C%81/">
 <base href="http://clonekim.github.io/" />
@@ -24,6 +24,7 @@ var gulp = require(&#39;gulp&#39;), browserify = require(&#39;browserify&#39;), 
 
 
 <meta property="article:published_time" content="2014-10-03T00:00:00&#43;00:00"/>
+
 <meta property="article:modified_time" content="2014-10-03T00:00:00&#43;00:00"/>
 
 
@@ -55,6 +56,7 @@ npm install --global gulp npm install --save-dev gulp npm install --save-dev bro
 var gulp = require(&#39;gulp&#39;), browserify = require(&#39;browserify&#39;), source = require(&#39;vinyl-source-stream&#39;), hbsfy = require(&#39;hbsfy&#39;); gulp.task(&#39;build&#39;, function() { var b = browserify(&#39;./js/app.js&#39;, {debug:true}); return b.transform(hbsfy) .bundle() .pipe(source(&#39;app.js&#39;)) .pipe(gulp.dest(&#39;/home/alpha/public/js&#39;)); }); gulp.">
 
 
+<meta itemprop="datePublished" content="2014-10-03T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2014-10-03T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="155">
 

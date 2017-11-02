@@ -7,7 +7,7 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.26" />
+<meta name="generator" content="Hugo 0.30" />
 
 <link rel="canonical" href="http://clonekim.github.io/2015/09/%ED%81%B4%EB%A1%9C%EC%A0%80%EC%97%90%EC%84%9C-jdbc/">
 <base href="http://clonekim.github.io/" />
@@ -21,6 +21,7 @@
 
 
 <meta property="article:published_time" content="2015-09-25T00:00:00&#43;00:00"/>
+
 <meta property="article:modified_time" content="2015-09-25T00:00:00&#43;00:00"/>
 
 
@@ -46,6 +47,7 @@
  clojure-doc보기 소스보기   leiningen [org.clojure/java.jdbc &quot;0.4.2&quot;]  간단한 예제 (ns db-test.core (:require [clojure.java.jdbc :as sql]))	(def db {:classname &quot;com.mysql.jdbc.Driver&quot; :subprotocol &quot;mysql&quot; :subname &quot;//127.0.0.1:3306/test&quot; :user &quot;xxx&quot; :password &quot;xxxx&quot; }) (defn get-user [] (println (sql/query db [&quot;select * from users&quot;]))) (defn -main [] (get-user))  참고  HikarCP를 사용하는 예 clojure.jdbc doc  ">
 
 
+<meta itemprop="datePublished" content="2015-09-25T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2015-09-25T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="63">
 

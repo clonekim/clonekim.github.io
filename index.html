@@ -8,7 +8,7 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.26" />
+<meta name="generator" content="Hugo 0.30" />
 
 <link rel="canonical" href="http://clonekim.github.io/">
 <base href="http://clonekim.github.io/" />
@@ -19,7 +19,7 @@
 
 
 
-<meta property="og:updated_time" content="2017-09-22T01:10:18&#43;09:00"/>
+<meta property="og:updated_time" content="2017-11-02T00:00:00&#43;00:00"/>
 
 
 
@@ -105,6 +105,71 @@
 
 
   
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2017/11/emacs%EC%97%90%EC%84%9C-golang-%EB%A5%BC-%EC%9C%84%ED%95%9C-%EC%97%90%EB%94%94%ED%8C%85/'> Emacs에서 Golang 를 위한 에디팅</a> </h2>
+    <div class="meta">
+      Nov 2, 2017
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/emacs">#emacs</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/go">#go</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> 설치 go get명령어로 아래와 같이 필요한 유틸리티(명령어)를 설치해야 한다
+$ go get github.com/golang/lint/golint  github.com/nsf/gocode github.com/k0kubun/pp github.com/golang/lint/golint github.com/rogpeppe/godef github.com/dougm/goflymake golang.org/x/tools/cmd/godoc 또는 golang.org/x/tools/cmd/...  필요한 패키지 direx ;;디렉토리 트리 보여줌 popwin ;;direx를 다른창으로 열어줌 auto-complete ;;자동완성 flycheck ;;오류체크 flymake-go go-mode go-autocomplete go-eldoc ;;상태줄에 godoc간단히 보여줌  go.el
+.bash_profile에 GOPATH가 설정되어야함
+(add-to-list 'load-path (concat (getenv &quot;GOPATH&quot;) &quot;/src/github.com/golang/lint/misc/emacs&quot;)) (add-to-list 'load-path (concat (getenv &quot;GOPATH&quot;) &quot;/src/github.com/dougm/goflymake&quot;)) (require 'direx) (require 'go-mode) (require 'go-flymake) (require 'go-flycheck) (require 'go-autocomplete) (require 'auto-complete-config) (global-set-key (kbd &quot;C-x C-j&quot;) 'direx:jump-to-directory-other-window) (ac-config-default) (if (not (string-match &quot;go&quot; compile-command)) (set (make-local-variable 'compile-command) &quot;go build -v &amp;&amp; go test -v &amp;&amp; go vet&quot;)) (add-hook 'go-mode-hook (lambda () (go-eldoc-setup) (add-hook 'before-save-hook 'gofmt-before-save) (local-set-key (kbd &quot;C-c C-r&quot;) 'go-remove-unused-imports) (local-set-key (kbd &quot;C-c C-a&quot;) 'go-import-add) (local-set-key (kbd &quot;C-c C-g&quot;) 'go-goto-imports) (local-set-key (kbd &quot;C-c C-f&quot;) 'gofmt) (local-set-key (kbd &quot;M-. </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2017/11/emacs%EC%97%90%EC%84%9C-golang-%EB%A5%BC-%EC%9C%84%ED%95%9C-%EC%97%90%EB%94%94%ED%8C%85/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://clonekim.github.io/2017/11/go-repl/'> Go Repl</a> </h2>
+    <div class="meta">
+      Nov 2, 2017
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/go">#go</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> $ go get github.com/motemen/gore  $ gore -autoimport gore version 0.2.6 :help for help gore&gt; fmt.Println(&quot;Hello World&quot;) Hello World 12 &lt;nil&gt; gore&gt;   </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://clonekim.github.io/2017/11/go-repl/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
     <article class="post-preview">
 
   <header>
@@ -698,73 +763,6 @@ Project 생성 lein new [프로젝트명]  프로젝트 의존성 추가 라이�
   <footer>
   <div class="rmore">
     <a href='http://clonekim.github.io/2015/09/clojure-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2015/09/%ED%81%B4%EB%A1%9C%EC%A0%80%EC%97%90%EC%84%9C-jdbc/'> 클로저에서 Jdbc</a> </h2>
-    <div class="meta">
-      Sep 25, 2015
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="/tags/clojure">#clojure</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary">  클로저에서 JDBC(Java Database Connectivity) 를 사용하기 위한 가이드
-몇몇 함수가 없어진 경우가 있기 때문에 소스보기로 확인할 것
- clojure-doc보기 소스보기   leiningen [org.clojure/java.jdbc &quot;0.4.2&quot;]  간단한 예제 (ns db-test.core (:require [clojure.java.jdbc :as sql]))	(def db {:classname &quot;com.mysql.jdbc.Driver&quot; :subprotocol &quot;mysql&quot; :subname &quot;//127.0.0.1:3306/test&quot; :user &quot;xxx&quot; :password &quot;xxxx&quot; }) (defn get-user [] (println (sql/query db [&quot;select * from users&quot;]))) (defn -main [] (get-user))  참고  HikarCP를 사용하는 예 clojure.jdbc doc   </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='http://clonekim.github.io/2015/09/%ED%81%B4%EB%A1%9C%EC%A0%80%EC%97%90%EC%84%9C-jdbc/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='http://clonekim.github.io/2015/09/freemarker-assign%ED%8C%81/'> Freemarker assign팁</a> </h2>
-    <div class="meta">
-      Sep 23, 2015
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="/tags/java">#java</a>
-      </div>
-    
-      <div class="tag">
-        <a href="/tags/freemarker">#freemarker</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary"> 변수 x에 42를 할당하고 이것은 명백히 Number 타입이다
-&lt;#assign x=42 /&gt;  String타입으로 변환할 수 있다
-${x?string} ${x?string[0..1]}  .(dot)가 들어간 변수도 사용할 수 있다
-&lt;#assign telephone=&quot;${site\\.telephone?string}&quot; /&gt; //15881234 ${telephone[0..3]}-${telephone[4..7]} //1588-1234   </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='http://clonekim.github.io/2015/09/freemarker-assign%ED%8C%81/'><nobr>Read more ...</nobr></a>
   </div>
   </footer>
 

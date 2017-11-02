@@ -7,7 +7,7 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.26" />
+<meta name="generator" content="Hugo 0.30" />
 
 <link rel="canonical" href="http://clonekim.github.io/2014/11/angularjs-tips/">
 <base href="http://clonekim.github.io/" />
@@ -21,6 +21,7 @@ scope 계층화 &lt;!DOCTYPE html&gt; &lt;html lang=&quot;ko&quot; ng-app=&quot;
 
 
 <meta property="article:published_time" content="2014-11-10T00:00:00&#43;00:00"/>
+
 <meta property="article:modified_time" content="2014-11-10T00:00:00&#43;00:00"/>
 
 
@@ -46,6 +47,7 @@ scope 계층화 &lt;!DOCTYPE html&gt; &lt;html lang=&quot;ko&quot; ng-app=&quot;
 scope 계층화 &lt;!DOCTYPE html&gt; &lt;html lang=&quot;ko&quot; ng-app=&quot;app&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;utf-8&quot;&gt; &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt; &lt;title&gt;Services and Modules&lt;/title&gt; &lt;link rel=&quot;stylesheet&quot; href=&quot;bootstrap/css/bootstrap.css&quot; /&gt; &lt;link rel=&quot;stylesheet&quot; href=&quot;bootstrap/css/bootstrap-theme.css&quot; /&gt; &lt;script type=&quot;text/javascript&quot; src=&quot;jquery/jquery.js&quot;&gt;&lt;/script&gt; &lt;script type=&quot;text/javascript&quot; src=&quot;jquery-ui/jquery-ui.js&quot;&gt;&lt;/script&gt; &lt;script type=&quot;text/javascript&quot; src=&quot;angular/angular.js&quot;&gt;&lt;/script&gt; &lt;script&gt; angular.module(&quot;app&quot;, []) .controller(&quot;ParentController&quot;, [&#39;$scope&#39;, function($scope) { $scope.value = &#39;parent value&#39;; $scope.getUpperValue = function () { return angular.uppercase($scope.value); } }]) .controller(&quot;ChildController&quot;,[ &#39;$scope&#39;, function($scope) { $scope.newValue = &#39;child value&#39;; }]); &lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;div ng-controller=&quot;ParentController&quot;&gt; &lt;h3&gt;parent&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;value: {{value}}&lt;/li&gt; &lt;li&gt;Upper: {{getUpperValue()}}&lt;/li&gt; &lt;li&gt;newValue: {{newValue}} &lt;/li&gt; &lt;/ul&gt; &lt;/div&gt; &lt;div ng-controller=&quot;ChildController&quot;&gt; &lt;h3&gt;parent&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;value: {{value}}&lt;/li&gt; &lt;li&gt;Upper: {{getUpperValue()}}&lt;/li&gt; &lt;li&gt;newValue: {{newValue}} &lt;/li&gt; &lt;/ul&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt;  제대로 된 결과를 보려면">
 
 
+<meta itemprop="datePublished" content="2014-11-10T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2014-11-10T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="934">
 
