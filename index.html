@@ -128,9 +128,10 @@
   </header>
 
   <div class="summary"> 설치 go get명령어로 아래와 같이 필요한 유틸리티(명령어)를 설치해야 한다
-$ go get github.com/golang/lint/golint  github.com/nsf/gocode github.com/k0kubun/pp github.com/golang/lint/golint github.com/rogpeppe/godef github.com/dougm/goflymake golang.org/x/tools/cmd/godoc 또는 golang.org/x/tools/cmd/...  필요한 패키지 direx ;;디렉토리 트리 보여줌 popwin ;;direx를 다른창으로 열어줌 auto-complete ;;자동완성 flycheck ;;오류체크 flymake-go go-mode go-autocomplete go-eldoc ;;상태줄에 godoc간단히 보여줌  go.el
-.bash_profile에 GOPATH가 설정되어야함
-(add-to-list 'load-path (concat (getenv &quot;GOPATH&quot;) &quot;/src/github.com/golang/lint/misc/emacs&quot;)) (add-to-list 'load-path (concat (getenv &quot;GOPATH&quot;) &quot;/src/github.com/dougm/goflymake&quot;)) (require 'direx) (require 'go-mode) (require 'go-flymake) (require 'go-flycheck) (require 'go-autocomplete) (require 'auto-complete-config) (global-set-key (kbd &quot;C-x C-j&quot;) 'direx:jump-to-directory-other-window) (ac-config-default) (if (not (string-match &quot;go&quot; compile-command)) (set (make-local-variable 'compile-command) &quot;go build -v &amp;&amp; go test -v &amp;&amp; go vet&quot;)) (add-hook 'go-mode-hook (lambda () (go-eldoc-setup) (add-hook 'before-save-hook 'gofmt-before-save) (local-set-key (kbd &quot;C-c C-r&quot;) 'go-remove-unused-imports) (local-set-key (kbd &quot;C-c C-a&quot;) 'go-import-add) (local-set-key (kbd &quot;C-c C-g&quot;) 'go-goto-imports) (local-set-key (kbd &quot;C-c C-f&quot;) 'gofmt) (local-set-key (kbd &quot;M-. </div>
+$ go get github.com/golang/lint/golint  github.com/nsf/gocode github.com/k0kubun/pp github.com/golang/lint/golint github.com/rogpeppe/godef github.com/dougm/goflymake golang.org/x/tools/cmd/godoc 또는 golang.org/x/tools/cmd/...  필요한 패키지 direx ;;디렉토리 트리 보여줌 popwin ;;direx를 다른창으로 열어줌 auto-complete ;;자동완성 flycheck ;;오류체크 flymake-go go-mode go-autocomplete go-eldoc ;;상태줄에 godoc간단히 보여줌  shell-intergration.el
+터미널에서 실행하면 이멕스가 작동하는데 바로가기에서는 작동이 안된다
+아래와 같이 쉘환경에 통합하고 나서 실행하니 문제가 없었다
+(when (memq window-system '(mac ns)) (exec-path-from-shell-initialize) (exec-path-from-shell-copy-envs '(&quot;PATH&quot; &quot;GOPATH&quot;)))  go. </div>
 
   <footer>
   <div class="rmore">
