@@ -18,10 +18,10 @@
       
       <guid>http://clonekim.github.io/2017/11/emacs%EC%97%90%EC%84%9C-golang-%EB%A5%BC-%EC%9C%84%ED%95%9C-%EC%97%90%EB%94%94%ED%8C%85/</guid>
       <description>설치 go get명령어로 아래와 같이 필요한 유틸리티(명령어)를 설치해야 한다
-$ go get github.com/golang/lint/golint  github.com/nsf/gocode github.com/k0kubun/pp github.com/golang/lint/golint github.com/rogpeppe/godef github.com/dougm/goflymake golang.org/x/tools/cmd/godoc 또는 golang.org/x/tools/cmd/...  필요한 패키지 direx ;;디렉토리 트리 보여줌 popwin ;;direx를 다른창으로 열어줌 auto-complete ;;자동완성 flycheck ;;오류체크 flymake-go go-mode go-autocomplete go-eldoc ;;상태줄에 godoc간단히 보여줌  shell-intergration.el
+$ go get github.com/golang/lint/golint github.com/nsf/gocode github.com/k0kubun/pp github.com/golang/lint/golint github.com/rogpeppe/godef github.com/dougm/goflymake golang.org/x/tools/cmd/godoc 또는 golang.org/x/tools/cmd/...  필요한 패키지 direx ;;디렉토리 트리 보여줌 popwin ;;direx를 다른창으로 열어줌 auto-complete ;;자동완성 flycheck ;;오류체크 flymake-go go-mode go-autocomplete go-eldoc ;;상태줄에 godoc간단히 보여줌  shell-intergration.el
 터미널에서 실행하면 이멕스가 작동하는데 바로가기에서는 작동이 안된다
 아래와 같이 쉘환경에 통합하고 나서 실행하니 문제가 없었다
-(when (memq window-system &#39;(mac ns)) (exec-path-from-shell-initialize) (exec-path-from-shell-copy-envs &#39;(&amp;quot;PATH&amp;quot; &amp;quot;GOPATH&amp;quot;)))  go.</description>
+(when (memq window-system &amp;#39;(mac ns)) (exec-path-from-shell-initialize) (exec-path-from-shell-copy-envs &amp;#39;(&amp;#34;PATH&amp;#34; &amp;#34;GOPATH&amp;#34;))) go.</description>
     </item>
     
     <item>
@@ -30,7 +30,7 @@ $ go get github.com/golang/lint/golint  github.com/nsf/gocode github.com/k0kubun
       <pubDate>Thu, 02 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://clonekim.github.io/2017/11/go-repl/</guid>
-      <description>$ go get github.com/motemen/gore  $ gore -autoimport gore version 0.2.6 :help for help gore&amp;gt; fmt.Println(&amp;quot;Hello World&amp;quot;) Hello World 12 &amp;lt;nil&amp;gt; gore&amp;gt;  </description>
+      <description>$ go get github.com/motemen/gore$ gore -autoimport gore version 0.2.6 :help for help gore&amp;gt; fmt.Println(&amp;#34;Hello World&amp;#34;) Hello World 12 &amp;lt;nil&amp;gt; gore&amp;gt;</description>
     </item>
     
     <item>
@@ -105,7 +105,7 @@ $ docker run --name deployd-mongo -d mongo -p 27017:27017  Deployd 실행 $ dpd 
       <description>참고소스
  [freemarker-clj &amp;quot;0.1.0&amp;quot;]  freemarker-clj
 템플릿 초기화 템플릿리소스는 해당 디렉토리로 초기화한다
-(defn gen-config [&amp;amp; {:keys [shared] :or {shared {}}}] (let [cfg (doto (Configuration.) (.setDirectoryForTemplateLoading (file &amp;quot;/Users/bonjour/git/cms/resources/public/ftl&amp;quot;)) (.setDefaultEncoding &amp;quot;UTF-8&amp;quot;) (.setObjectWrapper (DefaultObjectWrapper.)))] (doseq [[k v] (map-&amp;gt;model shared)] (.setSharedVariable ^Configuration cfg ^String k v)) cfg))  아래와 같이 템플릿로더를 직접구현해서도 가능하다
+(defn gen-config [&amp;amp; {:keys [shared] :or {shared {}}}] (let [cfg (doto (Configuration.) (.setDirectoryForTemplateLoading (file &amp;#34;/Users/bonjour/git/cms/resources/public/ftl&amp;#34;)) (.setDefaultEncoding &amp;#34;UTF-8&amp;#34;) (.setObjectWrapper (DefaultObjectWrapper.)))] (doseq [[k v] (map-&amp;gt;model shared)] (.setSharedVariable ^Configuration cfg ^String k v)) cfg)) 아래와 같이 템플릿로더를 직접구현해서도 가능하다
 (ns freemarker.template (:require [clojure.tools.logging :as log] [clojure.java.io :refer [file]] [freemarker.shim :refer [map-&amp;gt;model]]) (:import [freemarker.template Configuration DefaultObjectWrapper TemplateMethodModel] [java.io StringWriter])) (def DBTemplateLoader (proxy [freemarker.</description>
     </item>
     
@@ -129,8 +129,8 @@ $http.json(url, {jsonpCallbackParam: &#39;callback&#39;}) .then(function(res) { 
       
       <guid>http://clonekim.github.io/2016/09/clojurescript%EC%97%90%EC%84%9C-jquery%EC%82%AC%EC%9A%A9/</guid>
       <description> view.clj
-(defn view-layout [&amp;amp; content] (html [:head [:meta {:http-equiv &amp;quot;Content-type&amp;quot; :content &amp;quot;text/html; charset=utf-8&amp;quot;}] [&amp;quot;title&amp;quot;: &amp;quot;Project-Name&amp;quot;]] [:body content])) (defn view-content [] (view-layout [:h2 &amp;quot;Project-Name&amp;quot;] [:p {:id &amp;quot;clickhere&amp;quot;} &amp;quot;Get yourself a nice alert by clicking here.&amp;quot;] [:script {:src &amp;quot;/js/jquery-1.10.2.min.js&amp;quot;}] [:script {:src &amp;quot;/js/cljs.js&amp;quot;}]))  hello.cljs
-(:require [jayq.core :as jq]) (:use [jayq.core :only [$]]) ;; ;; $(&amp;quot;#btn&amp;quot;).click(function() {alert(&amp;quot;Hi!&amp;quot;); }); ;; (jq/bind ($ &amp;quot;#btn&amp;quot;) :click (fn [] (js/alert &amp;quot;Hi!&amp;quot;)))  lein cljsbuild once lein run  참고  ClojureScriptという選択肢 ClojureScript入門  </description>
+(defn view-layout [&amp;amp; content] (html [:head [:meta {:http-equiv &amp;#34;Content-type&amp;#34; :content &amp;#34;text/html; charset=utf-8&amp;#34;}] [&amp;#34;title&amp;#34;: &amp;#34;Project-Name&amp;#34;]] [:body content])) (defn view-content [] (view-layout [:h2 &amp;#34;Project-Name&amp;#34;] [:p {:id &amp;#34;clickhere&amp;#34;} &amp;#34;Get yourself a nice alert by clicking here.&amp;#34;] [:script {:src &amp;#34;/js/jquery-1.10.2.min.js&amp;#34;}] [:script {:src &amp;#34;/js/cljs.js&amp;#34;}])) hello.cljs
+(:require [jayq.core :as jq]) (:use [jayq.core :only [$]]) ;; ;; $(&amp;#34;#btn&amp;#34;).click(function() {alert(&amp;#34;Hi!&amp;#34;); }); ;; (jq/bind ($ &amp;#34;#btn&amp;#34;) :click (fn [] (js/alert &amp;#34;Hi!&amp;#34;))) lein cljsbuild once lein run  참고  ClojureScriptという選択肢 ClojureScript入門  </description>
     </item>
     
     <item>
@@ -199,7 +199,7 @@ $ docker ps CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES cf5fbb3d49b1 m
       <description>gulp와 함께 의존성설치 npm install -g gulp  react 개발에 필요한 라이브러리와
 번들로 묶기위한 browserify를 설치
 npm install react --save-dev npm install react-dom --save-dev npm install browserify --save-dev npm install gulp --save-dev npm install vinyl-source-stream --save-dev npm install babelify --save-dev npm install babel-preset-react --save-dev  gulpfile
-var gulp = require(&#39;gulp&#39;), browserify = require(&#39;browserify&#39;), babelify = require(&#39;babelify&#39;), source = require(&#39;vinyl-source-stream&#39;); gulp.task(&#39;default&#39;, function() { return browserify(&#39;./source/app.js&#39;) .transform(babelify, {presets: [&#39;react&#39;]}) .bundle() .pipe(source(&#39;app.min.js&#39;)) .</description>
+var gulp = require(&amp;#39;gulp&amp;#39;), browserify = require(&amp;#39;browserify&amp;#39;), babelify = require(&amp;#39;babelify&amp;#39;), source = require(&amp;#39;vinyl-source-stream&amp;#39;); gulp.task(&amp;#39;default&amp;#39;, function() { return browserify(&amp;#39;./source/app.js&amp;#39;) .transform(babelify, {presets: [&amp;#39;react&amp;#39;]}) .bundle() .pipe(source(&amp;#39;app.min.js&amp;#39;)) .</description>
     </item>
     
     <item>
@@ -209,9 +209,10 @@ var gulp = require(&#39;gulp&#39;), browserify = require(&#39;browserify&#39;), 
       
       <guid>http://clonekim.github.io/2016/01/clojurescript-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/</guid>
       <description>프로젝트 설정 leiningen
-[org.clojure/clojurescript &amp;quot;1.7.228&amp;quot;]  plugin
-[lein-cljsbuild &amp;quot;1.1.2&amp;quot;]  project.clj
-(defproject hello-ring &amp;quot;0.1.0-SNAPSHOT&amp;quot; :description &amp;quot;FIXME: write description&amp;quot; :url &amp;quot;http://example.com/FIXME&amp;quot; :license {:name &amp;quot;Eclipse Public License&amp;quot; :url &amp;quot;http://www.eclipse.org/legal/epl-v10.html&amp;quot;} :dependencies [[org.clojure/clojure &amp;quot;1.7.0&amp;quot;] [org.clojure/clojurescript &amp;quot;1.7.228&amp;quot;] [ring/ring-core &amp;quot;1.4.0&amp;quot;] [ring/ring-defaults &amp;quot;0.1.5&amp;quot;] [ring/ring-json &amp;quot;0.4.0&amp;quot;] [ring/ring-jetty-adapter &amp;quot;1.4.0&amp;quot;] [compojure &amp;quot;1.4.0&amp;quot;]] :plugins [[lein-cljsbuild &amp;quot;1.1.2&amp;quot;] [lein-ring &amp;quot;0.9.7&amp;quot;]] :cljsbuild {:builds {:main {:source-paths [&amp;quot;src-cljs&amp;quot;] :compiler {:output-to &amp;quot;resources/public/js/app.js&amp;quot; :output-dir &amp;quot;resources/public/out&amp;quot; :optimizations :simple :pretty-print true}}}} :ring {:handler hello-ring.core/app} :main hello-ring.core)  cljs소스를 src-cljs라는 경로로 선택했다</description>
+[org.clojure/clojurescript &amp;#34;1.7.228&amp;#34;] plugin
+[lein-cljsbuild &amp;#34;1.1.2&amp;#34;] project.clj
+(defproject hello-ring &amp;#34;0.1.0-SNAPSHOT&amp;#34; :description &amp;#34;FIXME: write description&amp;#34; :url &amp;#34;http://example.com/FIXME&amp;#34; :license {:name &amp;#34;Eclipse Public License&amp;#34; :url &amp;#34;http://www.eclipse.org/legal/epl-v10.html&amp;#34;} :dependencies [[org.clojure/clojure &amp;#34;1.7.0&amp;#34;] [org.clojure/clojurescript &amp;#34;1.7.228&amp;#34;] [ring/ring-core &amp;#34;1.4.0&amp;#34;] [ring/ring-defaults &amp;#34;0.1.5&amp;#34;] [ring/ring-json &amp;#34;0.4.0&amp;#34;] [ring/ring-jetty-adapter &amp;#34;1.4.0&amp;#34;] [compojure &amp;#34;1.4.0&amp;#34;]] :plugins [[lein-cljsbuild &amp;#34;1.1.2&amp;#34;] [lein-ring &amp;#34;0.9.7&amp;#34;]] :cljsbuild {:builds {:main {:source-paths [&amp;#34;src-cljs&amp;#34;] :compiler {:output-to &amp;#34;resources/public/js/app.js&amp;#34; :output-dir &amp;#34;resources/public/out&amp;#34; :optimizations :simple :pretty-print true}}}} :ring {:handler hello-ring.core/app} :main hello-ring.core) cljs소스를 src-cljs라는 경로로 선택했다
+디렉토리를 만들어야한다</description>
     </item>
     
     <item>
@@ -252,8 +253,8 @@ IDE/Tools  LightTable Cursive Emacs  Leiningen으로 시작하기 Leiningen (레
 윈도우에서만 self-install해준다
 Project 생성 lein new [프로젝트명]  프로젝트 의존성 추가 라이브러리는 아래의 저장소에서 검색이 가능하고
 의존성에 추가하면 된다
- clojars Maven repository  :dependencies [[org.clojure/clojure &amp;quot;1.7.0&amp;quot;] [groupId/artifactId &amp;quot;version&amp;quot;]])  그외의 라이브러리 저장소로는 추가로 지정할수있다
-:repositories { &amp;quot;이름&amp;quot; &amp;quot;http://192.168.0.10:8081/nexus/content/repositories/thirdparty&amp;quot; }  REPL(Read Eval Print Loop) 실행 lein repl  REPL에서 클로저코드를 작성하고 바로 실행이 가능하다</description>
+ clojars Maven repository  :dependencies [[org.clojure/clojure &amp;#34;1.7.0&amp;#34;] [groupId/artifactId &amp;#34;version&amp;#34;]]) 그외의 라이브러리 저장소로는 추가로 지정할수있다
+:repositories { &amp;#34;이름&amp;#34; &amp;#34;http://192.168.0.10:8081/nexus/content/repositories/thirdparty&amp;#34; } REPL(Read Eval Print Loop) 실행 lein repl  REPL에서 클로저코드를 작성하고 바로 실행이 가능하다</description>
     </item>
     
     <item>
@@ -264,7 +265,7 @@ Project 생성 lein new [프로젝트명]  프로젝트 의존성 추가 라이�
       <guid>http://clonekim.github.io/2015/09/%ED%81%B4%EB%A1%9C%EC%A0%80%EC%97%90%EC%84%9C-jdbc/</guid>
       <description> 클로저에서 JDBC(Java Database Connectivity) 를 사용하기 위한 가이드
 몇몇 함수가 없어진 경우가 있기 때문에 소스보기로 확인할 것
- clojure-doc보기 소스보기   leiningen [org.clojure/java.jdbc &amp;quot;0.4.2&amp;quot;]  간단한 예제 (ns db-test.core (:require [clojure.java.jdbc :as sql]))	(def db {:classname &amp;quot;com.mysql.jdbc.Driver&amp;quot; :subprotocol &amp;quot;mysql&amp;quot; :subname &amp;quot;//127.0.0.1:3306/test&amp;quot; :user &amp;quot;xxx&amp;quot; :password &amp;quot;xxxx&amp;quot; }) (defn get-user [] (println (sql/query db [&amp;quot;select * from users&amp;quot;]))) (defn -main [] (get-user))  참고  HikarCP를 사용하는 예 clojure.jdbc doc  </description>
+ clojure-doc보기 소스보기   leiningen [org.clojure/java.jdbc &amp;quot;0.4.2&amp;quot;]  간단한 예제 (ns db-test.core (:require [clojure.java.jdbc :as sql]))	(def db {:classname &amp;#34;com.mysql.jdbc.Driver&amp;#34; :subprotocol &amp;#34;mysql&amp;#34; :subname &amp;#34;//127.0.0.1:3306/test&amp;#34; :user &amp;#34;xxx&amp;#34; :password &amp;#34;xxxx&amp;#34; }) (defn get-user [] (println (sql/query db [&amp;#34;select * from users&amp;#34;]))) (defn -main [] (get-user)) 참고  HikarCP를 사용하는 예 clojure.jdbc doc  </description>
     </item>
     
     <item>
@@ -288,12 +289,12 @@ ${x?string} ${x?string[0..1]}  .(dot)가 들어간 변수도 사용할 수 있�
       <description>Emacs 24를 기준으로 작성
 현재 사용중인 환경은 custom-emacs.tgz
 Package Install init.el
-(require &#39;package) (add-to-list &#39;package-archives &#39;(&amp;quot;melpa-stable&amp;quot; . &amp;quot;http://stable.melpa.org/packages/&amp;quot;) t) (package-initialize)  package install
+(require &amp;#39;package) (add-to-list &amp;#39;package-archives &amp;#39;(&amp;#34;melpa-stable&amp;#34; . &amp;#34;http://stable.melpa.org/packages/&amp;#34;) t) (package-initialize) package install
 M-x package-install [RET] cider [RET]  현재 사용하고 있는 패키지
  cider paredit rainbow-delimiters s f clojure-mode clojure-mode-extra-font-locking dash ido-completing-read+ ido-ubiquitous projectile queue seq smex spinner  Cider 구동 주의
 Cider와 cider-nrepl의 버전이 맞아야함  profiles.clj
 .lein디렉토리이하에 작성한다 없을경우 파일생성
-{:user {:plugins [[cider/cider-nrepl &amp;quot;0.10.0&amp;quot;]] :dependencies [[org.clojure/tools.nrepl &amp;quot;0.</description>
+{:user {:plugins [[cider/cider-nrepl &amp;#34;0.10.0&amp;#34;]] :dependencies [[org.clojure/tools.nrepl &amp;#34;0.2.12&amp;#34;]]}} {:repl {:dependencies [[org.</description>
     </item>
     
     <item>
@@ -317,9 +318,9 @@ oracle.jdbc.driver.OracleDriver에서 oracle.jdbc.OracleDriver 로 바꿀 것
       <description>Hello-Ring 프로젝트 작성 새로운 프로젝트를 생성한다
 lein new hello-ring  leiningen.clj
 project.clj의 :dependencies에 임베디드 Jetty서버 추가
-[ring/ring-jetty-adapter &amp;quot;1.4.0&amp;quot;]  ring-jetty-adapter는 ring-core, ring-servlet, jetty-server를 의존성으로 가지고 있다
+[ring/ring-jetty-adapter &amp;#34;1.4.0&amp;#34;] ring-jetty-adapter는 ring-core, ring-servlet, jetty-server를 의존성으로 가지고 있다
 ring-core: essential functions for handling parameters, cookies and more ring-devel: functions for developing and debugging Ring applications ring-servlet: construct Java servlets from Ring handlers ring-jetty-adapter: a Ring adapter that uses the Jetty webserver  hello_ring.core
-(ns hello-ring.core (:use [ring.adapter.jetty])) (defn app-handler [request] {:status 200 :header {&amp;quot;Content-Type&amp;quot; &amp;quot;text/html&amp;quot;} :body &amp;quot;Hello Ring&amp;quot;}) (defn -main [] (run-jetty app-handler {:port 8080}))  실행</description>
+(ns hello-ring.core (:use [ring.adapter.jetty])) (defn app-handler [request] {:status 200 :header {&amp;#34;Content-Type&amp;#34; &amp;#34;text/html&amp;#34;} :body &amp;#34;Hello Ring&amp;#34;}) (defn -main [] (run-jetty app-handler {:port 8080})) 실행</description>
     </item>
     
     <item>
@@ -344,10 +345,10 @@ vm003: slave
       <description>Starter Kit으로 시작하기 0.13.x를 기준으로 작성함
 react-0.13.3.zip 다운로드
 hello React!
-&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;script src=&amp;quot;build/react.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;quot;build/JSXTransformer.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt;	&amp;lt;body&amp;gt; &amp;lt;div id=&amp;quot;hello&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script type=&amp;quot;text/jsx&amp;quot;&amp;gt; React.render(&amp;lt;h1&amp;gt;Hello, welcome to React!&amp;lt;/h1&amp;gt;, document.getElementById(&#39;hello&#39;)); &amp;lt;/script&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;  JSX(JavaScript XML) JSX(JavaScript XML)는 XML 과 유사한 문법을 가지는 자바스크립트이다.
+&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;script src=&amp;#34;build/react.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;build/JSXTransformer.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt;	&amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;hello&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script type=&amp;#34;text/jsx&amp;#34;&amp;gt; React.render(&amp;lt;h1&amp;gt;Hello, welcome to React!&amp;lt;/h1&amp;gt;, document.getElementById(&amp;#39;hello&amp;#39;)); &amp;lt;/script&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; JSX(JavaScript XML) JSX(JavaScript XML)는 XML 과 유사한 문법을 가지는 자바스크립트이다.
 JSX 문법을 사용하기 위해서는 반드시 JSXTransformer.js가 필요하다
 상세한 JSX syntaxt과 spec 은 아래를 참조할 것
- http://facebook.github.io/react/docs/jsx-in-depth.html http://facebook.github.io/jsx/  //Html &amp;lt;h1 class=&amp;quot;test&amp;quot;&amp;gt;Hello&amp;lt;/h1&amp;gt; //JSX &amp;lt;h1 className=&amp;quot;test&amp;quot;&amp;gt;Hello&amp;lt;/h1&amp;gt; var text= &amp;quot;Hello React!</description>
+ http://facebook.github.io/react/docs/jsx-in-depth.html http://facebook.github.io/jsx/  //Html &amp;lt;h1 class=&amp;#34;test&amp;#34;&amp;gt;Hello&amp;lt;/h1&amp;gt; //JSX &amp;lt;h1 className=&amp;#34;test&amp;#34;&amp;gt;Hello&amp;lt;/h1&amp;gt; var text= &amp;#34;Hello React!</description>
     </item>
     
     <item>
@@ -385,7 +386,7 @@ Ctrl +^ 입력시 바로 이전 탐색창으로 이동한다.</description>
       <description>canvas를 이용한 캡챠(captcha)를 생성하려고 한다.
 사용하려는 패키지는 canvas-captcha이다
 의존성 설치 apt-get install libpango1.0-dev apt-get install libjpeg-dev apt-get install libgif-dev  소스작성 captcha.js
-var captcha = require(&#39;canvas-captcha&#39;) ,captchaOptions = { charPool: (&#39;abcdefghijklmnopqrstuvwxyz&#39; + &#39;abcdefghijklmnopqrstuvwxyz&#39;.toUpperCase() + &#39;1234567890&#39;).split(&#39;&#39;) //char pool Array ,size: { width: 120 ,height: 52 } //image size ,textPos: { left: 15 ,top: 36 } //text drawing start position ,rotate: .01 //text ratate ,charLength: 5 //how many chars //,font: &#39;26px&#39; //font size ,strokeStyle: &#39;#0088cc&#39; //style ,bgColor: &#39;#eeeeee&#39; //bg color ,confusion: true //draw another group background text to mangle the text //,cFont: &#39;30px&#39; //bg text style ,cStrokeStyle: &#39;#adc&#39; //bg text color ,cRotate: -.</description>
+var captcha = require(&amp;#39;canvas-captcha&amp;#39;) ,captchaOptions = { charPool: (&amp;#39;abcdefghijklmnopqrstuvwxyz&amp;#39; + &amp;#39;abcdefghijklmnopqrstuvwxyz&amp;#39;.toUpperCase() + &amp;#39;1234567890&amp;#39;).split(&amp;#39;&amp;#39;) //char pool Array  ,size: { width: 120 ,height: 52 } //image size  ,textPos: { left: 15 ,top: 36 } //text drawing start position  ,rotate: .01 //text ratate  ,charLength: 5 //how many chars  //,font: &amp;#39;26px&amp;#39; //font size  ,strokeStyle: &amp;#39;#0088cc&amp;#39; //style  ,bgColor: &amp;#39;#eeeeee&amp;#39; //bg color  ,confusion: true //draw another group background text to mangle the text  //,cFont: &amp;#39;30px&amp;#39; //bg text style  ,cStrokeStyle: &amp;#39;#adc&amp;#39; //bg text color  ,cRotate: -.</description>
     </item>
     
     <item>
@@ -394,9 +395,10 @@ var captcha = require(&#39;canvas-captcha&#39;) ,captchaOptions = { charPool: (&
       <pubDate>Tue, 14 Jul 2015 00:00:00 +0000</pubDate>
       
       <guid>http://clonekim.github.io/2015/07/sinatra-%EC%9B%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/</guid>
-      <description>설치 jruby -S gem install sinatra  Hello Ruby require &#39;rubygems&#39; require &#39;sinatra&#39; get &#39;/&#39; do &#39;Hello Jruby&#39; end  라우터 get, post, put, delete를 사용할 수있다
-get &#39;/&#39; do end  요청파라미터 /?name=foo 로 요청 시 아래와 같이
-post &#39;/&#39; do puts params[&#39;name&#39;] end  본문으로 Json를 요청받을 경우 post &#39;/&#39; do payload = JSON.parse(request.body.read) puts payload status 201 end  응답하기 문자열, html, json, 바이너리 등의 모든 컨텐츠로 응답가능하다</description>
+      <description>설치 jruby -S gem install sinatra  Hello Ruby require &amp;#39;rubygems&amp;#39; require &amp;#39;sinatra&amp;#39; get &amp;#39;/&amp;#39; do &amp;#39;Hello Jruby&amp;#39; end 라우터 get, post, put, delete를 사용할 수있다
+get &amp;#39;/&amp;#39; do end 요청파라미터 /?name=foo 로 요청 시 아래와 같이
+post &amp;#39;/&amp;#39; do puts params[&amp;#39;name&amp;#39;] end 본문으로 Json를 요청받을 경우 post &amp;#39;/&amp;#39; do payload = JSON.parse(request.body.read) puts payload status 201 end 응답하기 문자열, html, json, 바이너리 등의 모든 컨텐츠로 응답가능하다
+get &amp;#39;/&amp;#39; do &amp;#39;Hello&amp;#39; end Json으로 응답하기 require &amp;#39;sinatra&amp;#39; require &amp;#39;json&amp;#39; get &amp;#39;/&amp;#39; do content_type :json data = { foo: &amp;#39;bar&amp;#39;} data.</description>
     </item>
     
     <item>
@@ -406,9 +408,9 @@ post &#39;/&#39; do puts params[&#39;name&#39;] end  본문으로 Json를 요청
       
       <guid>http://clonekim.github.io/2015/07/angularjs-%EB%8B%A4%EA%B5%AD%EC%96%B4%EC%B2%98%EB%A6%AC/</guid>
       <description>IndexController.js
-module.exports = [&#39;$scope&#39;, &#39;$cookies&#39;, &#39;TranslationService&#39;, function($scope, $cookies, TranslationService) { TranslationService.getLanguage($scope, $cookies); $scope.multiLng = function( lang ) { $cookies.put(&amp;quot;lang&amp;quot;, lang); TranslationService.getLanguage($scope, $cookies); } }];  TranslationService.js
-module.exports = [&#39;$http&#39;, function($http) { this.getLanguage = function($scope, $cookies, cbk) { var lang = $cookies.get(&#39;lang&#39;) || &#39;ko&#39;; $http({ method: &#39;GET&#39;, url: &#39;/js/locale_&#39; + lang +&#39;.json&#39; }).success(function(response) { $scope.translation = response;	$scope.lang = lang; }); }; }];  locale_zh.js
-{ &amp;quot;online_start&amp;quot;: &amp;quot;Online申请&amp;quot;, ... }  index.</description>
+module.exports = [&amp;#39;$scope&amp;#39;, &amp;#39;$cookies&amp;#39;, &amp;#39;TranslationService&amp;#39;, function($scope, $cookies, TranslationService) { TranslationService.getLanguage($scope, $cookies); $scope.multiLng = function( lang ) { $cookies.put(&amp;#34;lang&amp;#34;, lang); TranslationService.getLanguage($scope, $cookies); } }];  TranslationService.js
+module.exports = [&amp;#39;$http&amp;#39;, function($http) { this.getLanguage = function($scope, $cookies, cbk) { var lang = $cookies.get(&amp;#39;lang&amp;#39;) || &amp;#39;ko&amp;#39;; $http({ method: &amp;#39;GET&amp;#39;, url: &amp;#39;/js/locale_&amp;#39; + lang +&amp;#39;.json&amp;#39; }).success(function(response) { $scope.translation = response;	$scope.lang = lang; }); }; }];  locale_zh.js
+{ &amp;#34;online_start&amp;#34;: &amp;#34;Online申请&amp;#34;, ... }  index.</description>
     </item>
     
     <item>
@@ -461,8 +463,8 @@ png 로 이미지를 생성하되 :- 또는 png:fd:1 를 사용하면 표준 출
       <description>RequireJS
 log라는 모듈을 작성한다
 log.js
-define(&#39;log&#39;, function() { return function(str) { console.log(&amp;quot;--&amp;gt; &amp;quot;, str); } });  &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;ko&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;script src=&amp;quot;requirejs/2.1.15/require.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;quot;js/log.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;script&amp;gt; require([&#39;log&#39;], function(log) { log(&amp;quot;Hello !&amp;quot;); }); &amp;lt;/script&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;  프로토타입으로 작성한 boost.js
-define(&#39;boost&#39;, function() { function Boost() { } Boost.prototype.version = function() { return &amp;quot;1.0&amp;quot;; }; return Boost; });  &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;ko&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;script src=&amp;quot;requirejs/2.1.15/require.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;quot;js/boost.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; require([&#39;boost&#39;], function(Boost) { var boost = new Boost(); alert(boost.</description>
+define(&amp;#39;log&amp;#39;, function() { return function(str) { console.log(&amp;#34;--&amp;gt; &amp;#34;, str); } }); &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;ko&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;script src=&amp;#34;requirejs/2.1.15/require.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;js/log.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;script&amp;gt; require([&amp;#39;log&amp;#39;], function(log) { log(&amp;#34;Hello !&amp;#34;); }); &amp;lt;/script&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; 프로토타입으로 작성한 boost.js
+define(&amp;#39;boost&amp;#39;, function() { function Boost() { } Boost.prototype.version = function() { return &amp;#34;1.0&amp;#34;; }; return Boost; }); &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;ko&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;script src=&amp;#34;requirejs/2.1.15/require.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;js/boost.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; require([&amp;#39;boost&amp;#39;], function(Boost) { var boost = new Boost(); alert(boost.</description>
     </item>
     
     <item>
@@ -473,7 +475,7 @@ define(&#39;boost&#39;, function() { function Boost() { } Boost.prototype.versio
       <guid>http://clonekim.github.io/2014/11/angularjs-tips/</guid>
       <description>개발 정보
 버젼 1.2.26를 사용
-scope 계층화 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;ko&amp;quot; ng-app=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt; &amp;lt;meta http-equiv=&amp;quot;X-UA-Compatible&amp;quot; content=&amp;quot;IE=edge&amp;quot;&amp;gt; &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0&amp;quot;&amp;gt; &amp;lt;title&amp;gt;Services and Modules&amp;lt;/title&amp;gt; &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;bootstrap/css/bootstrap.css&amp;quot; /&amp;gt; &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;bootstrap/css/bootstrap-theme.css&amp;quot; /&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;jquery/jquery.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;jquery-ui/jquery-ui.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;angular/angular.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; angular.module(&amp;quot;app&amp;quot;, []) .controller(&amp;quot;ParentController&amp;quot;, [&#39;$scope&#39;, function($scope) { $scope.value = &#39;parent value&#39;; $scope.getUpperValue = function () { return angular.uppercase($scope.value); } }]) .controller(&amp;quot;ChildController&amp;quot;,[ &#39;$scope&#39;, function($scope) { $scope.newValue = &#39;child value&#39;; }]); &amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div ng-controller=&amp;quot;ParentController&amp;quot;&amp;gt; &amp;lt;h3&amp;gt;parent&amp;lt;/h3&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;value: {{value}}&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;Upper: {{getUpperValue()}}&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;newValue: {{newValue}} &amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div ng-controller=&amp;quot;ChildController&amp;quot;&amp;gt; &amp;lt;h3&amp;gt;parent&amp;lt;/h3&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;value: {{value}}&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;Upper: {{getUpperValue()}}&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;newValue: {{newValue}} &amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;  제대로 된 결과를 보려면</description>
+scope 계층화 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;ko&amp;#34; ng-app=&amp;#34;app&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;utf-8&amp;#34;&amp;gt; &amp;lt;meta http-equiv=&amp;#34;X-UA-Compatible&amp;#34; content=&amp;#34;IE=edge&amp;#34;&amp;gt; &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34;&amp;gt; &amp;lt;title&amp;gt;Services and Modules&amp;lt;/title&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;bootstrap/css/bootstrap.css&amp;#34; /&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;bootstrap/css/bootstrap-theme.css&amp;#34; /&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34; src=&amp;#34;jquery/jquery.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34; src=&amp;#34;jquery-ui/jquery-ui.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34; src=&amp;#34;angular/angular.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; angular.module(&amp;#34;app&amp;#34;, []) .controller(&amp;#34;ParentController&amp;#34;, [&amp;#39;$scope&amp;#39;, function($scope) { $scope.value = &amp;#39;parent value&amp;#39;; $scope.getUpperValue = function () { return angular.uppercase($scope.value); } }]) .controller(&amp;#34;ChildController&amp;#34;,[ &amp;#39;$scope&amp;#39;, function($scope) { $scope.newValue = &amp;#39;child value&amp;#39;; }]); &amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div ng-controller=&amp;#34;ParentController&amp;#34;&amp;gt; &amp;lt;h3&amp;gt;parent&amp;lt;/h3&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;value: {{value}}&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;Upper: {{getUpperValue()}}&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;newValue: {{newValue}} &amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div ng-controller=&amp;#34;ChildController&amp;#34;&amp;gt; &amp;lt;h3&amp;gt;parent&amp;lt;/h3&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;value: {{value}}&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;Upper: {{getUpperValue()}}&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;newValue: {{newValue}} &amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; 제대로 된 결과를 보려면</description>
     </item>
     
     <item>
@@ -487,7 +489,7 @@ scope 계층화 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;ko&amp
 핸들바를 사용하지 않을려면 brfs도 고려해보자
 패키지 설치
 npm install --global gulp npm install --save-dev gulp npm install --save-dev browserify npm install --save-dev vinyl-source-stream npm install --save handlebars npm install --save hbsfy  gulpfile.js
-var gulp = require(&#39;gulp&#39;), browserify = require(&#39;browserify&#39;), source = require(&#39;vinyl-source-stream&#39;), hbsfy = require(&#39;hbsfy&#39;); gulp.task(&#39;build&#39;, function() { var b = browserify(&#39;./js/app.js&#39;, {debug:true}); return b.transform(hbsfy) .bundle() .pipe(source(&#39;app.js&#39;)) .pipe(gulp.dest(&#39;/home/alpha/public/js&#39;)); }); gulp.</description>
+var gulp = require(&amp;#39;gulp&amp;#39;), browserify = require(&amp;#39;browserify&amp;#39;), source = require(&amp;#39;vinyl-source-stream&amp;#39;), hbsfy = require(&amp;#39;hbsfy&amp;#39;); gulp.task(&amp;#39;build&amp;#39;, function() { var b = browserify(&amp;#39;./js/app.js&amp;#39;, {debug:true}); return b.transform(hbsfy) .bundle() .pipe(source(&amp;#39;app.js&amp;#39;)) .pipe(gulp.dest(&amp;#39;/home/alpha/public/js&amp;#39;)); }); gulp.</description>
     </item>
     
     <item>
@@ -497,7 +499,7 @@ var gulp = require(&#39;gulp&#39;), browserify = require(&#39;browserify&#39;), 
       
       <guid>http://clonekim.github.io/2014/03/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A1%9C-uuid-%EC%83%9D%EC%84%B1/</guid>
       <description>RFC4122
-return &#39;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&#39;.replace(/[xy]/g, function(c) { var r = Math.random()*16|0, v = c === &#39;x&#39; ? r : (r&amp;amp;0x3|0x8); return v.toString(16); });  var s = []; var hexDigits = &amp;quot;0123456789abcdef&amp;quot;; for (var i = 0; i &amp;lt; 36; i++) { s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1); } s[14] = &amp;quot;4&amp;quot;; s[19] = hexDigits.substr((s[19] &amp;amp; 0x3) | 0x8, 1); s[8] = s[13] = s[18] = s[23] = &amp;quot;-&amp;quot;; var uuid = s.</description>
+return &amp;#39;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&amp;#39;.replace(/[xy]/g, function(c) { var r = Math.random()*16|0, v = c === &amp;#39;x&amp;#39; ? r : (r&amp;amp;0x3|0x8); return v.toString(16); }); var s = []; var hexDigits = &amp;#34;0123456789abcdef&amp;#34;; for (var i = 0; i &amp;lt; 36; i++) { s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1); } s[14] = &amp;#34;4&amp;#34;; s[19] = hexDigits.substr((s[19] &amp;amp; 0x3) | 0x8, 1); s[8] = s[13] = s[18] = s[23] = &amp;#34;-&amp;#34;; var uuid = s.join(&amp;#34;&amp;#34;); return uuid; } </description>
     </item>
     
     <item>
@@ -515,7 +517,7 @@ return &#39;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&#39;.replace(/[xy]/g, function(
       <pubDate>Sat, 12 Oct 2013 00:00:00 +0000</pubDate>
       
       <guid>http://clonekim.github.io/2013/10/bigdecimal%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%B0%98%EC%98%AC%EB%A6%BC/</guid>
-      <description>BigDecimal.ROUND_DOWN	// 내림 BigDecimal.ROUND_HALF_UP // 반올림 BigDecimal.ROUND_UP // 올림  </description>
+      <description>BigDecimal.ROUND_DOWN	// 내림 BigDecimal.ROUND_HALF_UP // 반올림 BigDecimal.ROUND_UP // 올림</description>
     </item>
     
     <item>
@@ -528,7 +530,7 @@ return &#39;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&#39;.replace(/[xy]/g, function(
 로직과 private 변수를 캡슐화하는 방법으로 아래와 같은 모듈패턴( 익명함수) 을 많이 사용한다.
 (function() { /* ... */ })();  jQuery와 연동해서 사용할 경우 아래와 같이 파라미터를 전달하도록 한다.
 (function($) { /* ... */ })(jQuery);  글로벌 변수를 전달해서 네임스페이스로 확장 할 수 있다.
-(function($, exports) { exports.Foo = &amp;quot;wem&amp;quot;; })(jQuery, window);  IIFE(mmediately-Invoked Function Expression)
+(function($, exports) { exports.Foo = &amp;#34;wem&amp;#34;; })(jQuery, window);  IIFE(mmediately-Invoked Function Expression)
 (function() { var mod = {}; })();  window라는 식별자를 거치지 않고 전역변수를 접근하자</description>
     </item>
     
@@ -549,7 +551,7 @@ return &#39;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&#39;.replace(/[xy]/g, function(
       <guid>http://clonekim.github.io/2013/09/jspwiki-%EC%84%A4%EC%B9%98/</guid>
       <description> Apache JSPWiki
 설정 server.xml
-&amp;lt;Connector address=&amp;quot;127.0.0.1&amp;quot; port=&amp;quot;8080&amp;quot; protocol=&amp;quot;org.apache.coyote.http11.Http11NioProtocol&amp;quot; connectionTimeout=&amp;quot;20000&amp;quot; maxThreads=&amp;quot;3&amp;quot; minSpareThreads=&amp;quot;2&amp;quot; redirectPort=&amp;quot;8443&amp;quot; URIEncoding=&amp;quot;UTF-8&amp;quot;/&amp;gt;  jspwiki.properties
+&amp;lt;Connector address=&amp;#34;127.0.0.1&amp;#34; port=&amp;#34;8080&amp;#34; protocol=&amp;#34;org.apache.coyote.http11.Http11NioProtocol&amp;#34; connectionTimeout=&amp;#34;20000&amp;#34; maxThreads=&amp;#34;3&amp;#34; minSpareThreads=&amp;#34;2&amp;#34; redirectPort=&amp;#34;8443&amp;#34; URIEncoding=&amp;#34;UTF-8&amp;#34;/&amp;gt; jspwiki.properties
 jspwiki.baseURL= http://cloud9ine.cafe24.com/wiki jspwiki.fileSystemProvider.pageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/ jspwiki.basicAttachmentProvider.storageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/  jspwiki.policy
 Anonymous를 코멘트처리
 Nginx 연동 upstream tomcat { server 127.0.0.1:8080; } server { ... location /wiki { proxy_pass http://tomcat; }  </description>
@@ -561,9 +563,9 @@ Nginx 연동 upstream tomcat { server 127.0.0.1:8080; } server { ... location /w
       <pubDate>Fri, 27 Sep 2013 00:00:00 +0000</pubDate>
       
       <guid>http://clonekim.github.io/2013/09/jackson-json-processor/</guid>
-      <description> Parsing option String data = &amp;quot;[{&#39;text&#39;:&#39;PROJECT&#39;,&#39;id&#39;:&#39;00156&#39;,&#39;leaf&#39;:true}]&amp;quot;; ObjectMapper mapper = new ObjectMapper(); mapper.configure(JsonParser.Feature.ALLOW_SINGLE_QUOTES, true); JsonNode node = mapper.readTree(data);  Annotation JsonSerialize
-@JsonSerialize(using=JsonDateSerializer.class) public Date getCreationDate() { return creationDate; }  JsonDateSerializer.java
-public class JsonDateSerializer extends JsonSerializer&amp;lt;Date&amp;gt; { private static final SimpleDateFormat dateFormat = new SimpleDateFormat(&amp;quot;yyyy-MM-dd HH:mm:ss&amp;quot;); @Override public void serialize(Date date, JsonGenerator json, SerializerProvider provider) throws IOException, JsonProcessingException { String formattedDate = dateFormat.format(date); json.writeString(formattedDate); } }   Jackson JSON Processor Wiki  </description>
+      <description> Parsing option String data = &amp;#34;[{&amp;#39;text&amp;#39;:&amp;#39;PROJECT&amp;#39;,&amp;#39;id&amp;#39;:&amp;#39;00156&amp;#39;,&amp;#39;leaf&amp;#39;:true}]&amp;#34;; ObjectMapper mapper = new ObjectMapper(); mapper.configure(JsonParser.Feature.ALLOW_SINGLE_QUOTES, true); JsonNode node = mapper.readTree(data); Annotation JsonSerialize
+@JsonSerialize(using=JsonDateSerializer.class) public Date getCreationDate() { return creationDate; } JsonDateSerializer.java
+public class JsonDateSerializer extends JsonSerializer&amp;lt;Date&amp;gt; { private static final SimpleDateFormat dateFormat = new SimpleDateFormat(&amp;#34;yyyy-MM-dd HH:mm:ss&amp;#34;); @Override public void serialize(Date date, JsonGenerator json, SerializerProvider provider) throws IOException, JsonProcessingException { String formattedDate = dateFormat.format(date); json.writeString(formattedDate); } }  Jackson JSON Processor Wiki  </description>
     </item>
     
     <item>
@@ -583,10 +585,10 @@ import java.net.Authenticator; import java.net.MalformedURLException; import jav
       <pubDate>Tue, 24 Sep 2013 00:00:00 +0000</pubDate>
       
       <guid>http://clonekim.github.io/2013/09/apache-tag-lib/</guid>
-      <description>Maven &amp;lt;groupId&amp;gt;jstl&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jstl&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.2&amp;lt;/version&amp;gt;  태그를 사용하기 위한 선언 &amp;lt;%@ taglib prefix=&amp;quot;c&amp;quot; uri=&amp;quot;http://java.sun.com/jsp/jstl/core&amp;quot;%&amp;gt; &amp;lt;%@ taglib prefix=&amp;quot;fn&amp;quot; uri=&amp;quot;http://java.sun.com/jsp/jstl/functions&amp;quot; %&amp;gt; &amp;lt;%@ taglib prefix=&amp;quot;fmt&amp;quot; uri=&amp;quot;http://java.sun.com/jsp/jstl/fmt&amp;quot;%&amp;gt;  param test.jsp?name=1234 일 경우
+      <description>Maven &amp;lt;groupId&amp;gt;jstl&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jstl&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.2&amp;lt;/version&amp;gt; 태그를 사용하기 위한 선언 &amp;lt;%@ taglib prefix=&amp;#34;c&amp;#34; uri=&amp;#34;http://java.sun.com/jsp/jstl/core&amp;#34;%&amp;gt; &amp;lt;%@ taglib prefix=&amp;#34;fn&amp;#34; uri=&amp;#34;http://java.sun.com/jsp/jstl/functions&amp;#34; %&amp;gt; &amp;lt;%@ taglib prefix=&amp;#34;fmt&amp;#34; uri=&amp;#34;http://java.sun.com/jsp/jstl/fmt&amp;#34;%&amp;gt; param test.jsp?name=1234 일 경우
 ${param.변수} 로 획득할 수 있다.
 ${param.name}으로 알수 있겠다.
-core set &amp;lt;c:set var=&amp;quot;string&amp;quot; value=&amp;quot;값&amp;quot;/&amp;gt; &amp;lt;c:set var=&amp;quot;string&amp;quot; value=&amp;quot;${변수.프로퍼티}&amp;quot;/&amp;gt;  out &amp;lt;c:out value=&amp;quot;${fn:substring(string,0,50)}&amp;quot; default=&amp;quot;초기값&amp;quot;/&amp;gt; &amp;lt;c:out value=&amp;quot;안녕하세요&amp;quot; /&amp;gt;  test &amp;lt;c:if test=&amp;quot;${변수가 존재하면}&amp;quot;&amp;gt; ..처리 &amp;lt;/c:if&amp;gt; &amp;lt;c:if test=&amp;quot;${변수 &amp;lt; 숫자 }&amp;quot;&amp;gt; ..처리 &amp;lt;/c:if&amp;gt; &amp;lt;c:if test=&amp;quot;${변수 &amp;lt; true}&amp;quot;&amp;gt; .</description>
+core set &amp;lt;c:set var=&amp;#34;string&amp;#34; value=&amp;#34;값&amp;#34;/&amp;gt; &amp;lt;c:set var=&amp;#34;string&amp;#34; value=&amp;#34;${변수.프로퍼티}&amp;#34;/&amp;gt; out &amp;lt;c:out value=&amp;#34;${fn:substring(string,0,50)}&amp;#34; default=&amp;#34;초기값&amp;#34;/&amp;gt; &amp;lt;c:out value=&amp;#34;안녕하세요&amp;#34; /&amp;gt; test &amp;lt;c:if test=&amp;#34;${변수가 존재하면}&amp;#34;&amp;gt; ..처리 &amp;lt;/c:if&amp;gt; &amp;lt;c:if test=&amp;#34;${변수 &amp;lt; 숫자 }&amp;#34;&amp;gt; ..처리 &amp;lt;/c:if&amp;gt; &amp;lt;c:if test=&amp;#34;${변수 &amp;lt; true}&amp;#34;&amp;gt; ..처리 &amp;lt;/c:if&amp;gt; choose &amp;lt;c:choose&amp;gt; &amp;lt;c:when test=&amp;#34;조건&amp;#34;&amp;gt; .</description>
     </item>
     
     <item>
@@ -650,9 +652,9 @@ set autoindent set smartindent set shiftwidth=3 set tabstop=3 set title set nu s
       
       <guid>http://clonekim.github.io/2012/02/ruby-some-basic/</guid>
       <description>json 생성
-require &#39;json&#39; jsonbody = JSON.generate[&amp;quot;message&amp;quot;=&amp;gt;&amp;quot;test&amp;quot;,&amp;quot;user&amp;quot;=&amp;gt;&amp;quot;user1&amp;quot;]  rest-client을 이용한 예제
-require &#39;rubygems&#39; require &#39;rest_client&#39; require &#39;json&#39; jdata = JSON.generate([&amp;quot;test&amp;quot;]) RestClient.put &#39;http://localhost:4567/users/123&#39;, jdata, {:content_type =&amp;gt; :json}  Net:HTTP GET/PUT
-require &#39;net/http&#39; http = Net::HTTP.new(&#39;www.data.com&#39;) response = http.request_put(&#39;/?access_token=123&#39;, jsonbody)  url = URI.parse(&#39;http://localhost:3000/someservice/&#39;) request = Net::HTTP::Post.new(url.path) request.body = &amp;quot;&amp;lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&amp;gt;&amp;lt;somedata&amp;gt;&amp;lt;name&amp;gt;Test Name 1&amp;lt;/name&amp;gt;&amp;lt;description&amp;gt;Some data for Unit testing&amp;lt;/description&amp;gt;&amp;lt;/somedata&amp;gt;&amp;quot; response = Net::HTTP.start(url.host, url.port) {|http| http.request(request)} #Note this test PASSES! assert_equal &#39;201 Created&#39;, response.</description>
+require &amp;#39;json&amp;#39; jsonbody = JSON.generate[&amp;#34;message&amp;#34;=&amp;gt;&amp;#34;test&amp;#34;,&amp;#34;user&amp;#34;=&amp;gt;&amp;#34;user1&amp;#34;] rest-client을 이용한 예제
+require &amp;#39;rubygems&amp;#39; require &amp;#39;rest_client&amp;#39; require &amp;#39;json&amp;#39; jdata = JSON.generate([&amp;#34;test&amp;#34;]) RestClient.put &amp;#39;http://localhost:4567/users/123&amp;#39;, jdata, {:content_type =&amp;gt; :json} Net:HTTP GET/PUT
+require &amp;#39;net/http&amp;#39; http = Net::HTTP.new(&amp;#39;www.data.com&amp;#39;) response = http.request_put(&amp;#39;/?access_token=123&amp;#39;, jsonbody)url = URI.parse(&amp;#39;http://localhost:3000/someservice/&amp;#39;) request = Net::HTTP::Post.new(url.path) request.body = &amp;#34;&amp;lt;?xml version=&amp;#39;1.0&amp;#39; encoding=&amp;#39;UTF-8&amp;#39;?&amp;gt;&amp;lt;somedata&amp;gt;&amp;lt;name&amp;gt;Test Name 1&amp;lt;/name&amp;gt;&amp;lt;description&amp;gt;Some data for Unit testing&amp;lt;/description&amp;gt;&amp;lt;/somedata&amp;gt;&amp;#34; response = Net::HTTP.start(url.host, url.port) {|http| http.request(request)} #Note this test PASSES! assert_equal &amp;#39;201 Created&amp;#39;, response.get_fields(&amp;#39;Status&amp;#39;)[0]require &amp;#39;net/http&amp;#39; require &amp;#39;uri&amp;#39; type = &amp;#39;record&amp;#39; activity = &amp;#39;query-data&amp;#39; xml_req =&amp;lt;&amp;lt;EOF &amp;lt;?</description>
     </item>
     
     <item>
@@ -662,8 +664,8 @@ require &#39;net/http&#39; http = Net::HTTP.new(&#39;www.data.com&#39;) response
       
       <guid>http://clonekim.github.io/2012/01/ognl/</guid>
       <description>Maven
-&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;ognl&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;ognl&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.0.5&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  소스
-Map&amp;lt;String, Object&amp;gt; map = new HashMap&amp;lt;String, Object&amp;gt;(); map.put(&amp;quot;book&amp;quot;, &amp;quot;모바일 웹앱&amp;quot;); System.out.println(Ognl.getValue(Ognl.parseExpression(&amp;quot;book&amp;quot;), map)); Map context = new HashMap(); List&amp;lt;String&amp;gt; values1 = (List)Ognl.getValue(&amp;quot;{123,&#39;abc&#39;,&#39;00oo&#39;}&amp;quot;, context, new Object()); System.out.println(values1); Map values2 = (Map) Ognl.getValue(&amp;quot;#{123:333,&#39;abc&#39;:111, &#39;bbb&#39;:&#39;Kim&#39;, &#39;other&#39;:&#39;[0,2,3,4,5]&#39;}&amp;quot;, context, new Object()); System.out.println(values2);  출력
+&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;ognl&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;ognl&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.0.5&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; 소스
+Map&amp;lt;String, Object&amp;gt; map = new HashMap&amp;lt;String, Object&amp;gt;(); map.put(&amp;#34;book&amp;#34;, &amp;#34;모바일 웹앱&amp;#34;); System.out.println(Ognl.getValue(Ognl.parseExpression(&amp;#34;book&amp;#34;), map)); Map context = new HashMap(); List&amp;lt;String&amp;gt; values1 = (List)Ognl.getValue(&amp;#34;{123,&amp;#39;abc&amp;#39;,&amp;#39;00oo&amp;#39;}&amp;#34;, context, new Object()); System.out.println(values1); Map values2 = (Map) Ognl.getValue(&amp;#34;#{123:333,&amp;#39;abc&amp;#39;:111, &amp;#39;bbb&amp;#39;:&amp;#39;Kim&amp;#39;, &amp;#39;other&amp;#39;:&amp;#39;[0,2,3,4,5]&amp;#39;}&amp;#34;, context, new Object()); System.out.println(values2); 출력
 모바일 웹앱 [123, abc, 00oo] {123=333, abc=111, bbb=Kim, other=[0,2,3,4,5]}  </description>
     </item>
     
@@ -674,7 +676,7 @@ Map&amp;lt;String, Object&amp;gt; map = new HashMap&amp;lt;String, Object&amp;gt
       
       <guid>http://clonekim.github.io/2011/06/java-date%EC%97%90%EB%9F%AC/</guid>
       <description> Override time zone 생성한 Date 객체가 KST가 아닌 자꾸 GMT로 출력 될 경우
-System.setProperty(&amp;quot;user.timezone&amp;quot;, &amp;quot;Asia/Seoul&amp;quot;) ex) System.setProperty(&amp;quot;user.timezone&amp;quot;, &amp;quot;UTC&amp;quot;); TimeZone.setDefault(null); //reset 하기 위해 반드시 필요함  서버를 구동시에 -D 옵션으로 설정할 것
+System.setProperty(&amp;#34;user.timezone&amp;#34;, &amp;#34;Asia/Seoul&amp;#34;) ex) System.setProperty(&amp;#34;user.timezone&amp;#34;, &amp;#34;UTC&amp;#34;); TimeZone.setDefault(null); //reset 하기 위해 반드시 필요함 서버를 구동시에 -D 옵션으로 설정할 것
 참고  Override a Java application&amp;rsquo;s time zone Java&amp;rsquo;s java.util.TimeZone  </description>
     </item>
     

@@ -7,7 +7,7 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.30" />
+<meta name="generator" content="Hugo 0.42.1" />
 
 <link rel="canonical" href="http://clonekim.github.io/2015/02/beefy-%ED%8C%81/">
 <base href="http://clonekim.github.io/" />
@@ -33,7 +33,8 @@
 
 
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="beefy 팁"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="beefy 팁"/>
 <meta name="twitter:description" content="a local development server designed to work with browserify.
  can live reload your browser when your code changes (if you want) works with whatever version of browserify or watchify; globally installed or locally installed to node_modules/. will spit compile errors out into the browser so you don&rsquo;t have that 1-2 seconds of cognitive dissonance and profound ennui that follows refreshing the page only to get a blank screen. will spit out a default index."/>
 
@@ -56,6 +57,17 @@
 <link rel="stylesheet" href="css/layout.css" />
 <link rel="stylesheet" href="css/color-dark.css" />
 
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-121397292-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 <title>
@@ -97,9 +109,11 @@
 <div class="social-links-header">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   
@@ -142,38 +156,30 @@ npm install --save-dev browserify
 </code></pre>
 
 <p><em>package.json</em></p>
-
-<pre><code class="language-json"> &quot;scripts&quot;: {
-    &quot;start&quot; : &quot;beefy index.js:bundle.js --live&quot;,
-     &quot;bundle&quot;: &quot;browserify index.js -o bundle.js&quot;
-  },
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"> <span style="color:#e6db74">&#34;scripts&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+    <span style="color:#f92672">&#34;start&#34;</span> : <span style="color:#e6db74">&#34;beefy index.js:bundle.js --live&#34;</span>,
+     <span style="color:#f92672">&#34;bundle&#34;</span>: <span style="color:#e6db74">&#34;browserify index.js -o bundle.js&#34;</span>
+  }<span style="color:#960050;background-color:#1e0010">,</span></code></pre></div>
 <p><em>main.js</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">Backbone</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;backbone&#39;</span>);
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">$</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;jquery&#39;</span>);
+<span style="color:#a6e22e">Backbone</span>.<span style="color:#a6e22e">$</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>;
 
-<pre><code class="language-javascript">
-var Backbone = require('backbone');
-var $ = require('jquery');
-Backbone.$ = $;
+<span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Backbone</span>.<span style="color:#a6e22e">View</span>.<span style="color:#a6e22e">extend</span>({
 
-module.exports = Backbone.View.extend({
-
-  initialize: function(){
-    this.render();
+  <span style="color:#a6e22e">initialize</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(){
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">render</span>();
   },
 
-  render: function(){
-    $('body').prepend('&lt;p&gt;Hello There&lt;/p&gt;');
+  <span style="color:#a6e22e">render</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(){
+    <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;body&#39;</span>).<span style="color:#a6e22e">prepend</span>(<span style="color:#e6db74">&#39;&lt;p&gt;Hello There&lt;/p&gt;&#39;</span>);
   }
 });
-</code></pre>
-
+</code></pre></div>
 <p><em>index.js</em></p>
-
-<pre><code class="language-javascript"> var Main = require('./main');
- new Main();
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"> <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">Main</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;./main&#39;</span>);
+ <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Main</span>();
+</code></pre></div>
 <p><em>실행</em></p>
 
 <pre><code>npm start
@@ -232,9 +238,11 @@ Hello There라는 문구를 볼수 있다<br />
   <div class="social-links-footer">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   

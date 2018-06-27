@@ -7,15 +7,15 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.30" />
+<meta name="generator" content="Hugo 0.42.1" />
 
 <link rel="canonical" href="http://clonekim.github.io/2012/02/ruby-some-basic/">
 <base href="http://clonekim.github.io/" />
 <meta property="og:title" content="Ruby Some Basic" />
 <meta property="og:description" content="json 생성
-require &#39;json&#39; jsonbody = JSON.generate[&quot;message&quot;=&gt;&quot;test&quot;,&quot;user&quot;=&gt;&quot;user1&quot;]  rest-client을 이용한 예제
-require &#39;rubygems&#39; require &#39;rest_client&#39; require &#39;json&#39; jdata = JSON.generate([&quot;test&quot;]) RestClient.put &#39;http://localhost:4567/users/123&#39;, jdata, {:content_type =&gt; :json}  Net:HTTP GET/PUT
-require &#39;net/http&#39; http = Net::HTTP.new(&#39;www.data.com&#39;) response = http.request_put(&#39;/?access_token=123&#39;, jsonbody)  url = URI.parse(&#39;http://localhost:3000/someservice/&#39;) request = Net::HTTP::Post.new(url.path) request.body = &quot;&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;&lt;somedata&gt;&lt;name&gt;Test Name 1&lt;/name&gt;&lt;description&gt;Some data for Unit testing&lt;/description&gt;&lt;/somedata&gt;&quot; response = Net::HTTP.start(url.host, url.port) {|http| http.request(request)} #Note this test PASSES! assert_equal &#39;201 Created&#39;, response." />
+require &#39;json&#39; jsonbody = JSON.generate[&#34;message&#34;=&gt;&#34;test&#34;,&#34;user&#34;=&gt;&#34;user1&#34;] rest-client을 이용한 예제
+require &#39;rubygems&#39; require &#39;rest_client&#39; require &#39;json&#39; jdata = JSON.generate([&#34;test&#34;]) RestClient.put &#39;http://localhost:4567/users/123&#39;, jdata, {:content_type =&gt; :json} Net:HTTP GET/PUT
+require &#39;net/http&#39; http = Net::HTTP.new(&#39;www.data.com&#39;) response = http.request_put(&#39;/?access_token=123&#39;, jsonbody)url = URI.parse(&#39;http://localhost:3000/someservice/&#39;) request = Net::HTTP::Post.new(url.path) request.body = &#34;&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;&lt;somedata&gt;&lt;name&gt;Test Name 1&lt;/name&gt;&lt;description&gt;Some data for Unit testing&lt;/description&gt;&lt;/somedata&gt;&#34; response = Net::HTTP.start(url.host, url.port) {|http| http.request(request)} #Note this test PASSES! assert_equal &#39;201 Created&#39;, response.get_fields(&#39;Status&#39;)[0]require &#39;net/http&#39; require &#39;uri&#39; type = &#39;record&#39; activity = &#39;query-data&#39; xml_req =&lt;&lt;EOF &lt;?" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://clonekim.github.io/2012/02/ruby-some-basic/" />
 
@@ -35,24 +35,25 @@ require &#39;net/http&#39; http = Net::HTTP.new(&#39;www.data.com&#39;) response
 
 
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Ruby Some Basic"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ruby Some Basic"/>
 <meta name="twitter:description" content="json 생성
-require &#39;json&#39; jsonbody = JSON.generate[&quot;message&quot;=&gt;&quot;test&quot;,&quot;user&quot;=&gt;&quot;user1&quot;]  rest-client을 이용한 예제
-require &#39;rubygems&#39; require &#39;rest_client&#39; require &#39;json&#39; jdata = JSON.generate([&quot;test&quot;]) RestClient.put &#39;http://localhost:4567/users/123&#39;, jdata, {:content_type =&gt; :json}  Net:HTTP GET/PUT
-require &#39;net/http&#39; http = Net::HTTP.new(&#39;www.data.com&#39;) response = http.request_put(&#39;/?access_token=123&#39;, jsonbody)  url = URI.parse(&#39;http://localhost:3000/someservice/&#39;) request = Net::HTTP::Post.new(url.path) request.body = &quot;&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;&lt;somedata&gt;&lt;name&gt;Test Name 1&lt;/name&gt;&lt;description&gt;Some data for Unit testing&lt;/description&gt;&lt;/somedata&gt;&quot; response = Net::HTTP.start(url.host, url.port) {|http| http.request(request)} #Note this test PASSES! assert_equal &#39;201 Created&#39;, response."/>
+require &#39;json&#39; jsonbody = JSON.generate[&#34;message&#34;=&gt;&#34;test&#34;,&#34;user&#34;=&gt;&#34;user1&#34;] rest-client을 이용한 예제
+require &#39;rubygems&#39; require &#39;rest_client&#39; require &#39;json&#39; jdata = JSON.generate([&#34;test&#34;]) RestClient.put &#39;http://localhost:4567/users/123&#39;, jdata, {:content_type =&gt; :json} Net:HTTP GET/PUT
+require &#39;net/http&#39; http = Net::HTTP.new(&#39;www.data.com&#39;) response = http.request_put(&#39;/?access_token=123&#39;, jsonbody)url = URI.parse(&#39;http://localhost:3000/someservice/&#39;) request = Net::HTTP::Post.new(url.path) request.body = &#34;&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;&lt;somedata&gt;&lt;name&gt;Test Name 1&lt;/name&gt;&lt;description&gt;Some data for Unit testing&lt;/description&gt;&lt;/somedata&gt;&#34; response = Net::HTTP.start(url.host, url.port) {|http| http.request(request)} #Note this test PASSES! assert_equal &#39;201 Created&#39;, response.get_fields(&#39;Status&#39;)[0]require &#39;net/http&#39; require &#39;uri&#39; type = &#39;record&#39; activity = &#39;query-data&#39; xml_req =&lt;&lt;EOF &lt;?"/>
 
 
 
 <meta itemprop="name" content="Ruby Some Basic">
 <meta itemprop="description" content="json 생성
-require &#39;json&#39; jsonbody = JSON.generate[&quot;message&quot;=&gt;&quot;test&quot;,&quot;user&quot;=&gt;&quot;user1&quot;]  rest-client을 이용한 예제
-require &#39;rubygems&#39; require &#39;rest_client&#39; require &#39;json&#39; jdata = JSON.generate([&quot;test&quot;]) RestClient.put &#39;http://localhost:4567/users/123&#39;, jdata, {:content_type =&gt; :json}  Net:HTTP GET/PUT
-require &#39;net/http&#39; http = Net::HTTP.new(&#39;www.data.com&#39;) response = http.request_put(&#39;/?access_token=123&#39;, jsonbody)  url = URI.parse(&#39;http://localhost:3000/someservice/&#39;) request = Net::HTTP::Post.new(url.path) request.body = &quot;&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;&lt;somedata&gt;&lt;name&gt;Test Name 1&lt;/name&gt;&lt;description&gt;Some data for Unit testing&lt;/description&gt;&lt;/somedata&gt;&quot; response = Net::HTTP.start(url.host, url.port) {|http| http.request(request)} #Note this test PASSES! assert_equal &#39;201 Created&#39;, response.">
+require &#39;json&#39; jsonbody = JSON.generate[&#34;message&#34;=&gt;&#34;test&#34;,&#34;user&#34;=&gt;&#34;user1&#34;] rest-client을 이용한 예제
+require &#39;rubygems&#39; require &#39;rest_client&#39; require &#39;json&#39; jdata = JSON.generate([&#34;test&#34;]) RestClient.put &#39;http://localhost:4567/users/123&#39;, jdata, {:content_type =&gt; :json} Net:HTTP GET/PUT
+require &#39;net/http&#39; http = Net::HTTP.new(&#39;www.data.com&#39;) response = http.request_put(&#39;/?access_token=123&#39;, jsonbody)url = URI.parse(&#39;http://localhost:3000/someservice/&#39;) request = Net::HTTP::Post.new(url.path) request.body = &#34;&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;&lt;somedata&gt;&lt;name&gt;Test Name 1&lt;/name&gt;&lt;description&gt;Some data for Unit testing&lt;/description&gt;&lt;/somedata&gt;&#34; response = Net::HTTP.start(url.host, url.port) {|http| http.request(request)} #Note this test PASSES! assert_equal &#39;201 Created&#39;, response.get_fields(&#39;Status&#39;)[0]require &#39;net/http&#39; require &#39;uri&#39; type = &#39;record&#39; activity = &#39;query-data&#39; xml_req =&lt;&lt;EOF &lt;?">
 
 
 <meta itemprop="datePublished" content="2012-02-03T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2012-02-03T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="222">
+<meta itemprop="wordCount" content="219">
 
 
 
@@ -62,6 +63,17 @@ require &#39;net/http&#39; http = Net::HTTP.new(&#39;www.data.com&#39;) response
 <link rel="stylesheet" href="css/layout.css" />
 <link rel="stylesheet" href="css/color-dark.css" />
 
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-121397292-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 <title>
@@ -103,9 +115,11 @@ require &#39;net/http&#39; http = Net::HTTP.new(&#39;www.data.com&#39;) response
 <div class="social-links-header">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   
@@ -125,93 +139,72 @@ require &#39;net/http&#39; http = Net::HTTP.new(&#39;www.data.com&#39;) response
     <div class="content"> 
 
 <p><em>json 생성</em></p>
-
-<pre><code class="language-ruby">require 'json'
-jsonbody = JSON.generate[&quot;message&quot;=&gt;&quot;test&quot;,&quot;user&quot;=&gt;&quot;user1&quot;]
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">require <span style="color:#e6db74">&#39;json&#39;</span>
+jsonbody <span style="color:#f92672">=</span> <span style="color:#66d9ef">JSON</span><span style="color:#f92672">.</span>generate<span style="color:#f92672">[</span><span style="color:#e6db74">&#34;message&#34;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#34;test&#34;</span>,<span style="color:#e6db74">&#34;user&#34;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#34;user1&#34;</span><span style="color:#f92672">]</span></code></pre></div>
 <p><em>rest-client을 이용한 예제</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">require <span style="color:#e6db74">&#39;rubygems&#39;</span>
+require <span style="color:#e6db74">&#39;rest_client&#39;</span>
+require <span style="color:#e6db74">&#39;json&#39;</span>
 
-<pre><code class="language-ruby">require 'rubygems'
-require 'rest_client'
-require 'json'
-
-jdata = JSON.generate([&quot;test&quot;])
-RestClient.put 'http://localhost:4567/users/123', jdata, {:content_type =&gt; :json}
-</code></pre>
-
+jdata <span style="color:#f92672">=</span> <span style="color:#66d9ef">JSON</span><span style="color:#f92672">.</span>generate(<span style="color:#f92672">[</span><span style="color:#e6db74">&#34;test&#34;</span><span style="color:#f92672">]</span>)
+<span style="color:#66d9ef">RestClient</span><span style="color:#f92672">.</span>put <span style="color:#e6db74">&#39;http://localhost:4567/users/123&#39;</span>, jdata, {<span style="color:#e6db74">:content_type</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">:json</span>}</code></pre></div>
 <h2 id="net-http">Net:HTTP</h2>
 
 <p><em>GET/PUT</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">require <span style="color:#e6db74">&#39;net/http&#39;</span>
+http <span style="color:#f92672">=</span> <span style="color:#66d9ef">Net</span><span style="color:#f92672">::</span><span style="color:#66d9ef">HTTP</span><span style="color:#f92672">.</span>new(<span style="color:#e6db74">&#39;www.data.com&#39;</span>)
+response <span style="color:#f92672">=</span> http<span style="color:#f92672">.</span>request_put(<span style="color:#e6db74">&#39;/?access_token=123&#39;</span>, jsonbody)</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">url <span style="color:#f92672">=</span> <span style="color:#66d9ef">URI</span><span style="color:#f92672">.</span>parse(<span style="color:#e6db74">&#39;http://localhost:3000/someservice/&#39;</span>)
+request <span style="color:#f92672">=</span> <span style="color:#66d9ef">Net</span><span style="color:#f92672">::</span><span style="color:#66d9ef">HTTP</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Post</span><span style="color:#f92672">.</span>new(url<span style="color:#f92672">.</span>path)
+request<span style="color:#f92672">.</span>body <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;&lt;somedata&gt;&lt;name&gt;Test Name 1&lt;/name&gt;&lt;description&gt;Some data for Unit testing&lt;/description&gt;&lt;/somedata&gt;&#34;</span>
+response <span style="color:#f92672">=</span> <span style="color:#66d9ef">Net</span><span style="color:#f92672">::</span><span style="color:#66d9ef">HTTP</span><span style="color:#f92672">.</span>start(url<span style="color:#f92672">.</span>host, url<span style="color:#f92672">.</span>port) {<span style="color:#f92672">|</span>http<span style="color:#f92672">|</span> http<span style="color:#f92672">.</span>request(request)}
 
-<pre><code class="language-ruby">require 'net/http'
-http = Net::HTTP.new('www.data.com')
-response = http.request_put('/?access_token=123', jsonbody)
-</code></pre>
+<span style="color:#75715e">#Note this test PASSES!</span>
+assert_equal <span style="color:#e6db74">&#39;201 Created&#39;</span>, response<span style="color:#f92672">.</span>get_fields(<span style="color:#e6db74">&#39;Status&#39;</span>)<span style="color:#f92672">[</span><span style="color:#ae81ff">0</span><span style="color:#f92672">]</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">require <span style="color:#e6db74">&#39;net/http&#39;</span>
+require <span style="color:#e6db74">&#39;uri&#39;</span>
 
-<pre><code class="language-ruby">url = URI.parse('http://localhost:3000/someservice/')
-request = Net::HTTP::Post.new(url.path)
-request.body = &quot;&lt;?xml version='1.0' encoding='UTF-8'?&gt;&lt;somedata&gt;&lt;name&gt;Test Name 1&lt;/name&gt;&lt;description&gt;Some data for Unit testing&lt;/description&gt;&lt;/somedata&gt;&quot;
-response = Net::HTTP.start(url.host, url.port) {|http| http.request(request)}
+type <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;record&#39;</span>
+activity <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;query-data&#39;</span>
 
-#Note this test PASSES!
-assert_equal '201 Created', response.get_fields('Status')[0]
-</code></pre>
-
-<pre><code class="language-ruby">require 'net/http'
-require 'uri'
-
-type = 'record'
-activity = 'query-data'
-
-xml_req =&lt;&lt;EOF
-&lt;? xml version='1.0' ?&gt;
-&lt;DATASET&gt;
-&lt;SITE_ID&gt;123456789&lt;/SITE_ID&gt;
-&lt;MLID&gt;987654321&lt;/MLID&gt;
-&lt;DATA type='email'&gt;user@somedomain.com&lt;/DATA&gt;
-&lt;/DATASET&gt;
-EOF
+xml_req <span style="color:#f92672">=</span><span style="color:#e6db74">&lt;&lt;EOF
+</span><span style="color:#e6db74"></span><span style="color:#f92672">&lt;</span>? xml version<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;1.0&#39;</span> <span style="color:#e6db74">?&gt;</span>
+<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">DATASET</span><span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">SITE_ID</span><span style="color:#f92672">&gt;</span><span style="color:#ae81ff">123456789</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74">/SITE_ID&gt;
+</span><span style="color:#e6db74">&lt;MLID&gt;987654321&lt;/</span><span style="color:#66d9ef">MLID</span><span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">DATA</span> type<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;email&#39;</span><span style="color:#f92672">&gt;</span>user@somedomain<span style="color:#f92672">.</span>com<span style="color:#f92672">&lt;</span><span style="color:#e6db74">/DATA&gt;
+</span><span style="color:#e6db74">&lt;/</span><span style="color:#66d9ef">DATASET</span><span style="color:#f92672">&gt;</span>
+<span style="color:#66d9ef">EOF</span>
 
 
-req = &quot;type=#{type}&amp;activity=#{activity}&amp;input=&quot;
-req = req + URI.escape(xml_req)
+req <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;type=</span><span style="color:#e6db74">#{</span>type<span style="color:#e6db74">}</span><span style="color:#e6db74">&amp;activity=</span><span style="color:#e6db74">#{</span>activity<span style="color:#e6db74">}</span><span style="color:#e6db74">&amp;input=&#34;</span>
+req <span style="color:#f92672">=</span> req <span style="color:#f92672">+</span> <span style="color:#66d9ef">URI</span><span style="color:#f92672">.</span>escape(xml_req)
 
-res = Net::HTTP.start('www.uptilt.com') { |http|
-  http.post(&quot;/API/mailing_list.html&quot;, req)
+res <span style="color:#f92672">=</span> <span style="color:#66d9ef">Net</span><span style="color:#f92672">::</span><span style="color:#66d9ef">HTTP</span><span style="color:#f92672">.</span>start(<span style="color:#e6db74">&#39;www.uptilt.com&#39;</span>) { <span style="color:#f92672">|</span>http<span style="color:#f92672">|</span>
+  http<span style="color:#f92672">.</span>post(<span style="color:#e6db74">&#34;/API/mailing_list.html&#34;</span>, req)
 }
-puts res.body
-</code></pre>
+puts res<span style="color:#f92672">.</span>body</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">require <span style="color:#e6db74">&#39;net/http&#39;</span>
+require <span style="color:#e6db74">&#39;pp&#39;</span>
 
-<pre><code class="language-ruby">require 'net/http'
-require 'pp'
+http <span style="color:#f92672">=</span> <span style="color:#66d9ef">Net</span><span style="color:#f92672">::</span><span style="color:#66d9ef">HTTP</span><span style="color:#f92672">.</span>new(<span style="color:#e6db74">&#39;localhost&#39;</span>, <span style="color:#ae81ff">8080</span>)
 
-http = Net::HTTP.new('localhost', 8080)
-
-params = {
-  'Accept' =&gt; 'application/xml'
+params <span style="color:#f92672">=</span> {
+  <span style="color:#e6db74">&#39;Accept&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;application/xml&#39;</span>
 }
 
-resp = http.get('/acerapp/say.app', params)
+resp <span style="color:#f92672">=</span> http<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;/acerapp/say.app&#39;</span>, params)
 
-pp resp.response
-pp resp.body
-</code></pre>
-
+pp resp<span style="color:#f92672">.</span>response
+pp resp<span style="color:#f92672">.</span>body</code></pre></div>
 <h2 id="io">IO</h2>
 
 <p><em>popen</em></p>
 
 <p>IO.popen명령어를 사용해서 IO오브젝트를 얻는다<br />
 get을 호출하면 출력결과를 볼 수 있다</p>
-
-<pre><code class="language-ruby">IO.popen(&quot;ping localhost&quot;) do |io|
-  while io.gets
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">IO</span><span style="color:#f92672">.</span>popen(<span style="color:#e6db74">&#34;ping localhost&#34;</span>) <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>io<span style="color:#f92672">|</span>
+  <span style="color:#66d9ef">while</span> io<span style="color:#f92672">.</span>gets
     print $_
-  end
-end
-</code></pre>
-
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span></code></pre></div>
 <p><em>실행결과</em></p>
 
 <pre><code>PING localhost.localdomain (127.0.0.1) 56(84) bytes of data.
@@ -225,13 +218,10 @@ rtt min/avg/max/mdev = 0.022/0.022/0.023/0.004 ms
 </code></pre>
 
 <p>pid를 얻어 프로세스를 닫는다.</p>
-
-<pre><code class="language-ruby">io = IO.popen(&quot;ping localhost&quot;)
-sleep(3)
-Process.kill(&quot;INT&quot;, io.pid)
-print io.readlines
-</code></pre>
- </div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">io <span style="color:#f92672">=</span> <span style="color:#66d9ef">IO</span><span style="color:#f92672">.</span>popen(<span style="color:#e6db74">&#34;ping localhost&#34;</span>)
+sleep(<span style="color:#ae81ff">3</span>)
+<span style="color:#66d9ef">Process</span><span style="color:#f92672">.</span>kill(<span style="color:#e6db74">&#34;INT&#34;</span>, io<span style="color:#f92672">.</span>pid)
+print io<span style="color:#f92672">.</span>readlines</code></pre></div> </div>
     <footer class="post-footer">
 
   <div class="post-footer-data">
@@ -281,9 +271,11 @@ print io.readlines
   <div class="social-links-footer">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   

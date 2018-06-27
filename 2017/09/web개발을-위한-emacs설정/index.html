@@ -7,7 +7,7 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.30" />
+<meta name="generator" content="Hugo 0.42.1" />
 
 <link rel="canonical" href="http://clonekim.github.io/2017/09/web%EA%B0%9C%EB%B0%9C%EC%9D%84-%EC%9C%84%ED%95%9C-emacs%EC%84%A4%EC%A0%95/">
 <base href="http://clonekim.github.io/" />
@@ -34,7 +34,8 @@ auto-complete 패키지를 사용하여 자동완성이 될것이다
 
 
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Web개발을 위한 Emacs설정"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Web개발을 위한 Emacs설정"/>
 <meta name="twitter:description" content="전에 사용하는 web.el를 개선하였다.
 auto-complete 패키지를 사용하여 자동완성이 될것이다
 (require &#39;web-mode) (require &#39;auto-complete) (ac-config-default) (add-to-list &#39;auto-mode-alist &#39;(&quot;\\.html?\\&#39;&quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&quot;\\.[aj]sp\\&#39;&quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&quot;\\.mustache\\&#39;&quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&quot;\\.ftl\\&#39;&quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&quot;\\.vue\\&#39;&quot; . web-mode)) (defun my-web-mode-hook () (setq web-mode-markup-indent-offset 2) (setq web-mode-css-indent-offset 2) (setq web-mode-code-indent-offset 2) (setq web-mode-enable-current-element-highlight t) (setq web-mode-enable-current-column-highlight t) (setq web-mode-ac-sources-alist &#39;((&quot;css&quot; . (ac-source-css-property)) (&quot;html&quot; . (ac-source-words-in-buffer ac-source-abbrev))))) (add-hook &#39;web-mode-hook &#39;my-web-mode-hook) (add-hook &#39;web-mode-before-auto-complete-hooks &#39;(lambda () (let ((web-mode-cur-language (web-mode-language-at-pos))) (if (string= web-mode-cur-language &quot;html&quot;) (setq emmet-use-css-transform t) (setq emmet-use-css-transform nil)) (if (string= web-mode-cur-language &quot;css&quot;) (setq emmet-use-css-transform t) (setq emmet-use-css-transform nil)))))  "/>
@@ -59,6 +60,17 @@ auto-complete 패키지를 사용하여 자동완성이 될것이다
 <link rel="stylesheet" href="css/layout.css" />
 <link rel="stylesheet" href="css/color-dark.css" />
 
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-121397292-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 <title>
@@ -100,9 +112,11 @@ auto-complete 패키지를 사용하여 자동완성이 될것이다
 <div class="social-links-header">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   
@@ -203,9 +217,11 @@ auto-complete 패키지를 사용하여 자동완성이 될것이다</p>
   <div class="social-links-footer">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   

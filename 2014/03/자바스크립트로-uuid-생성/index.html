@@ -7,13 +7,13 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.30" />
+<meta name="generator" content="Hugo 0.42.1" />
 
 <link rel="canonical" href="http://clonekim.github.io/2014/03/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A1%9C-uuid-%EC%83%9D%EC%84%B1/">
 <base href="http://clonekim.github.io/" />
 <meta property="og:title" content="자바스크립트로 UUID 생성" />
 <meta property="og:description" content="RFC4122
-return &#39;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&#39;.replace(/[xy]/g, function(c) { var r = Math.random()*16|0, v = c === &#39;x&#39; ? r : (r&amp;0x3|0x8); return v.toString(16); });  var s = []; var hexDigits = &quot;0123456789abcdef&quot;; for (var i = 0; i &lt; 36; i&#43;&#43;) { s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1); } s[14] = &quot;4&quot;; s[19] = hexDigits.substr((s[19] &amp; 0x3) | 0x8, 1); s[8] = s[13] = s[18] = s[23] = &quot;-&quot;; var uuid = s." />
+return &#39;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&#39;.replace(/[xy]/g, function(c) { var r = Math.random()*16|0, v = c === &#39;x&#39; ? r : (r&amp;0x3|0x8); return v.toString(16); }); var s = []; var hexDigits = &#34;0123456789abcdef&#34;; for (var i = 0; i &lt; 36; i&#43;&#43;) { s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1); } s[14] = &#34;4&#34;; s[19] = hexDigits.substr((s[19] &amp; 0x3) | 0x8, 1); s[8] = s[13] = s[18] = s[23] = &#34;-&#34;; var uuid = s.join(&#34;&#34;); return uuid; } " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://clonekim.github.io/2014/03/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A1%9C-uuid-%EC%83%9D%EC%84%B1/" />
 
@@ -33,15 +33,16 @@ return &#39;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&#39;.replace(/[xy]/g, function(
 
 
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="자바스크립트로 UUID 생성"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="자바스크립트로 UUID 생성"/>
 <meta name="twitter:description" content="RFC4122
-return &#39;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&#39;.replace(/[xy]/g, function(c) { var r = Math.random()*16|0, v = c === &#39;x&#39; ? r : (r&amp;0x3|0x8); return v.toString(16); });  var s = []; var hexDigits = &quot;0123456789abcdef&quot;; for (var i = 0; i &lt; 36; i&#43;&#43;) { s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1); } s[14] = &quot;4&quot;; s[19] = hexDigits.substr((s[19] &amp; 0x3) | 0x8, 1); s[8] = s[13] = s[18] = s[23] = &quot;-&quot;; var uuid = s."/>
+return &#39;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&#39;.replace(/[xy]/g, function(c) { var r = Math.random()*16|0, v = c === &#39;x&#39; ? r : (r&amp;0x3|0x8); return v.toString(16); }); var s = []; var hexDigits = &#34;0123456789abcdef&#34;; for (var i = 0; i &lt; 36; i&#43;&#43;) { s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1); } s[14] = &#34;4&#34;; s[19] = hexDigits.substr((s[19] &amp; 0x3) | 0x8, 1); s[8] = s[13] = s[18] = s[23] = &#34;-&#34;; var uuid = s.join(&#34;&#34;); return uuid; } "/>
 
 
 
 <meta itemprop="name" content="자바스크립트로 UUID 생성">
 <meta itemprop="description" content="RFC4122
-return &#39;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&#39;.replace(/[xy]/g, function(c) { var r = Math.random()*16|0, v = c === &#39;x&#39; ? r : (r&amp;0x3|0x8); return v.toString(16); });  var s = []; var hexDigits = &quot;0123456789abcdef&quot;; for (var i = 0; i &lt; 36; i&#43;&#43;) { s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1); } s[14] = &quot;4&quot;; s[19] = hexDigits.substr((s[19] &amp; 0x3) | 0x8, 1); s[8] = s[13] = s[18] = s[23] = &quot;-&quot;; var uuid = s.">
+return &#39;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&#39;.replace(/[xy]/g, function(c) { var r = Math.random()*16|0, v = c === &#39;x&#39; ? r : (r&amp;0x3|0x8); return v.toString(16); }); var s = []; var hexDigits = &#34;0123456789abcdef&#34;; for (var i = 0; i &lt; 36; i&#43;&#43;) { s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1); } s[14] = &#34;4&#34;; s[19] = hexDigits.substr((s[19] &amp; 0x3) | 0x8, 1); s[8] = s[13] = s[18] = s[23] = &#34;-&#34;; var uuid = s.join(&#34;&#34;); return uuid; } ">
 
 
 <meta itemprop="datePublished" content="2014-03-02T00:00:00&#43;00:00" />
@@ -56,6 +57,17 @@ return &#39;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&#39;.replace(/[xy]/g, function(
 <link rel="stylesheet" href="css/layout.css" />
 <link rel="stylesheet" href="css/color-dark.css" />
 
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-121397292-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 <title>
@@ -97,9 +109,11 @@ return &#39;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&#39;.replace(/[xy]/g, function(
 <div class="social-links-header">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   
@@ -117,29 +131,25 @@ return &#39;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&#39;.replace(/[xy]/g, function(
 <article class="post">
     <h1 class="title"> 자바스크립트로 UUID 생성 </h1>
     <div class="content"> <p><a href="http://www.ietf.org/rfc/rfc4122.txt">RFC4122</a></p>
-
-<pre><code class="language-javascript">return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-   var r = Math.random()*16|0, v = c === 'x' ? r : (r&amp;0x3|0x8);
-   return v.toString(16);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&#39;</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/[xy]/g</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">c</span>) {
+   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">r</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">random</span>()<span style="color:#f92672">*</span><span style="color:#ae81ff">16</span><span style="color:#f92672">|</span><span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">v</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;x&#39;</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">r</span> <span style="color:#f92672">:</span> (<span style="color:#a6e22e">r</span><span style="color:#f92672">&amp;</span><span style="color:#ae81ff">0x3</span><span style="color:#f92672">|</span><span style="color:#ae81ff">0x8</span>);
+   <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">toString</span>(<span style="color:#ae81ff">16</span>);
 });
-</code></pre>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">s</span> <span style="color:#f92672">=</span> [];
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">hexDigits</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;0123456789abcdef&#34;</span>;
 
-<pre><code class="language-javascript">var s = [];
-var hexDigits = &quot;0123456789abcdef&quot;;
-
-for (var i = 0; i &lt; 36; i++) {
-  s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1);
+<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">36</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+  <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">hexDigits</span>.<span style="color:#a6e22e">substr</span>(Math.<span style="color:#a6e22e">floor</span>(Math.<span style="color:#a6e22e">random</span>() <span style="color:#f92672">*</span> <span style="color:#ae81ff">0x10</span>), <span style="color:#ae81ff">1</span>);
 }
 
-s[14] = &quot;4&quot;;
-s[19] = hexDigits.substr((s[19] &amp; 0x3) | 0x8, 1);
-s[8] = s[13] = s[18] = s[23] = &quot;-&quot;;
+<span style="color:#a6e22e">s</span>[<span style="color:#ae81ff">14</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;4&#34;</span>;
+<span style="color:#a6e22e">s</span>[<span style="color:#ae81ff">19</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">hexDigits</span>.<span style="color:#a6e22e">substr</span>((<span style="color:#a6e22e">s</span>[<span style="color:#ae81ff">19</span>] <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">0x3</span>) <span style="color:#f92672">|</span> <span style="color:#ae81ff">0x8</span>, <span style="color:#ae81ff">1</span>);
+<span style="color:#a6e22e">s</span>[<span style="color:#ae81ff">8</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">s</span>[<span style="color:#ae81ff">13</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">s</span>[<span style="color:#ae81ff">18</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">s</span>[<span style="color:#ae81ff">23</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;-&#34;</span>;
 
-var uuid = s.join(&quot;&quot;);
-  return uuid;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">uuid</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#34;&#34;</span>);
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">uuid</span>;
 }
-</code></pre>
- </div>
+</code></pre></div> </div>
     <footer class="post-footer">
 
   <div class="post-footer-data">
@@ -189,9 +199,11 @@ var uuid = s.join(&quot;&quot;);
   <div class="social-links-footer">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   

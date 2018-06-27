@@ -8,7 +8,7 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.30" />
+<meta name="generator" content="Hugo 0.42.1" />
 
 <link rel="canonical" href="http://clonekim.github.io/">
 <base href="http://clonekim.github.io/" />
@@ -30,7 +30,8 @@
 
 
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="(fn [] &#34;Less is more&#34;)"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="(fn [] &#34;Less is more&#34;)"/>
 <meta name="twitter:description" content=""/>
 
 
@@ -43,6 +44,17 @@
 <link rel="stylesheet" href="css/layout.css" />
 <link rel="stylesheet" href="css/color-dark.css" />
 
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-121397292-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 <title>
@@ -84,9 +96,11 @@
 <div class="social-links-header">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   
@@ -125,7 +139,7 @@
 
   <div class="summary">  클로저에서 JDBC(Java Database Connectivity) 를 사용하기 위한 가이드
 몇몇 함수가 없어진 경우가 있기 때문에 소스보기로 확인할 것
- clojure-doc보기 소스보기   leiningen [org.clojure/java.jdbc &quot;0.4.2&quot;]  간단한 예제 (ns db-test.core (:require [clojure.java.jdbc :as sql]))	(def db {:classname &quot;com.mysql.jdbc.Driver&quot; :subprotocol &quot;mysql&quot; :subname &quot;//127.0.0.1:3306/test&quot; :user &quot;xxx&quot; :password &quot;xxxx&quot; }) (defn get-user [] (println (sql/query db [&quot;select * from users&quot;]))) (defn -main [] (get-user))  참고  HikarCP를 사용하는 예 clojure.jdbc doc   </div>
+ clojure-doc보기 소스보기   leiningen [org.clojure/java.jdbc &quot;0.4.2&quot;]  간단한 예제 (ns db-test.core (:require [clojure.java.jdbc :as sql]))	(def db {:classname &#34;com.mysql.jdbc.Driver&#34; :subprotocol &#34;mysql&#34; :subname &#34;//127.0.0.1:3306/test&#34; :user &#34;xxx&#34; :password &#34;xxxx&#34; }) (defn get-user [] (println (sql/query db [&#34;select * from users&#34;]))) (defn -main [] (get-user)) 참고  HikarCP를 사용하는 예 clojure.jdbc doc   </div>
 
   <footer>
   <div class="rmore">
@@ -197,12 +211,12 @@ ${x?string} ${x?string[0..1]}  .(dot)가 들어간 변수도 사용할 수 있�
   <div class="summary"> Emacs 24를 기준으로 작성
 현재 사용중인 환경은 custom-emacs.tgz
 Package Install init.el
-(require 'package) (add-to-list 'package-archives '(&quot;melpa-stable&quot; . &quot;http://stable.melpa.org/packages/&quot;) t) (package-initialize)  package install
+(require &#39;package) (add-to-list &#39;package-archives &#39;(&#34;melpa-stable&#34; . &#34;http://stable.melpa.org/packages/&#34;) t) (package-initialize) package install
 M-x package-install [RET] cider [RET]  현재 사용하고 있는 패키지
  cider paredit rainbow-delimiters s f clojure-mode clojure-mode-extra-font-locking dash ido-completing-read+ ido-ubiquitous projectile queue seq smex spinner  Cider 구동 주의
 Cider와 cider-nrepl의 버전이 맞아야함  profiles.clj
 .lein디렉토리이하에 작성한다 없을경우 파일생성
-{:user {:plugins [[cider/cider-nrepl &quot;0.10.0&quot;]] :dependencies [[org.clojure/tools.nrepl &quot;0. </div>
+{:user {:plugins [[cider/cider-nrepl &#34;0.10.0&#34;]] :dependencies [[org.clojure/tools.nrepl &#34;0.2.12&#34;]]}} {:repl {:dependencies [[org. </div>
 
   <footer>
   <div class="rmore">
@@ -274,9 +288,9 @@ oracle.jdbc.driver.OracleDriver에서 oracle.jdbc.OracleDriver 로 바꿀 것
   <div class="summary"> Hello-Ring 프로젝트 작성 새로운 프로젝트를 생성한다
 lein new hello-ring  leiningen.clj
 project.clj의 :dependencies에 임베디드 Jetty서버 추가
-[ring/ring-jetty-adapter &quot;1.4.0&quot;]  ring-jetty-adapter는 ring-core, ring-servlet, jetty-server를 의존성으로 가지고 있다
+[ring/ring-jetty-adapter &#34;1.4.0&#34;] ring-jetty-adapter는 ring-core, ring-servlet, jetty-server를 의존성으로 가지고 있다
 ring-core: essential functions for handling parameters, cookies and more ring-devel: functions for developing and debugging Ring applications ring-servlet: construct Java servlets from Ring handlers ring-jetty-adapter: a Ring adapter that uses the Jetty webserver  hello_ring.core
-(ns hello-ring.core (:use [ring.adapter.jetty])) (defn app-handler [request] {:status 200 :header {&quot;Content-Type&quot; &quot;text/html&quot;} :body &quot;Hello Ring&quot;}) (defn -main [] (run-jetty app-handler {:port 8080}))  실행 </div>
+(ns hello-ring.core (:use [ring.adapter.jetty])) (defn app-handler [request] {:status 200 :header {&#34;Content-Type&#34; &#34;text/html&#34;} :body &#34;Hello Ring&#34;}) (defn -main [] (run-jetty app-handler {:port 8080})) 실행 </div>
 
   <footer>
   <div class="rmore">
@@ -341,10 +355,10 @@ vm003: slave
   <div class="summary"> Starter Kit으로 시작하기 0.13.x를 기준으로 작성함
 react-0.13.3.zip 다운로드
 hello React!
-&lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;script src=&quot;build/react.js&quot;&gt;&lt;/script&gt; &lt;script src=&quot;build/JSXTransformer.js&quot;&gt;&lt;/script&gt; &lt;/head&gt;	&lt;body&gt; &lt;div id=&quot;hello&quot;&gt;&lt;/div&gt; &lt;script type=&quot;text/jsx&quot;&gt; React.render(&lt;h1&gt;Hello, welcome to React!&lt;/h1&gt;, document.getElementById('hello')); &lt;/script&gt; &lt;/body&gt; &lt;/html&gt;  JSX(JavaScript XML) JSX(JavaScript XML)는 XML 과 유사한 문법을 가지는 자바스크립트이다.
+&lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;script src=&#34;build/react.js&#34;&gt;&lt;/script&gt; &lt;script src=&#34;build/JSXTransformer.js&#34;&gt;&lt;/script&gt; &lt;/head&gt;	&lt;body&gt; &lt;div id=&#34;hello&#34;&gt;&lt;/div&gt; &lt;script type=&#34;text/jsx&#34;&gt; React.render(&lt;h1&gt;Hello, welcome to React!&lt;/h1&gt;, document.getElementById(&#39;hello&#39;)); &lt;/script&gt; &lt;/body&gt; &lt;/html&gt; JSX(JavaScript XML) JSX(JavaScript XML)는 XML 과 유사한 문법을 가지는 자바스크립트이다.
 JSX 문법을 사용하기 위해서는 반드시 JSXTransformer.js가 필요하다
 상세한 JSX syntaxt과 spec 은 아래를 참조할 것
- http://facebook.github.io/react/docs/jsx-in-depth.html http://facebook.github.io/jsx/  //Html &lt;h1 class=&quot;test&quot;&gt;Hello&lt;/h1&gt; //JSX &lt;h1 className=&quot;test&quot;&gt;Hello&lt;/h1&gt; var text= &quot;Hello React! </div>
+ http://facebook.github.io/react/docs/jsx-in-depth.html http://facebook.github.io/jsx/  //Html &lt;h1 class=&#34;test&#34;&gt;Hello&lt;/h1&gt; //JSX &lt;h1 className=&#34;test&#34;&gt;Hello&lt;/h1&gt; var text= &#34;Hello React! </div>
 
   <footer>
   <div class="rmore">
@@ -446,7 +460,7 @@ Ctrl +^ 입력시 바로 이전 탐색창으로 이동한다. </div>
   <div class="summary"> canvas를 이용한 캡챠(captcha)를 생성하려고 한다.
 사용하려는 패키지는 canvas-captcha이다
 의존성 설치 apt-get install libpango1.0-dev apt-get install libjpeg-dev apt-get install libgif-dev  소스작성 captcha.js
-var captcha = require('canvas-captcha') ,captchaOptions = { charPool: ('abcdefghijklmnopqrstuvwxyz' + 'abcdefghijklmnopqrstuvwxyz'.toUpperCase() + '1234567890').split('') //char pool Array ,size: { width: 120 ,height: 52 } //image size ,textPos: { left: 15 ,top: 36 } //text drawing start position ,rotate: .01 //text ratate ,charLength: 5 //how many chars //,font: '26px' //font size ,strokeStyle: '#0088cc' //style ,bgColor: '#eeeeee' //bg color ,confusion: true //draw another group background text to mangle the text //,cFont: '30px' //bg text style ,cStrokeStyle: '#adc' //bg text color ,cRotate: -. </div>
+var captcha = require(&#39;canvas-captcha&#39;) ,captchaOptions = { charPool: (&#39;abcdefghijklmnopqrstuvwxyz&#39; + &#39;abcdefghijklmnopqrstuvwxyz&#39;.toUpperCase() + &#39;1234567890&#39;).split(&#39;&#39;) //char pool Array  ,size: { width: 120 ,height: 52 } //image size  ,textPos: { left: 15 ,top: 36 } //text drawing start position  ,rotate: .01 //text ratate  ,charLength: 5 //how many chars  //,font: &#39;26px&#39; //font size  ,strokeStyle: &#39;#0088cc&#39; //style  ,bgColor: &#39;#eeeeee&#39; //bg color  ,confusion: true //draw another group background text to mangle the text  //,cFont: &#39;30px&#39; //bg text style  ,cStrokeStyle: &#39;#adc&#39; //bg text color  ,cRotate: -. </div>
 
   <footer>
   <div class="rmore">
@@ -475,9 +489,10 @@ var captcha = require('canvas-captcha') ,captchaOptions = { charPool: ('abcdefgh
 
   </header>
 
-  <div class="summary"> 설치 jruby -S gem install sinatra  Hello Ruby require 'rubygems' require 'sinatra' get '/' do 'Hello Jruby' end  라우터 get, post, put, delete를 사용할 수있다
-get '/' do end  요청파라미터 /?name=foo 로 요청 시 아래와 같이
-post '/' do puts params['name'] end  본문으로 Json를 요청받을 경우 post '/' do payload = JSON.parse(request.body.read) puts payload status 201 end  응답하기 문자열, html, json, 바이너리 등의 모든 컨텐츠로 응답가능하다 </div>
+  <div class="summary"> 설치 jruby -S gem install sinatra  Hello Ruby require &#39;rubygems&#39; require &#39;sinatra&#39; get &#39;/&#39; do &#39;Hello Jruby&#39; end 라우터 get, post, put, delete를 사용할 수있다
+get &#39;/&#39; do end 요청파라미터 /?name=foo 로 요청 시 아래와 같이
+post &#39;/&#39; do puts params[&#39;name&#39;] end 본문으로 Json를 요청받을 경우 post &#39;/&#39; do payload = JSON.parse(request.body.read) puts payload status 201 end 응답하기 문자열, html, json, 바이너리 등의 모든 컨텐츠로 응답가능하다
+get &#39;/&#39; do &#39;Hello&#39; end Json으로 응답하기 require &#39;sinatra&#39; require &#39;json&#39; get &#39;/&#39; do content_type :json data = { foo: &#39;bar&#39;} data. </div>
 
   <footer>
   <div class="rmore">
@@ -507,9 +522,9 @@ post '/' do puts params['name'] end  본문으로 Json를 요청받을 경우 po
   </header>
 
   <div class="summary"> IndexController.js
-module.exports = ['$scope', '$cookies', 'TranslationService', function($scope, $cookies, TranslationService) { TranslationService.getLanguage($scope, $cookies); $scope.multiLng = function( lang ) { $cookies.put(&quot;lang&quot;, lang); TranslationService.getLanguage($scope, $cookies); } }];  TranslationService.js
-module.exports = ['$http', function($http) { this.getLanguage = function($scope, $cookies, cbk) { var lang = $cookies.get('lang') || 'ko'; $http({ method: 'GET', url: '/js/locale_' + lang +'.json' }).success(function(response) { $scope.translation = response;	$scope.lang = lang; }); }; }];  locale_zh.js
-{ &quot;online_start&quot;: &quot;Online申请&quot;, ... }  index. </div>
+module.exports = [&#39;$scope&#39;, &#39;$cookies&#39;, &#39;TranslationService&#39;, function($scope, $cookies, TranslationService) { TranslationService.getLanguage($scope, $cookies); $scope.multiLng = function( lang ) { $cookies.put(&#34;lang&#34;, lang); TranslationService.getLanguage($scope, $cookies); } }];  TranslationService.js
+module.exports = [&#39;$http&#39;, function($http) { this.getLanguage = function($scope, $cookies, cbk) { var lang = $cookies.get(&#39;lang&#39;) || &#39;ko&#39;; $http({ method: &#39;GET&#39;, url: &#39;/js/locale_&#39; + lang +&#39;.json&#39; }).success(function(response) { $scope.translation = response;	$scope.lang = lang; }); }; }];  locale_zh.js
+{ &#34;online_start&#34;: &#34;Online申请&#34;, ... }  index. </div>
 
   <footer>
   <div class="rmore">
@@ -646,8 +661,8 @@ png 로 이미지를 생성하되 :- 또는 png:fd:1 를 사용하면 표준 출
   <div class="summary"> RequireJS
 log라는 모듈을 작성한다
 log.js
-define('log', function() { return function(str) { console.log(&quot;--&gt; &quot;, str); } });  &lt;!DOCTYPE html&gt; &lt;html lang=&quot;ko&quot;&gt; &lt;head&gt; &lt;script src=&quot;requirejs/2.1.15/require.js&quot;&gt;&lt;/script&gt; &lt;script src=&quot;js/log.js&quot;&gt;&lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;script&gt; require(['log'], function(log) { log(&quot;Hello !&quot;); }); &lt;/script&gt; &lt;/body&gt; &lt;/html&gt;  프로토타입으로 작성한 boost.js
-define('boost', function() { function Boost() { } Boost.prototype.version = function() { return &quot;1.0&quot;; }; return Boost; });  &lt;!DOCTYPE html&gt; &lt;html lang=&quot;ko&quot;&gt; &lt;head&gt; &lt;script src=&quot;requirejs/2.1.15/require.js&quot;&gt;&lt;/script&gt; &lt;script src=&quot;js/boost.js&quot;&gt;&lt;/script&gt; &lt;script&gt; require(['boost'], function(Boost) { var boost = new Boost(); alert(boost. </div>
+define(&#39;log&#39;, function() { return function(str) { console.log(&#34;--&gt; &#34;, str); } }); &lt;!DOCTYPE html&gt; &lt;html lang=&#34;ko&#34;&gt; &lt;head&gt; &lt;script src=&#34;requirejs/2.1.15/require.js&#34;&gt;&lt;/script&gt; &lt;script src=&#34;js/log.js&#34;&gt;&lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;script&gt; require([&#39;log&#39;], function(log) { log(&#34;Hello !&#34;); }); &lt;/script&gt; &lt;/body&gt; &lt;/html&gt; 프로토타입으로 작성한 boost.js
+define(&#39;boost&#39;, function() { function Boost() { } Boost.prototype.version = function() { return &#34;1.0&#34;; }; return Boost; }); &lt;!DOCTYPE html&gt; &lt;html lang=&#34;ko&#34;&gt; &lt;head&gt; &lt;script src=&#34;requirejs/2.1.15/require.js&#34;&gt;&lt;/script&gt; &lt;script src=&#34;js/boost.js&#34;&gt;&lt;/script&gt; &lt;script&gt; require([&#39;boost&#39;], function(Boost) { var boost = new Boost(); alert(boost. </div>
 
   <footer>
   <div class="rmore">
@@ -678,7 +693,7 @@ define('boost', function() { function Boost() { } Boost.prototype.version = func
 
   <div class="summary"> 개발 정보
 버젼 1.2.26를 사용
-scope 계층화 &lt;!DOCTYPE html&gt; &lt;html lang=&quot;ko&quot; ng-app=&quot;app&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;utf-8&quot;&gt; &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt; &lt;title&gt;Services and Modules&lt;/title&gt; &lt;link rel=&quot;stylesheet&quot; href=&quot;bootstrap/css/bootstrap.css&quot; /&gt; &lt;link rel=&quot;stylesheet&quot; href=&quot;bootstrap/css/bootstrap-theme.css&quot; /&gt; &lt;script type=&quot;text/javascript&quot; src=&quot;jquery/jquery.js&quot;&gt;&lt;/script&gt; &lt;script type=&quot;text/javascript&quot; src=&quot;jquery-ui/jquery-ui.js&quot;&gt;&lt;/script&gt; &lt;script type=&quot;text/javascript&quot; src=&quot;angular/angular.js&quot;&gt;&lt;/script&gt; &lt;script&gt; angular.module(&quot;app&quot;, []) .controller(&quot;ParentController&quot;, ['$scope', function($scope) { $scope.value = 'parent value'; $scope.getUpperValue = function () { return angular.uppercase($scope.value); } }]) .controller(&quot;ChildController&quot;,[ '$scope', function($scope) { $scope.newValue = 'child value'; }]); &lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;div ng-controller=&quot;ParentController&quot;&gt; &lt;h3&gt;parent&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;value: {{value}}&lt;/li&gt; &lt;li&gt;Upper: {{getUpperValue()}}&lt;/li&gt; &lt;li&gt;newValue: {{newValue}} &lt;/li&gt; &lt;/ul&gt; &lt;/div&gt; &lt;div ng-controller=&quot;ChildController&quot;&gt; &lt;h3&gt;parent&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;value: {{value}}&lt;/li&gt; &lt;li&gt;Upper: {{getUpperValue()}}&lt;/li&gt; &lt;li&gt;newValue: {{newValue}} &lt;/li&gt; &lt;/ul&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt;  제대로 된 결과를 보려면 </div>
+scope 계층화 &lt;!DOCTYPE html&gt; &lt;html lang=&#34;ko&#34; ng-app=&#34;app&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;utf-8&#34;&gt; &lt;meta http-equiv=&#34;X-UA-Compatible&#34; content=&#34;IE=edge&#34;&gt; &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;&gt; &lt;title&gt;Services and Modules&lt;/title&gt; &lt;link rel=&#34;stylesheet&#34; href=&#34;bootstrap/css/bootstrap.css&#34; /&gt; &lt;link rel=&#34;stylesheet&#34; href=&#34;bootstrap/css/bootstrap-theme.css&#34; /&gt; &lt;script type=&#34;text/javascript&#34; src=&#34;jquery/jquery.js&#34;&gt;&lt;/script&gt; &lt;script type=&#34;text/javascript&#34; src=&#34;jquery-ui/jquery-ui.js&#34;&gt;&lt;/script&gt; &lt;script type=&#34;text/javascript&#34; src=&#34;angular/angular.js&#34;&gt;&lt;/script&gt; &lt;script&gt; angular.module(&#34;app&#34;, []) .controller(&#34;ParentController&#34;, [&#39;$scope&#39;, function($scope) { $scope.value = &#39;parent value&#39;; $scope.getUpperValue = function () { return angular.uppercase($scope.value); } }]) .controller(&#34;ChildController&#34;,[ &#39;$scope&#39;, function($scope) { $scope.newValue = &#39;child value&#39;; }]); &lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;div ng-controller=&#34;ParentController&#34;&gt; &lt;h3&gt;parent&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;value: {{value}}&lt;/li&gt; &lt;li&gt;Upper: {{getUpperValue()}}&lt;/li&gt; &lt;li&gt;newValue: {{newValue}} &lt;/li&gt; &lt;/ul&gt; &lt;/div&gt; &lt;div ng-controller=&#34;ChildController&#34;&gt; &lt;h3&gt;parent&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;value: {{value}}&lt;/li&gt; &lt;li&gt;Upper: {{getUpperValue()}}&lt;/li&gt; &lt;li&gt;newValue: {{newValue}} &lt;/li&gt; &lt;/ul&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt; 제대로 된 결과를 보려면 </div>
 
   <footer>
   <div class="rmore">
@@ -716,7 +731,7 @@ scope 계층화 &lt;!DOCTYPE html&gt; &lt;html lang=&quot;ko&quot; ng-app=&quot;
 핸들바를 사용하지 않을려면 brfs도 고려해보자
 패키지 설치
 npm install --global gulp npm install --save-dev gulp npm install --save-dev browserify npm install --save-dev vinyl-source-stream npm install --save handlebars npm install --save hbsfy  gulpfile.js
-var gulp = require('gulp'), browserify = require('browserify'), source = require('vinyl-source-stream'), hbsfy = require('hbsfy'); gulp.task('build', function() { var b = browserify('./js/app.js', {debug:true}); return b.transform(hbsfy) .bundle() .pipe(source('app.js')) .pipe(gulp.dest('/home/alpha/public/js')); }); gulp. </div>
+var gulp = require(&#39;gulp&#39;), browserify = require(&#39;browserify&#39;), source = require(&#39;vinyl-source-stream&#39;), hbsfy = require(&#39;hbsfy&#39;); gulp.task(&#39;build&#39;, function() { var b = browserify(&#39;./js/app.js&#39;, {debug:true}); return b.transform(hbsfy) .bundle() .pipe(source(&#39;app.js&#39;)) .pipe(gulp.dest(&#39;/home/alpha/public/js&#39;)); }); gulp. </div>
 
   <footer>
   <div class="rmore">
@@ -746,7 +761,7 @@ var gulp = require('gulp'), browserify = require('browserify'), source = require
   </header>
 
   <div class="summary"> RFC4122
-return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) { var r = Math.random()*16|0, v = c === 'x' ? r : (r&amp;0x3|0x8); return v.toString(16); });  var s = []; var hexDigits = &quot;0123456789abcdef&quot;; for (var i = 0; i &lt; 36; i++) { s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1); } s[14] = &quot;4&quot;; s[19] = hexDigits.substr((s[19] &amp; 0x3) | 0x8, 1); s[8] = s[13] = s[18] = s[23] = &quot;-&quot;; var uuid = s. </div>
+return &#39;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&#39;.replace(/[xy]/g, function(c) { var r = Math.random()*16|0, v = c === &#39;x&#39; ? r : (r&amp;0x3|0x8); return v.toString(16); }); var s = []; var hexDigits = &#34;0123456789abcdef&#34;; for (var i = 0; i &lt; 36; i++) { s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1); } s[14] = &#34;4&#34;; s[19] = hexDigits.substr((s[19] &amp; 0x3) | 0x8, 1); s[8] = s[13] = s[18] = s[23] = &#34;-&#34;; var uuid = s.join(&#34;&#34;); return uuid; }  </div>
 
   <footer>
   <div class="rmore">
@@ -814,9 +829,11 @@ return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) { var
   <div class="social-links-footer">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   

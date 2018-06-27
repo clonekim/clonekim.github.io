@@ -7,14 +7,14 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.30" />
+<meta name="generator" content="Hugo 0.42.1" />
 
 <link rel="canonical" href="http://clonekim.github.io/2015/09/%ED%81%B4%EB%A1%9C%EC%A0%80%EC%97%90%EC%84%9C-jdbc/">
 <base href="http://clonekim.github.io/" />
 <meta property="og:title" content="클로저에서 Jdbc" />
 <meta property="og:description" content=" 클로저에서 JDBC(Java Database Connectivity) 를 사용하기 위한 가이드
 몇몇 함수가 없어진 경우가 있기 때문에 소스보기로 확인할 것
- clojure-doc보기 소스보기   leiningen [org.clojure/java.jdbc &quot;0.4.2&quot;]  간단한 예제 (ns db-test.core (:require [clojure.java.jdbc :as sql]))	(def db {:classname &quot;com.mysql.jdbc.Driver&quot; :subprotocol &quot;mysql&quot; :subname &quot;//127.0.0.1:3306/test&quot; :user &quot;xxx&quot; :password &quot;xxxx&quot; }) (defn get-user [] (println (sql/query db [&quot;select * from users&quot;]))) (defn -main [] (get-user))  참고  HikarCP를 사용하는 예 clojure.jdbc doc  " />
+ clojure-doc보기 소스보기   leiningen [org.clojure/java.jdbc &quot;0.4.2&quot;]  간단한 예제 (ns db-test.core (:require [clojure.java.jdbc :as sql]))	(def db {:classname &#34;com.mysql.jdbc.Driver&#34; :subprotocol &#34;mysql&#34; :subname &#34;//127.0.0.1:3306/test&#34; :user &#34;xxx&#34; :password &#34;xxxx&#34; }) (defn get-user [] (println (sql/query db [&#34;select * from users&#34;]))) (defn -main [] (get-user)) 참고  HikarCP를 사용하는 예 clojure.jdbc doc  " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://clonekim.github.io/2015/09/%ED%81%B4%EB%A1%9C%EC%A0%80%EC%97%90%EC%84%9C-jdbc/" />
 
@@ -34,17 +34,18 @@
 
 
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="클로저에서 Jdbc"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="클로저에서 Jdbc"/>
 <meta name="twitter:description" content=" 클로저에서 JDBC(Java Database Connectivity) 를 사용하기 위한 가이드
 몇몇 함수가 없어진 경우가 있기 때문에 소스보기로 확인할 것
- clojure-doc보기 소스보기   leiningen [org.clojure/java.jdbc &quot;0.4.2&quot;]  간단한 예제 (ns db-test.core (:require [clojure.java.jdbc :as sql]))	(def db {:classname &quot;com.mysql.jdbc.Driver&quot; :subprotocol &quot;mysql&quot; :subname &quot;//127.0.0.1:3306/test&quot; :user &quot;xxx&quot; :password &quot;xxxx&quot; }) (defn get-user [] (println (sql/query db [&quot;select * from users&quot;]))) (defn -main [] (get-user))  참고  HikarCP를 사용하는 예 clojure.jdbc doc  "/>
+ clojure-doc보기 소스보기   leiningen [org.clojure/java.jdbc &quot;0.4.2&quot;]  간단한 예제 (ns db-test.core (:require [clojure.java.jdbc :as sql]))	(def db {:classname &#34;com.mysql.jdbc.Driver&#34; :subprotocol &#34;mysql&#34; :subname &#34;//127.0.0.1:3306/test&#34; :user &#34;xxx&#34; :password &#34;xxxx&#34; }) (defn get-user [] (println (sql/query db [&#34;select * from users&#34;]))) (defn -main [] (get-user)) 참고  HikarCP를 사용하는 예 clojure.jdbc doc  "/>
 
 
 
 <meta itemprop="name" content="클로저에서 Jdbc">
 <meta itemprop="description" content=" 클로저에서 JDBC(Java Database Connectivity) 를 사용하기 위한 가이드
 몇몇 함수가 없어진 경우가 있기 때문에 소스보기로 확인할 것
- clojure-doc보기 소스보기   leiningen [org.clojure/java.jdbc &quot;0.4.2&quot;]  간단한 예제 (ns db-test.core (:require [clojure.java.jdbc :as sql]))	(def db {:classname &quot;com.mysql.jdbc.Driver&quot; :subprotocol &quot;mysql&quot; :subname &quot;//127.0.0.1:3306/test&quot; :user &quot;xxx&quot; :password &quot;xxxx&quot; }) (defn get-user [] (println (sql/query db [&quot;select * from users&quot;]))) (defn -main [] (get-user))  참고  HikarCP를 사용하는 예 clojure.jdbc doc  ">
+ clojure-doc보기 소스보기   leiningen [org.clojure/java.jdbc &quot;0.4.2&quot;]  간단한 예제 (ns db-test.core (:require [clojure.java.jdbc :as sql]))	(def db {:classname &#34;com.mysql.jdbc.Driver&#34; :subprotocol &#34;mysql&#34; :subname &#34;//127.0.0.1:3306/test&#34; :user &#34;xxx&#34; :password &#34;xxxx&#34; }) (defn get-user [] (println (sql/query db [&#34;select * from users&#34;]))) (defn -main [] (get-user)) 참고  HikarCP를 사용하는 예 clojure.jdbc doc  ">
 
 
 <meta itemprop="datePublished" content="2015-09-25T00:00:00&#43;00:00" />
@@ -59,6 +60,17 @@
 <link rel="stylesheet" href="css/layout.css" />
 <link rel="stylesheet" href="css/color-dark.css" />
 
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-121397292-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 <title>
@@ -100,9 +112,11 @@
 <div class="social-links-header">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   
@@ -136,24 +150,21 @@
 </code></pre>
 
 <h2 id="간단한-예제">간단한 예제</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">ns </span>db-test.core
+	(<span style="color:#e6db74">:require</span> [clojure.java.jdbc <span style="color:#e6db74">:as</span> sql]))	
 
-<pre><code class="language-clojure">(ns db-test.core
-	(:require [clojure.java.jdbc :as sql]))	
+(<span style="color:#66d9ef">def </span>db
+  {<span style="color:#e6db74">:classname</span> <span style="color:#e6db74">&#34;com.mysql.jdbc.Driver&#34;</span>
+   <span style="color:#e6db74">:subprotocol</span> <span style="color:#e6db74">&#34;mysql&#34;</span>
+   <span style="color:#e6db74">:subname</span> <span style="color:#e6db74">&#34;//127.0.0.1:3306/test&#34;</span>
+   <span style="color:#e6db74">:user</span> <span style="color:#e6db74">&#34;xxx&#34;</span>
+   <span style="color:#e6db74">:password</span> <span style="color:#e6db74">&#34;xxxx&#34;</span> })
 
-(def db
-  {:classname &quot;com.mysql.jdbc.Driver&quot;
-   :subprotocol &quot;mysql&quot;
-   :subname &quot;//127.0.0.1:3306/test&quot;
-   :user &quot;xxx&quot;
-   :password &quot;xxxx&quot; })
+(<span style="color:#66d9ef">defn </span>get-user []
+  (println (sql/query db [<span style="color:#e6db74">&#34;select * from users&#34;</span>]))) 
 
-(defn get-user []
-  (println (sql/query db [&quot;select * from users&quot;]))) 
-
-(defn -main [] 
-  (get-user))
-</code></pre>
-
+(<span style="color:#66d9ef">defn </span>-main [] 
+  (get-user))</code></pre></div>
 <h2 id="참고">참고</h2>
 
 <ul>
@@ -210,9 +221,11 @@
   <div class="social-links-footer">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   

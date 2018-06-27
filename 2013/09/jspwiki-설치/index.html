@@ -7,14 +7,14 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.30" />
+<meta name="generator" content="Hugo 0.42.1" />
 
 <link rel="canonical" href="http://clonekim.github.io/2013/09/jspwiki-%EC%84%A4%EC%B9%98/">
 <base href="http://clonekim.github.io/" />
 <meta property="og:title" content="JSPWiki 설치" />
 <meta property="og:description" content=" Apache JSPWiki
 설정 server.xml
-&lt;Connector address=&quot;127.0.0.1&quot; port=&quot;8080&quot; protocol=&quot;org.apache.coyote.http11.Http11NioProtocol&quot; connectionTimeout=&quot;20000&quot; maxThreads=&quot;3&quot; minSpareThreads=&quot;2&quot; redirectPort=&quot;8443&quot; URIEncoding=&quot;UTF-8&quot;/&gt;  jspwiki.properties
+&lt;Connector address=&#34;127.0.0.1&#34; port=&#34;8080&#34; protocol=&#34;org.apache.coyote.http11.Http11NioProtocol&#34; connectionTimeout=&#34;20000&#34; maxThreads=&#34;3&#34; minSpareThreads=&#34;2&#34; redirectPort=&#34;8443&#34; URIEncoding=&#34;UTF-8&#34;/&gt; jspwiki.properties
 jspwiki.baseURL= http://cloud9ine.cafe24.com/wiki jspwiki.fileSystemProvider.pageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/ jspwiki.basicAttachmentProvider.storageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/  jspwiki.policy
 Anonymous를 코멘트처리
 Nginx 연동 upstream tomcat { server 127.0.0.1:8080; } server { ... location /wiki { proxy_pass http://tomcat; }  " />
@@ -37,10 +37,11 @@ Nginx 연동 upstream tomcat { server 127.0.0.1:8080; } server { ... location /w
 
 
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="JSPWiki 설치"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="JSPWiki 설치"/>
 <meta name="twitter:description" content=" Apache JSPWiki
 설정 server.xml
-&lt;Connector address=&quot;127.0.0.1&quot; port=&quot;8080&quot; protocol=&quot;org.apache.coyote.http11.Http11NioProtocol&quot; connectionTimeout=&quot;20000&quot; maxThreads=&quot;3&quot; minSpareThreads=&quot;2&quot; redirectPort=&quot;8443&quot; URIEncoding=&quot;UTF-8&quot;/&gt;  jspwiki.properties
+&lt;Connector address=&#34;127.0.0.1&#34; port=&#34;8080&#34; protocol=&#34;org.apache.coyote.http11.Http11NioProtocol&#34; connectionTimeout=&#34;20000&#34; maxThreads=&#34;3&#34; minSpareThreads=&#34;2&#34; redirectPort=&#34;8443&#34; URIEncoding=&#34;UTF-8&#34;/&gt; jspwiki.properties
 jspwiki.baseURL= http://cloud9ine.cafe24.com/wiki jspwiki.fileSystemProvider.pageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/ jspwiki.basicAttachmentProvider.storageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/  jspwiki.policy
 Anonymous를 코멘트처리
 Nginx 연동 upstream tomcat { server 127.0.0.1:8080; } server { ... location /wiki { proxy_pass http://tomcat; }  "/>
@@ -50,7 +51,7 @@ Nginx 연동 upstream tomcat { server 127.0.0.1:8080; } server { ... location /w
 <meta itemprop="name" content="JSPWiki 설치">
 <meta itemprop="description" content=" Apache JSPWiki
 설정 server.xml
-&lt;Connector address=&quot;127.0.0.1&quot; port=&quot;8080&quot; protocol=&quot;org.apache.coyote.http11.Http11NioProtocol&quot; connectionTimeout=&quot;20000&quot; maxThreads=&quot;3&quot; minSpareThreads=&quot;2&quot; redirectPort=&quot;8443&quot; URIEncoding=&quot;UTF-8&quot;/&gt;  jspwiki.properties
+&lt;Connector address=&#34;127.0.0.1&#34; port=&#34;8080&#34; protocol=&#34;org.apache.coyote.http11.Http11NioProtocol&#34; connectionTimeout=&#34;20000&#34; maxThreads=&#34;3&#34; minSpareThreads=&#34;2&#34; redirectPort=&#34;8443&#34; URIEncoding=&#34;UTF-8&#34;/&gt; jspwiki.properties
 jspwiki.baseURL= http://cloud9ine.cafe24.com/wiki jspwiki.fileSystemProvider.pageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/ jspwiki.basicAttachmentProvider.storageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/  jspwiki.policy
 Anonymous를 코멘트처리
 Nginx 연동 upstream tomcat { server 127.0.0.1:8080; } server { ... location /wiki { proxy_pass http://tomcat; }  ">
@@ -68,6 +69,17 @@ Nginx 연동 upstream tomcat { server 127.0.0.1:8080; } server { ... location /w
 <link rel="stylesheet" href="css/layout.css" />
 <link rel="stylesheet" href="css/color-dark.css" />
 
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-121397292-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 <title>
@@ -109,9 +121,11 @@ Nginx 연동 upstream tomcat { server 127.0.0.1:8080; } server { ... location /w
 <div class="social-links-header">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   
@@ -135,13 +149,10 @@ Nginx 연동 upstream tomcat { server 127.0.0.1:8080; } server { ... location /w
 <h2 id="설정">설정</h2>
 
 <p><em>server.xml</em></p>
-
-<pre><code class="language-xml">&lt;Connector address=&quot;127.0.0.1&quot; port=&quot;8080&quot; protocol=&quot;org.apache.coyote.http11.Http11NioProtocol&quot;
-               connectionTimeout=&quot;20000&quot;
-               maxThreads=&quot;3&quot; minSpareThreads=&quot;2&quot;
-               redirectPort=&quot;8443&quot; URIEncoding=&quot;UTF-8&quot;/&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;Connector</span> <span style="color:#a6e22e">address=</span><span style="color:#e6db74">&#34;127.0.0.1&#34;</span> <span style="color:#a6e22e">port=</span><span style="color:#e6db74">&#34;8080&#34;</span> <span style="color:#a6e22e">protocol=</span><span style="color:#e6db74">&#34;org.apache.coyote.http11.Http11NioProtocol&#34;</span>
+               <span style="color:#a6e22e">connectionTimeout=</span><span style="color:#e6db74">&#34;20000&#34;</span>
+               <span style="color:#a6e22e">maxThreads=</span><span style="color:#e6db74">&#34;3&#34;</span> <span style="color:#a6e22e">minSpareThreads=</span><span style="color:#e6db74">&#34;2&#34;</span>
+               <span style="color:#a6e22e">redirectPort=</span><span style="color:#e6db74">&#34;8443&#34;</span> <span style="color:#a6e22e">URIEncoding=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span><span style="color:#f92672">/&gt;</span></code></pre></div>
 <p><em>jspwiki.properties</em></p>
 
 <pre><code>jspwiki.baseURL= http://cloud9ine.cafe24.com/wiki
@@ -216,9 +227,11 @@ server {
   <div class="social-links-footer">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   

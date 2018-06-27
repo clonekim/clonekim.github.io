@@ -7,7 +7,7 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.30" />
+<meta name="generator" content="Hugo 0.42.1" />
 
 <link rel="canonical" href="http://clonekim.github.io/2017/07/freemarker%EB%A5%BC-clojure%EC%97%90%EC%84%9C/">
 <base href="http://clonekim.github.io/" />
@@ -15,7 +15,7 @@
 <meta property="og:description" content="참고소스
  [freemarker-clj &quot;0.1.0&quot;]  freemarker-clj
 템플릿 초기화 템플릿리소스는 해당 디렉토리로 초기화한다
-(defn gen-config [&amp; {:keys [shared] :or {shared {}}}] (let [cfg (doto (Configuration.) (.setDirectoryForTemplateLoading (file &quot;/Users/bonjour/git/cms/resources/public/ftl&quot;)) (.setDefaultEncoding &quot;UTF-8&quot;) (.setObjectWrapper (DefaultObjectWrapper.)))] (doseq [[k v] (map-&gt;model shared)] (.setSharedVariable ^Configuration cfg ^String k v)) cfg))  아래와 같이 템플릿로더를 직접구현해서도 가능하다
+(defn gen-config [&amp; {:keys [shared] :or {shared {}}}] (let [cfg (doto (Configuration.) (.setDirectoryForTemplateLoading (file &#34;/Users/bonjour/git/cms/resources/public/ftl&#34;)) (.setDefaultEncoding &#34;UTF-8&#34;) (.setObjectWrapper (DefaultObjectWrapper.)))] (doseq [[k v] (map-&gt;model shared)] (.setSharedVariable ^Configuration cfg ^String k v)) cfg)) 아래와 같이 템플릿로더를 직접구현해서도 가능하다
 (ns freemarker.template (:require [clojure.tools.logging :as log] [clojure.java.io :refer [file]] [freemarker.shim :refer [map-&gt;model]]) (:import [freemarker.template Configuration DefaultObjectWrapper TemplateMethodModel] [java.io StringWriter])) (def DBTemplateLoader (proxy [freemarker." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://clonekim.github.io/2017/07/freemarker%EB%A5%BC-clojure%EC%97%90%EC%84%9C/" />
@@ -36,11 +36,12 @@
 
 
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Freemarker를 Clojure에서"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Freemarker를 Clojure에서"/>
 <meta name="twitter:description" content="참고소스
  [freemarker-clj &quot;0.1.0&quot;]  freemarker-clj
 템플릿 초기화 템플릿리소스는 해당 디렉토리로 초기화한다
-(defn gen-config [&amp; {:keys [shared] :or {shared {}}}] (let [cfg (doto (Configuration.) (.setDirectoryForTemplateLoading (file &quot;/Users/bonjour/git/cms/resources/public/ftl&quot;)) (.setDefaultEncoding &quot;UTF-8&quot;) (.setObjectWrapper (DefaultObjectWrapper.)))] (doseq [[k v] (map-&gt;model shared)] (.setSharedVariable ^Configuration cfg ^String k v)) cfg))  아래와 같이 템플릿로더를 직접구현해서도 가능하다
+(defn gen-config [&amp; {:keys [shared] :or {shared {}}}] (let [cfg (doto (Configuration.) (.setDirectoryForTemplateLoading (file &#34;/Users/bonjour/git/cms/resources/public/ftl&#34;)) (.setDefaultEncoding &#34;UTF-8&#34;) (.setObjectWrapper (DefaultObjectWrapper.)))] (doseq [[k v] (map-&gt;model shared)] (.setSharedVariable ^Configuration cfg ^String k v)) cfg)) 아래와 같이 템플릿로더를 직접구현해서도 가능하다
 (ns freemarker.template (:require [clojure.tools.logging :as log] [clojure.java.io :refer [file]] [freemarker.shim :refer [map-&gt;model]]) (:import [freemarker.template Configuration DefaultObjectWrapper TemplateMethodModel] [java.io StringWriter])) (def DBTemplateLoader (proxy [freemarker."/>
 
 
@@ -49,7 +50,7 @@
 <meta itemprop="description" content="참고소스
  [freemarker-clj &quot;0.1.0&quot;]  freemarker-clj
 템플릿 초기화 템플릿리소스는 해당 디렉토리로 초기화한다
-(defn gen-config [&amp; {:keys [shared] :or {shared {}}}] (let [cfg (doto (Configuration.) (.setDirectoryForTemplateLoading (file &quot;/Users/bonjour/git/cms/resources/public/ftl&quot;)) (.setDefaultEncoding &quot;UTF-8&quot;) (.setObjectWrapper (DefaultObjectWrapper.)))] (doseq [[k v] (map-&gt;model shared)] (.setSharedVariable ^Configuration cfg ^String k v)) cfg))  아래와 같이 템플릿로더를 직접구현해서도 가능하다
+(defn gen-config [&amp; {:keys [shared] :or {shared {}}}] (let [cfg (doto (Configuration.) (.setDirectoryForTemplateLoading (file &#34;/Users/bonjour/git/cms/resources/public/ftl&#34;)) (.setDefaultEncoding &#34;UTF-8&#34;) (.setObjectWrapper (DefaultObjectWrapper.)))] (doseq [[k v] (map-&gt;model shared)] (.setSharedVariable ^Configuration cfg ^String k v)) cfg)) 아래와 같이 템플릿로더를 직접구현해서도 가능하다
 (ns freemarker.template (:require [clojure.tools.logging :as log] [clojure.java.io :refer [file]] [freemarker.shim :refer [map-&gt;model]]) (:import [freemarker.template Configuration DefaultObjectWrapper TemplateMethodModel] [java.io StringWriter])) (def DBTemplateLoader (proxy [freemarker.">
 
 
@@ -65,6 +66,17 @@
 <link rel="stylesheet" href="css/layout.css" />
 <link rel="stylesheet" href="css/color-dark.css" />
 
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-121397292-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 <title>
@@ -106,9 +118,11 @@
 <div class="social-links-header">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   
@@ -137,62 +151,52 @@
 <h2 id="템플릿-초기화">템플릿 초기화</h2>
 
 <p>템플릿리소스는 해당 디렉토리로 초기화한다</p>
-
-<pre><code>(defn gen-config
-  [&amp; {:keys [shared] :or {shared {}}}]
-  (let [cfg (doto (Configuration.)
-              (.setDirectoryForTemplateLoading (file &quot;/Users/bonjour/git/cms/resources/public/ftl&quot;))
-              (.setDefaultEncoding &quot;UTF-8&quot;)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clj" data-lang="clj">(<span style="color:#66d9ef">defn </span>gen-config
+  [<span style="color:#f92672">&amp;</span> {<span style="color:#e6db74">:keys</span> [shared] <span style="color:#e6db74">:or</span> {shared {}}}]
+  (<span style="color:#66d9ef">let </span>[cfg (doto (Configuration.)
+              (.setDirectoryForTemplateLoading (file <span style="color:#e6db74">&#34;/Users/bonjour/git/cms/resources/public/ftl&#34;</span>))
+              (.setDefaultEncoding <span style="color:#e6db74">&#34;UTF-8&#34;</span>)
               (.setObjectWrapper (DefaultObjectWrapper.)))]
     (doseq [[k v] (map-&gt;model shared)]
-      (.setSharedVariable ^Configuration cfg ^String k v))
-    cfg))
-
-</code></pre>
-
+      (.setSharedVariable <span style="color:#f92672">^</span>Configuration cfg <span style="color:#f92672">^</span>String k v))
+    cfg))</code></pre></div>
 <p>아래와 같이 템플릿로더를 직접구현해서도 가능하다</p>
-
-<pre><code>(ns freemarker.template
-  (:require [clojure.tools.logging :as log]
-            [clojure.java.io :refer [file]]
-            [freemarker.shim :refer [map-&gt;model]])
-  (:import [freemarker.template
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clj" data-lang="clj">(<span style="color:#66d9ef">ns </span>freemarker.template
+  (<span style="color:#e6db74">:require</span> [clojure.tools.logging <span style="color:#e6db74">:as</span> log]
+            [clojure.java.io <span style="color:#e6db74">:refer</span> [file]]
+            [freemarker.shim <span style="color:#e6db74">:refer</span> [map-&gt;model]])
+  (<span style="color:#e6db74">:import</span> [freemarker.template
             Configuration
             DefaultObjectWrapper
             TemplateMethodModel]
            [java.io StringWriter]))
 
-(def DBTemplateLoader
+(<span style="color:#66d9ef">def </span>DBTemplateLoader
   (proxy [freemarker.cache.TemplateLoader] []
-    (findTemplateSource [^String name]
-       ;; 요청한 템플릿이름이 넘어온다
+    (findTemplateSource [<span style="color:#f92672">^</span>String name]
+       <span style="color:#75715e">;; 요청한 템플릿이름이 넘어온다</span>
       name)
     
-    (closeTemplateSource [^Object source])
+    (closeTemplateSource [<span style="color:#f92672">^</span>Object source])
 
-    (getLastModified [^Object source]
-      -1)
+    (getLastModified [<span style="color:#f92672">^</span>Object source]
+      <span style="color:#ae81ff">-1</span>)
 
-    (getReader [^Object source ^String encoding]
+    (getReader [<span style="color:#f92672">^</span>Object source <span style="color:#f92672">^</span>String encoding]
       
-      ;; 템플릿을 DB나 캐시에서 돌려줄 수 있다
-      (java.io.StringReader. &quot;&lt;html&gt;&lt;body&gt;Hello&lt;/body&gt;&lt;/html&gt;&quot;)
-      )))
-</code></pre>
-
+      <span style="color:#75715e">;; 템플릿을 DB나 캐시에서 돌려줄 수 있다</span>
+      (java.io.StringReader. <span style="color:#e6db74">&#34;&lt;html&gt;&lt;body&gt;Hello&lt;/body&gt;&lt;/html&gt;&#34;</span>)
+      )))</code></pre></div>
 <p>구현된 DBTemplateLoader로 교체한다</p>
-
-<pre><code>(defn gen-config
-  [&amp; {:keys [shared] :or {shared {}}}]
-  (let [cfg (doto (Configuration.)
-              (.setDefaultEncoding &quot;UTF-8&quot;)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clj" data-lang="clj">(<span style="color:#66d9ef">defn </span>gen-config
+  [<span style="color:#f92672">&amp;</span> {<span style="color:#e6db74">:keys</span> [shared] <span style="color:#e6db74">:or</span> {shared {}}}]
+  (<span style="color:#66d9ef">let </span>[cfg (doto (Configuration.)
+              (.setDefaultEncoding <span style="color:#e6db74">&#34;UTF-8&#34;</span>)
               (.setObjectWrapper (DefaultObjectWrapper.))
               (.setTemplateLoader DBTemplateLoader))]
     (doseq [[k v] (map-&gt;model shared)]
-      (.setSharedVariable ^Configuration cfg ^String k v))
-    cfg))
-</code></pre>
- </div>
+      (.setSharedVariable <span style="color:#f92672">^</span>Configuration cfg <span style="color:#f92672">^</span>String k v))
+    cfg))</code></pre></div> </div>
     <footer class="post-footer">
 
   <div class="post-footer-data">
@@ -242,9 +246,11 @@
   <div class="social-links-footer">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   

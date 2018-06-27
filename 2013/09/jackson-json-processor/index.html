@@ -7,14 +7,14 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.30" />
+<meta name="generator" content="Hugo 0.42.1" />
 
 <link rel="canonical" href="http://clonekim.github.io/2013/09/jackson-json-processor/">
 <base href="http://clonekim.github.io/" />
 <meta property="og:title" content="Jackson JSON Processor" />
-<meta property="og:description" content=" Parsing option String data = &quot;[{&#39;text&#39;:&#39;PROJECT&#39;,&#39;id&#39;:&#39;00156&#39;,&#39;leaf&#39;:true}]&quot;; ObjectMapper mapper = new ObjectMapper(); mapper.configure(JsonParser.Feature.ALLOW_SINGLE_QUOTES, true); JsonNode node = mapper.readTree(data);  Annotation JsonSerialize
-@JsonSerialize(using=JsonDateSerializer.class) public Date getCreationDate() { return creationDate; }  JsonDateSerializer.java
-public class JsonDateSerializer extends JsonSerializer&lt;Date&gt; { private static final SimpleDateFormat dateFormat = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;); @Override public void serialize(Date date, JsonGenerator json, SerializerProvider provider) throws IOException, JsonProcessingException { String formattedDate = dateFormat.format(date); json.writeString(formattedDate); } }   Jackson JSON Processor Wiki  " />
+<meta property="og:description" content=" Parsing option String data = &#34;[{&#39;text&#39;:&#39;PROJECT&#39;,&#39;id&#39;:&#39;00156&#39;,&#39;leaf&#39;:true}]&#34;; ObjectMapper mapper = new ObjectMapper(); mapper.configure(JsonParser.Feature.ALLOW_SINGLE_QUOTES, true); JsonNode node = mapper.readTree(data); Annotation JsonSerialize
+@JsonSerialize(using=JsonDateSerializer.class) public Date getCreationDate() { return creationDate; } JsonDateSerializer.java
+public class JsonDateSerializer extends JsonSerializer&lt;Date&gt; { private static final SimpleDateFormat dateFormat = new SimpleDateFormat(&#34;yyyy-MM-dd HH:mm:ss&#34;); @Override public void serialize(Date date, JsonGenerator json, SerializerProvider provider) throws IOException, JsonProcessingException { String formattedDate = dateFormat.format(date); json.writeString(formattedDate); } }  Jackson JSON Processor Wiki  " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://clonekim.github.io/2013/09/jackson-json-processor/" />
 
@@ -34,17 +34,18 @@ public class JsonDateSerializer extends JsonSerializer&lt;Date&gt; { private sta
 
 
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Jackson JSON Processor"/>
-<meta name="twitter:description" content=" Parsing option String data = &quot;[{&#39;text&#39;:&#39;PROJECT&#39;,&#39;id&#39;:&#39;00156&#39;,&#39;leaf&#39;:true}]&quot;; ObjectMapper mapper = new ObjectMapper(); mapper.configure(JsonParser.Feature.ALLOW_SINGLE_QUOTES, true); JsonNode node = mapper.readTree(data);  Annotation JsonSerialize
-@JsonSerialize(using=JsonDateSerializer.class) public Date getCreationDate() { return creationDate; }  JsonDateSerializer.java
-public class JsonDateSerializer extends JsonSerializer&lt;Date&gt; { private static final SimpleDateFormat dateFormat = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;); @Override public void serialize(Date date, JsonGenerator json, SerializerProvider provider) throws IOException, JsonProcessingException { String formattedDate = dateFormat.format(date); json.writeString(formattedDate); } }   Jackson JSON Processor Wiki  "/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Jackson JSON Processor"/>
+<meta name="twitter:description" content=" Parsing option String data = &#34;[{&#39;text&#39;:&#39;PROJECT&#39;,&#39;id&#39;:&#39;00156&#39;,&#39;leaf&#39;:true}]&#34;; ObjectMapper mapper = new ObjectMapper(); mapper.configure(JsonParser.Feature.ALLOW_SINGLE_QUOTES, true); JsonNode node = mapper.readTree(data); Annotation JsonSerialize
+@JsonSerialize(using=JsonDateSerializer.class) public Date getCreationDate() { return creationDate; } JsonDateSerializer.java
+public class JsonDateSerializer extends JsonSerializer&lt;Date&gt; { private static final SimpleDateFormat dateFormat = new SimpleDateFormat(&#34;yyyy-MM-dd HH:mm:ss&#34;); @Override public void serialize(Date date, JsonGenerator json, SerializerProvider provider) throws IOException, JsonProcessingException { String formattedDate = dateFormat.format(date); json.writeString(formattedDate); } }  Jackson JSON Processor Wiki  "/>
 
 
 
 <meta itemprop="name" content="Jackson JSON Processor">
-<meta itemprop="description" content=" Parsing option String data = &quot;[{&#39;text&#39;:&#39;PROJECT&#39;,&#39;id&#39;:&#39;00156&#39;,&#39;leaf&#39;:true}]&quot;; ObjectMapper mapper = new ObjectMapper(); mapper.configure(JsonParser.Feature.ALLOW_SINGLE_QUOTES, true); JsonNode node = mapper.readTree(data);  Annotation JsonSerialize
-@JsonSerialize(using=JsonDateSerializer.class) public Date getCreationDate() { return creationDate; }  JsonDateSerializer.java
-public class JsonDateSerializer extends JsonSerializer&lt;Date&gt; { private static final SimpleDateFormat dateFormat = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;); @Override public void serialize(Date date, JsonGenerator json, SerializerProvider provider) throws IOException, JsonProcessingException { String formattedDate = dateFormat.format(date); json.writeString(formattedDate); } }   Jackson JSON Processor Wiki  ">
+<meta itemprop="description" content=" Parsing option String data = &#34;[{&#39;text&#39;:&#39;PROJECT&#39;,&#39;id&#39;:&#39;00156&#39;,&#39;leaf&#39;:true}]&#34;; ObjectMapper mapper = new ObjectMapper(); mapper.configure(JsonParser.Feature.ALLOW_SINGLE_QUOTES, true); JsonNode node = mapper.readTree(data); Annotation JsonSerialize
+@JsonSerialize(using=JsonDateSerializer.class) public Date getCreationDate() { return creationDate; } JsonDateSerializer.java
+public class JsonDateSerializer extends JsonSerializer&lt;Date&gt; { private static final SimpleDateFormat dateFormat = new SimpleDateFormat(&#34;yyyy-MM-dd HH:mm:ss&#34;); @Override public void serialize(Date date, JsonGenerator json, SerializerProvider provider) throws IOException, JsonProcessingException { String formattedDate = dateFormat.format(date); json.writeString(formattedDate); } }  Jackson JSON Processor Wiki  ">
 
 
 <meta itemprop="datePublished" content="2013-09-27T00:00:00&#43;00:00" />
@@ -59,6 +60,17 @@ public class JsonDateSerializer extends JsonSerializer&lt;Date&gt; { private sta
 <link rel="stylesheet" href="css/layout.css" />
 <link rel="stylesheet" href="css/color-dark.css" />
 
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-121397292-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 <title>
@@ -100,9 +112,11 @@ public class JsonDateSerializer extends JsonSerializer&lt;Date&gt; { private sta
 <div class="social-links-header">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   
@@ -122,43 +136,34 @@ public class JsonDateSerializer extends JsonSerializer&lt;Date&gt; { private sta
     <div class="content"> 
 
 <h2 id="parsing-option">Parsing option</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">String data <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;[{&#39;text&#39;:&#39;PROJECT&#39;,&#39;id&#39;:&#39;00156&#39;,&#39;leaf&#39;:true}]&#34;</span><span style="color:#f92672">;</span>
 
-<pre><code class="language-java">String data = &quot;[{'text':'PROJECT','id':'00156','leaf':true}]&quot;;
 
+ObjectMapper mapper <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ObjectMapper<span style="color:#f92672">();</span>
+mapper<span style="color:#f92672">.</span><span style="color:#a6e22e">configure</span><span style="color:#f92672">(</span>JsonParser<span style="color:#f92672">.</span><span style="color:#a6e22e">Feature</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ALLOW_SINGLE_QUOTES</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
 
-ObjectMapper mapper = new ObjectMapper();
-mapper.configure(JsonParser.Feature.ALLOW_SINGLE_QUOTES, true);
-
-JsonNode node = mapper.readTree(data);
-</code></pre>
-
+JsonNode node <span style="color:#f92672">=</span> mapper<span style="color:#f92672">.</span><span style="color:#a6e22e">readTree</span><span style="color:#f92672">(</span>data<span style="color:#f92672">);</span></code></pre></div>
 <h2 id="annotation">Annotation</h2>
 
 <p><em>JsonSerialize</em></p>
-
-<pre><code class="language-java">	@JsonSerialize(using=JsonDateSerializer.class)
-	public Date getCreationDate() {
-		return creationDate;
-	}
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">	<span style="color:#a6e22e">@JsonSerialize</span><span style="color:#f92672">(</span>using<span style="color:#f92672">=</span>JsonDateSerializer<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">)</span>
+	<span style="color:#66d9ef">public</span> Date <span style="color:#a6e22e">getCreationDate</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">return</span> creationDate<span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span></code></pre></div>
 <p><em>JsonDateSerializer.java</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">JsonDateSerializer</span> <span style="color:#66d9ef">extends</span> JsonSerializer<span style="color:#f92672">&lt;</span>Date<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
 
-<pre><code class="language-java">public class JsonDateSerializer extends JsonSerializer&lt;Date&gt; {
-
-    private static final SimpleDateFormat dateFormat = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;); 
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> SimpleDateFormat dateFormat <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SimpleDateFormat<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;yyyy-MM-dd HH:mm:ss&#34;</span><span style="color:#f92672">);</span> 
 	  
-	@Override
-	public void serialize(Date date, JsonGenerator json, SerializerProvider provider)
-			throws IOException, JsonProcessingException {
+	<span style="color:#a6e22e">@Override</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">serialize</span><span style="color:#f92672">(</span>Date date<span style="color:#f92672">,</span> JsonGenerator json<span style="color:#f92672">,</span> SerializerProvider provider<span style="color:#f92672">)</span>
+			<span style="color:#66d9ef">throws</span> IOException<span style="color:#f92672">,</span> JsonProcessingException <span style="color:#f92672">{</span>
 		
-		String formattedDate = dateFormat.format(date);
-		json.writeString(formattedDate);
-	}
+		String formattedDate <span style="color:#f92672">=</span> dateFormat<span style="color:#f92672">.</span><span style="color:#a6e22e">format</span><span style="color:#f92672">(</span>date<span style="color:#f92672">);</span>
+		json<span style="color:#f92672">.</span><span style="color:#a6e22e">writeString</span><span style="color:#f92672">(</span>formattedDate<span style="color:#f92672">);</span>
+	<span style="color:#f92672">}</span>
 
-}
-</code></pre>
-
+<span style="color:#f92672">}</span></code></pre></div>
 <ul>
 <li><a href="http://wiki.fasterxml.com/JacksonHome">Jackson JSON Processor Wiki</a></li>
 </ul>
@@ -212,9 +217,11 @@ JsonNode node = mapper.readTree(data);
   <div class="social-links-footer">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   

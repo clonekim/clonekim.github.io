@@ -7,7 +7,7 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.30" />
+<meta name="generator" content="Hugo 0.42.1" />
 
 <link rel="canonical" href="http://clonekim.github.io/2016/01/gulp%EB%A1%9C-react%EB%B9%8C%EB%93%9C/">
 <base href="http://clonekim.github.io/" />
@@ -35,7 +35,8 @@ var gulp = require(&#39;gulp&#39;), browserify = require(&#39;browserify&#39;), 
 
 
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Gulp로 React빌드"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Gulp로 React빌드"/>
 <meta name="twitter:description" content="gulp와 함께 의존성설치 npm install -g gulp  react 개발에 필요한 라이브러리와
 번들로 묶기위한 browserify를 설치
 npm install react --save-dev npm install react-dom --save-dev npm install browserify --save-dev npm install gulp --save-dev npm install vinyl-source-stream --save-dev npm install babelify --save-dev npm install babel-preset-react --save-dev  gulpfile
@@ -62,6 +63,17 @@ var gulp = require(&#39;gulp&#39;), browserify = require(&#39;browserify&#39;), 
 <link rel="stylesheet" href="css/layout.css" />
 <link rel="stylesheet" href="css/color-dark.css" />
 
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-121397292-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 <title>
@@ -103,9 +115,11 @@ var gulp = require(&#39;gulp&#39;), browserify = require(&#39;browserify&#39;), 
 <div class="social-links-header">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   
@@ -142,37 +156,33 @@ npm install babel-preset-react --save-dev
 </code></pre>
 
 <p><em>gulpfile</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">gulp</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp&#39;</span>),
+	<span style="color:#a6e22e">browserify</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;browserify&#39;</span>),
+	<span style="color:#a6e22e">babelify</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;babelify&#39;</span>),
+	<span style="color:#a6e22e">source</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;vinyl-source-stream&#39;</span>);
 
-<pre><code class="language-javascript">var gulp = require('gulp'),
-	browserify = require('browserify'),
-	babelify = require('babelify'),
-	source = require('vinyl-source-stream');
+<span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">task</span>(<span style="color:#e6db74">&#39;default&#39;</span>, <span style="color:#66d9ef">function</span>() {
 
-gulp.task('default', function() {
-
-	return browserify('./source/app.js')
-		.transform(babelify, {presets: ['react']})
-		.bundle()
-		.pipe(source('app.min.js'))
-		.pipe(gulp.dest('./build/'));
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">browserify</span>(<span style="color:#e6db74">&#39;./source/app.js&#39;</span>)
+		.<span style="color:#a6e22e">transform</span>(<span style="color:#a6e22e">babelify</span>, {<span style="color:#a6e22e">presets</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;react&#39;</span>]})
+		.<span style="color:#a6e22e">bundle</span>()
+		.<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">source</span>(<span style="color:#e6db74">&#39;app.min.js&#39;</span>))
+		.<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">dest</span>(<span style="color:#e6db74">&#39;./build/&#39;</span>));
 });
-</code></pre>
-
+</code></pre></div>
 <p><em>app.js</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">React</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;react&#39;</span>);
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ReactDom</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;react-dom&#39;</span>);
 
-<pre><code class="language-javascript">var React = require('react');
-var ReactDom = require('react-dom');
-
-var MyComponent = React.createClass({
-	return: function() {
-		return (
-			&lt;h1&gt;Hello &lt;/h1&gt;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">MyComponent</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">createClass</span>({
+	<span style="color:#66d9ef">return</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
+		<span style="color:#66d9ef">return</span> (
+			<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Hello</span> <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;</span>
 			);
 	}
 
 });
-</code></pre>
-
+</code></pre></div>
 <p><em>build time</em></p>
 
 <pre><code>$ gulp
@@ -189,24 +199,22 @@ var MyComponent = React.createClass({
 </code></pre>
 
 <p><em>build/app.js</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">React</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;react&#39;</span>);
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ReactDom</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;react-dom&#39;</span>);
 
-<pre><code class="language-javascript">var React = require('react');
-var ReactDom = require('react-dom');
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">MyComponent</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">createClass</span>({
+	<span style="color:#a6e22e">displayName</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;MyComponent&#39;</span>,
 
-var MyComponent = React.createClass({
-	displayName: 'MyComponent',
-
-	return: function () {
-		return React.createElement(
-			'h1',
-			null,
-			'Hello '
+	<span style="color:#66d9ef">return</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> () {
+		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">createElement</span>(
+			<span style="color:#e6db74">&#39;h1&#39;</span>,
+			<span style="color:#66d9ef">null</span>,
+			<span style="color:#e6db74">&#39;Hello &#39;</span>
 		);
 	}
 
 });
-</code></pre>
-
+</code></pre></div>
 <h2 id="참고">참고</h2>
 
 <ul>
@@ -264,9 +272,11 @@ var MyComponent = React.createClass({
   <div class="social-links-footer">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   

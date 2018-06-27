@@ -7,7 +7,7 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.30" />
+<meta name="generator" content="Hugo 0.42.1" />
 
 <link rel="canonical" href="http://clonekim.github.io/2013/09/%ED%94%84%EB%A1%9D%EC%8B%9C%EC%84%9C%EB%B2%84-%EC%9D%B8%EC%A6%9D%EC%97%90%EB%9F%AC/">
 <base href="http://clonekim.github.io/" />
@@ -34,7 +34,8 @@ import java.net.Authenticator; import java.net.MalformedURLException; import jav
 
 
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="프록시서버 인증에러"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="프록시서버 인증에러"/>
 <meta name="twitter:description" content="HttpURLConnecton를 이용해서 프록시설정하고 다운로드할 데이터가 있었으나 인증에러를 발생
 java.net.Authenticator를 구현해야함
 import java.net.Authenticator; import java.net.MalformedURLException; import java.net.PasswordAuthentication; import java.net.URL; public class ProxyAuthenticator extends Authenticator { private String proxyhost; private String userid; private String password; public ProxyAuthenticator(String proxyhost, String userid, String password) { this.proxyhost = proxyhost; this.userid = userid; this.password = password; } @Override public URL getRequestingURL() { if (this.proxyhost == null) return null; try { return new URL(this.proxyhost); } catch (MalformedURLException e) { return null; } } @Override protected RequestorType getRequestorType() { return RequestorType."/>
@@ -59,6 +60,17 @@ import java.net.Authenticator; import java.net.MalformedURLException; import jav
 <link rel="stylesheet" href="css/layout.css" />
 <link rel="stylesheet" href="css/color-dark.css" />
 
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-121397292-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 <title>
@@ -100,9 +112,11 @@ import java.net.Authenticator; import java.net.MalformedURLException; import jav
 <div class="social-links-header">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   
@@ -121,46 +135,43 @@ import java.net.Authenticator; import java.net.MalformedURLException; import jav
     <h1 class="title"> 프록시서버 인증에러 </h1>
     <div class="content"> <p>HttpURLConnecton를 이용해서 프록시설정하고 다운로드할 데이터가 있었으나 인증에러를 발생<br />
 java.net.Authenticator를 구현해야함</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.net.Authenticator<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.net.MalformedURLException<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.net.PasswordAuthentication<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.net.URL<span style="color:#f92672">;</span>
 
-<pre><code class="language-java">import java.net.Authenticator;
-import java.net.MalformedURLException;
-import java.net.PasswordAuthentication;
-import java.net.URL;
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ProxyAuthenticator</span> <span style="color:#66d9ef">extends</span> Authenticator <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">private</span> String proxyhost<span style="color:#f92672">;</span>
+  <span style="color:#66d9ef">private</span> String userid<span style="color:#f92672">;</span>
+  <span style="color:#66d9ef">private</span> String password<span style="color:#f92672">;</span>
 
-public class ProxyAuthenticator extends Authenticator {
-  private String proxyhost;
-  private String userid;
-  private String password;
+  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">ProxyAuthenticator</span><span style="color:#f92672">(</span>String proxyhost<span style="color:#f92672">,</span> String userid<span style="color:#f92672">,</span> String password<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">proxyhost</span> <span style="color:#f92672">=</span> proxyhost<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">userid</span> <span style="color:#f92672">=</span> userid<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">password</span> <span style="color:#f92672">=</span> password<span style="color:#f92672">;</span>
+  <span style="color:#f92672">}</span>
 
-  public ProxyAuthenticator(String proxyhost, String userid, String password) {
-    this.proxyhost = proxyhost;
-    this.userid = userid;
-    this.password = password;
-  }
+  <span style="color:#a6e22e">@Override</span>
+  <span style="color:#66d9ef">public</span> URL <span style="color:#a6e22e">getRequestingURL</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">proxyhost</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> URL<span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">proxyhost</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>MalformedURLException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+  <span style="color:#f92672">}</span>
 
-  @Override
-  public URL getRequestingURL() {
-    if (this.proxyhost == null) return null;
-    try {
-      return new URL(this.proxyhost);
-    } catch (MalformedURLException e) {
-      return null;
-    }
-  }
+  <span style="color:#a6e22e">@Override</span>
+  <span style="color:#66d9ef">protected</span> RequestorType <span style="color:#a6e22e">getRequestorType</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">return</span> RequestorType<span style="color:#f92672">.</span><span style="color:#a6e22e">PROXY</span><span style="color:#f92672">;</span>
+  <span style="color:#f92672">}</span>
 
-  @Override
-  protected RequestorType getRequestorType() {
-    return RequestorType.PROXY;
-  }
-
-  @Override
-  protected PasswordAuthentication getPasswordAuthentication() {
-    if (this.userid == null || this.password == null) return null;
-    return new PasswordAuthentication(userid, password.toCharArray());
-  }
-}
-</code></pre>
- </div>
+  <span style="color:#a6e22e">@Override</span>
+  <span style="color:#66d9ef">protected</span> PasswordAuthentication <span style="color:#a6e22e">getPasswordAuthentication</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">userid</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">||</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">password</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> PasswordAuthentication<span style="color:#f92672">(</span>userid<span style="color:#f92672">,</span> password<span style="color:#f92672">.</span><span style="color:#a6e22e">toCharArray</span><span style="color:#f92672">());</span>
+  <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div> </div>
     <footer class="post-footer">
 
   <div class="post-footer-data">
@@ -210,9 +221,11 @@ public class ProxyAuthenticator extends Authenticator {
   <div class="social-links-footer">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   

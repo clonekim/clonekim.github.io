@@ -7,15 +7,15 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.30" />
+<meta name="generator" content="Hugo 0.42.1" />
 
 <link rel="canonical" href="http://clonekim.github.io/2013/09/apache-tag-lib/">
 <base href="http://clonekim.github.io/" />
 <meta property="og:title" content="Apache Tag Lib" />
-<meta property="og:description" content="Maven &lt;groupId&gt;jstl&lt;/groupId&gt; &lt;artifactId&gt;jstl&lt;/artifactId&gt; &lt;version&gt;1.2&lt;/version&gt;  태그를 사용하기 위한 선언 &lt;%@ taglib prefix=&quot;c&quot; uri=&quot;http://java.sun.com/jsp/jstl/core&quot;%&gt; &lt;%@ taglib prefix=&quot;fn&quot; uri=&quot;http://java.sun.com/jsp/jstl/functions&quot; %&gt; &lt;%@ taglib prefix=&quot;fmt&quot; uri=&quot;http://java.sun.com/jsp/jstl/fmt&quot;%&gt;  param test.jsp?name=1234 일 경우
+<meta property="og:description" content="Maven &lt;groupId&gt;jstl&lt;/groupId&gt; &lt;artifactId&gt;jstl&lt;/artifactId&gt; &lt;version&gt;1.2&lt;/version&gt; 태그를 사용하기 위한 선언 &lt;%@ taglib prefix=&#34;c&#34; uri=&#34;http://java.sun.com/jsp/jstl/core&#34;%&gt; &lt;%@ taglib prefix=&#34;fn&#34; uri=&#34;http://java.sun.com/jsp/jstl/functions&#34; %&gt; &lt;%@ taglib prefix=&#34;fmt&#34; uri=&#34;http://java.sun.com/jsp/jstl/fmt&#34;%&gt; param test.jsp?name=1234 일 경우
 ${param.변수} 로 획득할 수 있다.
 ${param.name}으로 알수 있겠다.
-core set &lt;c:set var=&quot;string&quot; value=&quot;값&quot;/&gt; &lt;c:set var=&quot;string&quot; value=&quot;${변수.프로퍼티}&quot;/&gt;  out &lt;c:out value=&quot;${fn:substring(string,0,50)}&quot; default=&quot;초기값&quot;/&gt; &lt;c:out value=&quot;안녕하세요&quot; /&gt;  test &lt;c:if test=&quot;${변수가 존재하면}&quot;&gt; ..처리 &lt;/c:if&gt; &lt;c:if test=&quot;${변수 &lt; 숫자 }&quot;&gt; ..처리 &lt;/c:if&gt; &lt;c:if test=&quot;${변수 &lt; true}&quot;&gt; ." />
+core set &lt;c:set var=&#34;string&#34; value=&#34;값&#34;/&gt; &lt;c:set var=&#34;string&#34; value=&#34;${변수.프로퍼티}&#34;/&gt; out &lt;c:out value=&#34;${fn:substring(string,0,50)}&#34; default=&#34;초기값&#34;/&gt; &lt;c:out value=&#34;안녕하세요&#34; /&gt; test &lt;c:if test=&#34;${변수가 존재하면}&#34;&gt; ..처리 &lt;/c:if&gt; &lt;c:if test=&#34;${변수 &lt; 숫자 }&#34;&gt; ..처리 &lt;/c:if&gt; &lt;c:if test=&#34;${변수 &lt; true}&#34;&gt; ..처리 &lt;/c:if&gt; choose &lt;c:choose&gt; &lt;c:when test=&#34;조건&#34;&gt; ." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://clonekim.github.io/2013/09/apache-tag-lib/" />
 
@@ -35,19 +35,20 @@ core set &lt;c:set var=&quot;string&quot; value=&quot;값&quot;/&gt; &lt;c:set v
 
 
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Apache Tag Lib"/>
-<meta name="twitter:description" content="Maven &lt;groupId&gt;jstl&lt;/groupId&gt; &lt;artifactId&gt;jstl&lt;/artifactId&gt; &lt;version&gt;1.2&lt;/version&gt;  태그를 사용하기 위한 선언 &lt;%@ taglib prefix=&quot;c&quot; uri=&quot;http://java.sun.com/jsp/jstl/core&quot;%&gt; &lt;%@ taglib prefix=&quot;fn&quot; uri=&quot;http://java.sun.com/jsp/jstl/functions&quot; %&gt; &lt;%@ taglib prefix=&quot;fmt&quot; uri=&quot;http://java.sun.com/jsp/jstl/fmt&quot;%&gt;  param test.jsp?name=1234 일 경우
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Apache Tag Lib"/>
+<meta name="twitter:description" content="Maven &lt;groupId&gt;jstl&lt;/groupId&gt; &lt;artifactId&gt;jstl&lt;/artifactId&gt; &lt;version&gt;1.2&lt;/version&gt; 태그를 사용하기 위한 선언 &lt;%@ taglib prefix=&#34;c&#34; uri=&#34;http://java.sun.com/jsp/jstl/core&#34;%&gt; &lt;%@ taglib prefix=&#34;fn&#34; uri=&#34;http://java.sun.com/jsp/jstl/functions&#34; %&gt; &lt;%@ taglib prefix=&#34;fmt&#34; uri=&#34;http://java.sun.com/jsp/jstl/fmt&#34;%&gt; param test.jsp?name=1234 일 경우
 ${param.변수} 로 획득할 수 있다.
 ${param.name}으로 알수 있겠다.
-core set &lt;c:set var=&quot;string&quot; value=&quot;값&quot;/&gt; &lt;c:set var=&quot;string&quot; value=&quot;${변수.프로퍼티}&quot;/&gt;  out &lt;c:out value=&quot;${fn:substring(string,0,50)}&quot; default=&quot;초기값&quot;/&gt; &lt;c:out value=&quot;안녕하세요&quot; /&gt;  test &lt;c:if test=&quot;${변수가 존재하면}&quot;&gt; ..처리 &lt;/c:if&gt; &lt;c:if test=&quot;${변수 &lt; 숫자 }&quot;&gt; ..처리 &lt;/c:if&gt; &lt;c:if test=&quot;${변수 &lt; true}&quot;&gt; ."/>
+core set &lt;c:set var=&#34;string&#34; value=&#34;값&#34;/&gt; &lt;c:set var=&#34;string&#34; value=&#34;${변수.프로퍼티}&#34;/&gt; out &lt;c:out value=&#34;${fn:substring(string,0,50)}&#34; default=&#34;초기값&#34;/&gt; &lt;c:out value=&#34;안녕하세요&#34; /&gt; test &lt;c:if test=&#34;${변수가 존재하면}&#34;&gt; ..처리 &lt;/c:if&gt; &lt;c:if test=&#34;${변수 &lt; 숫자 }&#34;&gt; ..처리 &lt;/c:if&gt; &lt;c:if test=&#34;${변수 &lt; true}&#34;&gt; ..처리 &lt;/c:if&gt; choose &lt;c:choose&gt; &lt;c:when test=&#34;조건&#34;&gt; ."/>
 
 
 
 <meta itemprop="name" content="Apache Tag Lib">
-<meta itemprop="description" content="Maven &lt;groupId&gt;jstl&lt;/groupId&gt; &lt;artifactId&gt;jstl&lt;/artifactId&gt; &lt;version&gt;1.2&lt;/version&gt;  태그를 사용하기 위한 선언 &lt;%@ taglib prefix=&quot;c&quot; uri=&quot;http://java.sun.com/jsp/jstl/core&quot;%&gt; &lt;%@ taglib prefix=&quot;fn&quot; uri=&quot;http://java.sun.com/jsp/jstl/functions&quot; %&gt; &lt;%@ taglib prefix=&quot;fmt&quot; uri=&quot;http://java.sun.com/jsp/jstl/fmt&quot;%&gt;  param test.jsp?name=1234 일 경우
+<meta itemprop="description" content="Maven &lt;groupId&gt;jstl&lt;/groupId&gt; &lt;artifactId&gt;jstl&lt;/artifactId&gt; &lt;version&gt;1.2&lt;/version&gt; 태그를 사용하기 위한 선언 &lt;%@ taglib prefix=&#34;c&#34; uri=&#34;http://java.sun.com/jsp/jstl/core&#34;%&gt; &lt;%@ taglib prefix=&#34;fn&#34; uri=&#34;http://java.sun.com/jsp/jstl/functions&#34; %&gt; &lt;%@ taglib prefix=&#34;fmt&#34; uri=&#34;http://java.sun.com/jsp/jstl/fmt&#34;%&gt; param test.jsp?name=1234 일 경우
 ${param.변수} 로 획득할 수 있다.
 ${param.name}으로 알수 있겠다.
-core set &lt;c:set var=&quot;string&quot; value=&quot;값&quot;/&gt; &lt;c:set var=&quot;string&quot; value=&quot;${변수.프로퍼티}&quot;/&gt;  out &lt;c:out value=&quot;${fn:substring(string,0,50)}&quot; default=&quot;초기값&quot;/&gt; &lt;c:out value=&quot;안녕하세요&quot; /&gt;  test &lt;c:if test=&quot;${변수가 존재하면}&quot;&gt; ..처리 &lt;/c:if&gt; &lt;c:if test=&quot;${변수 &lt; 숫자 }&quot;&gt; ..처리 &lt;/c:if&gt; &lt;c:if test=&quot;${변수 &lt; true}&quot;&gt; .">
+core set &lt;c:set var=&#34;string&#34; value=&#34;값&#34;/&gt; &lt;c:set var=&#34;string&#34; value=&#34;${변수.프로퍼티}&#34;/&gt; out &lt;c:out value=&#34;${fn:substring(string,0,50)}&#34; default=&#34;초기값&#34;/&gt; &lt;c:out value=&#34;안녕하세요&#34; /&gt; test &lt;c:if test=&#34;${변수가 존재하면}&#34;&gt; ..처리 &lt;/c:if&gt; &lt;c:if test=&#34;${변수 &lt; 숫자 }&#34;&gt; ..처리 &lt;/c:if&gt; &lt;c:if test=&#34;${변수 &lt; true}&#34;&gt; ..처리 &lt;/c:if&gt; choose &lt;c:choose&gt; &lt;c:when test=&#34;조건&#34;&gt; .">
 
 
 <meta itemprop="datePublished" content="2013-09-24T00:00:00&#43;00:00" />
@@ -62,6 +63,17 @@ core set &lt;c:set var=&quot;string&quot; value=&quot;값&quot;/&gt; &lt;c:set v
 <link rel="stylesheet" href="css/layout.css" />
 <link rel="stylesheet" href="css/color-dark.css" />
 
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-121397292-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 <title>
@@ -103,9 +115,11 @@ core set &lt;c:set var=&quot;string&quot; value=&quot;값&quot;/&gt; &lt;c:set v
 <div class="social-links-header">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   
@@ -125,19 +139,13 @@ core set &lt;c:set var=&quot;string&quot; value=&quot;값&quot;/&gt; &lt;c:set v
     <div class="content"> 
 
 <h2 id="maven">Maven</h2>
-
-<pre><code class="language-xml">&lt;groupId&gt;jstl&lt;/groupId&gt;
-&lt;artifactId&gt;jstl&lt;/artifactId&gt;
-&lt;version&gt;1.2&lt;/version&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;groupId&gt;</span>jstl<span style="color:#f92672">&lt;/groupId&gt;</span>
+<span style="color:#f92672">&lt;artifactId&gt;</span>jstl<span style="color:#f92672">&lt;/artifactId&gt;</span>
+<span style="color:#f92672">&lt;version&gt;</span>1.2<span style="color:#f92672">&lt;/version&gt;</span></code></pre></div>
 <h2 id="태그를-사용하기-위한-선언">태그를 사용하기 위한 선언</h2>
-
-<pre><code class="language-jsp">&lt;%@ taglib prefix=&quot;c&quot; uri=&quot;http://java.sun.com/jsp/jstl/core&quot;%&gt;
-&lt;%@ taglib prefix=&quot;fn&quot; uri=&quot;http://java.sun.com/jsp/jstl/functions&quot; %&gt;
-&lt;%@ taglib prefix=&quot;fmt&quot; uri=&quot;http://java.sun.com/jsp/jstl/fmt&quot;%&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsp" data-lang="jsp">&lt;%@ taglib prefix=&#34;c&#34; uri=&#34;http://java.sun.com/jsp/jstl/core&#34;%&gt;
+&lt;%@ taglib prefix=&#34;fn&#34; uri=&#34;http://java.sun.com/jsp/jstl/functions&#34; %&gt;
+&lt;%@ taglib prefix=&#34;fmt&#34; uri=&#34;http://java.sun.com/jsp/jstl/fmt&#34;%&gt;</code></pre></div>
 <h2 id="param">param</h2>
 
 <p>test.jsp?name=1234 일 경우</p>
@@ -148,101 +156,71 @@ ${param.name}으로 알수 있겠다.</p>
 <h2 id="core">core</h2>
 
 <h3 id="set">set</h3>
-
-<pre><code class="language-xml">&lt;c:set var=&quot;string&quot; value=&quot;값&quot;/&gt;
-&lt;c:set var=&quot;string&quot; value=&quot;${변수.프로퍼티}&quot;/&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;c:set</span> <span style="color:#a6e22e">var=</span><span style="color:#e6db74">&#34;string&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;값&#34;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;c:set</span> <span style="color:#a6e22e">var=</span><span style="color:#e6db74">&#34;string&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;${변수.프로퍼티}&#34;</span><span style="color:#f92672">/&gt;</span></code></pre></div>
 <h3 id="out">out</h3>
-
-<pre><code class="language-xml">&lt;c:out value=&quot;${fn:substring(string,0,50)}&quot;  default=&quot;초기값&quot;/&gt;
-&lt;c:out value=&quot;안녕하세요&quot; /&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;c:out</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;${fn:substring(string,0,50)}&#34;</span>  <span style="color:#a6e22e">default=</span><span style="color:#e6db74">&#34;초기값&#34;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;c:out</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;안녕하세요&#34;</span> <span style="color:#f92672">/&gt;</span></code></pre></div>
 <h3 id="test">test</h3>
-
-<pre><code class="language-xml">&lt;c:if test=&quot;${변수가 존재하면}&quot;&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;c:if</span> <span style="color:#a6e22e">test=</span><span style="color:#e6db74">&#34;${변수가 존재하면}&#34;</span><span style="color:#f92672">&gt;</span>
 ..처리
-&lt;/c:if&gt;
+<span style="color:#f92672">&lt;/c:if&gt;</span>
 
-&lt;c:if test=&quot;${변수 &lt; 숫자 }&quot;&gt;
+<span style="color:#f92672">&lt;c:if</span> <span style="color:#a6e22e">test=</span><span style="color:#e6db74">&#34;${변수 &lt; 숫자 }&#34;</span><span style="color:#f92672">&gt;</span>
 ..처리
-&lt;/c:if&gt;
+<span style="color:#f92672">&lt;/c:if&gt;</span>
 
-&lt;c:if test=&quot;${변수 &lt; true}&quot;&gt;
+<span style="color:#f92672">&lt;c:if</span> <span style="color:#a6e22e">test=</span><span style="color:#e6db74">&#34;${변수 &lt; true}&#34;</span><span style="color:#f92672">&gt;</span>
 ..처리
-&lt;/c:if&gt;
-</code></pre>
-
+<span style="color:#f92672">&lt;/c:if&gt;</span></code></pre></div>
 <h3 id="choose">choose</h3>
-
-<pre><code class="language-xml">&lt;c:choose&gt;
-  &lt;c:when test=&quot;조건&quot;&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;c:choose&gt;</span>
+  <span style="color:#f92672">&lt;c:when</span> <span style="color:#a6e22e">test=</span><span style="color:#e6db74">&#34;조건&#34;</span><span style="color:#f92672">&gt;</span>
  ..
-  &lt;/c:when&gt;
-  &lt;c:when test=&quot;조건&quot;&gt;
+  <span style="color:#f92672">&lt;/c:when&gt;</span>
+  <span style="color:#f92672">&lt;c:when</span> <span style="color:#a6e22e">test=</span><span style="color:#e6db74">&#34;조건&#34;</span><span style="color:#f92672">&gt;</span>
  ..
-  &lt;/c:when&gt;
-  &lt;c:otherwise&gt;
+  <span style="color:#f92672">&lt;/c:when&gt;</span>
+  <span style="color:#f92672">&lt;c:otherwise&gt;</span>
    그외 조건처리
-  &lt;/c:otherwise&gt;
-&lt;/c:choose&gt;
-</code></pre>
-
+  <span style="color:#f92672">&lt;/c:otherwise&gt;</span>
+<span style="color:#f92672">&lt;/c:choose&gt;</span></code></pre></div>
 <h3 id="exception">exception</h3>
-
-<pre><code class="language-xml">&lt;c:catch var=&quot;exception&quot;&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;c:catch</span> <span style="color:#a6e22e">var=</span><span style="color:#e6db74">&#34;exception&#34;</span><span style="color:#f92672">&gt;</span>
  ...처리
-&lt;/c:catch&gt;
-</code></pre>
-
+<span style="color:#f92672">&lt;/c:catch&gt;</span></code></pre></div>
 <h3 id="url">url</h3>
-
-<pre><code class="language-xml">&lt;c:url value='/hello.jsp'/&gt;&quot;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;c:url</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#39;/hello.jsp&#39;</span><span style="color:#f92672">/&gt;</span>&#34;</code></pre></div>
 <h3 id="function">function</h3>
 
 <h4 id="length">length</h4>
-
-<pre><code class="language-xml">&lt;c:set var=&quot;length&quot; value=&quot;${fn:length(변수)}&quot;/&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;c:set</span> <span style="color:#a6e22e">var=</span><span style="color:#e6db74">&#34;length&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;${fn:length(변수)}&#34;</span><span style="color:#f92672">/&gt;</span></code></pre></div>
 <h4 id="substring">substring</h4>
-
-<pre><code class="language-xml">&lt;c:out value=&quot;${fn:substring(string,0, fn:length(string))}&quot; /&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;c:out</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;${fn:substring(string,0, fn:length(string))}&#34;</span> <span style="color:#f92672">/&gt;</span></code></pre></div>
 <h3 id="format">format</h3>
 
 <h4 id="formatdate">formatDate</h4>
-
-<pre><code class="language-xml">&lt;fmt:formatDate value=&quot;${변수}&quot; pattern=&quot;패턴&quot; /&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;fmt:formatDate</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;${변수}&#34;</span> <span style="color:#a6e22e">pattern=</span><span style="color:#e6db74">&#34;패턴&#34;</span> <span style="color:#f92672">/&gt;</span></code></pre></div>
 <h3 id="sql">sql</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#960050;background-color:#1e0010">&lt;</span>%@ page pageEncoding=&#34;utf-8&#34; %&gt;
+<span style="color:#960050;background-color:#1e0010">&lt;</span>%@ taglib prefix=&#34;sql&#34; uri=&#34;http://java.sun.com/jsp/jstl/sql&#34; %&gt;
+<span style="color:#960050;background-color:#1e0010">&lt;</span>%@ taglib prefix=&#34;c&#34; uri=&#34;http://java.sun.com/jsp/jstl/core&#34; %&gt;
 
-<pre><code class="language-xml">&lt;%@ page pageEncoding=&quot;utf-8&quot; %&gt;
-&lt;%@ taglib prefix=&quot;sql&quot; uri=&quot;http://java.sun.com/jsp/jstl/sql&quot; %&gt;
-&lt;%@ taglib prefix=&quot;c&quot; uri=&quot;http://java.sun.com/jsp/jstl/core&quot; %&gt;
+<span style="color:#f92672">&lt;sql:setDataSource</span> <span style="color:#a6e22e">dataSource=</span><span style="color:#e6db74">&#34;jdbc/wodb&#34;</span><span style="color:#f92672">/&gt;</span>
 
-&lt;sql:setDataSource dataSource=&quot;jdbc/wodb&quot;/&gt;
-
-&lt;sql:query var=&quot;rs&quot;  sql=&quot;select 1 as id from dual union all select 10 as id from dual&quot;/&gt;
+<span style="color:#f92672">&lt;sql:query</span> <span style="color:#a6e22e">var=</span><span style="color:#e6db74">&#34;rs&#34;</span>  <span style="color:#a6e22e">sql=</span><span style="color:#e6db74">&#34;select 1 as id from dual union all select 10 as id from dual&#34;</span><span style="color:#f92672">/&gt;</span>
  or
-&lt;sql:query var=&quot;rs&quot;&gt;
-  select 1 as id from dual union all select 10 as id from dual&quot;
-&lt;/sql:query&gt;
+<span style="color:#f92672">&lt;sql:query</span> <span style="color:#a6e22e">var=</span><span style="color:#e6db74">&#34;rs&#34;</span><span style="color:#f92672">&gt;</span>
+  select 1 as id from dual union all select 10 as id from dual&#34;
+<span style="color:#f92672">&lt;/sql:query&gt;</span>
 
-&lt;table border=&quot;1&quot;&gt;
-&lt;c:forEach var=&quot;rec&quot; items=&quot;${rs.rows}&quot; &gt;
-　　&lt;tr&gt; 
-　　　　&lt;td&gt;&lt;c:out value=&quot;${rec.id}&quot; /&gt;&lt;/td&gt;
-　　&lt;/tr&gt;
-&lt;/c:forEach&gt;
-&lt;/table&gt;
-</code></pre>
- </div>
+<span style="color:#f92672">&lt;table</span> <span style="color:#a6e22e">border=</span><span style="color:#e6db74">&#34;1&#34;</span><span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">&lt;c:forEach</span> <span style="color:#a6e22e">var=</span><span style="color:#e6db74">&#34;rec&#34;</span> <span style="color:#a6e22e">items=</span><span style="color:#e6db74">&#34;${rs.rows}&#34;</span> <span style="color:#f92672">&gt;</span>
+　　<span style="color:#f92672">&lt;tr&gt;</span> 
+　　　　<span style="color:#f92672">&lt;td&gt;&lt;c:out</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;${rec.id}&#34;</span> <span style="color:#f92672">/&gt;&lt;/td&gt;</span>
+　　<span style="color:#f92672">&lt;/tr&gt;</span>
+<span style="color:#f92672">&lt;/c:forEach&gt;</span>
+<span style="color:#f92672">&lt;/table&gt;</span></code></pre></div> </div>
     <footer class="post-footer">
 
   <div class="post-footer-data">
@@ -292,9 +270,11 @@ ${param.name}으로 알수 있겠다.</p>
   <div class="social-links-footer">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   

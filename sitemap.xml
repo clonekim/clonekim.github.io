@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
     <loc>http://clonekim.github.io/2017/11/emacs%EC%97%90%EC%84%9C-golang-%EB%A5%BC-%EC%9C%84%ED%95%9C-%EC%97%90%EB%94%94%ED%8C%85/</loc>

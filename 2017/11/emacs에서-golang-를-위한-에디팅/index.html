@@ -7,16 +7,16 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.30" />
+<meta name="generator" content="Hugo 0.42.1" />
 
 <link rel="canonical" href="http://clonekim.github.io/2017/11/emacs%EC%97%90%EC%84%9C-golang-%EB%A5%BC-%EC%9C%84%ED%95%9C-%EC%97%90%EB%94%94%ED%8C%85/">
 <base href="http://clonekim.github.io/" />
 <meta property="og:title" content="Emacs에서 Golang 를 위한 에디팅" />
 <meta property="og:description" content="설치 go get명령어로 아래와 같이 필요한 유틸리티(명령어)를 설치해야 한다
-$ go get github.com/golang/lint/golint  github.com/nsf/gocode github.com/k0kubun/pp github.com/golang/lint/golint github.com/rogpeppe/godef github.com/dougm/goflymake golang.org/x/tools/cmd/godoc 또는 golang.org/x/tools/cmd/...  필요한 패키지 direx ;;디렉토리 트리 보여줌 popwin ;;direx를 다른창으로 열어줌 auto-complete ;;자동완성 flycheck ;;오류체크 flymake-go go-mode go-autocomplete go-eldoc ;;상태줄에 godoc간단히 보여줌  shell-intergration.el
+$ go get github.com/golang/lint/golint github.com/nsf/gocode github.com/k0kubun/pp github.com/golang/lint/golint github.com/rogpeppe/godef github.com/dougm/goflymake golang.org/x/tools/cmd/godoc 또는 golang.org/x/tools/cmd/...  필요한 패키지 direx ;;디렉토리 트리 보여줌 popwin ;;direx를 다른창으로 열어줌 auto-complete ;;자동완성 flycheck ;;오류체크 flymake-go go-mode go-autocomplete go-eldoc ;;상태줄에 godoc간단히 보여줌  shell-intergration.el
 터미널에서 실행하면 이멕스가 작동하는데 바로가기에서는 작동이 안된다
 아래와 같이 쉘환경에 통합하고 나서 실행하니 문제가 없었다
-(when (memq window-system &#39;(mac ns)) (exec-path-from-shell-initialize) (exec-path-from-shell-copy-envs &#39;(&quot;PATH&quot; &quot;GOPATH&quot;)))  go." />
+(when (memq window-system &#39;(mac ns)) (exec-path-from-shell-initialize) (exec-path-from-shell-copy-envs &#39;(&#34;PATH&#34; &#34;GOPATH&#34;))) go." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://clonekim.github.io/2017/11/emacs%EC%97%90%EC%84%9C-golang-%EB%A5%BC-%EC%9C%84%ED%95%9C-%EC%97%90%EB%94%94%ED%8C%85/" />
 
@@ -36,21 +36,22 @@ $ go get github.com/golang/lint/golint  github.com/nsf/gocode github.com/k0kubun
 
 
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Emacs에서 Golang 를 위한 에디팅"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Emacs에서 Golang 를 위한 에디팅"/>
 <meta name="twitter:description" content="설치 go get명령어로 아래와 같이 필요한 유틸리티(명령어)를 설치해야 한다
-$ go get github.com/golang/lint/golint  github.com/nsf/gocode github.com/k0kubun/pp github.com/golang/lint/golint github.com/rogpeppe/godef github.com/dougm/goflymake golang.org/x/tools/cmd/godoc 또는 golang.org/x/tools/cmd/...  필요한 패키지 direx ;;디렉토리 트리 보여줌 popwin ;;direx를 다른창으로 열어줌 auto-complete ;;자동완성 flycheck ;;오류체크 flymake-go go-mode go-autocomplete go-eldoc ;;상태줄에 godoc간단히 보여줌  shell-intergration.el
+$ go get github.com/golang/lint/golint github.com/nsf/gocode github.com/k0kubun/pp github.com/golang/lint/golint github.com/rogpeppe/godef github.com/dougm/goflymake golang.org/x/tools/cmd/godoc 또는 golang.org/x/tools/cmd/...  필요한 패키지 direx ;;디렉토리 트리 보여줌 popwin ;;direx를 다른창으로 열어줌 auto-complete ;;자동완성 flycheck ;;오류체크 flymake-go go-mode go-autocomplete go-eldoc ;;상태줄에 godoc간단히 보여줌  shell-intergration.el
 터미널에서 실행하면 이멕스가 작동하는데 바로가기에서는 작동이 안된다
 아래와 같이 쉘환경에 통합하고 나서 실행하니 문제가 없었다
-(when (memq window-system &#39;(mac ns)) (exec-path-from-shell-initialize) (exec-path-from-shell-copy-envs &#39;(&quot;PATH&quot; &quot;GOPATH&quot;)))  go."/>
+(when (memq window-system &#39;(mac ns)) (exec-path-from-shell-initialize) (exec-path-from-shell-copy-envs &#39;(&#34;PATH&#34; &#34;GOPATH&#34;))) go."/>
 
 
 
 <meta itemprop="name" content="Emacs에서 Golang 를 위한 에디팅">
 <meta itemprop="description" content="설치 go get명령어로 아래와 같이 필요한 유틸리티(명령어)를 설치해야 한다
-$ go get github.com/golang/lint/golint  github.com/nsf/gocode github.com/k0kubun/pp github.com/golang/lint/golint github.com/rogpeppe/godef github.com/dougm/goflymake golang.org/x/tools/cmd/godoc 또는 golang.org/x/tools/cmd/...  필요한 패키지 direx ;;디렉토리 트리 보여줌 popwin ;;direx를 다른창으로 열어줌 auto-complete ;;자동완성 flycheck ;;오류체크 flymake-go go-mode go-autocomplete go-eldoc ;;상태줄에 godoc간단히 보여줌  shell-intergration.el
+$ go get github.com/golang/lint/golint github.com/nsf/gocode github.com/k0kubun/pp github.com/golang/lint/golint github.com/rogpeppe/godef github.com/dougm/goflymake golang.org/x/tools/cmd/godoc 또는 golang.org/x/tools/cmd/...  필요한 패키지 direx ;;디렉토리 트리 보여줌 popwin ;;direx를 다른창으로 열어줌 auto-complete ;;자동완성 flycheck ;;오류체크 flymake-go go-mode go-autocomplete go-eldoc ;;상태줄에 godoc간단히 보여줌  shell-intergration.el
 터미널에서 실행하면 이멕스가 작동하는데 바로가기에서는 작동이 안된다
 아래와 같이 쉘환경에 통합하고 나서 실행하니 문제가 없었다
-(when (memq window-system &#39;(mac ns)) (exec-path-from-shell-initialize) (exec-path-from-shell-copy-envs &#39;(&quot;PATH&quot; &quot;GOPATH&quot;)))  go.">
+(when (memq window-system &#39;(mac ns)) (exec-path-from-shell-initialize) (exec-path-from-shell-copy-envs &#39;(&#34;PATH&#34; &#34;GOPATH&#34;))) go.">
 
 
 <meta itemprop="datePublished" content="2017-11-02T00:00:00&#43;00:00" />
@@ -65,6 +66,17 @@ $ go get github.com/golang/lint/golint  github.com/nsf/gocode github.com/k0kubun
 <link rel="stylesheet" href="css/layout.css" />
 <link rel="stylesheet" href="css/color-dark.css" />
 
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-121397292-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 <title>
@@ -106,9 +118,11 @@ $ go get github.com/golang/lint/golint  github.com/nsf/gocode github.com/k0kubun
 <div class="social-links-header">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   
@@ -130,10 +144,7 @@ $ go get github.com/golang/lint/golint  github.com/nsf/gocode github.com/k0kubun
 <h2 id="설치">설치</h2>
 
 <p>go get명령어로 아래와 같이 필요한 유틸리티(명령어)를 설치해야 한다</p>
-
-<pre><code class="language-sh">$ go get github.com/golang/lint/golint
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ go get github.com/golang/lint/golint</code></pre></div>
 <pre><code>github.com/nsf/gocode  
 github.com/k0kubun/pp  
 github.com/golang/lint/golint  
@@ -160,48 +171,40 @@ go-eldoc              ;;상태줄에 godoc간단히 보여줌
 
 <p>터미널에서 실행하면 이멕스가 작동하는데 바로가기에서는 작동이 안된다<br />
 아래와 같이 쉘환경에 통합하고 나서 실행하니 문제가 없었다</p>
-
-<pre><code>(when (memq window-system '(mac ns))
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">(when (memq window-system <span style="color:#f92672">&#39;</span>(mac ns))
   (exec-path-from-shell-initialize)
   (exec-path-from-shell-copy-envs
-   '(&quot;PATH&quot; &quot;GOPATH&quot;)))
-
-</code></pre>
-
+   <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;PATH&#34;</span> <span style="color:#e6db74">&#34;GOPATH&#34;</span>)))</code></pre></div>
 <p><strong>go.el</strong></p>
 
 <p>.bash_profile에 GOPATH가 설정되어야함</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">(add-to-list <span style="color:#e6db74">&#39;load-path</span> (concat (getenv <span style="color:#e6db74">&#34;GOPATH&#34;</span>)  <span style="color:#e6db74">&#34;/src/github.com/golang/lint/misc/emacs&#34;</span>))
+(add-to-list <span style="color:#e6db74">&#39;load-path</span> (concat (getenv <span style="color:#e6db74">&#34;GOPATH&#34;</span>)  <span style="color:#e6db74">&#34;/src/github.com/dougm/goflymake&#34;</span>))
 
-<pre><code>(add-to-list 'load-path (concat (getenv &quot;GOPATH&quot;)  &quot;/src/github.com/golang/lint/misc/emacs&quot;))
-(add-to-list 'load-path (concat (getenv &quot;GOPATH&quot;)  &quot;/src/github.com/dougm/goflymake&quot;))
-
-(require 'direx)
-(require 'go-mode)
-(require 'go-flymake)
-(require 'go-flycheck)
-(require 'go-autocomplete)
-(require 'auto-complete-config)
+(require <span style="color:#e6db74">&#39;direx</span>)
+(require <span style="color:#e6db74">&#39;go-mode</span>)
+(require <span style="color:#e6db74">&#39;go-flymake</span>)
+(require <span style="color:#e6db74">&#39;go-flycheck</span>)
+(require <span style="color:#e6db74">&#39;go-autocomplete</span>)
+(require <span style="color:#e6db74">&#39;auto-complete-config</span>)
 
 
-(global-set-key (kbd &quot;C-x C-j&quot;) 'direx:jump-to-directory-other-window)
+(global-set-key (kbd <span style="color:#e6db74">&#34;C-x C-j&#34;</span>) <span style="color:#e6db74">&#39;direx:jump-to-directory-other-window</span>)
 
 (ac-config-default)
 
-(if (not (string-match &quot;go&quot; compile-command))
-    (set (make-local-variable 'compile-command)
-         &quot;go build -v &amp;&amp; go test -v &amp;&amp; go vet&quot;))
+(if (not (string-match <span style="color:#e6db74">&#34;go&#34;</span> compile-command))
+    (set (make-local-variable <span style="color:#e6db74">&#39;compile-command</span>)
+         <span style="color:#e6db74">&#34;go build -v &amp;&amp; go test -v &amp;&amp; go vet&#34;</span>))
 
-(add-hook 'go-mode-hook (lambda ()
+(add-hook <span style="color:#e6db74">&#39;go-mode-hook</span> (lambda ()
                           (go-eldoc-setup)
-                          (add-hook 'before-save-hook 'gofmt-before-save)
-                          (local-set-key (kbd &quot;C-c C-r&quot;) 'go-remove-unused-imports)
-                          (local-set-key (kbd &quot;C-c C-a&quot;) 'go-import-add)
-                          (local-set-key (kbd &quot;C-c C-g&quot;) 'go-goto-imports)
-                          (local-set-key (kbd &quot;C-c C-f&quot;) 'gofmt)
-                          (local-set-key (kbd &quot;M-.&quot;)     'godef-jump)))
-
-</code></pre>
-
+                          (add-hook <span style="color:#e6db74">&#39;before-save-hook</span> <span style="color:#e6db74">&#39;gofmt-before-save</span>)
+                          (local-set-key (kbd <span style="color:#e6db74">&#34;C-c C-r&#34;</span>) <span style="color:#e6db74">&#39;go-remove-unused-imports</span>)
+                          (local-set-key (kbd <span style="color:#e6db74">&#34;C-c C-a&#34;</span>) <span style="color:#e6db74">&#39;go-import-add</span>)
+                          (local-set-key (kbd <span style="color:#e6db74">&#34;C-c C-g&#34;</span>) <span style="color:#e6db74">&#39;go-goto-imports</span>)
+                          (local-set-key (kbd <span style="color:#e6db74">&#34;C-c C-f&#34;</span>) <span style="color:#e6db74">&#39;gofmt</span>)
+                          (local-set-key (kbd <span style="color:#e6db74">&#34;M-.&#34;</span>)     <span style="color:#e6db74">&#39;godef-jump</span>)))</code></pre></div>
 <h2 id="참고">참고</h2>
 
 <ul>
@@ -265,9 +268,11 @@ go-eldoc              ;;상태줄에 godoc간단히 보여줌
   <div class="social-links-footer">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   

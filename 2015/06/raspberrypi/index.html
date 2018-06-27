@@ -7,7 +7,7 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.30" />
+<meta name="generator" content="Hugo 0.42.1" />
 
 <link rel="canonical" href="http://clonekim.github.io/2015/06/raspberrypi/">
 <base href="http://clonekim.github.io/" />
@@ -40,7 +40,8 @@
 
 
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="RaspberryPi"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="RaspberryPi"/>
 <meta name="twitter:description" content="준비  라즈베리파이2 microSD카드 (8G이상) HDMI케이블 LAN케이블 (카테고리3 이상) AC어댑터( USB단자출력 1A, 최소 700mA)  USB 3.0 : 5V, 900mA USB 2.0 : 5V, 500mA https://ko.wikipedia.org/wiki/USB  microUSB케이블 (A,B타입) 키보드,마우스 (USB연결)  구입  라즈베리파이2 with 고급 투명케이스 C &#43; 방열판 셋트 RPi Camera &copy;  하드웨어 살펴보기 정면
 뒷면
 1) SoC (CPU), 메모리
@@ -67,7 +68,7 @@
 
 <meta itemprop="datePublished" content="2015-06-28T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2015-06-28T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="425">
+<meta itemprop="wordCount" content="423">
 
 
 
@@ -77,6 +78,17 @@
 <link rel="stylesheet" href="css/layout.css" />
 <link rel="stylesheet" href="css/color-dark.css" />
 
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-121397292-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 <title>
@@ -118,9 +130,11 @@
 <div class="social-links-header">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   
@@ -258,53 +272,50 @@ Would you like to enter a view-only password라고 물어보면 그냥 엔터</p
 스크립트를 복사후 실행권한을 준다</p>
 
 <p><em>tightvnc</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">### BEGIN INIT INFO
+</span><span style="color:#75715e"># Provides: tightvnc
+</span><span style="color:#75715e"># Required-Start: $remote_fs $syslog
+</span><span style="color:#75715e"># Required-Stop: $remote_fs $syslog
+</span><span style="color:#75715e"># Default-Start: 2 3 4 5
+</span><span style="color:#75715e"># Default-Stop: 0 1 6
+</span><span style="color:#75715e"># Short-Description: Start VNC Server at boot time
+</span><span style="color:#75715e"># Description: Start VNC Server at boot time.
+</span><span style="color:#75715e">### END INIT INFO
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#! /bin/bash
+</span><span style="color:#75715e"></span><span style="color:#75715e"># /etc/init.d/tightvnc
+</span><span style="color:#75715e"></span>
+USER<span style="color:#f92672">=</span>pi
+HOME<span style="color:#f92672">=</span>/home/pi
 
-<pre><code class="language-bash">### BEGIN INIT INFO
-# Provides: tightvnc
-# Required-Start: $remote_fs $syslog
-# Required-Stop: $remote_fs $syslog
-# Default-Start: 2 3 4 5
-# Default-Stop: 0 1 6
-# Short-Description: Start VNC Server at boot time
-# Description: Start VNC Server at boot time.
-### END INIT INFO
-
-#! /bin/bash
-# /etc/init.d/tightvnc
-
-USER=pi
-HOME=/home/pi
-
-DISPNO=1       # Display No
-WIDTH=1280     # Display geometry widht
-HEIGHT=800     # Display geometry height
-DEPTH=24       # Use color depth
-
-OPTIONS=&quot;:${DISPNO} -geometry ${WIDTH}x${HEIGHT} -depth ${DEPTH}&quot;
+DISPNO<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>       <span style="color:#75715e"># Display No
+</span><span style="color:#75715e"></span>WIDTH<span style="color:#f92672">=</span><span style="color:#ae81ff">1280</span>     <span style="color:#75715e"># Display geometry widht
+</span><span style="color:#75715e"></span>HEIGHT<span style="color:#f92672">=</span><span style="color:#ae81ff">800</span>     <span style="color:#75715e"># Display geometry height
+</span><span style="color:#75715e"></span>DEPTH<span style="color:#f92672">=</span><span style="color:#ae81ff">24</span>       <span style="color:#75715e"># Use color depth
+</span><span style="color:#75715e"></span>
+OPTIONS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;:</span><span style="color:#e6db74">${</span>DISPNO<span style="color:#e6db74">}</span><span style="color:#e6db74"> -geometry </span><span style="color:#e6db74">${</span>WIDTH<span style="color:#e6db74">}</span><span style="color:#e6db74">x</span><span style="color:#e6db74">${</span>HEIGHT<span style="color:#e6db74">}</span><span style="color:#e6db74"> -depth </span><span style="color:#e6db74">${</span>DEPTH<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
 
 export USER HOME
 
-case &quot;$1&quot; in
-    start)
-        echo &quot;Starting TightVNC Server&quot;
-        #Insert your favoured settings for a TightVNC session
-        su $USER -c &quot;/usr/bin/tightvncserver ${OPTIONS}&quot;
+<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> in
+    start<span style="color:#f92672">)</span>
+        echo <span style="color:#e6db74">&#34;Starting TightVNC Server&#34;</span>
+        <span style="color:#75715e">#Insert your favoured settings for a TightVNC session
+</span><span style="color:#75715e"></span>        su $USER -c <span style="color:#e6db74">&#34;/usr/bin/tightvncserver </span><span style="color:#e6db74">${</span>OPTIONS<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
         ;;
 
-    stop)
-        echo &quot;Stopping VNC Server&quot;
-        su $USER -c &quot;/usr/bin/tightvncserver -kill :$DISPNO&quot;
+    stop<span style="color:#f92672">)</span>
+        echo <span style="color:#e6db74">&#34;Stopping VNC Server&#34;</span>
+        su $USER -c <span style="color:#e6db74">&#34;/usr/bin/tightvncserver -kill :</span>$DISPNO<span style="color:#e6db74">&#34;</span>
         ;;
 
-    *)
-        echo &quot;Usage: /etc/init.d/tightvnc {start|stop}&quot;
-        exit 1
+    *<span style="color:#f92672">)</span>
+        echo <span style="color:#e6db74">&#34;Usage: /etc/init.d/tightvnc {start|stop}&#34;</span>
+        exit <span style="color:#ae81ff">1</span>
         ;;
-esac
+<span style="color:#66d9ef">esac</span>
 
-exit 0
-</code></pre>
-
+exit <span style="color:#ae81ff">0</span></code></pre></div>
 <pre><code>sudo cp tightvnc /etc/init.d
 sudo chmod +x /etc/init.d/tightvnc
 </code></pre>
@@ -413,9 +424,11 @@ sudo chmod +x /etc/init.d/tightvnc
   <div class="social-links-footer">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   

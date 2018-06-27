@@ -20,9 +20,9 @@
       <description>Hello-Ring 프로젝트 작성 새로운 프로젝트를 생성한다
 lein new hello-ring  leiningen.clj
 project.clj의 :dependencies에 임베디드 Jetty서버 추가
-[ring/ring-jetty-adapter &amp;quot;1.4.0&amp;quot;]  ring-jetty-adapter는 ring-core, ring-servlet, jetty-server를 의존성으로 가지고 있다
+[ring/ring-jetty-adapter &amp;#34;1.4.0&amp;#34;] ring-jetty-adapter는 ring-core, ring-servlet, jetty-server를 의존성으로 가지고 있다
 ring-core: essential functions for handling parameters, cookies and more ring-devel: functions for developing and debugging Ring applications ring-servlet: construct Java servlets from Ring handlers ring-jetty-adapter: a Ring adapter that uses the Jetty webserver  hello_ring.core
-(ns hello-ring.core (:use [ring.adapter.jetty])) (defn app-handler [request] {:status 200 :header {&amp;quot;Content-Type&amp;quot; &amp;quot;text/html&amp;quot;} :body &amp;quot;Hello Ring&amp;quot;}) (defn -main [] (run-jetty app-handler {:port 8080}))  실행</description>
+(ns hello-ring.core (:use [ring.adapter.jetty])) (defn app-handler [request] {:status 200 :header {&amp;#34;Content-Type&amp;#34; &amp;#34;text/html&amp;#34;} :body &amp;#34;Hello Ring&amp;#34;}) (defn -main [] (run-jetty app-handler {:port 8080})) 실행</description>
     </item>
     
   </channel>

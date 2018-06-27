@@ -20,7 +20,7 @@
       <description>gulp와 함께 의존성설치 npm install -g gulp  react 개발에 필요한 라이브러리와
 번들로 묶기위한 browserify를 설치
 npm install react --save-dev npm install react-dom --save-dev npm install browserify --save-dev npm install gulp --save-dev npm install vinyl-source-stream --save-dev npm install babelify --save-dev npm install babel-preset-react --save-dev  gulpfile
-var gulp = require(&#39;gulp&#39;), browserify = require(&#39;browserify&#39;), babelify = require(&#39;babelify&#39;), source = require(&#39;vinyl-source-stream&#39;); gulp.task(&#39;default&#39;, function() { return browserify(&#39;./source/app.js&#39;) .transform(babelify, {presets: [&#39;react&#39;]}) .bundle() .pipe(source(&#39;app.min.js&#39;)) .</description>
+var gulp = require(&amp;#39;gulp&amp;#39;), browserify = require(&amp;#39;browserify&amp;#39;), babelify = require(&amp;#39;babelify&amp;#39;), source = require(&amp;#39;vinyl-source-stream&amp;#39;); gulp.task(&amp;#39;default&amp;#39;, function() { return browserify(&amp;#39;./source/app.js&amp;#39;) .transform(babelify, {presets: [&amp;#39;react&amp;#39;]}) .bundle() .pipe(source(&amp;#39;app.min.js&amp;#39;)) .</description>
     </item>
     
     <item>
@@ -32,10 +32,10 @@ var gulp = require(&#39;gulp&#39;), browserify = require(&#39;browserify&#39;), 
       <description>Starter Kit으로 시작하기 0.13.x를 기준으로 작성함
 react-0.13.3.zip 다운로드
 hello React!
-&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;script src=&amp;quot;build/react.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;quot;build/JSXTransformer.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt;	&amp;lt;body&amp;gt; &amp;lt;div id=&amp;quot;hello&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script type=&amp;quot;text/jsx&amp;quot;&amp;gt; React.render(&amp;lt;h1&amp;gt;Hello, welcome to React!&amp;lt;/h1&amp;gt;, document.getElementById(&#39;hello&#39;)); &amp;lt;/script&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;  JSX(JavaScript XML) JSX(JavaScript XML)는 XML 과 유사한 문법을 가지는 자바스크립트이다.
+&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;script src=&amp;#34;build/react.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;build/JSXTransformer.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt;	&amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;hello&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script type=&amp;#34;text/jsx&amp;#34;&amp;gt; React.render(&amp;lt;h1&amp;gt;Hello, welcome to React!&amp;lt;/h1&amp;gt;, document.getElementById(&amp;#39;hello&amp;#39;)); &amp;lt;/script&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; JSX(JavaScript XML) JSX(JavaScript XML)는 XML 과 유사한 문법을 가지는 자바스크립트이다.
 JSX 문법을 사용하기 위해서는 반드시 JSXTransformer.js가 필요하다
 상세한 JSX syntaxt과 spec 은 아래를 참조할 것
- http://facebook.github.io/react/docs/jsx-in-depth.html http://facebook.github.io/jsx/  //Html &amp;lt;h1 class=&amp;quot;test&amp;quot;&amp;gt;Hello&amp;lt;/h1&amp;gt; //JSX &amp;lt;h1 className=&amp;quot;test&amp;quot;&amp;gt;Hello&amp;lt;/h1&amp;gt; var text= &amp;quot;Hello React!</description>
+ http://facebook.github.io/react/docs/jsx-in-depth.html http://facebook.github.io/jsx/  //Html &amp;lt;h1 class=&amp;#34;test&amp;#34;&amp;gt;Hello&amp;lt;/h1&amp;gt; //JSX &amp;lt;h1 className=&amp;#34;test&amp;#34;&amp;gt;Hello&amp;lt;/h1&amp;gt; var text= &amp;#34;Hello React!</description>
     </item>
     
   </channel>

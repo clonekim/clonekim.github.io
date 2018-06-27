@@ -7,14 +7,14 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.30" />
+<meta name="generator" content="Hugo 0.42.1" />
 
 <link rel="canonical" href="http://clonekim.github.io/2016/09/clojurescript%EC%97%90%EC%84%9C-jquery%EC%82%AC%EC%9A%A9/">
 <base href="http://clonekim.github.io/" />
 <meta property="og:title" content="clojurescript에서 jquery사용" />
 <meta property="og:description" content=" view.clj
-(defn view-layout [&amp; content] (html [:head [:meta {:http-equiv &quot;Content-type&quot; :content &quot;text/html; charset=utf-8&quot;}] [&quot;title&quot;: &quot;Project-Name&quot;]] [:body content])) (defn view-content [] (view-layout [:h2 &quot;Project-Name&quot;] [:p {:id &quot;clickhere&quot;} &quot;Get yourself a nice alert by clicking here.&quot;] [:script {:src &quot;/js/jquery-1.10.2.min.js&quot;}] [:script {:src &quot;/js/cljs.js&quot;}]))  hello.cljs
-(:require [jayq.core :as jq]) (:use [jayq.core :only [$]]) ;; ;; $(&quot;#btn&quot;).click(function() {alert(&quot;Hi!&quot;); }); ;; (jq/bind ($ &quot;#btn&quot;) :click (fn [] (js/alert &quot;Hi!&quot;)))  lein cljsbuild once lein run  참고  ClojureScriptという選択肢 ClojureScript入門  " />
+(defn view-layout [&amp; content] (html [:head [:meta {:http-equiv &#34;Content-type&#34; :content &#34;text/html; charset=utf-8&#34;}] [&#34;title&#34;: &#34;Project-Name&#34;]] [:body content])) (defn view-content [] (view-layout [:h2 &#34;Project-Name&#34;] [:p {:id &#34;clickhere&#34;} &#34;Get yourself a nice alert by clicking here.&#34;] [:script {:src &#34;/js/jquery-1.10.2.min.js&#34;}] [:script {:src &#34;/js/cljs.js&#34;}])) hello.cljs
+(:require [jayq.core :as jq]) (:use [jayq.core :only [$]]) ;; ;; $(&#34;#btn&#34;).click(function() {alert(&#34;Hi!&#34;); }); ;; (jq/bind ($ &#34;#btn&#34;) :click (fn [] (js/alert &#34;Hi!&#34;))) lein cljsbuild once lein run  참고  ClojureScriptという選択肢 ClojureScript入門  " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://clonekim.github.io/2016/09/clojurescript%EC%97%90%EC%84%9C-jquery%EC%82%AC%EC%9A%A9/" />
 
@@ -34,17 +34,18 @@
 
 
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="clojurescript에서 jquery사용"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="clojurescript에서 jquery사용"/>
 <meta name="twitter:description" content=" view.clj
-(defn view-layout [&amp; content] (html [:head [:meta {:http-equiv &quot;Content-type&quot; :content &quot;text/html; charset=utf-8&quot;}] [&quot;title&quot;: &quot;Project-Name&quot;]] [:body content])) (defn view-content [] (view-layout [:h2 &quot;Project-Name&quot;] [:p {:id &quot;clickhere&quot;} &quot;Get yourself a nice alert by clicking here.&quot;] [:script {:src &quot;/js/jquery-1.10.2.min.js&quot;}] [:script {:src &quot;/js/cljs.js&quot;}]))  hello.cljs
-(:require [jayq.core :as jq]) (:use [jayq.core :only [$]]) ;; ;; $(&quot;#btn&quot;).click(function() {alert(&quot;Hi!&quot;); }); ;; (jq/bind ($ &quot;#btn&quot;) :click (fn [] (js/alert &quot;Hi!&quot;)))  lein cljsbuild once lein run  참고  ClojureScriptという選択肢 ClojureScript入門  "/>
+(defn view-layout [&amp; content] (html [:head [:meta {:http-equiv &#34;Content-type&#34; :content &#34;text/html; charset=utf-8&#34;}] [&#34;title&#34;: &#34;Project-Name&#34;]] [:body content])) (defn view-content [] (view-layout [:h2 &#34;Project-Name&#34;] [:p {:id &#34;clickhere&#34;} &#34;Get yourself a nice alert by clicking here.&#34;] [:script {:src &#34;/js/jquery-1.10.2.min.js&#34;}] [:script {:src &#34;/js/cljs.js&#34;}])) hello.cljs
+(:require [jayq.core :as jq]) (:use [jayq.core :only [$]]) ;; ;; $(&#34;#btn&#34;).click(function() {alert(&#34;Hi!&#34;); }); ;; (jq/bind ($ &#34;#btn&#34;) :click (fn [] (js/alert &#34;Hi!&#34;))) lein cljsbuild once lein run  참고  ClojureScriptという選択肢 ClojureScript入門  "/>
 
 
 
 <meta itemprop="name" content="clojurescript에서 jquery사용">
 <meta itemprop="description" content=" view.clj
-(defn view-layout [&amp; content] (html [:head [:meta {:http-equiv &quot;Content-type&quot; :content &quot;text/html; charset=utf-8&quot;}] [&quot;title&quot;: &quot;Project-Name&quot;]] [:body content])) (defn view-content [] (view-layout [:h2 &quot;Project-Name&quot;] [:p {:id &quot;clickhere&quot;} &quot;Get yourself a nice alert by clicking here.&quot;] [:script {:src &quot;/js/jquery-1.10.2.min.js&quot;}] [:script {:src &quot;/js/cljs.js&quot;}]))  hello.cljs
-(:require [jayq.core :as jq]) (:use [jayq.core :only [$]]) ;; ;; $(&quot;#btn&quot;).click(function() {alert(&quot;Hi!&quot;); }); ;; (jq/bind ($ &quot;#btn&quot;) :click (fn [] (js/alert &quot;Hi!&quot;)))  lein cljsbuild once lein run  참고  ClojureScriptという選択肢 ClojureScript入門  ">
+(defn view-layout [&amp; content] (html [:head [:meta {:http-equiv &#34;Content-type&#34; :content &#34;text/html; charset=utf-8&#34;}] [&#34;title&#34;: &#34;Project-Name&#34;]] [:body content])) (defn view-content [] (view-layout [:h2 &#34;Project-Name&#34;] [:p {:id &#34;clickhere&#34;} &#34;Get yourself a nice alert by clicking here.&#34;] [:script {:src &#34;/js/jquery-1.10.2.min.js&#34;}] [:script {:src &#34;/js/cljs.js&#34;}])) hello.cljs
+(:require [jayq.core :as jq]) (:use [jayq.core :only [$]]) ;; ;; $(&#34;#btn&#34;).click(function() {alert(&#34;Hi!&#34;); }); ;; (jq/bind ($ &#34;#btn&#34;) :click (fn [] (js/alert &#34;Hi!&#34;))) lein cljsbuild once lein run  참고  ClojureScriptという選択肢 ClojureScript入門  ">
 
 
 <meta itemprop="datePublished" content="2016-09-20T00:00:00&#43;00:00" />
@@ -59,6 +60,17 @@
 <link rel="stylesheet" href="css/layout.css" />
 <link rel="stylesheet" href="css/color-dark.css" />
 
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-121397292-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 <title>
@@ -100,9 +112,11 @@
 <div class="social-links-header">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   
@@ -122,35 +136,29 @@
     <div class="content"> 
 
 <p><em>view.clj</em></p>
-
-<pre><code class="language-clojure">(defn view-layout [&amp; content]
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defn </span>view-layout [<span style="color:#f92672">&amp;</span> content]
   (html
-      [:head
-           [:meta {:http-equiv &quot;Content-type&quot;
-                        :content &quot;text/html; charset=utf-8&quot;}]
-           [&quot;title&quot;: &quot;Project-Name&quot;]]
-      [:body content]))
+      [<span style="color:#e6db74">:head</span>
+           [<span style="color:#e6db74">:meta</span> {<span style="color:#e6db74">:http-equiv</span> <span style="color:#e6db74">&#34;Content-type&#34;</span>
+                        <span style="color:#e6db74">:content</span> <span style="color:#e6db74">&#34;text/html; charset=utf-8&#34;</span>}]
+           [<span style="color:#e6db74">&#34;title&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;Project-Name&#34;</span>]]
+      [<span style="color:#e6db74">:body</span> content]))
 
-(defn view-content []
+(<span style="color:#66d9ef">defn </span>view-content []
   (view-layout
-       [:h2 &quot;Project-Name&quot;]
-       [:p {:id &quot;clickhere&quot;} &quot;Get yourself a nice alert by clicking here.&quot;]
-       [:script {:src &quot;/js/jquery-1.10.2.min.js&quot;}]
-       [:script {:src &quot;/js/cljs.js&quot;}]))
-</code></pre>
-
+       [<span style="color:#e6db74">:h2</span> <span style="color:#e6db74">&#34;Project-Name&#34;</span>]
+       [<span style="color:#e6db74">:p</span> {<span style="color:#e6db74">:id</span> <span style="color:#e6db74">&#34;clickhere&#34;</span>} <span style="color:#e6db74">&#34;Get yourself a nice alert by clicking here.&#34;</span>]
+       [<span style="color:#e6db74">:script</span> {<span style="color:#e6db74">:src</span> <span style="color:#e6db74">&#34;/js/jquery-1.10.2.min.js&#34;</span>}]
+       [<span style="color:#e6db74">:script</span> {<span style="color:#e6db74">:src</span> <span style="color:#e6db74">&#34;/js/cljs.js&#34;</span>}]))</code></pre></div>
 <p><em>hello.cljs</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#e6db74">:require</span> [jayq.core <span style="color:#e6db74">:as</span> jq])
+(<span style="color:#e6db74">:use</span> [jayq.core <span style="color:#e6db74">:only</span> [$]])
 
-<pre><code class="language-clojure">(:require [jayq.core :as jq])
-(:use [jayq.core :only [$]])
+<span style="color:#75715e">;;</span>
+<span style="color:#75715e">;; $(&#34;#btn&#34;).click(function() {alert(&#34;Hi!&#34;); });</span>
+<span style="color:#75715e">;;</span>
 
-;;
-;; $(&quot;#btn&quot;).click(function() {alert(&quot;Hi!&quot;); });
-;;
-
-(jq/bind ($ &quot;#btn&quot;) :click (fn [] (js/alert &quot;Hi!&quot;)))
-</code></pre>
-
+(jq/bind ($ <span style="color:#e6db74">&#34;#btn&#34;</span>) <span style="color:#e6db74">:click</span> (<span style="color:#66d9ef">fn </span>[] (js/alert <span style="color:#e6db74">&#34;Hi!&#34;</span>)))</code></pre></div>
 <pre><code>lein cljsbuild once
 lein run
 </code></pre>
@@ -211,9 +219,11 @@ lein run
   <div class="social-links-footer">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   

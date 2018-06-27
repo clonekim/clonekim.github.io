@@ -7,7 +7,7 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.30" />
+<meta name="generator" content="Hugo 0.42.1" />
 
 <link rel="canonical" href="http://clonekim.github.io/2017/07/aws-s3-part-2/">
 <base href="http://clonekim.github.io/" />
@@ -33,7 +33,8 @@
 
 
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="AWS S3 Part 2"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="AWS S3 Part 2"/>
 <meta name="twitter:description" content=" S3 Condition Referer를 참조해서 리소스제한
 { &quot;Version&quot;: &quot;2012-10-17&quot;, &quot;Id&quot;: &quot;Policy1463129932149&quot;, &quot;Statement&quot;: [ { &quot;Sid&quot;: &quot;Stmt1463129927965&quot;, &quot;Effect&quot;: &quot;Allow&quot;, &quot;Principal&quot;: { &quot;AWS&quot;: &quot;*&quot; }, &quot;Action&quot;: &quot;s3:GetObject&quot;, &quot;Resource&quot;: &quot;arn:aws:s3:::your-bucket/*&quot;, &quot;Condition&quot;: { &quot;StringLike&quot;: { &quot;aws:Referer&quot;: [ &quot;http://yoursite/*&quot;, &quot;http://*.yoursite/*&quot; ] } } } ] }  "/>
 
@@ -56,6 +57,17 @@
 <link rel="stylesheet" href="css/layout.css" />
 <link rel="stylesheet" href="css/color-dark.css" />
 
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-121397292-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 <title>
@@ -97,9 +109,11 @@
 <div class="social-links-header">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   
@@ -196,9 +210,11 @@
   <div class="social-links-footer">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   

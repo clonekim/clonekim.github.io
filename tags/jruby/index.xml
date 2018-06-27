@@ -17,9 +17,10 @@
       <pubDate>Tue, 14 Jul 2015 00:00:00 +0000</pubDate>
       
       <guid>http://clonekim.github.io/2015/07/sinatra-%EC%9B%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/</guid>
-      <description>설치 jruby -S gem install sinatra  Hello Ruby require &#39;rubygems&#39; require &#39;sinatra&#39; get &#39;/&#39; do &#39;Hello Jruby&#39; end  라우터 get, post, put, delete를 사용할 수있다
-get &#39;/&#39; do end  요청파라미터 /?name=foo 로 요청 시 아래와 같이
-post &#39;/&#39; do puts params[&#39;name&#39;] end  본문으로 Json를 요청받을 경우 post &#39;/&#39; do payload = JSON.parse(request.body.read) puts payload status 201 end  응답하기 문자열, html, json, 바이너리 등의 모든 컨텐츠로 응답가능하다</description>
+      <description>설치 jruby -S gem install sinatra  Hello Ruby require &amp;#39;rubygems&amp;#39; require &amp;#39;sinatra&amp;#39; get &amp;#39;/&amp;#39; do &amp;#39;Hello Jruby&amp;#39; end 라우터 get, post, put, delete를 사용할 수있다
+get &amp;#39;/&amp;#39; do end 요청파라미터 /?name=foo 로 요청 시 아래와 같이
+post &amp;#39;/&amp;#39; do puts params[&amp;#39;name&amp;#39;] end 본문으로 Json를 요청받을 경우 post &amp;#39;/&amp;#39; do payload = JSON.parse(request.body.read) puts payload status 201 end 응답하기 문자열, html, json, 바이너리 등의 모든 컨텐츠로 응답가능하다
+get &amp;#39;/&amp;#39; do &amp;#39;Hello&amp;#39; end Json으로 응답하기 require &amp;#39;sinatra&amp;#39; require &amp;#39;json&amp;#39; get &amp;#39;/&amp;#39; do content_type :json data = { foo: &amp;#39;bar&amp;#39;} data.</description>
     </item>
     
   </channel>

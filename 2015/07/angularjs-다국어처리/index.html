@@ -7,15 +7,15 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.30" />
+<meta name="generator" content="Hugo 0.42.1" />
 
 <link rel="canonical" href="http://clonekim.github.io/2015/07/angularjs-%EB%8B%A4%EA%B5%AD%EC%96%B4%EC%B2%98%EB%A6%AC/">
 <base href="http://clonekim.github.io/" />
 <meta property="og:title" content="AngularJS 다국어처리" />
 <meta property="og:description" content="IndexController.js
-module.exports = [&#39;$scope&#39;, &#39;$cookies&#39;, &#39;TranslationService&#39;, function($scope, $cookies, TranslationService) { TranslationService.getLanguage($scope, $cookies); $scope.multiLng = function( lang ) { $cookies.put(&quot;lang&quot;, lang); TranslationService.getLanguage($scope, $cookies); } }];  TranslationService.js
+module.exports = [&#39;$scope&#39;, &#39;$cookies&#39;, &#39;TranslationService&#39;, function($scope, $cookies, TranslationService) { TranslationService.getLanguage($scope, $cookies); $scope.multiLng = function( lang ) { $cookies.put(&#34;lang&#34;, lang); TranslationService.getLanguage($scope, $cookies); } }];  TranslationService.js
 module.exports = [&#39;$http&#39;, function($http) { this.getLanguage = function($scope, $cookies, cbk) { var lang = $cookies.get(&#39;lang&#39;) || &#39;ko&#39;; $http({ method: &#39;GET&#39;, url: &#39;/js/locale_&#39; &#43; lang &#43;&#39;.json&#39; }).success(function(response) { $scope.translation = response;	$scope.lang = lang; }); }; }];  locale_zh.js
-{ &quot;online_start&quot;: &quot;Online申请&quot;, ... }  index." />
+{ &#34;online_start&#34;: &#34;Online申请&#34;, ... }  index." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://clonekim.github.io/2015/07/angularjs-%EB%8B%A4%EA%B5%AD%EC%96%B4%EC%B2%98%EB%A6%AC/" />
 
@@ -35,19 +35,20 @@ module.exports = [&#39;$http&#39;, function($http) { this.getLanguage = function
 
 
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="AngularJS 다국어처리"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="AngularJS 다국어처리"/>
 <meta name="twitter:description" content="IndexController.js
-module.exports = [&#39;$scope&#39;, &#39;$cookies&#39;, &#39;TranslationService&#39;, function($scope, $cookies, TranslationService) { TranslationService.getLanguage($scope, $cookies); $scope.multiLng = function( lang ) { $cookies.put(&quot;lang&quot;, lang); TranslationService.getLanguage($scope, $cookies); } }];  TranslationService.js
+module.exports = [&#39;$scope&#39;, &#39;$cookies&#39;, &#39;TranslationService&#39;, function($scope, $cookies, TranslationService) { TranslationService.getLanguage($scope, $cookies); $scope.multiLng = function( lang ) { $cookies.put(&#34;lang&#34;, lang); TranslationService.getLanguage($scope, $cookies); } }];  TranslationService.js
 module.exports = [&#39;$http&#39;, function($http) { this.getLanguage = function($scope, $cookies, cbk) { var lang = $cookies.get(&#39;lang&#39;) || &#39;ko&#39;; $http({ method: &#39;GET&#39;, url: &#39;/js/locale_&#39; &#43; lang &#43;&#39;.json&#39; }).success(function(response) { $scope.translation = response;	$scope.lang = lang; }); }; }];  locale_zh.js
-{ &quot;online_start&quot;: &quot;Online申请&quot;, ... }  index."/>
+{ &#34;online_start&#34;: &#34;Online申请&#34;, ... }  index."/>
 
 
 
 <meta itemprop="name" content="AngularJS 다국어처리">
 <meta itemprop="description" content="IndexController.js
-module.exports = [&#39;$scope&#39;, &#39;$cookies&#39;, &#39;TranslationService&#39;, function($scope, $cookies, TranslationService) { TranslationService.getLanguage($scope, $cookies); $scope.multiLng = function( lang ) { $cookies.put(&quot;lang&quot;, lang); TranslationService.getLanguage($scope, $cookies); } }];  TranslationService.js
+module.exports = [&#39;$scope&#39;, &#39;$cookies&#39;, &#39;TranslationService&#39;, function($scope, $cookies, TranslationService) { TranslationService.getLanguage($scope, $cookies); $scope.multiLng = function( lang ) { $cookies.put(&#34;lang&#34;, lang); TranslationService.getLanguage($scope, $cookies); } }];  TranslationService.js
 module.exports = [&#39;$http&#39;, function($http) { this.getLanguage = function($scope, $cookies, cbk) { var lang = $cookies.get(&#39;lang&#39;) || &#39;ko&#39;; $http({ method: &#39;GET&#39;, url: &#39;/js/locale_&#39; &#43; lang &#43;&#39;.json&#39; }).success(function(response) { $scope.translation = response;	$scope.lang = lang; }); }; }];  locale_zh.js
-{ &quot;online_start&quot;: &quot;Online申请&quot;, ... }  index.">
+{ &#34;online_start&#34;: &#34;Online申请&#34;, ... }  index.">
 
 
 <meta itemprop="datePublished" content="2015-07-02T00:00:00&#43;00:00" />
@@ -62,6 +63,17 @@ module.exports = [&#39;$http&#39;, function($http) { this.getLanguage = function
 <link rel="stylesheet" href="css/layout.css" />
 <link rel="stylesheet" href="css/color-dark.css" />
 
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-121397292-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 <title>
@@ -103,9 +115,11 @@ module.exports = [&#39;$http&#39;, function($http) { this.getLanguage = function
 <div class="social-links-header">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   
@@ -125,64 +139,51 @@ module.exports = [&#39;$http&#39;, function($http) { this.getLanguage = function
     <div class="content"> <p><img src="/img/angular/translation.png" alt="Translation Service" /></p>
 
 <p><em>IndexController.js</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;$scope&#39;</span>, <span style="color:#e6db74">&#39;$cookies&#39;</span>, <span style="color:#e6db74">&#39;TranslationService&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">$scope</span>, <span style="color:#a6e22e">$cookies</span>, <span style="color:#a6e22e">TranslationService</span>) {
+    <span style="color:#a6e22e">TranslationService</span>.<span style="color:#a6e22e">getLanguage</span>(<span style="color:#a6e22e">$scope</span>, <span style="color:#a6e22e">$cookies</span>);
 
-<pre><code class="language-javascript">module.exports = ['$scope', '$cookies', 'TranslationService', function($scope, $cookies, TranslationService) {
-    TranslationService.getLanguage($scope, $cookies);
-
-    $scope.multiLng = function( lang ) {
-        $cookies.put(&quot;lang&quot;, lang);
-        TranslationService.getLanguage($scope, $cookies);
+    <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">multiLng</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>( <span style="color:#a6e22e">lang</span> ) {
+        <span style="color:#a6e22e">$cookies</span>.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">&#34;lang&#34;</span>, <span style="color:#a6e22e">lang</span>);
+        <span style="color:#a6e22e">TranslationService</span>.<span style="color:#a6e22e">getLanguage</span>(<span style="color:#a6e22e">$scope</span>, <span style="color:#a6e22e">$cookies</span>);
     }
 }];
-</code></pre>
-
+</code></pre></div>
 <p><em>TranslationService.js</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;$http&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">$http</span>) {
 
-<pre><code class="language-javascript">module.exports = ['$http', function($http) {
+	<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">getLanguage</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">$scope</span>, <span style="color:#a6e22e">$cookies</span>, <span style="color:#a6e22e">cbk</span>) {
 
-	this.getLanguage = function($scope, $cookies, cbk) {
-
-		var lang = $cookies.get('lang') || 'ko';
+		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">lang</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$cookies</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;lang&#39;</span>) <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;ko&#39;</span>;
 		
-		$http({
-			method: 'GET',
-			url: '/js/locale_' + lang +'.json'
-		}).success(function(response) {
-		    $scope.translation = response;		    
-		    $scope.lang = lang;                    
+		<span style="color:#a6e22e">$http</span>({
+			<span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;GET&#39;</span>,
+			<span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;/js/locale_&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">lang</span> <span style="color:#f92672">+</span><span style="color:#e6db74">&#39;.json&#39;</span>
+		}).<span style="color:#a6e22e">success</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">response</span>) {
+		    <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">translation</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">response</span>;		    
+		    <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">lang</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">lang</span>;                    
 		});
 	};
 }];
-</code></pre>
-
+</code></pre></div>
 <p><em>locale_zh.js</em></p>
-
-<pre><code class="language-json">{
-  &quot;online_start&quot;: &quot;Online申请&quot;,
-  ...
-}  
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;online_start&#34;</span>: <span style="color:#e6db74">&#34;Online申请&#34;</span>,
+  <span style="color:#960050;background-color:#1e0010">...</span>
+}  </code></pre></div>
 <p><em>index.html</em></p>
-
-<pre><code class="language-html">&lt;div class=&quot;text-center&quot; style=&quot;background-color:#f15c34;&quot;&gt;
-    &lt;a class=&quot;btn btn-default&quot; ng-click=&quot;multiLng('ko')&quot;&gt;한국어&lt;/a&gt;
-    &lt;a class=&quot;btn btn-default&quot; ng-click=&quot;multiLng('us')&quot;&gt;English&lt;/a&gt;
-    &lt;a class=&quot;btn btn-default&quot; ng-click=&quot;multiLng('zh')&quot;&gt;中國語&lt;/a&gt;
-&lt;/div&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text-center&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;background-color:#f15c34;&#34;</span>&gt;
+    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-default&#34;</span> <span style="color:#a6e22e">ng-click</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;multiLng(&#39;ko&#39;)&#34;</span>&gt;한국어&lt;/<span style="color:#f92672">a</span>&gt;
+    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-default&#34;</span> <span style="color:#a6e22e">ng-click</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;multiLng(&#39;us&#39;)&#34;</span>&gt;English&lt;/<span style="color:#f92672">a</span>&gt;
+    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-default&#34;</span> <span style="color:#a6e22e">ng-click</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;multiLng(&#39;zh&#39;)&#34;</span>&gt;中國語&lt;/<span style="color:#f92672">a</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;</code></pre></div>
 <p><img src="/img/angular/angular-i18n-header.png" alt="header" /></p>
-
-<pre><code class="language-html">  &lt;div class=&quot;container&quot;&gt;
-    &lt;div class=&quot;row&quot;&gt;
-      &lt;div class=&quot;col-lg-12&quot;&gt;
-      	&lt;div&gt;
-         &lt;a class=&quot;btn r-btn btn-primary btn-xl&quot; href=&quot;#menu&quot;&gt;{{translation.online_start}}&lt;/a&gt;
-       &lt;/div&gt;
- ...
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;
+      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-lg-12&#34;</span>&gt;
+      	&lt;<span style="color:#f92672">div</span>&gt;
+         &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn r-btn btn-primary btn-xl&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#menu&#34;</span>&gt;{{translation.online_start}}&lt;/<span style="color:#f92672">a</span>&gt;
+       &lt;/<span style="color:#f92672">div</span>&gt;
+ ...</code></pre></div>
 <p><em>요청 파라미터가 ko 일때</em></p>
 
 <p><img src="/img/angular/angular-i18n-btn-ko.png" alt="button" /></p>
@@ -240,9 +241,11 @@ module.exports = [&#39;$http&#39;, function($http) { this.getLanguage = function
   <div class="social-links-footer">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   

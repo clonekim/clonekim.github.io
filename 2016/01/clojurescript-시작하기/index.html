@@ -7,15 +7,16 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.30" />
+<meta name="generator" content="Hugo 0.42.1" />
 
 <link rel="canonical" href="http://clonekim.github.io/2016/01/clojurescript-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/">
 <base href="http://clonekim.github.io/" />
 <meta property="og:title" content="ClojureScript 시작하기" />
 <meta property="og:description" content="프로젝트 설정 leiningen
-[org.clojure/clojurescript &quot;1.7.228&quot;]  plugin
-[lein-cljsbuild &quot;1.1.2&quot;]  project.clj
-(defproject hello-ring &quot;0.1.0-SNAPSHOT&quot; :description &quot;FIXME: write description&quot; :url &quot;http://example.com/FIXME&quot; :license {:name &quot;Eclipse Public License&quot; :url &quot;http://www.eclipse.org/legal/epl-v10.html&quot;} :dependencies [[org.clojure/clojure &quot;1.7.0&quot;] [org.clojure/clojurescript &quot;1.7.228&quot;] [ring/ring-core &quot;1.4.0&quot;] [ring/ring-defaults &quot;0.1.5&quot;] [ring/ring-json &quot;0.4.0&quot;] [ring/ring-jetty-adapter &quot;1.4.0&quot;] [compojure &quot;1.4.0&quot;]] :plugins [[lein-cljsbuild &quot;1.1.2&quot;] [lein-ring &quot;0.9.7&quot;]] :cljsbuild {:builds {:main {:source-paths [&quot;src-cljs&quot;] :compiler {:output-to &quot;resources/public/js/app.js&quot; :output-dir &quot;resources/public/out&quot; :optimizations :simple :pretty-print true}}}} :ring {:handler hello-ring.core/app} :main hello-ring.core)  cljs소스를 src-cljs라는 경로로 선택했다" />
+[org.clojure/clojurescript &#34;1.7.228&#34;] plugin
+[lein-cljsbuild &#34;1.1.2&#34;] project.clj
+(defproject hello-ring &#34;0.1.0-SNAPSHOT&#34; :description &#34;FIXME: write description&#34; :url &#34;http://example.com/FIXME&#34; :license {:name &#34;Eclipse Public License&#34; :url &#34;http://www.eclipse.org/legal/epl-v10.html&#34;} :dependencies [[org.clojure/clojure &#34;1.7.0&#34;] [org.clojure/clojurescript &#34;1.7.228&#34;] [ring/ring-core &#34;1.4.0&#34;] [ring/ring-defaults &#34;0.1.5&#34;] [ring/ring-json &#34;0.4.0&#34;] [ring/ring-jetty-adapter &#34;1.4.0&#34;] [compojure &#34;1.4.0&#34;]] :plugins [[lein-cljsbuild &#34;1.1.2&#34;] [lein-ring &#34;0.9.7&#34;]] :cljsbuild {:builds {:main {:source-paths [&#34;src-cljs&#34;] :compiler {:output-to &#34;resources/public/js/app.js&#34; :output-dir &#34;resources/public/out&#34; :optimizations :simple :pretty-print true}}}} :ring {:handler hello-ring.core/app} :main hello-ring.core) cljs소스를 src-cljs라는 경로로 선택했다
+디렉토리를 만들어야한다" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://clonekim.github.io/2016/01/clojurescript-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/" />
 
@@ -35,19 +36,22 @@
 
 
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="ClojureScript 시작하기"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ClojureScript 시작하기"/>
 <meta name="twitter:description" content="프로젝트 설정 leiningen
-[org.clojure/clojurescript &quot;1.7.228&quot;]  plugin
-[lein-cljsbuild &quot;1.1.2&quot;]  project.clj
-(defproject hello-ring &quot;0.1.0-SNAPSHOT&quot; :description &quot;FIXME: write description&quot; :url &quot;http://example.com/FIXME&quot; :license {:name &quot;Eclipse Public License&quot; :url &quot;http://www.eclipse.org/legal/epl-v10.html&quot;} :dependencies [[org.clojure/clojure &quot;1.7.0&quot;] [org.clojure/clojurescript &quot;1.7.228&quot;] [ring/ring-core &quot;1.4.0&quot;] [ring/ring-defaults &quot;0.1.5&quot;] [ring/ring-json &quot;0.4.0&quot;] [ring/ring-jetty-adapter &quot;1.4.0&quot;] [compojure &quot;1.4.0&quot;]] :plugins [[lein-cljsbuild &quot;1.1.2&quot;] [lein-ring &quot;0.9.7&quot;]] :cljsbuild {:builds {:main {:source-paths [&quot;src-cljs&quot;] :compiler {:output-to &quot;resources/public/js/app.js&quot; :output-dir &quot;resources/public/out&quot; :optimizations :simple :pretty-print true}}}} :ring {:handler hello-ring.core/app} :main hello-ring.core)  cljs소스를 src-cljs라는 경로로 선택했다"/>
+[org.clojure/clojurescript &#34;1.7.228&#34;] plugin
+[lein-cljsbuild &#34;1.1.2&#34;] project.clj
+(defproject hello-ring &#34;0.1.0-SNAPSHOT&#34; :description &#34;FIXME: write description&#34; :url &#34;http://example.com/FIXME&#34; :license {:name &#34;Eclipse Public License&#34; :url &#34;http://www.eclipse.org/legal/epl-v10.html&#34;} :dependencies [[org.clojure/clojure &#34;1.7.0&#34;] [org.clojure/clojurescript &#34;1.7.228&#34;] [ring/ring-core &#34;1.4.0&#34;] [ring/ring-defaults &#34;0.1.5&#34;] [ring/ring-json &#34;0.4.0&#34;] [ring/ring-jetty-adapter &#34;1.4.0&#34;] [compojure &#34;1.4.0&#34;]] :plugins [[lein-cljsbuild &#34;1.1.2&#34;] [lein-ring &#34;0.9.7&#34;]] :cljsbuild {:builds {:main {:source-paths [&#34;src-cljs&#34;] :compiler {:output-to &#34;resources/public/js/app.js&#34; :output-dir &#34;resources/public/out&#34; :optimizations :simple :pretty-print true}}}} :ring {:handler hello-ring.core/app} :main hello-ring.core) cljs소스를 src-cljs라는 경로로 선택했다
+디렉토리를 만들어야한다"/>
 
 
 
 <meta itemprop="name" content="ClojureScript 시작하기">
 <meta itemprop="description" content="프로젝트 설정 leiningen
-[org.clojure/clojurescript &quot;1.7.228&quot;]  plugin
-[lein-cljsbuild &quot;1.1.2&quot;]  project.clj
-(defproject hello-ring &quot;0.1.0-SNAPSHOT&quot; :description &quot;FIXME: write description&quot; :url &quot;http://example.com/FIXME&quot; :license {:name &quot;Eclipse Public License&quot; :url &quot;http://www.eclipse.org/legal/epl-v10.html&quot;} :dependencies [[org.clojure/clojure &quot;1.7.0&quot;] [org.clojure/clojurescript &quot;1.7.228&quot;] [ring/ring-core &quot;1.4.0&quot;] [ring/ring-defaults &quot;0.1.5&quot;] [ring/ring-json &quot;0.4.0&quot;] [ring/ring-jetty-adapter &quot;1.4.0&quot;] [compojure &quot;1.4.0&quot;]] :plugins [[lein-cljsbuild &quot;1.1.2&quot;] [lein-ring &quot;0.9.7&quot;]] :cljsbuild {:builds {:main {:source-paths [&quot;src-cljs&quot;] :compiler {:output-to &quot;resources/public/js/app.js&quot; :output-dir &quot;resources/public/out&quot; :optimizations :simple :pretty-print true}}}} :ring {:handler hello-ring.core/app} :main hello-ring.core)  cljs소스를 src-cljs라는 경로로 선택했다">
+[org.clojure/clojurescript &#34;1.7.228&#34;] plugin
+[lein-cljsbuild &#34;1.1.2&#34;] project.clj
+(defproject hello-ring &#34;0.1.0-SNAPSHOT&#34; :description &#34;FIXME: write description&#34; :url &#34;http://example.com/FIXME&#34; :license {:name &#34;Eclipse Public License&#34; :url &#34;http://www.eclipse.org/legal/epl-v10.html&#34;} :dependencies [[org.clojure/clojure &#34;1.7.0&#34;] [org.clojure/clojurescript &#34;1.7.228&#34;] [ring/ring-core &#34;1.4.0&#34;] [ring/ring-defaults &#34;0.1.5&#34;] [ring/ring-json &#34;0.4.0&#34;] [ring/ring-jetty-adapter &#34;1.4.0&#34;] [compojure &#34;1.4.0&#34;]] :plugins [[lein-cljsbuild &#34;1.1.2&#34;] [lein-ring &#34;0.9.7&#34;]] :cljsbuild {:builds {:main {:source-paths [&#34;src-cljs&#34;] :compiler {:output-to &#34;resources/public/js/app.js&#34; :output-dir &#34;resources/public/out&#34; :optimizations :simple :pretty-print true}}}} :ring {:handler hello-ring.core/app} :main hello-ring.core) cljs소스를 src-cljs라는 경로로 선택했다
+디렉토리를 만들어야한다">
 
 
 <meta itemprop="datePublished" content="2016-01-18T00:00:00&#43;00:00" />
@@ -62,6 +66,17 @@
 <link rel="stylesheet" href="css/layout.css" />
 <link rel="stylesheet" href="css/color-dark.css" />
 
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-121397292-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 <title>
@@ -103,9 +118,11 @@
 <div class="social-links-header">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   
@@ -127,40 +144,31 @@
 <h2 id="프로젝트-설정">프로젝트 설정</h2>
 
 <p><em>leiningen</em></p>
-
-<pre><code class="language-clojure">[org.clojure/clojurescript &quot;1.7.228&quot;]
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">[org.clojure/clojurescript <span style="color:#e6db74">&#34;1.7.228&#34;</span>]</code></pre></div>
 <p><em>plugin</em></p>
-
-<pre><code class="language-clojure">[lein-cljsbuild &quot;1.1.2&quot;]
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">[lein-cljsbuild <span style="color:#e6db74">&#34;1.1.2&#34;</span>]</code></pre></div>
 <p><em>project.clj</em></p>
-
-<pre><code class="language-clojure">(defproject hello-ring &quot;0.1.0-SNAPSHOT&quot;
-  :description &quot;FIXME: write description&quot;
-  :url &quot;http://example.com/FIXME&quot;
-  :license {:name &quot;Eclipse Public License&quot;
-            :url &quot;http://www.eclipse.org/legal/epl-v10.html&quot;}
-  :dependencies [[org.clojure/clojure &quot;1.7.0&quot;]
-                 [org.clojure/clojurescript &quot;1.7.228&quot;]
-                 [ring/ring-core &quot;1.4.0&quot;]
-                 [ring/ring-defaults &quot;0.1.5&quot;]
-                 [ring/ring-json &quot;0.4.0&quot;]
-                 [ring/ring-jetty-adapter &quot;1.4.0&quot;]
-                 [compojure &quot;1.4.0&quot;]]
-  :plugins [[lein-cljsbuild &quot;1.1.2&quot;]
-            [lein-ring &quot;0.9.7&quot;]]
-  :cljsbuild {:builds {:main {:source-paths [&quot;src-cljs&quot;]
-                              :compiler {:output-to &quot;resources/public/js/app.js&quot;
-                              	        :output-dir &quot;resources/public/out&quot;
-                                        :optimizations :simple
-                                        :pretty-print true}}}}
-  :ring {:handler hello-ring.core/app}
-  :main hello-ring.core)
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defproject </span>hello-ring <span style="color:#e6db74">&#34;0.1.0-SNAPSHOT&#34;</span>
+  <span style="color:#e6db74">:description</span> <span style="color:#e6db74">&#34;FIXME: write description&#34;</span>
+  <span style="color:#e6db74">:url</span> <span style="color:#e6db74">&#34;http://example.com/FIXME&#34;</span>
+  <span style="color:#e6db74">:license</span> {<span style="color:#e6db74">:name</span> <span style="color:#e6db74">&#34;Eclipse Public License&#34;</span>
+            <span style="color:#e6db74">:url</span> <span style="color:#e6db74">&#34;http://www.eclipse.org/legal/epl-v10.html&#34;</span>}
+  <span style="color:#e6db74">:dependencies</span> [[org.clojure/clojure <span style="color:#e6db74">&#34;1.7.0&#34;</span>]
+                 [org.clojure/clojurescript <span style="color:#e6db74">&#34;1.7.228&#34;</span>]
+                 [ring/ring-core <span style="color:#e6db74">&#34;1.4.0&#34;</span>]
+                 [ring/ring-defaults <span style="color:#e6db74">&#34;0.1.5&#34;</span>]
+                 [ring/ring-json <span style="color:#e6db74">&#34;0.4.0&#34;</span>]
+                 [ring/ring-jetty-adapter <span style="color:#e6db74">&#34;1.4.0&#34;</span>]
+                 [compojure <span style="color:#e6db74">&#34;1.4.0&#34;</span>]]
+  <span style="color:#e6db74">:plugins</span> [[lein-cljsbuild <span style="color:#e6db74">&#34;1.1.2&#34;</span>]
+            [lein-ring <span style="color:#e6db74">&#34;0.9.7&#34;</span>]]
+  <span style="color:#e6db74">:cljsbuild</span> {<span style="color:#e6db74">:builds</span> {<span style="color:#e6db74">:main</span> {<span style="color:#e6db74">:source-paths</span> [<span style="color:#e6db74">&#34;src-cljs&#34;</span>]
+                              <span style="color:#e6db74">:compiler</span> {<span style="color:#e6db74">:output-to</span> <span style="color:#e6db74">&#34;resources/public/js/app.js&#34;</span>
+                              	        <span style="color:#e6db74">:output-dir</span> <span style="color:#e6db74">&#34;resources/public/out&#34;</span>
+                                        <span style="color:#e6db74">:optimizations</span> <span style="color:#e6db74">:simple</span>
+                                        <span style="color:#e6db74">:pretty-print</span> true}}}}
+  <span style="color:#e6db74">:ring</span> {<span style="color:#e6db74">:handler</span> hello-ring.core/app}
+  <span style="color:#e6db74">:main</span> hello-ring.core)</code></pre></div>
 <p>cljs소스를 src-cljs라는 경로로 선택했다<br />
 디렉토리를 만들어야한다</p>
 
@@ -173,10 +181,7 @@
 
 <p>:none으로 설정 시 <a href="https://developers.google.com/closure/library/">Google Closure Library</a> 스크립트가 포함되지 않는다.<br />
 의존성까지 컴파일 결과에 포함하려면 :none이외의 설정으로 할것</p>
-
-<pre><code class="language-clojure">:optimizations :none
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure"><span style="color:#e6db74">:optimizations</span> <span style="color:#e6db74">:none</span></code></pre></div>
 <p><img src="/img/clojure/goog-not-found.png" alt="Goog not found" /></p>
 
 <h2 id="클라이언트-측">클라이언트 측</h2>
@@ -184,60 +189,53 @@
 <p><em>src-cljs/hello/app.cljs</em></p>
 
 <p>반드시 네임스페이스를 가져야한다</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">ns </span>hello.app)
 
-<pre><code class="language-clojure">(ns hello.app)
-
-(defn set-html! [el content]
+(<span style="color:#66d9ef">defn </span>set-html! [el content]
   (set! (.-innerHTML el) content))
 
-(defn main []
-  (let [content &quot;Hello world from ClojureScript&quot;
-        element (js/document.getElementById &quot;main&quot;)]
+(<span style="color:#66d9ef">defn </span>main []
+  (<span style="color:#66d9ef">let </span>[content <span style="color:#e6db74">&#34;Hello world from ClojureScript&#34;</span>
+        element (js/document.getElementById <span style="color:#e6db74">&#34;main&#34;</span>)]
     (set-html! element content)))
 
-(main)
-</code></pre>
-
+(main)</code></pre></div>
 <h2 id="서버측">서버측</h2>
 
 <p><em>hello_ring/core.clj</em></p>
-
-<pre><code class="language-clojure">(ns hello-ring.core
-  (:use [ring.util.response])
-  (:require [compojure.core :refer :all]
-            [compojure.route :as route]
-            [ring.middleware.defaults :refer [wrap-defaults site-defaults]]
-            [ring.middleware.json :refer [wrap-json-response
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">ns </span>hello-ring.core
+  (<span style="color:#e6db74">:use</span> [ring.util.response])
+  (<span style="color:#e6db74">:require</span> [compojure.core <span style="color:#e6db74">:refer</span> <span style="color:#e6db74">:all</span>]
+            [compojure.route <span style="color:#e6db74">:as</span> route]
+            [ring.middleware.defaults <span style="color:#e6db74">:refer</span> [wrap-defaults site-defaults]]
+            [ring.middleware.json <span style="color:#e6db74">:refer</span> [wrap-json-response
                                           wrap-json-body
                                           wrap-json-params]]
-            [hiccup.page :as page]
-            [ring.adapter.jetty :refer [run-jetty]])
+            [hiccup.page <span style="color:#e6db74">:as</span> page]
+            [ring.adapter.jetty <span style="color:#e6db74">:refer</span> [run-jetty]])
 
-  (:gen-class))
+  (<span style="color:#e6db74">:gen-class</span>))
 
 (defroutes app-routes
-  (GET &quot;/&quot; []
+  (GET <span style="color:#e6db74">&#34;/&#34;</span> []
        (page/html5 
-        [:head
-         [:meta {:http-equiv &quot;X-UA-Compatible&quot; :content &quot;IE=edge&quot;}]]
-        [:body
-         [:div {:id &quot;main&quot;}
-          [:button {:type &quot;button&quot; :id &quot;button01&quot;} &quot;Click Here!&quot;]]
-         (page/include-js &quot;js/app.js&quot;)]))
-  (route/not-found &quot;&lt;h1&gt;Page not found&lt;/h1&gt;&quot;))
+        [<span style="color:#e6db74">:head</span>
+         [<span style="color:#e6db74">:meta</span> {<span style="color:#e6db74">:http-equiv</span> <span style="color:#e6db74">&#34;X-UA-Compatible&#34;</span> <span style="color:#e6db74">:content</span> <span style="color:#e6db74">&#34;IE=edge&#34;</span>}]]
+        [<span style="color:#e6db74">:body</span>
+         [<span style="color:#e6db74">:div</span> {<span style="color:#e6db74">:id</span> <span style="color:#e6db74">&#34;main&#34;</span>}
+          [<span style="color:#e6db74">:button</span> {<span style="color:#e6db74">:type</span> <span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#e6db74">:id</span> <span style="color:#e6db74">&#34;button01&#34;</span>} <span style="color:#e6db74">&#34;Click Here!&#34;</span>]]
+         (page/include-js <span style="color:#e6db74">&#34;js/app.js&#34;</span>)]))
+  (route/not-found <span style="color:#e6db74">&#34;&lt;h1&gt;Page not found&lt;/h1&gt;&#34;</span>))
 
-(def app
+(<span style="color:#66d9ef">def </span>app
   (-&gt; app-routes
       wrap-json-body
       wrap-json-params
       wrap-json-response
-      (wrap-defaults (assoc-in site-defaults [:security :anti-forgery] false))))
+      (wrap-defaults (assoc-in site-defaults [<span style="color:#e6db74">:security</span> <span style="color:#e6db74">:anti-forgery</span>] false))))
 
-(defn -main []
-  (run-jetty #'app {:port 8080}))
-
-</code></pre>
-
+(<span style="color:#66d9ef">defn </span>-main []
+  (run-jetty <span style="color:#f92672">#</span><span style="color:#e6db74">&#39;app</span> {<span style="color:#e6db74">:port</span> <span style="color:#ae81ff">8080</span>}))</code></pre></div>
 <h2 id="서버시작">서버시작</h2>
 
 <pre><code>lein ring server
@@ -319,9 +317,11 @@ src-cljs/app.cljs를 자바스크립트로 컴파일한다<br />
   <div class="social-links-footer">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   

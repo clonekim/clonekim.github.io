@@ -7,7 +7,7 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.30" />
+<meta name="generator" content="Hugo 0.42.1" />
 
 <link rel="canonical" href="http://clonekim.github.io/2015/07/node.js%EB%A1%9C-captcha/">
 <base href="http://clonekim.github.io/" />
@@ -15,7 +15,7 @@
 <meta property="og:description" content="canvas를 이용한 캡챠(captcha)를 생성하려고 한다.
 사용하려는 패키지는 canvas-captcha이다
 의존성 설치 apt-get install libpango1.0-dev apt-get install libjpeg-dev apt-get install libgif-dev  소스작성 captcha.js
-var captcha = require(&#39;canvas-captcha&#39;) ,captchaOptions = { charPool: (&#39;abcdefghijklmnopqrstuvwxyz&#39; &#43; &#39;abcdefghijklmnopqrstuvwxyz&#39;.toUpperCase() &#43; &#39;1234567890&#39;).split(&#39;&#39;) //char pool Array ,size: { width: 120 ,height: 52 } //image size ,textPos: { left: 15 ,top: 36 } //text drawing start position ,rotate: .01 //text ratate ,charLength: 5 //how many chars //,font: &#39;26px&#39; //font size ,strokeStyle: &#39;#0088cc&#39; //style ,bgColor: &#39;#eeeeee&#39; //bg color ,confusion: true //draw another group background text to mangle the text //,cFont: &#39;30px&#39; //bg text style ,cStrokeStyle: &#39;#adc&#39; //bg text color ,cRotate: -." />
+var captcha = require(&#39;canvas-captcha&#39;) ,captchaOptions = { charPool: (&#39;abcdefghijklmnopqrstuvwxyz&#39; &#43; &#39;abcdefghijklmnopqrstuvwxyz&#39;.toUpperCase() &#43; &#39;1234567890&#39;).split(&#39;&#39;) //char pool Array  ,size: { width: 120 ,height: 52 } //image size  ,textPos: { left: 15 ,top: 36 } //text drawing start position  ,rotate: .01 //text ratate  ,charLength: 5 //how many chars  //,font: &#39;26px&#39; //font size  ,strokeStyle: &#39;#0088cc&#39; //style  ,bgColor: &#39;#eeeeee&#39; //bg color  ,confusion: true //draw another group background text to mangle the text  //,cFont: &#39;30px&#39; //bg text style  ,cStrokeStyle: &#39;#adc&#39; //bg text color  ,cRotate: -." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://clonekim.github.io/2015/07/node.js%EB%A1%9C-captcha/" />
 
@@ -35,11 +35,12 @@ var captcha = require(&#39;canvas-captcha&#39;) ,captchaOptions = { charPool: (&
 
 
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Node.js로 Captcha"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Node.js로 Captcha"/>
 <meta name="twitter:description" content="canvas를 이용한 캡챠(captcha)를 생성하려고 한다.
 사용하려는 패키지는 canvas-captcha이다
 의존성 설치 apt-get install libpango1.0-dev apt-get install libjpeg-dev apt-get install libgif-dev  소스작성 captcha.js
-var captcha = require(&#39;canvas-captcha&#39;) ,captchaOptions = { charPool: (&#39;abcdefghijklmnopqrstuvwxyz&#39; &#43; &#39;abcdefghijklmnopqrstuvwxyz&#39;.toUpperCase() &#43; &#39;1234567890&#39;).split(&#39;&#39;) //char pool Array ,size: { width: 120 ,height: 52 } //image size ,textPos: { left: 15 ,top: 36 } //text drawing start position ,rotate: .01 //text ratate ,charLength: 5 //how many chars //,font: &#39;26px&#39; //font size ,strokeStyle: &#39;#0088cc&#39; //style ,bgColor: &#39;#eeeeee&#39; //bg color ,confusion: true //draw another group background text to mangle the text //,cFont: &#39;30px&#39; //bg text style ,cStrokeStyle: &#39;#adc&#39; //bg text color ,cRotate: -."/>
+var captcha = require(&#39;canvas-captcha&#39;) ,captchaOptions = { charPool: (&#39;abcdefghijklmnopqrstuvwxyz&#39; &#43; &#39;abcdefghijklmnopqrstuvwxyz&#39;.toUpperCase() &#43; &#39;1234567890&#39;).split(&#39;&#39;) //char pool Array  ,size: { width: 120 ,height: 52 } //image size  ,textPos: { left: 15 ,top: 36 } //text drawing start position  ,rotate: .01 //text ratate  ,charLength: 5 //how many chars  //,font: &#39;26px&#39; //font size  ,strokeStyle: &#39;#0088cc&#39; //style  ,bgColor: &#39;#eeeeee&#39; //bg color  ,confusion: true //draw another group background text to mangle the text  //,cFont: &#39;30px&#39; //bg text style  ,cStrokeStyle: &#39;#adc&#39; //bg text color  ,cRotate: -."/>
 
 
 
@@ -47,7 +48,7 @@ var captcha = require(&#39;canvas-captcha&#39;) ,captchaOptions = { charPool: (&
 <meta itemprop="description" content="canvas를 이용한 캡챠(captcha)를 생성하려고 한다.
 사용하려는 패키지는 canvas-captcha이다
 의존성 설치 apt-get install libpango1.0-dev apt-get install libjpeg-dev apt-get install libgif-dev  소스작성 captcha.js
-var captcha = require(&#39;canvas-captcha&#39;) ,captchaOptions = { charPool: (&#39;abcdefghijklmnopqrstuvwxyz&#39; &#43; &#39;abcdefghijklmnopqrstuvwxyz&#39;.toUpperCase() &#43; &#39;1234567890&#39;).split(&#39;&#39;) //char pool Array ,size: { width: 120 ,height: 52 } //image size ,textPos: { left: 15 ,top: 36 } //text drawing start position ,rotate: .01 //text ratate ,charLength: 5 //how many chars //,font: &#39;26px&#39; //font size ,strokeStyle: &#39;#0088cc&#39; //style ,bgColor: &#39;#eeeeee&#39; //bg color ,confusion: true //draw another group background text to mangle the text //,cFont: &#39;30px&#39; //bg text style ,cStrokeStyle: &#39;#adc&#39; //bg text color ,cRotate: -.">
+var captcha = require(&#39;canvas-captcha&#39;) ,captchaOptions = { charPool: (&#39;abcdefghijklmnopqrstuvwxyz&#39; &#43; &#39;abcdefghijklmnopqrstuvwxyz&#39;.toUpperCase() &#43; &#39;1234567890&#39;).split(&#39;&#39;) //char pool Array  ,size: { width: 120 ,height: 52 } //image size  ,textPos: { left: 15 ,top: 36 } //text drawing start position  ,rotate: .01 //text ratate  ,charLength: 5 //how many chars  //,font: &#39;26px&#39; //font size  ,strokeStyle: &#39;#0088cc&#39; //style  ,bgColor: &#39;#eeeeee&#39; //bg color  ,confusion: true //draw another group background text to mangle the text  //,cFont: &#39;30px&#39; //bg text style  ,cStrokeStyle: &#39;#adc&#39; //bg text color  ,cRotate: -.">
 
 
 <meta itemprop="datePublished" content="2015-07-14T00:00:00&#43;00:00" />
@@ -62,6 +63,17 @@ var captcha = require(&#39;canvas-captcha&#39;) ,captchaOptions = { charPool: (&
 <link rel="stylesheet" href="css/layout.css" />
 <link rel="stylesheet" href="css/color-dark.css" />
 
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-121397292-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 <title>
@@ -103,9 +115,11 @@ var captcha = require(&#39;canvas-captcha&#39;) ,captchaOptions = { charPool: (&
 <div class="social-links-header">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   
@@ -137,43 +151,41 @@ apt-get install libgif-dev
 <h2 id="소스작성">소스작성</h2>
 
 <p><strong>captcha.js</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">captcha</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;canvas-captcha&#39;</span>)
+    ,<span style="color:#a6e22e">captchaOptions</span> <span style="color:#f92672">=</span> {
+        <span style="color:#a6e22e">charPool</span><span style="color:#f92672">:</span> (<span style="color:#e6db74">&#39;abcdefghijklmnopqrstuvwxyz&#39;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;abcdefghijklmnopqrstuvwxyz&#39;</span>.<span style="color:#a6e22e">toUpperCase</span>() <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;1234567890&#39;</span>).<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#39;&#39;</span>) <span style="color:#75715e">//char pool Array
+</span><span style="color:#75715e"></span>        ,<span style="color:#a6e22e">size</span><span style="color:#f92672">:</span> {
+            <span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">120</span>
+            ,<span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">52</span>
+        } <span style="color:#75715e">//image size
+</span><span style="color:#75715e"></span>        ,<span style="color:#a6e22e">textPos</span><span style="color:#f92672">:</span> {
+            <span style="color:#a6e22e">left</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">15</span>
+            ,<span style="color:#a6e22e">top</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">36</span>
+        } <span style="color:#75715e">//text drawing start position
+</span><span style="color:#75715e"></span>        ,<span style="color:#a6e22e">rotate</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">.01</span> <span style="color:#75715e">//text ratate
+</span><span style="color:#75715e"></span>        ,<span style="color:#a6e22e">charLength</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">5</span> <span style="color:#75715e">//how many chars
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//,font: &#39;26px&#39; //font size
+</span><span style="color:#75715e"></span>        ,<span style="color:#a6e22e">strokeStyle</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;#0088cc&#39;</span> <span style="color:#75715e">//style
+</span><span style="color:#75715e"></span>        ,<span style="color:#a6e22e">bgColor</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;#eeeeee&#39;</span> <span style="color:#75715e">//bg color
+</span><span style="color:#75715e"></span>        ,<span style="color:#a6e22e">confusion</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span> <span style="color:#75715e">//draw another group background text to mangle the text
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//,cFont: &#39;30px&#39; //bg text style
+</span><span style="color:#75715e"></span>        ,<span style="color:#a6e22e">cStrokeStyle</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;#adc&#39;</span> <span style="color:#75715e">//bg text color
+</span><span style="color:#75715e"></span>        ,<span style="color:#a6e22e">cRotate</span><span style="color:#f92672">:</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">.05</span> <span style="color:#75715e">//bg text rotate
+</span><span style="color:#75715e"></span>    };
 
-<pre><code class="language-javascript">var captcha = require('canvas-captcha')
-    ,captchaOptions = {
-        charPool: ('abcdefghijklmnopqrstuvwxyz' + 'abcdefghijklmnopqrstuvwxyz'.toUpperCase() + '1234567890').split('') //char pool Array
-        ,size: {
-            width: 120
-            ,height: 52
-        } //image size
-        ,textPos: {
-            left: 15
-            ,top: 36
-        } //text drawing start position
-        ,rotate: .01 //text ratate
-        ,charLength: 5 //how many chars
-        //,font: '26px' //font size
-        ,strokeStyle: '#0088cc' //style
-        ,bgColor: '#eeeeee' //bg color
-        ,confusion: true //draw another group background text to mangle the text
-        //,cFont: '30px' //bg text style
-        ,cStrokeStyle: '#adc' //bg text color
-        ,cRotate: -.05 //bg text rotate
-    };
-
-exports.captcha = function(req, res) {
-    captcha(captchaOptions, function(err, data) {
-        if(err) {
-            res.send(err);
+<span style="color:#a6e22e">exports</span>.<span style="color:#a6e22e">captcha</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>) {
+    <span style="color:#a6e22e">captcha</span>(<span style="color:#a6e22e">captchaOptions</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">err</span>, <span style="color:#a6e22e">data</span>) {
+        <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">err</span>) {
+            <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">send</span>(<span style="color:#a6e22e">err</span>);
         }
-        else {
-            console.log(&quot;Generated Captcha -&gt; &quot;, data.captchaStr);
-            req.session.captcha = data.captchaStr;
-            res.end(data.captchaImg)
+        <span style="color:#66d9ef">else</span> {
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Generated Captcha -&gt; &#34;</span>, <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">captchaStr</span>);
+            <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">session</span>.<span style="color:#a6e22e">captcha</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">captchaStr</span>;
+            <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">end</span>(<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">captchaImg</span>)
         }
     })
 };
-</code></pre>
- </div>
+</code></pre></div> </div>
     <footer class="post-footer">
 
   <div class="post-footer-data">
@@ -227,9 +239,11 @@ exports.captcha = function(req, res) {
   <div class="social-links-footer">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   

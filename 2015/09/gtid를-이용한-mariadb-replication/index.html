@@ -7,7 +7,7 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.30" />
+<meta name="generator" content="Hugo 0.42.1" />
 
 <link rel="canonical" href="http://clonekim.github.io/2015/09/gtid%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-mariadb-replication/">
 <base href="http://clonekim.github.io/" />
@@ -36,7 +36,8 @@ vm003: slave
 
 
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="GTID를 이용한 Mariadb Replication"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="GTID를 이용한 Mariadb Replication"/>
 <meta name="twitter:description" content="개요  클라이언트가 마스터노드에게 쓰기 트랜잭션을 요청한다 바이너리로그가 업데이트된다 (바이너리로그에는 디비의 이벤트도 포함된다) 슬레이브가 마스터로부터 정보를 전달받는다 슬레이브는 이 정보를 릴레이로그에 첨부한다 슬레이브 SQL 스레이드는 릴레이로그에 있는 명령문을 수행반복한다  복제메커니즘
  표준복제: 각 노드는 자신만의 트랜잭션 ID를 갖는다 글로벌 트랜잭션(GTID, Global Transaction ID): 모든 노드는 같은 트랜잭션 ID를 갖는다 (MariaDB 10부터 가능)  환경 vm002: master
 vm003: slave
@@ -65,6 +66,17 @@ vm003: slave
 <link rel="stylesheet" href="css/layout.css" />
 <link rel="stylesheet" href="css/color-dark.css" />
 
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-121397292-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 <title>
@@ -106,9 +118,11 @@ vm003: slave
 <div class="social-links-header">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   
@@ -267,9 +281,11 @@ MariaDB [(none)]&gt; start slave;
   <div class="social-links-footer">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   

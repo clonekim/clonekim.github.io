@@ -30,8 +30,8 @@
       <description>RequireJS
 log라는 모듈을 작성한다
 log.js
-define(&#39;log&#39;, function() { return function(str) { console.log(&amp;quot;--&amp;gt; &amp;quot;, str); } });  &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;ko&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;script src=&amp;quot;requirejs/2.1.15/require.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;quot;js/log.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;script&amp;gt; require([&#39;log&#39;], function(log) { log(&amp;quot;Hello !&amp;quot;); }); &amp;lt;/script&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;  프로토타입으로 작성한 boost.js
-define(&#39;boost&#39;, function() { function Boost() { } Boost.prototype.version = function() { return &amp;quot;1.0&amp;quot;; }; return Boost; });  &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;ko&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;script src=&amp;quot;requirejs/2.1.15/require.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;quot;js/boost.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; require([&#39;boost&#39;], function(Boost) { var boost = new Boost(); alert(boost.</description>
+define(&amp;#39;log&amp;#39;, function() { return function(str) { console.log(&amp;#34;--&amp;gt; &amp;#34;, str); } }); &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;ko&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;script src=&amp;#34;requirejs/2.1.15/require.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;js/log.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;script&amp;gt; require([&amp;#39;log&amp;#39;], function(log) { log(&amp;#34;Hello !&amp;#34;); }); &amp;lt;/script&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; 프로토타입으로 작성한 boost.js
+define(&amp;#39;boost&amp;#39;, function() { function Boost() { } Boost.prototype.version = function() { return &amp;#34;1.0&amp;#34;; }; return Boost; }); &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;ko&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;script src=&amp;#34;requirejs/2.1.15/require.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;js/boost.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; require([&amp;#39;boost&amp;#39;], function(Boost) { var boost = new Boost(); alert(boost.</description>
     </item>
     
     <item>
@@ -41,7 +41,7 @@ define(&#39;boost&#39;, function() { function Boost() { } Boost.prototype.versio
       
       <guid>http://clonekim.github.io/2014/03/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A1%9C-uuid-%EC%83%9D%EC%84%B1/</guid>
       <description>RFC4122
-return &#39;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&#39;.replace(/[xy]/g, function(c) { var r = Math.random()*16|0, v = c === &#39;x&#39; ? r : (r&amp;amp;0x3|0x8); return v.toString(16); });  var s = []; var hexDigits = &amp;quot;0123456789abcdef&amp;quot;; for (var i = 0; i &amp;lt; 36; i++) { s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1); } s[14] = &amp;quot;4&amp;quot;; s[19] = hexDigits.substr((s[19] &amp;amp; 0x3) | 0x8, 1); s[8] = s[13] = s[18] = s[23] = &amp;quot;-&amp;quot;; var uuid = s.</description>
+return &amp;#39;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&amp;#39;.replace(/[xy]/g, function(c) { var r = Math.random()*16|0, v = c === &amp;#39;x&amp;#39; ? r : (r&amp;amp;0x3|0x8); return v.toString(16); }); var s = []; var hexDigits = &amp;#34;0123456789abcdef&amp;#34;; for (var i = 0; i &amp;lt; 36; i++) { s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1); } s[14] = &amp;#34;4&amp;#34;; s[19] = hexDigits.substr((s[19] &amp;amp; 0x3) | 0x8, 1); s[8] = s[13] = s[18] = s[23] = &amp;#34;-&amp;#34;; var uuid = s.join(&amp;#34;&amp;#34;); return uuid; } </description>
     </item>
     
     <item>
@@ -54,7 +54,7 @@ return &#39;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&#39;.replace(/[xy]/g, function(
 로직과 private 변수를 캡슐화하는 방법으로 아래와 같은 모듈패턴( 익명함수) 을 많이 사용한다.
 (function() { /* ... */ })();  jQuery와 연동해서 사용할 경우 아래와 같이 파라미터를 전달하도록 한다.
 (function($) { /* ... */ })(jQuery);  글로벌 변수를 전달해서 네임스페이스로 확장 할 수 있다.
-(function($, exports) { exports.Foo = &amp;quot;wem&amp;quot;; })(jQuery, window);  IIFE(mmediately-Invoked Function Expression)
+(function($, exports) { exports.Foo = &amp;#34;wem&amp;#34;; })(jQuery, window);  IIFE(mmediately-Invoked Function Expression)
 (function() { var mod = {}; })();  window라는 식별자를 거치지 않고 전역변수를 접근하자</description>
     </item>
     

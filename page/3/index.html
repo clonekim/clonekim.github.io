@@ -8,7 +8,7 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.30" />
+<meta name="generator" content="Hugo 0.42.1" />
 
 <link rel="canonical" href="http://clonekim.github.io/">
 <base href="http://clonekim.github.io/" />
@@ -30,7 +30,8 @@
 
 
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="(fn [] &#34;Less is more&#34;)"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="(fn [] &#34;Less is more&#34;)"/>
 <meta name="twitter:description" content=""/>
 
 
@@ -43,6 +44,17 @@
 <link rel="stylesheet" href="css/layout.css" />
 <link rel="stylesheet" href="css/color-dark.css" />
 
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-121397292-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 <title>
@@ -84,9 +96,11 @@
 <div class="social-links-header">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   
@@ -123,7 +137,7 @@
 
   </header>
 
-  <div class="summary"> BigDecimal.ROUND_DOWN	// 내림 BigDecimal.ROUND_HALF_UP // 반올림 BigDecimal.ROUND_UP // 올림   </div>
+  <div class="summary"> BigDecimal.ROUND_DOWN	// 내림 BigDecimal.ROUND_HALF_UP // 반올림 BigDecimal.ROUND_UP // 올림 </div>
 
   <footer>
   <div class="rmore">
@@ -156,7 +170,7 @@
 로직과 private 변수를 캡슐화하는 방법으로 아래와 같은 모듈패턴( 익명함수) 을 많이 사용한다.
 (function() { /* ... */ })();  jQuery와 연동해서 사용할 경우 아래와 같이 파라미터를 전달하도록 한다.
 (function($) { /* ... */ })(jQuery);  글로벌 변수를 전달해서 네임스페이스로 확장 할 수 있다.
-(function($, exports) { exports.Foo = &quot;wem&quot;; })(jQuery, window);  IIFE(mmediately-Invoked Function Expression)
+(function($, exports) { exports.Foo = &#34;wem&#34;; })(jQuery, window);  IIFE(mmediately-Invoked Function Expression)
 (function() { var mod = {}; })();  window라는 식별자를 거치지 않고 전역변수를 접근하자 </div>
 
   <footer>
@@ -217,7 +231,7 @@
 
   <div class="summary">  Apache JSPWiki
 설정 server.xml
-&lt;Connector address=&quot;127.0.0.1&quot; port=&quot;8080&quot; protocol=&quot;org.apache.coyote.http11.Http11NioProtocol&quot; connectionTimeout=&quot;20000&quot; maxThreads=&quot;3&quot; minSpareThreads=&quot;2&quot; redirectPort=&quot;8443&quot; URIEncoding=&quot;UTF-8&quot;/&gt;  jspwiki.properties
+&lt;Connector address=&#34;127.0.0.1&#34; port=&#34;8080&#34; protocol=&#34;org.apache.coyote.http11.Http11NioProtocol&#34; connectionTimeout=&#34;20000&#34; maxThreads=&#34;3&#34; minSpareThreads=&#34;2&#34; redirectPort=&#34;8443&#34; URIEncoding=&#34;UTF-8&#34;/&gt; jspwiki.properties
 jspwiki.baseURL= http://cloud9ine.cafe24.com/wiki jspwiki.fileSystemProvider.pageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/ jspwiki.basicAttachmentProvider.storageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/  jspwiki.policy
 Anonymous를 코멘트처리
 Nginx 연동 upstream tomcat { server 127.0.0.1:8080; } server { ... location /wiki { proxy_pass http://tomcat; }   </div>
@@ -249,9 +263,9 @@ Nginx 연동 upstream tomcat { server 127.0.0.1:8080; } server { ... location /w
 
   </header>
 
-  <div class="summary">  Parsing option String data = &quot;[{'text':'PROJECT','id':'00156','leaf':true}]&quot;; ObjectMapper mapper = new ObjectMapper(); mapper.configure(JsonParser.Feature.ALLOW_SINGLE_QUOTES, true); JsonNode node = mapper.readTree(data);  Annotation JsonSerialize
-@JsonSerialize(using=JsonDateSerializer.class) public Date getCreationDate() { return creationDate; }  JsonDateSerializer.java
-public class JsonDateSerializer extends JsonSerializer&lt;Date&gt; { private static final SimpleDateFormat dateFormat = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;); @Override public void serialize(Date date, JsonGenerator json, SerializerProvider provider) throws IOException, JsonProcessingException { String formattedDate = dateFormat.format(date); json.writeString(formattedDate); } }   Jackson JSON Processor Wiki   </div>
+  <div class="summary">  Parsing option String data = &#34;[{&#39;text&#39;:&#39;PROJECT&#39;,&#39;id&#39;:&#39;00156&#39;,&#39;leaf&#39;:true}]&#34;; ObjectMapper mapper = new ObjectMapper(); mapper.configure(JsonParser.Feature.ALLOW_SINGLE_QUOTES, true); JsonNode node = mapper.readTree(data); Annotation JsonSerialize
+@JsonSerialize(using=JsonDateSerializer.class) public Date getCreationDate() { return creationDate; } JsonDateSerializer.java
+public class JsonDateSerializer extends JsonSerializer&lt;Date&gt; { private static final SimpleDateFormat dateFormat = new SimpleDateFormat(&#34;yyyy-MM-dd HH:mm:ss&#34;); @Override public void serialize(Date date, JsonGenerator json, SerializerProvider provider) throws IOException, JsonProcessingException { String formattedDate = dateFormat.format(date); json.writeString(formattedDate); } }  Jackson JSON Processor Wiki   </div>
 
   <footer>
   <div class="rmore">
@@ -311,10 +325,10 @@ import java.net.Authenticator; import java.net.MalformedURLException; import jav
 
   </header>
 
-  <div class="summary"> Maven &lt;groupId&gt;jstl&lt;/groupId&gt; &lt;artifactId&gt;jstl&lt;/artifactId&gt; &lt;version&gt;1.2&lt;/version&gt;  태그를 사용하기 위한 선언 &lt;%@ taglib prefix=&quot;c&quot; uri=&quot;http://java.sun.com/jsp/jstl/core&quot;%&gt; &lt;%@ taglib prefix=&quot;fn&quot; uri=&quot;http://java.sun.com/jsp/jstl/functions&quot; %&gt; &lt;%@ taglib prefix=&quot;fmt&quot; uri=&quot;http://java.sun.com/jsp/jstl/fmt&quot;%&gt;  param test.jsp?name=1234 일 경우
+  <div class="summary"> Maven &lt;groupId&gt;jstl&lt;/groupId&gt; &lt;artifactId&gt;jstl&lt;/artifactId&gt; &lt;version&gt;1.2&lt;/version&gt; 태그를 사용하기 위한 선언 &lt;%@ taglib prefix=&#34;c&#34; uri=&#34;http://java.sun.com/jsp/jstl/core&#34;%&gt; &lt;%@ taglib prefix=&#34;fn&#34; uri=&#34;http://java.sun.com/jsp/jstl/functions&#34; %&gt; &lt;%@ taglib prefix=&#34;fmt&#34; uri=&#34;http://java.sun.com/jsp/jstl/fmt&#34;%&gt; param test.jsp?name=1234 일 경우
 ${param.변수} 로 획득할 수 있다.
 ${param.name}으로 알수 있겠다.
-core set &lt;c:set var=&quot;string&quot; value=&quot;값&quot;/&gt; &lt;c:set var=&quot;string&quot; value=&quot;${변수.프로퍼티}&quot;/&gt;  out &lt;c:out value=&quot;${fn:substring(string,0,50)}&quot; default=&quot;초기값&quot;/&gt; &lt;c:out value=&quot;안녕하세요&quot; /&gt;  test &lt;c:if test=&quot;${변수가 존재하면}&quot;&gt; ..처리 &lt;/c:if&gt; &lt;c:if test=&quot;${변수 &lt; 숫자 }&quot;&gt; ..처리 &lt;/c:if&gt; &lt;c:if test=&quot;${변수 &lt; true}&quot;&gt; . </div>
+core set &lt;c:set var=&#34;string&#34; value=&#34;값&#34;/&gt; &lt;c:set var=&#34;string&#34; value=&#34;${변수.프로퍼티}&#34;/&gt; out &lt;c:out value=&#34;${fn:substring(string,0,50)}&#34; default=&#34;초기값&#34;/&gt; &lt;c:out value=&#34;안녕하세요&#34; /&gt; test &lt;c:if test=&#34;${변수가 존재하면}&#34;&gt; ..처리 &lt;/c:if&gt; &lt;c:if test=&#34;${변수 &lt; 숫자 }&#34;&gt; ..처리 &lt;/c:if&gt; &lt;c:if test=&#34;${변수 &lt; true}&#34;&gt; ..처리 &lt;/c:if&gt; choose &lt;c:choose&gt; &lt;c:when test=&#34;조건&#34;&gt; . </div>
 
   <footer>
   <div class="rmore">
@@ -502,9 +516,9 @@ set autoindent set smartindent set shiftwidth=3 set tabstop=3 set title set nu s
   </header>
 
   <div class="summary"> json 생성
-require 'json' jsonbody = JSON.generate[&quot;message&quot;=&gt;&quot;test&quot;,&quot;user&quot;=&gt;&quot;user1&quot;]  rest-client을 이용한 예제
-require 'rubygems' require 'rest_client' require 'json' jdata = JSON.generate([&quot;test&quot;]) RestClient.put 'http://localhost:4567/users/123', jdata, {:content_type =&gt; :json}  Net:HTTP GET/PUT
-require 'net/http' http = Net::HTTP.new('www.data.com') response = http.request_put('/?access_token=123', jsonbody)  url = URI.parse('http://localhost:3000/someservice/') request = Net::HTTP::Post.new(url.path) request.body = &quot;&lt;?xml version='1.0' encoding='UTF-8'?&gt;&lt;somedata&gt;&lt;name&gt;Test Name 1&lt;/name&gt;&lt;description&gt;Some data for Unit testing&lt;/description&gt;&lt;/somedata&gt;&quot; response = Net::HTTP.start(url.host, url.port) {|http| http.request(request)} #Note this test PASSES! assert_equal '201 Created', response. </div>
+require &#39;json&#39; jsonbody = JSON.generate[&#34;message&#34;=&gt;&#34;test&#34;,&#34;user&#34;=&gt;&#34;user1&#34;] rest-client을 이용한 예제
+require &#39;rubygems&#39; require &#39;rest_client&#39; require &#39;json&#39; jdata = JSON.generate([&#34;test&#34;]) RestClient.put &#39;http://localhost:4567/users/123&#39;, jdata, {:content_type =&gt; :json} Net:HTTP GET/PUT
+require &#39;net/http&#39; http = Net::HTTP.new(&#39;www.data.com&#39;) response = http.request_put(&#39;/?access_token=123&#39;, jsonbody)url = URI.parse(&#39;http://localhost:3000/someservice/&#39;) request = Net::HTTP::Post.new(url.path) request.body = &#34;&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;&lt;somedata&gt;&lt;name&gt;Test Name 1&lt;/name&gt;&lt;description&gt;Some data for Unit testing&lt;/description&gt;&lt;/somedata&gt;&#34; response = Net::HTTP.start(url.host, url.port) {|http| http.request(request)} #Note this test PASSES! assert_equal &#39;201 Created&#39;, response.get_fields(&#39;Status&#39;)[0]require &#39;net/http&#39; require &#39;uri&#39; type = &#39;record&#39; activity = &#39;query-data&#39; xml_req =&lt;&lt;EOF &lt;? </div>
 
   <footer>
   <div class="rmore">
@@ -534,8 +548,8 @@ require 'net/http' http = Net::HTTP.new('www.data.com') response = http.request_
   </header>
 
   <div class="summary"> Maven
-&lt;dependency&gt; &lt;groupId&gt;ognl&lt;/groupId&gt; &lt;artifactId&gt;ognl&lt;/artifactId&gt; &lt;version&gt;3.0.5&lt;/version&gt; &lt;/dependency&gt;  소스
-Map&lt;String, Object&gt; map = new HashMap&lt;String, Object&gt;(); map.put(&quot;book&quot;, &quot;모바일 웹앱&quot;); System.out.println(Ognl.getValue(Ognl.parseExpression(&quot;book&quot;), map)); Map context = new HashMap(); List&lt;String&gt; values1 = (List)Ognl.getValue(&quot;{123,'abc','00oo'}&quot;, context, new Object()); System.out.println(values1); Map values2 = (Map) Ognl.getValue(&quot;#{123:333,'abc':111, 'bbb':'Kim', 'other':'[0,2,3,4,5]'}&quot;, context, new Object()); System.out.println(values2);  출력
+&lt;dependency&gt; &lt;groupId&gt;ognl&lt;/groupId&gt; &lt;artifactId&gt;ognl&lt;/artifactId&gt; &lt;version&gt;3.0.5&lt;/version&gt; &lt;/dependency&gt; 소스
+Map&lt;String, Object&gt; map = new HashMap&lt;String, Object&gt;(); map.put(&#34;book&#34;, &#34;모바일 웹앱&#34;); System.out.println(Ognl.getValue(Ognl.parseExpression(&#34;book&#34;), map)); Map context = new HashMap(); List&lt;String&gt; values1 = (List)Ognl.getValue(&#34;{123,&#39;abc&#39;,&#39;00oo&#39;}&#34;, context, new Object()); System.out.println(values1); Map values2 = (Map) Ognl.getValue(&#34;#{123:333,&#39;abc&#39;:111, &#39;bbb&#39;:&#39;Kim&#39;, &#39;other&#39;:&#39;[0,2,3,4,5]&#39;}&#34;, context, new Object()); System.out.println(values2); 출력
 모바일 웹앱 [123, abc, 00oo] {123=333, abc=111, bbb=Kim, other=[0,2,3,4,5]}   </div>
 
   <footer>
@@ -566,7 +580,7 @@ Map&lt;String, Object&gt; map = new HashMap&lt;String, Object&gt;(); map.put(&qu
   </header>
 
   <div class="summary">  Override time zone 생성한 Date 객체가 KST가 아닌 자꾸 GMT로 출력 될 경우
-System.setProperty(&quot;user.timezone&quot;, &quot;Asia/Seoul&quot;) ex) System.setProperty(&quot;user.timezone&quot;, &quot;UTC&quot;); TimeZone.setDefault(null); //reset 하기 위해 반드시 필요함  서버를 구동시에 -D 옵션으로 설정할 것
+System.setProperty(&#34;user.timezone&#34;, &#34;Asia/Seoul&#34;) ex) System.setProperty(&#34;user.timezone&#34;, &#34;UTC&#34;); TimeZone.setDefault(null); //reset 하기 위해 반드시 필요함 서버를 구동시에 -D 옵션으로 설정할 것
 참고  Override a Java application&rsquo;s time zone Java&rsquo;s java.util.TimeZone   </div>
 
   <footer>
@@ -604,9 +618,11 @@ System.setProperty(&quot;user.timezone&quot;, &quot;Asia/Seoul&quot;) ex) System
   <div class="social-links-footer">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   

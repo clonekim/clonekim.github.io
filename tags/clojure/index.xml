@@ -20,7 +20,7 @@
       <description>참고소스
  [freemarker-clj &amp;quot;0.1.0&amp;quot;]  freemarker-clj
 템플릿 초기화 템플릿리소스는 해당 디렉토리로 초기화한다
-(defn gen-config [&amp;amp; {:keys [shared] :or {shared {}}}] (let [cfg (doto (Configuration.) (.setDirectoryForTemplateLoading (file &amp;quot;/Users/bonjour/git/cms/resources/public/ftl&amp;quot;)) (.setDefaultEncoding &amp;quot;UTF-8&amp;quot;) (.setObjectWrapper (DefaultObjectWrapper.)))] (doseq [[k v] (map-&amp;gt;model shared)] (.setSharedVariable ^Configuration cfg ^String k v)) cfg))  아래와 같이 템플릿로더를 직접구현해서도 가능하다
+(defn gen-config [&amp;amp; {:keys [shared] :or {shared {}}}] (let [cfg (doto (Configuration.) (.setDirectoryForTemplateLoading (file &amp;#34;/Users/bonjour/git/cms/resources/public/ftl&amp;#34;)) (.setDefaultEncoding &amp;#34;UTF-8&amp;#34;) (.setObjectWrapper (DefaultObjectWrapper.)))] (doseq [[k v] (map-&amp;gt;model shared)] (.setSharedVariable ^Configuration cfg ^String k v)) cfg)) 아래와 같이 템플릿로더를 직접구현해서도 가능하다
 (ns freemarker.template (:require [clojure.tools.logging :as log] [clojure.java.io :refer [file]] [freemarker.shim :refer [map-&amp;gt;model]]) (:import [freemarker.template Configuration DefaultObjectWrapper TemplateMethodModel] [java.io StringWriter])) (def DBTemplateLoader (proxy [freemarker.</description>
     </item>
     
@@ -45,8 +45,8 @@ IDE/Tools  LightTable Cursive Emacs  Leiningen으로 시작하기 Leiningen (레
 윈도우에서만 self-install해준다
 Project 생성 lein new [프로젝트명]  프로젝트 의존성 추가 라이브러리는 아래의 저장소에서 검색이 가능하고
 의존성에 추가하면 된다
- clojars Maven repository  :dependencies [[org.clojure/clojure &amp;quot;1.7.0&amp;quot;] [groupId/artifactId &amp;quot;version&amp;quot;]])  그외의 라이브러리 저장소로는 추가로 지정할수있다
-:repositories { &amp;quot;이름&amp;quot; &amp;quot;http://192.168.0.10:8081/nexus/content/repositories/thirdparty&amp;quot; }  REPL(Read Eval Print Loop) 실행 lein repl  REPL에서 클로저코드를 작성하고 바로 실행이 가능하다</description>
+ clojars Maven repository  :dependencies [[org.clojure/clojure &amp;#34;1.7.0&amp;#34;] [groupId/artifactId &amp;#34;version&amp;#34;]]) 그외의 라이브러리 저장소로는 추가로 지정할수있다
+:repositories { &amp;#34;이름&amp;#34; &amp;#34;http://192.168.0.10:8081/nexus/content/repositories/thirdparty&amp;#34; } REPL(Read Eval Print Loop) 실행 lein repl  REPL에서 클로저코드를 작성하고 바로 실행이 가능하다</description>
     </item>
     
     <item>
@@ -57,7 +57,7 @@ Project 생성 lein new [프로젝트명]  프로젝트 의존성 추가 라이�
       <guid>http://clonekim.github.io/2015/09/%ED%81%B4%EB%A1%9C%EC%A0%80%EC%97%90%EC%84%9C-jdbc/</guid>
       <description> 클로저에서 JDBC(Java Database Connectivity) 를 사용하기 위한 가이드
 몇몇 함수가 없어진 경우가 있기 때문에 소스보기로 확인할 것
- clojure-doc보기 소스보기   leiningen [org.clojure/java.jdbc &amp;quot;0.4.2&amp;quot;]  간단한 예제 (ns db-test.core (:require [clojure.java.jdbc :as sql]))	(def db {:classname &amp;quot;com.mysql.jdbc.Driver&amp;quot; :subprotocol &amp;quot;mysql&amp;quot; :subname &amp;quot;//127.0.0.1:3306/test&amp;quot; :user &amp;quot;xxx&amp;quot; :password &amp;quot;xxxx&amp;quot; }) (defn get-user [] (println (sql/query db [&amp;quot;select * from users&amp;quot;]))) (defn -main [] (get-user))  참고  HikarCP를 사용하는 예 clojure.jdbc doc  </description>
+ clojure-doc보기 소스보기   leiningen [org.clojure/java.jdbc &amp;quot;0.4.2&amp;quot;]  간단한 예제 (ns db-test.core (:require [clojure.java.jdbc :as sql]))	(def db {:classname &amp;#34;com.mysql.jdbc.Driver&amp;#34; :subprotocol &amp;#34;mysql&amp;#34; :subname &amp;#34;//127.0.0.1:3306/test&amp;#34; :user &amp;#34;xxx&amp;#34; :password &amp;#34;xxxx&amp;#34; }) (defn get-user [] (println (sql/query db [&amp;#34;select * from users&amp;#34;]))) (defn -main [] (get-user)) 참고  HikarCP를 사용하는 예 clojure.jdbc doc  </description>
     </item>
     
     <item>
@@ -69,12 +69,12 @@ Project 생성 lein new [프로젝트명]  프로젝트 의존성 추가 라이�
       <description>Emacs 24를 기준으로 작성
 현재 사용중인 환경은 custom-emacs.tgz
 Package Install init.el
-(require &#39;package) (add-to-list &#39;package-archives &#39;(&amp;quot;melpa-stable&amp;quot; . &amp;quot;http://stable.melpa.org/packages/&amp;quot;) t) (package-initialize)  package install
+(require &amp;#39;package) (add-to-list &amp;#39;package-archives &amp;#39;(&amp;#34;melpa-stable&amp;#34; . &amp;#34;http://stable.melpa.org/packages/&amp;#34;) t) (package-initialize) package install
 M-x package-install [RET] cider [RET]  현재 사용하고 있는 패키지
  cider paredit rainbow-delimiters s f clojure-mode clojure-mode-extra-font-locking dash ido-completing-read+ ido-ubiquitous projectile queue seq smex spinner  Cider 구동 주의
 Cider와 cider-nrepl의 버전이 맞아야함  profiles.clj
 .lein디렉토리이하에 작성한다 없을경우 파일생성
-{:user {:plugins [[cider/cider-nrepl &amp;quot;0.10.0&amp;quot;]] :dependencies [[org.clojure/tools.nrepl &amp;quot;0.</description>
+{:user {:plugins [[cider/cider-nrepl &amp;#34;0.10.0&amp;#34;]] :dependencies [[org.clojure/tools.nrepl &amp;#34;0.2.12&amp;#34;]]}} {:repl {:dependencies [[org.</description>
     </item>
     
     <item>
@@ -86,9 +86,9 @@ Cider와 cider-nrepl의 버전이 맞아야함  profiles.clj
       <description>Hello-Ring 프로젝트 작성 새로운 프로젝트를 생성한다
 lein new hello-ring  leiningen.clj
 project.clj의 :dependencies에 임베디드 Jetty서버 추가
-[ring/ring-jetty-adapter &amp;quot;1.4.0&amp;quot;]  ring-jetty-adapter는 ring-core, ring-servlet, jetty-server를 의존성으로 가지고 있다
+[ring/ring-jetty-adapter &amp;#34;1.4.0&amp;#34;] ring-jetty-adapter는 ring-core, ring-servlet, jetty-server를 의존성으로 가지고 있다
 ring-core: essential functions for handling parameters, cookies and more ring-devel: functions for developing and debugging Ring applications ring-servlet: construct Java servlets from Ring handlers ring-jetty-adapter: a Ring adapter that uses the Jetty webserver  hello_ring.core
-(ns hello-ring.core (:use [ring.adapter.jetty])) (defn app-handler [request] {:status 200 :header {&amp;quot;Content-Type&amp;quot; &amp;quot;text/html&amp;quot;} :body &amp;quot;Hello Ring&amp;quot;}) (defn -main [] (run-jetty app-handler {:port 8080}))  실행</description>
+(ns hello-ring.core (:use [ring.adapter.jetty])) (defn app-handler [request] {:status 200 :header {&amp;#34;Content-Type&amp;#34; &amp;#34;text/html&amp;#34;} :body &amp;#34;Hello Ring&amp;#34;}) (defn -main [] (run-jetty app-handler {:port 8080})) 실행</description>
     </item>
     
   </channel>

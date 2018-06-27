@@ -18,8 +18,8 @@
       
       <guid>http://clonekim.github.io/2016/09/clojurescript%EC%97%90%EC%84%9C-jquery%EC%82%AC%EC%9A%A9/</guid>
       <description> view.clj
-(defn view-layout [&amp;amp; content] (html [:head [:meta {:http-equiv &amp;quot;Content-type&amp;quot; :content &amp;quot;text/html; charset=utf-8&amp;quot;}] [&amp;quot;title&amp;quot;: &amp;quot;Project-Name&amp;quot;]] [:body content])) (defn view-content [] (view-layout [:h2 &amp;quot;Project-Name&amp;quot;] [:p {:id &amp;quot;clickhere&amp;quot;} &amp;quot;Get yourself a nice alert by clicking here.&amp;quot;] [:script {:src &amp;quot;/js/jquery-1.10.2.min.js&amp;quot;}] [:script {:src &amp;quot;/js/cljs.js&amp;quot;}]))  hello.cljs
-(:require [jayq.core :as jq]) (:use [jayq.core :only [$]]) ;; ;; $(&amp;quot;#btn&amp;quot;).click(function() {alert(&amp;quot;Hi!&amp;quot;); }); ;; (jq/bind ($ &amp;quot;#btn&amp;quot;) :click (fn [] (js/alert &amp;quot;Hi!&amp;quot;)))  lein cljsbuild once lein run  참고  ClojureScriptという選択肢 ClojureScript入門  </description>
+(defn view-layout [&amp;amp; content] (html [:head [:meta {:http-equiv &amp;#34;Content-type&amp;#34; :content &amp;#34;text/html; charset=utf-8&amp;#34;}] [&amp;#34;title&amp;#34;: &amp;#34;Project-Name&amp;#34;]] [:body content])) (defn view-content [] (view-layout [:h2 &amp;#34;Project-Name&amp;#34;] [:p {:id &amp;#34;clickhere&amp;#34;} &amp;#34;Get yourself a nice alert by clicking here.&amp;#34;] [:script {:src &amp;#34;/js/jquery-1.10.2.min.js&amp;#34;}] [:script {:src &amp;#34;/js/cljs.js&amp;#34;}])) hello.cljs
+(:require [jayq.core :as jq]) (:use [jayq.core :only [$]]) ;; ;; $(&amp;#34;#btn&amp;#34;).click(function() {alert(&amp;#34;Hi!&amp;#34;); }); ;; (jq/bind ($ &amp;#34;#btn&amp;#34;) :click (fn [] (js/alert &amp;#34;Hi!&amp;#34;))) lein cljsbuild once lein run  참고  ClojureScriptという選択肢 ClojureScript入門  </description>
     </item>
     
     <item>
@@ -29,9 +29,10 @@
       
       <guid>http://clonekim.github.io/2016/01/clojurescript-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/</guid>
       <description>프로젝트 설정 leiningen
-[org.clojure/clojurescript &amp;quot;1.7.228&amp;quot;]  plugin
-[lein-cljsbuild &amp;quot;1.1.2&amp;quot;]  project.clj
-(defproject hello-ring &amp;quot;0.1.0-SNAPSHOT&amp;quot; :description &amp;quot;FIXME: write description&amp;quot; :url &amp;quot;http://example.com/FIXME&amp;quot; :license {:name &amp;quot;Eclipse Public License&amp;quot; :url &amp;quot;http://www.eclipse.org/legal/epl-v10.html&amp;quot;} :dependencies [[org.clojure/clojure &amp;quot;1.7.0&amp;quot;] [org.clojure/clojurescript &amp;quot;1.7.228&amp;quot;] [ring/ring-core &amp;quot;1.4.0&amp;quot;] [ring/ring-defaults &amp;quot;0.1.5&amp;quot;] [ring/ring-json &amp;quot;0.4.0&amp;quot;] [ring/ring-jetty-adapter &amp;quot;1.4.0&amp;quot;] [compojure &amp;quot;1.4.0&amp;quot;]] :plugins [[lein-cljsbuild &amp;quot;1.1.2&amp;quot;] [lein-ring &amp;quot;0.9.7&amp;quot;]] :cljsbuild {:builds {:main {:source-paths [&amp;quot;src-cljs&amp;quot;] :compiler {:output-to &amp;quot;resources/public/js/app.js&amp;quot; :output-dir &amp;quot;resources/public/out&amp;quot; :optimizations :simple :pretty-print true}}}} :ring {:handler hello-ring.core/app} :main hello-ring.core)  cljs소스를 src-cljs라는 경로로 선택했다</description>
+[org.clojure/clojurescript &amp;#34;1.7.228&amp;#34;] plugin
+[lein-cljsbuild &amp;#34;1.1.2&amp;#34;] project.clj
+(defproject hello-ring &amp;#34;0.1.0-SNAPSHOT&amp;#34; :description &amp;#34;FIXME: write description&amp;#34; :url &amp;#34;http://example.com/FIXME&amp;#34; :license {:name &amp;#34;Eclipse Public License&amp;#34; :url &amp;#34;http://www.eclipse.org/legal/epl-v10.html&amp;#34;} :dependencies [[org.clojure/clojure &amp;#34;1.7.0&amp;#34;] [org.clojure/clojurescript &amp;#34;1.7.228&amp;#34;] [ring/ring-core &amp;#34;1.4.0&amp;#34;] [ring/ring-defaults &amp;#34;0.1.5&amp;#34;] [ring/ring-json &amp;#34;0.4.0&amp;#34;] [ring/ring-jetty-adapter &amp;#34;1.4.0&amp;#34;] [compojure &amp;#34;1.4.0&amp;#34;]] :plugins [[lein-cljsbuild &amp;#34;1.1.2&amp;#34;] [lein-ring &amp;#34;0.9.7&amp;#34;]] :cljsbuild {:builds {:main {:source-paths [&amp;#34;src-cljs&amp;#34;] :compiler {:output-to &amp;#34;resources/public/js/app.js&amp;#34; :output-dir &amp;#34;resources/public/out&amp;#34; :optimizations :simple :pretty-print true}}}} :ring {:handler hello-ring.core/app} :main hello-ring.core) cljs소스를 src-cljs라는 경로로 선택했다
+디렉토리를 만들어야한다</description>
     </item>
     
   </channel>

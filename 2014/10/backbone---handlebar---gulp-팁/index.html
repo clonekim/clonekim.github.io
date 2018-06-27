@@ -7,7 +7,7 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.30" />
+<meta name="generator" content="Hugo 0.42.1" />
 
 <link rel="canonical" href="http://clonekim.github.io/2014/10/backbone---handlebar---gulp-%ED%8C%81/">
 <base href="http://clonekim.github.io/" />
@@ -37,7 +37,8 @@ var gulp = require(&#39;gulp&#39;), browserify = require(&#39;browserify&#39;), 
 
 
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="backbone &#43; handlebar &#43; gulp 팁"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="backbone &#43; handlebar &#43; gulp 팁"/>
 <meta name="twitter:description" content="백본과 핸들바를 사용해서 소스를 컴파일 후
 정해진 경로로 결과물을 내보내자.
 핸들바를 사용하지 않을려면 brfs도 고려해보자
@@ -68,6 +69,17 @@ var gulp = require(&#39;gulp&#39;), browserify = require(&#39;browserify&#39;), 
 <link rel="stylesheet" href="css/layout.css" />
 <link rel="stylesheet" href="css/color-dark.css" />
 
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-121397292-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 <title>
@@ -109,9 +121,11 @@ var gulp = require(&#39;gulp&#39;), browserify = require(&#39;browserify&#39;), 
 <div class="social-links-header">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   
@@ -143,80 +157,71 @@ npm install --save hbsfy
 </code></pre>
 
 <p><em>gulpfile.js</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">gulp</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp&#39;</span>),
+	<span style="color:#a6e22e">browserify</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;browserify&#39;</span>),
+	<span style="color:#a6e22e">source</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;vinyl-source-stream&#39;</span>),
+	<span style="color:#a6e22e">hbsfy</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;hbsfy&#39;</span>);
 
-<pre><code class="language-javascript">var gulp = require('gulp'),
-	browserify = require('browserify'),
-	source = require('vinyl-source-stream'),
-	hbsfy = require('hbsfy');
-
-gulp.task('build', function() {
-	var b = browserify('./js/app.js', {debug:true});
-	return b.transform(hbsfy)
-		 .bundle()
-		 .pipe(source('app.js'))
-		 .pipe(gulp.dest('/home/alpha/public/js'));
+<span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">task</span>(<span style="color:#e6db74">&#39;build&#39;</span>, <span style="color:#66d9ef">function</span>() {
+	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">browserify</span>(<span style="color:#e6db74">&#39;./js/app.js&#39;</span>, {<span style="color:#a6e22e">debug</span><span style="color:#f92672">:</span><span style="color:#66d9ef">true</span>});
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">transform</span>(<span style="color:#a6e22e">hbsfy</span>)
+		 .<span style="color:#a6e22e">bundle</span>()
+		 .<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">source</span>(<span style="color:#e6db74">&#39;app.js&#39;</span>))
+		 .<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">dest</span>(<span style="color:#e6db74">&#39;/home/alpha/public/js&#39;</span>));
 });
 
 
-gulp.task('watch', function() {
-	gulp.watch('./js/**/*.js', ['build']);
-	gulp.watch('./templates/*.hbs', ['build']);
+<span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">task</span>(<span style="color:#e6db74">&#39;watch&#39;</span>, <span style="color:#66d9ef">function</span>() {
+	<span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">watch</span>(<span style="color:#e6db74">&#39;./js/**/*.js&#39;</span>, [<span style="color:#e6db74">&#39;build&#39;</span>]);
+	<span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">watch</span>(<span style="color:#e6db74">&#39;./templates/*.hbs&#39;</span>, [<span style="color:#e6db74">&#39;build&#39;</span>]);
 });
-</code></pre>
-
+</code></pre></div>
 <p><em>app.js</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">Backbone</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;backbone&#39;</span>);
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">$</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;jquery&#39;</span>);
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">HomeView</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;./views/home&#39;</span>);
 
-<pre><code class="language-javascript">var Backbone = require('backbone');
-var $ = require('jquery');
-var HomeView = require('./views/home');
-
-var Router = Backbone.Router.extend({
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">Router</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Backbone</span>.<span style="color:#a6e22e">Router</span>.<span style="color:#a6e22e">extend</span>({
 
 	
-		routes: {
-			'': 'start'
+		<span style="color:#a6e22e">routes</span><span style="color:#f92672">:</span> {
+			<span style="color:#e6db74">&#39;&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;start&#39;</span>
 		},
 		
-		start: function() {
-			console.log('start!');
-			$(&quot;.container&quot;).html(new HomeView().render().el);
+		<span style="color:#a6e22e">start</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
+			<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;start!&#39;</span>);
+			<span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;.container&#34;</span>).<span style="color:#a6e22e">html</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">HomeView</span>().<span style="color:#a6e22e">render</span>().<span style="color:#a6e22e">el</span>);
 		}
 		
 });
 
-var router = new Router();
-Backbone.history.start();
-</code></pre>
-
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">router</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Router</span>();
+<span style="color:#a6e22e">Backbone</span>.<span style="color:#a6e22e">history</span>.<span style="color:#a6e22e">start</span>();
+</code></pre></div>
 <p><em>views/home.js</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">Backbone</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;backbone&#39;</span>);
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">$</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;jquery&#39;</span>);
+<span style="color:#a6e22e">Backbone</span>.<span style="color:#a6e22e">$</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>;
 
-<pre><code class="language-javascript">var Backbone = require('backbone');
-var $ = require('jquery');
-Backbone.$ = $;
 
-
-var HomeView = Backbone.View.extend({
-	initialize: function() {
-		this.template = require('../../templates/home.hbs');
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">HomeView</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Backbone</span>.<span style="color:#a6e22e">View</span>.<span style="color:#a6e22e">extend</span>({
+	<span style="color:#a6e22e">initialize</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
+		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">template</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;../../templates/home.hbs&#39;</span>);
 	},
 	
-	render: function() {
-		this.$el.html(this.template({name: 'Hello There!'}));
-		console.log(&quot;home render&quot;);
-		return this;
+	<span style="color:#a6e22e">render</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
+		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$el</span>.<span style="color:#a6e22e">html</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">template</span>({<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Hello There!&#39;</span>}));
+		<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;home render&#34;</span>);
+		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>;
 	}
 });
 
-module.exports = HomeView;
-</code></pre>
-
+<span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">HomeView</span>;
+</code></pre></div>
 <p><em>templates/home.hbs</em></p>
-
-<pre><code class="language-html">&lt;h1&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">h1</span>&gt;
   {{name}}
-&lt;/h1&gt;
-</code></pre>
- </div>
+&lt;/<span style="color:#f92672">h1</span>&gt;</code></pre></div> </div>
     <footer class="post-footer">
 
   <div class="post-footer-data">
@@ -270,9 +275,11 @@ module.exports = HomeView;
   <div class="social-links-footer">
 
   
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
 
   
-  <a href="https://github.com/clonekim/" target="_blank"><div class="social-link">GitHub</div></a>
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
   
 
   

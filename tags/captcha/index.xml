@@ -20,7 +20,7 @@
       <description>canvas를 이용한 캡챠(captcha)를 생성하려고 한다.
 사용하려는 패키지는 canvas-captcha이다
 의존성 설치 apt-get install libpango1.0-dev apt-get install libjpeg-dev apt-get install libgif-dev  소스작성 captcha.js
-var captcha = require(&#39;canvas-captcha&#39;) ,captchaOptions = { charPool: (&#39;abcdefghijklmnopqrstuvwxyz&#39; + &#39;abcdefghijklmnopqrstuvwxyz&#39;.toUpperCase() + &#39;1234567890&#39;).split(&#39;&#39;) //char pool Array ,size: { width: 120 ,height: 52 } //image size ,textPos: { left: 15 ,top: 36 } //text drawing start position ,rotate: .01 //text ratate ,charLength: 5 //how many chars //,font: &#39;26px&#39; //font size ,strokeStyle: &#39;#0088cc&#39; //style ,bgColor: &#39;#eeeeee&#39; //bg color ,confusion: true //draw another group background text to mangle the text //,cFont: &#39;30px&#39; //bg text style ,cStrokeStyle: &#39;#adc&#39; //bg text color ,cRotate: -.</description>
+var captcha = require(&amp;#39;canvas-captcha&amp;#39;) ,captchaOptions = { charPool: (&amp;#39;abcdefghijklmnopqrstuvwxyz&amp;#39; + &amp;#39;abcdefghijklmnopqrstuvwxyz&amp;#39;.toUpperCase() + &amp;#39;1234567890&amp;#39;).split(&amp;#39;&amp;#39;) //char pool Array  ,size: { width: 120 ,height: 52 } //image size  ,textPos: { left: 15 ,top: 36 } //text drawing start position  ,rotate: .01 //text ratate  ,charLength: 5 //how many chars  //,font: &amp;#39;26px&amp;#39; //font size  ,strokeStyle: &amp;#39;#0088cc&amp;#39; //style  ,bgColor: &amp;#39;#eeeeee&amp;#39; //bg color  ,confusion: true //draw another group background text to mangle the text  //,cFont: &amp;#39;30px&amp;#39; //bg text style  ,cStrokeStyle: &amp;#39;#adc&amp;#39; //bg text color  ,cRotate: -.</description>
     </item>
     
     <item>
