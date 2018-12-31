@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>(fn[] &quot;less is more&quot;): AWS S3 Part 1</title>
+    <link rel="canonical" href="http://clonekim.github.io/posts/2016-04-20-aws-s3-part-1/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700' rel='stylesheet'
+          type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css">
+    <link href="/css/screen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">(fn[] &quot;less is more&quot;)</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li ><a href="/">Home</a></li>
+                <li
+                ><a href="/archives/">Archives</a></li>
+                
+                <li
+                >
+                <a href="/pages/about/">About</a>
+                </li>
+                
+                <li><a href="/feed.xml">RSS</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+</nav>
+
+
+<div class="container">
+
+
+    <div class="row">
+        <div class="col-lg-9">
+            <div id="content">
+                
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta" class="row">
+        <div class="col-lg-6">2016년 4월 20일 (수)</div>
+        
+    </div>
+    <h2>AWS S3 Part 1</h2>
+</div>
+<div>
+    
+    <h2 id="s3&#95;버킷&#95;작성">S3 버킷 작성</h2><ol><li>콘솔로 로그인한다</li><li>S3로 이동한다</li><li>Bucket(버킷)을 생성한다 해당 버킷은 해당 리젼에서 유일무이해야 한다</li></ol><h2 id="정적&#95;리소스&#95;호스팅">정적 리소스 호스팅</h2><ol><li>버킷을 만든다</li><li>퍼미션에서 버킷정책(Bucket policy)을 작성한다<img src="/img/aws/picture616-1.png" alt="picture616-1.png" /></li><li>AWS Policy Generator를 통해   권한을 작성한다(포맷은 JSON)   <img src="/img/aws/picture533-1.png" alt="picture533-1.png" /></li><li>Policy 작성</li></ol><p>|Select type of policy   | S3 bucket policy   |</p><table><thead><tr></tr></thead></table>|Principal   | AWS:*   ||Action      | getObject  ||ARN         | arn:aws:s3:::[bucket name]/* |<p><img src="/img/aws/picture291-1.png" alt="picture291-1.png" /></p>
+</div>
+
+<div id="post-tags">
+    <b>Tags: </b>
+    
+    <a href="/tags/aws/">aws</a>
+    
+</div>
+
+
+    <div id="prev-next">
+        
+        <a href="/posts/2016-05-07-emacs-package/">&laquo; Emacs를 쓰면서</a>
+        
+        
+        <a class="right" href="/posts/2016-03-01-docker-start/">Docker 시작하기 &raquo;</a>
+        
+    </div>
+
+    
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_config = function () {
+            this.page.url = "http://clonekim.github.io/posts/2016-04-20-aws-s3-part-1/";
+            this.page.identifier = "AWS S3 Part 1";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//clonekim-github-io.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    
+
+
+</div>
+
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div id="sidebar">
+                <h3>Links</h3>
+                <ul id="links">
+                    <li><a href="http://cryogenweb.org/docs/home.html">Cryogen Docs</a></li>
+                    <li><a href="http://carmenla.me/blog/archives">Carmen's Blog</a></li>
+                    
+                    <li><a href="/pages/guick-guide/">Quick Start Guide</a></li>
+                    
+                </ul>
+                
+                <div id="recent">
+                    <h3>Recent Posts</h3>
+                    <ul>
+                        
+                        <li><a href="/posts/2018-12-24-aggregation-tags-with-spark/">Spark</a></li>
+                        
+                        <li><a href="/posts/2018-12-24-how-spark/">Spark</a></li>
+                        
+                        <li><a href="/posts/2018-07-05-ERAlchemy/">ERAlchemy 를 이용한 ERD작성</a></li>
+                        
+                        <li><a href="/posts/2017-11-02-go-repl/">Go Repl</a></li>
+                        
+                        <li><a href="/posts/2017-11-02-emacs-golang/">Emacs에서 Golang 를 위한 에디팅</a></li>
+                        
+                    </ul>
+                </div>
+                
+                
+                <div id="tags">
+                    <h3>Tags</h3>
+                    <ul>
+                        
+                        <li><a href="/tags/svn/">svn</a></li>
+                        
+                        <li><a href="/tags/cryogen/">cryogen</a></li>
+                        
+                        <li><a href="/tags/imagemagick/">imagemagick</a></li>
+                        
+                        <li><a href="/tags/gnome/">gnome</a></li>
+                        
+                        <li><a href="/tags/github/">github</a></li>
+                        
+                        <li><a href="/tags/clojure/">clojure</a></li>
+                        
+                        <li><a href="/tags/redmine/">redmine</a></li>
+                        
+                        <li><a href="/tags/raspberry/">raspberry</a></li>
+                        
+                        <li><a href="/tags/aws/">aws</a></li>
+                        
+                        <li><a href="/tags/oracle/">oracle</a></li>
+                        
+                        <li><a href="/tags/spark/">spark</a></li>
+                        
+                        <li><a href="/tags/web programming/">web programming</a></li>
+                        
+                        <li><a href="/tags/vi/">vi</a></li>
+                        
+                        <li><a href="/tags/gulp/">gulp</a></li>
+                        
+                        <li><a href="/tags/linux/">linux</a></li>
+                        
+                        <li><a href="/tags/captcha/">captcha</a></li>
+                        
+                        <li><a href="/tags/java/">java</a></li>
+                        
+                        <li><a href="/tags/wiki/">wiki</a></li>
+                        
+                        <li><a href="/tags/io/">io</a></li>
+                        
+                        <li><a href="/tags/pi/">pi</a></li>
+                        
+                        <li><a href="/tags/php/">php</a></li>
+                        
+                        <li><a href="/tags/go/">go</a></li>
+                        
+                        <li><a href="/tags/mariadb/">mariadb</a></li>
+                        
+                        <li><a href="/tags/emacs/">emacs</a></li>
+                        
+                        <li><a href="/tags/freemarker/">freemarker</a></li>
+                        
+                        <li><a href="/tags/OGNL/">OGNL</a></li>
+                        
+                        <li><a href="/tags/nginx/">nginx</a></li>
+                        
+                        <li><a href="/tags/windows/">windows</a></li>
+                        
+                        <li><a href="/tags/ruby/">ruby</a></li>
+                        
+                        <li><a href="/tags/jdbc/">jdbc</a></li>
+                        
+                        <li><a href="/tags/docker/">docker</a></li>
+                        
+                        <li><a href="/tags/angular/">angular</a></li>
+                        
+                        <li><a href="/tags/template/">template</a></li>
+                        
+                        <li><a href="/tags/jruby/">jruby</a></li>
+                        
+                        <li><a href="/tags/concurrent/">concurrent</a></li>
+                        
+                        <li><a href="/tags/angularjs/">angularjs</a></li>
+                        
+                        <li><a href="/tags/javascript/">javascript</a></li>
+                        
+                        <li><a href="/tags/python/">python</a></li>
+                        
+                        <li><a href="/tags/microframework/">microframework</a></li>
+                        
+                        <li><a href="/tags/proxy/">proxy</a></li>
+                        
+                        <li><a href="/tags/game/">game</a></li>
+                        
+                        <li><a href="/tags/node.js/">node.js</a></li>
+                        
+                        <li><a href="/tags/태그집계/">태그집계</a></li>
+                        
+                        <li><a href="/tags/react/">react</a></li>
+                        
+                        <li><a href="/tags/taglib/">taglib</a></li>
+                        
+                        <li><a href="/tags/clojurescript/">clojurescript</a></li>
+                        
+                        <li><a href="/tags/jsp/">jsp</a></li>
+                        
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <footer>Copyright &copy; 2018 DAEHEE KIM
+        <p style="text-align: center;">Powered by <a href="http://cryogenweb.org">Cryogen</a></p></footer>
+</div>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="/js/highlight.pack.js" type="text/javascript"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
+</html>

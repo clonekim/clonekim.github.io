@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>(fn[] &quot;less is more&quot;): ClojureScript 시작하기</title>
+    <link rel="canonical" href="http://clonekim.github.io/posts/2016-01-18-starting-clojurescript/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700' rel='stylesheet'
+          type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css">
+    <link href="/css/screen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">(fn[] &quot;less is more&quot;)</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li ><a href="/">Home</a></li>
+                <li
+                ><a href="/archives/">Archives</a></li>
+                
+                <li
+                >
+                <a href="/pages/about/">About</a>
+                </li>
+                
+                <li><a href="/feed.xml">RSS</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+</nav>
+
+
+<div class="container">
+
+
+    <div class="row">
+        <div class="col-lg-9">
+            <div id="content">
+                
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta" class="row">
+        <div class="col-lg-6">2016년 1월 18일 (월)</div>
+        
+    </div>
+    <h2>ClojureScript 시작하기</h2>
+</div>
+<div>
+    <ol class="content"><li><a href="#프로젝트_설정">프로젝트 설정</a></li><li><a href="#클라이언트_측">클라이언트 측</a></li><li><a href="#서버측">서버측</a></li><li><a href="#서버시작">서버시작</a></li><li><a href="#참고">참고</a></li></ol>
+     <h2 id="프로젝트&#95;설정">프로젝트 설정</h2><p><em>leiningen</em></p><pre><code class="clojure">&#91;org.clojure/clojurescript &quot;1.7.228&quot;&#93;
+</code></pre><p><em>plugin</em></p><pre><code class="clojure">&#91;lein-cljsbuild &quot;1.1.2&quot;&#93;
+</code></pre><p><em>project.clj</em></p><pre><code class="clojure">&#40;defproject hello-ring &quot;0.1.0-SNAPSHOT&quot;
+  :description &quot;FIXME: write description&quot;
+  :url &quot;http://example.com/FIXME&quot;
+  :license {:name &quot;Eclipse Public License&quot;
+            :url &quot;http://www.eclipse.org/legal/epl-v10.html&quot;}
+  :dependencies &#91;&#91;org.clojure/clojure &quot;1.7.0&quot;&#93;
+                 &#91;org.clojure/clojurescript &quot;1.7.228&quot;&#93;
+                 &#91;ring/ring-core &quot;1.4.0&quot;&#93;
+                 &#91;ring/ring-defaults &quot;0.1.5&quot;&#93;
+                 &#91;ring/ring-json &quot;0.4.0&quot;&#93;
+                 &#91;ring/ring-jetty-adapter &quot;1.4.0&quot;&#93;
+                 &#91;compojure &quot;1.4.0&quot;&#93;&#93;
+  :plugins &#91;&#91;lein-cljsbuild &quot;1.1.2&quot;&#93;
+            &#91;lein-ring &quot;0.9.7&quot;&#93;&#93;
+  :cljsbuild {:builds {:main {:source-paths &#91;&quot;src-cljs&quot;&#93;
+                              :compiler {:output-to &quot;resources/public/js/app.js&quot;
+                              	        :output-dir &quot;resources/public/out&quot;
+                                        :optimizations :simple
+                                        :pretty-print true}}}}
+  :ring {:handler hello-ring.core/app}
+  :main hello-ring.core&#41;
+</code></pre><p>cljs소스를 src-cljs라는 경로로 선택했다<br /> 디렉토리를 만들어야한다</p><pre><code>&#126;hello-ring $ mkdir src-cljs
+</code></pre><p><strong>주의</strong></p><p>:none으로 설정 시 <a href='https://developers.google.com/closure/library/'>Google Closure Library</a> 스크립트가 포함되지 않는다.<br /> 의존성까지 컴파일 결과에 포함하려면 :none이외의 설정으로 할것</p><pre><code class="clojure">:optimizations :none
+</code></pre><p><img src="/img/clojure/goog-not-found.png" alt="Goog not found" /></p><h2 id="클라이언트&#95;측">클라이언트 측</h2><p><em>src-cljs/hello/app.cljs</em></p><p>반드시 네임스페이스를 가져야한다</p><pre><code class="clojure">&#40;ns hello.app&#41;
+
+&#40;defn set-html! &#91;el content&#93;
+  &#40;set! &#40;.-innerHTML el&#41; content&#41;&#41;
+
+&#40;defn main &#91;&#93;
+  &#40;let &#91;content &quot;Hello world from ClojureScript&quot;
+        element &#40;js/document.getElementById &quot;main&quot;&#41;&#93;
+    &#40;set-html! element content&#41;&#41;&#41;
+
+&#40;main&#41;
+</code></pre><h2 id="서버측">서버측</h2><p><em>hello_ring/core.clj</em></p><pre><code class="clojure">&#40;ns hello-ring.core
+  &#40;:use &#91;ring.util.response&#93;&#41;
+  &#40;:require &#91;compojure.core :refer :all&#93;
+            &#91;compojure.route :as route&#93;
+            &#91;ring.middleware.defaults :refer &#91;wrap-defaults site-defaults&#93;&#93;
+            &#91;ring.middleware.json :refer &#91;wrap-json-response
+                                          wrap-json-body
+                                          wrap-json-params&#93;&#93;
+            &#91;hiccup.page :as page&#93;
+            &#91;ring.adapter.jetty :refer &#91;run-jetty&#93;&#93;&#41;
+
+  &#40;:gen-class&#41;&#41;
+
+&#40;defroutes app-routes
+  &#40;GET &quot;/&quot; &#91;&#93;
+       &#40;page/html5 
+        &#91;:head
+         &#91;:meta {:http-equiv &quot;X-UA-Compatible&quot; :content &quot;IE=edge&quot;}&#93;&#93;
+        &#91;:body
+         &#91;:div {:id &quot;main&quot;}
+          &#91;:button {:type &quot;button&quot; :id &quot;button01&quot;} &quot;Click Here!&quot;&#93;&#93;
+         &#40;page/include-js &quot;js/app.js&quot;&#41;&#93;&#41;&#41;
+  &#40;route/not-found &quot;&lt;h1&gt;Page not found&lt;/h1&gt;&quot;&#41;&#41;
+
+&#40;def app
+  &#40;-&gt; app-routes
+      wrap-json-body
+      wrap-json-params
+      wrap-json-response
+      &#40;wrap-defaults &#40;assoc-in site-defaults &#91;:security :anti-forgery&#93; false&#41;&#41;&#41;&#41;
+
+&#40;defn -main &#91;&#93;
+  &#40;run-jetty #'app {:port 8080}&#41;&#41;
+
+</code></pre><h2 id="서버시작">서버시작</h2><pre><code>lein ring server
+</code></pre><p>다른 터미널을 열어서<br /> src-cljs/app.cljs를 자바스크립트로 컴파일한다<br /> 한번만 컴파일한다</p><pre><code>lein cljsbuild once
+</code></pre><p>만약 소스를 주시하면서 변경 시마다 컴파일하려면</p><pre><code>lein cljsbuild auto
+</code></pre><p>이제 브라우저로 접근해보자</p><p><img src="/img/clojure/run-clojurescript.png" alt="Run ClojureScript" /></p><h2 id="참고">참고</h2><ul><li><a href='https://www.niwi.nz/cljs-workshop/'>ClojureScript Tutorial</a></li><li><a href='http://blog.jonharrington.org/clojurescript-and-closure-ui/'>Clojurescript and Closure UI Tutorial</a></li><li><a href='http://lukevanderhart.com/2011/09/30/using-javascript-and-clojurescript.html'>Using JavaScript libraries in ClojureScript</a></li><li><a href='http://swannodette.github.io/2013/11/07/clojurescript-101/'>ClojureScript 101</a></li><li><a href='https://github.com/clojure/clojurescript/wiki/Dependencies'>ClojureScript Dependencies</a></li><li><a href='http://astashov.github.io/blog/2014/07/30/perfect-clojurescript-development-environment-with-vim/'>Perfect ClojureScript Development Environment With Vim</a></li></ul>
+</div>
+
+<div id="post-tags">
+    <b>Tags: </b>
+    
+    <a href="/tags/web programming/">web programming</a>
+    
+    <a href="/tags/clojurescript/">clojurescript</a>
+    
+</div>
+
+
+    <div id="prev-next">
+        
+        <a href="/posts/2016-01-19-using-gulp-react/">&laquo; Gulp로 React빌드</a>
+        
+        
+        <a class="right" href="/posts/2016-01-14-clojurescript-gaming/">Clojure(Script)로 게임제작 &raquo;</a>
+        
+    </div>
+
+    
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_config = function () {
+            this.page.url = "http://clonekim.github.io/posts/2016-01-18-starting-clojurescript/";
+            this.page.identifier = "ClojureScript 시작하기";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//clonekim-github-io.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    
+
+
+</div>
+
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div id="sidebar">
+                <h3>Links</h3>
+                <ul id="links">
+                    <li><a href="http://cryogenweb.org/docs/home.html">Cryogen Docs</a></li>
+                    <li><a href="http://carmenla.me/blog/archives">Carmen's Blog</a></li>
+                    
+                    <li><a href="/pages/guick-guide/">Quick Start Guide</a></li>
+                    
+                </ul>
+                
+                <div id="recent">
+                    <h3>Recent Posts</h3>
+                    <ul>
+                        
+                        <li><a href="/posts/2018-12-24-aggregation-tags-with-spark/">Spark</a></li>
+                        
+                        <li><a href="/posts/2018-12-24-how-spark/">Spark</a></li>
+                        
+                        <li><a href="/posts/2018-07-05-ERAlchemy/">ERAlchemy 를 이용한 ERD작성</a></li>
+                        
+                        <li><a href="/posts/2017-11-02-go-repl/">Go Repl</a></li>
+                        
+                        <li><a href="/posts/2017-11-02-emacs-golang/">Emacs에서 Golang 를 위한 에디팅</a></li>
+                        
+                    </ul>
+                </div>
+                
+                
+                <div id="tags">
+                    <h3>Tags</h3>
+                    <ul>
+                        
+                        <li><a href="/tags/svn/">svn</a></li>
+                        
+                        <li><a href="/tags/cryogen/">cryogen</a></li>
+                        
+                        <li><a href="/tags/imagemagick/">imagemagick</a></li>
+                        
+                        <li><a href="/tags/gnome/">gnome</a></li>
+                        
+                        <li><a href="/tags/github/">github</a></li>
+                        
+                        <li><a href="/tags/clojure/">clojure</a></li>
+                        
+                        <li><a href="/tags/redmine/">redmine</a></li>
+                        
+                        <li><a href="/tags/raspberry/">raspberry</a></li>
+                        
+                        <li><a href="/tags/aws/">aws</a></li>
+                        
+                        <li><a href="/tags/oracle/">oracle</a></li>
+                        
+                        <li><a href="/tags/spark/">spark</a></li>
+                        
+                        <li><a href="/tags/web programming/">web programming</a></li>
+                        
+                        <li><a href="/tags/vi/">vi</a></li>
+                        
+                        <li><a href="/tags/gulp/">gulp</a></li>
+                        
+                        <li><a href="/tags/linux/">linux</a></li>
+                        
+                        <li><a href="/tags/captcha/">captcha</a></li>
+                        
+                        <li><a href="/tags/java/">java</a></li>
+                        
+                        <li><a href="/tags/wiki/">wiki</a></li>
+                        
+                        <li><a href="/tags/io/">io</a></li>
+                        
+                        <li><a href="/tags/pi/">pi</a></li>
+                        
+                        <li><a href="/tags/php/">php</a></li>
+                        
+                        <li><a href="/tags/go/">go</a></li>
+                        
+                        <li><a href="/tags/mariadb/">mariadb</a></li>
+                        
+                        <li><a href="/tags/emacs/">emacs</a></li>
+                        
+                        <li><a href="/tags/freemarker/">freemarker</a></li>
+                        
+                        <li><a href="/tags/OGNL/">OGNL</a></li>
+                        
+                        <li><a href="/tags/nginx/">nginx</a></li>
+                        
+                        <li><a href="/tags/windows/">windows</a></li>
+                        
+                        <li><a href="/tags/ruby/">ruby</a></li>
+                        
+                        <li><a href="/tags/jdbc/">jdbc</a></li>
+                        
+                        <li><a href="/tags/docker/">docker</a></li>
+                        
+                        <li><a href="/tags/angular/">angular</a></li>
+                        
+                        <li><a href="/tags/template/">template</a></li>
+                        
+                        <li><a href="/tags/jruby/">jruby</a></li>
+                        
+                        <li><a href="/tags/concurrent/">concurrent</a></li>
+                        
+                        <li><a href="/tags/angularjs/">angularjs</a></li>
+                        
+                        <li><a href="/tags/javascript/">javascript</a></li>
+                        
+                        <li><a href="/tags/python/">python</a></li>
+                        
+                        <li><a href="/tags/microframework/">microframework</a></li>
+                        
+                        <li><a href="/tags/proxy/">proxy</a></li>
+                        
+                        <li><a href="/tags/game/">game</a></li>
+                        
+                        <li><a href="/tags/node.js/">node.js</a></li>
+                        
+                        <li><a href="/tags/태그집계/">태그집계</a></li>
+                        
+                        <li><a href="/tags/react/">react</a></li>
+                        
+                        <li><a href="/tags/taglib/">taglib</a></li>
+                        
+                        <li><a href="/tags/clojurescript/">clojurescript</a></li>
+                        
+                        <li><a href="/tags/jsp/">jsp</a></li>
+                        
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <footer>Copyright &copy; 2018 DAEHEE KIM
+        <p style="text-align: center;">Powered by <a href="http://cryogenweb.org">Cryogen</a></p></footer>
+</div>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="/js/highlight.pack.js" type="text/javascript"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
+</html>
