@@ -12,30 +12,27 @@
 <link rel="canonical" href="http://clonekim.github.io/2018/12/spark-docker-%EC%9D%B4%EB%AF%B8%EC%A7%80%EB%A7%8C%EB%93%A4%EA%B8%B0/">
 <base href="http://clonekim.github.io/" />
 <meta property="og:title" content="Spark - Docker 이미지만들기" />
-<meta property="og:description" content="Spark Docker를 이용한 스파크 실습  Docker Image 만들기 spark-version-tgz는 미리 홈페이지에서 다운받아둘것
-├── Dockerfile ├── config │ ├── core-site.xml │ ├── hdfs-site.xml │ └── spark-env.sh ├── spark-2.4.0-bin-hadoop2.7.tgz └── start-spark.sh  Dockerfile
-FROM ubuntu:18.04 ENV SPARK_HOME /opt/spark ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64 RUN apt-get update &amp;&amp; apt-get install -y \ wget \ python3 \ psmisc \ net-tools \ openjdk-8-jdk &amp;&amp; \ apt-get autoclean &amp;&amp; \ ln -s /usr/bin/python3 /usr/bin/python RUN wget http://apache." />
+<meta property="og:description" content="Spark Docker를 이용한 스파크 실습  Docker Image 만들기 ├── Dockerfile ├── config │ ├── core-site.xml │ ├── hdfs-site.xml │ └── spark-env.sh └── start-spark.sh  Dockerfile
+FROM ubuntu:18.04 ENV SPARK_HOME /opt/spark ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64 RUN apt-get update &amp;&amp; apt-get install -y \ wget \ python3 \ psmisc \ net-tools \ openjdk-8-jdk &amp;&amp; \ apt-get autoclean &amp;&amp; \ ln -s /usr/bin/python3 /usr/bin/python RUN wget http://apache.tt.co.kr/spark/spark-2.4.0/spark-2.4.0-bin-hadoop2.7.tgz -O /spark-2.4.0-bin-hadoop2.7.tgz RUN tar -xvf spark-2." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://clonekim.github.io/2018/12/spark-docker-%EC%9D%B4%EB%AF%B8%EC%A7%80%EB%A7%8C%EB%93%A4%EA%B8%B0/" /><meta property="article:published_time" content="2018-12-24T00:00:00&#43;00:00"/>
 <meta property="article:modified_time" content="2018-12-24T00:00:00&#43;00:00"/>
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Spark - Docker 이미지만들기"/>
-<meta name="twitter:description" content="Spark Docker를 이용한 스파크 실습  Docker Image 만들기 spark-version-tgz는 미리 홈페이지에서 다운받아둘것
-├── Dockerfile ├── config │ ├── core-site.xml │ ├── hdfs-site.xml │ └── spark-env.sh ├── spark-2.4.0-bin-hadoop2.7.tgz └── start-spark.sh  Dockerfile
-FROM ubuntu:18.04 ENV SPARK_HOME /opt/spark ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64 RUN apt-get update &amp;&amp; apt-get install -y \ wget \ python3 \ psmisc \ net-tools \ openjdk-8-jdk &amp;&amp; \ apt-get autoclean &amp;&amp; \ ln -s /usr/bin/python3 /usr/bin/python RUN wget http://apache."/>
+<meta name="twitter:description" content="Spark Docker를 이용한 스파크 실습  Docker Image 만들기 ├── Dockerfile ├── config │ ├── core-site.xml │ ├── hdfs-site.xml │ └── spark-env.sh └── start-spark.sh  Dockerfile
+FROM ubuntu:18.04 ENV SPARK_HOME /opt/spark ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64 RUN apt-get update &amp;&amp; apt-get install -y \ wget \ python3 \ psmisc \ net-tools \ openjdk-8-jdk &amp;&amp; \ apt-get autoclean &amp;&amp; \ ln -s /usr/bin/python3 /usr/bin/python RUN wget http://apache.tt.co.kr/spark/spark-2.4.0/spark-2.4.0-bin-hadoop2.7.tgz -O /spark-2.4.0-bin-hadoop2.7.tgz RUN tar -xvf spark-2."/>
 
 
 
 <meta itemprop="name" content="Spark - Docker 이미지만들기">
-<meta itemprop="description" content="Spark Docker를 이용한 스파크 실습  Docker Image 만들기 spark-version-tgz는 미리 홈페이지에서 다운받아둘것
-├── Dockerfile ├── config │ ├── core-site.xml │ ├── hdfs-site.xml │ └── spark-env.sh ├── spark-2.4.0-bin-hadoop2.7.tgz └── start-spark.sh  Dockerfile
-FROM ubuntu:18.04 ENV SPARK_HOME /opt/spark ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64 RUN apt-get update &amp;&amp; apt-get install -y \ wget \ python3 \ psmisc \ net-tools \ openjdk-8-jdk &amp;&amp; \ apt-get autoclean &amp;&amp; \ ln -s /usr/bin/python3 /usr/bin/python RUN wget http://apache.">
+<meta itemprop="description" content="Spark Docker를 이용한 스파크 실습  Docker Image 만들기 ├── Dockerfile ├── config │ ├── core-site.xml │ ├── hdfs-site.xml │ └── spark-env.sh └── start-spark.sh  Dockerfile
+FROM ubuntu:18.04 ENV SPARK_HOME /opt/spark ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64 RUN apt-get update &amp;&amp; apt-get install -y \ wget \ python3 \ psmisc \ net-tools \ openjdk-8-jdk &amp;&amp; \ apt-get autoclean &amp;&amp; \ ln -s /usr/bin/python3 /usr/bin/python RUN wget http://apache.tt.co.kr/spark/spark-2.4.0/spark-2.4.0-bin-hadoop2.7.tgz -O /spark-2.4.0-bin-hadoop2.7.tgz RUN tar -xvf spark-2.">
 
 
 <meta itemprop="datePublished" content="2018-12-24T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2018-12-24T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="175">
+<meta itemprop="wordCount" content="169">
 
 
 
@@ -127,14 +124,11 @@ if (!doNotTrack) {
 
 <h2 id="docker-image-만들기">Docker Image 만들기</h2>
 
-<p>spark-version-tgz는 미리 홈페이지에서 다운받아둘것</p>
-
 <pre><code>├── Dockerfile
 ├── config
 │   ├── core-site.xml
 │   ├── hdfs-site.xml
 │   └── spark-env.sh
-├── spark-2.4.0-bin-hadoop2.7.tgz
 └── start-spark.sh
 </code></pre>
 

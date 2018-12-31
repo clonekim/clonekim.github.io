@@ -29,9 +29,8 @@
       <pubDate>Mon, 24 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>http://clonekim.github.io/2018/12/spark-docker-%EC%9D%B4%EB%AF%B8%EC%A7%80%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid>
-      <description>Spark Docker를 이용한 스파크 실습  Docker Image 만들기 spark-version-tgz는 미리 홈페이지에서 다운받아둘것
-├── Dockerfile ├── config │ ├── core-site.xml │ ├── hdfs-site.xml │ └── spark-env.sh ├── spark-2.4.0-bin-hadoop2.7.tgz └── start-spark.sh  Dockerfile
-FROM ubuntu:18.04 ENV SPARK_HOME /opt/spark ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64 RUN apt-get update &amp;amp;&amp;amp; apt-get install -y \ wget \ python3 \ psmisc \ net-tools \ openjdk-8-jdk &amp;amp;&amp;amp; \ apt-get autoclean &amp;amp;&amp;amp; \ ln -s /usr/bin/python3 /usr/bin/python RUN wget http://apache.</description>
+      <description>Spark Docker를 이용한 스파크 실습  Docker Image 만들기 ├── Dockerfile ├── config │ ├── core-site.xml │ ├── hdfs-site.xml │ └── spark-env.sh └── start-spark.sh  Dockerfile
+FROM ubuntu:18.04 ENV SPARK_HOME /opt/spark ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64 RUN apt-get update &amp;amp;&amp;amp; apt-get install -y \ wget \ python3 \ psmisc \ net-tools \ openjdk-8-jdk &amp;amp;&amp;amp; \ apt-get autoclean &amp;amp;&amp;amp; \ ln -s /usr/bin/python3 /usr/bin/python RUN wget http://apache.tt.co.kr/spark/spark-2.4.0/spark-2.4.0-bin-hadoop2.7.tgz -O /spark-2.4.0-bin-hadoop2.7.tgz RUN tar -xvf spark-2.</description>
     </item>
     
   </channel>
