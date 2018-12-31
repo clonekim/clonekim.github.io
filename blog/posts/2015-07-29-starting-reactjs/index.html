@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>(fn[] &quot;less is more&quot;): ReactJS 시작하기</title>
+    <link rel="canonical" href="http://clonekim.github.io/blog/posts/2015-07-29-starting-reactjs/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700' rel='stylesheet'
+          type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css">
+    <link href="/blog/css/screen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/blog/">(fn[] &quot;less is more&quot;)</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li ><a href="/blog/">Home</a></li>
+                <li
+                ><a href="/blog/archives/">Archives</a></li>
+                
+                <li
+                >
+                <a href="/blog/pages/about/">About</a>
+                </li>
+                
+                <li><a href="/blog/feed.xml">RSS</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+</nav>
+
+
+<div class="container">
+
+
+    <div class="row">
+        <div class="col-lg-9">
+            <div id="content">
+                
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta" class="row">
+        <div class="col-lg-6">2015년 7월 29일 (수)</div>
+        
+    </div>
+    <h2>ReactJS 시작하기</h2>
+</div>
+<div>
+    <ol class="content"><li><a href="#starter_kit으로_시작하기">Starter Kit으로 시작하기</a></li><li><a href="#jsx(javascript_xml)">JSX(JavaScript XML)</a></li><li><a href="#offline_transform">OffLine Transform</a></li><li><a href="#component">Component</a></li><li><a href="#state_component">State Component</a></li><li><a href="#event_핸들러">Event 핸들러</a></li><li><a href="#서버측_데이터_이용">서버측 데이터 이용</a></li><li><a href="#참고">참고</a></li></ol>
+     <h2 id="starter&#95;kit으로&#95;시작하기">Starter Kit으로 시작하기</h2><p><em>0.13.x를 기준으로 작성함</em></p><p><a href='http://facebook.github.io/react/downloads/react-0.13.3.zip'>react-0.13.3.zip 다운로드</a></p><p><em>hello React!</em></p><pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script src=&quot;build/react.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;build/JSXTransformer.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;	
+&lt;body&gt;
+  &lt;div id=&quot;hello&quot;&gt;&lt;/div&gt;
+    
+    &lt;script type=&quot;text/jsx&quot;&gt;
+	React.render&#40;&lt;h1&gt;Hello, welcome to React!&lt;/h1&gt;,
+	document.getElementById&#40;'hello'&#41;&#41;;
+    &lt;/script&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p><img src="/blog/img/react/hello.png" alt="Hello React!" /></p><h2 id="jsx(javascript&#95;xml)">JSX(JavaScript XML)</h2><p>JSX(JavaScript XML)는 XML 과 유사한 문법을 가지는 자바스크립트이다.<br /> JSX 문법을 사용하기 위해서는 반드시 JSXTransformer.js가 필요하다<br /> 상세한 JSX syntaxt과 spec 은 아래를 참조할 것<br /></p><ul><li><a href='http://facebook.github.io/react/docs/jsx-in-depth.html'>http://facebook.github.io/react/docs/jsx-in-depth.html</a></li><li><a href='http://facebook.github.io/jsx/'>http://facebook.github.io/jsx/</a> </li></ul><pre><code class="javascript">//Html
+&lt;h1 class=&quot;test&quot;&gt;Hello&lt;/h1&gt;
+
+//JSX
+&lt;h1 className=&quot;test&quot;&gt;Hello&lt;/h1&gt;
+
+var text= &quot;Hello React!&quot;;
+&lt;h1&gt;{text}&lt;/h1&gt;
+</code></pre><h2 id="offline&#95;transform">OffLine Transform</h2><p>JSX 스크립트 필요없이 CommonJS스펙에 따른 빌드 방법이다</p><pre><code>npm install -g react-tools</code></pre><p>아래와 같이 해당 소스가 있는 곳을 지정하면 소스가 변경될때마다 컴파일해서 순수한 자바스크립트로 빌드한다</p><pre><code>jsx --watch &#91;디렉토리 소스명&#93;
+</code></pre><h2 id="component">Component</h2><p><em>작성 순서</em></p><ol><li>클래스 생성<pre><code class="javascript"></li></ol>  var MainView = React.createClass&#40;{}&#41;;
+</code></pre><ol><li>렌더링에 포함<pre><code class="javascript"></li></ol>React.render&#40;&lt;MainView /&gt;, document.body&#41;;
+</code></pre><p><em>render를 사용하여 화면에 출력한다</em></p><p>화면에 출력한다. 한번만 호출된다</p><pre><code class="javascript">React.render&#40;&#91;JSX syntaxt&#93;, DOM element&#41;
+</code></pre><pre><code class="javascript">var MainView = React.createClass&#40;{
+  render: function&#40;&#41; {
+    return React.DOM.div&#40;{className: 'root'}, &quot;My Div&quot;&#41;;
+  }
+}&#41;;
+
+//아래는 JSX를 사용하여
+
+var MainView = React.createClass&#40;{
+  render: function&#40;&#41; {
+       return &lt;div className:&quot;root&quot;&gt;My Div&lt;/div&gt;
+  }
+}&#41;;
+
+React.render&#40;&lt;MainView /&gt;, document.body&#41;;
+</code></pre><p><em>컴포넌트는 다른 컴포넌트를 포함할 수 있다</em></p><pre><code class="javascript">var Row = React.createClass&#40;{
+
+	render: function&#40;&#41; {
+		return &lt;tr&gt;&lt;td&gt;{this.props.name}&lt;/td&gt;&lt;/tr&gt;;
+	}
+}&#41;;
+
+var Table = React.createClass&#40;{
+
+	render: function&#40;&#41; {
+
+	var data = &#91;&#93;;
+	data.push&#40;&lt;Row name=&quot;hello1&quot;/&gt;&#41;;
+	data.push&#40;&lt;Row name=&quot;hello2&quot;/&gt;&#41;;
+	data.push&#40;&lt;Row name=&quot;hello3&quot;/&gt;&#41;;
+
+		return &lt;table className=&quot;table&quot;&gt;&lt;thead&gt;
+		  &lt;tr&gt;
+		    &lt;th&gt;Attribute&lt;/th&gt;
+		    &lt;th&gt;Value&lt;/th&gt;
+		  &lt;/tr&gt;
+		  &lt;/thead&gt;
+		  &lt;tbody&gt;{data}&lt;/tbody&gt;
+		  &lt;/table&gt;
+	}
+}&#41;;
+
+React.render&#40;&lt;Table /&gt;, document.getElementById&#40;'hello'&#41;&#41;;
+</code></pre><p><img src="/blog/img/react/test03.png" alt="React Table" /></p><h2 id="state&#95;component">State Component</h2><p><em>입력폼 만들기</em></p><pre><code class="javascript">var input = React.createClass&#40;{}&#41;; //input는 html이므로 작동이 안된다. 아래처럼 수정할 것
+
+var Input = React.createClass&#40;{
+  render: function&#40;&#41; {
+    return &lt;input type=&quot;text&quot; value=&quot;Hello there&quot; /&gt;;
+}&#41;;
+
+</code></pre><p><em>초기값을 설정</em></p><pre><code class="javascript">var Input = React.createClass&#40;{
+	getInitialState: function&#40;&#41; {				
+		return {abc: &quot;Hello There!&quot;};
+	},
+	
+	render: function&#40;&#41; {
+		return &lt;Input type=&quot;text&quot; value={this.state.abc} /&gt;;
+	}
+}&#41;
+</code></pre><p>this.state는 컴포넌트의 상태값을 가지고 있다<br /> 동적으로 컴포넌트의 상태값을 바뀌기 위해서<br /> this.state에 변화를 주면 된다.</p><p>변화를 주기 위해서</p><pre><code class="javascript">this.setState&#40; 데이터 &#41;
+</code></pre><h2 id="event&#95;핸들러">Event 핸들러</h2><p>text 입력창에 변화가 발생할 때마다 초기값으로 돌리는 예이다<br /> 결과는 입력값 수정이 불가능하게 된다</p><pre><code class="javascript">var Input = React.createClass&#40;{
+	getInitialState: function&#40;&#41; {
+		return {abc: &quot;Hello There!&quot;};
+	},
+	handleEvent: function&#40;e&#41; {
+		this.setState&#40;{abc: this.state.abc}&#41;;
+	},
+	render: function&#40;&#41; {
+		return &lt;input type=&quot;text&quot; value={this.state.abc} onChange={this.handleEvent}/&gt;;
+	}
+}&#41;
+</code></pre><p><img src="/blog/img/react/hello_there.png" alt="Event Handler" /></p><h2 id="서버측&#95;데이터&#95;이용">서버측 데이터 이용</h2><p><em>작업 디렉토리 준비</em></p><pre><code>$ mkdir react-json-example
+$ cd react-json-example
+$ python -m SimpleHTTPServer
+</code></pre><p><em>서버에서 사용할 데이터를 미리 준비</em></p><p><code>example.json</code></p><pre><code class="json">&#91;
+  { &quot;author&quot;: &quot;Kim Dae Hee&quot;, &quot;title&quot; : &quot;자바스크립트로 배우는 vert.x&quot; },
+  { &quot;author&quot;: &quot;Kim Dae Hee&quot;, &quot;title&quot; : &quot;React.js + Spring Boot&quot; }
+&#93;
+</code></pre><p><code>test05.html</code></p><pre><code class="javascript">var Book = React.createClass&#40;{
+   render: function&#40;&#41; {
+      console.log&#40;&quot;here!&quot;&#41;;
+      return &#40;
+         &lt;div&gt;
+            &lt;h4&gt;도서명: {this.props.title}&lt;/h4&gt;
+            &lt;p&gt;저자:{this.props.author}&lt;/p&gt;
+         &lt;/div&gt;
+      &#41;;
+   }
+}&#41;;
+
+var BookList = React.createClass&#40;{
+   render: function &#40;&#41; {
+      console.log&#40;this.props.data&#41;;
+
+      var nodes = this.props.data.map&#40;function&#40;item&#41; {
+
+         return &#40;
+            &lt;Book author={item.author} title={item.title} /&gt;
+         &#41;;
+
+      }&#41;;
+
+      return &lt;div&gt;{nodes}&lt;/div&gt;;
+   }
+
+}&#41;;
+
+
+var BookView = React.createClass&#40;{
+   getInitialState: function&#40;&#41; {
+      return {data: &#91;&#93;};
+   },
+   componentDidMount: function&#40;&#41; {
+      console.log&#40;&quot;fetch from server&quot;&#41;;
+
+      $.ajax&#40;{
+         url: 'example.json',
+         dataType: 'json',
+         success: function&#40;data&#41; {
+            this.setState&#40;{data:data}&#41;;
+         }.bind&#40;this&#41;
+      }&#41;;
+
+   },
+
+   render: function&#40;&#41; {
+
+      return &#40;
+         &lt;div&gt;
+           &lt;h1&gt; Book List&lt;/h1&gt;
+           &lt;BookList data={this.state.data} /&gt;
+         &lt;/div&gt;
+      &#41;;
+   }
+}&#41;;
+
+React.render&#40;&lt;BookView /&gt;, document.getElementById&#40;'hello'&#41;&#41;;
+</code></pre><p><img src="/blog/img/react/test05.png" alt="React Server Side" /></p><h2 id="참고">참고</h2><ul><li>https://bitbucket.org/moondowner/facebook-react-thymeleaf-spring-mvc-example/src\</li><li>http://bloggar.aftonbladet.se/utvecklingsbloggen/2015/05/04/spring-io-isomorphic-react-applications-with-nashorn-and-spring-boot/</li><li>http://winterbe.com/posts/2015/02/16/isomorphic-react-webapps-on-the-jvm/</li><li>https://github.com/winterbe/spring-react-example</li></ul>
+</div>
+
+<div id="post-tags">
+    <b>Tags: </b>
+    
+    <a href="/blog/tags/javascript/">javascript</a>
+    
+    <a href="/blog/tags/react/">react</a>
+    
+</div>
+
+
+    <div id="prev-next">
+        
+        <a href="/blog/posts/2015-09-03-mariadb-replication-using-gtid/">&laquo; GTID를 이용한 Mariadb Replication</a>
+        
+        
+        <a class="right" href="/blog/posts/2015-07-18-install-redmine/">Redmine3 설치하기 &raquo;</a>
+        
+    </div>
+
+    
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_config = function () {
+            this.page.url = "http://clonekim.github.io/blog/posts/2015-07-29-starting-reactjs/";
+            this.page.identifier = "ReactJS 시작하기";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//clonekim-github-io.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    
+
+
+</div>
+
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div id="sidebar">
+                <h3>Links</h3>
+                <ul id="links">
+                    <li><a href="http://cryogenweb.org/docs/home.html">Cryogen Docs</a></li>
+                    <li><a href="http://carmenla.me/blog/archives">Carmen's Blog</a></li>
+                    
+                    <li><a href="/blog/pages/guick-guide/">Quick Start Guide</a></li>
+                    
+                </ul>
+                
+                <div id="recent">
+                    <h3>Recent Posts</h3>
+                    <ul>
+                        
+                        <li><a href="/blog/posts/2018-12-24-aggregation-tags-with-spark/">Spark</a></li>
+                        
+                        <li><a href="/blog/posts/2018-12-24-how-spark/">Spark</a></li>
+                        
+                        <li><a href="/blog/posts/2018-07-05-ERAlchemy/">ERAlchemy 를 이용한 ERD작성</a></li>
+                        
+                        <li><a href="/blog/posts/2017-11-02-go-repl/">Go Repl</a></li>
+                        
+                        <li><a href="/blog/posts/2017-11-02-emacs-golang/">Emacs에서 Golang 를 위한 에디팅</a></li>
+                        
+                    </ul>
+                </div>
+                
+                
+                <div id="tags">
+                    <h3>Tags</h3>
+                    <ul>
+                        
+                        <li><a href="/blog/tags/svn/">svn</a></li>
+                        
+                        <li><a href="/blog/tags/cryogen/">cryogen</a></li>
+                        
+                        <li><a href="/blog/tags/imagemagick/">imagemagick</a></li>
+                        
+                        <li><a href="/blog/tags/gnome/">gnome</a></li>
+                        
+                        <li><a href="/blog/tags/github/">github</a></li>
+                        
+                        <li><a href="/blog/tags/clojure/">clojure</a></li>
+                        
+                        <li><a href="/blog/tags/redmine/">redmine</a></li>
+                        
+                        <li><a href="/blog/tags/raspberry/">raspberry</a></li>
+                        
+                        <li><a href="/blog/tags/aws/">aws</a></li>
+                        
+                        <li><a href="/blog/tags/oracle/">oracle</a></li>
+                        
+                        <li><a href="/blog/tags/spark/">spark</a></li>
+                        
+                        <li><a href="/blog/tags/web programming/">web programming</a></li>
+                        
+                        <li><a href="/blog/tags/vi/">vi</a></li>
+                        
+                        <li><a href="/blog/tags/gulp/">gulp</a></li>
+                        
+                        <li><a href="/blog/tags/linux/">linux</a></li>
+                        
+                        <li><a href="/blog/tags/captcha/">captcha</a></li>
+                        
+                        <li><a href="/blog/tags/java/">java</a></li>
+                        
+                        <li><a href="/blog/tags/wiki/">wiki</a></li>
+                        
+                        <li><a href="/blog/tags/io/">io</a></li>
+                        
+                        <li><a href="/blog/tags/pi/">pi</a></li>
+                        
+                        <li><a href="/blog/tags/php/">php</a></li>
+                        
+                        <li><a href="/blog/tags/go/">go</a></li>
+                        
+                        <li><a href="/blog/tags/mariadb/">mariadb</a></li>
+                        
+                        <li><a href="/blog/tags/emacs/">emacs</a></li>
+                        
+                        <li><a href="/blog/tags/freemarker/">freemarker</a></li>
+                        
+                        <li><a href="/blog/tags/OGNL/">OGNL</a></li>
+                        
+                        <li><a href="/blog/tags/nginx/">nginx</a></li>
+                        
+                        <li><a href="/blog/tags/windows/">windows</a></li>
+                        
+                        <li><a href="/blog/tags/ruby/">ruby</a></li>
+                        
+                        <li><a href="/blog/tags/jdbc/">jdbc</a></li>
+                        
+                        <li><a href="/blog/tags/docker/">docker</a></li>
+                        
+                        <li><a href="/blog/tags/angular/">angular</a></li>
+                        
+                        <li><a href="/blog/tags/template/">template</a></li>
+                        
+                        <li><a href="/blog/tags/jruby/">jruby</a></li>
+                        
+                        <li><a href="/blog/tags/concurrent/">concurrent</a></li>
+                        
+                        <li><a href="/blog/tags/angularjs/">angularjs</a></li>
+                        
+                        <li><a href="/blog/tags/javascript/">javascript</a></li>
+                        
+                        <li><a href="/blog/tags/python/">python</a></li>
+                        
+                        <li><a href="/blog/tags/microframework/">microframework</a></li>
+                        
+                        <li><a href="/blog/tags/proxy/">proxy</a></li>
+                        
+                        <li><a href="/blog/tags/game/">game</a></li>
+                        
+                        <li><a href="/blog/tags/node.js/">node.js</a></li>
+                        
+                        <li><a href="/blog/tags/태그집계/">태그집계</a></li>
+                        
+                        <li><a href="/blog/tags/react/">react</a></li>
+                        
+                        <li><a href="/blog/tags/taglib/">taglib</a></li>
+                        
+                        <li><a href="/blog/tags/clojurescript/">clojurescript</a></li>
+                        
+                        <li><a href="/blog/tags/jsp/">jsp</a></li>
+                        
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <footer>Copyright &copy; 2018 DAEHEE KIM
+        <p style="text-align: center;">Powered by <a href="http://cryogenweb.org">Cryogen</a></p></footer>
+</div>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="/blog/js/highlight.pack.js" type="text/javascript"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
+</html>
