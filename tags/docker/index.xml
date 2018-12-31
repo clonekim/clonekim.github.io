@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on (fn [] &#34;Less is more&#34;)</title>
+    <link>http://clonekim.github.io/tags/docker/</link>
+    <description>Recent content in Docker on (fn [] &#34;Less is more&#34;)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko</language>
+    <lastBuildDate>Mon, 24 Dec 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://clonekim.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Spark - Docker 이미지만들기</title>
+      <link>http://clonekim.github.io/2018/12/spark-docker-%EC%9D%B4%EB%AF%B8%EC%A7%80%EB%A7%8C%EB%93%A4%EA%B8%B0/</link>
+      <pubDate>Mon, 24 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://clonekim.github.io/2018/12/spark-docker-%EC%9D%B4%EB%AF%B8%EC%A7%80%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid>
+      <description>Spark Docker를 이용한 스파크 실습  Docker Image 만들기 spark-version-tgz는 미리 홈페이지에서 다운받아둘것
+├── Dockerfile ├── config │ ├── core-site.xml │ ├── hdfs-site.xml │ └── spark-env.sh ├── spark-2.4.0-bin-hadoop2.7.tgz └── start-spark.sh  Dockerfile
+FROM ubuntu:18.04 ENV SPARK_HOME /opt/spark ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64 RUN apt-get update &amp;amp;&amp;amp; apt-get install -y \ wget \ python3 \ psmisc \ net-tools \ openjdk-8-jdk &amp;amp;&amp;amp; \ apt-get autoclean &amp;amp;&amp;amp; \ ln -s /usr/bin/python3 /usr/bin/python RUN wget http://apache.</description>
+    </item>
+    
+    <item>
+      <title>Docker 시작하기</title>
+      <link>http://clonekim.github.io/2016/03/docker-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/</link>
+      <pubDate>Tue, 01 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://clonekim.github.io/2016/03/docker-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/</guid>
+      <description>Docker 시작하기 이미지다운로드
+$ docker pull [이미지이름]  컨테이너 생성
+$ docker run --name [컨테이너이름]  컨테이너로 접속
+$ docker exec -it [컨테이너] bash  컨테이너 시작/재시작
+$ docker start [컨테이너이름] $ docker stop [컨테이너이름]  MySQL 사용하기 mysql이미지를 다운로드와 함께 컨테이너 시작하기
+$ docker run --name mysql -e MYSQL_ROOT_PASSWORD=root -e TZ=Asia/Seoul -p 3306:3306 -d mysql --character-set-server=utf8  컨테이너확인
+$ docker ps CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES cf5fbb3d49b1 mysql &amp;quot;docker-entrypoint.</description>
+    </item>
+    
+  </channel>
+</rss>

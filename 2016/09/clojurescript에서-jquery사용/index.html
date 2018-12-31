@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="DAEHEE KIM" />
+<meta name="description" content="Personal blog." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.53" />
+
+<link rel="canonical" href="http://clonekim.github.io/2016/09/clojurescript%EC%97%90%EC%84%9C-jquery%EC%82%AC%EC%9A%A9/">
+<base href="http://clonekim.github.io/" />
+<meta property="og:title" content="clojurescript에서 jquery사용" />
+<meta property="og:description" content=" view.clj
+(defn view-layout [&amp; content] (html [:head [:meta {:http-equiv &#34;Content-type&#34; :content &#34;text/html; charset=utf-8&#34;}] [&#34;title&#34;: &#34;Project-Name&#34;]] [:body content])) (defn view-content [] (view-layout [:h2 &#34;Project-Name&#34;] [:p {:id &#34;clickhere&#34;} &#34;Get yourself a nice alert by clicking here.&#34;] [:script {:src &#34;/js/jquery-1.10.2.min.js&#34;}] [:script {:src &#34;/js/cljs.js&#34;}])) hello.cljs
+(:require [jayq.core :as jq]) (:use [jayq.core :only [$]]) ;; ;; $(&#34;#btn&#34;).click(function() {alert(&#34;Hi!&#34;); }); ;; (jq/bind ($ &#34;#btn&#34;) :click (fn [] (js/alert &#34;Hi!&#34;))) lein cljsbuild once lein run  참고  ClojureScriptという選択肢 ClojureScript入門  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://clonekim.github.io/2016/09/clojurescript%EC%97%90%EC%84%9C-jquery%EC%82%AC%EC%9A%A9/" /><meta property="article:published_time" content="2016-09-20T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2016-09-20T00:00:00&#43;00:00"/>
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="clojurescript에서 jquery사용"/>
+<meta name="twitter:description" content=" view.clj
+(defn view-layout [&amp; content] (html [:head [:meta {:http-equiv &#34;Content-type&#34; :content &#34;text/html; charset=utf-8&#34;}] [&#34;title&#34;: &#34;Project-Name&#34;]] [:body content])) (defn view-content [] (view-layout [:h2 &#34;Project-Name&#34;] [:p {:id &#34;clickhere&#34;} &#34;Get yourself a nice alert by clicking here.&#34;] [:script {:src &#34;/js/jquery-1.10.2.min.js&#34;}] [:script {:src &#34;/js/cljs.js&#34;}])) hello.cljs
+(:require [jayq.core :as jq]) (:use [jayq.core :only [$]]) ;; ;; $(&#34;#btn&#34;).click(function() {alert(&#34;Hi!&#34;); }); ;; (jq/bind ($ &#34;#btn&#34;) :click (fn [] (js/alert &#34;Hi!&#34;))) lein cljsbuild once lein run  참고  ClojureScriptという選択肢 ClojureScript入門  "/>
+
+
+
+<meta itemprop="name" content="clojurescript에서 jquery사용">
+<meta itemprop="description" content=" view.clj
+(defn view-layout [&amp; content] (html [:head [:meta {:http-equiv &#34;Content-type&#34; :content &#34;text/html; charset=utf-8&#34;}] [&#34;title&#34;: &#34;Project-Name&#34;]] [:body content])) (defn view-content [] (view-layout [:h2 &#34;Project-Name&#34;] [:p {:id &#34;clickhere&#34;} &#34;Get yourself a nice alert by clicking here.&#34;] [:script {:src &#34;/js/jquery-1.10.2.min.js&#34;}] [:script {:src &#34;/js/cljs.js&#34;}])) hello.cljs
+(:require [jayq.core :as jq]) (:use [jayq.core :only [$]]) ;; ;; $(&#34;#btn&#34;).click(function() {alert(&#34;Hi!&#34;); }); ;; (jq/bind ($ &#34;#btn&#34;) :click (fn [] (js/alert &#34;Hi!&#34;))) lein cljsbuild once lein run  참고  ClojureScriptという選択肢 ClojureScript入門  ">
+
+
+<meta itemprop="datePublished" content="2016-09-20T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2016-09-20T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="71">
+
+
+
+<meta itemprop="keywords" content="clojurescript," />
+
+
+<link rel="stylesheet" href="css/layout.css" />
+<link rel="stylesheet" href="css/color-dark.css" />
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-121397292-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<title>
+
+
+     clojurescript에서 jquery사용 
+
+</title>
+
+<script src="js/highlight.min.js"></script>
+<link rel="stylesheet" href="css/tomorrow-night.min.css" />
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="http://clonekim.github.io/">(fn [] &#34;Less is more&#34;)</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item active" href="/post/"><div class="nav-item-title">Posts</div></a>
+    
+
+  </nav>
+</div>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> clojurescript에서 jquery사용 </h1>
+    <div class="content"> 
+
+<p><em>view.clj</em></p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#fff;font-weight:bold">defn </span>view-layout [&amp; content]
+  (html
+      [<span style="color:#0ff;font-weight:bold">:head</span>
+           [<span style="color:#0ff;font-weight:bold">:meta</span> {<span style="color:#0ff;font-weight:bold">:http-equiv</span> <span style="color:#0ff;font-weight:bold">&#34;Content-type&#34;</span>
+                        <span style="color:#0ff;font-weight:bold">:content</span> <span style="color:#0ff;font-weight:bold">&#34;text/html; charset=utf-8&#34;</span>}]
+           [<span style="color:#0ff;font-weight:bold">&#34;title&#34;</span><span style="color:#f00">:</span> <span style="color:#0ff;font-weight:bold">&#34;Project-Name&#34;</span>]]
+      [<span style="color:#0ff;font-weight:bold">:body</span> content]))
+
+(<span style="color:#fff;font-weight:bold">defn </span>view-content []
+  (view-layout
+       [<span style="color:#0ff;font-weight:bold">:h2</span> <span style="color:#0ff;font-weight:bold">&#34;Project-Name&#34;</span>]
+       [<span style="color:#0ff;font-weight:bold">:p</span> {<span style="color:#0ff;font-weight:bold">:id</span> <span style="color:#0ff;font-weight:bold">&#34;clickhere&#34;</span>} <span style="color:#0ff;font-weight:bold">&#34;Get yourself a nice alert by clicking here.&#34;</span>]
+       [<span style="color:#0ff;font-weight:bold">:script</span> {<span style="color:#0ff;font-weight:bold">:src</span> <span style="color:#0ff;font-weight:bold">&#34;/js/jquery-1.10.2.min.js&#34;</span>}]
+       [<span style="color:#0ff;font-weight:bold">:script</span> {<span style="color:#0ff;font-weight:bold">:src</span> <span style="color:#0ff;font-weight:bold">&#34;/js/cljs.js&#34;</span>}]))</code></pre></div>
+<p><em>hello.cljs</em></p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#0ff;font-weight:bold">:require</span> [jayq.core <span style="color:#0ff;font-weight:bold">:as</span> jq])
+(<span style="color:#0ff;font-weight:bold">:use</span> [jayq.core <span style="color:#0ff;font-weight:bold">:only</span> [$]])
+
+<span style="color:#007f7f">;;</span>
+<span style="color:#007f7f">;; $(&#34;#btn&#34;).click(function() {alert(&#34;Hi!&#34;); });</span>
+<span style="color:#007f7f">;;</span>
+
+(jq/bind ($ <span style="color:#0ff;font-weight:bold">&#34;#btn&#34;</span>) <span style="color:#0ff;font-weight:bold">:click</span> (<span style="color:#fff;font-weight:bold">fn </span>[] (js/alert <span style="color:#0ff;font-weight:bold">&#34;Hi!&#34;</span>)))</code></pre></div>
+<pre><code>lein cljsbuild once
+lein run
+</code></pre>
+
+<h2 id="참고">참고</h2>
+
+<ul>
+<li><a href="http://www.slideshare.net/maedaunderscore/clojurescript">ClojureScriptという選択肢</a></li>
+<li><a href="http://qiita.com/mizchi/items/f64b7620cd93a4d5b157">ClojureScript入門</a></li>
+</ul>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/clojurescript">#clojurescript</a>
+      </div>
+    
+</div>
+
+    <div class="date"> Sep 20, 2016 </div>
+  </div>
+
+</footer>
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'clonekim-github-io';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="http://clonekim.github.io/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright">  </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</body>
+</html>
+

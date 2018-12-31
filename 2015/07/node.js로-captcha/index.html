@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="DAEHEE KIM" />
+<meta name="description" content="Personal blog." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.53" />
+
+<link rel="canonical" href="http://clonekim.github.io/2015/07/node.js%EB%A1%9C-captcha/">
+<base href="http://clonekim.github.io/" />
+<meta property="og:title" content="Node.js로 Captcha" />
+<meta property="og:description" content="canvas를 이용한 캡챠(captcha)를 생성하려고 한다.
+사용하려는 패키지는 canvas-captcha이다
+의존성 설치 apt-get install libpango1.0-dev apt-get install libjpeg-dev apt-get install libgif-dev  소스작성 captcha.js
+var captcha = require(&#39;canvas-captcha&#39;) ,captchaOptions = { charPool: (&#39;abcdefghijklmnopqrstuvwxyz&#39; &#43; &#39;abcdefghijklmnopqrstuvwxyz&#39;.toUpperCase() &#43; &#39;1234567890&#39;).split(&#39;&#39;) //char pool Array  ,size: { width: 120 ,height: 52 } //image size  ,textPos: { left: 15 ,top: 36 } //text drawing start position  ,rotate: .01 //text ratate  ,charLength: 5 //how many chars  //,font: &#39;26px&#39; //font size  ,strokeStyle: &#39;#0088cc&#39; //style  ,bgColor: &#39;#eeeeee&#39; //bg color  ,confusion: true //draw another group background text to mangle the text  //,cFont: &#39;30px&#39; //bg text style  ,cStrokeStyle: &#39;#adc&#39; //bg text color  ,cRotate: -." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://clonekim.github.io/2015/07/node.js%EB%A1%9C-captcha/" /><meta property="article:published_time" content="2015-07-14T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2015-07-14T00:00:00&#43;00:00"/>
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Node.js로 Captcha"/>
+<meta name="twitter:description" content="canvas를 이용한 캡챠(captcha)를 생성하려고 한다.
+사용하려는 패키지는 canvas-captcha이다
+의존성 설치 apt-get install libpango1.0-dev apt-get install libjpeg-dev apt-get install libgif-dev  소스작성 captcha.js
+var captcha = require(&#39;canvas-captcha&#39;) ,captchaOptions = { charPool: (&#39;abcdefghijklmnopqrstuvwxyz&#39; &#43; &#39;abcdefghijklmnopqrstuvwxyz&#39;.toUpperCase() &#43; &#39;1234567890&#39;).split(&#39;&#39;) //char pool Array  ,size: { width: 120 ,height: 52 } //image size  ,textPos: { left: 15 ,top: 36 } //text drawing start position  ,rotate: .01 //text ratate  ,charLength: 5 //how many chars  //,font: &#39;26px&#39; //font size  ,strokeStyle: &#39;#0088cc&#39; //style  ,bgColor: &#39;#eeeeee&#39; //bg color  ,confusion: true //draw another group background text to mangle the text  //,cFont: &#39;30px&#39; //bg text style  ,cStrokeStyle: &#39;#adc&#39; //bg text color  ,cRotate: -."/>
+
+
+
+<meta itemprop="name" content="Node.js로 Captcha">
+<meta itemprop="description" content="canvas를 이용한 캡챠(captcha)를 생성하려고 한다.
+사용하려는 패키지는 canvas-captcha이다
+의존성 설치 apt-get install libpango1.0-dev apt-get install libjpeg-dev apt-get install libgif-dev  소스작성 captcha.js
+var captcha = require(&#39;canvas-captcha&#39;) ,captchaOptions = { charPool: (&#39;abcdefghijklmnopqrstuvwxyz&#39; &#43; &#39;abcdefghijklmnopqrstuvwxyz&#39;.toUpperCase() &#43; &#39;1234567890&#39;).split(&#39;&#39;) //char pool Array  ,size: { width: 120 ,height: 52 } //image size  ,textPos: { left: 15 ,top: 36 } //text drawing start position  ,rotate: .01 //text ratate  ,charLength: 5 //how many chars  //,font: &#39;26px&#39; //font size  ,strokeStyle: &#39;#0088cc&#39; //style  ,bgColor: &#39;#eeeeee&#39; //bg color  ,confusion: true //draw another group background text to mangle the text  //,cFont: &#39;30px&#39; //bg text style  ,cStrokeStyle: &#39;#adc&#39; //bg text color  ,cRotate: -.">
+
+
+<meta itemprop="datePublished" content="2015-07-14T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2015-07-14T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="131">
+
+
+
+<meta itemprop="keywords" content="node.js,captcha," />
+
+
+<link rel="stylesheet" href="css/layout.css" />
+<link rel="stylesheet" href="css/color-dark.css" />
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-121397292-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<title>
+
+
+     Node.js로 Captcha 
+
+</title>
+
+<script src="js/highlight.min.js"></script>
+<link rel="stylesheet" href="css/tomorrow-night.min.css" />
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="http://clonekim.github.io/">(fn [] &#34;Less is more&#34;)</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item active" href="/post/"><div class="nav-item-title">Posts</div></a>
+    
+
+  </nav>
+</div>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Node.js로 Captcha </h1>
+    <div class="content"> 
+
+<p>canvas를 이용한 캡챠(captcha)를 생성하려고 한다.<br />
+사용하려는 패키지는 canvas-captcha이다</p>
+
+<h2 id="의존성-설치">의존성 설치</h2>
+
+<pre><code>apt-get install libpango1.0-dev
+apt-get install libjpeg-dev
+apt-get install libgif-dev
+</code></pre>
+
+<h2 id="소스작성">소스작성</h2>
+
+<p><strong>captcha.js</strong></p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#fff;font-weight:bold">var</span> captcha = require(<span style="color:#0ff;font-weight:bold">&#39;canvas-captcha&#39;</span>)
+    ,captchaOptions = {
+        charPool: (<span style="color:#0ff;font-weight:bold">&#39;abcdefghijklmnopqrstuvwxyz&#39;</span> + <span style="color:#0ff;font-weight:bold">&#39;abcdefghijklmnopqrstuvwxyz&#39;</span>.toUpperCase() + <span style="color:#0ff;font-weight:bold">&#39;1234567890&#39;</span>).split(<span style="color:#0ff;font-weight:bold">&#39;&#39;</span>) <span style="color:#007f7f">//char pool Array
+</span><span style="color:#007f7f"></span>        ,size: {
+            width: <span style="color:#ff0;font-weight:bold">120</span>
+            ,height: <span style="color:#ff0;font-weight:bold">52</span>
+        } <span style="color:#007f7f">//image size
+</span><span style="color:#007f7f"></span>        ,textPos: {
+            left: <span style="color:#ff0;font-weight:bold">15</span>
+            ,top: <span style="color:#ff0;font-weight:bold">36</span>
+        } <span style="color:#007f7f">//text drawing start position
+</span><span style="color:#007f7f"></span>        ,rotate: <span style="color:#ff0;font-weight:bold">.01</span> <span style="color:#007f7f">//text ratate
+</span><span style="color:#007f7f"></span>        ,charLength: <span style="color:#ff0;font-weight:bold">5</span> <span style="color:#007f7f">//how many chars
+</span><span style="color:#007f7f"></span>        <span style="color:#007f7f">//,font: &#39;26px&#39; //font size
+</span><span style="color:#007f7f"></span>        ,strokeStyle: <span style="color:#0ff;font-weight:bold">&#39;#0088cc&#39;</span> <span style="color:#007f7f">//style
+</span><span style="color:#007f7f"></span>        ,bgColor: <span style="color:#0ff;font-weight:bold">&#39;#eeeeee&#39;</span> <span style="color:#007f7f">//bg color
+</span><span style="color:#007f7f"></span>        ,confusion: <span style="color:#fff;font-weight:bold">true</span> <span style="color:#007f7f">//draw another group background text to mangle the text
+</span><span style="color:#007f7f"></span>        <span style="color:#007f7f">//,cFont: &#39;30px&#39; //bg text style
+</span><span style="color:#007f7f"></span>        ,cStrokeStyle: <span style="color:#0ff;font-weight:bold">&#39;#adc&#39;</span> <span style="color:#007f7f">//bg text color
+</span><span style="color:#007f7f"></span>        ,cRotate: -<span style="color:#ff0;font-weight:bold">.05</span> <span style="color:#007f7f">//bg text rotate
+</span><span style="color:#007f7f"></span>    };
+
+exports.captcha = <span style="color:#fff;font-weight:bold">function</span>(req, res) {
+    captcha(captchaOptions, <span style="color:#fff;font-weight:bold">function</span>(err, data) {
+        <span style="color:#fff;font-weight:bold">if</span>(err) {
+            res.send(err);
+        }
+        <span style="color:#fff;font-weight:bold">else</span> {
+            console.log(<span style="color:#0ff;font-weight:bold">&#34;Generated Captcha -&gt; &#34;</span>, data.captchaStr);
+            req.session.captcha = data.captchaStr;
+            res.end(data.captchaImg)
+        }
+    })
+};
+</code></pre></div> </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/node.js">#node.js</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/captcha">#captcha</a>
+      </div>
+    
+</div>
+
+    <div class="date"> Jul 14, 2015 </div>
+  </div>
+
+</footer>
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'clonekim-github-io';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="http://clonekim.github.io/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright">  </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</body>
+</html>
+

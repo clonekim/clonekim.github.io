@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="DAEHEE KIM" />
+<meta name="description" content="Personal blog." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.53" />
+
+<link rel="canonical" href="http://clonekim.github.io/2018/12/spark/">
+<base href="http://clonekim.github.io/" />
+<meta property="og:title" content="Spark" />
+<meta property="og:description" content="현재 특정 테이블의 태그정보와 아래와 같다
+특정컬럼에 태그 값이 컴마 구분으로 들어있음
+   tags     태그, 태그, 태그 &hellip;    파일 처리 해당 컬럼만 csv로 만들어본것
+# -*- coding: utf-8 -*- from pyspark import SparkConf from pyspark import SparkContext from pyspark.sql import SparkSession from pyspark.sql.types import * lines = sc.textFile(&#39;[csv파일]&#39;, use_unicode=True) counts = lines.flatMap(lambda line: line.split(&#39;,&#39;)).map(lambda word: (word,1)).reduceByKey(lambda a,b : a &#43; b) schema = StructType([ StructField(&#39;tag&#39;, StringType(), False), StructField(&#39;count&#39;, IntegerType(), False), ]) df = spark." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://clonekim.github.io/2018/12/spark/" /><meta property="article:published_time" content="2018-12-24T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-12-24T00:00:00&#43;00:00"/>
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Spark"/>
+<meta name="twitter:description" content="현재 특정 테이블의 태그정보와 아래와 같다
+특정컬럼에 태그 값이 컴마 구분으로 들어있음
+   tags     태그, 태그, 태그 &hellip;    파일 처리 해당 컬럼만 csv로 만들어본것
+# -*- coding: utf-8 -*- from pyspark import SparkConf from pyspark import SparkContext from pyspark.sql import SparkSession from pyspark.sql.types import * lines = sc.textFile(&#39;[csv파일]&#39;, use_unicode=True) counts = lines.flatMap(lambda line: line.split(&#39;,&#39;)).map(lambda word: (word,1)).reduceByKey(lambda a,b : a &#43; b) schema = StructType([ StructField(&#39;tag&#39;, StringType(), False), StructField(&#39;count&#39;, IntegerType(), False), ]) df = spark."/>
+
+
+
+<meta itemprop="name" content="Spark">
+<meta itemprop="description" content="현재 특정 테이블의 태그정보와 아래와 같다
+특정컬럼에 태그 값이 컴마 구분으로 들어있음
+   tags     태그, 태그, 태그 &hellip;    파일 처리 해당 컬럼만 csv로 만들어본것
+# -*- coding: utf-8 -*- from pyspark import SparkConf from pyspark import SparkContext from pyspark.sql import SparkSession from pyspark.sql.types import * lines = sc.textFile(&#39;[csv파일]&#39;, use_unicode=True) counts = lines.flatMap(lambda line: line.split(&#39;,&#39;)).map(lambda word: (word,1)).reduceByKey(lambda a,b : a &#43; b) schema = StructType([ StructField(&#39;tag&#39;, StringType(), False), StructField(&#39;count&#39;, IntegerType(), False), ]) df = spark.">
+
+
+<meta itemprop="datePublished" content="2018-12-24T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-12-24T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="250">
+
+
+
+<meta itemprop="keywords" content="spark,태그집계," />
+
+
+<link rel="stylesheet" href="css/layout.css" />
+<link rel="stylesheet" href="css/color-dark.css" />
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-121397292-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<title>
+
+
+     Spark 
+
+</title>
+
+<script src="js/highlight.min.js"></script>
+<link rel="stylesheet" href="css/tomorrow-night.min.css" />
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="http://clonekim.github.io/">(fn [] &#34;Less is more&#34;)</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item active" href="/post/"><div class="nav-item-title">Posts</div></a>
+    
+
+  </nav>
+</div>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Spark </h1>
+    <div class="content"> 
+
+<p>현재 특정 테이블의 태그정보와 아래와 같다<br />
+특정컬럼에 태그 값이 컴마 구분으로 들어있음</p>
+
+<table>
+<thead>
+<tr>
+<th>tags</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>태그, 태그, 태그 &hellip;</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="파일-처리">파일 처리</h2>
+
+<p>해당 컬럼만 csv로 만들어본것</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007f7f"># -*- coding: utf-8 -*-</span>
+
+<span style="color:#fff;font-weight:bold">from</span> pyspark <span style="color:#fff;font-weight:bold">import</span> SparkConf
+<span style="color:#fff;font-weight:bold">from</span> pyspark <span style="color:#fff;font-weight:bold">import</span> SparkContext
+<span style="color:#fff;font-weight:bold">from</span> pyspark.sql <span style="color:#fff;font-weight:bold">import</span> SparkSession
+<span style="color:#fff;font-weight:bold">from</span> pyspark.sql.types <span style="color:#fff;font-weight:bold">import</span> *
+
+
+lines = sc.textFile(<span style="color:#0ff;font-weight:bold">&#39;[csv파일]&#39;</span>, use_unicode=True)
+counts = lines.flatMap(<span style="color:#fff;font-weight:bold">lambda</span> line: line.split(<span style="color:#0ff;font-weight:bold">&#39;,&#39;</span>)).<span style="color:#fff;font-weight:bold">map</span>(<span style="color:#fff;font-weight:bold">lambda</span> word: (word,<span style="color:#ff0;font-weight:bold">1</span>)).reduceByKey(<span style="color:#fff;font-weight:bold">lambda</span> a,b : a + b)
+
+
+schema = StructType([
+  StructField(<span style="color:#0ff;font-weight:bold">&#39;tag&#39;</span>, StringType(), False),
+  StructField(<span style="color:#0ff;font-weight:bold">&#39;count&#39;</span>, IntegerType(), False),
+])
+
+df = spark.createDataFrame(counts, schema)
+
+df.show()</code></pre></div>
+<p><img src="/img/spark/show-df.png" alt="show-df.png" /></p>
+
+<h2 id="jdbc를-통해-소스-읽어오기">JDBC를 통해 소스 읽어오기</h2>
+
+<p>그냥 jdbc를 통해서 바로 데이터프레임으로 만들어 본것</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">dbDataFrame = spark.read.format(<span style="color:#0ff;font-weight:bold">&#39;jdbc&#39;</span>) \
+                             .option(<span style="color:#0ff;font-weight:bold">&#39;url&#39;</span>, url) \
+                             .option(<span style="color:#0ff;font-weight:bold">&#39;dbtable&#39;</span>, <span style="color:#0ff;font-weight:bold">&#39;popular_product_ranks&#39;</span>) \
+                             .option(<span style="color:#0ff;font-weight:bold">&#39;driver&#39;</span>,  driver) \
+                             .option(<span style="color:#0ff;font-weight:bold">&#39;user&#39;</span>, user)
+                             .option(<span style="color:#0ff;font-weight:bold">&#39;password&#39;</span>, password).load()</code></pre></div>
+<h2 id="jdbc로-통해-write-처리">JDBC로 통해 Write 처리</h2>
+
+<p>처리결과를 바로 대시보드 역할을 하는 테이블에 다시 쓰기</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#fff;font-weight:bold">from</span> pyspark <span style="color:#fff;font-weight:bold">import</span> SparkConf
+<span style="color:#fff;font-weight:bold">from</span> pyspark <span style="color:#fff;font-weight:bold">import</span> SparkContext
+<span style="color:#fff;font-weight:bold">from</span> pyspark.sql <span style="color:#fff;font-weight:bold">import</span> SparkSession
+<span style="color:#fff;font-weight:bold">from</span> pyspark.sql.types <span style="color:#fff;font-weight:bold">import</span> *
+
+<span style="color:#fff;font-weight:bold">def</span> main():
+conf = SparkConf()
+conf.setAppName(<span style="color:#0ff;font-weight:bold">&#39;save_tags_jdbc&#39;</span>)
+sc = SparkContext(conf=conf)
+spark = SparkSession(sc)
+
+schema = StructType([
+StructField(<span style="color:#0ff;font-weight:bold">&#39;tag&#39;</span>, StringType(), False),
+StructField(<span style="color:#0ff;font-weight:bold">&#39;count&#39;</span>, IntegerType(), False),
+])
+
+lines = sc.textFile(<span style="color:#0ff;font-weight:bold">&#39;/home/bonjour/spark-master/data/tags.txt&#39;</span>, use_unicode=True)
+counts = lines.flatMap(<span style="color:#fff;font-weight:bold">lambda</span> line: line.split(<span style="color:#0ff;font-weight:bold">&#39;,&#39;</span>)).<span style="color:#fff;font-weight:bold">map</span>(<span style="color:#fff;font-weight:bold">lambda</span> word: (word,<span style="color:#ff0;font-weight:bold">1</span>)).reduceByKey(<span style="color:#fff;font-weight:bold">lambda</span> a,b : a + b)
+
+df = spark.createDataFrame(counts, schema)
+df.write.format(<span style="color:#0ff;font-weight:bold">&#39;jdbc&#39;</span>).options(
+url=<span style="color:#0ff;font-weight:bold">&#39;[jdbc url]&#39;</span>,
+        user=<span style="color:#0ff;font-weight:bold">&#39;[user]&#39;</span>,
+        password=<span style="color:#0ff;font-weight:bold">&#39;[password]&#39;</span>,
+        driver=<span style="color:#0ff;font-weight:bold">&#39;org.mariadb.jdbc.Driver&#39;</span>,
+        dbtable=<span style="color:#0ff;font-weight:bold">&#39;top_tags&#39;</span>).mode(<span style="color:#0ff;font-weight:bold">&#39;overwrite&#39;</span>).save()</code></pre></div>
+<h2 id="flatmap-사용해봄">flatMap 사용해봄</h2>
+
+<p><em>테이블 A</em></p>
+
+<table>
+<thead>
+<tr>
+<th>product_no</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+</tr>
+
+<tr>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+
+<p><em>테이블 B</em></p>
+
+<table>
+<thead>
+<tr>
+<th>product_no</th>
+<th>tags</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>예쁜, 20대여성&hellip;</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>20대여성, 스타일이 좋은, 핏이 좋은&hellip;</td>
+</tr>
+</tbody>
+</table>
+
+<p>이럴 경우 flatMap을 이용해 아래와 같이 만든다</p>
+
+<table>
+<thead>
+<tr>
+<th>product_no</th>
+<th>tag</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>예쁜</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>20대여성</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>20대여성</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>스타일이 좋은</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df = spark.read.format(<span style="color:#0ff;font-weight:bold">&#39;jdbc&#39;</span>)\
+            .option(<span style="color:#0ff;font-weight:bold">&#39;url&#39;</span>, url) \
+            .option(<span style="color:#0ff;font-weight:bold">&#39;dbtable&#39;</span>, table) \
+            .option(<span style="color:#0ff;font-weight:bold">&#39;driver&#39;</span>,  driver) \
+            .option(<span style="color:#0ff;font-weight:bold">&#39;user&#39;</span>, user) \
+            .option(<span style="color:#0ff;font-weight:bold">&#39;password&#39;</span>, password).load()
+
+df.<span style="color:#fff;font-weight:bold">filter</span>(df[<span style="color:#0ff;font-weight:bold">&#39;tags&#39;</span>] != <span style="color:#0ff;font-weight:bold">&#39;&#39;</span>)\
+  .select(df[<span style="color:#0ff;font-weight:bold">&#39;product_no&#39;</span>], df[<span style="color:#0ff;font-weight:bold">&#39;tags&#39;</span>])\
+  .rdd \
+  .flatMap(<span style="color:#fff;font-weight:bold">lambda</span> row: ((<span style="color:#fff;font-weight:bold">int</span>(row[<span style="color:#ff0;font-weight:bold">0</span>]), v) <span style="color:#fff;font-weight:bold">for</span> v in row[<span style="color:#ff0;font-weight:bold">1</span>].split(<span style="color:#0ff;font-weight:bold">&#39;,&#39;</span>)))</code></pre></div> </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/spark">#spark</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/%ED%83%9C%EA%B7%B8%EC%A7%91%EA%B3%84">#태그집계</a>
+      </div>
+    
+</div>
+
+    <div class="date"> Dec 24, 2018 </div>
+  </div>
+
+</footer>
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'clonekim-github-io';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="http://clonekim.github.io/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright">  </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</body>
+</html>
+

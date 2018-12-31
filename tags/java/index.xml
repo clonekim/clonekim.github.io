@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on (fn [] &#34;Less is more&#34;)</title>
+    <link>http://clonekim.github.io/tags/java/</link>
+    <description>Recent content in Java on (fn [] &#34;Less is more&#34;)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko</language>
+    <lastBuildDate>Wed, 23 Sep 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://clonekim.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Freemarker assign팁</title>
+      <link>http://clonekim.github.io/2015/09/freemarker-assign%ED%8C%81/</link>
+      <pubDate>Wed, 23 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://clonekim.github.io/2015/09/freemarker-assign%ED%8C%81/</guid>
+      <description>변수 x에 42를 할당하고 이것은 명백히 Number 타입이다
+&amp;lt;#assign x=42 /&amp;gt;  String타입으로 변환할 수 있다
+${x?string} ${x?string[0..1]}  .(dot)가 들어간 변수도 사용할 수 있다
+&amp;lt;#assign telephone=&amp;quot;${site\\.telephone?string}&amp;quot; /&amp;gt; //15881234 ${telephone[0..3]}-${telephone[4..7]} //1588-1234  </description>
+    </item>
+    
+    <item>
+      <title>Oracle Jdbc Url</title>
+      <link>http://clonekim.github.io/2015/09/oracle-jdbc-url/</link>
+      <pubDate>Fri, 11 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://clonekim.github.io/2015/09/oracle-jdbc-url/</guid>
+      <description>JDBC URL syntax
+jdbc:oracle:thin:@[HOST][:PORT]:SID jdbc:oracle:thin:@//[HOST][:PORT]/SERVICE  Hikari Pool를 사용 시 아래와 같이 경고메시지가 나타나면
+oracle.jdbc.driver.OracleDriver에서 oracle.jdbc.OracleDriver 로 바꿀 것
+2015-09-10 WARN (main) [DriverDataSource(&amp;lt;init&amp;gt;:68)] Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation. 2015-09-10 DEBUG (main) [PoolUtilities(getAndSetNetworkTimeout:198)] HikariPool-0 - Connection.setNetworkTimeout() not supported   JDBC - Oracle FAQ Database JDBC Developer&amp;rsquo;s Guide and Reference  </description>
+    </item>
+    
+    <item>
+      <title>Java IO/NIO Tutorial</title>
+      <link>http://clonekim.github.io/2014/01/java-io-nio-tutorial/</link>
+      <pubDate>Sun, 05 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://clonekim.github.io/2014/01/java-io-nio-tutorial/</guid>
+      <description> The Rox Java NIO Tutorial Five ways to maximize Java NIO and NIO.2 Java NIO - Non Blocking IO and Multiplexing A simple HTTP server that displays information about all accessible printers on the network  </description>
+    </item>
+    
+    <item>
+      <title>BigDecimal을 이용한 반올림</title>
+      <link>http://clonekim.github.io/2013/10/bigdecimal%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%B0%98%EC%98%AC%EB%A6%BC/</link>
+      <pubDate>Sat, 12 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://clonekim.github.io/2013/10/bigdecimal%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%B0%98%EC%98%AC%EB%A6%BC/</guid>
+      <description>BigDecimal.ROUND_DOWN	// 내림 BigDecimal.ROUND_HALF_UP // 반올림 BigDecimal.ROUND_UP // 올림</description>
+    </item>
+    
+    <item>
+      <title>java.util.concurrent</title>
+      <link>http://clonekim.github.io/2013/10/java.util.concurrent/</link>
+      <pubDate>Tue, 01 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://clonekim.github.io/2013/10/java.util.concurrent/</guid>
+      <description>쓰레드 생성은 시스템에 따라 제한됨 쓰레드풀을 사용할 수 있는 패키지가 있음 Future는 메서드를 비동기로 실행 후 나중에 결과를 받을 수 있음  import java.math.BigDecimal; import java.util.ArrayList; import java.util.List; import java.util.concurrent.Callable; import java.util.concurrent.ExecutionException; import java.util.concurrent.ExecutorService; import java.util.concurrent.Executors; import java.util.concurrent.Future; public class CallableTest { public static void main(String[] args) { callableTest(); } private static class Result { Long in; BigDecimal out; Result(final Long in, final BigDecimal out) { this.in = in; this.</description>
+    </item>
+    
+    <item>
+      <title>Jackson JSON Processor</title>
+      <link>http://clonekim.github.io/2013/09/jackson-json-processor/</link>
+      <pubDate>Fri, 27 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://clonekim.github.io/2013/09/jackson-json-processor/</guid>
+      <description> Parsing option String data = &amp;#34;[{&amp;#39;text&amp;#39;:&amp;#39;PROJECT&amp;#39;,&amp;#39;id&amp;#39;:&amp;#39;00156&amp;#39;,&amp;#39;leaf&amp;#39;:true}]&amp;#34;; ObjectMapper mapper = new ObjectMapper(); mapper.configure(JsonParser.Feature.ALLOW_SINGLE_QUOTES, true); JsonNode node = mapper.readTree(data); Annotation JsonSerialize
+@JsonSerialize(using=JsonDateSerializer.class) public Date getCreationDate() { return creationDate; } JsonDateSerializer.java
+public class JsonDateSerializer extends JsonSerializer&amp;lt;Date&amp;gt; { private static final SimpleDateFormat dateFormat = new SimpleDateFormat(&amp;#34;yyyy-MM-dd HH:mm:ss&amp;#34;); @Override public void serialize(Date date, JsonGenerator json, SerializerProvider provider) throws IOException, JsonProcessingException { String formattedDate = dateFormat.format(date); json.writeString(formattedDate); } }  Jackson JSON Processor Wiki  </description>
+    </item>
+    
+    <item>
+      <title>프록시서버 인증에러</title>
+      <link>http://clonekim.github.io/2013/09/%ED%94%84%EB%A1%9D%EC%8B%9C%EC%84%9C%EB%B2%84-%EC%9D%B8%EC%A6%9D%EC%97%90%EB%9F%AC/</link>
+      <pubDate>Fri, 27 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://clonekim.github.io/2013/09/%ED%94%84%EB%A1%9D%EC%8B%9C%EC%84%9C%EB%B2%84-%EC%9D%B8%EC%A6%9D%EC%97%90%EB%9F%AC/</guid>
+      <description>HttpURLConnecton를 이용해서 프록시설정하고 다운로드할 데이터가 있었으나 인증에러를 발생
+java.net.Authenticator를 구현해야함
+import java.net.Authenticator; import java.net.MalformedURLException; import java.net.PasswordAuthentication; import java.net.URL; public class ProxyAuthenticator extends Authenticator { private String proxyhost; private String userid; private String password; public ProxyAuthenticator(String proxyhost, String userid, String password) { this.proxyhost = proxyhost; this.userid = userid; this.password = password; } @Override public URL getRequestingURL() { if (this.proxyhost == null) return null; try { return new URL(this.proxyhost); } catch (MalformedURLException e) { return null; } } @Override protected RequestorType getRequestorType() { return RequestorType.</description>
+    </item>
+    
+    <item>
+      <title>자바 호환에러</title>
+      <link>http://clonekim.github.io/2013/06/%EC%9E%90%EB%B0%94-%ED%98%B8%ED%99%98%EC%97%90%EB%9F%AC/</link>
+      <pubDate>Thu, 20 Jun 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://clonekim.github.io/2013/06/%EC%9E%90%EB%B0%94-%ED%98%B8%ED%99%98%EC%97%90%EB%9F%AC/</guid>
+      <description>java.lang.UnsupportedClassVersion_error (Unsupported major.minor version 51.0)  하위버전의 클래스파일을 상위버전이 읽어들일때는 상관없지만
+상위버전의 클래스파일을 하위버전이 읽어올때는 위와 같은 에러를 낸다
+에러 상세코드
+version 52.0 컴파일 버전 : 1.8 version 51.0 컴파일 버전 : 1.7 version 50.0 컴파일 버전 : 1.6 version 49.0 컴파일 버전 : 1.5 version 48.0 컴파일 버전 : 1.4  </description>
+    </item>
+    
+    <item>
+      <title>Java Compile Option</title>
+      <link>http://clonekim.github.io/2013/06/java-compile-option/</link>
+      <pubDate>Sun, 16 Jun 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://clonekim.github.io/2013/06/java-compile-option/</guid>
+      <description>-Dfile.encoding=[Character Set] -Dclient.encoding.override=[Character Set]  </description>
+    </item>
+    
+    <item>
+      <title>OGNL</title>
+      <link>http://clonekim.github.io/2012/01/ognl/</link>
+      <pubDate>Tue, 17 Jan 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://clonekim.github.io/2012/01/ognl/</guid>
+      <description>Maven
+&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;ognl&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;ognl&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.0.5&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; 소스
+Map&amp;lt;String, Object&amp;gt; map = new HashMap&amp;lt;String, Object&amp;gt;(); map.put(&amp;#34;book&amp;#34;, &amp;#34;모바일 웹앱&amp;#34;); System.out.println(Ognl.getValue(Ognl.parseExpression(&amp;#34;book&amp;#34;), map)); Map context = new HashMap(); List&amp;lt;String&amp;gt; values1 = (List)Ognl.getValue(&amp;#34;{123,&amp;#39;abc&amp;#39;,&amp;#39;00oo&amp;#39;}&amp;#34;, context, new Object()); System.out.println(values1); Map values2 = (Map) Ognl.getValue(&amp;#34;#{123:333,&amp;#39;abc&amp;#39;:111, &amp;#39;bbb&amp;#39;:&amp;#39;Kim&amp;#39;, &amp;#39;other&amp;#39;:&amp;#39;[0,2,3,4,5]&amp;#39;}&amp;#34;, context, new Object()); System.out.println(values2); 출력
+모바일 웹앱 [123, abc, 00oo] {123=333, abc=111, bbb=Kim, other=[0,2,3,4,5]}  </description>
+    </item>
+    
+    <item>
+      <title>Java Date에러</title>
+      <link>http://clonekim.github.io/2011/06/java-date%EC%97%90%EB%9F%AC/</link>
+      <pubDate>Sun, 12 Jun 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://clonekim.github.io/2011/06/java-date%EC%97%90%EB%9F%AC/</guid>
+      <description> Override time zone 생성한 Date 객체가 KST가 아닌 자꾸 GMT로 출력 될 경우
+System.setProperty(&amp;#34;user.timezone&amp;#34;, &amp;#34;Asia/Seoul&amp;#34;) ex) System.setProperty(&amp;#34;user.timezone&amp;#34;, &amp;#34;UTC&amp;#34;); TimeZone.setDefault(null); //reset 하기 위해 반드시 필요함 서버를 구동시에 -D 옵션으로 설정할 것
+참고  Override a Java application&amp;rsquo;s time zone Java&amp;rsquo;s java.util.TimeZone  </description>
+    </item>
+    
+  </channel>
+</rss>

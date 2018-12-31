@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Oracle on (fn [] &#34;Less is more&#34;)</title>
+    <link>http://clonekim.github.io/tags/oracle/</link>
+    <description>Recent content in Oracle on (fn [] &#34;Less is more&#34;)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko</language>
+    <lastBuildDate>Fri, 11 Sep 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://clonekim.github.io/tags/oracle/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Oracle Jdbc Url</title>
+      <link>http://clonekim.github.io/2015/09/oracle-jdbc-url/</link>
+      <pubDate>Fri, 11 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://clonekim.github.io/2015/09/oracle-jdbc-url/</guid>
+      <description>JDBC URL syntax
+jdbc:oracle:thin:@[HOST][:PORT]:SID jdbc:oracle:thin:@//[HOST][:PORT]/SERVICE  Hikari Pool를 사용 시 아래와 같이 경고메시지가 나타나면
+oracle.jdbc.driver.OracleDriver에서 oracle.jdbc.OracleDriver 로 바꿀 것
+2015-09-10 WARN (main) [DriverDataSource(&amp;lt;init&amp;gt;:68)] Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation. 2015-09-10 DEBUG (main) [PoolUtilities(getAndSetNetworkTimeout:198)] HikariPool-0 - Connection.setNetworkTimeout() not supported   JDBC - Oracle FAQ Database JDBC Developer&amp;rsquo;s Guide and Reference  </description>
+    </item>
+    
+  </channel>
+</rss>

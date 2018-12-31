@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="DAEHEE KIM" />
+<meta name="description" content="Personal blog." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.53" />
+
+<link rel="canonical" href="http://clonekim.github.io/2015/09/clojure-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/">
+<base href="http://clonekim.github.io/" />
+<meta property="og:title" content="Clojure 시작하기" />
+<meta property="og:description" content="JVM위에서 작동하는 함수형 프로그래밍이다
+clojure 얻기 http://clojure.org
+IDE/Tools  LightTable Cursive Emacs  Leiningen으로 시작하기 Leiningen (레닝겐)은 클로져를 쉽게 시작하기 위한 빌드자동화 툴이다
+윈도우에서만 self-install해준다
+Project 생성 lein new [프로젝트명]  프로젝트 의존성 추가 라이브러리는 아래의 저장소에서 검색이 가능하고
+의존성에 추가하면 된다
+ clojars Maven repository  :dependencies [[org.clojure/clojure &#34;1.7.0&#34;] [groupId/artifactId &#34;version&#34;]]) 그외의 라이브러리 저장소로는 추가로 지정할수있다
+:repositories { &#34;이름&#34; &#34;http://192.168.0.10:8081/nexus/content/repositories/thirdparty&#34; } REPL(Read Eval Print Loop) 실행 lein repl  REPL에서 클로저코드를 작성하고 바로 실행이 가능하다" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://clonekim.github.io/2015/09/clojure-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/" /><meta property="article:published_time" content="2015-09-25T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2015-09-25T00:00:00&#43;00:00"/>
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Clojure 시작하기"/>
+<meta name="twitter:description" content="JVM위에서 작동하는 함수형 프로그래밍이다
+clojure 얻기 http://clojure.org
+IDE/Tools  LightTable Cursive Emacs  Leiningen으로 시작하기 Leiningen (레닝겐)은 클로져를 쉽게 시작하기 위한 빌드자동화 툴이다
+윈도우에서만 self-install해준다
+Project 생성 lein new [프로젝트명]  프로젝트 의존성 추가 라이브러리는 아래의 저장소에서 검색이 가능하고
+의존성에 추가하면 된다
+ clojars Maven repository  :dependencies [[org.clojure/clojure &#34;1.7.0&#34;] [groupId/artifactId &#34;version&#34;]]) 그외의 라이브러리 저장소로는 추가로 지정할수있다
+:repositories { &#34;이름&#34; &#34;http://192.168.0.10:8081/nexus/content/repositories/thirdparty&#34; } REPL(Read Eval Print Loop) 실행 lein repl  REPL에서 클로저코드를 작성하고 바로 실행이 가능하다"/>
+
+
+
+<meta itemprop="name" content="Clojure 시작하기">
+<meta itemprop="description" content="JVM위에서 작동하는 함수형 프로그래밍이다
+clojure 얻기 http://clojure.org
+IDE/Tools  LightTable Cursive Emacs  Leiningen으로 시작하기 Leiningen (레닝겐)은 클로져를 쉽게 시작하기 위한 빌드자동화 툴이다
+윈도우에서만 self-install해준다
+Project 생성 lein new [프로젝트명]  프로젝트 의존성 추가 라이브러리는 아래의 저장소에서 검색이 가능하고
+의존성에 추가하면 된다
+ clojars Maven repository  :dependencies [[org.clojure/clojure &#34;1.7.0&#34;] [groupId/artifactId &#34;version&#34;]]) 그외의 라이브러리 저장소로는 추가로 지정할수있다
+:repositories { &#34;이름&#34; &#34;http://192.168.0.10:8081/nexus/content/repositories/thirdparty&#34; } REPL(Read Eval Print Loop) 실행 lein repl  REPL에서 클로저코드를 작성하고 바로 실행이 가능하다">
+
+
+<meta itemprop="datePublished" content="2015-09-25T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2015-09-25T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1093">
+
+
+
+<meta itemprop="keywords" content="clojure," />
+
+
+<link rel="stylesheet" href="css/layout.css" />
+<link rel="stylesheet" href="css/color-dark.css" />
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-121397292-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<title>
+
+
+     Clojure 시작하기 
+
+</title>
+
+<script src="js/highlight.min.js"></script>
+<link rel="stylesheet" href="css/tomorrow-night.min.css" />
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="http://clonekim.github.io/">(fn [] &#34;Less is more&#34;)</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item active" href="/post/"><div class="nav-item-title">Posts</div></a>
+    
+
+  </nav>
+</div>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Clojure 시작하기 </h1>
+    <div class="content"> 
+
+<p>JVM위에서 작동하는 함수형 프로그래밍이다</p>
+
+<h2 id="clojure-얻기">clojure 얻기</h2>
+
+<p><a href="http://clojure.org">http://clojure.org</a></p>
+
+<h2 id="ide-tools">IDE/Tools</h2>
+
+<ul>
+<li><a href="http://lighttable.com">LightTable</a></li>
+<li><a href="https://cursiveclojure.com">Cursive</a></li>
+<li>Emacs</li>
+</ul>
+
+<h2 id="leiningen으로-시작하기">Leiningen으로 시작하기</h2>
+
+<p><a href="http://leiningen.org">Leiningen</a> (레닝겐)은 클로져를 쉽게 시작하기 위한 빌드자동화 툴이다</p>
+
+<p>윈도우에서만 self-install해준다</p>
+
+<p><img src="/img/clojure/lein-self-install.png" alt="Image 1" /></p>
+
+<h2 id="project-생성">Project 생성</h2>
+
+<pre><code>lein new [프로젝트명]
+</code></pre>
+
+<h2 id="프로젝트-의존성-추가">프로젝트 의존성 추가</h2>
+
+<p>라이브러리는 아래의 저장소에서 검색이 가능하고<br />
+의존성에 추가하면 된다</p>
+
+<ul>
+<li><a href="https://clojars.org">clojars</a></li>
+<li><a href="http://mvnrepository.com">Maven repository</a></li>
+</ul>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure"> <span style="color:#0ff;font-weight:bold">:dependencies</span> [[org.clojure/clojure <span style="color:#0ff;font-weight:bold">&#34;1.7.0&#34;</span>]
+                [groupId/artifactId <span style="color:#0ff;font-weight:bold">&#34;version&#34;</span>]])</code></pre></div>
+<p>그외의 라이브러리 저장소로는 추가로 지정할수있다</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">  <span style="color:#0ff;font-weight:bold">:repositories</span> {
+       <span style="color:#0ff;font-weight:bold">&#34;이름&#34;</span> <span style="color:#0ff;font-weight:bold">&#34;http://192.168.0.10:8081/nexus/content/repositories/thirdparty&#34;</span>
+    }</code></pre></div>
+<h2 id="repl-read-eval-print-loop-실행">REPL(Read Eval Print Loop) 실행</h2>
+
+<pre><code>lein repl
+</code></pre>
+
+<p>REPL에서 클로저코드를 작성하고 바로 실행이 가능하다</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">user=&gt; (<span style="color:#fff;font-weight:bold">+ </span><span style="color:#ff0;font-weight:bold">1</span> <span style="color:#ff0;font-weight:bold">3</span>)
+<span style="color:#ff0;font-weight:bold">4</span>
+user=&gt; (<span style="color:#fff;font-weight:bold">doc </span>conj) <span style="color:#007f7f">;도움말 보기</span>
+-------------------------
+clojure.core/conj
+([coll x] [coll x &amp; xs])
+  conj[oin]<span style="color:#fff;font-weight:bold">. </span>Returns a <span style="color:#fff;font-weight:bold">new </span>collection with the xs
+    <span style="color:#0ff;font-weight:bold">&#39;added&#39;.</span> (<span style="color:#fff;font-weight:bold">conj </span>nil item) returns (item)<span style="color:#fff;font-weight:bold">. </span> The <span style="color:#0ff;font-weight:bold">&#39;addition</span>&#39; may
+    happen at different <span style="color:#0ff;font-weight:bold">&#39;places</span>&#39; depending on the concrete type.
+nil
+user=&gt; (<span style="color:#fff;font-weight:bold">doc </span>+)
+-------------------------
+clojure.core/+
+([] [x] [x y] [x y &amp; more])
+  Returns the sum of nums. (+) returns <span style="color:#ff0;font-weight:bold">0</span><span style="color:#fff;font-weight:bold">. </span>Does <span style="color:#fff;font-weight:bold">not </span>auto-promote
+  longs, will throw on overflow. See also<span style="color:#f00">:</span> +&#39;
+nil  </code></pre></div>
+<h2 id="자료구조">자료구조</h2>
+
+<p>repl에서 아래를 입력해보고 결과를 보자</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure"><span style="color:#ff0;font-weight:bold">4</span>/2
+<span style="color:#007f7f">;; 2</span>
+
+<span style="color:#ff0;font-weight:bold">4.0</span>/2
+<span style="color:#007f7f">;; NumberFormatException Invalid number: 4.0/2</span>
+
+(<span style="color:#fff;font-weight:bold">/ </span><span style="color:#ff0;font-weight:bold">1</span> <span style="color:#ff0;font-weight:bold">3</span>)
+<span style="color:#007f7f">;;  1/3</span>
+
+(<span style="color:#fff;font-weight:bold">/ </span><span style="color:#ff0;font-weight:bold">1.0</span> <span style="color:#ff0;font-weight:bold">3</span>)
+<span style="color:#007f7f">;; 0.3333333333333</span>
+
+<span style="color:#0ff;font-weight:bold">&#34;jam&#34;</span>
+<span style="color:#007f7f">;; 문자열은 반드시 쌍따옴표를 사용할 것</span>
+
+<span style="color:#0ff;font-weight:bold">:jam</span>
+<span style="color:#007f7f">;; 이것은 키워드</span>
+
+(<span style="color:#fff;font-weight:bold">+ </span><span style="color:#ff0;font-weight:bold">1</span> <span style="color:#ff0;font-weight:bold">1</span>)
+<span style="color:#007f7f">;; 2</span></code></pre></div>
+<p>collecton 과 sequence로 나뉘는데<br />
+콜렉션은 단순히 vecotr, list, map 이 있고 영속적이고 불변적인 데이터구조이고<br />
+clojure.lang.IPersistentCollection 인터페이스를 구현한 녀석들이다</p>
+
+<p>그리고 count, conj, seq라는 메서드를 사용할 수있다</p>
+
+<p>seq라는 함수는 콜렉션을 시퀀스로 바꿔주는 역할을 한다.</p>
+
+<p>시퀀스란 walkable(순회가능한)리스트이다 또한 영속적이고 불변적이고<br />
+first, rest, cons라는 메서드를 사용한다.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">user=&gt; (<span style="color:#fff;font-weight:bold">class </span>[<span style="color:#ff0;font-weight:bold">1</span> <span style="color:#ff0;font-weight:bold">2</span> <span style="color:#ff0;font-weight:bold">3</span>])
+clojure.lang.PersistentVector
+user=&gt; (<span style="color:#fff;font-weight:bold">class </span>(<span style="color:#fff;font-weight:bold">seq </span>[<span style="color:#ff0;font-weight:bold">1</span> <span style="color:#ff0;font-weight:bold">2</span> <span style="color:#ff0;font-weight:bold">3</span>]))
+clojure.lang.PersistentVector$ChunkedSeq</code></pre></div>
+<h3 id="list">List</h3>
+
+<p>리스트는 &lsquo;(quote)로 시작 하거나 list를 사용할 것<br />
+만약 &lsquo;(&rsquo; 로 시작하면 문법파싱이 일어나서 첫번째를 함수로 인식 결국 에러 발생</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">&#39;(<span style="color:#ff0;font-weight:bold">1</span> <span style="color:#ff0;font-weight:bold">2</span> <span style="color:#0ff;font-weight:bold">&#34;jam&#34;</span> <span style="color:#0ff;font-weight:bold">:jack</span>)
+
+<span style="color:#007f7f">;;위와 같음 콤마(,)는 생략가능</span>
+&#39;(<span style="color:#ff0;font-weight:bold">1</span>, <span style="color:#ff0;font-weight:bold">2</span>, <span style="color:#0ff;font-weight:bold">&#34;jam&#34;</span>, <span style="color:#0ff;font-weight:bold">:jack</span>)
+
+(<span style="color:#fff;font-weight:bold">list </span><span style="color:#ff0;font-weight:bold">1</span> <span style="color:#ff0;font-weight:bold">2</span> <span style="color:#ff0;font-weight:bold">3</span> <span style="color:#ff0;font-weight:bold">4</span>)
+<span style="color:#007f7f">;; (1 2 3 4)</span>
+
+(<span style="color:#fff;font-weight:bold">first </span>&#39;(<span style="color:#ff0;font-weight:bold">1</span> <span style="color:#ff0;font-weight:bold">2</span> <span style="color:#ff0;font-weight:bold">3</span> <span style="color:#ff0;font-weight:bold">4</span>))
+<span style="color:#007f7f">;; 1</span>
+
+(<span style="color:#fff;font-weight:bold">rest </span>&#39;(<span style="color:#ff0;font-weight:bold">1</span> <span style="color:#ff0;font-weight:bold">2</span> <span style="color:#ff0;font-weight:bold">3</span> <span style="color:#ff0;font-weight:bold">4</span>))
+<span style="color:#007f7f">;; (2 3 4)</span>
+
+(<span style="color:#fff;font-weight:bold">last </span>&#39;(<span style="color:#ff0;font-weight:bold">1</span> <span style="color:#ff0;font-weight:bold">2</span> <span style="color:#ff0;font-weight:bold">3</span> <span style="color:#ff0;font-weight:bold">4</span>))
+<span style="color:#007f7f">;; 4</span>
+
+(<span style="color:#fff;font-weight:bold">cons </span><span style="color:#ff0;font-weight:bold">4</span> &#39;(<span style="color:#ff0;font-weight:bold">1</span> <span style="color:#ff0;font-weight:bold">2</span> <span style="color:#ff0;font-weight:bold">3</span>))
+<span style="color:#007f7f">;; (4 1 2 3)</span>
+
+(<span style="color:#fff;font-weight:bold">cons </span><span style="color:#ff0;font-weight:bold">5</span> &#39;())
+<span style="color:#007f7f">;; (5)</span>
+
+(<span style="color:#fff;font-weight:bold">cons </span><span style="color:#ff0;font-weight:bold">5</span> nil)
+<span style="color:#007f7f">;; (5)</span>
+
+(<span style="color:#fff;font-weight:bold">conj </span>&#39;(<span style="color:#ff0;font-weight:bold">1</span> <span style="color:#ff0;font-weight:bold">2</span> <span style="color:#ff0;font-weight:bold">3</span>) <span style="color:#ff0;font-weight:bold">4</span>)
+<span style="color:#007f7f">;; (4 1 2 3)</span>
+
+(<span style="color:#fff;font-weight:bold">conj </span>&#39;(<span style="color:#ff0;font-weight:bold">1</span> <span style="color:#ff0;font-weight:bold">2</span> <span style="color:#ff0;font-weight:bold">3</span>) <span style="color:#ff0;font-weight:bold">4</span> <span style="color:#ff0;font-weight:bold">5</span>)
+<span style="color:#007f7f">;; (5 4 1 2 3)</span></code></pre></div>
+<h3 id="vector">Vector</h3>
+
+<p>[ ]를 사용하여 표현하고 인덱스값으로 접근이 가능함</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">[<span style="color:#0ff;font-weight:bold">:jam</span> <span style="color:#ff0;font-weight:bold">1</span> <span style="color:#ff0;font-weight:bold">2</span> <span style="color:#ff0;font-weight:bold">3</span>]
+
+(<span style="color:#fff;font-weight:bold">first </span>[<span style="color:#0ff;font-weight:bold">:jam</span> <span style="color:#ff0;font-weight:bold">1</span> <span style="color:#ff0;font-weight:bold">2</span> <span style="color:#ff0;font-weight:bold">3</span>])
+<span style="color:#007f7f">;; :jam</span>
+
+(<span style="color:#fff;font-weight:bold">rest </span>[<span style="color:#0ff;font-weight:bold">:jam</span> <span style="color:#ff0;font-weight:bold">1</span> <span style="color:#ff0;font-weight:bold">2</span> <span style="color:#ff0;font-weight:bold">3</span>])
+<span style="color:#007f7f">;; (1 2 3)</span>
+
+(<span style="color:#fff;font-weight:bold">last </span>[<span style="color:#0ff;font-weight:bold">:jam</span> <span style="color:#ff0;font-weight:bold">1</span> <span style="color:#ff0;font-weight:bold">2</span> <span style="color:#ff0;font-weight:bold">3</span>])
+<span style="color:#007f7f">;; 3</span>
+
+(<span style="color:#fff;font-weight:bold">nth </span>[<span style="color:#0ff;font-weight:bold">:jam</span> <span style="color:#ff0;font-weight:bold">1</span> <span style="color:#ff0;font-weight:bold">2</span> <span style="color:#ff0;font-weight:bold">3</span>] <span style="color:#ff0;font-weight:bold">2</span>)
+<span style="color:#007f7f">;; 2</span>
+
+(<span style="color:#fff;font-weight:bold">count </span>[<span style="color:#ff0;font-weight:bold">1</span> <span style="color:#ff0;font-weight:bold">2</span> <span style="color:#ff0;font-weight:bold">3</span>))
+<span style="color:#007f7f">;; 3</span>
+
+(<span style="color:#fff;font-weight:bold">conj </span>[<span style="color:#ff0;font-weight:bold">1</span> <span style="color:#ff0;font-weight:bold">2</span> <span style="color:#ff0;font-weight:bold">3</span>] <span style="color:#0ff;font-weight:bold">:butter</span>)
+<span style="color:#007f7f">;; [1 2 3 :butter]  벡터 끝에 요소를 추가함</span></code></pre></div>
+<h3 id="map">Map</h3>
+
+<p>키:값 구조로 키는 문자열이나 키워드를 사용함<br />
+키 값으로 데이터를 찾을 수 있음</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">{<span style="color:#0ff;font-weight:bold">:weapon</span> <span style="color:#0ff;font-weight:bold">&#34;gun&#34;</span> <span style="color:#0ff;font-weight:bold">:armor</span> <span style="color:#ff0;font-weight:bold">120</span>}
+
+(<span style="color:#fff;font-weight:bold">get </span>{<span style="color:#0ff;font-weight:bold">:weapon</span> <span style="color:#0ff;font-weight:bold">&#34;gun&#34;</span> <span style="color:#0ff;font-weight:bold">:armor</span> <span style="color:#ff0;font-weight:bold">120</span>} <span style="color:#0ff;font-weight:bold">:weapon</span>)
+<span style="color:#007f7f">;; &#34;gun&#34;</span>
+
+(<span style="color:#fff;font-weight:bold">get </span>{<span style="color:#0ff;font-weight:bold">:weapon</span> <span style="color:#0ff;font-weight:bold">&#34;gun&#34;</span> <span style="color:#0ff;font-weight:bold">:armor</span> <span style="color:#ff0;font-weight:bold">120</span>} <span style="color:#0ff;font-weight:bold">:speed</span>)
+<span style="color:#007f7f">;; nil</span>
+
+(<span style="color:#fff;font-weight:bold">get </span>{<span style="color:#0ff;font-weight:bold">:weapon</span> <span style="color:#0ff;font-weight:bold">&#34;gun&#34;</span> <span style="color:#0ff;font-weight:bold">:armor</span> <span style="color:#ff0;font-weight:bold">120</span>} <span style="color:#0ff;font-weight:bold">:speed</span> <span style="color:#0ff;font-weight:bold">&#34;error&#34;</span>)
+<span style="color:#007f7f">;; &#34;error&#34;</span>
+
+(<span style="color:#0ff;font-weight:bold">:armor</span> {<span style="color:#0ff;font-weight:bold">:weapon</span> <span style="color:#0ff;font-weight:bold">&#34;gun&#34;</span> <span style="color:#0ff;font-weight:bold">:armor</span> <span style="color:#ff0;font-weight:bold">120</span>})
+<span style="color:#007f7f">;; 120</span>
+
+(<span style="color:#fff;font-weight:bold">keys </span>{<span style="color:#0ff;font-weight:bold">:weapon</span> <span style="color:#0ff;font-weight:bold">&#34;gun&#34;</span> <span style="color:#0ff;font-weight:bold">:armor</span> <span style="color:#ff0;font-weight:bold">120</span>})
+<span style="color:#007f7f">;; (:weapon :armor)</span>
+
+(<span style="color:#fff;font-weight:bold">vals </span>{<span style="color:#0ff;font-weight:bold">:weapon</span> <span style="color:#0ff;font-weight:bold">&#34;gun&#34;</span> <span style="color:#0ff;font-weight:bold">:armor</span> <span style="color:#ff0;font-weight:bold">120</span>})
+<span style="color:#007f7f">;; (&#34;gun&#34; 120)</span>
+
+
+(<span style="color:#fff;font-weight:bold">assoc </span>{<span style="color:#0ff;font-weight:bold">:weapon</span> <span style="color:#0ff;font-weight:bold">&#34;gun&#34;</span> <span style="color:#0ff;font-weight:bold">:armor</span> <span style="color:#ff0;font-weight:bold">120</span>} <span style="color:#0ff;font-weight:bold">:speed</span> <span style="color:#ff0;font-weight:bold">90</span>)
+<span style="color:#007f7f">;; {:weapon &#34;gun&#34; :armor 120 :speed 90}</span>
+
+(<span style="color:#fff;font-weight:bold">dissoc </span>{<span style="color:#0ff;font-weight:bold">:weapon</span> <span style="color:#0ff;font-weight:bold">&#34;gun&#34;</span> <span style="color:#0ff;font-weight:bold">:armor</span> <span style="color:#ff0;font-weight:bold">120</span> <span style="color:#0ff;font-weight:bold">:speed</span> <span style="color:#ff0;font-weight:bold">90</span>} <span style="color:#0ff;font-weight:bold">:armor</span>)
+<span style="color:#007f7f">;; {:weapon &#34;gun&#34; :speed 90}</span></code></pre></div>
+<h3 id="set">Set</h3>
+
+<p>중복되지 않는 요소만 포함한다</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">#{<span style="color:#0ff;font-weight:bold">:red</span> <span style="color:#0ff;font-weight:bold">:blud</span> <span style="color:#0ff;font-weight:bold">:white</span> <span style="color:#0ff;font-weight:bold">:pink</span>}
+
+<span style="color:#007f7f">;; set은 다른 콜렉션을 Set로 바꾼다</span>
+(<span style="color:#fff;font-weight:bold">set </span>[<span style="color:#ff0;font-weight:bold">1</span> <span style="color:#ff0;font-weight:bold">2</span> <span style="color:#ff0;font-weight:bold">3</span>])
+<span style="color:#007f7f">;;#{1 3 2}</span>
+
+(<span style="color:#fff;font-weight:bold">set </span>&#39;(<span style="color:#ff0;font-weight:bold">1</span> <span style="color:#ff0;font-weight:bold">2</span> <span style="color:#ff0;font-weight:bold">3</span>))
+<span style="color:#007f7f">;; #{1 3 2}</span>
+
+(<span style="color:#fff;font-weight:bold">set </span>{<span style="color:#0ff;font-weight:bold">:a</span> <span style="color:#ff0;font-weight:bold">1</span> <span style="color:#0ff;font-weight:bold">:b</span> <span style="color:#ff0;font-weight:bold">2</span> <span style="color:#0ff;font-weight:bold">:c</span> <span style="color:#ff0;font-weight:bold">3</span>})
+<span style="color:#007f7f">;; #{[:c 3] [:b 2] [:a 1]}</span>
+
+
+(clojure.set/union #{<span style="color:#0ff;font-weight:bold">:r</span> <span style="color:#0ff;font-weight:bold">:b</span> <span style="color:#0ff;font-weight:bold">:w</span>} #{<span style="color:#0ff;font-weight:bold">:w</span> <span style="color:#0ff;font-weight:bold">:p</span> <span style="color:#0ff;font-weight:bold">:y</span>})
+<span style="color:#007f7f">;; #{:y :r :w :b :p}  중복요소 제거하고 모두 포함</span>
+
+(clojure.set/difference #{<span style="color:#0ff;font-weight:bold">:r</span> <span style="color:#0ff;font-weight:bold">:b</span> <span style="color:#0ff;font-weight:bold">:w</span>} #{<span style="color:#0ff;font-weight:bold">:w</span> <span style="color:#0ff;font-weight:bold">:p</span> <span style="color:#0ff;font-weight:bold">:y</span>})
+<span style="color:#007f7f">;; #{:r :b}</span>
+
+(clojure.set/intersection #{<span style="color:#0ff;font-weight:bold">:r</span> <span style="color:#0ff;font-weight:bold">:b</span> <span style="color:#0ff;font-weight:bold">:w</span>} #{<span style="color:#0ff;font-weight:bold">:w</span> <span style="color:#0ff;font-weight:bold">:p</span> <span style="color:#0ff;font-weight:bold">:y</span>})
+<span style="color:#007f7f">;;#{:w}</span></code></pre></div>
+<h2 id="binding">Binding</h2>
+
+<p>변수에 값을 할당하는 과정을 말한다<br />
+repl에서 정의하면 기본적으로 user라는 네임공간(namespace)서만 사용가능하다</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#fff;font-weight:bold">def </span>devloper <span style="color:#0ff;font-weight:bold">&#34;Alice&#34;</span>)
+<span style="color:#007f7f">;; #&#39;user/developer</span></code></pre></div>
+<p>let은 해당 컨텍스트안에서만 유효한 로컬 변수임</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#fff;font-weight:bold">let </span>[developer <span style="color:#0ff;font-weight:bold">&#34;Alice in Wonderland&#34;</span>])
+
+(<span style="color:#fff;font-weight:bold">let </span>[developer <span style="color:#0ff;font-weight:bold">&#34;Alice in Wonderland&#34;</span> rabbit <span style="color:#0ff;font-weight:bold">&#34;White Rabbit&#34;</span> ])
+
+(<span style="color:#fff;font-weight:bold">let </span>[[color size] [<span style="color:#0ff;font-weight:bold">&#34;blue&#34;</span> <span style="color:#0ff;font-weight:bold">&#34;small&#34;</span>]]
+  (<span style="color:#fff;font-weight:bold">str </span><span style="color:#0ff;font-weight:bold">&#34;The &#34;</span> color <span style="color:#0ff;font-weight:bold">&#34; door is &#34;</span> size))
+<span style="color:#007f7f">;; &#34;The blue door is small&#34;</span>
+
+(<span style="color:#fff;font-weight:bold">let </span>[x [<span style="color:#0ff;font-weight:bold">&#34;blue&#34;</span> <span style="color:#0ff;font-weight:bold">&#34;small&#34;</span>]
+  color (<span style="color:#fff;font-weight:bold">first </span>x)
+  size (<span style="color:#fff;font-weight:bold">last </span>x)]
+   (<span style="color:#fff;font-weight:bold">str </span><span style="color:#0ff;font-weight:bold">&#34;The &#34;</span> color <span style="color:#0ff;font-weight:bold">&#34; door is &#34;</span> size))
+<span style="color:#007f7f">;; &#34;The blue door is small&#34;</span>
+
+
+<span style="color:#007f7f">;; 현재 네임공간 확인</span>
+*ns*
+<span style="color:#007f7f">;; #object[clojure.lang.Namespace 0x4e5051b9 &#34;user&#34;]</span>
+
+<span style="color:#007f7f">;; 다른 네임공간으로 전환</span>
+(<span style="color:#fff;font-weight:bold">ns </span>alice)
+(<span style="color:#fff;font-weight:bold">def </span><span style="color:#fff;font-weight:bold">name </span><span style="color:#0ff;font-weight:bold">&#34;King&#34;</span>)
+(<span style="color:#fff;font-weight:bold">ns </span>user)
+alice/name
+<span style="color:#007f7f">;; &#34;King&#34; 다른 네임공간의 변수를 사용</span>
+
+<span style="color:#007f7f">;; alias 사용</span>
+(require &#39;[alice <span style="color:#0ff;font-weight:bold">:as</span> al])
+al/name
+<span style="color:#007f7f">;; &#34;King&#34;</span>
+
+<span style="color:#007f7f">;; alias 사용하지 않고 현재 네임공간에서 사용할 경우</span>
+(<span style="color:#fff;font-weight:bold">ns </span>wonderland
+  (<span style="color:#0ff;font-weight:bold">:require</span> [alice <span style="color:#0ff;font-weight:bold">:refer</span> <span style="color:#0ff;font-weight:bold">:all</span>] <span style="color:#007f7f">;;alice 네임공간의 모든 것을 현재 네임공간에서 사용한다</span>
+            [rabbit <span style="color:#0ff;font-weight:bold">:refer</span> <span style="color:#0ff;font-weight:bold">:all</span>]))
+            
+<span style="color:#007f7f">;;함수명이 같아서 충돌할 경우가 발생할 수 도 있다</span>
+<span style="color:#007f7f">;; 그럴 경우 일부만 as(aliase)로  사용하자</span>
+
+(<span style="color:#fff;font-weight:bold">ns </span>wonderland
+  (<span style="color:#0ff;font-weight:bold">:require</span> [clojure.set <span style="color:#0ff;font-weight:bold">:as</span> s]
+            [alice <span style="color:#0ff;font-weight:bold">:as</span> al]))          </code></pre></div>
+<h2 id="함수정의">함수정의</h2>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#fff;font-weight:bold">defn </span>follow-the-rabbit [] <span style="color:#0ff;font-weight:bold">&#34;Off we go!&#34;</span>)
+
+(follow-the-rabbit)
+<span style="color:#007f7f">;; &#34;Off we go!&#34;</span>
+
+<span style="color:#fff;font-weight:bold">defn </span>shop-for-jams [jam1 jam2]
+  {<span style="color:#0ff;font-weight:bold">:name</span> <span style="color:#0ff;font-weight:bold">&#34;jam-basket&#34;</span>
+   <span style="color:#0ff;font-weight:bold">:jam1</span> jam1
+   <span style="color:#0ff;font-weight:bold">:jam2</span> jam2})
+
+(shop-for-jams <span style="color:#0ff;font-weight:bold">&#34;strawberry&#34;</span> <span style="color:#0ff;font-weight:bold">&#34;marmalade&#34;</span>)
+<span style="color:#007f7f">;; {:name &#34;jam-basket&#34;, :jam1 &#34;strawberry&#34;, :jam2 &#34;marmalade&#34;}</span>
+
+<span style="color:#007f7f">;;anonymous 함수</span>
+(<span style="color:#fff;font-weight:bold">fn </span>[] (<span style="color:#fff;font-weight:bold">str </span><span style="color:#0ff;font-weight:bold">&#34;Off we go&#34;</span> <span style="color:#0ff;font-weight:bold">&#34;!&#34;</span>))
+<span style="color:#007f7f">;; #object[user$eval1365$fn__1366 0x4c3e78fd &#34;user$eval1365$fn__1366@4c3e78fd&#34;]</span>
+
+<span style="color:#007f7f">;; 단축표현(shorthand)</span>
+(#(<span style="color:#fff;font-weight:bold">str </span><span style="color:#0ff;font-weight:bold">&#34;Off we go&#34;</span> <span style="color:#0ff;font-weight:bold">&#34;!&#34;</span>))
+<span style="color:#007f7f">;; &#34;Off we go!&#34;</span>
+
+(#(<span style="color:#fff;font-weight:bold">str </span><span style="color:#0ff;font-weight:bold">&#34;Off we go&#34;</span> <span style="color:#0ff;font-weight:bold">&#34;!&#34;</span> <span style="color:#0ff;font-weight:bold">&#34; - &#34;</span> %) <span style="color:#0ff;font-weight:bold">&#34;again&#34;</span>)
+<span style="color:#007f7f">;; &#34;Off we go! - again&#34; %(또는 %1)는 첫번째 파라미터</span>
+두번째부터는 %2로 처리해야함</code></pre></div>
+<h2 id="제어구문">제어구문</h2>
+
+<h3 id="if">if</h3>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#fff;font-weight:bold">if </span>true <span style="color:#0ff;font-weight:bold">&#34;true&#34;</span> <span style="color:#0ff;font-weight:bold">&#34;false&#34;</span>)
+<span style="color:#007f7f">;;-&gt; &#34;true&#34;</span>
+
+(<span style="color:#fff;font-weight:bold">if </span>nil <span style="color:#0ff;font-weight:bold">&#34;true&#34;</span> <span style="color:#0ff;font-weight:bold">&#34;false&#34;</span>)
+<span style="color:#007f7f">;;-&gt; &#34;false&#34;</span>
+
+(<span style="color:#fff;font-weight:bold">if </span>(<span style="color:#fff;font-weight:bold">= </span><span style="color:#0ff;font-weight:bold">:drink</span> <span style="color:#0ff;font-weight:bold">:drink</span>)
+  <span style="color:#0ff;font-weight:bold">&#34;Try&#34;</span>
+  <span style="color:#0ff;font-weight:bold">&#34;Don&#39;t try&#34;</span> )
+<span style="color:#007f7f">;;-&gt; &#34;Try&#34;</span>
+
+(<span style="color:#fff;font-weight:bold">let </span>[is-small (<span style="color:#fff;font-weight:bold">&gt; </span><span style="color:#ff0;font-weight:bold">5</span> <span style="color:#ff0;font-weight:bold">3</span>)]
+  (<span style="color:#fff;font-weight:bold">if </span>is-small
+    <span style="color:#0ff;font-weight:bold">&#34;Small&#34;</span>
+    <span style="color:#0ff;font-weight:bold">&#34;No&#34;</span>))
+<span style="color:#007f7f">;; &#34;Small&#34;    </span>
+<span style="color:#007f7f">;; 5보다 3이 작은경우 true를 저장하고 조건에 맞는 결과값을 반환한다</span>
+
+(<span style="color:#fff;font-weight:bold">if-let </span>[is-small (<span style="color:#fff;font-weight:bold">&gt; </span><span style="color:#ff0;font-weight:bold">5</span> <span style="color:#ff0;font-weight:bold">3</span>)]
+  <span style="color:#0ff;font-weight:bold">&#34;Small&#34;</span>
+  <span style="color:#0ff;font-weight:bold">&#34;No&#34;</span>)
+<span style="color:#007f7f">;; &#34;Small&#34;  </span></code></pre></div>
+<h3 id="when-when-let">when,when-let</h3>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#fff;font-weight:bold">defn </span>ask [question]
+  (<span style="color:#fff;font-weight:bold">when </span>question <span style="color:#0ff;font-weight:bold">&#34;Yes&#34;</span>))
+<span style="color:#007f7f">;;-&gt; &#34;Yes&#34;</span>
+
+(<span style="color:#fff;font-weight:bold">when-let </span>[question] <span style="color:#0ff;font-weight:bold">&#34;Yes&#34;</span>)
+<span style="color:#007f7f">;;-&gt; Yes otherwise nil</span></code></pre></div>
+<h3 id="cond-case">cond, case</h3>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#fff;font-weight:bold">let </span>[bottle <span style="color:#0ff;font-weight:bold">&#34;drink&#34;</span>]
+  (cond
+    (<span style="color:#fff;font-weight:bold">= </span>bottle <span style="color:#0ff;font-weight:bold">&#34;poison&#34;</span>) <span style="color:#0ff;font-weight:bold">&#34;don&#39;t touch&#34;</span>
+    (<span style="color:#fff;font-weight:bold">= </span>bottle <span style="color:#0ff;font-weight:bold">&#34;empty&#34;</span>) <span style="color:#0ff;font-weight:bold">&#34;all gone&#34;</span>))
+ <span style="color:#007f7f">;;-&gt; nil</span></code></pre></div>
+<p>cond와 달리 매칭되는 것이 없을 경우  IllegalArgumentException 을 발생시킴<br />
+아래와 같이 익셉션을 발생하지 않고 unknown을 출력할 수 있음</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#fff;font-weight:bold">let </span>[bottle <span style="color:#0ff;font-weight:bold">&#34;drink&#34;</span>]
+ (case bottle
+   <span style="color:#0ff;font-weight:bold">&#34;poison&#34;</span> <span style="color:#0ff;font-weight:bold">&#34;don&#39;t touch&#34;</span>
+   <span style="color:#0ff;font-weight:bold">&#34;drink&#34;</span> <span style="color:#0ff;font-weight:bold">&#34;drink it&#34;</span> 
+   <span style="color:#0ff;font-weight:bold">&#34;unknown&#34;</span> )) </code></pre></div>
+<h2 id="그-밖의-expression">그 밖의 expression</h2>
+
+<h3 id="doto">doto</h3>
+
+<p>doto는 생성된 인스턴스에 계속적인 메서드를 호출(부가효과)를 할 수 있고<br />
+최종적으로 돌려주는 것은 그 인스턴스가 된다</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#fff;font-weight:bold">doto </span>(java.util.HashMap.)
+      (.put <span style="color:#0ff;font-weight:bold">&#34;name&#34;</span> <span style="color:#0ff;font-weight:bold">&#34;clojure&#34;</span>)
+      (.put <span style="color:#0ff;font-weight:bold">&#34;ver&#34;</span> <span style="color:#0ff;font-weight:bold">&#34;1.7&#34;</span>))
+
+<span style="color:#007f7f">;; {&#34;name&#34; &#34;clojure&#34; , &#34;ver&#34; &#34;1.7&#34;}</span></code></pre></div>
+<h3 id="threading">Threading(-&gt;)</h3>
+
+<p>최종적으로 돌려주는 것은 해당 메서드가 적용된 것</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#fff;font-weight:bold">-&gt; </span>(java.util.HashMap.)
+    (.put <span style="color:#0ff;font-weight:bold">&#34;num&#34;</span> <span style="color:#ff0;font-weight:bold">1234</span>))
+<span style="color:#007f7f">;; nil</span>
+
+(<span style="color:#fff;font-weight:bold">-&gt; </span><span style="color:#0ff;font-weight:bold">&#34;aaaa&#34;</span>
+    (.toUpperCase))
+<span style="color:#007f7f">;; &#34;AAAA&#34;</span></code></pre></div>
+<h2 id="database">Database</h2>
+
+<ul>
+<li><a href="http://clojure-doc.org/articles/ecosystem/java_jdbc/home.html">jdbc</a></li>
+<li><a href="http://sqlkorma.com/">SQL Korma</a></li>
+<li><a href="http://clojuremongodb.info">monger</a></li>
+</ul>
+
+<h2 id="java-interoperability">Java Interoperability</h2>
+
+<p><a href="http://clojure.org/reference/java_interop">Java Interop</a></p>
+
+<h3 id="import">Import</h3>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#0ff;font-weight:bold">:import</span> java.awt.Panel
+         java.util.Date)
+
+(<span style="color:#0ff;font-weight:bold">:import</span> (java.io Writer
+                  ByteArrayOutputStream))</code></pre></div>
+<h3 id="inner-class를-사용할-경우">Inner class를 사용할 경우</h3>
+
+<p>아래와 같은 클래스일 경우다</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#fff;font-weight:bold">public</span> <span style="color:#fff;font-weight:bold">class</span> Robot {
+
+  <span style="color:#fff;font-weight:bold">public</span> <span style="color:#fff;font-weight:bold">static</span> <span style="color:#fff;font-weight:bold">class</span> Radio  {
+   ...
+  }
+}</code></pre></div>
+<pre><code>(Robot$Radio.)
+</code></pre>
+
+<h3 id="try-catch">try..catch</h3>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure"> (try
+    (Integer/parseInt s)
+    (catch NumberFormatException e
+      (.printStackTrace e))
+    (finally
+      (<span style="color:#fff;font-weight:bold">println </span><span style="color:#0ff;font-weight:bold">&#34;Attempted to parse as integer: &#34;</span> s)))</code></pre></div>
+<h2 id="web-programming">Web Programming</h2>
+
+<ul>
+<li><a href="https://github.com/ring-clojure/ring">Ring</a></li>
+<li><a href="http://www.luminusweb.net">Luminus</a></li>
+</ul>
+
+<h2 id="3rd-party-libraries">3rd Party Libraries</h2>
+
+<ul>
+<li>bouncer</li>
+<li>validateur</li>
+<li>SQLingvo</li>
+<li>HoneySQL</li>
+</ul>
+
+<h2 id="plugins">plugins</h2>
+
+<h3 id="lein-try-사용하기">lein-try 사용하기</h3>
+
+<p>아래 파일을 편집한다</p>
+
+<p>${HOME}/.lein/profiles.clj</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">{<span style="color:#0ff;font-weight:bold">:user</span> {<span style="color:#0ff;font-weight:bold">:plugins</span> [[lein-try <span style="color:#0ff;font-weight:bold">&#34;0.4.3&#34;</span>]]}}</code></pre></div>
+<p>clj-time이라는 라이브러를 가지고 간단한 테스트 해볼때<br />
+아래와 같이 repl를 열수있다</p>
+
+<pre><code>lein try clj-time
+</code></pre>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/clojure">#clojure</a>
+      </div>
+    
+</div>
+
+    <div class="date"> Sep 25, 2015 </div>
+  </div>
+
+</footer>
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'clonekim-github-io';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="http://clonekim.github.io/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright">  </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</body>
+</html>
+

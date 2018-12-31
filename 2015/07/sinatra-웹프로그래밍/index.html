@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="DAEHEE KIM" />
+<meta name="description" content="Personal blog." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.53" />
+
+<link rel="canonical" href="http://clonekim.github.io/2015/07/sinatra-%EC%9B%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/">
+<base href="http://clonekim.github.io/" />
+<meta property="og:title" content="Sinatra 웹프로그래밍" />
+<meta property="og:description" content="설치 jruby -S gem install sinatra  Hello Ruby require &#39;rubygems&#39; require &#39;sinatra&#39; get &#39;/&#39; do &#39;Hello Jruby&#39; end 라우터 get, post, put, delete를 사용할 수있다
+get &#39;/&#39; do end 요청파라미터 /?name=foo 로 요청 시 아래와 같이
+post &#39;/&#39; do puts params[&#39;name&#39;] end 본문으로 Json를 요청받을 경우 post &#39;/&#39; do payload = JSON.parse(request.body.read) puts payload status 201 end 응답하기 문자열, html, json, 바이너리 등의 모든 컨텐츠로 응답가능하다
+get &#39;/&#39; do &#39;Hello&#39; end Json으로 응답하기 require &#39;sinatra&#39; require &#39;json&#39; get &#39;/&#39; do content_type :json data = { foo: &#39;bar&#39;} data." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://clonekim.github.io/2015/07/sinatra-%EC%9B%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/" /><meta property="article:published_time" content="2015-07-14T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2015-07-14T00:00:00&#43;00:00"/>
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Sinatra 웹프로그래밍"/>
+<meta name="twitter:description" content="설치 jruby -S gem install sinatra  Hello Ruby require &#39;rubygems&#39; require &#39;sinatra&#39; get &#39;/&#39; do &#39;Hello Jruby&#39; end 라우터 get, post, put, delete를 사용할 수있다
+get &#39;/&#39; do end 요청파라미터 /?name=foo 로 요청 시 아래와 같이
+post &#39;/&#39; do puts params[&#39;name&#39;] end 본문으로 Json를 요청받을 경우 post &#39;/&#39; do payload = JSON.parse(request.body.read) puts payload status 201 end 응답하기 문자열, html, json, 바이너리 등의 모든 컨텐츠로 응답가능하다
+get &#39;/&#39; do &#39;Hello&#39; end Json으로 응답하기 require &#39;sinatra&#39; require &#39;json&#39; get &#39;/&#39; do content_type :json data = { foo: &#39;bar&#39;} data."/>
+
+
+
+<meta itemprop="name" content="Sinatra 웹프로그래밍">
+<meta itemprop="description" content="설치 jruby -S gem install sinatra  Hello Ruby require &#39;rubygems&#39; require &#39;sinatra&#39; get &#39;/&#39; do &#39;Hello Jruby&#39; end 라우터 get, post, put, delete를 사용할 수있다
+get &#39;/&#39; do end 요청파라미터 /?name=foo 로 요청 시 아래와 같이
+post &#39;/&#39; do puts params[&#39;name&#39;] end 본문으로 Json를 요청받을 경우 post &#39;/&#39; do payload = JSON.parse(request.body.read) puts payload status 201 end 응답하기 문자열, html, json, 바이너리 등의 모든 컨텐츠로 응답가능하다
+get &#39;/&#39; do &#39;Hello&#39; end Json으로 응답하기 require &#39;sinatra&#39; require &#39;json&#39; get &#39;/&#39; do content_type :json data = { foo: &#39;bar&#39;} data.">
+
+
+<meta itemprop="datePublished" content="2015-07-14T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2015-07-14T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="340">
+
+
+
+<meta itemprop="keywords" content="jruby," />
+
+
+<link rel="stylesheet" href="css/layout.css" />
+<link rel="stylesheet" href="css/color-dark.css" />
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-121397292-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<title>
+
+
+     Sinatra 웹프로그래밍 
+
+</title>
+
+<script src="js/highlight.min.js"></script>
+<link rel="stylesheet" href="css/tomorrow-night.min.css" />
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="http://clonekim.github.io/">(fn [] &#34;Less is more&#34;)</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item active" href="/post/"><div class="nav-item-title">Posts</div></a>
+    
+
+  </nav>
+</div>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Sinatra 웹프로그래밍 </h1>
+    <div class="content"> 
+
+<h2 id="설치">설치</h2>
+
+<pre><code>jruby -S gem install sinatra
+</code></pre>
+
+<h2 id="hello-ruby">Hello Ruby</h2>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#fff;font-weight:bold">require</span> <span style="color:#0ff;font-weight:bold">&#39;rubygems&#39;</span>
+<span style="color:#fff;font-weight:bold">require</span> <span style="color:#0ff;font-weight:bold">&#39;sinatra&#39;</span>
+
+get <span style="color:#0ff;font-weight:bold">&#39;/&#39;</span> <span style="color:#fff;font-weight:bold">do</span>
+  <span style="color:#0ff;font-weight:bold">&#39;Hello Jruby&#39;</span>
+<span style="color:#fff;font-weight:bold">end</span></code></pre></div>
+<h2 id="라우터">라우터</h2>
+
+<p>get, post, put, delete를 사용할 수있다</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">get <span style="color:#0ff;font-weight:bold">&#39;/&#39;</span> <span style="color:#fff;font-weight:bold">do</span>
+
+<span style="color:#fff;font-weight:bold">end</span></code></pre></div>
+<h2 id="요청파라미터">요청파라미터</h2>
+
+<p>/?name=foo 로 요청 시 아래와 같이</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">post <span style="color:#0ff;font-weight:bold">&#39;/&#39;</span> <span style="color:#fff;font-weight:bold">do</span>
+  <span style="color:#fff;font-weight:bold">puts</span> params[<span style="color:#0ff;font-weight:bold">&#39;name&#39;</span>]
+<span style="color:#fff;font-weight:bold">end</span></code></pre></div>
+<h2 id="본문으로-json를-요청받을-경우">본문으로 Json를 요청받을 경우</h2>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">post <span style="color:#0ff;font-weight:bold">&#39;/&#39;</span> <span style="color:#fff;font-weight:bold">do</span>
+  payload = JSON.parse(request.body.read)
+  <span style="color:#fff;font-weight:bold">puts</span> payload
+  status <span style="color:#ff0;font-weight:bold">201</span>
+<span style="color:#fff;font-weight:bold">end</span></code></pre></div>
+<h2 id="응답하기">응답하기</h2>
+
+<p>문자열, html, json, 바이너리 등의 모든 컨텐츠로 응답가능하다</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">get <span style="color:#0ff;font-weight:bold">&#39;/&#39;</span> <span style="color:#fff;font-weight:bold">do</span>
+  <span style="color:#0ff;font-weight:bold">&#39;Hello&#39;</span>
+<span style="color:#fff;font-weight:bold">end</span></code></pre></div>
+<h2 id="json으로-응답하기">Json으로 응답하기</h2>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#fff;font-weight:bold">require</span> <span style="color:#0ff;font-weight:bold">&#39;sinatra&#39;</span>
+<span style="color:#fff;font-weight:bold">require</span> <span style="color:#0ff;font-weight:bold">&#39;json&#39;</span>
+
+get <span style="color:#0ff;font-weight:bold">&#39;/&#39;</span> <span style="color:#fff;font-weight:bold">do</span>
+  content_type <span style="color:#0ff;font-weight:bold">:json</span>
+  data = { <span style="color:#0ff;font-weight:bold">foo</span>: <span style="color:#0ff;font-weight:bold">&#39;bar&#39;</span>}
+  data.to_json
+<span style="color:#fff;font-weight:bold">end</span></code></pre></div>
+<p>또는 sinatra-contrib를 사용해서</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#fff;font-weight:bold">require</span> <span style="color:#0ff;font-weight:bold">&#39;sinatra&#39;</span>
+<span style="color:#fff;font-weight:bold">require</span> <span style="color:#0ff;font-weight:bold">&#39;sinatra-contrib&#39;</span>
+
+get <span style="color:#0ff;font-weight:bold">&#39;/&#39;</span> <span style="color:#fff;font-weight:bold">do</span>
+  data = { <span style="color:#0ff;font-weight:bold">foo</span>: <span style="color:#0ff;font-weight:bold">&#39;bar&#39;</span>}
+  json data
+<span style="color:#fff;font-weight:bold">end</span></code></pre></div>
+<h2 id="sample-web">Sample Web</h2>
+
+<p><strong>app.rb</strong></p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#fff;font-weight:bold">require</span> <span style="color:#0ff;font-weight:bold">&#39;rubygems&#39;</span>
+<span style="color:#fff;font-weight:bold">require</span> <span style="color:#0ff;font-weight:bold">&#39;sinatra&#39;</span>
+<span style="color:#fff;font-weight:bold">require</span> <span style="color:#0ff;font-weight:bold">&#39;sinatra/reloader&#39;</span>
+<span style="color:#fff;font-weight:bold">require</span> <span style="color:#0ff;font-weight:bold">&#39;json&#39;</span>
+<span style="color:#fff;font-weight:bold">require</span> <span style="color:#0ff;font-weight:bold">&#39;sequel&#39;</span>
+<span style="color:#fff;font-weight:bold">require</span> <span style="color:#0ff;font-weight:bold">&#39;./mysql-connector-java-5.1.35.jar&#39;</span>
+
+DB = Sequel.connect(<span style="color:#0ff;font-weight:bold">&#39;jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&amp;characterEncoding=utf8&#39;</span>,
+			<span style="color:#0ff;font-weight:bold">:user</span>=&gt;<span style="color:#0ff;font-weight:bold">&#39;test&#39;</span>,
+			<span style="color:#0ff;font-weight:bold">:password</span>=&gt;<span style="color:#0ff;font-weight:bold">&#39;test&#39;</span>)
+user = DB[<span style="color:#0ff;font-weight:bold">:users</span>]
+
+
+get <span style="color:#0ff;font-weight:bold">&#39;/&#39;</span> <span style="color:#fff;font-weight:bold">do</span>
+  erb <span style="color:#0ff;font-weight:bold">:index</span>
+<span style="color:#fff;font-weight:bold">end</span>
+
+get <span style="color:#0ff;font-weight:bold">&#39;/api/users&#39;</span> <span style="color:#fff;font-weight:bold">do</span>
+  data = user.all
+  pager = {
+ 	<span style="color:#0ff;font-weight:bold">total</span>: data.count,
+	<span style="color:#0ff;font-weight:bold">rows</span>: data,
+	<span style="color:#0ff;font-weight:bold">page</span>: <span style="color:#ff0;font-weight:bold">1</span>
+  }
+  pager.to_json
+<span style="color:#fff;font-weight:bold">end</span></code></pre></div>
+<p><strong>config.ru</strong></p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#fff;font-weight:bold">require</span> <span style="color:#0ff;font-weight:bold">&#39;app.rb&#39;</span>
+run Sinatra::Application</code></pre></div>
+<p>아래와 같이 실행한다</p>
+
+<pre><code>jruby app.rb
+</code></pre>
+
+<p>실행 시 내장된 웹서버서(WEBrick)를 사용한다<br />
+기본적으로 4567번 포트를 사용한다</p>
+
+<p>아래는 Rack기반으로 기동하는 방법이다<br />
+기본적으로 9292번 포트를 사용한다</p>
+
+<pre><code>jruby -S rackup config.ru
+</code></pre>
+
+<h2 id="템플릿">템플릿</h2>
+
+<p>기본적으로 erb템플릿을 사용한다</p>
+
+<p><strong>디렉토리 구조</strong></p>
+
+<p>public에 정적인 파일을 views에 .erb파일이 위치한다.</p>
+
+<pre><code>├─public
+└─views
+       index.erb
+       layout.erb
+</code></pre>
+
+<p><em>layout.erb</em></p>
+
+<pre><code>&lt;body&gt;
+ &lt;%= yield %&gt;
+&lt;/body&gt;
+</code></pre>
+
+<p><em>index.erb</em></p>
+
+<pre><code>&lt;h1&gt;Hello Sinatra&lt;/h1&gt;
+&lt;%= $servlet_context %&gt;
+</code></pre>
+
+<p>템플릿을 사용하려면</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">get <span style="color:#0ff;font-weight:bold">&#39;/&#39;</span> <span style="color:#fff;font-weight:bold">do</span>
+  erb <span style="color:#0ff;font-weight:bold">:index</span>
+<span style="color:#fff;font-weight:bold">end</span></code></pre></div>
+<p>$servlet_context라는 인스턴스명을 출력할 것이다<br />
+단지 rack기반일 경우에만 출력됨</p>
+
+<h2 id="contrib-활용">Contrib 활용</h2>
+
+<pre><code>jruby -S gem install sinatra-contrib
+</code></pre>
+
+<p>reloader만 추가하고 소스를 수정 시 바로 적용됨</p>
+
+<pre><code>require 'sinatra/reloader'
+</code></pre>
+
+<h2 id="war-배포">War 배포</h2>
+
+<p>warbler를 설치한다</p>
+
+<pre><code>jruby -S gem install warbler
+</code></pre>
+
+<p>루비웹 프레임워크는 rack 이라는 인터페이스위에서 작동한다<br />
+자바의 서블릿과 같다<br />
+rack으로 기동하는 파일을 작성한다</p>
+
+<p><em>config.ru</em></p>
+
+<pre><code>require 'app.rb'
+run Sinatra::Application
+</code></pre>
+
+<p>config 디렉토리를 만들고 warble config를 작성한다<br />
+config아래에 warble.config라는 파일이 생성된다</p>
+
+<pre><code>mkdir config
+jruby -S warble config
+</code></pre>
+
+<p><em>warble.rb</em></p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">Warbler::Config.new <span style="color:#fff;font-weight:bold">do</span> |config|
+
+   config.dirs = <span style="color:#0ff;font-weight:bold">%w(public views)</span>
+   config.includes = FileList[<span style="color:#0ff;font-weight:bold">&#34;app.rb&#34;</span>]
+   config.gems += [<span style="color:#0ff;font-weight:bold">&#34;sinatra&#34;</span>,<span style="color:#0ff;font-weight:bold">&#34;sinatra-contrib&#34;</span>, <span style="color:#0ff;font-weight:bold">&#34;sequel&#34;</span>]
+   config.gem_dependencies = <span style="color:#fff;font-weight:bold">true</span>
+   config.pathmaps.application = [<span style="color:#0ff;font-weight:bold">&#34;WEB-INF/%p&#34;</span>]
+   config.jar_name = <span style="color:#0ff;font-weight:bold">&#34;app&#34;</span>
+<span style="color:#fff;font-weight:bold">end</span>  </code></pre></div>
+<p>이제 war파일을 작성하면 app.war 라는 파일이 보일것이다</p>
+
+<pre><code>jruby -S warble
+</code></pre>
+
+<h2 id="참고">참고</h2>
+
+<ul>
+<li><a href="http://www.rubyinside.com/sinatra-29-links-and-resources-for-a-quicker-easier-way-to-build-webapps-1371.html">Sinatra: 29 Links and Resources For A Quicker, Easier Way to Build Webapps</a></li>
+<li><a href="http://aligach.net/diary/20110307.html"> 今さらSinatra最低限メモ</a></li>
+<li><a href="http://www7b.biglobe.ne.jp/~makandat/gg_sites/Sinatra_Diary_01.html">Sinatra 日記</a></li>
+</ul>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/jruby">#jruby</a>
+      </div>
+    
+</div>
+
+    <div class="date"> Jul 14, 2015 </div>
+  </div>
+
+</footer>
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'clonekim-github-io';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="http://clonekim.github.io/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright">  </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</body>
+</html>
+
