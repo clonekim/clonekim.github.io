@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+  <meta charset="utf-8" />
+  <meta name="author" content="DAEHEE KIM" />
+  <meta name="description" content="Personal blog." />
+  <meta name="keywords" content="blog, tech" />
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <link rel="canonical" href="http://clonekim.github.io/posts/2018/2018-07-05-eralchemy/">
+  <base href="http://clonekim.github.io/" />
+  <meta property="og:title" content="ERAlchemy 를 이용한 ERD작성" />
+<meta property="og:description" content="우분투를 사용하는 환경이다.  사전준비 $ sudo apt install graphviz graphviz-dev python 라이브러리 설치 $ pip install pygraphviz --install-option=&#34;--include-path=/usr/include/graphviz&#34; --install-option=&#34;--library-path=/usr/lib/graphviz/&#34; $ pip install eralchemy 에러 graphviz 를 설치하지 않았을 경우
+ (Python) ValueError: Program dot not found in path  graphviz-dev를 설치하지 않았을 경우
+undefined symbol: Agundirected  사용법 MySQL에 접속해서 해당 DB를 pdf로 출력해봄
+내부적으로 SQLAlchemy를 사용해서 db접속시 url를 아래와 같다.
+사용하는 드라이버가 달라서 접속 url을 주의해야함.
+현재 pymysql를 사용하므로" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://clonekim.github.io/posts/2018/2018-07-05-eralchemy/" />
+<meta property="article:published_time" content="2018-07-05T23:29:30&#43;09:00"/>
+<meta property="article:modified_time" content="2018-07-05T23:29:30&#43;09:00"/>
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ERAlchemy 를 이용한 ERD작성"/>
+<meta name="twitter:description" content="우분투를 사용하는 환경이다.  사전준비 $ sudo apt install graphviz graphviz-dev python 라이브러리 설치 $ pip install pygraphviz --install-option=&#34;--include-path=/usr/include/graphviz&#34; --install-option=&#34;--library-path=/usr/lib/graphviz/&#34; $ pip install eralchemy 에러 graphviz 를 설치하지 않았을 경우
+ (Python) ValueError: Program dot not found in path  graphviz-dev를 설치하지 않았을 경우
+undefined symbol: Agundirected  사용법 MySQL에 접속해서 해당 DB를 pdf로 출력해봄
+내부적으로 SQLAlchemy를 사용해서 db접속시 url를 아래와 같다.
+사용하는 드라이버가 달라서 접속 url을 주의해야함.
+현재 pymysql를 사용하므로"/>
+
+  
+  
+<meta itemprop="name" content="ERAlchemy 를 이용한 ERD작성">
+<meta itemprop="description" content="우분투를 사용하는 환경이다.  사전준비 $ sudo apt install graphviz graphviz-dev python 라이브러리 설치 $ pip install pygraphviz --install-option=&#34;--include-path=/usr/include/graphviz&#34; --install-option=&#34;--library-path=/usr/lib/graphviz/&#34; $ pip install eralchemy 에러 graphviz 를 설치하지 않았을 경우
+ (Python) ValueError: Program dot not found in path  graphviz-dev를 설치하지 않았을 경우
+undefined symbol: Agundirected  사용법 MySQL에 접속해서 해당 DB를 pdf로 출력해봄
+내부적으로 SQLAlchemy를 사용해서 db접속시 url를 아래와 같다.
+사용하는 드라이버가 달라서 접속 url을 주의해야함.
+현재 pymysql를 사용하므로">
+
+
+<meta itemprop="datePublished" content="2018-07-05T23:29:30&#43;09:00" />
+<meta itemprop="dateModified" content="2018-07-05T23:29:30&#43;09:00" />
+<meta itemprop="wordCount" content="74">
+
+
+
+<meta itemprop="keywords" content="python," />
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <title>Bonjour!</title>
+  <style>
+   pre {
+     margin: 1em 0em 1em;
+     padding: 0.5em 0.5em 0.5em;
+     border: 1px solid #5C5C5C;
+   }
+
+   code {
+     white-space: pre-wrap;        
+     white-space: -moz-pre-wrap;   
+     white-space: -pre-wrap;       
+     white-space: -o-pre-wrap;     
+     word-wrap: break-word;        
+     line-height: 1.4em;
+   }
+
+   blockquote { background: #1D1F21; border-left: 3px solid #99cc66; }
+   table { margin: 1em auto; border-collapse: collapse; }
+   table, th, td { border: 1px solid #5C5C5C; }
+   tr:hover { background: #1D1F21; }
+  </style>
+  <link rel="stylesheet" href="css/tomorrow-night.min.css" />
+  <script src="js/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body><h3><a href="http://clonekim.github.io/">Bonjour!</a></h3>
+<div id="content" class="container">
+<div class="card border-primary">
+  <div class="card-header text-right">
+    <small>Jul 5, 2018</small>
+  </div>
+  <div class="card-body">
+    <a  href="http://clonekim.github.io/posts/2018/2018-07-05-eralchemy/">
+      <h5 class="card-title">ERAlchemy 를 이용한 ERD작성</h5>
+    </a>
+    <p class="card-text">
+
+<pre><code>우분투를 사용하는 환경이다.
+</code></pre>
+
+<h2 id="사전준비">사전준비</h2>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo apt install graphviz graphviz-dev</code></pre></div>
+<h2 id="python-라이브러리-설치">python 라이브러리 설치</h2>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ pip install pygraphviz --install-option=<span style="color:#0ff;font-weight:bold">&#34;--include-path=/usr/include/graphviz&#34;</span> --install-option=<span style="color:#0ff;font-weight:bold">&#34;--library-path=/usr/lib/graphviz/&#34;</span>
+$ pip install eralchemy</code></pre></div>
+<h2 id="에러">에러</h2>
+
+<p>graphviz 를 설치하지 않았을 경우</p>
+
+<pre><code> (Python) ValueError: Program dot not found in path
+</code></pre>
+
+<p>graphviz-dev를 설치하지 않았을 경우</p>
+
+<pre><code>undefined symbol: Agundirected 
+</code></pre>
+
+<h2 id="사용법">사용법</h2>
+
+<p>MySQL에 접속해서 해당 DB를 pdf로 출력해봄<br />
+내부적으로 SQLAlchemy를 사용해서 db접속시 url를 아래와 같다.<br />
+사용하는 드라이버가 달라서 접속 url을 주의해야함.</p>
+
+<p>현재 pymysql를 사용하므로<br />
+<a href="https://docs.sqlalchemy.org/en/latest/dialects/mysql.html#module-sqlalchemy.dialects.mysql.pymysql">https://docs.sqlalchemy.org/en/latest/dialects/mysql.html#module-sqlalchemy.dialects.mysql.pymysql</a></p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ eralchemy -i <span style="color:#0ff;font-weight:bold">&#39;mysql+pymysql://test:test@localhost:3306/testdb&#39;</span> -o a.pdf</code></pre></div></p>
+    <p class="card-text text-right">
+      
+      <a href="http://clonekim.github.io/tags/python" class="btn btn-outline-success btn-sm">
+        python
+      </a>
+      
+    </p>
+  </div>
+</div>
+
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+ (function() {
+   
+   
+   if (window.location.hostname == "localhost")
+     return;
+   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+   var disqus_shortname = 'clonekim-github-io';
+   dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+ })();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+        </div></body>
+</html>

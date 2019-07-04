@@ -1,234 +1,167 @@
-<!DOCTYPE html>
-<html lang="ko">
-
 <head>
-<meta charset="utf-8" />
-<meta name="author" content="DAEHEE KIM" />
-<meta name="description" content="Personal blog." />
-<meta name="keywords" content="blog, tech" />
-<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.53" />
+  <meta charset="utf-8" />
+  <meta name="author" content="DAEHEE KIM" />
+  <meta name="description" content="Personal blog." />
+  <meta name="keywords" content="blog, tech" />
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
-<link rel="canonical" href="http://clonekim.github.io/tags/emacs/">
-<base href="http://clonekim.github.io/" />
-<meta property="og:title" content="Emacs" />
+  <link rel="canonical" href="http://clonekim.github.io/tags/emacs/">
+  <base href="http://clonekim.github.io/" />
+  <meta property="og:title" content="emacs" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://clonekim.github.io/tags/emacs/" />
+
 <meta property="og:updated_time" content="2017-11-02T00:00:00&#43;00:00"/>
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Emacs"/>
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="emacs"/>
 <meta name="twitter:description" content=""/>
 
-
-
-<meta itemprop="name" content="Emacs">
+  
+  
+<meta itemprop="name" content="emacs">
 <meta itemprop="description" content="">
 
 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <title>Bonjour!</title>
+  <style>
+   pre {
+     margin: 1em 0em 1em;
+     padding: 0.5em 0.5em 0.5em;
+     border: 1px solid #5C5C5C;
+   }
 
-<link rel="stylesheet" href="css/layout.css" />
-<link rel="stylesheet" href="css/color-dark.css" />
+   code {
+     white-space: pre-wrap;        
+     white-space: -moz-pre-wrap;   
+     white-space: -pre-wrap;       
+     white-space: -o-pre-wrap;     
+     word-wrap: break-word;        
+     line-height: 1.4em;
+   }
 
-
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-121397292-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-
-<title>
-
-
-     Emacs 
-
-</title>
-
-<script src="js/highlight.min.js"></script>
-<link rel="stylesheet" href="css/tomorrow-night.min.css" />
-<script>hljs.initHighlightingOnLoad();</script>
-
+   blockquote { background: #1D1F21; border-left: 3px solid #99cc66; }
+   table { margin: 1em auto; border-collapse: collapse; }
+   table, th, td { border: 1px solid #5C5C5C; }
+   tr:hover { background: #1D1F21; }
+  </style>
+  <link rel="stylesheet" href="css/tomorrow-night.min.css" />
+  <script src="js/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 </head>
 
+<h3><a href="http://clonekim.github.io/">Bonjour!</a></h3>
 
-<body>
-<div class="main">
-<header>
-
-<div class="header-bar">
-
-  <nav>
-    <div class="siteTitle">
-      <a href="http://clonekim.github.io/">(fn [] &#34;Less is more&#34;)</a>
-    </div> 
+<body class="container">
+  <div class="row">
 
     
     
-    <a class="nav-item" href="/tags/"><div class="nav-item-title">Tags</div></a>
-    
-    <a class="nav-item" href="/post/"><div class="nav-item-title">Posts</div></a>
-    
-
-  </nav>
-</div>
-
-  
-<div class="social-links-header">
-
-  
-  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
-  
-
-  
-  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
-  
-
-  
-
-  
-
-  
-
-</div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card border-secondary mb-3">
+        <div class="card-header text-right">
+          Nov 2, 2017
+        </div>
+        <div class="card-body">
+          <a  href="http://clonekim.github.io/posts/2017/2017-11-02-emacs-golang/">
+            <h5 class="card-title">Emacs에서 Golang 를 위한 에디팅</h5>
+          </a>
 
 
-</header>
-
-
-<h2 class="content-list-title">
-    <a href="http://clonekim.github.io/tags/emacs/" class="linktopost">Emacs</a>
-</h2>
-
-<div class="content-list">
-
-<div class="content-list-date">2017</div>
-  
-  <div class="content-item">
-    <a href="http://clonekim.github.io/2017/11/emacs%EC%97%90%EC%84%9C-golang-%EB%A5%BC-%EC%9C%84%ED%95%9C-%EC%97%90%EB%94%94%ED%8C%85/">
-    <div class="post-list"> <h3 class="title"> Emacs에서 Golang 를 위한 에디팅 </h3> </div>
-    </a>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="/tags/emacs">#emacs</a>
+          <p class="card-text text-right">
+            
+            <a href="http://clonekim.github.io/tags/emacs" class="btn btn-outline-success btn-sm">
+              emacs
+            </a>
+            
+            <a href="http://clonekim.github.io/tags/go" class="btn btn-outline-success btn-sm">
+              go
+            </a>
+            
+          </p>
+        </div>
       </div>
+    </div>
     
-      <div class="tag">
-        <a href="/tags/go">#go</a>
+    <div class="col-sm-6 col-md-4">
+      <div class="card border-secondary mb-3">
+        <div class="card-header text-right">
+          Sep 9, 2017
+        </div>
+        <div class="card-body">
+          <a  href="http://clonekim.github.io/posts/2017/2017-09-09-emacs-tip/">
+            <h5 class="card-title">Web개발을 위한 Emacs설정</h5>
+          </a>
+
+
+          <p class="card-text text-right">
+            
+            <a href="http://clonekim.github.io/tags/emacs" class="btn btn-outline-success btn-sm">
+              emacs
+            </a>
+            
+          </p>
+        </div>
       </div>
+    </div>
     
-</div>
-
-    <div class="date"> Nov 2, 2017 </div>
-</div>
-
   
-  <div class="content-item">
-    <a href="http://clonekim.github.io/2017/09/web%EA%B0%9C%EB%B0%9C%EC%9D%84-%EC%9C%84%ED%95%9C-emacs%EC%84%A4%EC%A0%95/">
-    <div class="post-list"> <h3 class="title"> Web개발을 위한 Emacs설정 </h3> </div>
-    </a>
     
-<div class="tags">
-    
-      <div class="tag">
-        <a href="/tags/emacs">#emacs</a>
+    <div class="col-sm-6 col-md-4">
+      <div class="card border-secondary mb-3">
+        <div class="card-header text-right">
+          May 7, 2016
+        </div>
+        <div class="card-body">
+          <a  href="http://clonekim.github.io/posts/2016/2016-05-07-emacs-package/">
+            <h5 class="card-title">Emacs를 쓰면서</h5>
+          </a>
+
+
+          <p class="card-text text-right">
+            
+            <a href="http://clonekim.github.io/tags/emacs" class="btn btn-outline-success btn-sm">
+              emacs
+            </a>
+            
+          </p>
+        </div>
       </div>
+    </div>
     
-</div>
-
-    <div class="date"> Sep 9, 2017 </div>
-</div>
-
   
+    
+    <div class="col-sm-6 col-md-4">
+      <div class="card border-secondary mb-3">
+        <div class="card-header text-right">
+          Sep 11, 2015
+        </div>
+        <div class="card-body">
+          <a  href="http://clonekim.github.io/posts/2015/2015-09-11-custom-emacs-setting/">
+            <h5 class="card-title">Clojure를 위한 Emacs 환경</h5>
+          </a>
 
-<div class="content-list-date">2016</div>
-  
-  <div class="content-item">
-    <a href="http://clonekim.github.io/2016/05/emacs%EB%A5%BC-%EC%93%B0%EB%A9%B4%EC%84%9C/">
-    <div class="post-list"> <h3 class="title"> Emacs를 쓰면서 </h3> </div>
-    </a>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="/tags/emacs">#emacs</a>
+
+          <p class="card-text text-right">
+            
+            <a href="http://clonekim.github.io/tags/emacs" class="btn btn-outline-success btn-sm">
+              emacs
+            </a>
+            
+            <a href="http://clonekim.github.io/tags/clojure" class="btn btn-outline-success btn-sm">
+              clojure
+            </a>
+            
+          </p>
+        </div>
       </div>
+    </div>
     
+  
 </div>
-
-    <div class="date"> May 7, 2016 </div>
-</div>
-
-  
-
-<div class="content-list-date">2015</div>
-  
-  <div class="content-item">
-    <a href="http://clonekim.github.io/2015/09/clojure%EB%A5%BC-%EC%9C%84%ED%95%9C-emacs-%ED%99%98%EA%B2%BD/">
-    <div class="post-list"> <h3 class="title"> Clojure를 위한 Emacs 환경 </h3> </div>
-    </a>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="/tags/emacs">#emacs</a>
-      </div>
-    
-      <div class="tag">
-        <a href="/tags/clojure">#clojure</a>
-      </div>
-    
-</div>
-
-    <div class="date"> Sep 11, 2015 </div>
-</div>
-
-  
-
-</div>
-
-
-  <footer>
-
-  <div class="social-links-footer">
-
-  
-  <a href="mailto:clonekim-at-gmail-dot-com"><div class="social-link">Email</div></a>
-  
-
-  
-  <a href="https://github.com/clonekim" target="_blank"><div class="social-link">GitHub</div></a>
-  
-
-  
-
-  
-
-  
-
-  <div class="social-link">
-  <a href="http://clonekim.github.io/index.xml" target="_blank">RSS</a>
-  </div>
-
-</div>
-
-
-  <div class="copyright">  </div>
-
-  <div class="poweredby">
-    Powered by <a href="https://gohugo.io/">Hugo</a>.
-  </div>
-
-  </footer>
-
 </body>
-</html>
-

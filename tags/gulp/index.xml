@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Gulp on (fn [] &#34;Less is more&#34;)</title>
+    <title>gulp on Bonjour!</title>
     <link>http://clonekim.github.io/tags/gulp/</link>
-    <description>Recent content in Gulp on (fn [] &#34;Less is more&#34;)</description>
+    <description>Recent content in gulp on Bonjour!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
     <lastBuildDate>Fri, 03 Oct 2014 00:00:00 +0000</lastBuildDate>
@@ -13,10 +13,10 @@
     
     <item>
       <title>backbone &#43; handlebar &#43; gulp 팁</title>
-      <link>http://clonekim.github.io/2014/10/backbone-handlebar-gulp-%ED%8C%81/</link>
+      <link>http://clonekim.github.io/posts/2014/2014-10-03-backbone_handlebar_gulp_tip/</link>
       <pubDate>Fri, 03 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2014/10/backbone-handlebar-gulp-%ED%8C%81/</guid>
+      <guid>http://clonekim.github.io/posts/2014/2014-10-03-backbone_handlebar_gulp_tip/</guid>
       <description>백본과 핸들바를 사용해서 소스를 컴파일 후
 정해진 경로로 결과물을 내보내자.
 핸들바를 사용하지 않을려면 brfs도 고려해보자

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+  <meta charset="utf-8" />
+  <meta name="author" content="DAEHEE KIM" />
+  <meta name="description" content="Personal blog." />
+  <meta name="keywords" content="blog, tech" />
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <link rel="canonical" href="http://clonekim.github.io/posts/2015/2015-02-03-beefy-tip/">
+  <base href="http://clonekim.github.io/" />
+  <meta property="og:title" content="beefy 팁" />
+<meta property="og:description" content="a local development server designed to work with browserify.
+ can live reload your browser when your code changes (if you want) works with whatever version of browserify or watchify; globally installed or locally installed to node_modules/. will spit compile errors out into the browser so you don&rsquo;t have that 1-2 seconds of cognitive dissonance and profound ennui that follows refreshing the page only to get a blank screen. will spit out a default index." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://clonekim.github.io/posts/2015/2015-02-03-beefy-tip/" />
+<meta property="article:published_time" content="2015-02-03T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2015-02-03T00:00:00&#43;00:00"/>
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="beefy 팁"/>
+<meta name="twitter:description" content="a local development server designed to work with browserify.
+ can live reload your browser when your code changes (if you want) works with whatever version of browserify or watchify; globally installed or locally installed to node_modules/. will spit compile errors out into the browser so you don&rsquo;t have that 1-2 seconds of cognitive dissonance and profound ennui that follows refreshing the page only to get a blank screen. will spit out a default index."/>
+
+  
+  
+<meta itemprop="name" content="beefy 팁">
+<meta itemprop="description" content="a local development server designed to work with browserify.
+ can live reload your browser when your code changes (if you want) works with whatever version of browserify or watchify; globally installed or locally installed to node_modules/. will spit compile errors out into the browser so you don&rsquo;t have that 1-2 seconds of cognitive dissonance and profound ennui that follows refreshing the page only to get a blank screen. will spit out a default index.">
+
+
+<meta itemprop="datePublished" content="2015-02-03T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2015-02-03T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="196">
+
+
+
+<meta itemprop="keywords" content="javascript," />
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <title>Bonjour!</title>
+  <style>
+   pre {
+     margin: 1em 0em 1em;
+     padding: 0.5em 0.5em 0.5em;
+     border: 1px solid #5C5C5C;
+   }
+
+   code {
+     white-space: pre-wrap;        
+     white-space: -moz-pre-wrap;   
+     white-space: -pre-wrap;       
+     white-space: -o-pre-wrap;     
+     word-wrap: break-word;        
+     line-height: 1.4em;
+   }
+
+   blockquote { background: #1D1F21; border-left: 3px solid #99cc66; }
+   table { margin: 1em auto; border-collapse: collapse; }
+   table, th, td { border: 1px solid #5C5C5C; }
+   tr:hover { background: #1D1F21; }
+  </style>
+  <link rel="stylesheet" href="css/tomorrow-night.min.css" />
+  <script src="js/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body><h3><a href="http://clonekim.github.io/">Bonjour!</a></h3>
+<div id="content" class="container">
+<div class="card border-primary">
+  <div class="card-header text-right">
+    <small>Feb 3, 2015</small>
+  </div>
+  <div class="card-body">
+    <a  href="http://clonekim.github.io/posts/2015/2015-02-03-beefy-tip/">
+      <h5 class="card-title">beefy 팁</h5>
+    </a>
+    <p class="card-text"><p>a local development server designed to work with browserify.</p>
+
+<ul>
+<li>can live reload your browser when your code changes (if you want)</li>
+<li>works with whatever version of browserify or watchify; globally installed or
+locally installed to <code>node_modules/</code>.</li>
+<li>will spit compile errors out into the browser so you don&rsquo;t have that
+1-2 seconds of cognitive dissonance and profound ennui that follows
+refreshing the page only to get a blank screen.</li>
+<li>will spit out a default <code>index.html</code> for missing routes so you don&rsquo;t
+need to even muck about with HTML to get started</li>
+<li>serves up static files with grace and aplomb (and also appropriate
+mimetypes)</li>
+<li>is designed to fall away gracefully, as your project gets bigger.</li>
+<li>love you, unconditionally</li>
+</ul>
+
+<p><em>의존성 설치</em></p>
+
+<pre><code>npm install --save jquery
+npm install --save backbone
+npm install --save-dev beefy
+npm install --save-dev browserify
+</code></pre>
+
+<p><em>package.json</em></p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"> <span style="color:#0ff;font-weight:bold">&#34;scripts&#34;</span><span style="color:#f00">:</span> {
+    <span style="font-weight:bold">&#34;start&#34;</span> : <span style="color:#0ff;font-weight:bold">&#34;beefy index.js:bundle.js --live&#34;</span>,
+     <span style="font-weight:bold">&#34;bundle&#34;</span>: <span style="color:#0ff;font-weight:bold">&#34;browserify index.js -o bundle.js&#34;</span>
+  }<span style="color:#f00">,</span></code></pre></div>
+<p><em>main.js</em></p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#fff;font-weight:bold">var</span> Backbone = require(<span style="color:#0ff;font-weight:bold">&#39;backbone&#39;</span>);
+<span style="color:#fff;font-weight:bold">var</span> $ = require(<span style="color:#0ff;font-weight:bold">&#39;jquery&#39;</span>);
+Backbone.$ = $;
+
+module.exports = Backbone.View.extend({
+
+  initialize: <span style="color:#fff;font-weight:bold">function</span>(){
+    <span style="color:#fff;font-weight:bold">this</span>.render();
+  },
+
+  render: <span style="color:#fff;font-weight:bold">function</span>(){
+    $(<span style="color:#0ff;font-weight:bold">&#39;body&#39;</span>).prepend(<span style="color:#0ff;font-weight:bold">&#39;&lt;p&gt;Hello There&lt;/p&gt;&#39;</span>);
+  }
+});
+</code></pre></div>
+<p><em>index.js</em></p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"> <span style="color:#fff;font-weight:bold">var</span> Main = require(<span style="color:#0ff;font-weight:bold">&#39;./main&#39;</span>);
+ <span style="color:#fff;font-weight:bold">new</span> Main();
+</code></pre></div>
+<p><em>실행</em></p>
+
+<pre><code>npm start
+</code></pre>
+
+<p>웹브라우저로 <a href="http://127.0.0.1:9966를">http://127.0.0.1:9966를</a> 접근해보라<br />
+Hello There라는 문구를 볼수 있다<br />
+<code>소스</code>가 수정되면 <code>웹브라우저</code>도 새로고침이 된다!</p>
+</p>
+    <p class="card-text text-right">
+      
+      <a href="http://clonekim.github.io/tags/javascript" class="btn btn-outline-success btn-sm">
+        javascript
+      </a>
+      
+    </p>
+  </div>
+</div>
+
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+ (function() {
+   
+   
+   if (window.location.hostname == "localhost")
+     return;
+   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+   var disqus_shortname = 'clonekim-github-io';
+   dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+ })();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+        </div></body>
+</html>

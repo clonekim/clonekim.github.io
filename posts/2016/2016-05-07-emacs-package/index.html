@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+  <meta charset="utf-8" />
+  <meta name="author" content="DAEHEE KIM" />
+  <meta name="description" content="Personal blog." />
+  <meta name="keywords" content="blog, tech" />
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <link rel="canonical" href="http://clonekim.github.io/posts/2016/2016-05-07-emacs-package/">
+  <base href="http://clonekim.github.io/" />
+  <meta property="og:title" content="Emacs를 쓰면서" />
+<meta property="og:description" content="mode-icons-mode init.el
+&#39;(mode-icons-mode t)  js-mode setup-js.el
+(add-to-list &#39;auto-mode-alist &#39;(&quot;\\.js$&quot; . js-mode)) (add-hook &#39;js-mode-hook &#39;subword-mode) (add-hook &#39;html-mode-hook &#39;subword-mode) (setq js-indent-level 2) (eval-after-load &quot;sgml-mode&quot; &#39;(progn (require &#39;tagedit) (tagedit-add-paredit-like-keybindings) (add-hook &#39;html-mode-hook (lambda () (tagedit-mode 1)))))  web-mode web.el
+(require &#39;web-mode) (add-to-list &#39;auto-mode-alist &#39;(&quot;\\.html?\\&#39;&quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&quot;\\.[aj]sp\\&#39;&quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&quot;\\.mustache\\&#39;&quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&quot;\\.ftl\\&#39;&quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&quot;\\.vue\\&#39;&quot; . web-mode)) (defun my-web-mode-hook () (setq web-mode-markup-indent-offset 2) (setq web-mode-css-indent-offset 2) (setq web-mode-code-indent-offset 2)) (add-hook &#39;web-mode-hook &#39;my-web-mode-hook)  neo-mode neo." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://clonekim.github.io/posts/2016/2016-05-07-emacs-package/" />
+<meta property="article:published_time" content="2016-05-07T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2016-05-07T00:00:00&#43;00:00"/>
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Emacs를 쓰면서"/>
+<meta name="twitter:description" content="mode-icons-mode init.el
+&#39;(mode-icons-mode t)  js-mode setup-js.el
+(add-to-list &#39;auto-mode-alist &#39;(&quot;\\.js$&quot; . js-mode)) (add-hook &#39;js-mode-hook &#39;subword-mode) (add-hook &#39;html-mode-hook &#39;subword-mode) (setq js-indent-level 2) (eval-after-load &quot;sgml-mode&quot; &#39;(progn (require &#39;tagedit) (tagedit-add-paredit-like-keybindings) (add-hook &#39;html-mode-hook (lambda () (tagedit-mode 1)))))  web-mode web.el
+(require &#39;web-mode) (add-to-list &#39;auto-mode-alist &#39;(&quot;\\.html?\\&#39;&quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&quot;\\.[aj]sp\\&#39;&quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&quot;\\.mustache\\&#39;&quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&quot;\\.ftl\\&#39;&quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&quot;\\.vue\\&#39;&quot; . web-mode)) (defun my-web-mode-hook () (setq web-mode-markup-indent-offset 2) (setq web-mode-css-indent-offset 2) (setq web-mode-code-indent-offset 2)) (add-hook &#39;web-mode-hook &#39;my-web-mode-hook)  neo-mode neo."/>
+
+  
+  
+<meta itemprop="name" content="Emacs를 쓰면서">
+<meta itemprop="description" content="mode-icons-mode init.el
+&#39;(mode-icons-mode t)  js-mode setup-js.el
+(add-to-list &#39;auto-mode-alist &#39;(&quot;\\.js$&quot; . js-mode)) (add-hook &#39;js-mode-hook &#39;subword-mode) (add-hook &#39;html-mode-hook &#39;subword-mode) (setq js-indent-level 2) (eval-after-load &quot;sgml-mode&quot; &#39;(progn (require &#39;tagedit) (tagedit-add-paredit-like-keybindings) (add-hook &#39;html-mode-hook (lambda () (tagedit-mode 1)))))  web-mode web.el
+(require &#39;web-mode) (add-to-list &#39;auto-mode-alist &#39;(&quot;\\.html?\\&#39;&quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&quot;\\.[aj]sp\\&#39;&quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&quot;\\.mustache\\&#39;&quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&quot;\\.ftl\\&#39;&quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&quot;\\.vue\\&#39;&quot; . web-mode)) (defun my-web-mode-hook () (setq web-mode-markup-indent-offset 2) (setq web-mode-css-indent-offset 2) (setq web-mode-code-indent-offset 2)) (add-hook &#39;web-mode-hook &#39;my-web-mode-hook)  neo-mode neo.">
+
+
+<meta itemprop="datePublished" content="2016-05-07T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2016-05-07T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="173">
+
+
+
+<meta itemprop="keywords" content="emacs," />
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <title>Bonjour!</title>
+  <style>
+   pre {
+     margin: 1em 0em 1em;
+     padding: 0.5em 0.5em 0.5em;
+     border: 1px solid #5C5C5C;
+   }
+
+   code {
+     white-space: pre-wrap;        
+     white-space: -moz-pre-wrap;   
+     white-space: -pre-wrap;       
+     white-space: -o-pre-wrap;     
+     word-wrap: break-word;        
+     line-height: 1.4em;
+   }
+
+   blockquote { background: #1D1F21; border-left: 3px solid #99cc66; }
+   table { margin: 1em auto; border-collapse: collapse; }
+   table, th, td { border: 1px solid #5C5C5C; }
+   tr:hover { background: #1D1F21; }
+  </style>
+  <link rel="stylesheet" href="css/tomorrow-night.min.css" />
+  <script src="js/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body><h3><a href="http://clonekim.github.io/">Bonjour!</a></h3>
+<div id="content" class="container">
+<div class="card border-primary">
+  <div class="card-header text-right">
+    <small>May 7, 2016</small>
+  </div>
+  <div class="card-body">
+    <a  href="http://clonekim.github.io/posts/2016/2016-05-07-emacs-package/">
+      <h5 class="card-title">Emacs를 쓰면서</h5>
+    </a>
+    <p class="card-text">
+
+<h3 id="mode-icons-mode">mode-icons-mode</h3>
+
+<p><em>init.el</em></p>
+
+<pre><code>'(mode-icons-mode t)
+</code></pre>
+
+<h3 id="js-mode">js-mode</h3>
+
+<p><em>setup-js.el</em></p>
+
+<pre><code>(add-to-list 'auto-mode-alist '(&quot;\\.js$&quot; . js-mode))
+(add-hook 'js-mode-hook 'subword-mode)
+(add-hook 'html-mode-hook 'subword-mode)
+
+(setq js-indent-level 2)
+(eval-after-load &quot;sgml-mode&quot;
+  '(progn
+     (require 'tagedit)
+     (tagedit-add-paredit-like-keybindings)
+     (add-hook 'html-mode-hook (lambda () (tagedit-mode 1)))))
+</code></pre>
+
+<h3 id="web-mode">web-mode</h3>
+
+<p><em>web.el</em></p>
+
+<pre><code>(require 'web-mode)
+
+(add-to-list 'auto-mode-alist '(&quot;\\.html?\\'&quot; . web-mode))
+(add-to-list 'auto-mode-alist '(&quot;\\.[aj]sp\\'&quot; . web-mode))
+(add-to-list 'auto-mode-alist '(&quot;\\.mustache\\'&quot; . web-mode))
+(add-to-list 'auto-mode-alist '(&quot;\\.ftl\\'&quot; . web-mode))
+(add-to-list 'auto-mode-alist '(&quot;\\.vue\\'&quot; . web-mode))
+
+(defun my-web-mode-hook ()
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-code-indent-offset 2))
+
+(add-hook 'web-mode-hook 'my-web-mode-hook)
+</code></pre>
+
+<h3 id="neo-mode">neo-mode</h3>
+
+<p><em>neo.el</em></p>
+
+<pre><code>(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
+
+(defun neotree-project-dir ()
+  &quot;Open NeoTree using the git root.&quot;
+  (interactive)
+  (let ((file-name (buffer-file-name)))
+    (if file-name
+        (progn
+          (neotree-find file-name))
+      (message &quot;Could not find git project root.&quot;))))
+
+(global-set-key [f8] 'neotree-toggle)
+(global-set-key (kbd &quot;C-c C-p&quot;) 'neotree-project-dir)
+</code></pre>
+
+<h3 id="emmet-mode">emmet-mode</h3>
+
+<p><em>emmet.el</em></p>
+
+<pre><code>(require 'emmet-mode)
+(add-hook 'sgml-mode-hook 'emmet-mode)
+(add-hook 'css-mode-hook  'emmet-mode)
+(add-hook 'emmet-mode-hook (lambda () 
+                             (setq emmet-indentation 2)
+                             ;; (setq emmet-indent-after-insert nill)
+                             ))
+
+(add-to-list 'auto-mode-alist '(&quot;\\.html?\\'&quot; . emmet-mode))
+(add-to-list 'auto-mode-alist '(&quot;\\.ftl\\'&quot; . emmet-mode))
+(add-to-list 'auto-mode-alist '(&quot;\\.vue\\'&quot; . emmet-mode))
+(add-to-list 'auto-mode-alist '(&quot;\\.mustache\\'&quot; . emmet-mode))
+(eval-after-load &quot;emmet-mode&quot;
+  '(define-key emmet-mode-keymap (kbd &quot;C-j&quot;) nil))
+(keyboard-translate ?\C-i ?\H-i)
+(define-key emmet-mode-keymap (kbd &quot;H-i&quot;) 'emmet-expand-line)
+</code></pre>
+</p>
+    <p class="card-text text-right">
+      
+      <a href="http://clonekim.github.io/tags/emacs" class="btn btn-outline-success btn-sm">
+        emacs
+      </a>
+      
+    </p>
+  </div>
+</div>
+
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+ (function() {
+   
+   
+   if (window.location.hostname == "localhost")
+     return;
+   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+   var disqus_shortname = 'clonekim-github-io';
+   dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+ })();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+        </div></body>
+</html>

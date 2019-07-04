@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+  <meta charset="utf-8" />
+  <meta name="author" content="DAEHEE KIM" />
+  <meta name="description" content="Personal blog." />
+  <meta name="keywords" content="blog, tech" />
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <link rel="canonical" href="http://clonekim.github.io/posts/2018/2018-12-24-how-spark/">
+  <base href="http://clonekim.github.io/" />
+  <meta property="og:title" content="Spark - Docker 이미지만들기" />
+<meta property="og:description" content="Spark Docker를 이용한 스파크 실습  Docker Image 만들기 spark-version-tgz는 미리 홈페이지에서 다운받아둘것
+├── Dockerfile ├── config │ ├── core-site.xml │ ├── hdfs-site.xml │ └── spark-env.sh ├── spark-2.4.0-bin-hadoop2.7.tgz └── start-spark.sh  Dockerfile
+FROM ubuntu:18.04 ENV SPARK_HOME /opt/spark ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64 RUN apt-get update &amp;&amp; apt-get install -y \ wget \ python3 \ psmisc \ net-tools \ openjdk-8-jdk &amp;&amp; \ apt-get autoclean &amp;&amp; \ ln -s /usr/bin/python3 /usr/bin/python RUN wget http://apache." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://clonekim.github.io/posts/2018/2018-12-24-how-spark/" />
+<meta property="article:published_time" content="2018-12-24T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-12-24T00:00:00&#43;00:00"/>
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Spark - Docker 이미지만들기"/>
+<meta name="twitter:description" content="Spark Docker를 이용한 스파크 실습  Docker Image 만들기 spark-version-tgz는 미리 홈페이지에서 다운받아둘것
+├── Dockerfile ├── config │ ├── core-site.xml │ ├── hdfs-site.xml │ └── spark-env.sh ├── spark-2.4.0-bin-hadoop2.7.tgz └── start-spark.sh  Dockerfile
+FROM ubuntu:18.04 ENV SPARK_HOME /opt/spark ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64 RUN apt-get update &amp;&amp; apt-get install -y \ wget \ python3 \ psmisc \ net-tools \ openjdk-8-jdk &amp;&amp; \ apt-get autoclean &amp;&amp; \ ln -s /usr/bin/python3 /usr/bin/python RUN wget http://apache."/>
+
+  
+  
+<meta itemprop="name" content="Spark - Docker 이미지만들기">
+<meta itemprop="description" content="Spark Docker를 이용한 스파크 실습  Docker Image 만들기 spark-version-tgz는 미리 홈페이지에서 다운받아둘것
+├── Dockerfile ├── config │ ├── core-site.xml │ ├── hdfs-site.xml │ └── spark-env.sh ├── spark-2.4.0-bin-hadoop2.7.tgz └── start-spark.sh  Dockerfile
+FROM ubuntu:18.04 ENV SPARK_HOME /opt/spark ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64 RUN apt-get update &amp;&amp; apt-get install -y \ wget \ python3 \ psmisc \ net-tools \ openjdk-8-jdk &amp;&amp; \ apt-get autoclean &amp;&amp; \ ln -s /usr/bin/python3 /usr/bin/python RUN wget http://apache.">
+
+
+<meta itemprop="datePublished" content="2018-12-24T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-12-24T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="175">
+
+
+
+<meta itemprop="keywords" content="spark,docker," />
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <title>Bonjour!</title>
+  <style>
+   pre {
+     margin: 1em 0em 1em;
+     padding: 0.5em 0.5em 0.5em;
+     border: 1px solid #5C5C5C;
+   }
+
+   code {
+     white-space: pre-wrap;        
+     white-space: -moz-pre-wrap;   
+     white-space: -pre-wrap;       
+     white-space: -o-pre-wrap;     
+     word-wrap: break-word;        
+     line-height: 1.4em;
+   }
+
+   blockquote { background: #1D1F21; border-left: 3px solid #99cc66; }
+   table { margin: 1em auto; border-collapse: collapse; }
+   table, th, td { border: 1px solid #5C5C5C; }
+   tr:hover { background: #1D1F21; }
+  </style>
+  <link rel="stylesheet" href="css/tomorrow-night.min.css" />
+  <script src="js/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body><h3><a href="http://clonekim.github.io/">Bonjour!</a></h3>
+<div id="content" class="container">
+<div class="card border-primary">
+  <div class="card-header text-right">
+    <small>Dec 24, 2018</small>
+  </div>
+  <div class="card-body">
+    <a  href="http://clonekim.github.io/posts/2018/2018-12-24-how-spark/">
+      <h5 class="card-title">Spark - Docker 이미지만들기</h5>
+    </a>
+    <p class="card-text">
+
+<h1 id="spark">Spark</h1>
+
+<pre><code>Docker를 이용한 스파크 실습
+</code></pre>
+
+<h2 id="docker-image-만들기">Docker Image 만들기</h2>
+
+<p>spark-version-tgz는 미리 홈페이지에서 다운받아둘것</p>
+
+<pre><code>├── Dockerfile
+├── config
+│   ├── core-site.xml
+│   ├── hdfs-site.xml
+│   └── spark-env.sh
+├── spark-2.4.0-bin-hadoop2.7.tgz
+└── start-spark.sh
+</code></pre>
+
+<p>Dockerfile</p>
+
+<pre><code>FROM ubuntu:18.04
+
+ENV SPARK_HOME /opt/spark
+ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
+
+RUN apt-get update &amp;&amp; apt-get install -y \
+    wget \
+    python3 \
+    psmisc \
+    net-tools \
+    openjdk-8-jdk &amp;&amp; \
+    apt-get autoclean &amp;&amp; \
+    ln -s /usr/bin/python3 /usr/bin/python
+
+RUN wget http://apache.tt.co.kr/spark/spark-2.4.0/spark-2.4.0-bin-hadoop2.7.tgz -O /spark-2.4.0-bin-hadoop2.7.tgz
+
+RUN tar -xvf spark-2.4.0-bin-hadoop2.7.tgz  -C /opt &amp;&amp; \
+    rm spark-2.4.0-bin-hadoop2.7.tgz &amp;&amp; \
+    cd /opt &amp;&amp; \
+    mv spark-2.4.0-bin-hadoop2.7 spark &amp;&amp; \
+    echo &quot;export JAVA_HOME=$JAVA_HOME&quot; &gt;&gt; ~/.bashrc &amp;&amp; \
+    echo &quot;PYSPARK_PYTHON=python3&quot; &gt;&gt; ~/.bashrc &amp;&amp; \
+    echo &quot;PATH=$PATH:$SPARK_HOME/bin&quot; &gt;&gt; ~/.bashrc
+
+RUN wget http://central.maven.org/maven2/org/mariadb/jdbc/mariadb-java-client/2.3.0/mariadb-java-client-2.3.0.jar -O /opt/spark/jars/mariadb-java-client-2.3.0.jar
+ADD config/*xml $SPARK_HOME/conf/
+ADD config/*sh  $SPARK_HOME/conf/
+ADD start-spark.sh start-spark.sh
+
+EXPOSE 8080 8081 8082 7077
+
+CMD [&quot;bash&quot;, &quot;start-spark.sh&quot;]
+</code></pre>
+
+<p>start-spark.sh</p>
+
+<pre><code>#!/bin/bash
+export SPARK_WORKER_INSTANCES=2
+$SPARK_HOME/sbin/start-master.sh -h 0.0.0.0
+$SPARK_HOME/sbin/start-slave.sh spark://0.0.0.0:7077 -c 4 -m 4G
+
+tail -f /dev/null
+</code></pre>
+
+<h2 id="이미지빌드">이미지빌드</h2>
+
+<pre><code>$ docker image build -t spark-single .
+</code></pre>
+
+<p>Docker 인스턴스 작동해보자</p>
+
+<pre><code>$ docker run -d --name spark-single -p 8080-8082:8080-8082 -p 7077:7077 spark
+</code></pre>
+
+<p>쉘접속해보자</p>
+
+<pre><code>$ docker exec -it spark /spark/bin/pyspark
+</code></pre>
+</p>
+    <p class="card-text text-right">
+      
+      <a href="http://clonekim.github.io/tags/spark" class="btn btn-outline-success btn-sm">
+        spark
+      </a>
+      
+      <a href="http://clonekim.github.io/tags/docker" class="btn btn-outline-success btn-sm">
+        docker
+      </a>
+      
+    </p>
+  </div>
+</div>
+
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+ (function() {
+   
+   
+   if (window.location.hostname == "localhost")
+     return;
+   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+   var disqus_shortname = 'clonekim-github-io';
+   dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+ })();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+        </div></body>
+</html>

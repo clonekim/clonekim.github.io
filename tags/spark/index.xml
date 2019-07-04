@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Spark on (fn [] &#34;Less is more&#34;)</title>
+    <title>spark on Bonjour!</title>
     <link>http://clonekim.github.io/tags/spark/</link>
-    <description>Recent content in Spark on (fn [] &#34;Less is more&#34;)</description>
+    <description>Recent content in spark on Bonjour!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
     <lastBuildDate>Mon, 24 Dec 2018 00:00:00 +0000</lastBuildDate>
@@ -13,10 +13,10 @@
     
     <item>
       <title>Spark</title>
-      <link>http://clonekim.github.io/2018/12/spark/</link>
+      <link>http://clonekim.github.io/posts/2018/2018-12-24-aggregation-tags-with-spark/</link>
       <pubDate>Mon, 24 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2018/12/spark/</guid>
+      <guid>http://clonekim.github.io/posts/2018/2018-12-24-aggregation-tags-with-spark/</guid>
       <description>현재 특정 테이블의 태그정보와 아래와 같다
 특정컬럼에 태그 값이 컴마 구분으로 들어있음
    tags     태그, 태그, 태그 &amp;hellip;    파일 처리 해당 컬럼만 csv로 만들어본것
@@ -25,12 +25,13 @@
     
     <item>
       <title>Spark - Docker 이미지만들기</title>
-      <link>http://clonekim.github.io/2018/12/spark-docker-%EC%9D%B4%EB%AF%B8%EC%A7%80%EB%A7%8C%EB%93%A4%EA%B8%B0/</link>
+      <link>http://clonekim.github.io/posts/2018/2018-12-24-how-spark/</link>
       <pubDate>Mon, 24 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2018/12/spark-docker-%EC%9D%B4%EB%AF%B8%EC%A7%80%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid>
-      <description>Spark Docker를 이용한 스파크 실습  Docker Image 만들기 ├── Dockerfile ├── config │ ├── core-site.xml │ ├── hdfs-site.xml │ └── spark-env.sh └── start-spark.sh  Dockerfile
-FROM ubuntu:18.04 ENV SPARK_HOME /opt/spark ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64 RUN apt-get update &amp;amp;&amp;amp; apt-get install -y \ wget \ python3 \ psmisc \ net-tools \ openjdk-8-jdk &amp;amp;&amp;amp; \ apt-get autoclean &amp;amp;&amp;amp; \ ln -s /usr/bin/python3 /usr/bin/python RUN wget http://apache.tt.co.kr/spark/spark-2.4.0/spark-2.4.0-bin-hadoop2.7.tgz -O /spark-2.4.0-bin-hadoop2.7.tgz RUN tar -xvf spark-2.</description>
+      <guid>http://clonekim.github.io/posts/2018/2018-12-24-how-spark/</guid>
+      <description>Spark Docker를 이용한 스파크 실습  Docker Image 만들기 spark-version-tgz는 미리 홈페이지에서 다운받아둘것
+├── Dockerfile ├── config │ ├── core-site.xml │ ├── hdfs-site.xml │ └── spark-env.sh ├── spark-2.4.0-bin-hadoop2.7.tgz └── start-spark.sh  Dockerfile
+FROM ubuntu:18.04 ENV SPARK_HOME /opt/spark ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64 RUN apt-get update &amp;amp;&amp;amp; apt-get install -y \ wget \ python3 \ psmisc \ net-tools \ openjdk-8-jdk &amp;amp;&amp;amp; \ apt-get autoclean &amp;amp;&amp;amp; \ ln -s /usr/bin/python3 /usr/bin/python RUN wget http://apache.</description>
     </item>
     
   </channel>

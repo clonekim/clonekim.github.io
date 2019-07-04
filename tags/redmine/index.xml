@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Redmine on (fn [] &#34;Less is more&#34;)</title>
+    <title>redmine on Bonjour!</title>
     <link>http://clonekim.github.io/tags/redmine/</link>
-    <description>Recent content in Redmine on (fn [] &#34;Less is more&#34;)</description>
+    <description>Recent content in redmine on Bonjour!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
     <lastBuildDate>Sat, 18 Jul 2015 00:00:00 +0000</lastBuildDate>
@@ -13,10 +13,10 @@
     
     <item>
       <title>Redmine3 설치하기</title>
-      <link>http://clonekim.github.io/2015/07/redmine3-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/</link>
+      <link>http://clonekim.github.io/posts/2015/2015-07-18-install-redmine/</link>
       <pubDate>Sat, 18 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2015/07/redmine3-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/</guid>
+      <guid>http://clonekim.github.io/posts/2015/2015-07-18-install-redmine/</guid>
       <description>## 설치환경
  redmine-3.0.4 centos 6.6 redmine install가이드  RVM 설치 rvm.io 에 대하여
 rvm을 이용하여 루비를 버젼별로 설치및 관리할 수 있다

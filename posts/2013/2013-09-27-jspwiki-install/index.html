@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+  <meta charset="utf-8" />
+  <meta name="author" content="DAEHEE KIM" />
+  <meta name="description" content="Personal blog." />
+  <meta name="keywords" content="blog, tech" />
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <link rel="canonical" href="http://clonekim.github.io/posts/2013/2013-09-27-jspwiki-install/">
+  <base href="http://clonekim.github.io/" />
+  <meta property="og:title" content="JSPWiki 설치" />
+<meta property="og:description" content=" Apache JSPWiki
+설정 server.xml
+&lt;Connector address=&#34;127.0.0.1&#34; port=&#34;8080&#34; protocol=&#34;org.apache.coyote.http11.Http11NioProtocol&#34; connectionTimeout=&#34;20000&#34; maxThreads=&#34;3&#34; minSpareThreads=&#34;2&#34; redirectPort=&#34;8443&#34; URIEncoding=&#34;UTF-8&#34;/&gt; jspwiki.properties
+jspwiki.baseURL= http://cloud9ine.cafe24.com/wiki jspwiki.fileSystemProvider.pageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/ jspwiki.basicAttachmentProvider.storageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/  jspwiki.policy
+Anonymous를 코멘트처리
+Nginx 연동 upstream tomcat { server 127.0.0.1:8080; } server { ... location /wiki { proxy_pass http://tomcat; }  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://clonekim.github.io/posts/2013/2013-09-27-jspwiki-install/" />
+<meta property="article:published_time" content="2013-09-27T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2013-09-27T00:00:00&#43;00:00"/>
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="JSPWiki 설치"/>
+<meta name="twitter:description" content=" Apache JSPWiki
+설정 server.xml
+&lt;Connector address=&#34;127.0.0.1&#34; port=&#34;8080&#34; protocol=&#34;org.apache.coyote.http11.Http11NioProtocol&#34; connectionTimeout=&#34;20000&#34; maxThreads=&#34;3&#34; minSpareThreads=&#34;2&#34; redirectPort=&#34;8443&#34; URIEncoding=&#34;UTF-8&#34;/&gt; jspwiki.properties
+jspwiki.baseURL= http://cloud9ine.cafe24.com/wiki jspwiki.fileSystemProvider.pageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/ jspwiki.basicAttachmentProvider.storageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/  jspwiki.policy
+Anonymous를 코멘트처리
+Nginx 연동 upstream tomcat { server 127.0.0.1:8080; } server { ... location /wiki { proxy_pass http://tomcat; }  "/>
+
+  
+  
+<meta itemprop="name" content="JSPWiki 설치">
+<meta itemprop="description" content=" Apache JSPWiki
+설정 server.xml
+&lt;Connector address=&#34;127.0.0.1&#34; port=&#34;8080&#34; protocol=&#34;org.apache.coyote.http11.Http11NioProtocol&#34; connectionTimeout=&#34;20000&#34; maxThreads=&#34;3&#34; minSpareThreads=&#34;2&#34; redirectPort=&#34;8443&#34; URIEncoding=&#34;UTF-8&#34;/&gt; jspwiki.properties
+jspwiki.baseURL= http://cloud9ine.cafe24.com/wiki jspwiki.fileSystemProvider.pageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/ jspwiki.basicAttachmentProvider.storageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/  jspwiki.policy
+Anonymous를 코멘트처리
+Nginx 연동 upstream tomcat { server 127.0.0.1:8080; } server { ... location /wiki { proxy_pass http://tomcat; }  ">
+
+
+<meta itemprop="datePublished" content="2013-09-27T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2013-09-27T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="42">
+
+
+
+<meta itemprop="keywords" content="wiki," />
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <title>Bonjour!</title>
+  <style>
+   pre {
+     margin: 1em 0em 1em;
+     padding: 0.5em 0.5em 0.5em;
+     border: 1px solid #5C5C5C;
+   }
+
+   code {
+     white-space: pre-wrap;        
+     white-space: -moz-pre-wrap;   
+     white-space: -pre-wrap;       
+     white-space: -o-pre-wrap;     
+     word-wrap: break-word;        
+     line-height: 1.4em;
+   }
+
+   blockquote { background: #1D1F21; border-left: 3px solid #99cc66; }
+   table { margin: 1em auto; border-collapse: collapse; }
+   table, th, td { border: 1px solid #5C5C5C; }
+   tr:hover { background: #1D1F21; }
+  </style>
+  <link rel="stylesheet" href="css/tomorrow-night.min.css" />
+  <script src="js/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body><h3><a href="http://clonekim.github.io/">Bonjour!</a></h3>
+<div id="content" class="container">
+<div class="card border-primary">
+  <div class="card-header text-right">
+    <small>Sep 27, 2013</small>
+  </div>
+  <div class="card-body">
+    <a  href="http://clonekim.github.io/posts/2013/2013-09-27-jspwiki-install/">
+      <h5 class="card-title">JSPWiki 설치</h5>
+    </a>
+    <p class="card-text">
+
+<p><a href="http://jspwiki.apache.org/">Apache JSPWiki</a></p>
+
+<h2 id="설정">설정</h2>
+
+<p><em>server.xml</em></p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="font-weight:bold">&lt;Connector</span> <span style="color:#007f7f">address=</span><span style="color:#0ff;font-weight:bold">&#34;127.0.0.1&#34;</span> <span style="color:#007f7f">port=</span><span style="color:#0ff;font-weight:bold">&#34;8080&#34;</span> <span style="color:#007f7f">protocol=</span><span style="color:#0ff;font-weight:bold">&#34;org.apache.coyote.http11.Http11NioProtocol&#34;</span>
+               <span style="color:#007f7f">connectionTimeout=</span><span style="color:#0ff;font-weight:bold">&#34;20000&#34;</span>
+               <span style="color:#007f7f">maxThreads=</span><span style="color:#0ff;font-weight:bold">&#34;3&#34;</span> <span style="color:#007f7f">minSpareThreads=</span><span style="color:#0ff;font-weight:bold">&#34;2&#34;</span>
+               <span style="color:#007f7f">redirectPort=</span><span style="color:#0ff;font-weight:bold">&#34;8443&#34;</span> <span style="color:#007f7f">URIEncoding=</span><span style="color:#0ff;font-weight:bold">&#34;UTF-8&#34;</span><span style="font-weight:bold">/&gt;</span></code></pre></div>
+<p><em>jspwiki.properties</em></p>
+
+<pre><code>jspwiki.baseURL= http://cloud9ine.cafe24.com/wiki
+jspwiki.fileSystemProvider.pageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/
+jspwiki.basicAttachmentProvider.storageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/
+</code></pre>
+
+<p><em>jspwiki.policy</em></p>
+
+<p>Anonymous를 코멘트처리</p>
+
+<h2 id="nginx-연동">Nginx 연동</h2>
+
+<pre><code>upstream tomcat {
+    server 127.0.0.1:8080;
+}
+
+server {
+ ...
+  location /wiki {
+      proxy_pass http://tomcat;
+  }
+
+</code></pre>
+</p>
+    <p class="card-text text-right">
+      
+      <a href="http://clonekim.github.io/tags/wiki" class="btn btn-outline-success btn-sm">
+        wiki
+      </a>
+      
+    </p>
+  </div>
+</div>
+
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+ (function() {
+   
+   
+   if (window.location.hostname == "localhost")
+     return;
+   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+   var disqus_shortname = 'clonekim-github-io';
+   dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+ })();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+        </div></body>
+</html>

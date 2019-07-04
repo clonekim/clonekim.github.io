@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Clojurescript on (fn [] &#34;Less is more&#34;)</title>
+    <title>clojurescript on Bonjour!</title>
     <link>http://clonekim.github.io/tags/clojurescript/</link>
-    <description>Recent content in Clojurescript on (fn [] &#34;Less is more&#34;)</description>
+    <description>Recent content in clojurescript on Bonjour!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
     <lastBuildDate>Tue, 20 Sep 2016 00:00:00 +0000</lastBuildDate>
@@ -13,10 +13,10 @@
     
     <item>
       <title>clojurescript에서 jquery사용</title>
-      <link>http://clonekim.github.io/2016/09/clojurescript%EC%97%90%EC%84%9C-jquery%EC%82%AC%EC%9A%A9/</link>
+      <link>http://clonekim.github.io/posts/2016/2016-09-20-using-jquery-in-clojurescript/</link>
       <pubDate>Tue, 20 Sep 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2016/09/clojurescript%EC%97%90%EC%84%9C-jquery%EC%82%AC%EC%9A%A9/</guid>
+      <guid>http://clonekim.github.io/posts/2016/2016-09-20-using-jquery-in-clojurescript/</guid>
       <description> view.clj
 (defn view-layout [&amp;amp; content] (html [:head [:meta {:http-equiv &amp;#34;Content-type&amp;#34; :content &amp;#34;text/html; charset=utf-8&amp;#34;}] [&amp;#34;title&amp;#34;: &amp;#34;Project-Name&amp;#34;]] [:body content])) (defn view-content [] (view-layout [:h2 &amp;#34;Project-Name&amp;#34;] [:p {:id &amp;#34;clickhere&amp;#34;} &amp;#34;Get yourself a nice alert by clicking here.&amp;#34;] [:script {:src &amp;#34;/js/jquery-1.10.2.min.js&amp;#34;}] [:script {:src &amp;#34;/js/cljs.js&amp;#34;}])) hello.cljs
 (:require [jayq.core :as jq]) (:use [jayq.core :only [$]]) ;; ;; $(&amp;#34;#btn&amp;#34;).click(function() {alert(&amp;#34;Hi!&amp;#34;); }); ;; (jq/bind ($ &amp;#34;#btn&amp;#34;) :click (fn [] (js/alert &amp;#34;Hi!&amp;#34;))) lein cljsbuild once lein run  참고  ClojureScriptという選択肢 ClojureScript入門  </description>
@@ -24,10 +24,10 @@
     
     <item>
       <title>ClojureScript 시작하기</title>
-      <link>http://clonekim.github.io/2016/01/clojurescript-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/</link>
+      <link>http://clonekim.github.io/posts/2016/2016-01-18-starting-clojurescript/</link>
       <pubDate>Mon, 18 Jan 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2016/01/clojurescript-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/</guid>
+      <guid>http://clonekim.github.io/posts/2016/2016-01-18-starting-clojurescript/</guid>
       <description>프로젝트 설정 leiningen
 [org.clojure/clojurescript &amp;#34;1.7.228&amp;#34;] plugin
 [lein-cljsbuild &amp;#34;1.1.2&amp;#34;] project.clj

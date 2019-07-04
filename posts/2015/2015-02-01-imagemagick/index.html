@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+  <meta charset="utf-8" />
+  <meta name="author" content="DAEHEE KIM" />
+  <meta name="description" content="Personal blog." />
+  <meta name="keywords" content="blog, tech" />
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <link rel="canonical" href="http://clonekim.github.io/posts/2015/2015-02-01-imagemagick/">
+  <base href="http://clonekim.github.io/" />
+  <meta property="og:title" content="ImageMagick" />
+<meta property="og:description" content="Thumbnail
+convert [Image 1] -thumbnail 50% [Result Image] or convert [Image 1] -thumbnail 100x70 [Result Image]  Composite
+composite -geometry &#43;[x]&#43;[y] [Image 1] [Image 2] [Result Image] ex) composite -geometry &#43;02&#43;30 person.jpg background.jpg profile.jpg  Image Info
+identify -format &#39;%wx%h %m %b %n&#39; [file]  box 필터
+convert [file] -scale [n]% -filter box -resize [size]! [file]  inline 이미지 생성
+png 로 이미지를 생성하되 :- 또는 png:fd:1 를 사용하면 표준 출력 장치(모니터) 로 내보냄" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://clonekim.github.io/posts/2015/2015-02-01-imagemagick/" />
+<meta property="article:published_time" content="2015-02-01T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2015-02-01T00:00:00&#43;00:00"/>
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ImageMagick"/>
+<meta name="twitter:description" content="Thumbnail
+convert [Image 1] -thumbnail 50% [Result Image] or convert [Image 1] -thumbnail 100x70 [Result Image]  Composite
+composite -geometry &#43;[x]&#43;[y] [Image 1] [Image 2] [Result Image] ex) composite -geometry &#43;02&#43;30 person.jpg background.jpg profile.jpg  Image Info
+identify -format &#39;%wx%h %m %b %n&#39; [file]  box 필터
+convert [file] -scale [n]% -filter box -resize [size]! [file]  inline 이미지 생성
+png 로 이미지를 생성하되 :- 또는 png:fd:1 를 사용하면 표준 출력 장치(모니터) 로 내보냄"/>
+
+  
+  
+<meta itemprop="name" content="ImageMagick">
+<meta itemprop="description" content="Thumbnail
+convert [Image 1] -thumbnail 50% [Result Image] or convert [Image 1] -thumbnail 100x70 [Result Image]  Composite
+composite -geometry &#43;[x]&#43;[y] [Image 1] [Image 2] [Result Image] ex) composite -geometry &#43;02&#43;30 person.jpg background.jpg profile.jpg  Image Info
+identify -format &#39;%wx%h %m %b %n&#39; [file]  box 필터
+convert [file] -scale [n]% -filter box -resize [size]! [file]  inline 이미지 생성
+png 로 이미지를 생성하되 :- 또는 png:fd:1 를 사용하면 표준 출력 장치(모니터) 로 내보냄">
+
+
+<meta itemprop="datePublished" content="2015-02-01T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2015-02-01T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="105">
+
+
+
+<meta itemprop="keywords" content="imagemagick,captcha," />
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <title>Bonjour!</title>
+  <style>
+   pre {
+     margin: 1em 0em 1em;
+     padding: 0.5em 0.5em 0.5em;
+     border: 1px solid #5C5C5C;
+   }
+
+   code {
+     white-space: pre-wrap;        
+     white-space: -moz-pre-wrap;   
+     white-space: -pre-wrap;       
+     white-space: -o-pre-wrap;     
+     word-wrap: break-word;        
+     line-height: 1.4em;
+   }
+
+   blockquote { background: #1D1F21; border-left: 3px solid #99cc66; }
+   table { margin: 1em auto; border-collapse: collapse; }
+   table, th, td { border: 1px solid #5C5C5C; }
+   tr:hover { background: #1D1F21; }
+  </style>
+  <link rel="stylesheet" href="css/tomorrow-night.min.css" />
+  <script src="js/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body><h3><a href="http://clonekim.github.io/">Bonjour!</a></h3>
+<div id="content" class="container">
+<div class="card border-primary">
+  <div class="card-header text-right">
+    <small>Feb 1, 2015</small>
+  </div>
+  <div class="card-body">
+    <a  href="http://clonekim.github.io/posts/2015/2015-02-01-imagemagick/">
+      <h5 class="card-title">ImageMagick</h5>
+    </a>
+    <p class="card-text"><p><em>Thumbnail</em></p>
+
+<pre><code>convert [Image 1] -thumbnail 50% [Result Image]
+or
+convert [Image 1] -thumbnail 100x70 [Result Image]
+</code></pre>
+
+<p><em>Composite</em></p>
+
+<pre><code>composite -geometry +[x]+[y] [Image 1] [Image 2] [Result Image] 
+
+ex)
+composite -geometry +02+30 person.jpg background.jpg profile.jpg 
+</code></pre>
+
+<p><em>Image Info</em></p>
+
+<pre><code>identify -format '%wx%h %m %b %n' [file]
+</code></pre>
+
+<p><em>box 필터</em></p>
+
+<pre><code>convert [file] -scale [n]% -filter box -resize [size]! [file]
+</code></pre>
+
+<p><em>inline 이미지 생성</em></p>
+
+<p>png 로 이미지를 생성하되 :- 또는 png:fd:1 를 사용하면 표준 출력 장치(모니터) 로 내보냄</p>
+
+<pre><code> convert -size 300x300 -background &quot;#c0c0c0&quot; -fill &quot;#FFFF00&quot; caption:&quot;Hello&quot; png:-
+</code></pre>
+
+<p>표준 출력 장치로 내보는 것을 base64로 파이프처리</p>
+
+<pre><code>convert -size 300x300 -background &quot;#c0c0c0&quot; -fill &quot;#FFFF00&quot; caption:&quot;Hello&quot; png:- | base64 -i - 
+</code></pre>
+
+<ul>
+<li><a href="http://ameblo.jp/itboy/entry-10593629105.html">ImageMagickを使ってコマンドラインからCAPTCHAを作ってみる</a></li>
+<li><a href="https://alexandrotommy.wordpress.com/tag/quebrar-captcha/">Quebrar Captcha</a></li>
+<li><a href="http://www.fmwconcepts.com/imagemagick/captcha/index.php">Fred&rsquo;s ImageMagick Scripts</a></li>
+</ul>
+</p>
+    <p class="card-text text-right">
+      
+      <a href="http://clonekim.github.io/tags/imagemagick" class="btn btn-outline-success btn-sm">
+        imagemagick
+      </a>
+      
+      <a href="http://clonekim.github.io/tags/captcha" class="btn btn-outline-success btn-sm">
+        captcha
+      </a>
+      
+    </p>
+  </div>
+</div>
+
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+ (function() {
+   
+   
+   if (window.location.hostname == "localhost")
+     return;
+   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+   var disqus_shortname = 'clonekim-github-io';
+   dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+ })();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+        </div></body>
+</html>

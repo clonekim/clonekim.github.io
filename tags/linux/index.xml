@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Linux on (fn [] &#34;Less is more&#34;)</title>
+    <title>linux on Bonjour!</title>
     <link>http://clonekim.github.io/tags/linux/</link>
-    <description>Recent content in Linux on (fn [] &#34;Less is more&#34;)</description>
+    <description>Recent content in linux on Bonjour!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
     <lastBuildDate>Fri, 22 Sep 2017 01:10:18 +0900</lastBuildDate>
@@ -13,19 +13,19 @@
     
     <item>
       <title>Gtk Version</title>
-      <link>http://clonekim.github.io/2017/09/gtk-version/</link>
+      <link>http://clonekim.github.io/posts/2017/2017-09-21-gtk-version/</link>
       <pubDate>Fri, 22 Sep 2017 01:10:18 +0900</pubDate>
       
-      <guid>http://clonekim.github.io/2017/09/gtk-version/</guid>
+      <guid>http://clonekim.github.io/posts/2017/2017-09-21-gtk-version/</guid>
       <description>$ dpkg --get-selections | grep gtk  $ dpkg-query -W libgtk-3-0 libgtk-3-0:amd64 3.18.9-1ubuntu3.3  </description>
     </item>
     
     <item>
       <title>Gnome Desktop</title>
-      <link>http://clonekim.github.io/2017/09/gnome-desktop/</link>
+      <link>http://clonekim.github.io/posts/2017/2017-09-21-gnome-css/</link>
       <pubDate>Fri, 22 Sep 2017 00:27:04 +0900</pubDate>
       
-      <guid>http://clonekim.github.io/2017/09/gnome-desktop/</guid>
+      <guid>http://clonekim.github.io/posts/2017/2017-09-21-gnome-css/</guid>
       <description>Gnome 데스크탑 을 사용중이다.
 문제는 터미널창이 겹쳐질때 구분이 안간다
 아래와 같이 css를 작성하면 해결된다.

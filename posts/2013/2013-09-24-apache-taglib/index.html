@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+  <meta charset="utf-8" />
+  <meta name="author" content="DAEHEE KIM" />
+  <meta name="description" content="Personal blog." />
+  <meta name="keywords" content="blog, tech" />
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <link rel="canonical" href="http://clonekim.github.io/posts/2013/2013-09-24-apache-taglib/">
+  <base href="http://clonekim.github.io/" />
+  <meta property="og:title" content="Apache Tag Lib" />
+<meta property="og:description" content="Maven &lt;groupId&gt;jstl&lt;/groupId&gt; &lt;artifactId&gt;jstl&lt;/artifactId&gt; &lt;version&gt;1.2&lt;/version&gt; 태그를 사용하기 위한 선언 &lt;%@ taglib prefix=&#34;c&#34; uri=&#34;http://java.sun.com/jsp/jstl/core&#34;%&gt; &lt;%@ taglib prefix=&#34;fn&#34; uri=&#34;http://java.sun.com/jsp/jstl/functions&#34; %&gt; &lt;%@ taglib prefix=&#34;fmt&#34; uri=&#34;http://java.sun.com/jsp/jstl/fmt&#34;%&gt; param test.jsp?name=1234 일 경우
+${param.변수} 로 획득할 수 있다.
+${param.name}으로 알수 있겠다.
+core set &lt;c:set var=&#34;string&#34; value=&#34;값&#34;/&gt; &lt;c:set var=&#34;string&#34; value=&#34;${변수.프로퍼티}&#34;/&gt; out &lt;c:out value=&#34;${fn:substring(string,0,50)}&#34; default=&#34;초기값&#34;/&gt; &lt;c:out value=&#34;안녕하세요&#34; /&gt; test &lt;c:if test=&#34;${변수가 존재하면}&#34;&gt; ..처리 &lt;/c:if&gt; &lt;c:if test=&#34;${변수 &lt; 숫자 }&#34;&gt; ..처리 &lt;/c:if&gt; &lt;c:if test=&#34;${변수 &lt; true}&#34;&gt; ..처리 &lt;/c:if&gt; choose &lt;c:choose&gt; &lt;c:when test=&#34;조건&#34;&gt; ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://clonekim.github.io/posts/2013/2013-09-24-apache-taglib/" />
+<meta property="article:published_time" content="2013-09-24T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2013-09-24T00:00:00&#43;00:00"/>
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Apache Tag Lib"/>
+<meta name="twitter:description" content="Maven &lt;groupId&gt;jstl&lt;/groupId&gt; &lt;artifactId&gt;jstl&lt;/artifactId&gt; &lt;version&gt;1.2&lt;/version&gt; 태그를 사용하기 위한 선언 &lt;%@ taglib prefix=&#34;c&#34; uri=&#34;http://java.sun.com/jsp/jstl/core&#34;%&gt; &lt;%@ taglib prefix=&#34;fn&#34; uri=&#34;http://java.sun.com/jsp/jstl/functions&#34; %&gt; &lt;%@ taglib prefix=&#34;fmt&#34; uri=&#34;http://java.sun.com/jsp/jstl/fmt&#34;%&gt; param test.jsp?name=1234 일 경우
+${param.변수} 로 획득할 수 있다.
+${param.name}으로 알수 있겠다.
+core set &lt;c:set var=&#34;string&#34; value=&#34;값&#34;/&gt; &lt;c:set var=&#34;string&#34; value=&#34;${변수.프로퍼티}&#34;/&gt; out &lt;c:out value=&#34;${fn:substring(string,0,50)}&#34; default=&#34;초기값&#34;/&gt; &lt;c:out value=&#34;안녕하세요&#34; /&gt; test &lt;c:if test=&#34;${변수가 존재하면}&#34;&gt; ..처리 &lt;/c:if&gt; &lt;c:if test=&#34;${변수 &lt; 숫자 }&#34;&gt; ..처리 &lt;/c:if&gt; &lt;c:if test=&#34;${변수 &lt; true}&#34;&gt; ..처리 &lt;/c:if&gt; choose &lt;c:choose&gt; &lt;c:when test=&#34;조건&#34;&gt; ."/>
+
+  
+  
+<meta itemprop="name" content="Apache Tag Lib">
+<meta itemprop="description" content="Maven &lt;groupId&gt;jstl&lt;/groupId&gt; &lt;artifactId&gt;jstl&lt;/artifactId&gt; &lt;version&gt;1.2&lt;/version&gt; 태그를 사용하기 위한 선언 &lt;%@ taglib prefix=&#34;c&#34; uri=&#34;http://java.sun.com/jsp/jstl/core&#34;%&gt; &lt;%@ taglib prefix=&#34;fn&#34; uri=&#34;http://java.sun.com/jsp/jstl/functions&#34; %&gt; &lt;%@ taglib prefix=&#34;fmt&#34; uri=&#34;http://java.sun.com/jsp/jstl/fmt&#34;%&gt; param test.jsp?name=1234 일 경우
+${param.변수} 로 획득할 수 있다.
+${param.name}으로 알수 있겠다.
+core set &lt;c:set var=&#34;string&#34; value=&#34;값&#34;/&gt; &lt;c:set var=&#34;string&#34; value=&#34;${변수.프로퍼티}&#34;/&gt; out &lt;c:out value=&#34;${fn:substring(string,0,50)}&#34; default=&#34;초기값&#34;/&gt; &lt;c:out value=&#34;안녕하세요&#34; /&gt; test &lt;c:if test=&#34;${변수가 존재하면}&#34;&gt; ..처리 &lt;/c:if&gt; &lt;c:if test=&#34;${변수 &lt; 숫자 }&#34;&gt; ..처리 &lt;/c:if&gt; &lt;c:if test=&#34;${변수 &lt; true}&#34;&gt; ..처리 &lt;/c:if&gt; choose &lt;c:choose&gt; &lt;c:when test=&#34;조건&#34;&gt; .">
+
+
+<meta itemprop="datePublished" content="2013-09-24T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2013-09-24T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="170">
+
+
+
+<meta itemprop="keywords" content="jsp," />
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <title>Bonjour!</title>
+  <style>
+   pre {
+     margin: 1em 0em 1em;
+     padding: 0.5em 0.5em 0.5em;
+     border: 1px solid #5C5C5C;
+   }
+
+   code {
+     white-space: pre-wrap;        
+     white-space: -moz-pre-wrap;   
+     white-space: -pre-wrap;       
+     white-space: -o-pre-wrap;     
+     word-wrap: break-word;        
+     line-height: 1.4em;
+   }
+
+   blockquote { background: #1D1F21; border-left: 3px solid #99cc66; }
+   table { margin: 1em auto; border-collapse: collapse; }
+   table, th, td { border: 1px solid #5C5C5C; }
+   tr:hover { background: #1D1F21; }
+  </style>
+  <link rel="stylesheet" href="css/tomorrow-night.min.css" />
+  <script src="js/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body><h3><a href="http://clonekim.github.io/">Bonjour!</a></h3>
+<div id="content" class="container">
+<div class="card border-primary">
+  <div class="card-header text-right">
+    <small>Sep 24, 2013</small>
+  </div>
+  <div class="card-body">
+    <a  href="http://clonekim.github.io/posts/2013/2013-09-24-apache-taglib/">
+      <h5 class="card-title">Apache Tag Lib</h5>
+    </a>
+    <p class="card-text">
+
+<h2 id="maven">Maven</h2>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="font-weight:bold">&lt;groupId&gt;</span>jstl<span style="font-weight:bold">&lt;/groupId&gt;</span>
+<span style="font-weight:bold">&lt;artifactId&gt;</span>jstl<span style="font-weight:bold">&lt;/artifactId&gt;</span>
+<span style="font-weight:bold">&lt;version&gt;</span>1.2<span style="font-weight:bold">&lt;/version&gt;</span></code></pre></div>
+<h2 id="태그를-사용하기-위한-선언">태그를 사용하기 위한 선언</h2>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsp" data-lang="jsp">&lt;%@ taglib prefix=&#34;c&#34; uri=&#34;http://java.sun.com/jsp/jstl/core&#34;%&gt;
+&lt;%@ taglib prefix=&#34;fn&#34; uri=&#34;http://java.sun.com/jsp/jstl/functions&#34; %&gt;
+&lt;%@ taglib prefix=&#34;fmt&#34; uri=&#34;http://java.sun.com/jsp/jstl/fmt&#34;%&gt;</code></pre></div>
+<h2 id="param">param</h2>
+
+<p>test.jsp?name=1234 일 경우</p>
+
+<p>${param.변수} 로 획득할 수 있다.<br />
+${param.name}으로 알수 있겠다.</p>
+
+<h2 id="core">core</h2>
+
+<h3 id="set">set</h3>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="font-weight:bold">&lt;c:set</span> <span style="color:#007f7f">var=</span><span style="color:#0ff;font-weight:bold">&#34;string&#34;</span> <span style="color:#007f7f">value=</span><span style="color:#0ff;font-weight:bold">&#34;값&#34;</span><span style="font-weight:bold">/&gt;</span>
+<span style="font-weight:bold">&lt;c:set</span> <span style="color:#007f7f">var=</span><span style="color:#0ff;font-weight:bold">&#34;string&#34;</span> <span style="color:#007f7f">value=</span><span style="color:#0ff;font-weight:bold">&#34;${변수.프로퍼티}&#34;</span><span style="font-weight:bold">/&gt;</span></code></pre></div>
+<h3 id="out">out</h3>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="font-weight:bold">&lt;c:out</span> <span style="color:#007f7f">value=</span><span style="color:#0ff;font-weight:bold">&#34;${fn:substring(string,0,50)}&#34;</span>  <span style="color:#007f7f">default=</span><span style="color:#0ff;font-weight:bold">&#34;초기값&#34;</span><span style="font-weight:bold">/&gt;</span>
+<span style="font-weight:bold">&lt;c:out</span> <span style="color:#007f7f">value=</span><span style="color:#0ff;font-weight:bold">&#34;안녕하세요&#34;</span> <span style="font-weight:bold">/&gt;</span></code></pre></div>
+<h3 id="test">test</h3>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="font-weight:bold">&lt;c:if</span> <span style="color:#007f7f">test=</span><span style="color:#0ff;font-weight:bold">&#34;${변수가 존재하면}&#34;</span><span style="font-weight:bold">&gt;</span>
+..처리
+<span style="font-weight:bold">&lt;/c:if&gt;</span>
+
+<span style="font-weight:bold">&lt;c:if</span> <span style="color:#007f7f">test=</span><span style="color:#0ff;font-weight:bold">&#34;${변수 &lt; 숫자 }&#34;</span><span style="font-weight:bold">&gt;</span>
+..처리
+<span style="font-weight:bold">&lt;/c:if&gt;</span>
+
+<span style="font-weight:bold">&lt;c:if</span> <span style="color:#007f7f">test=</span><span style="color:#0ff;font-weight:bold">&#34;${변수 &lt; true}&#34;</span><span style="font-weight:bold">&gt;</span>
+..처리
+<span style="font-weight:bold">&lt;/c:if&gt;</span></code></pre></div>
+<h3 id="choose">choose</h3>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="font-weight:bold">&lt;c:choose&gt;</span>
+  <span style="font-weight:bold">&lt;c:when</span> <span style="color:#007f7f">test=</span><span style="color:#0ff;font-weight:bold">&#34;조건&#34;</span><span style="font-weight:bold">&gt;</span>
+ ..
+  <span style="font-weight:bold">&lt;/c:when&gt;</span>
+  <span style="font-weight:bold">&lt;c:when</span> <span style="color:#007f7f">test=</span><span style="color:#0ff;font-weight:bold">&#34;조건&#34;</span><span style="font-weight:bold">&gt;</span>
+ ..
+  <span style="font-weight:bold">&lt;/c:when&gt;</span>
+  <span style="font-weight:bold">&lt;c:otherwise&gt;</span>
+   그외 조건처리
+  <span style="font-weight:bold">&lt;/c:otherwise&gt;</span>
+<span style="font-weight:bold">&lt;/c:choose&gt;</span></code></pre></div>
+<h3 id="exception">exception</h3>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="font-weight:bold">&lt;c:catch</span> <span style="color:#007f7f">var=</span><span style="color:#0ff;font-weight:bold">&#34;exception&#34;</span><span style="font-weight:bold">&gt;</span>
+ ...처리
+<span style="font-weight:bold">&lt;/c:catch&gt;</span></code></pre></div>
+<h3 id="url">url</h3>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="font-weight:bold">&lt;c:url</span> <span style="color:#007f7f">value=</span><span style="color:#0ff;font-weight:bold">&#39;/hello.jsp&#39;</span><span style="font-weight:bold">/&gt;</span>&#34;</code></pre></div>
+<h3 id="function">function</h3>
+
+<h4 id="length">length</h4>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="font-weight:bold">&lt;c:set</span> <span style="color:#007f7f">var=</span><span style="color:#0ff;font-weight:bold">&#34;length&#34;</span> <span style="color:#007f7f">value=</span><span style="color:#0ff;font-weight:bold">&#34;${fn:length(변수)}&#34;</span><span style="font-weight:bold">/&gt;</span></code></pre></div>
+<h4 id="substring">substring</h4>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="font-weight:bold">&lt;c:out</span> <span style="color:#007f7f">value=</span><span style="color:#0ff;font-weight:bold">&#34;${fn:substring(string,0, fn:length(string))}&#34;</span> <span style="font-weight:bold">/&gt;</span></code></pre></div>
+<h3 id="format">format</h3>
+
+<h4 id="formatdate">formatDate</h4>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="font-weight:bold">&lt;fmt:formatDate</span> <span style="color:#007f7f">value=</span><span style="color:#0ff;font-weight:bold">&#34;${변수}&#34;</span> <span style="color:#007f7f">pattern=</span><span style="color:#0ff;font-weight:bold">&#34;패턴&#34;</span> <span style="font-weight:bold">/&gt;</span></code></pre></div>
+<h3 id="sql">sql</h3>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f00">&lt;</span>%@ page pageEncoding=&#34;utf-8&#34; %&gt;
+<span style="color:#f00">&lt;</span>%@ taglib prefix=&#34;sql&#34; uri=&#34;http://java.sun.com/jsp/jstl/sql&#34; %&gt;
+<span style="color:#f00">&lt;</span>%@ taglib prefix=&#34;c&#34; uri=&#34;http://java.sun.com/jsp/jstl/core&#34; %&gt;
+
+<span style="font-weight:bold">&lt;sql:setDataSource</span> <span style="color:#007f7f">dataSource=</span><span style="color:#0ff;font-weight:bold">&#34;jdbc/wodb&#34;</span><span style="font-weight:bold">/&gt;</span>
+
+<span style="font-weight:bold">&lt;sql:query</span> <span style="color:#007f7f">var=</span><span style="color:#0ff;font-weight:bold">&#34;rs&#34;</span>  <span style="color:#007f7f">sql=</span><span style="color:#0ff;font-weight:bold">&#34;select 1 as id from dual union all select 10 as id from dual&#34;</span><span style="font-weight:bold">/&gt;</span>
+ or
+<span style="font-weight:bold">&lt;sql:query</span> <span style="color:#007f7f">var=</span><span style="color:#0ff;font-weight:bold">&#34;rs&#34;</span><span style="font-weight:bold">&gt;</span>
+  select 1 as id from dual union all select 10 as id from dual&#34;
+<span style="font-weight:bold">&lt;/sql:query&gt;</span>
+
+<span style="font-weight:bold">&lt;table</span> <span style="color:#007f7f">border=</span><span style="color:#0ff;font-weight:bold">&#34;1&#34;</span><span style="font-weight:bold">&gt;</span>
+<span style="font-weight:bold">&lt;c:forEach</span> <span style="color:#007f7f">var=</span><span style="color:#0ff;font-weight:bold">&#34;rec&#34;</span> <span style="color:#007f7f">items=</span><span style="color:#0ff;font-weight:bold">&#34;${rs.rows}&#34;</span> <span style="font-weight:bold">&gt;</span>
+　　<span style="font-weight:bold">&lt;tr&gt;</span> 
+　　　　<span style="font-weight:bold">&lt;td&gt;&lt;c:out</span> <span style="color:#007f7f">value=</span><span style="color:#0ff;font-weight:bold">&#34;${rec.id}&#34;</span> <span style="font-weight:bold">/&gt;&lt;/td&gt;</span>
+　　<span style="font-weight:bold">&lt;/tr&gt;</span>
+<span style="font-weight:bold">&lt;/c:forEach&gt;</span>
+<span style="font-weight:bold">&lt;/table&gt;</span></code></pre></div></p>
+    <p class="card-text text-right">
+      
+      <a href="http://clonekim.github.io/tags/jsp" class="btn btn-outline-success btn-sm">
+        jsp
+      </a>
+      
+    </p>
+  </div>
+</div>
+
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+ (function() {
+   
+   
+   if (window.location.hostname == "localhost")
+     return;
+   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+   var disqus_shortname = 'clonekim-github-io';
+   dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+ })();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+        </div></body>
+</html>

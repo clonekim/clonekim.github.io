@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+  <meta charset="utf-8" />
+  <meta name="author" content="DAEHEE KIM" />
+  <meta name="description" content="Personal blog." />
+  <meta name="keywords" content="blog, tech" />
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <link rel="canonical" href="http://clonekim.github.io/posts/2013/2013-05-13-phpfpm-nginx/">
+  <base href="http://clonekim.github.io/" />
+  <meta property="og:title" content="PHP FPM" />
+<meta property="og:description" content="PHP Install apt-get install php5-fpm php5-mongo php5-mysql  /etc/php5/fpm/php.ini
+; This directive determines whether or not PHP will recognize code between ; &lt;? and ?&gt; tags as PHP source which should be processed as such. It is ; generally recommended that &lt;?php and ?&gt; should be used and that this feature ; should be disabled, as enabling it may result in issues when generating XML ; documents, however this remains supported for backward compatibility reasons." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://clonekim.github.io/posts/2013/2013-05-13-phpfpm-nginx/" />
+<meta property="article:published_time" content="2013-05-13T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2013-05-13T00:00:00&#43;00:00"/>
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="PHP FPM"/>
+<meta name="twitter:description" content="PHP Install apt-get install php5-fpm php5-mongo php5-mysql  /etc/php5/fpm/php.ini
+; This directive determines whether or not PHP will recognize code between ; &lt;? and ?&gt; tags as PHP source which should be processed as such. It is ; generally recommended that &lt;?php and ?&gt; should be used and that this feature ; should be disabled, as enabling it may result in issues when generating XML ; documents, however this remains supported for backward compatibility reasons."/>
+
+  
+  
+<meta itemprop="name" content="PHP FPM">
+<meta itemprop="description" content="PHP Install apt-get install php5-fpm php5-mongo php5-mysql  /etc/php5/fpm/php.ini
+; This directive determines whether or not PHP will recognize code between ; &lt;? and ?&gt; tags as PHP source which should be processed as such. It is ; generally recommended that &lt;?php and ?&gt; should be used and that this feature ; should be disabled, as enabling it may result in issues when generating XML ; documents, however this remains supported for backward compatibility reasons.">
+
+
+<meta itemprop="datePublished" content="2013-05-13T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2013-05-13T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="410">
+
+
+
+<meta itemprop="keywords" content="php,nginx," />
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <title>Bonjour!</title>
+  <style>
+   pre {
+     margin: 1em 0em 1em;
+     padding: 0.5em 0.5em 0.5em;
+     border: 1px solid #5C5C5C;
+   }
+
+   code {
+     white-space: pre-wrap;        
+     white-space: -moz-pre-wrap;   
+     white-space: -pre-wrap;       
+     white-space: -o-pre-wrap;     
+     word-wrap: break-word;        
+     line-height: 1.4em;
+   }
+
+   blockquote { background: #1D1F21; border-left: 3px solid #99cc66; }
+   table { margin: 1em auto; border-collapse: collapse; }
+   table, th, td { border: 1px solid #5C5C5C; }
+   tr:hover { background: #1D1F21; }
+  </style>
+  <link rel="stylesheet" href="css/tomorrow-night.min.css" />
+  <script src="js/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body><h3><a href="http://clonekim.github.io/">Bonjour!</a></h3>
+<div id="content" class="container">
+<div class="card border-primary">
+  <div class="card-header text-right">
+    <small>May 13, 2013</small>
+  </div>
+  <div class="card-body">
+    <a  href="http://clonekim.github.io/posts/2013/2013-05-13-phpfpm-nginx/">
+      <h5 class="card-title">PHP FPM</h5>
+    </a>
+    <p class="card-text">
+
+<h2 id="php-install">PHP Install</h2>
+
+<pre><code>apt-get install php5-fpm php5-mongo php5-mysql
+</code></pre>
+
+<p><em>/etc/php5/fpm/php.ini</em></p>
+
+<pre><code>; This directive determines whether or not PHP will recognize code between
+; &lt;? and ?&gt; tags as PHP source which should be processed as such. It is
+; generally recommended that &lt;?php and ?&gt; should be used and that this feature
+; should be disabled, as enabling it may result in issues when generating XML
+; documents, however this remains supported for backward compatibility reasons.
+; Note that this directive does not control the &lt;?= shorthand tag, which can be
+; used regardless of this directive.
+; Default Value: On
+; Development Value: Off
+; Production Value: Off
+; http://php.net/short-open-tag
+short_open_tag = Off
+...
+; http://php.net/post-max-size
+post_max_size = 8M
+
+</code></pre>
+
+<p><em>/etc/php5/fpm/pool.d/www.conf</em></p>
+
+<pre><code>; Unix user/group of processes
+; Note: The user is mandatory. If the group is not set, the default user's group
+;       will be used.
+user = www-data
+group = www-data
+
+listen = /var/run/php5-fpm.sock
+
+listen.owner = www-data
+listen.group = www-data
+
+</code></pre>
+
+<p><code>error</code></p>
+
+<p>아래와 같이 퍼미션에러가 나면 nginx 와 php5-fpm의 권한이 일치하지 않아서이다</p>
+
+<pre><code>2015/02/05 21:37:04 [crit] 8615#0: *3 connect() to unix:/var/run/php5-fpm.sock failed (13: Permission denied) while connecting to upstream, client: 127.0.0.1, server: localhost, request: &quot;GET /a.php HTTP/1.1&quot;, upstream: &quot;fastcgi://unix:/var/run/php5-fpm.sock:&quot;, host: &quot;127.0.0.1&quot;
+</code></pre>
+
+<h2 id="그-외-필요한-설정">그 외 필요한 설정</h2>
+
+<pre><code>; 디폴트 문자코드
+default_charset = &quot;UTF-8&quot;
+
+; 타임존
+date.timezone = &quot;Asia/Tokyo&quot;
+
+[mbstring]
+; 디폴트 언어설정
+mbstring.language = Korean
+
+; 내부문자코드
+; 설정이 안됬을 경우 디폴트 문자코드가 사용됨
+;mbstring.internal_encoding = EUC-KR
+
+;HTTP 입력 문자 인코딩
+;mbstring.http_input = auto
+
+; HTTP 출력문자 인코딩
+
+;mbstring.http_output = &quot;UTF-8&quot;
+</code></pre>
+
+<h2 id="nginx에-fastcgi">nginx에 fastcgi</h2>
+
+<pre><code>server {
+    listen       80;
+    server_name  localhost;
+
+    #charset koi8-r;
+    #access_log  /var/log/nginx/log/host.access.log  main;
+
+    location / {
+        root   /usr/share/nginx/html;
+        index  index.html index.htm;
+    }
+
+    #error_page  404              /404.html;
+
+    # redirect server error pages to the static page /50x.html
+    #
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   /usr/share/nginx/html;
+    }
+
+
+    # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+    #
+    location ~ \.php$ {
+        root           /home/www;
+        fastcgi_pass   unix:/var/run/php5-fpm.sock;
+        fastcgi_index  index.php;
+        fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+        include        fastcgi_params;
+    }
+
+}
+
+</code></pre>
+
+<p>wordpress를 사용하는 예</p>
+
+<p><em>/etc/nginx/conf.d/wordpress.conf</em></p>
+
+<pre><code>server {
+  listen 80;
+  server_name example.com;
+  root /var/www/wordpress;
+  index index.php;
+
+  location / {
+    if (!-e $request_filename) {
+      rewrite ^/(.+)#  /index.php?q=$1 last;
+      break;
+    }
+  }
+  
+  # wp-config.php에 접속금지
+  location ~* /wp-config.php {
+    deny all;
+  }
+
+  location ~ \.php$ {
+    fastcgi_pass 127.0.0.1:9000;
+    fastcgi_param SCRIPT_FILENAME /home/wordpress$fastcgi_script_name;
+    fastcgi_param PATH_INFO $fastcgi_script_name;
+    include fastcgi_params;
+  }
+}
+</code></pre>
+
+<h2 id="basic-인증">Basic 인증</h2>
+
+<pre><code>$ sudo htpasswd -cb /home/wordpress/.htpasswd wordpress password
+</code></pre>
+
+<pre><code>server {
+  ...
+
+  location ~* /wp-login\.php|/wp-admin/((?!admin-ajax\.php).)*$ {
+    auth_basic &quot;Please enter your name and password&quot;;
+    auth_basic_user_file  &quot;/home/wordpress/.htpasswd&quot;;
+  }
+
+  location ~ \.php$ {
+  ...
+}
+</code></pre>
+</p>
+    <p class="card-text text-right">
+      
+      <a href="http://clonekim.github.io/tags/php" class="btn btn-outline-success btn-sm">
+        php
+      </a>
+      
+      <a href="http://clonekim.github.io/tags/nginx" class="btn btn-outline-success btn-sm">
+        nginx
+      </a>
+      
+    </p>
+  </div>
+</div>
+
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+ (function() {
+   
+   
+   if (window.location.hostname == "localhost")
+     return;
+   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+   var disqus_shortname = 'clonekim-github-io';
+   dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+ })();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+        </div></body>
+</html>

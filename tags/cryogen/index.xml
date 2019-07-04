@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cryogen on (fn [] &#34;Less is more&#34;)</title>
+    <title>cryogen on Bonjour!</title>
     <link>http://clonekim.github.io/tags/cryogen/</link>
-    <description>Recent content in Cryogen on (fn [] &#34;Less is more&#34;)</description>
+    <description>Recent content in cryogen on Bonjour!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
     <lastBuildDate>Wed, 13 Jan 2016 00:00:00 +0000</lastBuildDate>
@@ -13,10 +13,10 @@
     
     <item>
       <title>Github에 블로그제작</title>
-      <link>http://clonekim.github.io/2016/01/github%EC%97%90-%EB%B8%94%EB%A1%9C%EA%B7%B8%EC%A0%9C%EC%9E%91/</link>
+      <link>http://clonekim.github.io/posts/2016/2016-01-13-github-page/</link>
       <pubDate>Wed, 13 Jan 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2016/01/github%EC%97%90-%EB%B8%94%EB%A1%9C%EA%B7%B8%EC%A0%9C%EC%9E%91/</guid>
+      <guid>http://clonekim.github.io/posts/2016/2016-01-13-github-page/</guid>
       <description>깃허브에 계정만들기 먼저 github.com에 가입하고 저장소를 만든다
 저장소는 계정명.github.io라고 작성한다. 자세한 것은 GitHub Page를 살펴볼 것
 lein 설치 leiningen 을 설치한다

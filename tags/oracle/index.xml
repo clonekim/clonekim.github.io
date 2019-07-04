@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Oracle on (fn [] &#34;Less is more&#34;)</title>
+    <title>oracle on Bonjour!</title>
     <link>http://clonekim.github.io/tags/oracle/</link>
-    <description>Recent content in Oracle on (fn [] &#34;Less is more&#34;)</description>
+    <description>Recent content in oracle on Bonjour!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
     <lastBuildDate>Fri, 11 Sep 2015 00:00:00 +0000</lastBuildDate>
@@ -13,10 +13,10 @@
     
     <item>
       <title>Oracle Jdbc Url</title>
-      <link>http://clonekim.github.io/2015/09/oracle-jdbc-url/</link>
+      <link>http://clonekim.github.io/posts/2015/2015-09-10-oracle-jdbc/</link>
       <pubDate>Fri, 11 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2015/09/oracle-jdbc-url/</guid>
+      <guid>http://clonekim.github.io/posts/2015/2015-09-10-oracle-jdbc/</guid>
       <description>JDBC URL syntax
 jdbc:oracle:thin:@[HOST][:PORT]:SID jdbc:oracle:thin:@//[HOST][:PORT]/SERVICE  Hikari Pool를 사용 시 아래와 같이 경고메시지가 나타나면
 oracle.jdbc.driver.OracleDriver에서 oracle.jdbc.OracleDriver 로 바꿀 것

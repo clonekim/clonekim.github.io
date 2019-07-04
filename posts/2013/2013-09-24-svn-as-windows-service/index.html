@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+  <meta charset="utf-8" />
+  <meta name="author" content="DAEHEE KIM" />
+  <meta name="description" content="Personal blog." />
+  <meta name="keywords" content="blog, tech" />
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <link rel="canonical" href="http://clonekim.github.io/posts/2013/2013-09-24-svn-as-windows-service/">
+  <base href="http://clonekim.github.io/" />
+  <meta property="og:title" content="윈도우즈에 SVN서비스등록" />
+<meta property="og:description" content="###SVN서버를 윈도우에서 서비스로 등록한다.*
+Creating the Repository svnadmin create c:\svn  Edit Configuration 방금 생성한 레포지토리 디렉토리로 이동하여
+conf\passwd 에서
+아이디 = 패스워드 형식으로 등록 ex) test = 1234  conf\svnserve.conf 에서 아래와 같이 설정
+anon-access = read auth-access = write password-db = passwd  Register as a Service C:\Program Files\Subversion\bin\svnserve.exe --service --root c:\svn 또는 C:\&gt; sc create svn binpath= &quot;C:\svn\bin\svnserve.exe --service -r C:\repos&quot; displayname= &quot;Subversion Server&quot; depend= Tcpip start= auto C:\&gt;sc create svnserver binpath= &quot;C:\Program Files\Subversion\bin\svnserve." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://clonekim.github.io/posts/2013/2013-09-24-svn-as-windows-service/" />
+<meta property="article:published_time" content="2013-09-24T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2013-09-24T00:00:00&#43;00:00"/>
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="윈도우즈에 SVN서비스등록"/>
+<meta name="twitter:description" content="###SVN서버를 윈도우에서 서비스로 등록한다.*
+Creating the Repository svnadmin create c:\svn  Edit Configuration 방금 생성한 레포지토리 디렉토리로 이동하여
+conf\passwd 에서
+아이디 = 패스워드 형식으로 등록 ex) test = 1234  conf\svnserve.conf 에서 아래와 같이 설정
+anon-access = read auth-access = write password-db = passwd  Register as a Service C:\Program Files\Subversion\bin\svnserve.exe --service --root c:\svn 또는 C:\&gt; sc create svn binpath= &quot;C:\svn\bin\svnserve.exe --service -r C:\repos&quot; displayname= &quot;Subversion Server&quot; depend= Tcpip start= auto C:\&gt;sc create svnserver binpath= &quot;C:\Program Files\Subversion\bin\svnserve."/>
+
+  
+  
+<meta itemprop="name" content="윈도우즈에 SVN서비스등록">
+<meta itemprop="description" content="###SVN서버를 윈도우에서 서비스로 등록한다.*
+Creating the Repository svnadmin create c:\svn  Edit Configuration 방금 생성한 레포지토리 디렉토리로 이동하여
+conf\passwd 에서
+아이디 = 패스워드 형식으로 등록 ex) test = 1234  conf\svnserve.conf 에서 아래와 같이 설정
+anon-access = read auth-access = write password-db = passwd  Register as a Service C:\Program Files\Subversion\bin\svnserve.exe --service --root c:\svn 또는 C:\&gt; sc create svn binpath= &quot;C:\svn\bin\svnserve.exe --service -r C:\repos&quot; displayname= &quot;Subversion Server&quot; depend= Tcpip start= auto C:\&gt;sc create svnserver binpath= &quot;C:\Program Files\Subversion\bin\svnserve.">
+
+
+<meta itemprop="datePublished" content="2013-09-24T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2013-09-24T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="84">
+
+
+
+<meta itemprop="keywords" content="svn," />
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <title>Bonjour!</title>
+  <style>
+   pre {
+     margin: 1em 0em 1em;
+     padding: 0.5em 0.5em 0.5em;
+     border: 1px solid #5C5C5C;
+   }
+
+   code {
+     white-space: pre-wrap;        
+     white-space: -moz-pre-wrap;   
+     white-space: -pre-wrap;       
+     white-space: -o-pre-wrap;     
+     word-wrap: break-word;        
+     line-height: 1.4em;
+   }
+
+   blockquote { background: #1D1F21; border-left: 3px solid #99cc66; }
+   table { margin: 1em auto; border-collapse: collapse; }
+   table, th, td { border: 1px solid #5C5C5C; }
+   tr:hover { background: #1D1F21; }
+  </style>
+  <link rel="stylesheet" href="css/tomorrow-night.min.css" />
+  <script src="js/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body><h3><a href="http://clonekim.github.io/">Bonjour!</a></h3>
+<div id="content" class="container">
+<div class="card border-primary">
+  <div class="card-header text-right">
+    <small>Sep 24, 2013</small>
+  </div>
+  <div class="card-body">
+    <a  href="http://clonekim.github.io/posts/2013/2013-09-24-svn-as-windows-service/">
+      <h5 class="card-title">윈도우즈에 SVN서비스등록</h5>
+    </a>
+    <p class="card-text">
+
+<p>###SVN서버를 윈도우에서 서비스로 등록한다.*</p>
+
+<h4 id="creating-the-repository">Creating the Repository</h4>
+
+<pre><code>svnadmin create c:\svn
+</code></pre>
+
+<h4 id="edit-configuration">Edit Configuration</h4>
+
+<p>방금 생성한 레포지토리 디렉토리로 이동하여<br />
+<code>conf\passwd</code> 에서</p>
+
+<pre><code>아이디 = 패스워드 형식으로 등록
+ex)
+test = 1234
+</code></pre>
+
+<p><code>conf\svnserve.conf</code> 에서 아래와 같이 설정</p>
+
+<pre><code>anon-access = read
+auth-access = write
+password-db = passwd
+</code></pre>
+
+<h4 id="register-as-a-service">Register as a Service</h4>
+
+<pre><code>C:\Program Files\Subversion\bin\svnserve.exe --service --root c:\svn
+또는
+C:\&gt; sc create svn
+        binpath= &quot;C:\svn\bin\svnserve.exe --service -r C:\repos&quot;
+        displayname= &quot;Subversion Server&quot;
+        depend= Tcpip
+        start= auto
+
+C:\&gt;sc create svnserver binpath= &quot;C:\Program Files\Subversion\bin\svnserve.exe --service -r D:\svn&quot;  displayname= &quot;Subversion Server&quot; depend= Tcpip start= auto
+</code></pre>
+</p>
+    <p class="card-text text-right">
+      
+      <a href="http://clonekim.github.io/tags/svn" class="btn btn-outline-success btn-sm">
+        svn
+      </a>
+      
+    </p>
+  </div>
+</div>
+
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+ (function() {
+   
+   
+   if (window.location.hostname == "localhost")
+     return;
+   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+   var disqus_shortname = 'clonekim-github-io';
+   dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+ })();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+        </div></body>
+</html>

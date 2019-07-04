@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+  <meta charset="utf-8" />
+  <meta name="author" content="DAEHEE KIM" />
+  <meta name="description" content="Personal blog." />
+  <meta name="keywords" content="blog, tech" />
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <link rel="canonical" href="http://clonekim.github.io/posts/2017/2017-11-02-emacs-golang/">
+  <base href="http://clonekim.github.io/" />
+  <meta property="og:title" content="Emacs에서 Golang 를 위한 에디팅" />
+<meta property="og:description" content="설치 go get명령어로 아래와 같이 필요한 유틸리티(명령어)를 설치해야 한다
+$ go get github.com/golang/lint/golint github.com/nsf/gocode github.com/k0kubun/pp github.com/golang/lint/golint github.com/rogpeppe/godef github.com/dougm/goflymake golang.org/x/tools/cmd/godoc 또는 golang.org/x/tools/cmd/...  필요한 패키지 direx ;;디렉토리 트리 보여줌 popwin ;;direx를 다른창으로 열어줌 auto-complete ;;자동완성 flycheck ;;오류체크 flymake-go go-mode go-autocomplete go-eldoc ;;상태줄에 godoc간단히 보여줌  shell-intergration.el
+터미널에서 실행하면 이멕스가 작동하는데 바로가기에서는 작동이 안된다
+아래와 같이 쉘환경에 통합하고 나서 실행하니 문제가 없었다
+(when (memq window-system &#39;(mac ns)) (exec-path-from-shell-initialize) (exec-path-from-shell-copy-envs &#39;(&#34;PATH&#34; &#34;GOPATH&#34;))) go." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://clonekim.github.io/posts/2017/2017-11-02-emacs-golang/" />
+<meta property="article:published_time" content="2017-11-02T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2017-11-02T00:00:00&#43;00:00"/>
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Emacs에서 Golang 를 위한 에디팅"/>
+<meta name="twitter:description" content="설치 go get명령어로 아래와 같이 필요한 유틸리티(명령어)를 설치해야 한다
+$ go get github.com/golang/lint/golint github.com/nsf/gocode github.com/k0kubun/pp github.com/golang/lint/golint github.com/rogpeppe/godef github.com/dougm/goflymake golang.org/x/tools/cmd/godoc 또는 golang.org/x/tools/cmd/...  필요한 패키지 direx ;;디렉토리 트리 보여줌 popwin ;;direx를 다른창으로 열어줌 auto-complete ;;자동완성 flycheck ;;오류체크 flymake-go go-mode go-autocomplete go-eldoc ;;상태줄에 godoc간단히 보여줌  shell-intergration.el
+터미널에서 실행하면 이멕스가 작동하는데 바로가기에서는 작동이 안된다
+아래와 같이 쉘환경에 통합하고 나서 실행하니 문제가 없었다
+(when (memq window-system &#39;(mac ns)) (exec-path-from-shell-initialize) (exec-path-from-shell-copy-envs &#39;(&#34;PATH&#34; &#34;GOPATH&#34;))) go."/>
+
+  
+  
+<meta itemprop="name" content="Emacs에서 Golang 를 위한 에디팅">
+<meta itemprop="description" content="설치 go get명령어로 아래와 같이 필요한 유틸리티(명령어)를 설치해야 한다
+$ go get github.com/golang/lint/golint github.com/nsf/gocode github.com/k0kubun/pp github.com/golang/lint/golint github.com/rogpeppe/godef github.com/dougm/goflymake golang.org/x/tools/cmd/godoc 또는 golang.org/x/tools/cmd/...  필요한 패키지 direx ;;디렉토리 트리 보여줌 popwin ;;direx를 다른창으로 열어줌 auto-complete ;;자동완성 flycheck ;;오류체크 flymake-go go-mode go-autocomplete go-eldoc ;;상태줄에 godoc간단히 보여줌  shell-intergration.el
+터미널에서 실행하면 이멕스가 작동하는데 바로가기에서는 작동이 안된다
+아래와 같이 쉘환경에 통합하고 나서 실행하니 문제가 없었다
+(when (memq window-system &#39;(mac ns)) (exec-path-from-shell-initialize) (exec-path-from-shell-copy-envs &#39;(&#34;PATH&#34; &#34;GOPATH&#34;))) go.">
+
+
+<meta itemprop="datePublished" content="2017-11-02T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2017-11-02T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="157">
+
+
+
+<meta itemprop="keywords" content="emacs,go," />
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <title>Bonjour!</title>
+  <style>
+   pre {
+     margin: 1em 0em 1em;
+     padding: 0.5em 0.5em 0.5em;
+     border: 1px solid #5C5C5C;
+   }
+
+   code {
+     white-space: pre-wrap;        
+     white-space: -moz-pre-wrap;   
+     white-space: -pre-wrap;       
+     white-space: -o-pre-wrap;     
+     word-wrap: break-word;        
+     line-height: 1.4em;
+   }
+
+   blockquote { background: #1D1F21; border-left: 3px solid #99cc66; }
+   table { margin: 1em auto; border-collapse: collapse; }
+   table, th, td { border: 1px solid #5C5C5C; }
+   tr:hover { background: #1D1F21; }
+  </style>
+  <link rel="stylesheet" href="css/tomorrow-night.min.css" />
+  <script src="js/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body><h3><a href="http://clonekim.github.io/">Bonjour!</a></h3>
+<div id="content" class="container">
+<div class="card border-primary">
+  <div class="card-header text-right">
+    <small>Nov 2, 2017</small>
+  </div>
+  <div class="card-body">
+    <a  href="http://clonekim.github.io/posts/2017/2017-11-02-emacs-golang/">
+      <h5 class="card-title">Emacs에서 Golang 를 위한 에디팅</h5>
+    </a>
+    <p class="card-text">
+
+<h2 id="설치">설치</h2>
+
+<p>go get명령어로 아래와 같이 필요한 유틸리티(명령어)를 설치해야 한다</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ go get github.com/golang/lint/golint</code></pre></div>
+<pre><code>github.com/nsf/gocode  
+github.com/k0kubun/pp  
+github.com/golang/lint/golint  
+github.com/rogpeppe/godef  
+github.com/dougm/goflymake  
+golang.org/x/tools/cmd/godoc  
+또는  
+golang.org/x/tools/cmd/...  
+</code></pre>
+
+<h3 id="필요한-패키지">필요한 패키지</h3>
+
+<pre><code>direx                 ;;디렉토리 트리 보여줌
+popwin                ;;direx를 다른창으로 열어줌
+auto-complete         ;;자동완성
+flycheck              ;;오류체크
+flymake-go
+go-mode
+go-autocomplete
+go-eldoc              ;;상태줄에 godoc간단히 보여줌
+</code></pre>
+
+<p><strong>shell-intergration.el</strong></p>
+
+<p>터미널에서 실행하면 이멕스가 작동하는데 바로가기에서는 작동이 안된다<br />
+아래와 같이 쉘환경에 통합하고 나서 실행하니 문제가 없었다</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">(when (memq window-system &#39;(mac ns))
+  (exec-path-from-shell-initialize)
+  (exec-path-from-shell-copy-envs
+   &#39;(<span style="color:#0ff;font-weight:bold">&#34;PATH&#34;</span> <span style="color:#0ff;font-weight:bold">&#34;GOPATH&#34;</span>)))</code></pre></div>
+<p><strong>go.el</strong></p>
+
+<p>.bash_profile에 GOPATH가 설정되어야함</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">(add-to-list <span style="color:#0ff;font-weight:bold">&#39;load-path</span> (concat (getenv <span style="color:#0ff;font-weight:bold">&#34;GOPATH&#34;</span>)  <span style="color:#0ff;font-weight:bold">&#34;/src/github.com/golang/lint/misc/emacs&#34;</span>))
+(add-to-list <span style="color:#0ff;font-weight:bold">&#39;load-path</span> (concat (getenv <span style="color:#0ff;font-weight:bold">&#34;GOPATH&#34;</span>)  <span style="color:#0ff;font-weight:bold">&#34;/src/github.com/dougm/goflymake&#34;</span>))
+
+(require <span style="color:#0ff;font-weight:bold">&#39;direx</span>)
+(require <span style="color:#0ff;font-weight:bold">&#39;go-mode</span>)
+(require <span style="color:#0ff;font-weight:bold">&#39;go-flymake</span>)
+(require <span style="color:#0ff;font-weight:bold">&#39;go-flycheck</span>)
+(require <span style="color:#0ff;font-weight:bold">&#39;go-autocomplete</span>)
+(require <span style="color:#0ff;font-weight:bold">&#39;auto-complete-config</span>)
+
+
+(global-set-key (kbd <span style="color:#0ff;font-weight:bold">&#34;C-x C-j&#34;</span>) <span style="color:#0ff;font-weight:bold">&#39;direx:jump-to-directory-other-window</span>)
+
+(ac-config-default)
+
+(if (not (string-match <span style="color:#0ff;font-weight:bold">&#34;go&#34;</span> compile-command))
+    (set (make-local-variable <span style="color:#0ff;font-weight:bold">&#39;compile-command</span>)
+         <span style="color:#0ff;font-weight:bold">&#34;go build -v &amp;&amp; go test -v &amp;&amp; go vet&#34;</span>))
+
+(add-hook <span style="color:#0ff;font-weight:bold">&#39;go-mode-hook</span> (lambda ()
+                          (go-eldoc-setup)
+                          (add-hook <span style="color:#0ff;font-weight:bold">&#39;before-save-hook</span> <span style="color:#0ff;font-weight:bold">&#39;gofmt-before-save</span>)
+                          (local-set-key (kbd <span style="color:#0ff;font-weight:bold">&#34;C-c C-r&#34;</span>) <span style="color:#0ff;font-weight:bold">&#39;go-remove-unused-imports</span>)
+                          (local-set-key (kbd <span style="color:#0ff;font-weight:bold">&#34;C-c C-a&#34;</span>) <span style="color:#0ff;font-weight:bold">&#39;go-import-add</span>)
+                          (local-set-key (kbd <span style="color:#0ff;font-weight:bold">&#34;C-c C-g&#34;</span>) <span style="color:#0ff;font-weight:bold">&#39;go-goto-imports</span>)
+                          (local-set-key (kbd <span style="color:#0ff;font-weight:bold">&#34;C-c C-f&#34;</span>) <span style="color:#0ff;font-weight:bold">&#39;gofmt</span>)
+                          (local-set-key (kbd <span style="color:#0ff;font-weight:bold">&#34;M-.&#34;</span>)     <span style="color:#0ff;font-weight:bold">&#39;godef-jump</span>)))</code></pre></div>
+<h2 id="참고">참고</h2>
+
+<ul>
+<li><a href="http://arenzana.org/2015/Emacs-for-Go/">http://arenzana.org/2015/Emacs-for-Go/</a></li>
+<li><a href="https://github.com/m2ym/direx-el">https://github.com/m2ym/direx-el</a></li>
+<li><a href="https://github.com/m2ym/popwin-el">https://github.com/m2ym/popwin-el</a></li>
+<li><a href="https://qiita.com/senda-akiha/items/8bbdd3e59c51d5619ea7">https://qiita.com/senda-akiha/items/8bbdd3e59c51d5619ea7</a></li>
+<li><a href="https://qiita.com/bussorenre/items/3e80e59d517db8aebf46">https://qiita.com/bussorenre/items/3e80e59d517db8aebf46</a></li>
+</ul>
+</p>
+    <p class="card-text text-right">
+      
+      <a href="http://clonekim.github.io/tags/emacs" class="btn btn-outline-success btn-sm">
+        emacs
+      </a>
+      
+      <a href="http://clonekim.github.io/tags/go" class="btn btn-outline-success btn-sm">
+        go
+      </a>
+      
+    </p>
+  </div>
+</div>
+
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+ (function() {
+   
+   
+   if (window.location.hostname == "localhost")
+     return;
+   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+   var disqus_shortname = 'clonekim-github-io';
+   dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+ })();
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+        </div></body>
+</html>

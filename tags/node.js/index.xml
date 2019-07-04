@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Node.js on (fn [] &#34;Less is more&#34;)</title>
+    <title>node.js on Bonjour!</title>
     <link>http://clonekim.github.io/tags/node.js/</link>
-    <description>Recent content in Node.js on (fn [] &#34;Less is more&#34;)</description>
+    <description>Recent content in node.js on Bonjour!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
     <lastBuildDate>Tue, 14 Jul 2015 00:00:00 +0000</lastBuildDate>
@@ -13,10 +13,10 @@
     
     <item>
       <title>Node.js로 Captcha</title>
-      <link>http://clonekim.github.io/2015/07/node.js%EB%A1%9C-captcha/</link>
+      <link>http://clonekim.github.io/posts/2015/2015-07-14-how-to-captcha-in-node.js/</link>
       <pubDate>Tue, 14 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2015/07/node.js%EB%A1%9C-captcha/</guid>
+      <guid>http://clonekim.github.io/posts/2015/2015-07-14-how-to-captcha-in-node.js/</guid>
       <description>canvas를 이용한 캡챠(captcha)를 생성하려고 한다.
 사용하려는 패키지는 canvas-captcha이다
 의존성 설치 apt-get install libpango1.0-dev apt-get install libjpeg-dev apt-get install libgif-dev  소스작성 captcha.js

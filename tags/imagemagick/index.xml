@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Imagemagick on (fn [] &#34;Less is more&#34;)</title>
+    <title>imagemagick on Bonjour!</title>
     <link>http://clonekim.github.io/tags/imagemagick/</link>
-    <description>Recent content in Imagemagick on (fn [] &#34;Less is more&#34;)</description>
+    <description>Recent content in imagemagick on Bonjour!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
     <lastBuildDate>Sun, 01 Feb 2015 00:00:00 +0000</lastBuildDate>
@@ -13,10 +13,10 @@
     
     <item>
       <title>ImageMagick</title>
-      <link>http://clonekim.github.io/2015/02/imagemagick/</link>
+      <link>http://clonekim.github.io/posts/2015/2015-02-01-imagemagick/</link>
       <pubDate>Sun, 01 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2015/02/imagemagick/</guid>
+      <guid>http://clonekim.github.io/posts/2015/2015-02-01-imagemagick/</guid>
       <description>Thumbnail
 convert [Image 1] -thumbnail 50% [Result Image] or convert [Image 1] -thumbnail 100x70 [Result Image]  Composite
 composite -geometry +[x]+[y] [Image 1] [Image 2] [Result Image] ex) composite -geometry +02+30 person.jpg background.jpg profile.jpg  Image Info

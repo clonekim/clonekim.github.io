@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Clojure on (fn [] &#34;Less is more&#34;)</title>
+    <title>clojure on Bonjour!</title>
     <link>http://clonekim.github.io/tags/clojure/</link>
-    <description>Recent content in Clojure on (fn [] &#34;Less is more&#34;)</description>
+    <description>Recent content in clojure on Bonjour!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
     <lastBuildDate>Fri, 14 Jul 2017 00:00:00 +0000</lastBuildDate>
@@ -13,10 +13,10 @@
     
     <item>
       <title>Freemarker를 Clojure에서</title>
-      <link>http://clonekim.github.io/2017/07/freemarker%EB%A5%BC-clojure%EC%97%90%EC%84%9C/</link>
+      <link>http://clonekim.github.io/posts/2017/2017-07-14-using-freemarker-from-clojure/</link>
       <pubDate>Fri, 14 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2017/07/freemarker%EB%A5%BC-clojure%EC%97%90%EC%84%9C/</guid>
+      <guid>http://clonekim.github.io/posts/2017/2017-07-14-using-freemarker-from-clojure/</guid>
       <description>참고소스
  [freemarker-clj &amp;quot;0.1.0&amp;quot;]  freemarker-clj
 템플릿 초기화 템플릿리소스는 해당 디렉토리로 초기화한다
@@ -26,19 +26,19 @@
     
     <item>
       <title>Clojure(Script)로 게임제작</title>
-      <link>http://clonekim.github.io/2016/01/clojurescript%EB%A1%9C-%EA%B2%8C%EC%9E%84%EC%A0%9C%EC%9E%91/</link>
+      <link>http://clonekim.github.io/posts/2016/2016-01-14-clojurescript-gaming/</link>
       <pubDate>Thu, 14 Jan 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2016/01/clojurescript%EB%A1%9C-%EA%B2%8C%EC%9E%84%EC%A0%9C%EC%9E%91/</guid>
+      <guid>http://clonekim.github.io/posts/2016/2016-01-14-clojurescript-gaming/</guid>
       <description>PARENS OF THE DEAD</description>
     </item>
     
     <item>
       <title>Clojure 시작하기</title>
-      <link>http://clonekim.github.io/2015/09/clojure-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/</link>
+      <link>http://clonekim.github.io/posts/2015/2015-09-25-starting-clojure/</link>
       <pubDate>Fri, 25 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2015/09/clojure-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/</guid>
+      <guid>http://clonekim.github.io/posts/2015/2015-09-25-starting-clojure/</guid>
       <description>JVM위에서 작동하는 함수형 프로그래밍이다
 clojure 얻기 http://clojure.org
 IDE/Tools  LightTable Cursive Emacs  Leiningen으로 시작하기 Leiningen (레닝겐)은 클로져를 쉽게 시작하기 위한 빌드자동화 툴이다
@@ -51,10 +51,10 @@ Project 생성 lein new [프로젝트명]  프로젝트 의존성 추가 라이�
     
     <item>
       <title>클로저에서 Jdbc</title>
-      <link>http://clonekim.github.io/2015/09/%ED%81%B4%EB%A1%9C%EC%A0%80%EC%97%90%EC%84%9C-jdbc/</link>
+      <link>http://clonekim.github.io/posts/2015/2015-09-25-jdbc-in-clojure/</link>
       <pubDate>Fri, 25 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2015/09/%ED%81%B4%EB%A1%9C%EC%A0%80%EC%97%90%EC%84%9C-jdbc/</guid>
+      <guid>http://clonekim.github.io/posts/2015/2015-09-25-jdbc-in-clojure/</guid>
       <description> 클로저에서 JDBC(Java Database Connectivity) 를 사용하기 위한 가이드
 몇몇 함수가 없어진 경우가 있기 때문에 소스보기로 확인할 것
  clojure-doc보기 소스보기   leiningen [org.clojure/java.jdbc &amp;quot;0.4.2&amp;quot;]  간단한 예제 (ns db-test.core (:require [clojure.java.jdbc :as sql]))	(def db {:classname &amp;#34;com.mysql.jdbc.Driver&amp;#34; :subprotocol &amp;#34;mysql&amp;#34; :subname &amp;#34;//127.0.0.1:3306/test&amp;#34; :user &amp;#34;xxx&amp;#34; :password &amp;#34;xxxx&amp;#34; }) (defn get-user [] (println (sql/query db [&amp;#34;select * from users&amp;#34;]))) (defn -main [] (get-user)) 참고  HikarCP를 사용하는 예 clojure.jdbc doc  </description>
@@ -62,10 +62,10 @@ Project 생성 lein new [프로젝트명]  프로젝트 의존성 추가 라이�
     
     <item>
       <title>Clojure를 위한 Emacs 환경</title>
-      <link>http://clonekim.github.io/2015/09/clojure%EB%A5%BC-%EC%9C%84%ED%95%9C-emacs-%ED%99%98%EA%B2%BD/</link>
+      <link>http://clonekim.github.io/posts/2015/2015-09-11-custom-emacs-setting/</link>
       <pubDate>Fri, 11 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2015/09/clojure%EB%A5%BC-%EC%9C%84%ED%95%9C-emacs-%ED%99%98%EA%B2%BD/</guid>
+      <guid>http://clonekim.github.io/posts/2015/2015-09-11-custom-emacs-setting/</guid>
       <description>Emacs 24를 기준으로 작성
 현재 사용중인 환경은 custom-emacs.tgz
 Package Install init.el
@@ -79,10 +79,10 @@ Cider와 cider-nrepl의 버전이 맞아야함  profiles.clj
     
     <item>
       <title>Ring으로 웹프로그래밍</title>
-      <link>http://clonekim.github.io/2015/09/ring%EC%9C%BC%EB%A1%9C-%EC%9B%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/</link>
+      <link>http://clonekim.github.io/posts/2015/2015-09-11-ring-web-programming/</link>
       <pubDate>Fri, 11 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2015/09/ring%EC%9C%BC%EB%A1%9C-%EC%9B%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/</guid>
+      <guid>http://clonekim.github.io/posts/2015/2015-09-11-ring-web-programming/</guid>
       <description>## Hello-Ring 프로젝트 작성
 새로운 프로젝트를 생성한다
 lein new hello-ring  leiningen.clj

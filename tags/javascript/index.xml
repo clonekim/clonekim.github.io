@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Javascript on (fn [] &#34;Less is more&#34;)</title>
+    <title>javascript on Bonjour!</title>
     <link>http://clonekim.github.io/tags/javascript/</link>
-    <description>Recent content in Javascript on (fn [] &#34;Less is more&#34;)</description>
+    <description>Recent content in javascript on Bonjour!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
     <lastBuildDate>Tue, 03 Feb 2015 00:00:00 +0000</lastBuildDate>
@@ -13,20 +13,20 @@
     
     <item>
       <title>beefy 팁</title>
-      <link>http://clonekim.github.io/2015/02/beefy-%ED%8C%81/</link>
+      <link>http://clonekim.github.io/posts/2015/2015-02-03-beefy-tip/</link>
       <pubDate>Tue, 03 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2015/02/beefy-%ED%8C%81/</guid>
+      <guid>http://clonekim.github.io/posts/2015/2015-02-03-beefy-tip/</guid>
       <description>a local development server designed to work with browserify.
  can live reload your browser when your code changes (if you want) works with whatever version of browserify or watchify; globally installed or locally installed to node_modules/. will spit compile errors out into the browser so you don&amp;rsquo;t have that 1-2 seconds of cognitive dissonance and profound ennui that follows refreshing the page only to get a blank screen. will spit out a default index.</description>
     </item>
     
     <item>
       <title>RequireJS 예제</title>
-      <link>http://clonekim.github.io/2014/12/requirejs-%EC%98%88%EC%A0%9C/</link>
+      <link>http://clonekim.github.io/posts/2014/2014-12-29-requirejs/</link>
       <pubDate>Mon, 29 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2014/12/requirejs-%EC%98%88%EC%A0%9C/</guid>
+      <guid>http://clonekim.github.io/posts/2014/2014-12-29-requirejs/</guid>
       <description>RequireJS
 log라는 모듈을 작성한다
 log.js
@@ -36,20 +36,20 @@ define(&amp;#39;boost&amp;#39;, function() { function Boost() { } Boost.prototyp
     
     <item>
       <title>자바스크립트로 UUID 생성</title>
-      <link>http://clonekim.github.io/2014/03/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A1%9C-uuid-%EC%83%9D%EC%84%B1/</link>
+      <link>http://clonekim.github.io/posts/2014/2014-03-02-uuid-in-javascript/</link>
       <pubDate>Sun, 02 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2014/03/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A1%9C-uuid-%EC%83%9D%EC%84%B1/</guid>
+      <guid>http://clonekim.github.io/posts/2014/2014-03-02-uuid-in-javascript/</guid>
       <description>RFC4122
 return &amp;#39;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&amp;#39;.replace(/[xy]/g, function(c) { var r = Math.random()*16|0, v = c === &amp;#39;x&amp;#39; ? r : (r&amp;amp;0x3|0x8); return v.toString(16); }); var s = []; var hexDigits = &amp;#34;0123456789abcdef&amp;#34;; for (var i = 0; i &amp;lt; 36; i++) { s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1); } s[14] = &amp;#34;4&amp;#34;; s[19] = hexDigits.substr((s[19] &amp;amp; 0x3) | 0x8, 1); s[8] = s[13] = s[18] = s[23] = &amp;#34;-&amp;#34;; var uuid = s.join(&amp;#34;&amp;#34;); return uuid; } </description>
     </item>
     
     <item>
       <title>JavaScript 개발팁</title>
-      <link>http://clonekim.github.io/2013/10/javascript-%EA%B0%9C%EB%B0%9C%ED%8C%81/</link>
+      <link>http://clonekim.github.io/posts/2013/2013-10-10-javascript-pattern/</link>
       <pubDate>Thu, 10 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://clonekim.github.io/2013/10/javascript-%EA%B0%9C%EB%B0%9C%ED%8C%81/</guid>
+      <guid>http://clonekim.github.io/posts/2013/2013-10-10-javascript-pattern/</guid>
       <description>Module Pattern
 로직과 private 변수를 캡슐화하는 방법으로 아래와 같은 모듈패턴( 익명함수) 을 많이 사용한다.
 (function() { /* ... */ })();  jQuery와 연동해서 사용할 경우 아래와 같이 파라미터를 전달하도록 한다.
