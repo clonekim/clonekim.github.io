@@ -1,164 +1,163 @@
 <!DOCTYPE html>
-<html lang="ko"><head>
-  <meta charset="utf-8" />
-  <meta name="author" content="DAEHEE KIM" />
-  <meta name="description" content="Personal blog." />
-  <meta name="keywords" content="blog, tech" />
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<html><head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <link rel="canonical" href="http://clonekim.github.io/posts/2013/2013-10-10-javascript-pattern/">
-  <base href="http://clonekim.github.io/" />
-  <meta property="og:title" content="JavaScript 개발팁" />
-<meta property="og:description" content="Module Pattern
+    
+    <meta name="author"
+            content="DAEHEE KIM"/>
+
+    
+    <meta name="description" content="Module Pattern
 로직과 private 변수를 캡슐화하는 방법으로 아래와 같은 모듈패턴( 익명함수) 을 많이 사용한다.
 (function() { /* ... */ })();  jQuery와 연동해서 사용할 경우 아래와 같이 파라미터를 전달하도록 한다.
 (function($) { /* ... */ })(jQuery);  글로벌 변수를 전달해서 네임스페이스로 확장 할 수 있다.
-(function($, exports) { exports.Foo = &#34;wem&#34;; })(jQuery, window);  IIFE(mmediately-Invoked Function Expression)
-(function() { var mod = {}; })();  window라는 식별자를 거치지 않고 전역변수를 접근하자" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://clonekim.github.io/posts/2013/2013-10-10-javascript-pattern/" />
-<meta property="article:published_time" content="2013-10-10T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2013-10-10T00:00:00&#43;00:00"/>
-
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="JavaScript 개발팁"/>
-<meta name="twitter:description" content="Module Pattern
-로직과 private 변수를 캡슐화하는 방법으로 아래와 같은 모듈패턴( 익명함수) 을 많이 사용한다.
-(function() { /* ... */ })();  jQuery와 연동해서 사용할 경우 아래와 같이 파라미터를 전달하도록 한다.
-(function($) { /* ... */ })(jQuery);  글로벌 변수를 전달해서 네임스페이스로 확장 할 수 있다.
-(function($, exports) { exports.Foo = &#34;wem&#34;; })(jQuery, window);  IIFE(mmediately-Invoked Function Expression)
+(function($, exports) { exports.Foo = &amp;#34;wem&amp;#34;; })(jQuery, window);  IIFE(mmediately-Invoked Function Expression)
 (function() { var mod = {}; })();  window라는 식별자를 거치지 않고 전역변수를 접근하자"/>
+    
 
-  
-  
-<meta itemprop="name" content="JavaScript 개발팁">
-<meta itemprop="description" content="Module Pattern
-로직과 private 변수를 캡슐화하는 방법으로 아래와 같은 모듈패턴( 익명함수) 을 많이 사용한다.
-(function() { /* ... */ })();  jQuery와 연동해서 사용할 경우 아래와 같이 파라미터를 전달하도록 한다.
-(function($) { /* ... */ })(jQuery);  글로벌 변수를 전달해서 네임스페이스로 확장 할 수 있다.
-(function($, exports) { exports.Foo = &#34;wem&#34;; })(jQuery, window);  IIFE(mmediately-Invoked Function Expression)
-(function() { var mod = {}; })();  window라는 식별자를 거치지 않고 전역변수를 접근하자">
+    
 
+    
+    <link rel="canonical" href="http://clonekim.github.io/posts/2013/2013-10-10-javascript-pattern/"/>
 
-<meta itemprop="datePublished" content="2013-10-10T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2013-10-10T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="121">
+    
 
+    
+    
+    
+        
+            
+        
+    
+    <title> JavaScript 개발팁 | Bonjour! </title>
 
-
-<meta itemprop="keywords" content="javascript," />
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <title>Bonjour!</title>
-  <style>
-   pre {
-     margin: 1em 0em 1em;
-     padding: 0.5em 0.5em 0.5em;
-     border: 1px solid #5C5C5C;
-   }
-
-   code {
-     white-space: pre-wrap;        
-     white-space: -moz-pre-wrap;   
-     white-space: -pre-wrap;       
-     white-space: -o-pre-wrap;     
-     word-wrap: break-word;        
-     line-height: 1.4em;
-   }
-
-   blockquote { background: #1D1F21; border-left: 3px solid #99cc66; }
-   table { margin: 1em auto; border-collapse: collapse; }
-   table, th, td { border: 1px solid #5C5C5C; }
-   tr:hover { background: #1D1F21; }
-  </style>
-  <link rel="stylesheet" href="css/tomorrow-night.min.css" />
-  <script src="js/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-</head>
-<body><h3><a href="http://clonekim.github.io/">Bonjour!</a></h3>
-<div id="content" class="container">
-<div class="card border-primary">
-  <div class="card-header text-right">
-    <small>Oct 10, 2013</small>
-  </div>
-  <div class="card-body">
-    <a  href="http://clonekim.github.io/posts/2013/2013-10-10-javascript-pattern/">
-      <h5 class="card-title">JavaScript 개발팁</h5>
-    </a>
-    <p class="card-text"><p><strong>Module Pattern</strong></p>
+    <link rel="shortcut icon" href="http://clonekim.github.io/favicon.jpg"/>
+    <link rel="stylesheet" href="http://clonekim.github.io/css/bulma.min.css"/>
+    <link rel="stylesheet" href="http://clonekim.github.io/css/style.css"/>
+</head><body><header>
+    <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand is-size-4">
+            <a class="navbar-item" href="http://clonekim.github.io/">
+                    Bonjour!
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="navbar-menu" class="navbar-menu">
+            <div class="navbar-end">
+                
+                    
+                        <a class="navbar-item" href="/tags">태그</a>
+                    
+                
+            </div>
+            </div>
+    </nav>
+</header><main>
+      <div class="container">
+        <div class="columns">
+          <div class="column is-four-fifths">
+            <article class="post box is-radiusless">
+              <div class="post-title">
+                <h2 class="is-size-4">JavaScript 개발팁</h2>
+              </div>
+              <div class="post-meta">
+                <span class="post-time">2013-10-10</span>
+              </div>
+              <div class="post-content content">
+                <p><strong>Module Pattern</strong></p>
 
 <p>로직과 private 변수를 캡슐화하는 방법으로 아래와 같은 모듈패턴( 익명함수) 을 많이 사용한다.</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"> (<span style="color:#fff;font-weight:bold">function</span>() {
-  <span style="color:#007f7f">/* ... */</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"> (<span style="color:#66d9ef">function</span>() {
+  <span style="color:#75715e">/* ... */</span>
  })();
 </code></pre></div>
 <p>jQuery와 연동해서 사용할 경우 아래와 같이 파라미터를 전달하도록 한다.</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"> (<span style="color:#fff;font-weight:bold">function</span>($) {
-  <span style="color:#007f7f">/* ... */</span>
- })(jQuery);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"> (<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">$</span>) {
+  <span style="color:#75715e">/* ... */</span>
+ })(<span style="color:#a6e22e">jQuery</span>);
 </code></pre></div>
 <p>글로벌 변수를 전달해서 네임스페이스로 확장 할 수 있다.</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"> (<span style="color:#fff;font-weight:bold">function</span>($, exports) {
-  exports.Foo = <span style="color:#0ff;font-weight:bold">&#34;wem&#34;</span>;
- })(jQuery, <span style="color:#fff;font-weight:bold">window</span>);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"> (<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">$</span>, <span style="color:#a6e22e">exports</span>) {
+  <span style="color:#a6e22e">exports</span>.<span style="color:#a6e22e">Foo</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;wem&#34;</span>;
+ })(<span style="color:#a6e22e">jQuery</span>, window);
 </code></pre></div>
 <p><strong>IIFE(mmediately-Invoked Function Expression)</strong></p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"> (<span style="color:#fff;font-weight:bold">function</span>() {
-   <span style="color:#fff;font-weight:bold">var</span> mod = {};
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"> (<span style="color:#66d9ef">function</span>() {
+   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">mod</span> <span style="color:#f92672">=</span> {};
     
  })();
 </code></pre></div>
 <p>window라는 식별자를 거치지 않고 전역변수를 접근하자<br />
 함수를 new와 생성자를 사용하지 않고 호출한 경우 this 는 전역객체 (window)가 된다.<br />
 그러므로 아래와 같은 패턴을 즉, 즉시 실행함수로 작성한다.</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#fff;font-weight:bold">var</span> global = (<span style="color:#fff;font-weight:bold">function</span>() {
- <span style="color:#fff;font-weight:bold">return</span> <span style="color:#fff;font-weight:bold">this</span>;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">global</span> <span style="color:#f92672">=</span> (<span style="color:#66d9ef">function</span>() {
+ <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>;
 }());
 </code></pre></div>
 <p><strong>Type Casting</strong></p>
 
 <p>변수를 비교시 타입 캐스팅을 한다. 그러므로 아래는 true 반환한다.<br />
 암묵적 타입캐스팅을 방지 하기 위해서 ===와 !==를 사용해야 한다.</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#fff;font-weight:bold">false</span> == <span style="color:#ff0;font-weight:bold">0</span>;
-<span style="color:#0ff;font-weight:bold">&#34;&#34;</span> == <span style="color:#ff0;font-weight:bold">0</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">false</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>;
+<span style="color:#e6db74">&#34;&#34;</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>
 </code></pre></div>
 <p></pre></p>
-</p>
-    <p class="card-text text-right">
-      
-      <a href="http://clonekim.github.io/tags/javascript" class="btn btn-outline-success btn-sm">
-        javascript
-      </a>
-      
-    </p>
-  </div>
-</div>
 
+              </div>
+              <div class="columns is-mobile post-meta">
+                <div class="column is-half-desktop has-text-left is-paddingless"> 
+                   
+                  이전:<a href="http://clonekim.github.io/posts/2013/2013-10-01-java-concurrent/"> java.util.concurrent</a>
+                  
+                </div>
+                <div class="column is-half-desktop has-text-right is-paddingless">
+                  
+                  이후:<a href="http://clonekim.github.io/posts/2013/2013-10-12-bigdecimal-java/"> BigDecimal을 이용한 반올림</a>
+                  
+                </div>
+                <div class="is-clearfix"></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </main>    <footer class="footer">
+    
+        <div class="copyright has-text-centered">
+            <a href="https://bulma.io">
+                <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
+            </a>
+            <p>© Bonjour! Power by Hugo</p>
+        </div>
+    </footer>
+    <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+        
+        if ($navbarBurgers.length > 0) {
+            
+            $navbarBurgers.forEach( el => {
+                el.addEventListener('click', () => {
+                
+                const target = el.dataset.target;
+                const $target = document.getElementById(target);
+                
+                el.classList.toggle('is-active');
+                $target.classList.toggle('is-active');
+    
+                });
+            });
+        }
+    });
+    
 
-
-<div id="disqus_thread"></div>
-<script type="text/javascript">
- (function() {
-   
-   
-   if (window.location.hostname == "localhost")
-     return;
-   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-   var disqus_shortname = 'clonekim-github-io';
-   dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
- })();
-</script>
-<noscript>
-  Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-</noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
-
-
-        </div></body>
+    </script>
+</body>
 </html>

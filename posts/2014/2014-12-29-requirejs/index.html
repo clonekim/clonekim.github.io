@@ -1,191 +1,192 @@
 <!DOCTYPE html>
-<html lang="ko"><head>
-  <meta charset="utf-8" />
-  <meta name="author" content="DAEHEE KIM" />
-  <meta name="description" content="Personal blog." />
-  <meta name="keywords" content="blog, tech" />
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<html><head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <link rel="canonical" href="http://clonekim.github.io/posts/2014/2014-12-29-requirejs/">
-  <base href="http://clonekim.github.io/" />
-  <meta property="og:title" content="RequireJS 예제" />
-<meta property="og:description" content="RequireJS
+    
+    <meta name="author"
+            content="DAEHEE KIM"/>
+
+    
+    <meta name="description" content="RequireJS
 log라는 모듈을 작성한다
 log.js
-define(&#39;log&#39;, function() { return function(str) { console.log(&#34;--&gt; &#34;, str); } }); &lt;!DOCTYPE html&gt; &lt;html lang=&#34;ko&#34;&gt; &lt;head&gt; &lt;script src=&#34;requirejs/2.1.15/require.js&#34;&gt;&lt;/script&gt; &lt;script src=&#34;js/log.js&#34;&gt;&lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;script&gt; require([&#39;log&#39;], function(log) { log(&#34;Hello !&#34;); }); &lt;/script&gt; &lt;/body&gt; &lt;/html&gt; 프로토타입으로 작성한 boost.js
-define(&#39;boost&#39;, function() { function Boost() { } Boost.prototype.version = function() { return &#34;1.0&#34;; }; return Boost; }); &lt;!DOCTYPE html&gt; &lt;html lang=&#34;ko&#34;&gt; &lt;head&gt; &lt;script src=&#34;requirejs/2.1.15/require.js&#34;&gt;&lt;/script&gt; &lt;script src=&#34;js/boost.js&#34;&gt;&lt;/script&gt; &lt;script&gt; require([&#39;boost&#39;], function(Boost) { var boost = new Boost(); alert(boost." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://clonekim.github.io/posts/2014/2014-12-29-requirejs/" />
-<meta property="article:published_time" content="2014-12-29T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2014-12-29T00:00:00&#43;00:00"/>
+define(&amp;#39;log&amp;#39;, function() { return function(str) { console.log(&amp;#34;--&amp;gt; &amp;#34;, str); } }); &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;ko&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;script src=&amp;#34;requirejs/2.1.15/require.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;js/log.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;script&amp;gt; require([&amp;#39;log&amp;#39;], function(log) { log(&amp;#34;Hello !&amp;#34;); }); &amp;lt;/script&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; 프로토타입으로 작성한 boost.js
+define(&amp;#39;boost&amp;#39;, function() { function Boost() { } Boost.prototype.version = function() { return &amp;#34;1.0&amp;#34;; }; return Boost; }); &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;ko&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;script src=&amp;#34;requirejs/2.1.15/require.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;js/boost.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; require([&amp;#39;boost&amp;#39;], function(Boost) { var boost = new Boost(); alert(boost."/>
+    
 
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="RequireJS 예제"/>
-<meta name="twitter:description" content="RequireJS
-log라는 모듈을 작성한다
-log.js
-define(&#39;log&#39;, function() { return function(str) { console.log(&#34;--&gt; &#34;, str); } }); &lt;!DOCTYPE html&gt; &lt;html lang=&#34;ko&#34;&gt; &lt;head&gt; &lt;script src=&#34;requirejs/2.1.15/require.js&#34;&gt;&lt;/script&gt; &lt;script src=&#34;js/log.js&#34;&gt;&lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;script&gt; require([&#39;log&#39;], function(log) { log(&#34;Hello !&#34;); }); &lt;/script&gt; &lt;/body&gt; &lt;/html&gt; 프로토타입으로 작성한 boost.js
-define(&#39;boost&#39;, function() { function Boost() { } Boost.prototype.version = function() { return &#34;1.0&#34;; }; return Boost; }); &lt;!DOCTYPE html&gt; &lt;html lang=&#34;ko&#34;&gt; &lt;head&gt; &lt;script src=&#34;requirejs/2.1.15/require.js&#34;&gt;&lt;/script&gt; &lt;script src=&#34;js/boost.js&#34;&gt;&lt;/script&gt; &lt;script&gt; require([&#39;boost&#39;], function(Boost) { var boost = new Boost(); alert(boost."/>
+    
 
-  
-  
-<meta itemprop="name" content="RequireJS 예제">
-<meta itemprop="description" content="RequireJS
-log라는 모듈을 작성한다
-log.js
-define(&#39;log&#39;, function() { return function(str) { console.log(&#34;--&gt; &#34;, str); } }); &lt;!DOCTYPE html&gt; &lt;html lang=&#34;ko&#34;&gt; &lt;head&gt; &lt;script src=&#34;requirejs/2.1.15/require.js&#34;&gt;&lt;/script&gt; &lt;script src=&#34;js/log.js&#34;&gt;&lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;script&gt; require([&#39;log&#39;], function(log) { log(&#34;Hello !&#34;); }); &lt;/script&gt; &lt;/body&gt; &lt;/html&gt; 프로토타입으로 작성한 boost.js
-define(&#39;boost&#39;, function() { function Boost() { } Boost.prototype.version = function() { return &#34;1.0&#34;; }; return Boost; }); &lt;!DOCTYPE html&gt; &lt;html lang=&#34;ko&#34;&gt; &lt;head&gt; &lt;script src=&#34;requirejs/2.1.15/require.js&#34;&gt;&lt;/script&gt; &lt;script src=&#34;js/boost.js&#34;&gt;&lt;/script&gt; &lt;script&gt; require([&#39;boost&#39;], function(Boost) { var boost = new Boost(); alert(boost.">
+    
+    <link rel="canonical" href="http://clonekim.github.io/posts/2014/2014-12-29-requirejs/"/>
 
+    
 
-<meta itemprop="datePublished" content="2014-12-29T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2014-12-29T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="111">
+    
+    
+    
+        
+            
+        
+    
+    <title> RequireJS 예제 | Bonjour! </title>
 
-
-
-<meta itemprop="keywords" content="javascript," />
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <title>Bonjour!</title>
-  <style>
-   pre {
-     margin: 1em 0em 1em;
-     padding: 0.5em 0.5em 0.5em;
-     border: 1px solid #5C5C5C;
-   }
-
-   code {
-     white-space: pre-wrap;        
-     white-space: -moz-pre-wrap;   
-     white-space: -pre-wrap;       
-     white-space: -o-pre-wrap;     
-     word-wrap: break-word;        
-     line-height: 1.4em;
-   }
-
-   blockquote { background: #1D1F21; border-left: 3px solid #99cc66; }
-   table { margin: 1em auto; border-collapse: collapse; }
-   table, th, td { border: 1px solid #5C5C5C; }
-   tr:hover { background: #1D1F21; }
-  </style>
-  <link rel="stylesheet" href="css/tomorrow-night.min.css" />
-  <script src="js/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-</head>
-<body><h3><a href="http://clonekim.github.io/">Bonjour!</a></h3>
-<div id="content" class="container">
-<div class="card border-primary">
-  <div class="card-header text-right">
-    <small>Dec 29, 2014</small>
-  </div>
-  <div class="card-body">
-    <a  href="http://clonekim.github.io/posts/2014/2014-12-29-requirejs/">
-      <h5 class="card-title">RequireJS 예제</h5>
-    </a>
-    <p class="card-text"><p><a href="http://requirejs.org/">RequireJS</a></p>
+    <link rel="shortcut icon" href="http://clonekim.github.io/favicon.jpg"/>
+    <link rel="stylesheet" href="http://clonekim.github.io/css/bulma.min.css"/>
+    <link rel="stylesheet" href="http://clonekim.github.io/css/style.css"/>
+</head><body><header>
+    <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand is-size-4">
+            <a class="navbar-item" href="http://clonekim.github.io/">
+                    Bonjour!
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="navbar-menu" class="navbar-menu">
+            <div class="navbar-end">
+                
+                    
+                        <a class="navbar-item" href="/tags">태그</a>
+                    
+                
+            </div>
+            </div>
+    </nav>
+</header><main>
+      <div class="container">
+        <div class="columns">
+          <div class="column is-four-fifths">
+            <article class="post box is-radiusless">
+              <div class="post-title">
+                <h2 class="is-size-4">RequireJS 예제</h2>
+              </div>
+              <div class="post-meta">
+                <span class="post-time">2014-12-29</span>
+              </div>
+              <div class="post-content content">
+                <p><a href="http://requirejs.org/">RequireJS</a></p>
 
 <p>log라는 모듈을 작성한다</p>
 
 <p><em>log.js</em></p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">define(<span style="color:#0ff;font-weight:bold">&#39;log&#39;</span>, <span style="color:#fff;font-weight:bold">function</span>() {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#39;log&#39;</span>, <span style="color:#66d9ef">function</span>() {
 	
-	<span style="color:#fff;font-weight:bold">return</span> <span style="color:#fff;font-weight:bold">function</span>(str) {
-		console.log(<span style="color:#0ff;font-weight:bold">&#34;--&gt; &#34;</span>, str);
+	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">str</span>) {
+		<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;--&gt; &#34;</span>, <span style="color:#a6e22e">str</span>);
 	}
 });
-</code></pre></div><div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#0f0;font-weight:bold">&lt;!DOCTYPE html&gt;</span>
-&lt;<span style="font-weight:bold">html</span> <span style="color:#007f7f">lang</span>=<span style="color:#0ff;font-weight:bold">&#34;ko&#34;</span>&gt;
-&lt;<span style="font-weight:bold">head</span>&gt;
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ko&#34;</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
    
-    &lt;<span style="font-weight:bold">script</span> <span style="color:#007f7f">src</span>=<span style="color:#0ff;font-weight:bold">&#34;requirejs/2.1.15/require.js&#34;</span>&gt;&lt;/<span style="font-weight:bold">script</span>&gt;
-    &lt;<span style="font-weight:bold">script</span> <span style="color:#007f7f">src</span>=<span style="color:#0ff;font-weight:bold">&#34;js/log.js&#34;</span>&gt;&lt;/<span style="font-weight:bold">script</span>&gt;
-&lt;/<span style="font-weight:bold">head</span>&gt;
-&lt;<span style="font-weight:bold">body</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;requirejs/2.1.15/require.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;js/log.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">body</span>&gt;
 
-&lt;<span style="font-weight:bold">script</span>&gt;
- require([<span style="color:#0ff;font-weight:bold">&#39;log&#39;</span>], <span style="color:#fff;font-weight:bold">function</span>(log) {
- 	log(<span style="color:#0ff;font-weight:bold">&#34;Hello !&#34;</span>);
+&lt;<span style="color:#f92672">script</span>&gt;
+ <span style="color:#a6e22e">require</span>([<span style="color:#e6db74">&#39;log&#39;</span>], <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">log</span>) {
+ 	<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Hello !&#34;</span>);
  });
-&lt;/<span style="font-weight:bold">script</span>&gt;
-&lt;/<span style="font-weight:bold">body</span>&gt;
-&lt;/<span style="font-weight:bold">html</span>&gt;</code></pre></div>
+&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;</code></pre></div>
 <p>프로토타입으로 작성한 <em>boost.js</em></p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">define(<span style="color:#0ff;font-weight:bold">&#39;boost&#39;</span>, <span style="color:#fff;font-weight:bold">function</span>() {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#39;boost&#39;</span>, <span style="color:#66d9ef">function</span>() {
 	
-	<span style="color:#fff;font-weight:bold">function</span> Boost() {
+	<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Boost</span>() {
 
 	}
 
-	Boost.prototype.version = <span style="color:#fff;font-weight:bold">function</span>() {
-		<span style="color:#fff;font-weight:bold">return</span> <span style="color:#0ff;font-weight:bold">&#34;1.0&#34;</span>;
+	<span style="color:#a6e22e">Boost</span>.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">version</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+		<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;1.0&#34;</span>;
 	};
 
-	<span style="color:#fff;font-weight:bold">return</span> Boost;
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">Boost</span>;
 
 });
-</code></pre></div><div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#0f0;font-weight:bold">&lt;!DOCTYPE html&gt;</span>
-&lt;<span style="font-weight:bold">html</span> <span style="color:#007f7f">lang</span>=<span style="color:#0ff;font-weight:bold">&#34;ko&#34;</span>&gt;
-&lt;<span style="font-weight:bold">head</span>&gt;
-  &lt;<span style="font-weight:bold">script</span> <span style="color:#007f7f">src</span>=<span style="color:#0ff;font-weight:bold">&#34;requirejs/2.1.15/require.js&#34;</span>&gt;&lt;/<span style="font-weight:bold">script</span>&gt;
-  &lt;<span style="font-weight:bold">script</span> <span style="color:#007f7f">src</span>=<span style="color:#0ff;font-weight:bold">&#34;js/boost.js&#34;</span>&gt;&lt;/<span style="font-weight:bold">script</span>&gt;
-  &lt;<span style="font-weight:bold">script</span>&gt;
-   require([<span style="color:#0ff;font-weight:bold">&#39;boost&#39;</span>], <span style="color:#fff;font-weight:bold">function</span>(Boost) {
-	<span style="color:#fff;font-weight:bold">var</span> boost = <span style="color:#fff;font-weight:bold">new</span> Boost();
-	alert(boost.version());
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ko&#34;</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+  &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;requirejs/2.1.15/require.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+  &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;js/boost.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+  &lt;<span style="color:#f92672">script</span>&gt;
+   <span style="color:#a6e22e">require</span>([<span style="color:#e6db74">&#39;boost&#39;</span>], <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">Boost</span>) {
+	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">boost</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Boost</span>();
+	<span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">boost</span>.<span style="color:#a6e22e">version</span>());
    });
-&lt;/<span style="font-weight:bold">script</span>&gt;</code></pre></div>
+&lt;/<span style="color:#f92672">script</span>&gt;</code></pre></div>
 <p><code>IIFE(mmediately-Invoked Function Expression)</code> 를 적용하면<br />
 new 생성자 없이 사용가능하다</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">define(<span style="color:#0ff;font-weight:bold">&#39;boost&#39;</span>, <span style="color:#fff;font-weight:bold">function</span>() {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#39;boost&#39;</span>, <span style="color:#66d9ef">function</span>() {
 	
-	<span style="color:#fff;font-weight:bold">var</span> boost = (<span style="color:#fff;font-weight:bold">function</span>(){
-		<span style="color:#fff;font-weight:bold">var</span> version = <span style="color:#0ff;font-weight:bold">&#34;1.0&#34;</span>;
+	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">boost</span> <span style="color:#f92672">=</span> (<span style="color:#66d9ef">function</span>(){
+		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">version</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1.0&#34;</span>;
 
-		<span style="color:#fff;font-weight:bold">return</span> {
-			version: <span style="color:#fff;font-weight:bold">function</span>() {
-				<span style="color:#fff;font-weight:bold">return</span> version; 
+		<span style="color:#66d9ef">return</span> {
+			<span style="color:#a6e22e">version</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
+				<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">version</span>; 
 			}
 		}
 	})();
 
-	<span style="color:#fff;font-weight:bold">return</span> boost;
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">boost</span>;
 });
-</code></pre></div></p>
-    <p class="card-text text-right">
-      
-      <a href="http://clonekim.github.io/tags/javascript" class="btn btn-outline-success btn-sm">
-        javascript
-      </a>
-      
-    </p>
-  </div>
-</div>
+</code></pre></div>
+              </div>
+              <div class="columns is-mobile post-meta">
+                <div class="column is-half-desktop has-text-left is-paddingless"> 
+                   
+                  이전:<a href="http://clonekim.github.io/posts/2014/2014-11-10-angularjs-tip/"> AngularJS Tips</a>
+                  
+                </div>
+                <div class="column is-half-desktop has-text-right is-paddingless">
+                  
+                  이후:<a href="http://clonekim.github.io/posts/2015/2015-02-01-imagemagick/"> ImageMagick</a>
+                  
+                </div>
+                <div class="is-clearfix"></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </main>    <footer class="footer">
+    
+        <div class="copyright has-text-centered">
+            <a href="https://bulma.io">
+                <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
+            </a>
+            <p>© Bonjour! Power by Hugo</p>
+        </div>
+    </footer>
+    <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+        
+        if ($navbarBurgers.length > 0) {
+            
+            $navbarBurgers.forEach( el => {
+                el.addEventListener('click', () => {
+                
+                const target = el.dataset.target;
+                const $target = document.getElementById(target);
+                
+                el.classList.toggle('is-active');
+                $target.classList.toggle('is-active');
+    
+                });
+            });
+        }
+    });
+    
 
-
-
-<div id="disqus_thread"></div>
-<script type="text/javascript">
- (function() {
-   
-   
-   if (window.location.hostname == "localhost")
-     return;
-   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-   var disqus_shortname = 'clonekim-github-io';
-   dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
- })();
-</script>
-<noscript>
-  Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-</noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
-
-
-        </div></body>
+    </script>
+</body>
 </html>

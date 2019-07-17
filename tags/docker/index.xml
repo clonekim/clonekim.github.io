@@ -6,6 +6,8 @@
     <description>Recent content in docker on Bonjour!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
+    <managingEditor>clonekim-at-gmail-dot-com (DAEHEE KIM)</managingEditor>
+    <webMaster>clonekim-at-gmail-dot-com (DAEHEE KIM)</webMaster>
     <lastBuildDate>Mon, 24 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://clonekim.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +17,7 @@
       <title>Spark - Docker 이미지만들기</title>
       <link>http://clonekim.github.io/posts/2018/2018-12-24-how-spark/</link>
       <pubDate>Mon, 24 Dec 2018 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2018/2018-12-24-how-spark/</guid>
       <description>Spark Docker를 이용한 스파크 실습  Docker Image 만들기 spark-version-tgz는 미리 홈페이지에서 다운받아둘것
 ├── Dockerfile ├── config │ ├── core-site.xml │ ├── hdfs-site.xml │ └── spark-env.sh ├── spark-2.4.0-bin-hadoop2.7.tgz └── start-spark.sh  Dockerfile
@@ -26,7 +28,7 @@ FROM ubuntu:18.04 ENV SPARK_HOME /opt/spark ENV JAVA_HOME /usr/lib/jvm/java-8-op
       <title>Docker 시작하기</title>
       <link>http://clonekim.github.io/posts/2016/2016-03-01-docker-start/</link>
       <pubDate>Tue, 01 Mar 2016 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2016/2016-03-01-docker-start/</guid>
       <description>Docker 시작하기 이미지다운로드
 $ docker pull [이미지이름]  컨테이너 생성

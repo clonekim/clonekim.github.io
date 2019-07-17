@@ -6,6 +6,8 @@
     <description>Recent content in ruby on Bonjour!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
+    <managingEditor>clonekim-at-gmail-dot-com (DAEHEE KIM)</managingEditor>
+    <webMaster>clonekim-at-gmail-dot-com (DAEHEE KIM)</webMaster>
     <lastBuildDate>Fri, 03 Feb 2012 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://clonekim.github.io/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +17,7 @@
       <title>Ruby Some Basic</title>
       <link>http://clonekim.github.io/posts/2012/2012-02-03-ruby-some-basic/</link>
       <pubDate>Fri, 03 Feb 2012 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2012/2012-02-03-ruby-some-basic/</guid>
       <description>json 생성
 require &amp;#39;json&amp;#39; jsonbody = JSON.generate[&amp;#34;message&amp;#34;=&amp;gt;&amp;#34;test&amp;#34;,&amp;#34;user&amp;#34;=&amp;gt;&amp;#34;user1&amp;#34;] rest-client을 이용한 예제

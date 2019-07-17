@@ -1,209 +1,197 @@
 <!DOCTYPE html>
-<html lang="ko"><head>
-  <meta charset="utf-8" />
-  <meta name="author" content="DAEHEE KIM" />
-  <meta name="description" content="Personal blog." />
-  <meta name="keywords" content="blog, tech" />
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<html><head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <link rel="canonical" href="http://clonekim.github.io/posts/2014/2014-11-10-angularjs-tip/">
-  <base href="http://clonekim.github.io/" />
-  <meta property="og:title" content="AngularJS Tips" />
-<meta property="og:description" content="개발 정보
+    
+    <meta name="author"
+            content="DAEHEE KIM"/>
+
+    
+    <meta name="description" content="개발 정보
 버젼 1.2.26를 사용
-scope 계층화 &lt;!DOCTYPE html&gt; &lt;html lang=&#34;ko&#34; ng-app=&#34;app&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;utf-8&#34;&gt; &lt;meta http-equiv=&#34;X-UA-Compatible&#34; content=&#34;IE=edge&#34;&gt; &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;&gt; &lt;title&gt;Services and Modules&lt;/title&gt; &lt;link rel=&#34;stylesheet&#34; href=&#34;bootstrap/css/bootstrap.css&#34; /&gt; &lt;link rel=&#34;stylesheet&#34; href=&#34;bootstrap/css/bootstrap-theme.css&#34; /&gt; &lt;script type=&#34;text/javascript&#34; src=&#34;jquery/jquery.js&#34;&gt;&lt;/script&gt; &lt;script type=&#34;text/javascript&#34; src=&#34;jquery-ui/jquery-ui.js&#34;&gt;&lt;/script&gt; &lt;script type=&#34;text/javascript&#34; src=&#34;angular/angular.js&#34;&gt;&lt;/script&gt; &lt;script&gt; angular.module(&#34;app&#34;, []) .controller(&#34;ParentController&#34;, [&#39;$scope&#39;, function($scope) { $scope.value = &#39;parent value&#39;; $scope.getUpperValue = function () { return angular.uppercase($scope.value); } }]) .controller(&#34;ChildController&#34;,[ &#39;$scope&#39;, function($scope) { $scope.newValue = &#39;child value&#39;; }]); &lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;div ng-controller=&#34;ParentController&#34;&gt; &lt;h3&gt;parent&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;value: {{value}}&lt;/li&gt; &lt;li&gt;Upper: {{getUpperValue()}}&lt;/li&gt; &lt;li&gt;newValue: {{newValue}} &lt;/li&gt; &lt;/ul&gt; &lt;/div&gt; &lt;div ng-controller=&#34;ChildController&#34;&gt; &lt;h3&gt;parent&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;value: {{value}}&lt;/li&gt; &lt;li&gt;Upper: {{getUpperValue()}}&lt;/li&gt; &lt;li&gt;newValue: {{newValue}} &lt;/li&gt; &lt;/ul&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt; 제대로 된 결과를 보려면" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://clonekim.github.io/posts/2014/2014-11-10-angularjs-tip/" />
-<meta property="article:published_time" content="2014-11-10T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2014-11-10T00:00:00&#43;00:00"/>
+scope 계층화 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;ko&amp;#34; ng-app=&amp;#34;app&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;utf-8&amp;#34;&amp;gt; &amp;lt;meta http-equiv=&amp;#34;X-UA-Compatible&amp;#34; content=&amp;#34;IE=edge&amp;#34;&amp;gt; &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34;&amp;gt; &amp;lt;title&amp;gt;Services and Modules&amp;lt;/title&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;bootstrap/css/bootstrap.css&amp;#34; /&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;bootstrap/css/bootstrap-theme.css&amp;#34; /&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34; src=&amp;#34;jquery/jquery.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34; src=&amp;#34;jquery-ui/jquery-ui.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34; src=&amp;#34;angular/angular.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; angular.module(&amp;#34;app&amp;#34;, []) .controller(&amp;#34;ParentController&amp;#34;, [&amp;#39;$scope&amp;#39;, function($scope) { $scope.value = &amp;#39;parent value&amp;#39;; $scope.getUpperValue = function () { return angular.uppercase($scope.value); } }]) .controller(&amp;#34;ChildController&amp;#34;,[ &amp;#39;$scope&amp;#39;, function($scope) { $scope.newValue = &amp;#39;child value&amp;#39;; }]); &amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div ng-controller=&amp;#34;ParentController&amp;#34;&amp;gt; &amp;lt;h3&amp;gt;parent&amp;lt;/h3&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;value: {{value}}&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;Upper: {{getUpperValue()}}&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;newValue: {{newValue}} &amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div ng-controller=&amp;#34;ChildController&amp;#34;&amp;gt; &amp;lt;h3&amp;gt;parent&amp;lt;/h3&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;value: {{value}}&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;Upper: {{getUpperValue()}}&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;newValue: {{newValue}} &amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; 제대로 된 결과를 보려면"/>
+    
 
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="AngularJS Tips"/>
-<meta name="twitter:description" content="개발 정보
-버젼 1.2.26를 사용
-scope 계층화 &lt;!DOCTYPE html&gt; &lt;html lang=&#34;ko&#34; ng-app=&#34;app&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;utf-8&#34;&gt; &lt;meta http-equiv=&#34;X-UA-Compatible&#34; content=&#34;IE=edge&#34;&gt; &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;&gt; &lt;title&gt;Services and Modules&lt;/title&gt; &lt;link rel=&#34;stylesheet&#34; href=&#34;bootstrap/css/bootstrap.css&#34; /&gt; &lt;link rel=&#34;stylesheet&#34; href=&#34;bootstrap/css/bootstrap-theme.css&#34; /&gt; &lt;script type=&#34;text/javascript&#34; src=&#34;jquery/jquery.js&#34;&gt;&lt;/script&gt; &lt;script type=&#34;text/javascript&#34; src=&#34;jquery-ui/jquery-ui.js&#34;&gt;&lt;/script&gt; &lt;script type=&#34;text/javascript&#34; src=&#34;angular/angular.js&#34;&gt;&lt;/script&gt; &lt;script&gt; angular.module(&#34;app&#34;, []) .controller(&#34;ParentController&#34;, [&#39;$scope&#39;, function($scope) { $scope.value = &#39;parent value&#39;; $scope.getUpperValue = function () { return angular.uppercase($scope.value); } }]) .controller(&#34;ChildController&#34;,[ &#39;$scope&#39;, function($scope) { $scope.newValue = &#39;child value&#39;; }]); &lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;div ng-controller=&#34;ParentController&#34;&gt; &lt;h3&gt;parent&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;value: {{value}}&lt;/li&gt; &lt;li&gt;Upper: {{getUpperValue()}}&lt;/li&gt; &lt;li&gt;newValue: {{newValue}} &lt;/li&gt; &lt;/ul&gt; &lt;/div&gt; &lt;div ng-controller=&#34;ChildController&#34;&gt; &lt;h3&gt;parent&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;value: {{value}}&lt;/li&gt; &lt;li&gt;Upper: {{getUpperValue()}}&lt;/li&gt; &lt;li&gt;newValue: {{newValue}} &lt;/li&gt; &lt;/ul&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt; 제대로 된 결과를 보려면"/>
+    
 
-  
-  
-<meta itemprop="name" content="AngularJS Tips">
-<meta itemprop="description" content="개발 정보
-버젼 1.2.26를 사용
-scope 계층화 &lt;!DOCTYPE html&gt; &lt;html lang=&#34;ko&#34; ng-app=&#34;app&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;utf-8&#34;&gt; &lt;meta http-equiv=&#34;X-UA-Compatible&#34; content=&#34;IE=edge&#34;&gt; &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;&gt; &lt;title&gt;Services and Modules&lt;/title&gt; &lt;link rel=&#34;stylesheet&#34; href=&#34;bootstrap/css/bootstrap.css&#34; /&gt; &lt;link rel=&#34;stylesheet&#34; href=&#34;bootstrap/css/bootstrap-theme.css&#34; /&gt; &lt;script type=&#34;text/javascript&#34; src=&#34;jquery/jquery.js&#34;&gt;&lt;/script&gt; &lt;script type=&#34;text/javascript&#34; src=&#34;jquery-ui/jquery-ui.js&#34;&gt;&lt;/script&gt; &lt;script type=&#34;text/javascript&#34; src=&#34;angular/angular.js&#34;&gt;&lt;/script&gt; &lt;script&gt; angular.module(&#34;app&#34;, []) .controller(&#34;ParentController&#34;, [&#39;$scope&#39;, function($scope) { $scope.value = &#39;parent value&#39;; $scope.getUpperValue = function () { return angular.uppercase($scope.value); } }]) .controller(&#34;ChildController&#34;,[ &#39;$scope&#39;, function($scope) { $scope.newValue = &#39;child value&#39;; }]); &lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;div ng-controller=&#34;ParentController&#34;&gt; &lt;h3&gt;parent&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;value: {{value}}&lt;/li&gt; &lt;li&gt;Upper: {{getUpperValue()}}&lt;/li&gt; &lt;li&gt;newValue: {{newValue}} &lt;/li&gt; &lt;/ul&gt; &lt;/div&gt; &lt;div ng-controller=&#34;ChildController&#34;&gt; &lt;h3&gt;parent&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;value: {{value}}&lt;/li&gt; &lt;li&gt;Upper: {{getUpperValue()}}&lt;/li&gt; &lt;li&gt;newValue: {{newValue}} &lt;/li&gt; &lt;/ul&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt; 제대로 된 결과를 보려면">
+    
+    <link rel="canonical" href="http://clonekim.github.io/posts/2014/2014-11-10-angularjs-tip/"/>
 
+    
 
-<meta itemprop="datePublished" content="2014-11-10T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2014-11-10T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="934">
+    
+    
+    
+        
+            
+        
+    
+    <title> AngularJS Tips | Bonjour! </title>
 
-
-
-<meta itemprop="keywords" content="angularjs," />
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <title>Bonjour!</title>
-  <style>
-   pre {
-     margin: 1em 0em 1em;
-     padding: 0.5em 0.5em 0.5em;
-     border: 1px solid #5C5C5C;
-   }
-
-   code {
-     white-space: pre-wrap;        
-     white-space: -moz-pre-wrap;   
-     white-space: -pre-wrap;       
-     white-space: -o-pre-wrap;     
-     word-wrap: break-word;        
-     line-height: 1.4em;
-   }
-
-   blockquote { background: #1D1F21; border-left: 3px solid #99cc66; }
-   table { margin: 1em auto; border-collapse: collapse; }
-   table, th, td { border: 1px solid #5C5C5C; }
-   tr:hover { background: #1D1F21; }
-  </style>
-  <link rel="stylesheet" href="css/tomorrow-night.min.css" />
-  <script src="js/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-</head>
-<body><h3><a href="http://clonekim.github.io/">Bonjour!</a></h3>
-<div id="content" class="container">
-<div class="card border-primary">
-  <div class="card-header text-right">
-    <small>Nov 10, 2014</small>
-  </div>
-  <div class="card-body">
-    <a  href="http://clonekim.github.io/posts/2014/2014-11-10-angularjs-tip/">
-      <h5 class="card-title">AngularJS Tips</h5>
-    </a>
-    <p class="card-text">
+    <link rel="shortcut icon" href="http://clonekim.github.io/favicon.jpg"/>
+    <link rel="stylesheet" href="http://clonekim.github.io/css/bulma.min.css"/>
+    <link rel="stylesheet" href="http://clonekim.github.io/css/style.css"/>
+</head><body><header>
+    <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand is-size-4">
+            <a class="navbar-item" href="http://clonekim.github.io/">
+                    Bonjour!
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="navbar-menu" class="navbar-menu">
+            <div class="navbar-end">
+                
+                    
+                        <a class="navbar-item" href="/tags">태그</a>
+                    
+                
+            </div>
+            </div>
+    </nav>
+</header><main>
+      <div class="container">
+        <div class="columns">
+          <div class="column is-four-fifths">
+            <article class="post box is-radiusless">
+              <div class="post-title">
+                <h2 class="is-size-4">AngularJS Tips</h2>
+              </div>
+              <div class="post-meta">
+                <span class="post-time">2014-11-10</span>
+              </div>
+              <div class="post-content content">
+                
 
 <p><em>개발 정보</em></p>
 
 <p>버젼 1.2.26를 사용</p>
 
 <h2 id="scope-계층화">scope 계층화</h2>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#0f0;font-weight:bold">&lt;!DOCTYPE html&gt;</span>
-&lt;<span style="font-weight:bold">html</span> <span style="color:#007f7f">lang</span>=<span style="color:#0ff;font-weight:bold">&#34;ko&#34;</span> <span style="color:#007f7f">ng-app</span>=<span style="color:#0ff;font-weight:bold">&#34;app&#34;</span>&gt;
-&lt;<span style="font-weight:bold">head</span>&gt;
-    &lt;<span style="font-weight:bold">meta</span> <span style="color:#007f7f">charset</span>=<span style="color:#0ff;font-weight:bold">&#34;utf-8&#34;</span>&gt;
-    &lt;<span style="font-weight:bold">meta</span> <span style="color:#007f7f">http-equiv</span>=<span style="color:#0ff;font-weight:bold">&#34;X-UA-Compatible&#34;</span> <span style="color:#007f7f">content</span>=<span style="color:#0ff;font-weight:bold">&#34;IE=edge&#34;</span>&gt;
-    &lt;<span style="font-weight:bold">meta</span> <span style="color:#007f7f">name</span>=<span style="color:#0ff;font-weight:bold">&#34;viewport&#34;</span> <span style="color:#007f7f">content</span>=<span style="color:#0ff;font-weight:bold">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
-    &lt;<span style="font-weight:bold">title</span>&gt;Services and Modules&lt;/<span style="font-weight:bold">title</span>&gt;
-    &lt;<span style="font-weight:bold">link</span> <span style="color:#007f7f">rel</span>=<span style="color:#0ff;font-weight:bold">&#34;stylesheet&#34;</span> <span style="color:#007f7f">href</span>=<span style="color:#0ff;font-weight:bold">&#34;bootstrap/css/bootstrap.css&#34;</span> /&gt;
-    &lt;<span style="font-weight:bold">link</span> <span style="color:#007f7f">rel</span>=<span style="color:#0ff;font-weight:bold">&#34;stylesheet&#34;</span> <span style="color:#007f7f">href</span>=<span style="color:#0ff;font-weight:bold">&#34;bootstrap/css/bootstrap-theme.css&#34;</span> /&gt;
-    &lt;<span style="font-weight:bold">script</span> <span style="color:#007f7f">type</span>=<span style="color:#0ff;font-weight:bold">&#34;text/javascript&#34;</span> <span style="color:#007f7f">src</span>=<span style="color:#0ff;font-weight:bold">&#34;jquery/jquery.js&#34;</span>&gt;&lt;/<span style="font-weight:bold">script</span>&gt;
-    &lt;<span style="font-weight:bold">script</span> <span style="color:#007f7f">type</span>=<span style="color:#0ff;font-weight:bold">&#34;text/javascript&#34;</span> <span style="color:#007f7f">src</span>=<span style="color:#0ff;font-weight:bold">&#34;jquery-ui/jquery-ui.js&#34;</span>&gt;&lt;/<span style="font-weight:bold">script</span>&gt;
-    &lt;<span style="font-weight:bold">script</span> <span style="color:#007f7f">type</span>=<span style="color:#0ff;font-weight:bold">&#34;text/javascript&#34;</span> <span style="color:#007f7f">src</span>=<span style="color:#0ff;font-weight:bold">&#34;angular/angular.js&#34;</span>&gt;&lt;/<span style="font-weight:bold">script</span>&gt;
-    &lt;<span style="font-weight:bold">script</span>&gt;
-        angular.module(<span style="color:#0ff;font-weight:bold">&#34;app&#34;</span>, [])
-        .controller(<span style="color:#0ff;font-weight:bold">&#34;ParentController&#34;</span>,  [<span style="color:#0ff;font-weight:bold">&#39;$scope&#39;</span>, <span style="color:#fff;font-weight:bold">function</span>($scope) {
-            $scope.value = <span style="color:#0ff;font-weight:bold">&#39;parent value&#39;</span>;
-            $scope.getUpperValue = <span style="color:#fff;font-weight:bold">function</span> () {
-                <span style="color:#fff;font-weight:bold">return</span> angular.uppercase($scope.value);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ko&#34;</span> <span style="color:#a6e22e">ng-app</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;app&#34;</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;X-UA-Compatible&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;IE=edge&#34;</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;Services and Modules&lt;/<span style="color:#f92672">title</span>&gt;
+    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bootstrap/css/bootstrap.css&#34;</span> /&gt;
+    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bootstrap/css/bootstrap-theme.css&#34;</span> /&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;jquery/jquery.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;jquery-ui/jquery-ui.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;angular/angular.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span>&gt;
+        <span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#34;app&#34;</span>, [])
+        .<span style="color:#a6e22e">controller</span>(<span style="color:#e6db74">&#34;ParentController&#34;</span>,  [<span style="color:#e6db74">&#39;$scope&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">$scope</span>) {
+            <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;parent value&#39;</span>;
+            <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">getUpperValue</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+                <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">uppercase</span>(<span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">value</span>);
             }
         }])
-        .controller(<span style="color:#0ff;font-weight:bold">&#34;ChildController&#34;</span>,[ <span style="color:#0ff;font-weight:bold">&#39;$scope&#39;</span>, <span style="color:#fff;font-weight:bold">function</span>($scope) {
-            $scope.newValue = <span style="color:#0ff;font-weight:bold">&#39;child value&#39;</span>;
+        .<span style="color:#a6e22e">controller</span>(<span style="color:#e6db74">&#34;ChildController&#34;</span>,[ <span style="color:#e6db74">&#39;$scope&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">$scope</span>) {
+            <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">newValue</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;child value&#39;</span>;
 
         }]);
-    &lt;/<span style="font-weight:bold">script</span>&gt;
-&lt;/<span style="font-weight:bold">head</span>&gt;
+    &lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
 
-&lt;<span style="font-weight:bold">body</span>&gt;
-    &lt;<span style="font-weight:bold">div</span> <span style="color:#007f7f">ng-controller</span>=<span style="color:#0ff;font-weight:bold">&#34;ParentController&#34;</span>&gt;
-        &lt;<span style="font-weight:bold">h3</span>&gt;parent&lt;/<span style="font-weight:bold">h3</span>&gt;
-        &lt;<span style="font-weight:bold">ul</span>&gt;
-            &lt;<span style="font-weight:bold">li</span>&gt;value: {{value}}&lt;/<span style="font-weight:bold">li</span>&gt;
-            &lt;<span style="font-weight:bold">li</span>&gt;Upper: {{getUpperValue()}}&lt;/<span style="font-weight:bold">li</span>&gt;
-            &lt;<span style="font-weight:bold">li</span>&gt;newValue: {{newValue}} &lt;/<span style="font-weight:bold">li</span>&gt;
-        &lt;/<span style="font-weight:bold">ul</span>&gt;
-    &lt;/<span style="font-weight:bold">div</span>&gt;
+&lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">ng-controller</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ParentController&#34;</span>&gt;
+        &lt;<span style="color:#f92672">h3</span>&gt;parent&lt;/<span style="color:#f92672">h3</span>&gt;
+        &lt;<span style="color:#f92672">ul</span>&gt;
+            &lt;<span style="color:#f92672">li</span>&gt;value: {{value}}&lt;/<span style="color:#f92672">li</span>&gt;
+            &lt;<span style="color:#f92672">li</span>&gt;Upper: {{getUpperValue()}}&lt;/<span style="color:#f92672">li</span>&gt;
+            &lt;<span style="color:#f92672">li</span>&gt;newValue: {{newValue}} &lt;/<span style="color:#f92672">li</span>&gt;
+        &lt;/<span style="color:#f92672">ul</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
 
-    &lt;<span style="font-weight:bold">div</span> <span style="color:#007f7f">ng-controller</span>=<span style="color:#0ff;font-weight:bold">&#34;ChildController&#34;</span>&gt;
-        &lt;<span style="font-weight:bold">h3</span>&gt;parent&lt;/<span style="font-weight:bold">h3</span>&gt;
-        &lt;<span style="font-weight:bold">ul</span>&gt;
-            &lt;<span style="font-weight:bold">li</span>&gt;value: {{value}}&lt;/<span style="font-weight:bold">li</span>&gt;
-            &lt;<span style="font-weight:bold">li</span>&gt;Upper: {{getUpperValue()}}&lt;/<span style="font-weight:bold">li</span>&gt;
-            &lt;<span style="font-weight:bold">li</span>&gt;newValue: {{newValue}} &lt;/<span style="font-weight:bold">li</span>&gt;
-        &lt;/<span style="font-weight:bold">ul</span>&gt;
-    &lt;/<span style="font-weight:bold">div</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">ng-controller</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ChildController&#34;</span>&gt;
+        &lt;<span style="color:#f92672">h3</span>&gt;parent&lt;/<span style="color:#f92672">h3</span>&gt;
+        &lt;<span style="color:#f92672">ul</span>&gt;
+            &lt;<span style="color:#f92672">li</span>&gt;value: {{value}}&lt;/<span style="color:#f92672">li</span>&gt;
+            &lt;<span style="color:#f92672">li</span>&gt;Upper: {{getUpperValue()}}&lt;/<span style="color:#f92672">li</span>&gt;
+            &lt;<span style="color:#f92672">li</span>&gt;newValue: {{newValue}} &lt;/<span style="color:#f92672">li</span>&gt;
+        &lt;/<span style="color:#f92672">ul</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
 
-&lt;/<span style="font-weight:bold">body</span>&gt;
-&lt;/<span style="font-weight:bold">html</span>&gt;</code></pre></div>
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;</code></pre></div>
 <p><img src="/img/angular/picture504-1.png" alt="picture504-1.png" /></p>
 
 <p>제대로 된 결과를 보려면</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">   &lt;<span style="font-weight:bold">div</span> <span style="color:#007f7f">ng-controller</span>=<span style="color:#0ff;font-weight:bold">&#34;ParentController&#34;</span>&gt;
-        &lt;<span style="font-weight:bold">h3</span>&gt;parent&lt;/<span style="font-weight:bold">h3</span>&gt;
-        &lt;<span style="font-weight:bold">ul</span>&gt;
-            &lt;<span style="font-weight:bold">li</span>&gt;value: {{value}}&lt;/<span style="font-weight:bold">li</span>&gt;
-            &lt;<span style="font-weight:bold">li</span>&gt;Upper: {{getUpperValue()}}&lt;/<span style="font-weight:bold">li</span>&gt;
-            &lt;<span style="font-weight:bold">li</span>&gt;newValue: {{newValue}} &lt;/<span style="font-weight:bold">li</span>&gt;
-        &lt;/<span style="font-weight:bold">ul</span>&gt;
-		&lt;<span style="font-weight:bold">div</span> <span style="color:#007f7f">ng-controller</span>=<span style="color:#0ff;font-weight:bold">&#34;ChildController&#34;</span>&gt; <span style="color:#007f7f">&lt;!-- 부모밑으로 들어가도록 한다 --&gt;</span>
-			&lt;<span style="font-weight:bold">h3</span>&gt;child&lt;/<span style="font-weight:bold">h3</span>&gt;
-			&lt;<span style="font-weight:bold">ul</span>&gt;
-				&lt;<span style="font-weight:bold">li</span>&gt;value: {{value}}&lt;/<span style="font-weight:bold">li</span>&gt;
-				&lt;<span style="font-weight:bold">li</span>&gt;Upper: {{getUpperValue()}}&lt;/<span style="font-weight:bold">li</span>&gt;
-				&lt;<span style="font-weight:bold">li</span>&gt;newValue: {{newValue}} &lt;/<span style="font-weight:bold">li</span>&gt;
-			&lt;/<span style="font-weight:bold">ul</span>&gt;
-		&lt;/<span style="font-weight:bold">div</span>&gt;
-    &lt;/<span style="font-weight:bold">div</span>&gt;</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">   &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">ng-controller</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ParentController&#34;</span>&gt;
+        &lt;<span style="color:#f92672">h3</span>&gt;parent&lt;/<span style="color:#f92672">h3</span>&gt;
+        &lt;<span style="color:#f92672">ul</span>&gt;
+            &lt;<span style="color:#f92672">li</span>&gt;value: {{value}}&lt;/<span style="color:#f92672">li</span>&gt;
+            &lt;<span style="color:#f92672">li</span>&gt;Upper: {{getUpperValue()}}&lt;/<span style="color:#f92672">li</span>&gt;
+            &lt;<span style="color:#f92672">li</span>&gt;newValue: {{newValue}} &lt;/<span style="color:#f92672">li</span>&gt;
+        &lt;/<span style="color:#f92672">ul</span>&gt;
+		&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">ng-controller</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ChildController&#34;</span>&gt; <span style="color:#75715e">&lt;!-- 부모밑으로 들어가도록 한다 --&gt;</span>
+			&lt;<span style="color:#f92672">h3</span>&gt;child&lt;/<span style="color:#f92672">h3</span>&gt;
+			&lt;<span style="color:#f92672">ul</span>&gt;
+				&lt;<span style="color:#f92672">li</span>&gt;value: {{value}}&lt;/<span style="color:#f92672">li</span>&gt;
+				&lt;<span style="color:#f92672">li</span>&gt;Upper: {{getUpperValue()}}&lt;/<span style="color:#f92672">li</span>&gt;
+				&lt;<span style="color:#f92672">li</span>&gt;newValue: {{newValue}} &lt;/<span style="color:#f92672">li</span>&gt;
+			&lt;/<span style="color:#f92672">ul</span>&gt;
+		&lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;</code></pre></div>
 <p><img src="/img/angular/picture85-1.png" alt="picture85-1.png" /></p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="font-weight:bold">script</span>&gt;
-        angular.module(<span style="color:#0ff;font-weight:bold">&#34;app&#34;</span>, [])
-        .controller(<span style="color:#0ff;font-weight:bold">&#34;ParentController&#34;</span>,  [<span style="color:#0ff;font-weight:bold">&#39;$scope&#39;</span>, <span style="color:#fff;font-weight:bold">function</span>($scope) {
-            $scope.value = <span style="color:#ff0;font-weight:bold">128</span>
-            $scope.increment = <span style="color:#fff;font-weight:bold">function</span> () {
-				<span style="color:#fff;font-weight:bold">this</span>.value++;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span>&gt;
+        <span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#34;app&#34;</span>, [])
+        .<span style="color:#a6e22e">controller</span>(<span style="color:#e6db74">&#34;ParentController&#34;</span>,  [<span style="color:#e6db74">&#39;$scope&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">$scope</span>) {
+            <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">128</span>
+            <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">increment</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+				<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">value</span><span style="color:#f92672">++</span>;
             }
         }])
-        .controller(<span style="color:#0ff;font-weight:bold">&#34;ChildController&#34;</span>,[ <span style="color:#0ff;font-weight:bold">&#39;$scope&#39;</span>, <span style="color:#fff;font-weight:bold">function</span>($scope) {
-			$scope.decrement = <span style="color:#fff;font-weight:bold">function</span> () {
-				<span style="color:#fff;font-weight:bold">this</span>.value--;
+        .<span style="color:#a6e22e">controller</span>(<span style="color:#e6db74">&#34;ChildController&#34;</span>,[ <span style="color:#e6db74">&#39;$scope&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">$scope</span>) {
+			<span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">decrement</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+				<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">value</span><span style="color:#f92672">--</span>;
 			}
 
         }]);
-    &lt;/<span style="font-weight:bold">script</span>&gt;
-&lt;/<span style="font-weight:bold">head</span>&gt;
+    &lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
 
-&lt;<span style="font-weight:bold">body</span>&gt;
-    &lt;<span style="font-weight:bold">div</span> <span style="color:#007f7f">ng-controller</span>=<span style="color:#0ff;font-weight:bold">&#34;ParentController&#34;</span>&gt;
-        &lt;<span style="font-weight:bold">h3</span>&gt;parent&lt;/<span style="font-weight:bold">h3</span>&gt;
+&lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">ng-controller</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ParentController&#34;</span>&gt;
+        &lt;<span style="color:#f92672">h3</span>&gt;parent&lt;/<span style="color:#f92672">h3</span>&gt;
         
-		&lt;<span style="font-weight:bold">p</span>&gt;value: {{value}} &lt;/<span style="font-weight:bold">p</span>&gt;
-		&lt;<span style="font-weight:bold">button</span> <span style="color:#007f7f">ng-click</span>=<span style="color:#0ff;font-weight:bold">&#34;increment()&#34;</span>&gt; increment&lt;/<span style="font-weight:bold">button</span>&gt;
+		&lt;<span style="color:#f92672">p</span>&gt;value: {{value}} &lt;/<span style="color:#f92672">p</span>&gt;
+		&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">ng-click</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;increment()&#34;</span>&gt; increment&lt;/<span style="color:#f92672">button</span>&gt;
 
-		&lt;<span style="font-weight:bold">div</span> <span style="color:#007f7f">ng-controller</span>=<span style="color:#0ff;font-weight:bold">&#34;ChildController&#34;</span>&gt;
-		   &lt;<span style="font-weight:bold">h3</span>&gt;child&lt;/<span style="font-weight:bold">h3</span>&gt;
-		    &lt;<span style="font-weight:bold">p</span>&gt;value: {{value}} &lt;/<span style="font-weight:bold">p</span>&gt;
-			&lt;<span style="font-weight:bold">button</span> <span style="color:#007f7f">ng-click</span>=<span style="color:#0ff;font-weight:bold">&#34;decrement()&#34;</span>&gt; decrement&lt;/<span style="font-weight:bold">button</span>&gt;
-		&lt;/<span style="font-weight:bold">div</span>&gt;
-    &lt;/<span style="font-weight:bold">div</span>&gt;
-&lt;/<span style="font-weight:bold">body</span>&gt;</code></pre></div>
+		&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">ng-controller</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ChildController&#34;</span>&gt;
+		   &lt;<span style="color:#f92672">h3</span>&gt;child&lt;/<span style="color:#f92672">h3</span>&gt;
+		    &lt;<span style="color:#f92672">p</span>&gt;value: {{value}} &lt;/<span style="color:#f92672">p</span>&gt;
+			&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">ng-click</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;decrement()&#34;</span>&gt; decrement&lt;/<span style="color:#f92672">button</span>&gt;
+		&lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;</code></pre></div>
 <p><img src="/img/angular/picture860-1.png" alt="picture860-1.png" /></p>
 
 <p>부모 영역의 버튼을 클릭 시 함께 증가한다. 하지만 자식영역의 버튼을 클릭한 순간<br />
 자식 영역의 값만 감소하게 된다.</p>
 
 <p>자식 영역에서 부모영역의 값을 감소하도록 하려면 아래와 같이 수정한다.</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">  angular.module(<span style="color:#0ff;font-weight:bold">&#34;app&#34;</span>, [])
-        .controller(<span style="color:#0ff;font-weight:bold">&#34;ParentController&#34;</span>,  [<span style="color:#0ff;font-weight:bold">&#39;$scope&#39;</span>, <span style="color:#fff;font-weight:bold">function</span>($scope) {
-            $scope.value = <span style="color:#ff0;font-weight:bold">128</span>
-			$scope.data = { value: <span style="color:#ff0;font-weight:bold">456</span>};
-            $scope.increment = <span style="color:#fff;font-weight:bold">function</span> () {
-				<span style="color:#fff;font-weight:bold">this</span>.value++;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">  <span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#34;app&#34;</span>, [])
+        .<span style="color:#a6e22e">controller</span>(<span style="color:#e6db74">&#34;ParentController&#34;</span>,  [<span style="color:#e6db74">&#39;$scope&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">$scope</span>) {
+            <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">128</span>
+			<span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">456</span>};
+            <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">increment</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+				<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">value</span><span style="color:#f92672">++</span>;
             }
         }])
-        .controller(<span style="color:#0ff;font-weight:bold">&#34;ChildController&#34;</span>,[ <span style="color:#0ff;font-weight:bold">&#39;$scope&#39;</span>, <span style="color:#fff;font-weight:bold">function</span>($scope) {
+        .<span style="color:#a6e22e">controller</span>(<span style="color:#e6db74">&#34;ChildController&#34;</span>,[ <span style="color:#e6db74">&#39;$scope&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">$scope</span>) {
 
-			$scope.decrement = <span style="color:#fff;font-weight:bold">function</span> () {
-				$scope.data.value = <span style="color:#ff0;font-weight:bold">654</span>;
-				$scope.$parent.value--;
+			<span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">decrement</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+				<span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">654</span>;
+				<span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">$parent</span>.<span style="color:#a6e22e">value</span><span style="color:#f92672">--</span>;
 			}
 
         }]);
@@ -228,64 +216,64 @@ scope 계층화 &lt;!DOCTYPE html&gt; &lt;html lang=&#34;ko&#34; ng-app=&#34;app
 </ol>
 
 <h3 id="간단한-예제">간단한 예제</h3>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#0f0;font-weight:bold">&lt;!DOCTYPE html&gt;</span>
-&lt;<span style="font-weight:bold">html</span> <span style="color:#007f7f">lang</span>=<span style="color:#0ff;font-weight:bold">&#34;ko&#34;</span> <span style="color:#007f7f">ng-app</span>=<span style="color:#0ff;font-weight:bold">&#34;exampleApp&#34;</span>&gt;
-&lt;<span style="font-weight:bold">head</span>&gt;
-	&lt;<span style="font-weight:bold">meta</span> <span style="color:#007f7f">charset</span>=<span style="color:#0ff;font-weight:bold">&#34;utf-8&#34;</span>&gt;
-	&lt;<span style="font-weight:bold">meta</span> <span style="color:#007f7f">http-equiv</span>=<span style="color:#0ff;font-weight:bold">&#34;X-UA-Compatible&#34;</span> <span style="color:#007f7f">content</span>=<span style="color:#0ff;font-weight:bold">&#34;IE=edge&#34;</span>&gt;
-	&lt;<span style="font-weight:bold">meta</span> <span style="color:#007f7f">name</span>=<span style="color:#0ff;font-weight:bold">&#34;viewport&#34;</span> <span style="color:#007f7f">content</span>=<span style="color:#0ff;font-weight:bold">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
-	&lt;<span style="font-weight:bold">title</span>&gt;Services and Modules&lt;/<span style="font-weight:bold">title</span>&gt;
-	&lt;<span style="font-weight:bold">link</span> <span style="color:#007f7f">rel</span>=<span style="color:#0ff;font-weight:bold">&#34;stylesheet&#34;</span> <span style="color:#007f7f">href</span>=<span style="color:#0ff;font-weight:bold">&#34;bootstrap/3.3.0/css/bootstrap.min.css&#34;</span>&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ko&#34;</span> <span style="color:#a6e22e">ng-app</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;exampleApp&#34;</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+	&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
+	&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;X-UA-Compatible&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;IE=edge&#34;</span>&gt;
+	&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+	&lt;<span style="color:#f92672">title</span>&gt;Services and Modules&lt;/<span style="color:#f92672">title</span>&gt;
+	&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bootstrap/3.3.0/css/bootstrap.min.css&#34;</span>&gt;
 	
-	<span style="color:#007f7f">&lt;!--[if lt IE 9]&gt;
-</span><span style="color:#007f7f">      &lt;script src=&#34;https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js&#34;&gt;&lt;/script&gt;
-</span><span style="color:#007f7f">      &lt;script src=&#34;https://oss.maxcdn.com/respond/1.4.2/respond.min.js&#34;&gt;&lt;/script&gt;
-</span><span style="color:#007f7f">    &lt;![endif]--&gt;</span>
+	<span style="color:#75715e">&lt;!--[if lt IE 9]&gt;
+</span><span style="color:#75715e">      &lt;script src=&#34;https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js&#34;&gt;&lt;/script&gt;
+</span><span style="color:#75715e">      &lt;script src=&#34;https://oss.maxcdn.com/respond/1.4.2/respond.min.js&#34;&gt;&lt;/script&gt;
+</span><span style="color:#75715e">    &lt;![endif]--&gt;</span>
 		
-	&lt;<span style="font-weight:bold">script</span> <span style="color:#007f7f">src</span>=<span style="color:#0ff;font-weight:bold">&#34;jquery/1.11.1/jquery.min.js&#34;</span>&gt;&lt;/<span style="font-weight:bold">script</span>&gt;
-	&lt;<span style="font-weight:bold">script</span> <span style="color:#007f7f">src</span>=<span style="color:#0ff;font-weight:bold">&#34;bootstrap/3.3.0/js/bootstrap.min.js&#34;</span>&gt;&lt;/<span style="font-weight:bold">script</span>&gt;
-	&lt;<span style="font-weight:bold">script</span> <span style="color:#007f7f">src</span>=<span style="color:#0ff;font-weight:bold">&#34;angularjs/1.2.26/angular.min.js&#34;</span>&gt;&lt;/<span style="font-weight:bold">script</span>&gt;
-	&lt;<span style="font-weight:bold">script</span>&gt;
-		angular.module(<span style="color:#0ff;font-weight:bold">&#34;exampleApp&#34;</span>, [])
-		.controller(<span style="color:#0ff;font-weight:bold">&#34;defaultCtrl&#34;</span>, <span style="color:#fff;font-weight:bold">function</span>($scope) {
-			$scope.data = {
-				cities: [<span style="color:#0ff;font-weight:bold">&#34;London&#34;</span>, <span style="color:#0ff;font-weight:bold">&#34;New York&#34;</span>, <span style="color:#0ff;font-weight:bold">&#34;Paris&#34;</span>],
-				totalClicks: <span style="color:#ff0;font-weight:bold">0</span>
+	&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;jquery/1.11.1/jquery.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+	&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bootstrap/3.3.0/js/bootstrap.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+	&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;angularjs/1.2.26/angular.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+	&lt;<span style="color:#f92672">script</span>&gt;
+		<span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#34;exampleApp&#34;</span>, [])
+		.<span style="color:#a6e22e">controller</span>(<span style="color:#e6db74">&#34;defaultCtrl&#34;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">$scope</span>) {
+			<span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> {
+				<span style="color:#a6e22e">cities</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;London&#34;</span>, <span style="color:#e6db74">&#34;New York&#34;</span>, <span style="color:#e6db74">&#34;Paris&#34;</span>],
+				<span style="color:#a6e22e">totalClicks</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>
 			};
 
-			$scope.$watch(<span style="color:#0ff;font-weight:bold">&#34;data.totalClicks&#34;</span>, <span style="color:#fff;font-weight:bold">function</span>(newVal) {
-				console.log(<span style="color:#0ff;font-weight:bold">&#34;Total click count: &#34;</span> + newVal);
+			<span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">$watch</span>(<span style="color:#e6db74">&#34;data.totalClicks&#34;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">newVal</span>) {
+				<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Total click count: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">newVal</span>);
 			});		
 		})
-		.directive(<span style="color:#0ff;font-weight:bold">&#34;triButton&#34;</span>, <span style="color:#fff;font-weight:bold">function</span>() {
+		.<span style="color:#a6e22e">directive</span>(<span style="color:#e6db74">&#34;triButton&#34;</span>, <span style="color:#66d9ef">function</span>() {
 			
-			<span style="color:#fff;font-weight:bold">return</span> {
-				scope: { counter: <span style="color:#0ff;font-weight:bold">&#34;=counter&#34;</span> },
-				link: <span style="color:#fff;font-weight:bold">function</span>(scope, element, attrs) {
-					element.on(<span style="color:#0ff;font-weight:bold">&#34;click&#34;</span>, <span style="color:#fff;font-weight:bold">function</span>(event) {
-						console.log(<span style="color:#0ff;font-weight:bold">&#34;Button click: &#34;</span> + event.target.innerText);
-						scope.$apply(<span style="color:#fff;font-weight:bold">function</span>() {
-							scope.counter++;
+			<span style="color:#66d9ef">return</span> {
+				<span style="color:#a6e22e">scope</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">counter</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;=counter&#34;</span> },
+				<span style="color:#a6e22e">link</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">scope</span>, <span style="color:#a6e22e">element</span>, <span style="color:#a6e22e">attrs</span>) {
+					<span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#34;click&#34;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">event</span>) {
+						<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Button click: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">innerText</span>);
+						<span style="color:#a6e22e">scope</span>.<span style="color:#a6e22e">$apply</span>(<span style="color:#66d9ef">function</span>() {
+							<span style="color:#a6e22e">scope</span>.<span style="color:#a6e22e">counter</span><span style="color:#f92672">++</span>;
 						});
 					});
 				}
 			}
 		
 		});
-	&lt;/<span style="font-weight:bold">script</span>&gt;
-&lt;/<span style="font-weight:bold">head</span>&gt;
+	&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
 
-&lt;<span style="font-weight:bold">body</span> <span style="color:#007f7f">ng-controller</span>=<span style="color:#0ff;font-weight:bold">&#34;defaultCtrl&#34;</span>&gt;
-	&lt;<span style="font-weight:bold">div</span> <span style="color:#007f7f">class</span>=<span style="color:#0ff;font-weight:bold">&#34;well&#34;</span>&gt;
-		&lt;<span style="font-weight:bold">div</span> <span style="color:#007f7f">class</span>=<span style="color:#0ff;font-weight:bold">&#34;btn-group&#34;</span> <span style="color:#007f7f">tri-button</span> <span style="color:#007f7f">counter</span>=<span style="color:#0ff;font-weight:bold">&#34;data.totalClicks&#34;</span> <span style="color:#007f7f">source</span>=<span style="color:#0ff;font-weight:bold">&#34;data.cities&#34;</span>&gt;
-			&lt;<span style="font-weight:bold">button</span> <span style="color:#007f7f">class</span>=<span style="color:#0ff;font-weight:bold">&#34;btn btn-default&#34;</span> <span style="color:#007f7f">ng-repeat</span>=<span style="color:#0ff;font-weight:bold">&#34;city in data.cities&#34;</span>&gt;
+&lt;<span style="color:#f92672">body</span> <span style="color:#a6e22e">ng-controller</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;defaultCtrl&#34;</span>&gt;
+	&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;well&#34;</span>&gt;
+		&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn-group&#34;</span> <span style="color:#a6e22e">tri-button</span> <span style="color:#a6e22e">counter</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;data.totalClicks&#34;</span> <span style="color:#a6e22e">source</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;data.cities&#34;</span>&gt;
+			&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-default&#34;</span> <span style="color:#a6e22e">ng-repeat</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;city in data.cities&#34;</span>&gt;
 				{{city}}
-			&lt;/<span style="font-weight:bold">button</span>&gt;
-		&lt;/<span style="font-weight:bold">div</span>&gt;
-		&lt;<span style="font-weight:bold">h5</span>&gt; Total Clicks: {{data.totalClicks}}&lt;/<span style="font-weight:bold">h5</span>&gt;
-	&lt;/<span style="font-weight:bold">div</span>&gt;
-&lt;/<span style="font-weight:bold">body</span>&gt;
-&lt;/<span style="font-weight:bold">html</span>&gt;</code></pre></div>
+			&lt;/<span style="color:#f92672">button</span>&gt;
+		&lt;/<span style="color:#f92672">div</span>&gt;
+		&lt;<span style="color:#f92672">h5</span>&gt; Total Clicks: {{data.totalClicks}}&lt;/<span style="color:#f92672">h5</span>&gt;
+	&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;</code></pre></div>
 <p>클릭 시 클릭횟수를 출력합니다.</p>
 
 <p><img src="/img/angular/example.png" alt="example.png" /></p>
@@ -293,31 +281,31 @@ scope 계층화 &lt;!DOCTYPE html&gt; &lt;html lang=&#34;ko&#34; ng-app=&#34;app
 <h2 id="directive-를-분리하자">Directive 를 분리하자</h2>
 
 <p><strong>example2.html</strong></p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">	&lt;script&gt;
-		angular.module(<span style="color:#0ff;font-weight:bold">&#34;exampleApp&#34;</span>, [])
-		.controller(<span style="color:#0ff;font-weight:bold">&#34;defaultCtrl&#34;</span>, <span style="color:#fff;font-weight:bold">function</span>($scope) {
-			$scope.data = {
-				cities: [<span style="color:#0ff;font-weight:bold">&#34;London&#34;</span>, <span style="color:#0ff;font-weight:bold">&#34;New York&#34;</span>, <span style="color:#0ff;font-weight:bold">&#34;Paris&#34;</span>],
-				totalClicks: <span style="color:#ff0;font-weight:bold">0</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">	<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span><span style="color:#f92672">&gt;</span>
+		<span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#34;exampleApp&#34;</span>, [])
+		.<span style="color:#a6e22e">controller</span>(<span style="color:#e6db74">&#34;defaultCtrl&#34;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">$scope</span>) {
+			<span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> {
+				<span style="color:#a6e22e">cities</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;London&#34;</span>, <span style="color:#e6db74">&#34;New York&#34;</span>, <span style="color:#e6db74">&#34;Paris&#34;</span>],
+				<span style="color:#a6e22e">totalClicks</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>
 			};
 
-			$scope.$watch(<span style="color:#0ff;font-weight:bold">&#34;data.totalClicks&#34;</span>, <span style="color:#fff;font-weight:bold">function</span>(newVal) {
-				console.log(<span style="color:#0ff;font-weight:bold">&#34;Total click count: &#34;</span> + newVal);
+			<span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">$watch</span>(<span style="color:#e6db74">&#34;data.totalClicks&#34;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">newVal</span>) {
+				<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Total click count: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">newVal</span>);
 			});		
 		});
-	&lt;<span style="color:#f00">/script&gt;</span>
-        &lt;script src=<span style="color:#0ff;font-weight:bold">&#34;js/custom-dir.js&#34;</span>&gt;&lt;<span style="color:#f00">/script&gt;</span>
+	<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;js/custom-dir.js&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
 </code></pre></div>
 <p><strong>custom-dir.js</strong></p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">angular.module(<span style="color:#0ff;font-weight:bold">&#34;customDirective&#34;</span>)
-.directive(<span style="color:#0ff;font-weight:bold">&#34;triButton&#34;</span>, <span style="color:#fff;font-weight:bold">function</span>() {
-	<span style="color:#fff;font-weight:bold">return</span> {
-		scope: { counter: <span style="color:#0ff;font-weight:bold">&#34;=counter&#34;</span> },
-		link: <span style="color:#fff;font-weight:bold">function</span>(scope, element, attrs) {
-			element.on(<span style="color:#0ff;font-weight:bold">&#34;click&#34;</span>, <span style="color:#fff;font-weight:bold">function</span>(event) {
-				console.log(<span style="color:#0ff;font-weight:bold">&#34;Button click: &#34;</span> + event.target.innerText);
-				scope.$apply(<span style="color:#fff;font-weight:bold">function</span>() {
-					scope.counter++;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#34;customDirective&#34;</span>)
+.<span style="color:#a6e22e">directive</span>(<span style="color:#e6db74">&#34;triButton&#34;</span>, <span style="color:#66d9ef">function</span>() {
+	<span style="color:#66d9ef">return</span> {
+		<span style="color:#a6e22e">scope</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">counter</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;=counter&#34;</span> },
+		<span style="color:#a6e22e">link</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">scope</span>, <span style="color:#a6e22e">element</span>, <span style="color:#a6e22e">attrs</span>) {
+			<span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#34;click&#34;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">event</span>) {
+				<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Button click: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">innerText</span>);
+				<span style="color:#a6e22e">scope</span>.<span style="color:#a6e22e">$apply</span>(<span style="color:#66d9ef">function</span>() {
+					<span style="color:#a6e22e">scope</span>.<span style="color:#a6e22e">counter</span><span style="color:#f92672">++</span>;
 				});
 			});
 		}
@@ -328,20 +316,20 @@ scope 계층화 &lt;!DOCTYPE html&gt; &lt;html lang=&#34;ko&#34; ng-app=&#34;app
 <h2 id="directive를-새-모듈로-구성">Directive를 새 모듈로 구성</h2>
 
 <p><strong>example3.html</strong></p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    &lt;script src=<span style="color:#0ff;font-weight:bold">&#34;js/custom-dir.js&#34;</span>&gt;&lt;<span style="color:#f00">/script&gt;</span>
-	&lt;script&gt;
-		angular.module(<span style="color:#0ff;font-weight:bold">&#34;exampleApp&#34;</span>, [<span style="color:#0ff;font-weight:bold">&#34;customDirective&#34;</span>]) <span style="color:#007f7f">// added customDirective module as a dependency
-</span><span style="color:#007f7f"></span>		.controller(<span style="color:#0ff;font-weight:bold">&#34;defaultCtrl&#34;</span>, <span style="color:#fff;font-weight:bold">function</span>($scope) {
-			$scope.data = {
-				cities: [<span style="color:#0ff;font-weight:bold">&#34;London&#34;</span>, <span style="color:#0ff;font-weight:bold">&#34;New York&#34;</span>, <span style="color:#0ff;font-weight:bold">&#34;Paris&#34;</span>],
-				totalClicks: <span style="color:#ff0;font-weight:bold">0</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;js/custom-dir.js&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+	<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span><span style="color:#f92672">&gt;</span>
+		<span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#34;exampleApp&#34;</span>, [<span style="color:#e6db74">&#34;customDirective&#34;</span>]) <span style="color:#75715e">// added customDirective module as a dependency
+</span><span style="color:#75715e"></span>		.<span style="color:#a6e22e">controller</span>(<span style="color:#e6db74">&#34;defaultCtrl&#34;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">$scope</span>) {
+			<span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> {
+				<span style="color:#a6e22e">cities</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;London&#34;</span>, <span style="color:#e6db74">&#34;New York&#34;</span>, <span style="color:#e6db74">&#34;Paris&#34;</span>],
+				<span style="color:#a6e22e">totalClicks</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>
 			};
 
-			$scope.$watch(<span style="color:#0ff;font-weight:bold">&#34;data.totalClicks&#34;</span>, <span style="color:#fff;font-weight:bold">function</span>(newVal) {
-				console.log(<span style="color:#0ff;font-weight:bold">&#34;Total click count: &#34;</span> + newVal);
+			<span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">$watch</span>(<span style="color:#e6db74">&#34;data.totalClicks&#34;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">newVal</span>) {
+				<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Total click count: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">newVal</span>);
 			});		
 		});
-	&lt;<span style="color:#f00">/script&gt;</span>
+	<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
 </code></pre></div>
 <pre>
 <code class="js">
@@ -368,29 +356,29 @@ angular.module("customDirective",[])
 <h3 id="factory-메서드를-사용해서-구현">Factory 메서드를 사용해서 구현</h3>
 
 <p><strong>custom-srv.js</strong></p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">angular.module(<span style="color:#0ff;font-weight:bold">&#34;customService&#34;</span>, [])
-.factory(<span style="color:#0ff;font-weight:bold">&#34;logService&#34;</span>, <span style="color:#fff;font-weight:bold">function</span>() {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#34;customService&#34;</span>, [])
+.<span style="color:#a6e22e">factory</span>(<span style="color:#e6db74">&#34;logService&#34;</span>, <span style="color:#66d9ef">function</span>() {
 	
-	<span style="color:#fff;font-weight:bold">var</span> messageCount = <span style="color:#ff0;font-weight:bold">0</span>;
+	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">messageCount</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
 
-	<span style="color:#fff;font-weight:bold">return</span> {
-		log: <span style="color:#fff;font-weight:bold">function</span>(msg) {
-			console.log(<span style="color:#0ff;font-weight:bold">&#34;(LOG + &#34;</span> + messageCount++ + <span style="color:#0ff;font-weight:bold">&#34;) &#34;</span> + msg);
+	<span style="color:#66d9ef">return</span> {
+		<span style="color:#a6e22e">log</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">msg</span>) {
+			<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;(LOG + &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">messageCount</span><span style="color:#f92672">++</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;) &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">msg</span>);
 		}
 	};
 
 });
 </code></pre></div>
 <p><strong>custom-dir.js</strong></p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">angular.module(<span style="color:#0ff;font-weight:bold">&#34;customDirective&#34;</span>, [<span style="color:#0ff;font-weight:bold">&#34;customService&#34;</span>])
-.directive(<span style="color:#0ff;font-weight:bold">&#34;triButton&#34;</span>, <span style="color:#fff;font-weight:bold">function</span>(logService) {
-	<span style="color:#fff;font-weight:bold">return</span> {
-		scope: { counter: <span style="color:#0ff;font-weight:bold">&#34;=counter&#34;</span> },
-		link: <span style="color:#fff;font-weight:bold">function</span>(scope, element, attrs) {
-			element.on(<span style="color:#0ff;font-weight:bold">&#34;click&#34;</span>, <span style="color:#fff;font-weight:bold">function</span>(event) {
-				logService.log(<span style="color:#0ff;font-weight:bold">&#34;Button click: &#34;</span> + event.target.innerText);
-				scope.$apply(<span style="color:#fff;font-weight:bold">function</span>() {
-					scope.counter++;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#34;customDirective&#34;</span>, [<span style="color:#e6db74">&#34;customService&#34;</span>])
+.<span style="color:#a6e22e">directive</span>(<span style="color:#e6db74">&#34;triButton&#34;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">logService</span>) {
+	<span style="color:#66d9ef">return</span> {
+		<span style="color:#a6e22e">scope</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">counter</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;=counter&#34;</span> },
+		<span style="color:#a6e22e">link</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">scope</span>, <span style="color:#a6e22e">element</span>, <span style="color:#a6e22e">attrs</span>) {
+			<span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#34;click&#34;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">event</span>) {
+				<span style="color:#a6e22e">logService</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Button click: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">innerText</span>);
+				<span style="color:#a6e22e">scope</span>.<span style="color:#a6e22e">$apply</span>(<span style="color:#66d9ef">function</span>() {
+					<span style="color:#a6e22e">scope</span>.<span style="color:#a6e22e">counter</span><span style="color:#f92672">++</span>;
 				});
 			});
 		}
@@ -399,62 +387,62 @@ angular.module("customDirective",[])
 });
 </code></pre></div>
 <p><strong>example4.html</strong></p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">	&lt;script src=<span style="color:#0ff;font-weight:bold">&#34;js/custom-dir.js&#34;</span>&gt;&lt;<span style="color:#f00">/script&gt;</span>
-	&lt;script src=<span style="color:#0ff;font-weight:bold">&#34;js/custom-srv.js&#34;</span>&gt;&lt;<span style="color:#f00">/script&gt;</span>
-	&lt;script&gt;
-		angular.module(<span style="color:#0ff;font-weight:bold">&#34;exampleApp&#34;</span>, [<span style="color:#0ff;font-weight:bold">&#34;customDirective&#34;</span>, <span style="color:#0ff;font-weight:bold">&#34;customService&#34;</span>])
-		.controller(<span style="color:#0ff;font-weight:bold">&#34;defaultCtrl&#34;</span>, <span style="color:#fff;font-weight:bold">function</span>($scope, logService) {
-			$scope.data = {
-				cities: [<span style="color:#0ff;font-weight:bold">&#34;London&#34;</span>, <span style="color:#0ff;font-weight:bold">&#34;New York&#34;</span>, <span style="color:#0ff;font-weight:bold">&#34;Paris&#34;</span>],
-				totalClicks: <span style="color:#ff0;font-weight:bold">0</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">	<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;js/custom-dir.js&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+	<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;js/custom-srv.js&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+	<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span><span style="color:#f92672">&gt;</span>
+		<span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#34;exampleApp&#34;</span>, [<span style="color:#e6db74">&#34;customDirective&#34;</span>, <span style="color:#e6db74">&#34;customService&#34;</span>])
+		.<span style="color:#a6e22e">controller</span>(<span style="color:#e6db74">&#34;defaultCtrl&#34;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">$scope</span>, <span style="color:#a6e22e">logService</span>) {
+			<span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> {
+				<span style="color:#a6e22e">cities</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;London&#34;</span>, <span style="color:#e6db74">&#34;New York&#34;</span>, <span style="color:#e6db74">&#34;Paris&#34;</span>],
+				<span style="color:#a6e22e">totalClicks</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>
 			};
 
-			$scope.$watch(<span style="color:#0ff;font-weight:bold">&#34;data.totalClicks&#34;</span>, <span style="color:#fff;font-weight:bold">function</span>(newVal) {
-				logService.log(<span style="color:#0ff;font-weight:bold">&#34;Total click count: &#34;</span> + newVal);
+			<span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">$watch</span>(<span style="color:#e6db74">&#34;data.totalClicks&#34;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">newVal</span>) {
+				<span style="color:#a6e22e">logService</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Total click count: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">newVal</span>);
 			});		
 		});
-	&lt;<span style="color:#f00">/script&gt;</span>
+	<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
 </code></pre></div>
 <p>!example4.png!</p>
 
 <h3 id="service-method를-사용해서-구현">Service Method를 사용해서 구현</h3>
 
 <p><strong>custom-logger.js</strong></p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#fff;font-weight:bold">var</span> baseLogger = <span style="color:#fff;font-weight:bold">function</span>() {
-        console.log(<span style="color:#0ff;font-weight:bold">&#34;init!!&#34;</span>);
-	<span style="color:#fff;font-weight:bold">this</span>.messageCount = <span style="color:#ff0;font-weight:bold">0</span>;
-	<span style="color:#fff;font-weight:bold">this</span>.log = <span style="color:#fff;font-weight:bold">function</span>(msg) {
-		console.log(<span style="color:#fff;font-weight:bold">this</span>.msgType + <span style="color:#0ff;font-weight:bold">&#34;: &#34;</span> + (<span style="color:#fff;font-weight:bold">this</span>.messageCount++) + <span style="color:#0ff;font-weight:bold">&#34; &#34;</span> + msg);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">baseLogger</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;init!!&#34;</span>);
+	<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">messageCount</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">log</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">msg</span>) {
+		<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">msgType</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;: &#34;</span> <span style="color:#f92672">+</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">messageCount</span><span style="color:#f92672">++</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">msg</span>);
 	}
 };
 
-<span style="color:#fff;font-weight:bold">var</span> debugLogger = <span style="color:#fff;font-weight:bold">function</span>() {};
-debugLogger.prototype = <span style="color:#fff;font-weight:bold">new</span> baseLogger();
-debugLogger.prototype.msgType = <span style="color:#0ff;font-weight:bold">&#34;Debug&#34;</span>;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">debugLogger</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {};
+<span style="color:#a6e22e">debugLogger</span>.<span style="color:#a6e22e">prototype</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">baseLogger</span>();
+<span style="color:#a6e22e">debugLogger</span>.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">msgType</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Debug&#34;</span>;
 
-<span style="color:#fff;font-weight:bold">var</span> errorLogger = <span style="color:#fff;font-weight:bold">function</span>() {};
-errorLogger.prototype = <span style="color:#fff;font-weight:bold">new</span> baseLogger();
-errorLogger.prototype.msgType = <span style="color:#0ff;font-weight:bold">&#34;Error&#34;</span>;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">errorLogger</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {};
+<span style="color:#a6e22e">errorLogger</span>.<span style="color:#a6e22e">prototype</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">baseLogger</span>();
+<span style="color:#a6e22e">errorLogger</span>.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">msgType</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Error&#34;</span>;
 
-angular.module(<span style="color:#0ff;font-weight:bold">&#34;customService&#34;</span>,[])
-.service(<span style="color:#0ff;font-weight:bold">&#34;logService&#34;</span>, debugLogger)  <span style="color:#007f7f">//서비스 생성자 메서드를 이용해서 구현, 즉  angularjs에서 apply메서드를 호출하기 때문에 생성자를 만들어야 한다.
-</span><span style="color:#007f7f"></span>.service(<span style="color:#0ff;font-weight:bold">&#34;errorService&#34;</span>, errorLogger);
+<span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#34;customService&#34;</span>,[])
+.<span style="color:#a6e22e">service</span>(<span style="color:#e6db74">&#34;logService&#34;</span>, <span style="color:#a6e22e">debugLogger</span>)  <span style="color:#75715e">//서비스 생성자 메서드를 이용해서 구현, 즉  angularjs에서 apply메서드를 호출하기 때문에 생성자를 만들어야 한다.
+</span><span style="color:#75715e"></span>.<span style="color:#a6e22e">service</span>(<span style="color:#e6db74">&#34;errorService&#34;</span>, <span style="color:#a6e22e">errorLogger</span>);
 </code></pre></div>
 <p><strong>example5.html</strong></p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">	&lt;script src=<span style="color:#0ff;font-weight:bold">&#34;js/custom-logger.js&#34;</span>&gt;&lt;<span style="color:#f00">/script&gt;</span>
-	&lt;script&gt;
-		angular.module(<span style="color:#0ff;font-weight:bold">&#34;exampleApp&#34;</span>, [<span style="color:#0ff;font-weight:bold">&#34;customDirective&#34;</span>, <span style="color:#0ff;font-weight:bold">&#34;customService&#34;</span>])
-		.controller(<span style="color:#0ff;font-weight:bold">&#34;defaultCtrl&#34;</span>, <span style="color:#fff;font-weight:bold">function</span>($scope, logService) {
-			$scope.data = {
-				cities: [<span style="color:#0ff;font-weight:bold">&#34;London&#34;</span>, <span style="color:#0ff;font-weight:bold">&#34;New York&#34;</span>, <span style="color:#0ff;font-weight:bold">&#34;Paris&#34;</span>],
-				totalClicks: <span style="color:#ff0;font-weight:bold">0</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">	<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;js/custom-logger.js&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+	<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span><span style="color:#f92672">&gt;</span>
+		<span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#34;exampleApp&#34;</span>, [<span style="color:#e6db74">&#34;customDirective&#34;</span>, <span style="color:#e6db74">&#34;customService&#34;</span>])
+		.<span style="color:#a6e22e">controller</span>(<span style="color:#e6db74">&#34;defaultCtrl&#34;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">$scope</span>, <span style="color:#a6e22e">logService</span>) {
+			<span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> {
+				<span style="color:#a6e22e">cities</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;London&#34;</span>, <span style="color:#e6db74">&#34;New York&#34;</span>, <span style="color:#e6db74">&#34;Paris&#34;</span>],
+				<span style="color:#a6e22e">totalClicks</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>
 			};
 
-			$scope.$watch(<span style="color:#0ff;font-weight:bold">&#34;data.totalClicks&#34;</span>, <span style="color:#fff;font-weight:bold">function</span>(newVal) {
-				logService.log(<span style="color:#0ff;font-weight:bold">&#34;Total click count: &#34;</span> + newVal);
+			<span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">$watch</span>(<span style="color:#e6db74">&#34;data.totalClicks&#34;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">newVal</span>) {
+				<span style="color:#a6e22e">logService</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Total click count: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">newVal</span>);
 			});		
 		});
-	&lt;<span style="color:#f00">/script&gt;</span>
+	<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
 </code></pre></div>
 <p>!example5.png!</p>
 
@@ -474,37 +462,37 @@ angular.module(<span style="color:#0ff;font-weight:bold">&#34;customService&#34;
 <p>Provider를 이용하면 config메서드를 사용하여 설정정보를 전달 할 수 있다.</p>
 
 <p><strong>custom-provider.js</strong></p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">angular.module(<span style="color:#0ff;font-weight:bold">&#34;customService&#34;</span>, [])
-.provider(<span style="color:#0ff;font-weight:bold">&#34;logService&#34;</span>, <span style="color:#fff;font-weight:bold">function</span>() {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#34;customService&#34;</span>, [])
+.<span style="color:#a6e22e">provider</span>(<span style="color:#e6db74">&#34;logService&#34;</span>, <span style="color:#66d9ef">function</span>() {
 
-	<span style="color:#fff;font-weight:bold">var</span> counter = <span style="color:#fff;font-weight:bold">true</span>;
-	<span style="color:#fff;font-weight:bold">var</span> debug = <span style="color:#fff;font-weight:bold">true</span>;
+	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">counter</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">debug</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
 
-	<span style="color:#fff;font-weight:bold">return</span> {
-		messageCounterEnabled: <span style="color:#fff;font-weight:bold">function</span>(setting) {
-			<span style="color:#fff;font-weight:bold">if</span>(angular.isDefined(setting)) {
-				counter = setting;
-				<span style="color:#fff;font-weight:bold">return</span> <span style="color:#fff;font-weight:bold">this</span>;
-			}<span style="color:#fff;font-weight:bold">else</span> {
-				<span style="color:#fff;font-weight:bold">return</span> counter;
+	<span style="color:#66d9ef">return</span> {
+		<span style="color:#a6e22e">messageCounterEnabled</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">setting</span>) {
+			<span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">isDefined</span>(<span style="color:#a6e22e">setting</span>)) {
+				<span style="color:#a6e22e">counter</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">setting</span>;
+				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>;
+			}<span style="color:#66d9ef">else</span> {
+				<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">counter</span>;
 			}
 		},
 
-		debugEnabled: <span style="color:#fff;font-weight:bold">function</span>(setting) {
-			<span style="color:#fff;font-weight:bold">if</span>(angular.isDefined(setting)) {
-				debug = setting;
-				<span style="color:#fff;font-weight:bold">return</span> <span style="color:#fff;font-weight:bold">this</span>;
-			}<span style="color:#fff;font-weight:bold">else</span> {
-				<span style="color:#fff;font-weight:bold">return</span> debug;
+		<span style="color:#a6e22e">debugEnabled</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">setting</span>) {
+			<span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">isDefined</span>(<span style="color:#a6e22e">setting</span>)) {
+				<span style="color:#a6e22e">debug</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">setting</span>;
+				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>;
+			}<span style="color:#66d9ef">else</span> {
+				<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">debug</span>;
 			}
 		},
 
-		$get: <span style="color:#fff;font-weight:bold">function</span>() {
-			<span style="color:#fff;font-weight:bold">return</span> {
-				messageCount: <span style="color:#ff0;font-weight:bold">0</span>,
-				log: <span style="color:#fff;font-weight:bold">function</span>(msg) {
-					<span style="color:#fff;font-weight:bold">if</span>(debug) {
-						console.log(<span style="color:#0ff;font-weight:bold">&#34;(LOG +&#34;</span> + (counter? <span style="color:#fff;font-weight:bold">this</span>.messageCount++ : <span style="color:#0ff;font-weight:bold">&#34;&#34;</span>) + <span style="color:#0ff;font-weight:bold">&#34;) &#34;</span> + msg);						
+		<span style="color:#a6e22e">$get</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
+			<span style="color:#66d9ef">return</span> {
+				<span style="color:#a6e22e">messageCount</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
+				<span style="color:#a6e22e">log</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">msg</span>) {
+					<span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">debug</span>) {
+						<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;(LOG +&#34;</span> <span style="color:#f92672">+</span> (<span style="color:#a6e22e">counter</span><span style="color:#f92672">?</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">messageCount</span><span style="color:#f92672">++</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;) &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">msg</span>);						
 					}
 				}
 			};
@@ -515,57 +503,74 @@ angular.module(<span style="color:#0ff;font-weight:bold">&#34;customService&#34;
 <p><strong>example6.html</strong></p>
 
 <p>이제 로그가 출력되지 않는다.</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">&lt;script src=<span style="color:#0ff;font-weight:bold">&#34;js/custom-dir.js&#34;</span>&gt;&lt;<span style="color:#f00">/script&gt;</span>
-	&lt;script src=<span style="color:#0ff;font-weight:bold">&#34;js/custom-provider.js&#34;</span>&gt;&lt;<span style="color:#f00">/script&gt;</span>
-	&lt;script&gt;
-		angular.module(<span style="color:#0ff;font-weight:bold">&#34;exampleApp&#34;</span>, [<span style="color:#0ff;font-weight:bold">&#34;customDirective&#34;</span>, <span style="color:#0ff;font-weight:bold">&#34;customService&#34;</span>])
-		.config( <span style="color:#fff;font-weight:bold">function</span>(logServiceProvider){
-			logServiceProvider.debugEnabled(<span style="color:#fff;font-weight:bold">false</span>).messageCounterEnabled(<span style="color:#fff;font-weight:bold">false</span>);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;js/custom-dir.js&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+	<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;js/custom-provider.js&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+	<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span><span style="color:#f92672">&gt;</span>
+		<span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#34;exampleApp&#34;</span>, [<span style="color:#e6db74">&#34;customDirective&#34;</span>, <span style="color:#e6db74">&#34;customService&#34;</span>])
+		.<span style="color:#a6e22e">config</span>( <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">logServiceProvider</span>){
+			<span style="color:#a6e22e">logServiceProvider</span>.<span style="color:#a6e22e">debugEnabled</span>(<span style="color:#66d9ef">false</span>).<span style="color:#a6e22e">messageCounterEnabled</span>(<span style="color:#66d9ef">false</span>);
 		})
-		.controller(<span style="color:#0ff;font-weight:bold">&#34;defaultCtrl&#34;</span>, <span style="color:#fff;font-weight:bold">function</span>($scope, logService) {
-			$scope.data = {
-				cities: [<span style="color:#0ff;font-weight:bold">&#34;London&#34;</span>, <span style="color:#0ff;font-weight:bold">&#34;New York&#34;</span>, <span style="color:#0ff;font-weight:bold">&#34;Paris&#34;</span>],
-				totalClicks: <span style="color:#ff0;font-weight:bold">0</span>
+		.<span style="color:#a6e22e">controller</span>(<span style="color:#e6db74">&#34;defaultCtrl&#34;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">$scope</span>, <span style="color:#a6e22e">logService</span>) {
+			<span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> {
+				<span style="color:#a6e22e">cities</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;London&#34;</span>, <span style="color:#e6db74">&#34;New York&#34;</span>, <span style="color:#e6db74">&#34;Paris&#34;</span>],
+				<span style="color:#a6e22e">totalClicks</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>
 			};
 
-			$scope.$watch(<span style="color:#0ff;font-weight:bold">&#34;data.totalClicks&#34;</span>, <span style="color:#fff;font-weight:bold">function</span>(newVal) {
-				logService.log(<span style="color:#0ff;font-weight:bold">&#34;Total click count: &#34;</span> + newVal);
+			<span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">$watch</span>(<span style="color:#e6db74">&#34;data.totalClicks&#34;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">newVal</span>) {
+				<span style="color:#a6e22e">logService</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Total click count: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">newVal</span>);
 			});		
 		});
-	&lt;<span style="color:#f00">/script&gt;</span>
-</code></pre></div></p>
-    <p class="card-text text-right">
-      
-      <a href="http://clonekim.github.io/tags/angularjs" class="btn btn-outline-success btn-sm">
-        angularjs
-      </a>
-      
-    </p>
-  </div>
-</div>
+	<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+</code></pre></div>
+              </div>
+              <div class="columns is-mobile post-meta">
+                <div class="column is-half-desktop has-text-left is-paddingless"> 
+                   
+                  이전:<a href="http://clonekim.github.io/posts/2014/2014-10-03-backbone_handlebar_gulp_tip/"> backbone &#43; handlebar &#43; gulp 팁</a>
+                  
+                </div>
+                <div class="column is-half-desktop has-text-right is-paddingless">
+                  
+                  이후:<a href="http://clonekim.github.io/posts/2014/2014-12-29-requirejs/"> RequireJS 예제</a>
+                  
+                </div>
+                <div class="is-clearfix"></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </main>    <footer class="footer">
+    
+        <div class="copyright has-text-centered">
+            <a href="https://bulma.io">
+                <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
+            </a>
+            <p>© Bonjour! Power by Hugo</p>
+        </div>
+    </footer>
+    <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+        
+        if ($navbarBurgers.length > 0) {
+            
+            $navbarBurgers.forEach( el => {
+                el.addEventListener('click', () => {
+                
+                const target = el.dataset.target;
+                const $target = document.getElementById(target);
+                
+                el.classList.toggle('is-active');
+                $target.classList.toggle('is-active');
+    
+                });
+            });
+        }
+    });
+    
 
-
-
-<div id="disqus_thread"></div>
-<script type="text/javascript">
- (function() {
-   
-   
-   if (window.location.hostname == "localhost")
-     return;
-   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-   var disqus_shortname = 'clonekim-github-io';
-   dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
- })();
-</script>
-<noscript>
-  Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-</noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
-
-
-        </div></body>
+    </script>
+</body>
 </html>

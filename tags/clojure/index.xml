@@ -6,6 +6,8 @@
     <description>Recent content in clojure on Bonjour!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
+    <managingEditor>clonekim-at-gmail-dot-com (DAEHEE KIM)</managingEditor>
+    <webMaster>clonekim-at-gmail-dot-com (DAEHEE KIM)</webMaster>
     <lastBuildDate>Fri, 14 Jul 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://clonekim.github.io/tags/clojure/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +17,7 @@
       <title>Freemarker를 Clojure에서</title>
       <link>http://clonekim.github.io/posts/2017/2017-07-14-using-freemarker-from-clojure/</link>
       <pubDate>Fri, 14 Jul 2017 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2017/2017-07-14-using-freemarker-from-clojure/</guid>
       <description>참고소스
  [freemarker-clj &amp;quot;0.1.0&amp;quot;]  freemarker-clj
@@ -28,7 +30,7 @@
       <title>Clojure(Script)로 게임제작</title>
       <link>http://clonekim.github.io/posts/2016/2016-01-14-clojurescript-gaming/</link>
       <pubDate>Thu, 14 Jan 2016 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2016/2016-01-14-clojurescript-gaming/</guid>
       <description>PARENS OF THE DEAD</description>
     </item>
@@ -37,7 +39,7 @@
       <title>Clojure 시작하기</title>
       <link>http://clonekim.github.io/posts/2015/2015-09-25-starting-clojure/</link>
       <pubDate>Fri, 25 Sep 2015 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2015/2015-09-25-starting-clojure/</guid>
       <description>JVM위에서 작동하는 함수형 프로그래밍이다
 clojure 얻기 http://clojure.org
@@ -53,7 +55,7 @@ Project 생성 lein new [프로젝트명]  프로젝트 의존성 추가 라이�
       <title>클로저에서 Jdbc</title>
       <link>http://clonekim.github.io/posts/2015/2015-09-25-jdbc-in-clojure/</link>
       <pubDate>Fri, 25 Sep 2015 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2015/2015-09-25-jdbc-in-clojure/</guid>
       <description> 클로저에서 JDBC(Java Database Connectivity) 를 사용하기 위한 가이드
 몇몇 함수가 없어진 경우가 있기 때문에 소스보기로 확인할 것
@@ -64,7 +66,7 @@ Project 생성 lein new [프로젝트명]  프로젝트 의존성 추가 라이�
       <title>Clojure를 위한 Emacs 환경</title>
       <link>http://clonekim.github.io/posts/2015/2015-09-11-custom-emacs-setting/</link>
       <pubDate>Fri, 11 Sep 2015 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2015/2015-09-11-custom-emacs-setting/</guid>
       <description>Emacs 24를 기준으로 작성
 현재 사용중인 환경은 custom-emacs.tgz
@@ -81,7 +83,7 @@ Cider와 cider-nrepl의 버전이 맞아야함  profiles.clj
       <title>Ring으로 웹프로그래밍</title>
       <link>http://clonekim.github.io/posts/2015/2015-09-11-ring-web-programming/</link>
       <pubDate>Fri, 11 Sep 2015 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2015/2015-09-11-ring-web-programming/</guid>
       <description>## Hello-Ring 프로젝트 작성
 새로운 프로젝트를 생성한다

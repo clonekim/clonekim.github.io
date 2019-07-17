@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html><head>
+	<meta name="generator" content="Hugo 0.55.6" />
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    
+    <meta name="author"
+            content="DAEHEE KIM"/>
+
+    
+
+    
+
+    
+    <link rel="canonical" href="http://clonekim.github.io/"/>
+
+    
+    <link rel="alternate" type="application/rss&#43;xml" href="http://clonekim.github.io/index.xml">
+    
+
+    
+    
+    
+        
+            
+        
+    
+    <title>Bonjour!</title>
+
+    <link rel="shortcut icon" href="http://clonekim.github.io/favicon.jpg"/>
+    <link rel="stylesheet" href="http://clonekim.github.io/css/bulma.min.css"/>
+    <link rel="stylesheet" href="http://clonekim.github.io/css/style.css"/>
+</head><body><header>
+    <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand is-size-4">
+            <a class="navbar-item" href="http://clonekim.github.io/">
+                    Bonjour!
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="navbar-menu" class="navbar-menu">
+            <div class="navbar-end">
+                
+                    
+                        <a class="navbar-item" href="/tags">태그</a>
+                    
+                
+            </div>
+            </div>
+    </nav>
+</header><main>
+      <div class="container">
+        <div class="columns"><section class="posts">
+
+<article class="post box is-radiusless">
+    <div class="post-title">
+        <a class="post-title-link" href="/posts/2012/2012-10-17-ognl-in-java/"><h2 class="is-size-4 has-text-dark">OGNL</h2></a>
+    </div>
+    <div class="post-meta">
+        <span class="post-time">2012-01-17</span>
+    </div>
+    <div class="post-excerpt content">
+        Maven
+&lt;dependency&gt; &lt;groupId&gt;ognl&lt;/groupId&gt; &lt;artifactId&gt;ognl&lt;/artifactId&gt; &lt;version&gt;3.0.5&lt;/version&gt; &lt;/dependency&gt; 소스
+Map&lt;String, Object&gt; map = new HashMap&lt;String, Object&gt;(); map.put(&#34;book&#34;, &#34;모바일 웹앱&#34;); System.out.println(Ognl.getValue(Ognl.parseExpression(&#34;book&#34;), map)); Map context = new HashMap(); List&lt;String&gt; values1 = (List)Ognl.getValue(&#34;{123,&#39;abc&#39;,&#39;00oo&#39;}&#34;, context, new Object()); System.out.println(values1); Map values2 = (Map) Ognl.getValue(&#34;#{123:333,&#39;abc&#39;:111, &#39;bbb&#39;:&#39;Kim&#39;, &#39;other&#39;:&#39;[0,2,3,4,5]&#39;}&#34;, context, new Object()); System.out.println(values2); 출력
+모바일 웹앱 [123, abc, 00oo] {123=333, abc=111, bbb=Kim, other=[0,2,3,4,5]}  
+    </div>
+    <a href="/posts/2012/2012-10-17-ognl-in-java/">more</a>
+    </article>
+
+<article class="post box is-radiusless">
+    <div class="post-title">
+        <a class="post-title-link" href="/posts/2011/2011-06-12-java-date-bug/"><h2 class="is-size-4 has-text-dark">Java Date에러</h2></a>
+    </div>
+    <div class="post-meta">
+        <span class="post-time">2011-06-12</span>
+    </div>
+    <div class="post-excerpt content">
+         Override time zone 생성한 Date 객체가 KST가 아닌 자꾸 GMT로 출력 될 경우
+System.setProperty(&#34;user.timezone&#34;, &#34;Asia/Seoul&#34;) ex) System.setProperty(&#34;user.timezone&#34;, &#34;UTC&#34;); TimeZone.setDefault(null); //reset 하기 위해 반드시 필요함 서버를 구동시에 -D 옵션으로 설정할 것
+참고  Override a Java application&rsquo;s time zone Java&rsquo;s java.util.TimeZone  
+    </div>
+    <a href="/posts/2011/2011-06-12-java-date-bug/">more</a>
+    </article>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="page-nav">
+    
+    <a href="/page/11/" class="extend prev">First</a>
+    
+
+    
+
+      
+
+        
+
+        
+          
+        
+
+        
+
+        
+
+        
+
+        
+
+      
+
+      
+      
+          <a href="/" class="page-number">1</a>
+      
+
+    
+
+      
+
+        
+
+        
+
+        
+          
+            <span class="space">...</span>
+          
+        
+
+        
+
+        
+
+        
+
+      
+
+      
+      
+
+    
+
+      
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+      
+
+      
+      
+
+    
+
+      
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+      
+
+      
+      
+
+    
+
+      
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+      
+
+      
+      
+
+    
+
+      
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+      
+
+      
+      
+
+    
+
+      
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+      
+
+      
+      
+
+    
+
+      
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+      
+
+      
+      
+
+    
+
+      
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+      
+
+      
+      
+
+    
+
+      
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+      
+
+      
+      
+
+    
+
+      
+
+        
+
+        
+
+        
+
+        
+          
+        
+
+        
+          
+        
+
+        
+
+      
+
+      
+      
+          <a href="/page/11/" class="page-number">11</a>
+      
+
+    
+
+      
+
+        
+
+        
+
+        
+
+        
+          
+        
+
+        
+
+        
+          
+        
+
+      
+
+      
+      
+          <a href="/page/12/" class="page-number current">12</a>
+      
+
+        
+
+
+    
+
+</nav>
+
+</div>
+      </div>
+    </main>    <footer class="footer">
+    
+        <div class="copyright has-text-centered">
+            <a href="https://bulma.io">
+                <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
+            </a>
+            <p>© Bonjour! Power by Hugo</p>
+        </div>
+    </footer>
+    <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+        
+        if ($navbarBurgers.length > 0) {
+            
+            $navbarBurgers.forEach( el => {
+                el.addEventListener('click', () => {
+                
+                const target = el.dataset.target;
+                const $target = document.getElementById(target);
+                
+                el.classList.toggle('is-active');
+                $target.classList.toggle('is-active');
+    
+                });
+            });
+        }
+    });
+    
+
+    </script>
+</body>
+</html>

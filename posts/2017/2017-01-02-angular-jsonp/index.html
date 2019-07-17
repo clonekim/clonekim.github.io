@@ -1,91 +1,75 @@
 <!DOCTYPE html>
-<html lang="ko"><head>
-  <meta charset="utf-8" />
-  <meta name="author" content="DAEHEE KIM" />
-  <meta name="description" content="Personal blog." />
-  <meta name="keywords" content="blog, tech" />
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<html><head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <link rel="canonical" href="http://clonekim.github.io/posts/2017/2017-01-02-angular-jsonp/">
-  <base href="http://clonekim.github.io/" />
-  <meta property="og:title" content="Angular 1.6 사용" />
-<meta property="og:description" content="angular 1.6 이상적용
-PREFIX
-이제 기본값으로 !가 붙는다
-.config([&#39;$locationProvider&#39;, function($locationProvider){ $locationProvider.hashPrefix(&#39;&#39;); }])  JSONP
-$http.json(url, {jsonpCallbackParam: &#39;callback&#39;}) .then(function(res) { ... })  " />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://clonekim.github.io/posts/2017/2017-01-02-angular-jsonp/" />
-<meta property="article:published_time" content="2017-01-02T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2017-01-02T00:00:00&#43;00:00"/>
+    
+    <meta name="author"
+            content="DAEHEE KIM"/>
 
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Angular 1.6 사용"/>
-<meta name="twitter:description" content="angular 1.6 이상적용
+    
+    <meta name="description" content="angular 1.6 이상적용
 PREFIX
 이제 기본값으로 !가 붙는다
 .config([&#39;$locationProvider&#39;, function($locationProvider){ $locationProvider.hashPrefix(&#39;&#39;); }])  JSONP
 $http.json(url, {jsonpCallbackParam: &#39;callback&#39;}) .then(function(res) { ... })  "/>
+    
 
-  
-  
-<meta itemprop="name" content="Angular 1.6 사용">
-<meta itemprop="description" content="angular 1.6 이상적용
-PREFIX
-이제 기본값으로 !가 붙는다
-.config([&#39;$locationProvider&#39;, function($locationProvider){ $locationProvider.hashPrefix(&#39;&#39;); }])  JSONP
-$http.json(url, {jsonpCallbackParam: &#39;callback&#39;}) .then(function(res) { ... })  ">
+    
 
+    
+    <link rel="canonical" href="http://clonekim.github.io/posts/2017/2017-01-02-angular-jsonp/"/>
 
-<meta itemprop="datePublished" content="2017-01-02T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2017-01-02T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="20">
+    
 
+    
+    
+    
+        
+            
+        
+    
+    <title> Angular 1.6 사용 | Bonjour! </title>
 
-
-<meta itemprop="keywords" content="angularjs," />
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <title>Bonjour!</title>
-  <style>
-   pre {
-     margin: 1em 0em 1em;
-     padding: 0.5em 0.5em 0.5em;
-     border: 1px solid #5C5C5C;
-   }
-
-   code {
-     white-space: pre-wrap;        
-     white-space: -moz-pre-wrap;   
-     white-space: -pre-wrap;       
-     white-space: -o-pre-wrap;     
-     word-wrap: break-word;        
-     line-height: 1.4em;
-   }
-
-   blockquote { background: #1D1F21; border-left: 3px solid #99cc66; }
-   table { margin: 1em auto; border-collapse: collapse; }
-   table, th, td { border: 1px solid #5C5C5C; }
-   tr:hover { background: #1D1F21; }
-  </style>
-  <link rel="stylesheet" href="css/tomorrow-night.min.css" />
-  <script src="js/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-</head>
-<body><h3><a href="http://clonekim.github.io/">Bonjour!</a></h3>
-<div id="content" class="container">
-<div class="card border-primary">
-  <div class="card-header text-right">
-    <small>Jan 2, 2017</small>
-  </div>
-  <div class="card-body">
-    <a  href="http://clonekim.github.io/posts/2017/2017-01-02-angular-jsonp/">
-      <h5 class="card-title">Angular 1.6 사용</h5>
-    </a>
-    <p class="card-text"><p><strong>angular 1.6 이상적용</strong></p>
+    <link rel="shortcut icon" href="http://clonekim.github.io/favicon.jpg"/>
+    <link rel="stylesheet" href="http://clonekim.github.io/css/bulma.min.css"/>
+    <link rel="stylesheet" href="http://clonekim.github.io/css/style.css"/>
+</head><body><header>
+    <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand is-size-4">
+            <a class="navbar-item" href="http://clonekim.github.io/">
+                    Bonjour!
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="navbar-menu" class="navbar-menu">
+            <div class="navbar-end">
+                
+                    
+                        <a class="navbar-item" href="/tags">태그</a>
+                    
+                
+            </div>
+            </div>
+    </nav>
+</header><main>
+      <div class="container">
+        <div class="columns">
+          <div class="column is-four-fifths">
+            <article class="post box is-radiusless">
+              <div class="post-title">
+                <h2 class="is-size-4">Angular 1.6 사용</h2>
+              </div>
+              <div class="post-meta">
+                <span class="post-time">2017-01-02</span>
+              </div>
+              <div class="post-content content">
+                <p><strong>angular 1.6 이상적용</strong></p>
 
 <p><em>PREFIX</em></p>
 
@@ -105,39 +89,56 @@ $http.json(url, {jsonpCallbackParam: &#39;callback&#39;}) .then(function(res) { 
   ...
 })
 </code></pre>
-</p>
-    <p class="card-text text-right">
-      
-      <a href="http://clonekim.github.io/tags/angularjs" class="btn btn-outline-success btn-sm">
-        angularjs
-      </a>
-      
-    </p>
-  </div>
-</div>
 
+              </div>
+              <div class="columns is-mobile post-meta">
+                <div class="column is-half-desktop has-text-left is-paddingless"> 
+                   
+                  이전:<a href="http://clonekim.github.io/posts/2016/2016-09-20-using-jquery-in-clojurescript/"> clojurescript에서 jquery사용</a>
+                  
+                </div>
+                <div class="column is-half-desktop has-text-right is-paddingless">
+                  
+                  이후:<a href="http://clonekim.github.io/posts/2017/2017-07-14-using-freemarker-from-clojure/"> Freemarker를 Clojure에서</a>
+                  
+                </div>
+                <div class="is-clearfix"></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </main>    <footer class="footer">
+    
+        <div class="copyright has-text-centered">
+            <a href="https://bulma.io">
+                <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
+            </a>
+            <p>© Bonjour! Power by Hugo</p>
+        </div>
+    </footer>
+    <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+        
+        if ($navbarBurgers.length > 0) {
+            
+            $navbarBurgers.forEach( el => {
+                el.addEventListener('click', () => {
+                
+                const target = el.dataset.target;
+                const $target = document.getElementById(target);
+                
+                el.classList.toggle('is-active');
+                $target.classList.toggle('is-active');
+    
+                });
+            });
+        }
+    });
+    
 
-
-<div id="disqus_thread"></div>
-<script type="text/javascript">
- (function() {
-   
-   
-   if (window.location.hostname == "localhost")
-     return;
-   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-   var disqus_shortname = 'clonekim-github-io';
-   dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
- })();
-</script>
-<noscript>
-  Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-</noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
-
-
-        </div></body>
+    </script>
+</body>
 </html>

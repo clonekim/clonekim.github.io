@@ -6,6 +6,8 @@
     <description>Recent content in Posts on Bonjour!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
+    <managingEditor>clonekim-at-gmail-dot-com (DAEHEE KIM)</managingEditor>
+    <webMaster>clonekim-at-gmail-dot-com (DAEHEE KIM)</webMaster>
     <lastBuildDate>Mon, 24 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://clonekim.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +17,7 @@
       <title>Spark</title>
       <link>http://clonekim.github.io/posts/2018/2018-12-24-aggregation-tags-with-spark/</link>
       <pubDate>Mon, 24 Dec 2018 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2018/2018-12-24-aggregation-tags-with-spark/</guid>
       <description>현재 특정 테이블의 태그정보와 아래와 같다
 특정컬럼에 태그 값이 컴마 구분으로 들어있음
@@ -27,7 +29,7 @@
       <title>Spark - Docker 이미지만들기</title>
       <link>http://clonekim.github.io/posts/2018/2018-12-24-how-spark/</link>
       <pubDate>Mon, 24 Dec 2018 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2018/2018-12-24-how-spark/</guid>
       <description>Spark Docker를 이용한 스파크 실습  Docker Image 만들기 spark-version-tgz는 미리 홈페이지에서 다운받아둘것
 ├── Dockerfile ├── config │ ├── core-site.xml │ ├── hdfs-site.xml │ └── spark-env.sh ├── spark-2.4.0-bin-hadoop2.7.tgz └── start-spark.sh  Dockerfile
@@ -38,7 +40,7 @@ FROM ubuntu:18.04 ENV SPARK_HOME /opt/spark ENV JAVA_HOME /usr/lib/jvm/java-8-op
       <title>ERAlchemy 를 이용한 ERD작성</title>
       <link>http://clonekim.github.io/posts/2018/2018-07-05-eralchemy/</link>
       <pubDate>Thu, 05 Jul 2018 23:29:30 +0900</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2018/2018-07-05-eralchemy/</guid>
       <description>우분투를 사용하는 환경이다.  사전준비 $ sudo apt install graphviz graphviz-dev python 라이브러리 설치 $ pip install pygraphviz --install-option=&amp;#34;--include-path=/usr/include/graphviz&amp;#34; --install-option=&amp;#34;--library-path=/usr/lib/graphviz/&amp;#34; $ pip install eralchemy 에러 graphviz 를 설치하지 않았을 경우
  (Python) ValueError: Program dot not found in path  graphviz-dev를 설치하지 않았을 경우
@@ -52,7 +54,7 @@ undefined symbol: Agundirected  사용법 MySQL에 접속해서 해당 DB를 pdf
       <title>Emacs에서 Golang 를 위한 에디팅</title>
       <link>http://clonekim.github.io/posts/2017/2017-11-02-emacs-golang/</link>
       <pubDate>Thu, 02 Nov 2017 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2017/2017-11-02-emacs-golang/</guid>
       <description>설치 go get명령어로 아래와 같이 필요한 유틸리티(명령어)를 설치해야 한다
 $ go get github.com/golang/lint/golint github.com/nsf/gocode github.com/k0kubun/pp github.com/golang/lint/golint github.com/rogpeppe/godef github.com/dougm/goflymake golang.org/x/tools/cmd/godoc 또는 golang.org/x/tools/cmd/...  필요한 패키지 direx ;;디렉토리 트리 보여줌 popwin ;;direx를 다른창으로 열어줌 auto-complete ;;자동완성 flycheck ;;오류체크 flymake-go go-mode go-autocomplete go-eldoc ;;상태줄에 godoc간단히 보여줌  shell-intergration.el
@@ -65,7 +67,7 @@ $ go get github.com/golang/lint/golint github.com/nsf/gocode github.com/k0kubun/
       <title>Go Repl</title>
       <link>http://clonekim.github.io/posts/2017/2017-11-02-go-repl/</link>
       <pubDate>Thu, 02 Nov 2017 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2017/2017-11-02-go-repl/</guid>
       <description>$ go get github.com/motemen/gore$ gore -autoimport gore version 0.2.6 :help for help gore&amp;gt; fmt.Println(&amp;#34;Hello World&amp;#34;) Hello World 12 &amp;lt;nil&amp;gt; gore&amp;gt;</description>
     </item>
@@ -74,7 +76,7 @@ $ go get github.com/golang/lint/golint github.com/nsf/gocode github.com/k0kubun/
       <title>Gtk Version</title>
       <link>http://clonekim.github.io/posts/2017/2017-09-21-gtk-version/</link>
       <pubDate>Fri, 22 Sep 2017 01:10:18 +0900</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2017/2017-09-21-gtk-version/</guid>
       <description>$ dpkg --get-selections | grep gtk  $ dpkg-query -W libgtk-3-0 libgtk-3-0:amd64 3.18.9-1ubuntu3.3  </description>
     </item>
@@ -83,7 +85,7 @@ $ go get github.com/golang/lint/golint github.com/nsf/gocode github.com/k0kubun/
       <title>Gnome Desktop</title>
       <link>http://clonekim.github.io/posts/2017/2017-09-21-gnome-css/</link>
       <pubDate>Fri, 22 Sep 2017 00:27:04 +0900</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2017/2017-09-21-gnome-css/</guid>
       <description>Gnome 데스크탑 을 사용중이다.
 문제는 터미널창이 겹쳐질때 구분이 안간다
@@ -96,7 +98,7 @@ $ go get github.com/golang/lint/golint github.com/nsf/gocode github.com/k0kubun/
       <title>Web개발을 위한 Emacs설정</title>
       <link>http://clonekim.github.io/posts/2017/2017-09-09-emacs-tip/</link>
       <pubDate>Sat, 09 Sep 2017 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2017/2017-09-09-emacs-tip/</guid>
       <description>전에 사용하는 web.el를 개선하였다.
 auto-complete 패키지를 사용하여 자동완성이 될것이다
@@ -107,7 +109,7 @@ auto-complete 패키지를 사용하여 자동완성이 될것이다
       <title>Deployd</title>
       <link>http://clonekim.github.io/posts/2017/2017-08-21-deplo1y/</link>
       <pubDate>Mon, 21 Aug 2017 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2017/2017-08-21-deplo1y/</guid>
       <description> 몽고디비를 이용한 JSON Dummy 서버툴이다.
 설치 $ npm install -g deployd  몽고디비
@@ -118,7 +120,7 @@ $ docker run --name deployd-mongo -d mongo -p 27017:27017  Deployd 실행 $ dpd 
       <title>AWS S3 Part 2</title>
       <link>http://clonekim.github.io/posts/2017/2017-07-26-aws-s3-part-2/</link>
       <pubDate>Wed, 26 Jul 2017 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2017/2017-07-26-aws-s3-part-2/</guid>
       <description> S3 Condition Referer를 참조해서 리소스제한
 { &amp;quot;Version&amp;quot;: &amp;quot;2012-10-17&amp;quot;, &amp;quot;Id&amp;quot;: &amp;quot;Policy1463129932149&amp;quot;, &amp;quot;Statement&amp;quot;: [ { &amp;quot;Sid&amp;quot;: &amp;quot;Stmt1463129927965&amp;quot;, &amp;quot;Effect&amp;quot;: &amp;quot;Allow&amp;quot;, &amp;quot;Principal&amp;quot;: { &amp;quot;AWS&amp;quot;: &amp;quot;*&amp;quot; }, &amp;quot;Action&amp;quot;: &amp;quot;s3:GetObject&amp;quot;, &amp;quot;Resource&amp;quot;: &amp;quot;arn:aws:s3:::your-bucket/*&amp;quot;, &amp;quot;Condition&amp;quot;: { &amp;quot;StringLike&amp;quot;: { &amp;quot;aws:Referer&amp;quot;: [ &amp;quot;http://yoursite/*&amp;quot;, &amp;quot;http://*.yoursite/*&amp;quot; ] } } } ] }  </description>
@@ -128,7 +130,7 @@ $ docker run --name deployd-mongo -d mongo -p 27017:27017  Deployd 실행 $ dpd 
       <title>Freemarker를 Clojure에서</title>
       <link>http://clonekim.github.io/posts/2017/2017-07-14-using-freemarker-from-clojure/</link>
       <pubDate>Fri, 14 Jul 2017 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2017/2017-07-14-using-freemarker-from-clojure/</guid>
       <description>참고소스
  [freemarker-clj &amp;quot;0.1.0&amp;quot;]  freemarker-clj
@@ -141,7 +143,7 @@ $ docker run --name deployd-mongo -d mongo -p 27017:27017  Deployd 실행 $ dpd 
       <title>Angular 1.6 사용</title>
       <link>http://clonekim.github.io/posts/2017/2017-01-02-angular-jsonp/</link>
       <pubDate>Mon, 02 Jan 2017 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2017/2017-01-02-angular-jsonp/</guid>
       <description>angular 1.6 이상적용
 PREFIX
@@ -154,7 +156,7 @@ $http.json(url, {jsonpCallbackParam: &#39;callback&#39;}) .then(function(res) { 
       <title>clojurescript에서 jquery사용</title>
       <link>http://clonekim.github.io/posts/2016/2016-09-20-using-jquery-in-clojurescript/</link>
       <pubDate>Tue, 20 Sep 2016 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2016/2016-09-20-using-jquery-in-clojurescript/</guid>
       <description> view.clj
 (defn view-layout [&amp;amp; content] (html [:head [:meta {:http-equiv &amp;#34;Content-type&amp;#34; :content &amp;#34;text/html; charset=utf-8&amp;#34;}] [&amp;#34;title&amp;#34;: &amp;#34;Project-Name&amp;#34;]] [:body content])) (defn view-content [] (view-layout [:h2 &amp;#34;Project-Name&amp;#34;] [:p {:id &amp;#34;clickhere&amp;#34;} &amp;#34;Get yourself a nice alert by clicking here.&amp;#34;] [:script {:src &amp;#34;/js/jquery-1.10.2.min.js&amp;#34;}] [:script {:src &amp;#34;/js/cljs.js&amp;#34;}])) hello.cljs
@@ -165,7 +167,7 @@ $http.json(url, {jsonpCallbackParam: &#39;callback&#39;}) .then(function(res) { 
       <title>AWS Elastick Beanstalk 1</title>
       <link>http://clonekim.github.io/posts/2016/2016-05-12-aws-elastick-beanstalk-1/</link>
       <pubDate>Thu, 12 May 2016 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2016/2016-05-12-aws-elastick-beanstalk-1/</guid>
       <description>awsebcli 설치 linux
 $ sudo apt install python3-pip $ pip3 install awsebcli  MacOS
@@ -180,7 +182,7 @@ eb 초기화 $ mkdir eb $ cd eb $ eb init  초기화를 실행하면 자신의 �
       <title>Emacs를 쓰면서</title>
       <link>http://clonekim.github.io/posts/2016/2016-05-07-emacs-package/</link>
       <pubDate>Sat, 07 May 2016 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2016/2016-05-07-emacs-package/</guid>
       <description>mode-icons-mode init.el
 &#39;(mode-icons-mode t)  js-mode setup-js.el
@@ -192,7 +194,7 @@ eb 초기화 $ mkdir eb $ cd eb $ eb init  초기화를 실행하면 자신의 �
       <title>AWS S3 Part 1</title>
       <link>http://clonekim.github.io/posts/2016/2016-04-20-aws-s3-part-1/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2016/2016-04-20-aws-s3-part-1/</guid>
       <description> S3 버킷 작성  콘솔로 로그인한다 S3로 이동한다 Bucket(버킷)을 생성한다
 해당 버킷은 해당 리젼에서 유일무이해야 한다  정적 리소스 호스팅  버킷을 만든다
@@ -207,7 +209,7 @@ eb 초기화 $ mkdir eb $ cd eb $ eb init  초기화를 실행하면 자신의 �
       <title>Docker 시작하기</title>
       <link>http://clonekim.github.io/posts/2016/2016-03-01-docker-start/</link>
       <pubDate>Tue, 01 Mar 2016 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2016/2016-03-01-docker-start/</guid>
       <description>Docker 시작하기 이미지다운로드
 $ docker pull [이미지이름]  컨테이너 생성
@@ -222,7 +224,7 @@ $ docker ps CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES cf5fbb3d49b1 m
       <title>Gulp로 React빌드</title>
       <link>http://clonekim.github.io/posts/2016/2016-01-19-using-gulp-react/</link>
       <pubDate>Tue, 19 Jan 2016 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2016/2016-01-19-using-gulp-react/</guid>
       <description>gulp와 함께 의존성설치 npm install -g gulp  react 개발에 필요한 라이브러리와
 번들로 묶기위한 browserify를 설치
@@ -234,7 +236,7 @@ var gulp = require(&amp;#39;gulp&amp;#39;), browserify = require(&amp;#39;browse
       <title>ClojureScript 시작하기</title>
       <link>http://clonekim.github.io/posts/2016/2016-01-18-starting-clojurescript/</link>
       <pubDate>Mon, 18 Jan 2016 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2016/2016-01-18-starting-clojurescript/</guid>
       <description>프로젝트 설정 leiningen
 [org.clojure/clojurescript &amp;#34;1.7.228&amp;#34;] plugin
@@ -247,7 +249,7 @@ var gulp = require(&amp;#39;gulp&amp;#39;), browserify = require(&amp;#39;browse
       <title>Clojure(Script)로 게임제작</title>
       <link>http://clonekim.github.io/posts/2016/2016-01-14-clojurescript-gaming/</link>
       <pubDate>Thu, 14 Jan 2016 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2016/2016-01-14-clojurescript-gaming/</guid>
       <description>PARENS OF THE DEAD</description>
     </item>
@@ -256,7 +258,7 @@ var gulp = require(&amp;#39;gulp&amp;#39;), browserify = require(&amp;#39;browse
       <title>Github에 블로그제작</title>
       <link>http://clonekim.github.io/posts/2016/2016-01-13-github-page/</link>
       <pubDate>Wed, 13 Jan 2016 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2016/2016-01-13-github-page/</guid>
       <description>깃허브에 계정만들기 먼저 github.com에 가입하고 저장소를 만든다
 저장소는 계정명.github.io라고 작성한다. 자세한 것은 GitHub Page를 살펴볼 것
@@ -273,7 +275,7 @@ mkdir resources/public git clone git@github.com:clonekim/clonekim.github.io.git 
       <title>Clojure 시작하기</title>
       <link>http://clonekim.github.io/posts/2015/2015-09-25-starting-clojure/</link>
       <pubDate>Fri, 25 Sep 2015 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2015/2015-09-25-starting-clojure/</guid>
       <description>JVM위에서 작동하는 함수형 프로그래밍이다
 clojure 얻기 http://clojure.org
@@ -289,7 +291,7 @@ Project 생성 lein new [프로젝트명]  프로젝트 의존성 추가 라이�
       <title>클로저에서 Jdbc</title>
       <link>http://clonekim.github.io/posts/2015/2015-09-25-jdbc-in-clojure/</link>
       <pubDate>Fri, 25 Sep 2015 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2015/2015-09-25-jdbc-in-clojure/</guid>
       <description> 클로저에서 JDBC(Java Database Connectivity) 를 사용하기 위한 가이드
 몇몇 함수가 없어진 경우가 있기 때문에 소스보기로 확인할 것
@@ -300,7 +302,7 @@ Project 생성 lein new [프로젝트명]  프로젝트 의존성 추가 라이�
       <title>Freemarker assign팁</title>
       <link>http://clonekim.github.io/posts/2015/2015-09-23-freemarker-assign-tip/</link>
       <pubDate>Wed, 23 Sep 2015 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2015/2015-09-23-freemarker-assign-tip/</guid>
       <description>변수 x에 42를 할당하고 이것은 명백히 Number 타입이다
 &amp;lt;#assign x=42 /&amp;gt;  String타입으로 변환할 수 있다
@@ -312,7 +314,7 @@ ${x?string} ${x?string[0..1]}  .(dot)가 들어간 변수도 사용할 수 있�
       <title>Clojure를 위한 Emacs 환경</title>
       <link>http://clonekim.github.io/posts/2015/2015-09-11-custom-emacs-setting/</link>
       <pubDate>Fri, 11 Sep 2015 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2015/2015-09-11-custom-emacs-setting/</guid>
       <description>Emacs 24를 기준으로 작성
 현재 사용중인 환경은 custom-emacs.tgz
@@ -329,7 +331,7 @@ Cider와 cider-nrepl의 버전이 맞아야함  profiles.clj
       <title>Oracle Jdbc Url</title>
       <link>http://clonekim.github.io/posts/2015/2015-09-10-oracle-jdbc/</link>
       <pubDate>Fri, 11 Sep 2015 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2015/2015-09-10-oracle-jdbc/</guid>
       <description>JDBC URL syntax
 jdbc:oracle:thin:@[HOST][:PORT]:SID jdbc:oracle:thin:@//[HOST][:PORT]/SERVICE  Hikari Pool를 사용 시 아래와 같이 경고메시지가 나타나면
@@ -341,7 +343,7 @@ oracle.jdbc.driver.OracleDriver에서 oracle.jdbc.OracleDriver 로 바꿀 것
       <title>Ring으로 웹프로그래밍</title>
       <link>http://clonekim.github.io/posts/2015/2015-09-11-ring-web-programming/</link>
       <pubDate>Fri, 11 Sep 2015 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2015/2015-09-11-ring-web-programming/</guid>
       <description>## Hello-Ring 프로젝트 작성
 새로운 프로젝트를 생성한다
@@ -356,7 +358,7 @@ ring-core: essential functions for handling parameters, cookies and more ring-de
       <title>GTID를 이용한 Mariadb Replication</title>
       <link>http://clonekim.github.io/posts/2015/2015-09-03-mariadb-replication-using-gtid/</link>
       <pubDate>Thu, 03 Sep 2015 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2015/2015-09-03-mariadb-replication-using-gtid/</guid>
       <description>개요  클라이언트가 마스터노드에게 쓰기 트랜잭션을 요청한다 바이너리로그가 업데이트된다 (바이너리로그에는 디비의 이벤트도 포함된다) 슬레이브가 마스터로부터 정보를 전달받는다 슬레이브는 이 정보를 릴레이로그에 첨부한다 슬레이브 SQL 스레이드는 릴레이로그에 있는 명령문을 수행반복한다  복제메커니즘
  표준복제: 각 노드는 자신만의 트랜잭션 ID를 갖는다 글로벌 트랜잭션(GTID, Global Transaction ID): 모든 노드는 같은 트랜잭션 ID를 갖는다 (MariaDB 10부터 가능)  환경 vm002: master
@@ -369,7 +371,7 @@ vm003: slave
       <title>ReactJS 시작하기</title>
       <link>http://clonekim.github.io/posts/2015/2015-07-29-starting-reactjs/</link>
       <pubDate>Wed, 29 Jul 2015 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2015/2015-07-29-starting-reactjs/</guid>
       <description>Starter Kit으로 시작하기 0.13.x를 기준으로 작성함
 react-0.13.3.zip 다운로드
@@ -384,7 +386,7 @@ JSX 문법을 사용하기 위해서는 반드시 JSXTransformer.js가 필요하
       <title>Redmine3 설치하기</title>
       <link>http://clonekim.github.io/posts/2015/2015-07-18-install-redmine/</link>
       <pubDate>Sat, 18 Jul 2015 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2015/2015-07-18-install-redmine/</guid>
       <description>## 설치환경
  redmine-3.0.4 centos 6.6 redmine install가이드  RVM 설치 rvm.io 에 대하여
@@ -399,7 +401,7 @@ bundle install --without development test  아래 파일을 /etc/thin/redmine.</
       <title>윈도우즈 Vim설정</title>
       <link>http://clonekim.github.io/posts/2015/2015-07-16-windows-vim/</link>
       <pubDate>Thu, 16 Jul 2015 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2015/2015-07-16-windows-vim/</guid>
       <description>vi를 윈도우즈에서 사용하기 위한 가이드
 설치  http://www.vim.org http://www.vim.org/download.php  설정 아래 파일을 C:\Users[계정명]_vimrc 에 위치한다
@@ -411,7 +413,7 @@ Ctrl +^ 입력시 바로 이전 탐색창으로 이동한다.</description>
       <title>Node.js로 Captcha</title>
       <link>http://clonekim.github.io/posts/2015/2015-07-14-how-to-captcha-in-node.js/</link>
       <pubDate>Tue, 14 Jul 2015 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2015/2015-07-14-how-to-captcha-in-node.js/</guid>
       <description>canvas를 이용한 캡챠(captcha)를 생성하려고 한다.
 사용하려는 패키지는 canvas-captcha이다
@@ -423,7 +425,7 @@ var captcha = require(&amp;#39;canvas-captcha&amp;#39;) ,captchaOptions = { char
       <title>Sinatra 웹프로그래밍</title>
       <link>http://clonekim.github.io/posts/2015/2015-07-14-sinatra/</link>
       <pubDate>Tue, 14 Jul 2015 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2015/2015-07-14-sinatra/</guid>
       <description>설치 jruby -S gem install sinatra  Hello Ruby require &amp;#39;rubygems&amp;#39; require &amp;#39;sinatra&amp;#39; get &amp;#39;/&amp;#39; do &amp;#39;Hello Jruby&amp;#39; end 라우터 get, post, put, delete를 사용할 수있다
 get &amp;#39;/&amp;#39; do end 요청파라미터 /?name=foo 로 요청 시 아래와 같이
@@ -435,7 +437,7 @@ get &amp;#39;/&amp;#39; do &amp;#39;Hello&amp;#39; end Json으로 응답하기 r
       <title>AngularJS 다국어처리</title>
       <link>http://clonekim.github.io/posts/2015/2015-07-02-angularjs/</link>
       <pubDate>Thu, 02 Jul 2015 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2015/2015-07-02-angularjs/</guid>
       <description>IndexController.js
 module.exports = [&amp;#39;$scope&amp;#39;, &amp;#39;$cookies&amp;#39;, &amp;#39;TranslationService&amp;#39;, function($scope, $cookies, TranslationService) { TranslationService.getLanguage($scope, $cookies); $scope.multiLng = function( lang ) { $cookies.put(&amp;#34;lang&amp;#34;, lang); TranslationService.getLanguage($scope, $cookies); } }];  TranslationService.js
@@ -447,7 +449,7 @@ module.exports = [&amp;#39;$http&amp;#39;, function($http) { this.getLanguage = 
       <title>RaspberryPi</title>
       <link>http://clonekim.github.io/posts/2015/2015-06-28-raspberrypi/</link>
       <pubDate>Sun, 28 Jun 2015 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2015/2015-06-28-raspberrypi/</guid>
       <description>준비  라즈베리파이2 microSD카드 (8G이상) HDMI케이블 LAN케이블 (카테고리3 이상) AC어댑터( USB단자출력 1A, 최소 700mA)  USB 3.0 : 5V, 900mA USB 2.0 : 5V, 500mA https://ko.wikipedia.org/wiki/USB  microUSB케이블 (A,B타입) 키보드,마우스 (USB연결)  구입  라즈베리파이2 with 고급 투명케이스 C + 방열판 셋트 RPi Camera &amp;copy;  하드웨어 살펴보기 정면
 뒷면
@@ -464,7 +466,7 @@ module.exports = [&amp;#39;$http&amp;#39;, function($http) { this.getLanguage = 
       <title>beefy 팁</title>
       <link>http://clonekim.github.io/posts/2015/2015-02-03-beefy-tip/</link>
       <pubDate>Tue, 03 Feb 2015 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2015/2015-02-03-beefy-tip/</guid>
       <description>a local development server designed to work with browserify.
  can live reload your browser when your code changes (if you want) works with whatever version of browserify or watchify; globally installed or locally installed to node_modules/. will spit compile errors out into the browser so you don&amp;rsquo;t have that 1-2 seconds of cognitive dissonance and profound ennui that follows refreshing the page only to get a blank screen. will spit out a default index.</description>
@@ -474,7 +476,7 @@ module.exports = [&amp;#39;$http&amp;#39;, function($http) { this.getLanguage = 
       <title>ImageMagick</title>
       <link>http://clonekim.github.io/posts/2015/2015-02-01-imagemagick/</link>
       <pubDate>Sun, 01 Feb 2015 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2015/2015-02-01-imagemagick/</guid>
       <description>Thumbnail
 convert [Image 1] -thumbnail 50% [Result Image] or convert [Image 1] -thumbnail 100x70 [Result Image]  Composite
@@ -488,7 +490,7 @@ png 로 이미지를 생성하되 :- 또는 png:fd:1 를 사용하면 표준 출
       <title>RequireJS 예제</title>
       <link>http://clonekim.github.io/posts/2014/2014-12-29-requirejs/</link>
       <pubDate>Mon, 29 Dec 2014 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2014/2014-12-29-requirejs/</guid>
       <description>RequireJS
 log라는 모듈을 작성한다
@@ -501,7 +503,7 @@ define(&amp;#39;boost&amp;#39;, function() { function Boost() { } Boost.prototyp
       <title>AngularJS Tips</title>
       <link>http://clonekim.github.io/posts/2014/2014-11-10-angularjs-tip/</link>
       <pubDate>Mon, 10 Nov 2014 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2014/2014-11-10-angularjs-tip/</guid>
       <description>개발 정보
 버젼 1.2.26를 사용
@@ -512,7 +514,7 @@ scope 계층화 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;ko&amp;
       <title>backbone &#43; handlebar &#43; gulp 팁</title>
       <link>http://clonekim.github.io/posts/2014/2014-10-03-backbone_handlebar_gulp_tip/</link>
       <pubDate>Fri, 03 Oct 2014 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2014/2014-10-03-backbone_handlebar_gulp_tip/</guid>
       <description>백본과 핸들바를 사용해서 소스를 컴파일 후
 정해진 경로로 결과물을 내보내자.
@@ -526,7 +528,7 @@ var gulp = require(&amp;#39;gulp&amp;#39;), browserify = require(&amp;#39;browse
       <title>자바스크립트로 UUID 생성</title>
       <link>http://clonekim.github.io/posts/2014/2014-03-02-uuid-in-javascript/</link>
       <pubDate>Sun, 02 Mar 2014 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2014/2014-03-02-uuid-in-javascript/</guid>
       <description>RFC4122
 return &amp;#39;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&amp;#39;.replace(/[xy]/g, function(c) { var r = Math.random()*16|0, v = c === &amp;#39;x&amp;#39; ? r : (r&amp;amp;0x3|0x8); return v.toString(16); }); var s = []; var hexDigits = &amp;#34;0123456789abcdef&amp;#34;; for (var i = 0; i &amp;lt; 36; i++) { s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1); } s[14] = &amp;#34;4&amp;#34;; s[19] = hexDigits.substr((s[19] &amp;amp; 0x3) | 0x8, 1); s[8] = s[13] = s[18] = s[23] = &amp;#34;-&amp;#34;; var uuid = s.join(&amp;#34;&amp;#34;); return uuid; } </description>
@@ -536,7 +538,7 @@ return &amp;#39;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&amp;#39;.replace(/[xy]/g, f
       <title>Java IO/NIO Tutorial</title>
       <link>http://clonekim.github.io/posts/2014/2014-01-05-java-ionio-tutorial/</link>
       <pubDate>Sun, 05 Jan 2014 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2014/2014-01-05-java-ionio-tutorial/</guid>
       <description> The Rox Java NIO Tutorial Five ways to maximize Java NIO and NIO.2 Java NIO - Non Blocking IO and Multiplexing A simple HTTP server that displays information about all accessible printers on the network  </description>
     </item>
@@ -545,7 +547,7 @@ return &amp;#39;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&amp;#39;.replace(/[xy]/g, f
       <title>BigDecimal을 이용한 반올림</title>
       <link>http://clonekim.github.io/posts/2013/2013-10-12-bigdecimal-java/</link>
       <pubDate>Sat, 12 Oct 2013 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2013/2013-10-12-bigdecimal-java/</guid>
       <description>BigDecimal.ROUND_DOWN	// 내림 BigDecimal.ROUND_HALF_UP // 반올림 BigDecimal.ROUND_UP // 올림</description>
     </item>
@@ -554,7 +556,7 @@ return &amp;#39;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&amp;#39;.replace(/[xy]/g, f
       <title>JavaScript 개발팁</title>
       <link>http://clonekim.github.io/posts/2013/2013-10-10-javascript-pattern/</link>
       <pubDate>Thu, 10 Oct 2013 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2013/2013-10-10-javascript-pattern/</guid>
       <description>Module Pattern
 로직과 private 변수를 캡슐화하는 방법으로 아래와 같은 모듈패턴( 익명함수) 을 많이 사용한다.
@@ -568,7 +570,7 @@ return &amp;#39;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&amp;#39;.replace(/[xy]/g, f
       <title>java.util.concurrent</title>
       <link>http://clonekim.github.io/posts/2013/2013-10-01-java-concurrent/</link>
       <pubDate>Tue, 01 Oct 2013 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2013/2013-10-01-java-concurrent/</guid>
       <description>쓰레드 생성은 시스템에 따라 제한됨 쓰레드풀을 사용할 수 있는 패키지가 있음 Future는 메서드를 비동기로 실행 후 나중에 결과를 받을 수 있음  import java.math.BigDecimal; import java.util.ArrayList; import java.util.List; import java.util.concurrent.Callable; import java.util.concurrent.ExecutionException; import java.util.concurrent.ExecutorService; import java.util.concurrent.Executors; import java.util.concurrent.Future; public class CallableTest { public static void main(String[] args) { callableTest(); } private static class Result { Long in; BigDecimal out; Result(final Long in, final BigDecimal out) { this.in = in; this.</description>
     </item>
@@ -577,7 +579,7 @@ return &amp;#39;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&amp;#39;.replace(/[xy]/g, f
       <title>JSPWiki 설치</title>
       <link>http://clonekim.github.io/posts/2013/2013-09-27-jspwiki-install/</link>
       <pubDate>Fri, 27 Sep 2013 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2013/2013-09-27-jspwiki-install/</guid>
       <description> Apache JSPWiki
 설정 server.xml
@@ -591,7 +593,7 @@ Nginx 연동 upstream tomcat { server 127.0.0.1:8080; } server { ... location /w
       <title>Jackson JSON Processor</title>
       <link>http://clonekim.github.io/posts/2013/2013-09-27-jackson-json-processor/</link>
       <pubDate>Fri, 27 Sep 2013 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2013/2013-09-27-jackson-json-processor/</guid>
       <description> Parsing option String data = &amp;#34;[{&amp;#39;text&amp;#39;:&amp;#39;PROJECT&amp;#39;,&amp;#39;id&amp;#39;:&amp;#39;00156&amp;#39;,&amp;#39;leaf&amp;#39;:true}]&amp;#34;; ObjectMapper mapper = new ObjectMapper(); mapper.configure(JsonParser.Feature.ALLOW_SINGLE_QUOTES, true); JsonNode node = mapper.readTree(data); Annotation JsonSerialize
 @JsonSerialize(using=JsonDateSerializer.class) public Date getCreationDate() { return creationDate; } JsonDateSerializer.java
@@ -602,7 +604,7 @@ public class JsonDateSerializer extends JsonSerializer&amp;lt;Date&amp;gt; { pri
       <title>프록시서버 인증에러</title>
       <link>http://clonekim.github.io/posts/2013/2013-09-27-proxy-authentication/</link>
       <pubDate>Fri, 27 Sep 2013 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2013/2013-09-27-proxy-authentication/</guid>
       <description>HttpURLConnecton를 이용해서 프록시설정하고 다운로드할 데이터가 있었으나 인증에러를 발생
 java.net.Authenticator를 구현해야함
@@ -613,7 +615,7 @@ import java.net.Authenticator; import java.net.MalformedURLException; import jav
       <title>Apache Tag Lib</title>
       <link>http://clonekim.github.io/posts/2013/2013-09-24-apache-taglib/</link>
       <pubDate>Tue, 24 Sep 2013 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2013/2013-09-24-apache-taglib/</guid>
       <description>Maven &amp;lt;groupId&amp;gt;jstl&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jstl&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.2&amp;lt;/version&amp;gt; 태그를 사용하기 위한 선언 &amp;lt;%@ taglib prefix=&amp;#34;c&amp;#34; uri=&amp;#34;http://java.sun.com/jsp/jstl/core&amp;#34;%&amp;gt; &amp;lt;%@ taglib prefix=&amp;#34;fn&amp;#34; uri=&amp;#34;http://java.sun.com/jsp/jstl/functions&amp;#34; %&amp;gt; &amp;lt;%@ taglib prefix=&amp;#34;fmt&amp;#34; uri=&amp;#34;http://java.sun.com/jsp/jstl/fmt&amp;#34;%&amp;gt; param test.jsp?name=1234 일 경우
 ${param.변수} 로 획득할 수 있다.
@@ -625,7 +627,7 @@ core set &amp;lt;c:set var=&amp;#34;string&amp;#34; value=&amp;#34;값&amp;#34;/
       <title>윈도우즈에 SVN서비스등록</title>
       <link>http://clonekim.github.io/posts/2013/2013-09-24-svn-as-windows-service/</link>
       <pubDate>Tue, 24 Sep 2013 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2013/2013-09-24-svn-as-windows-service/</guid>
       <description>###SVN서버를 윈도우에서 서비스로 등록한다.*
 Creating the Repository svnadmin create c:\svn  Edit Configuration 방금 생성한 레포지토리 디렉토리로 이동하여
@@ -638,7 +640,7 @@ anon-access = read auth-access = write password-db = passwd  Register as a Servi
       <title>자바 호환에러</title>
       <link>http://clonekim.github.io/posts/2013/2013-06-20-unsupported-classversion-error/</link>
       <pubDate>Thu, 20 Jun 2013 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2013/2013-06-20-unsupported-classversion-error/</guid>
       <description>java.lang.UnsupportedClassVersion_error (Unsupported major.minor version 51.0)  하위버전의 클래스파일을 상위버전이 읽어들일때는 상관없지만
 상위버전의 클래스파일을 하위버전이 읽어올때는 위와 같은 에러를 낸다
@@ -650,7 +652,7 @@ version 52.0 컴파일 버전 : 1.8 version 51.0 컴파일 버전 : 1.7 version 
       <title>Java Compile Option</title>
       <link>http://clonekim.github.io/posts/2013/2013-06-16-java-compile-option/</link>
       <pubDate>Sun, 16 Jun 2013 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2013/2013-06-16-java-compile-option/</guid>
       <description>-Dfile.encoding=[Character Set] -Dclient.encoding.override=[Character Set]  </description>
     </item>
@@ -659,7 +661,7 @@ version 52.0 컴파일 버전 : 1.8 version 51.0 컴파일 버전 : 1.7 version 
       <title>PHP FPM</title>
       <link>http://clonekim.github.io/posts/2013/2013-05-13-phpfpm-nginx/</link>
       <pubDate>Mon, 13 May 2013 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2013/2013-05-13-phpfpm-nginx/</guid>
       <description>PHP Install apt-get install php5-fpm php5-mongo php5-mysql  /etc/php5/fpm/php.ini
 ; This directive determines whether or not PHP will recognize code between ; &amp;lt;? and ?&amp;gt; tags as PHP source which should be processed as such. It is ; generally recommended that &amp;lt;?php and ?&amp;gt; should be used and that this feature ; should be disabled, as enabling it may result in issues when generating XML ; documents, however this remains supported for backward compatibility reasons.</description>
@@ -669,7 +671,7 @@ version 52.0 컴파일 버전 : 1.8 version 51.0 컴파일 버전 : 1.7 version 
       <title>즐겨사용하는 VIM 설정</title>
       <link>http://clonekim.github.io/posts/2012/2012-05-23-vim-favorite-setting/</link>
       <pubDate>Wed, 23 May 2012 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2012/2012-05-23-vim-favorite-setting/</guid>
       <description>~./vimrc 또는 /etc/vim/vimrc.local
 set autoindent set smartindent set shiftwidth=3 set tabstop=3 set title set nu set background=dark set nobackup set fileencoding=utf-8 set nowrap set showmatch set ruler syntax on  </description>
@@ -679,7 +681,7 @@ set autoindent set smartindent set shiftwidth=3 set tabstop=3 set title set nu s
       <title>Ruby Some Basic</title>
       <link>http://clonekim.github.io/posts/2012/2012-02-03-ruby-some-basic/</link>
       <pubDate>Fri, 03 Feb 2012 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2012/2012-02-03-ruby-some-basic/</guid>
       <description>json 생성
 require &amp;#39;json&amp;#39; jsonbody = JSON.generate[&amp;#34;message&amp;#34;=&amp;gt;&amp;#34;test&amp;#34;,&amp;#34;user&amp;#34;=&amp;gt;&amp;#34;user1&amp;#34;] rest-client을 이용한 예제
@@ -691,7 +693,7 @@ require &amp;#39;net/http&amp;#39; http = Net::HTTP.new(&amp;#39;www.data.com&am
       <title>OGNL</title>
       <link>http://clonekim.github.io/posts/2012/2012-10-17-ognl-in-java/</link>
       <pubDate>Tue, 17 Jan 2012 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2012/2012-10-17-ognl-in-java/</guid>
       <description>Maven
 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;ognl&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;ognl&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.0.5&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; 소스
@@ -703,7 +705,7 @@ Map&amp;lt;String, Object&amp;gt; map = new HashMap&amp;lt;String, Object&amp;gt
       <title>Java Date에러</title>
       <link>http://clonekim.github.io/posts/2011/2011-06-12-java-date-bug/</link>
       <pubDate>Sun, 12 Jun 2011 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2011/2011-06-12-java-date-bug/</guid>
       <description> Override time zone 생성한 Date 객체가 KST가 아닌 자꾸 GMT로 출력 될 경우
 System.setProperty(&amp;#34;user.timezone&amp;#34;, &amp;#34;Asia/Seoul&amp;#34;) ex) System.setProperty(&amp;#34;user.timezone&amp;#34;, &amp;#34;UTC&amp;#34;); TimeZone.setDefault(null); //reset 하기 위해 반드시 필요함 서버를 구동시에 -D 옵션으로 설정할 것

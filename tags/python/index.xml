@@ -6,6 +6,8 @@
     <description>Recent content in python on Bonjour!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
+    <managingEditor>clonekim-at-gmail-dot-com (DAEHEE KIM)</managingEditor>
+    <webMaster>clonekim-at-gmail-dot-com (DAEHEE KIM)</webMaster>
     <lastBuildDate>Thu, 05 Jul 2018 23:29:30 +0900</lastBuildDate>
     
 	<atom:link href="http://clonekim.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +17,7 @@
       <title>ERAlchemy 를 이용한 ERD작성</title>
       <link>http://clonekim.github.io/posts/2018/2018-07-05-eralchemy/</link>
       <pubDate>Thu, 05 Jul 2018 23:29:30 +0900</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2018/2018-07-05-eralchemy/</guid>
       <description>우분투를 사용하는 환경이다.  사전준비 $ sudo apt install graphviz graphviz-dev python 라이브러리 설치 $ pip install pygraphviz --install-option=&amp;#34;--include-path=/usr/include/graphviz&amp;#34; --install-option=&amp;#34;--library-path=/usr/lib/graphviz/&amp;#34; $ pip install eralchemy 에러 graphviz 를 설치하지 않았을 경우
  (Python) ValueError: Program dot not found in path  graphviz-dev를 설치하지 않았을 경우

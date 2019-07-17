@@ -1,31 +1,15 @@
 <!DOCTYPE html>
-<html lang="ko"><head>
-  <meta charset="utf-8" />
-  <meta name="author" content="DAEHEE KIM" />
-  <meta name="description" content="Personal blog." />
-  <meta name="keywords" content="blog, tech" />
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<html><head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <link rel="canonical" href="http://clonekim.github.io/posts/2015/2015-06-28-raspberrypi/">
-  <base href="http://clonekim.github.io/" />
-  <meta property="og:title" content="RaspberryPi" />
-<meta property="og:description" content="준비  라즈베리파이2 microSD카드 (8G이상) HDMI케이블 LAN케이블 (카테고리3 이상) AC어댑터( USB단자출력 1A, 최소 700mA)  USB 3.0 : 5V, 900mA USB 2.0 : 5V, 500mA https://ko.wikipedia.org/wiki/USB  microUSB케이블 (A,B타입) 키보드,마우스 (USB연결)  구입  라즈베리파이2 with 고급 투명케이스 C &#43; 방열판 셋트 RPi Camera &copy;  하드웨어 살펴보기 정면
-뒷면
-1) SoC (CPU), 메모리
-2) 전원단자
-3) USB포트
-4) HDMI포트
-7) 컴포지트출력, 오디오출력
-8) DSI (Display Serial Interface)
-9) 랜포트" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://clonekim.github.io/posts/2015/2015-06-28-raspberrypi/" />
-<meta property="article:published_time" content="2015-06-28T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2015-06-28T00:00:00&#43;00:00"/>
+    
+    <meta name="author"
+            content="DAEHEE KIM"/>
 
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="RaspberryPi"/>
-<meta name="twitter:description" content="준비  라즈베리파이2 microSD카드 (8G이상) HDMI케이블 LAN케이블 (카테고리3 이상) AC어댑터( USB단자출력 1A, 최소 700mA)  USB 3.0 : 5V, 900mA USB 2.0 : 5V, 500mA https://ko.wikipedia.org/wiki/USB  microUSB케이블 (A,B타입) 키보드,마우스 (USB연결)  구입  라즈베리파이2 with 고급 투명케이스 C &#43; 방열판 셋트 RPi Camera &copy;  하드웨어 살펴보기 정면
+    
+    <meta name="description" content="준비  라즈베리파이2 microSD카드 (8G이상) HDMI케이블 LAN케이블 (카테고리3 이상) AC어댑터( USB단자출력 1A, 최소 700mA)  USB 3.0 : 5V, 900mA USB 2.0 : 5V, 500mA https://ko.wikipedia.org/wiki/USB  microUSB케이블 (A,B타입) 키보드,마우스 (USB연결)  구입  라즈베리파이2 with 고급 투명케이스 C &#43; 방열판 셋트 RPi Camera &amp;copy;  하드웨어 살펴보기 정면
 뒷면
 1) SoC (CPU), 메모리
 2) 전원단자
@@ -34,70 +18,62 @@
 7) 컴포지트출력, 오디오출력
 8) DSI (Display Serial Interface)
 9) 랜포트"/>
+    
 
-  
-  
-<meta itemprop="name" content="RaspberryPi">
-<meta itemprop="description" content="준비  라즈베리파이2 microSD카드 (8G이상) HDMI케이블 LAN케이블 (카테고리3 이상) AC어댑터( USB단자출력 1A, 최소 700mA)  USB 3.0 : 5V, 900mA USB 2.0 : 5V, 500mA https://ko.wikipedia.org/wiki/USB  microUSB케이블 (A,B타입) 키보드,마우스 (USB연결)  구입  라즈베리파이2 with 고급 투명케이스 C &#43; 방열판 셋트 RPi Camera &copy;  하드웨어 살펴보기 정면
-뒷면
-1) SoC (CPU), 메모리
-2) 전원단자
-3) USB포트
-4) HDMI포트
-7) 컴포지트출력, 오디오출력
-8) DSI (Display Serial Interface)
-9) 랜포트">
+    
 
+    
+    <link rel="canonical" href="http://clonekim.github.io/posts/2015/2015-06-28-raspberrypi/"/>
 
-<meta itemprop="datePublished" content="2015-06-28T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2015-06-28T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="423">
+    
 
+    
+    
+    
+        
+            
+        
+    
+    <title> RaspberryPi | Bonjour! </title>
 
-
-<meta itemprop="keywords" content="raspberry," />
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <title>Bonjour!</title>
-  <style>
-   pre {
-     margin: 1em 0em 1em;
-     padding: 0.5em 0.5em 0.5em;
-     border: 1px solid #5C5C5C;
-   }
-
-   code {
-     white-space: pre-wrap;        
-     white-space: -moz-pre-wrap;   
-     white-space: -pre-wrap;       
-     white-space: -o-pre-wrap;     
-     word-wrap: break-word;        
-     line-height: 1.4em;
-   }
-
-   blockquote { background: #1D1F21; border-left: 3px solid #99cc66; }
-   table { margin: 1em auto; border-collapse: collapse; }
-   table, th, td { border: 1px solid #5C5C5C; }
-   tr:hover { background: #1D1F21; }
-  </style>
-  <link rel="stylesheet" href="css/tomorrow-night.min.css" />
-  <script src="js/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-</head>
-<body><h3><a href="http://clonekim.github.io/">Bonjour!</a></h3>
-<div id="content" class="container">
-<div class="card border-primary">
-  <div class="card-header text-right">
-    <small>Jun 28, 2015</small>
-  </div>
-  <div class="card-body">
-    <a  href="http://clonekim.github.io/posts/2015/2015-06-28-raspberrypi/">
-      <h5 class="card-title">RaspberryPi</h5>
-    </a>
-    <p class="card-text">
+    <link rel="shortcut icon" href="http://clonekim.github.io/favicon.jpg"/>
+    <link rel="stylesheet" href="http://clonekim.github.io/css/bulma.min.css"/>
+    <link rel="stylesheet" href="http://clonekim.github.io/css/style.css"/>
+</head><body><header>
+    <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand is-size-4">
+            <a class="navbar-item" href="http://clonekim.github.io/">
+                    Bonjour!
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="navbar-menu" class="navbar-menu">
+            <div class="navbar-end">
+                
+                    
+                        <a class="navbar-item" href="/tags">태그</a>
+                    
+                
+            </div>
+            </div>
+    </nav>
+</header><main>
+      <div class="container">
+        <div class="columns">
+          <div class="column is-four-fifths">
+            <article class="post box is-radiusless">
+              <div class="post-title">
+                <h2 class="is-size-4">RaspberryPi</h2>
+              </div>
+              <div class="post-meta">
+                <span class="post-time">2015-06-28</span>
+              </div>
+              <div class="post-content content">
+                
 
 <h2 id="준비">준비</h2>
 
@@ -218,50 +194,50 @@ Would you like to enter a view-only password라고 물어보면 그냥 엔터</p
 스크립트를 복사후 실행권한을 준다</p>
 
 <p><em>tightvnc</em></p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#007f7f">### BEGIN INIT INFO</span>
-<span style="color:#007f7f"># Provides: tightvnc</span>
-<span style="color:#007f7f"># Required-Start: $remote_fs $syslog</span>
-<span style="color:#007f7f"># Required-Stop: $remote_fs $syslog</span>
-<span style="color:#007f7f"># Default-Start: 2 3 4 5</span>
-<span style="color:#007f7f"># Default-Stop: 0 1 6</span>
-<span style="color:#007f7f"># Short-Description: Start VNC Server at boot time</span>
-<span style="color:#007f7f"># Description: Start VNC Server at boot time.</span>
-<span style="color:#007f7f">### END INIT INFO</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">### BEGIN INIT INFO</span>
+<span style="color:#75715e"># Provides: tightvnc</span>
+<span style="color:#75715e"># Required-Start: $remote_fs $syslog</span>
+<span style="color:#75715e"># Required-Stop: $remote_fs $syslog</span>
+<span style="color:#75715e"># Default-Start: 2 3 4 5</span>
+<span style="color:#75715e"># Default-Stop: 0 1 6</span>
+<span style="color:#75715e"># Short-Description: Start VNC Server at boot time</span>
+<span style="color:#75715e"># Description: Start VNC Server at boot time.</span>
+<span style="color:#75715e">### END INIT INFO</span>
 
-<span style="color:#0f0;font-weight:bold">#! /bin/bash
-</span><span style="color:#0f0;font-weight:bold"></span><span style="color:#007f7f"># /etc/init.d/tightvnc</span>
+<span style="color:#75715e">#! /bin/bash
+</span><span style="color:#75715e"></span><span style="color:#75715e"># /etc/init.d/tightvnc</span>
 
-USER=pi
-HOME=/home/pi
+USER<span style="color:#f92672">=</span>pi
+HOME<span style="color:#f92672">=</span>/home/pi
 
-DISPNO=<span style="color:#ff0;font-weight:bold">1</span>       <span style="color:#007f7f"># Display No</span>
-WIDTH=<span style="color:#ff0;font-weight:bold">1280</span>     <span style="color:#007f7f"># Display geometry widht</span>
-HEIGHT=<span style="color:#ff0;font-weight:bold">800</span>     <span style="color:#007f7f"># Display geometry height</span>
-DEPTH=<span style="color:#ff0;font-weight:bold">24</span>       <span style="color:#007f7f"># Use color depth</span>
+DISPNO<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>       <span style="color:#75715e"># Display No</span>
+WIDTH<span style="color:#f92672">=</span><span style="color:#ae81ff">1280</span>     <span style="color:#75715e"># Display geometry widht</span>
+HEIGHT<span style="color:#f92672">=</span><span style="color:#ae81ff">800</span>     <span style="color:#75715e"># Display geometry height</span>
+DEPTH<span style="color:#f92672">=</span><span style="color:#ae81ff">24</span>       <span style="color:#75715e"># Use color depth</span>
 
-OPTIONS=<span style="color:#0ff;font-weight:bold">&#34;:</span><span style="color:#0ff;font-weight:bold">${</span>DISPNO<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold"> -geometry </span><span style="color:#0ff;font-weight:bold">${</span>WIDTH<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold">x</span><span style="color:#0ff;font-weight:bold">${</span>HEIGHT<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold"> -depth </span><span style="color:#0ff;font-weight:bold">${</span>DEPTH<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold">&#34;</span>
+OPTIONS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;:</span><span style="color:#e6db74">${</span>DISPNO<span style="color:#e6db74">}</span><span style="color:#e6db74"> -geometry </span><span style="color:#e6db74">${</span>WIDTH<span style="color:#e6db74">}</span><span style="color:#e6db74">x</span><span style="color:#e6db74">${</span>HEIGHT<span style="color:#e6db74">}</span><span style="color:#e6db74"> -depth </span><span style="color:#e6db74">${</span>DEPTH<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
 
-<span style="color:#fff;font-weight:bold">export</span> USER HOME
+export USER HOME
 
-<span style="color:#fff;font-weight:bold">case</span> <span style="color:#0ff;font-weight:bold">&#34;</span>$1<span style="color:#0ff;font-weight:bold">&#34;</span> in
-    start)
-        <span style="color:#fff;font-weight:bold">echo</span> <span style="color:#0ff;font-weight:bold">&#34;Starting TightVNC Server&#34;</span>
-        <span style="color:#007f7f">#Insert your favoured settings for a TightVNC session</span>
-        su $USER -c <span style="color:#0ff;font-weight:bold">&#34;/usr/bin/tightvncserver </span><span style="color:#0ff;font-weight:bold">${</span>OPTIONS<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold">&#34;</span>
+<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> in
+    start<span style="color:#f92672">)</span>
+        echo <span style="color:#e6db74">&#34;Starting TightVNC Server&#34;</span>
+        <span style="color:#75715e">#Insert your favoured settings for a TightVNC session</span>
+        su $USER -c <span style="color:#e6db74">&#34;/usr/bin/tightvncserver </span><span style="color:#e6db74">${</span>OPTIONS<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
         ;;
 
-    stop)
-        <span style="color:#fff;font-weight:bold">echo</span> <span style="color:#0ff;font-weight:bold">&#34;Stopping VNC Server&#34;</span>
-        su $USER -c <span style="color:#0ff;font-weight:bold">&#34;/usr/bin/tightvncserver -kill :</span>$DISPNO<span style="color:#0ff;font-weight:bold">&#34;</span>
+    stop<span style="color:#f92672">)</span>
+        echo <span style="color:#e6db74">&#34;Stopping VNC Server&#34;</span>
+        su $USER -c <span style="color:#e6db74">&#34;/usr/bin/tightvncserver -kill :</span>$DISPNO<span style="color:#e6db74">&#34;</span>
         ;;
 
-    *)
-        <span style="color:#fff;font-weight:bold">echo</span> <span style="color:#0ff;font-weight:bold">&#34;Usage: /etc/init.d/tightvnc {start|stop}&#34;</span>
-        <span style="color:#fff;font-weight:bold">exit</span> <span style="color:#ff0;font-weight:bold">1</span>
+    *<span style="color:#f92672">)</span>
+        echo <span style="color:#e6db74">&#34;Usage: /etc/init.d/tightvnc {start|stop}&#34;</span>
+        exit <span style="color:#ae81ff">1</span>
         ;;
-<span style="color:#fff;font-weight:bold">esac</span>
+<span style="color:#66d9ef">esac</span>
 
-<span style="color:#fff;font-weight:bold">exit</span> <span style="color:#ff0;font-weight:bold">0</span></code></pre></div>
+exit <span style="color:#ae81ff">0</span></code></pre></div>
 <pre><code>sudo cp tightvnc /etc/init.d
 sudo chmod +x /etc/init.d/tightvnc
 </code></pre>
@@ -320,39 +296,56 @@ sudo chmod +x /etc/init.d/tightvnc
 <li><a href="http://www.rasplay.org/">http://www.rasplay.org/</a></li>
 <li><a href="/img/raspberry/picture820-1.png">참고도서</a></li>
 </ul>
-</p>
-    <p class="card-text text-right">
-      
-      <a href="http://clonekim.github.io/tags/raspberry" class="btn btn-outline-success btn-sm">
-        raspberry
-      </a>
-      
-    </p>
-  </div>
-</div>
 
+              </div>
+              <div class="columns is-mobile post-meta">
+                <div class="column is-half-desktop has-text-left is-paddingless"> 
+                   
+                  이전:<a href="http://clonekim.github.io/posts/2015/2015-02-03-beefy-tip/"> beefy 팁</a>
+                  
+                </div>
+                <div class="column is-half-desktop has-text-right is-paddingless">
+                  
+                  이후:<a href="http://clonekim.github.io/posts/2015/2015-07-02-angularjs/"> AngularJS 다국어처리</a>
+                  
+                </div>
+                <div class="is-clearfix"></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </main>    <footer class="footer">
+    
+        <div class="copyright has-text-centered">
+            <a href="https://bulma.io">
+                <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
+            </a>
+            <p>© Bonjour! Power by Hugo</p>
+        </div>
+    </footer>
+    <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+        
+        if ($navbarBurgers.length > 0) {
+            
+            $navbarBurgers.forEach( el => {
+                el.addEventListener('click', () => {
+                
+                const target = el.dataset.target;
+                const $target = document.getElementById(target);
+                
+                el.classList.toggle('is-active');
+                $target.classList.toggle('is-active');
+    
+                });
+            });
+        }
+    });
+    
 
-
-<div id="disqus_thread"></div>
-<script type="text/javascript">
- (function() {
-   
-   
-   if (window.location.hostname == "localhost")
-     return;
-   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-   var disqus_shortname = 'clonekim-github-io';
-   dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
- })();
-</script>
-<noscript>
-  Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-</noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
-
-
-        </div></body>
+    </script>
+</body>
 </html>

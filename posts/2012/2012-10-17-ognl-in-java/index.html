@@ -1,146 +1,149 @@
 <!DOCTYPE html>
-<html lang="ko"><head>
-  <meta charset="utf-8" />
-  <meta name="author" content="DAEHEE KIM" />
-  <meta name="description" content="Personal blog." />
-  <meta name="keywords" content="blog, tech" />
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<html><head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <link rel="canonical" href="http://clonekim.github.io/posts/2012/2012-10-17-ognl-in-java/">
-  <base href="http://clonekim.github.io/" />
-  <meta property="og:title" content="OGNL" />
-<meta property="og:description" content="Maven
-&lt;dependency&gt; &lt;groupId&gt;ognl&lt;/groupId&gt; &lt;artifactId&gt;ognl&lt;/artifactId&gt; &lt;version&gt;3.0.5&lt;/version&gt; &lt;/dependency&gt; 소스
-Map&lt;String, Object&gt; map = new HashMap&lt;String, Object&gt;(); map.put(&#34;book&#34;, &#34;모바일 웹앱&#34;); System.out.println(Ognl.getValue(Ognl.parseExpression(&#34;book&#34;), map)); Map context = new HashMap(); List&lt;String&gt; values1 = (List)Ognl.getValue(&#34;{123,&#39;abc&#39;,&#39;00oo&#39;}&#34;, context, new Object()); System.out.println(values1); Map values2 = (Map) Ognl.getValue(&#34;#{123:333,&#39;abc&#39;:111, &#39;bbb&#39;:&#39;Kim&#39;, &#39;other&#39;:&#39;[0,2,3,4,5]&#39;}&#34;, context, new Object()); System.out.println(values2); 출력
-모바일 웹앱 [123, abc, 00oo] {123=333, abc=111, bbb=Kim, other=[0,2,3,4,5]}  " />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://clonekim.github.io/posts/2012/2012-10-17-ognl-in-java/" />
-<meta property="article:published_time" content="2012-01-17T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2012-01-17T00:00:00&#43;00:00"/>
+    
+    <meta name="author"
+            content="DAEHEE KIM"/>
 
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="OGNL"/>
-<meta name="twitter:description" content="Maven
-&lt;dependency&gt; &lt;groupId&gt;ognl&lt;/groupId&gt; &lt;artifactId&gt;ognl&lt;/artifactId&gt; &lt;version&gt;3.0.5&lt;/version&gt; &lt;/dependency&gt; 소스
-Map&lt;String, Object&gt; map = new HashMap&lt;String, Object&gt;(); map.put(&#34;book&#34;, &#34;모바일 웹앱&#34;); System.out.println(Ognl.getValue(Ognl.parseExpression(&#34;book&#34;), map)); Map context = new HashMap(); List&lt;String&gt; values1 = (List)Ognl.getValue(&#34;{123,&#39;abc&#39;,&#39;00oo&#39;}&#34;, context, new Object()); System.out.println(values1); Map values2 = (Map) Ognl.getValue(&#34;#{123:333,&#39;abc&#39;:111, &#39;bbb&#39;:&#39;Kim&#39;, &#39;other&#39;:&#39;[0,2,3,4,5]&#39;}&#34;, context, new Object()); System.out.println(values2); 출력
+    
+    <meta name="description" content="Maven
+&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;ognl&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;ognl&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.0.5&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; 소스
+Map&amp;lt;String, Object&amp;gt; map = new HashMap&amp;lt;String, Object&amp;gt;(); map.put(&amp;#34;book&amp;#34;, &amp;#34;모바일 웹앱&amp;#34;); System.out.println(Ognl.getValue(Ognl.parseExpression(&amp;#34;book&amp;#34;), map)); Map context = new HashMap(); List&amp;lt;String&amp;gt; values1 = (List)Ognl.getValue(&amp;#34;{123,&amp;#39;abc&amp;#39;,&amp;#39;00oo&amp;#39;}&amp;#34;, context, new Object()); System.out.println(values1); Map values2 = (Map) Ognl.getValue(&amp;#34;#{123:333,&amp;#39;abc&amp;#39;:111, &amp;#39;bbb&amp;#39;:&amp;#39;Kim&amp;#39;, &amp;#39;other&amp;#39;:&amp;#39;[0,2,3,4,5]&amp;#39;}&amp;#34;, context, new Object()); System.out.println(values2); 출력
 모바일 웹앱 [123, abc, 00oo] {123=333, abc=111, bbb=Kim, other=[0,2,3,4,5]}  "/>
+    
 
-  
-  
-<meta itemprop="name" content="OGNL">
-<meta itemprop="description" content="Maven
-&lt;dependency&gt; &lt;groupId&gt;ognl&lt;/groupId&gt; &lt;artifactId&gt;ognl&lt;/artifactId&gt; &lt;version&gt;3.0.5&lt;/version&gt; &lt;/dependency&gt; 소스
-Map&lt;String, Object&gt; map = new HashMap&lt;String, Object&gt;(); map.put(&#34;book&#34;, &#34;모바일 웹앱&#34;); System.out.println(Ognl.getValue(Ognl.parseExpression(&#34;book&#34;), map)); Map context = new HashMap(); List&lt;String&gt; values1 = (List)Ognl.getValue(&#34;{123,&#39;abc&#39;,&#39;00oo&#39;}&#34;, context, new Object()); System.out.println(values1); Map values2 = (Map) Ognl.getValue(&#34;#{123:333,&#39;abc&#39;:111, &#39;bbb&#39;:&#39;Kim&#39;, &#39;other&#39;:&#39;[0,2,3,4,5]&#39;}&#34;, context, new Object()); System.out.println(values2); 출력
-모바일 웹앱 [123, abc, 00oo] {123=333, abc=111, bbb=Kim, other=[0,2,3,4,5]}  ">
+    
 
+    
+    <link rel="canonical" href="http://clonekim.github.io/posts/2012/2012-10-17-ognl-in-java/"/>
 
-<meta itemprop="datePublished" content="2012-01-17T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2012-01-17T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="53">
+    
 
+    
+    
+    
+        
+            
+        
+    
+    <title> OGNL | Bonjour! </title>
 
-
-<meta itemprop="keywords" content="java," />
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <title>Bonjour!</title>
-  <style>
-   pre {
-     margin: 1em 0em 1em;
-     padding: 0.5em 0.5em 0.5em;
-     border: 1px solid #5C5C5C;
-   }
-
-   code {
-     white-space: pre-wrap;        
-     white-space: -moz-pre-wrap;   
-     white-space: -pre-wrap;       
-     white-space: -o-pre-wrap;     
-     word-wrap: break-word;        
-     line-height: 1.4em;
-   }
-
-   blockquote { background: #1D1F21; border-left: 3px solid #99cc66; }
-   table { margin: 1em auto; border-collapse: collapse; }
-   table, th, td { border: 1px solid #5C5C5C; }
-   tr:hover { background: #1D1F21; }
-  </style>
-  <link rel="stylesheet" href="css/tomorrow-night.min.css" />
-  <script src="js/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-</head>
-<body><h3><a href="http://clonekim.github.io/">Bonjour!</a></h3>
-<div id="content" class="container">
-<div class="card border-primary">
-  <div class="card-header text-right">
-    <small>Jan 17, 2012</small>
-  </div>
-  <div class="card-body">
-    <a  href="http://clonekim.github.io/posts/2012/2012-10-17-ognl-in-java/">
-      <h5 class="card-title">OGNL</h5>
-    </a>
-    <p class="card-text"><p><strong>Maven</strong></p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"> <span style="font-weight:bold">&lt;dependency&gt;</span>
-    <span style="font-weight:bold">&lt;groupId&gt;</span>ognl<span style="font-weight:bold">&lt;/groupId&gt;</span>
-    <span style="font-weight:bold">&lt;artifactId&gt;</span>ognl<span style="font-weight:bold">&lt;/artifactId&gt;</span>
-    <span style="font-weight:bold">&lt;version&gt;</span>3.0.5<span style="font-weight:bold">&lt;/version&gt;</span>
-<span style="font-weight:bold">&lt;/dependency&gt;</span></code></pre></div>
+    <link rel="shortcut icon" href="http://clonekim.github.io/favicon.jpg"/>
+    <link rel="stylesheet" href="http://clonekim.github.io/css/bulma.min.css"/>
+    <link rel="stylesheet" href="http://clonekim.github.io/css/style.css"/>
+</head><body><header>
+    <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand is-size-4">
+            <a class="navbar-item" href="http://clonekim.github.io/">
+                    Bonjour!
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="navbar-menu" class="navbar-menu">
+            <div class="navbar-end">
+                
+                    
+                        <a class="navbar-item" href="/tags">태그</a>
+                    
+                
+            </div>
+            </div>
+    </nav>
+</header><main>
+      <div class="container">
+        <div class="columns">
+          <div class="column is-four-fifths">
+            <article class="post box is-radiusless">
+              <div class="post-title">
+                <h2 class="is-size-4">OGNL</h2>
+              </div>
+              <div class="post-meta">
+                <span class="post-time">2012-01-17</span>
+              </div>
+              <div class="post-content content">
+                <p><strong>Maven</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"> <span style="color:#f92672">&lt;dependency&gt;</span>
+    <span style="color:#f92672">&lt;groupId&gt;</span>ognl<span style="color:#f92672">&lt;/groupId&gt;</span>
+    <span style="color:#f92672">&lt;artifactId&gt;</span>ognl<span style="color:#f92672">&lt;/artifactId&gt;</span>
+    <span style="color:#f92672">&lt;version&gt;</span>3.0.5<span style="color:#f92672">&lt;/version&gt;</span>
+<span style="color:#f92672">&lt;/dependency&gt;</span></code></pre></div>
 <p><em>소스</em></p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Map&lt;String, Object&gt; map = <span style="color:#fff;font-weight:bold">new</span> HashMap&lt;String, Object&gt;();
-map.<span style="color:#007f7f">put</span>(<span style="color:#0ff;font-weight:bold">&#34;book&#34;</span>, <span style="color:#0ff;font-weight:bold">&#34;모바일 웹앱&#34;</span>);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> Object<span style="color:#f92672">&gt;</span> map <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> Object<span style="color:#f92672">&gt;();</span>
+map<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;book&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;모바일 웹앱&#34;</span><span style="color:#f92672">);</span>
 
-System.<span style="color:#007f7f">out</span>.<span style="color:#007f7f">println</span>(Ognl.<span style="color:#007f7f">getValue</span>(Ognl.<span style="color:#007f7f">parseExpression</span>(<span style="color:#0ff;font-weight:bold">&#34;book&#34;</span>), map));
+System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>Ognl<span style="color:#f92672">.</span><span style="color:#a6e22e">getValue</span><span style="color:#f92672">(</span>Ognl<span style="color:#f92672">.</span><span style="color:#a6e22e">parseExpression</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;book&#34;</span><span style="color:#f92672">),</span> map<span style="color:#f92672">));</span>
 
-Map context = <span style="color:#fff;font-weight:bold">new</span> HashMap();
-List&lt;String&gt; values1 = (List)Ognl.<span style="color:#007f7f">getValue</span>(<span style="color:#0ff;font-weight:bold">&#34;{123,&#39;abc&#39;,&#39;00oo&#39;}&#34;</span>, context, <span style="color:#fff;font-weight:bold">new</span> Object());
+Map context <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">();</span>
+List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> values1 <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>List<span style="color:#f92672">)</span>Ognl<span style="color:#f92672">.</span><span style="color:#a6e22e">getValue</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;{123,&#39;abc&#39;,&#39;00oo&#39;}&#34;</span><span style="color:#f92672">,</span> context<span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> Object<span style="color:#f92672">());</span>
 
-System.<span style="color:#007f7f">out</span>.<span style="color:#007f7f">println</span>(values1);
+System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>values1<span style="color:#f92672">);</span>
 
-Map values2  = (Map) Ognl.<span style="color:#007f7f">getValue</span>(<span style="color:#0ff;font-weight:bold">&#34;#{123:333,&#39;abc&#39;:111, &#39;bbb&#39;:&#39;Kim&#39;, &#39;other&#39;:&#39;[0,2,3,4,5]&#39;}&#34;</span>, context, <span style="color:#fff;font-weight:bold">new</span> Object());
+Map values2  <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>Map<span style="color:#f92672">)</span> Ognl<span style="color:#f92672">.</span><span style="color:#a6e22e">getValue</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;#{123:333,&#39;abc&#39;:111, &#39;bbb&#39;:&#39;Kim&#39;, &#39;other&#39;:&#39;[0,2,3,4,5]&#39;}&#34;</span><span style="color:#f92672">,</span> context<span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> Object<span style="color:#f92672">());</span>
 
-System.<span style="color:#007f7f">out</span>.<span style="color:#007f7f">println</span>(values2);</code></pre></div>
+System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>values2<span style="color:#f92672">);</span></code></pre></div>
 <p><em>출력</em></p>
 
 <pre><code>모바일 웹앱
 [123, abc, 00oo]
 {123=333, abc=111, bbb=Kim, other=[0,2,3,4,5]}
 </code></pre>
-</p>
-    <p class="card-text text-right">
-      
-      <a href="http://clonekim.github.io/tags/java" class="btn btn-outline-success btn-sm">
-        java
-      </a>
-      
-    </p>
-  </div>
-</div>
 
+              </div>
+              <div class="columns is-mobile post-meta">
+                <div class="column is-half-desktop has-text-left is-paddingless"> 
+                   
+                  이전:<a href="http://clonekim.github.io/posts/2011/2011-06-12-java-date-bug/"> Java Date에러</a>
+                  
+                </div>
+                <div class="column is-half-desktop has-text-right is-paddingless">
+                  
+                  이후:<a href="http://clonekim.github.io/posts/2012/2012-02-03-ruby-some-basic/"> Ruby Some Basic</a>
+                  
+                </div>
+                <div class="is-clearfix"></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </main>    <footer class="footer">
+    
+        <div class="copyright has-text-centered">
+            <a href="https://bulma.io">
+                <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
+            </a>
+            <p>© Bonjour! Power by Hugo</p>
+        </div>
+    </footer>
+    <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+        
+        if ($navbarBurgers.length > 0) {
+            
+            $navbarBurgers.forEach( el => {
+                el.addEventListener('click', () => {
+                
+                const target = el.dataset.target;
+                const $target = document.getElementById(target);
+                
+                el.classList.toggle('is-active');
+                $target.classList.toggle('is-active');
+    
+                });
+            });
+        }
+    });
+    
 
-
-<div id="disqus_thread"></div>
-<script type="text/javascript">
- (function() {
-   
-   
-   if (window.location.hostname == "localhost")
-     return;
-   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-   var disqus_shortname = 'clonekim-github-io';
-   dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
- })();
-</script>
-<noscript>
-  Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-</noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
-
-
-        </div></body>
+    </script>
+</body>
 </html>

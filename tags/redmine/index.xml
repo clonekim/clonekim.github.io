@@ -6,6 +6,8 @@
     <description>Recent content in redmine on Bonjour!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
+    <managingEditor>clonekim-at-gmail-dot-com (DAEHEE KIM)</managingEditor>
+    <webMaster>clonekim-at-gmail-dot-com (DAEHEE KIM)</webMaster>
     <lastBuildDate>Sat, 18 Jul 2015 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://clonekim.github.io/tags/redmine/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +17,7 @@
       <title>Redmine3 설치하기</title>
       <link>http://clonekim.github.io/posts/2015/2015-07-18-install-redmine/</link>
       <pubDate>Sat, 18 Jul 2015 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2015/2015-07-18-install-redmine/</guid>
       <description>## 설치환경
  redmine-3.0.4 centos 6.6 redmine install가이드  RVM 설치 rvm.io 에 대하여

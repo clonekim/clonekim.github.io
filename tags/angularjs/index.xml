@@ -6,6 +6,8 @@
     <description>Recent content in angularjs on Bonjour!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
+    <managingEditor>clonekim-at-gmail-dot-com (DAEHEE KIM)</managingEditor>
+    <webMaster>clonekim-at-gmail-dot-com (DAEHEE KIM)</webMaster>
     <lastBuildDate>Mon, 02 Jan 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://clonekim.github.io/tags/angularjs/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +17,7 @@
       <title>Angular 1.6 사용</title>
       <link>http://clonekim.github.io/posts/2017/2017-01-02-angular-jsonp/</link>
       <pubDate>Mon, 02 Jan 2017 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2017/2017-01-02-angular-jsonp/</guid>
       <description>angular 1.6 이상적용
 PREFIX
@@ -28,7 +30,7 @@ $http.json(url, {jsonpCallbackParam: &#39;callback&#39;}) .then(function(res) { 
       <title>AngularJS 다국어처리</title>
       <link>http://clonekim.github.io/posts/2015/2015-07-02-angularjs/</link>
       <pubDate>Thu, 02 Jul 2015 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2015/2015-07-02-angularjs/</guid>
       <description>IndexController.js
 module.exports = [&amp;#39;$scope&amp;#39;, &amp;#39;$cookies&amp;#39;, &amp;#39;TranslationService&amp;#39;, function($scope, $cookies, TranslationService) { TranslationService.getLanguage($scope, $cookies); $scope.multiLng = function( lang ) { $cookies.put(&amp;#34;lang&amp;#34;, lang); TranslationService.getLanguage($scope, $cookies); } }];  TranslationService.js
@@ -40,7 +42,7 @@ module.exports = [&amp;#39;$http&amp;#39;, function($http) { this.getLanguage = 
       <title>AngularJS Tips</title>
       <link>http://clonekim.github.io/posts/2014/2014-11-10-angularjs-tip/</link>
       <pubDate>Mon, 10 Nov 2014 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2014/2014-11-10-angularjs-tip/</guid>
       <description>개발 정보
 버젼 1.2.26를 사용

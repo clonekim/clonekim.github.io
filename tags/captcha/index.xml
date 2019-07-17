@@ -6,6 +6,8 @@
     <description>Recent content in captcha on Bonjour!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
+    <managingEditor>clonekim-at-gmail-dot-com (DAEHEE KIM)</managingEditor>
+    <webMaster>clonekim-at-gmail-dot-com (DAEHEE KIM)</webMaster>
     <lastBuildDate>Tue, 14 Jul 2015 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://clonekim.github.io/tags/captcha/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +17,7 @@
       <title>Node.js로 Captcha</title>
       <link>http://clonekim.github.io/posts/2015/2015-07-14-how-to-captcha-in-node.js/</link>
       <pubDate>Tue, 14 Jul 2015 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2015/2015-07-14-how-to-captcha-in-node.js/</guid>
       <description>canvas를 이용한 캡챠(captcha)를 생성하려고 한다.
 사용하려는 패키지는 canvas-captcha이다
@@ -27,7 +29,7 @@ var captcha = require(&amp;#39;canvas-captcha&amp;#39;) ,captchaOptions = { char
       <title>ImageMagick</title>
       <link>http://clonekim.github.io/posts/2015/2015-02-01-imagemagick/</link>
       <pubDate>Sun, 01 Feb 2015 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2015/2015-02-01-imagemagick/</guid>
       <description>Thumbnail
 convert [Image 1] -thumbnail 50% [Result Image] or convert [Image 1] -thumbnail 100x70 [Result Image]  Composite

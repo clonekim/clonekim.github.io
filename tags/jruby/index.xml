@@ -6,6 +6,8 @@
     <description>Recent content in jruby on Bonjour!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
+    <managingEditor>clonekim-at-gmail-dot-com (DAEHEE KIM)</managingEditor>
+    <webMaster>clonekim-at-gmail-dot-com (DAEHEE KIM)</webMaster>
     <lastBuildDate>Tue, 14 Jul 2015 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://clonekim.github.io/tags/jruby/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +17,7 @@
       <title>Sinatra 웹프로그래밍</title>
       <link>http://clonekim.github.io/posts/2015/2015-07-14-sinatra/</link>
       <pubDate>Tue, 14 Jul 2015 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2015/2015-07-14-sinatra/</guid>
       <description>설치 jruby -S gem install sinatra  Hello Ruby require &amp;#39;rubygems&amp;#39; require &amp;#39;sinatra&amp;#39; get &amp;#39;/&amp;#39; do &amp;#39;Hello Jruby&amp;#39; end 라우터 get, post, put, delete를 사용할 수있다
 get &amp;#39;/&amp;#39; do end 요청파라미터 /?name=foo 로 요청 시 아래와 같이

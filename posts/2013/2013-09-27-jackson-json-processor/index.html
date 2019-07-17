@@ -1,151 +1,156 @@
 <!DOCTYPE html>
-<html lang="ko"><head>
-  <meta charset="utf-8" />
-  <meta name="author" content="DAEHEE KIM" />
-  <meta name="description" content="Personal blog." />
-  <meta name="keywords" content="blog, tech" />
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<html><head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <link rel="canonical" href="http://clonekim.github.io/posts/2013/2013-09-27-jackson-json-processor/">
-  <base href="http://clonekim.github.io/" />
-  <meta property="og:title" content="Jackson JSON Processor" />
-<meta property="og:description" content=" Parsing option String data = &#34;[{&#39;text&#39;:&#39;PROJECT&#39;,&#39;id&#39;:&#39;00156&#39;,&#39;leaf&#39;:true}]&#34;; ObjectMapper mapper = new ObjectMapper(); mapper.configure(JsonParser.Feature.ALLOW_SINGLE_QUOTES, true); JsonNode node = mapper.readTree(data); Annotation JsonSerialize
+    
+    <meta name="author"
+            content="DAEHEE KIM"/>
+
+    
+    <meta name="description" content=" Parsing option String data = &amp;#34;[{&amp;#39;text&amp;#39;:&amp;#39;PROJECT&amp;#39;,&amp;#39;id&amp;#39;:&amp;#39;00156&amp;#39;,&amp;#39;leaf&amp;#39;:true}]&amp;#34;; ObjectMapper mapper = new ObjectMapper(); mapper.configure(JsonParser.Feature.ALLOW_SINGLE_QUOTES, true); JsonNode node = mapper.readTree(data); Annotation JsonSerialize
 @JsonSerialize(using=JsonDateSerializer.class) public Date getCreationDate() { return creationDate; } JsonDateSerializer.java
-public class JsonDateSerializer extends JsonSerializer&lt;Date&gt; { private static final SimpleDateFormat dateFormat = new SimpleDateFormat(&#34;yyyy-MM-dd HH:mm:ss&#34;); @Override public void serialize(Date date, JsonGenerator json, SerializerProvider provider) throws IOException, JsonProcessingException { String formattedDate = dateFormat.format(date); json.writeString(formattedDate); } }  Jackson JSON Processor Wiki  " />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://clonekim.github.io/posts/2013/2013-09-27-jackson-json-processor/" />
-<meta property="article:published_time" content="2013-09-27T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2013-09-27T00:00:00&#43;00:00"/>
+public class JsonDateSerializer extends JsonSerializer&amp;lt;Date&amp;gt; { private static final SimpleDateFormat dateFormat = new SimpleDateFormat(&amp;#34;yyyy-MM-dd HH:mm:ss&amp;#34;); @Override public void serialize(Date date, JsonGenerator json, SerializerProvider provider) throws IOException, JsonProcessingException { String formattedDate = dateFormat.format(date); json.writeString(formattedDate); } }  Jackson JSON Processor Wiki  "/>
+    
 
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Jackson JSON Processor"/>
-<meta name="twitter:description" content=" Parsing option String data = &#34;[{&#39;text&#39;:&#39;PROJECT&#39;,&#39;id&#39;:&#39;00156&#39;,&#39;leaf&#39;:true}]&#34;; ObjectMapper mapper = new ObjectMapper(); mapper.configure(JsonParser.Feature.ALLOW_SINGLE_QUOTES, true); JsonNode node = mapper.readTree(data); Annotation JsonSerialize
-@JsonSerialize(using=JsonDateSerializer.class) public Date getCreationDate() { return creationDate; } JsonDateSerializer.java
-public class JsonDateSerializer extends JsonSerializer&lt;Date&gt; { private static final SimpleDateFormat dateFormat = new SimpleDateFormat(&#34;yyyy-MM-dd HH:mm:ss&#34;); @Override public void serialize(Date date, JsonGenerator json, SerializerProvider provider) throws IOException, JsonProcessingException { String formattedDate = dateFormat.format(date); json.writeString(formattedDate); } }  Jackson JSON Processor Wiki  "/>
+    
 
-  
-  
-<meta itemprop="name" content="Jackson JSON Processor">
-<meta itemprop="description" content=" Parsing option String data = &#34;[{&#39;text&#39;:&#39;PROJECT&#39;,&#39;id&#39;:&#39;00156&#39;,&#39;leaf&#39;:true}]&#34;; ObjectMapper mapper = new ObjectMapper(); mapper.configure(JsonParser.Feature.ALLOW_SINGLE_QUOTES, true); JsonNode node = mapper.readTree(data); Annotation JsonSerialize
-@JsonSerialize(using=JsonDateSerializer.class) public Date getCreationDate() { return creationDate; } JsonDateSerializer.java
-public class JsonDateSerializer extends JsonSerializer&lt;Date&gt; { private static final SimpleDateFormat dateFormat = new SimpleDateFormat(&#34;yyyy-MM-dd HH:mm:ss&#34;); @Override public void serialize(Date date, JsonGenerator json, SerializerProvider provider) throws IOException, JsonProcessingException { String formattedDate = dateFormat.format(date); json.writeString(formattedDate); } }  Jackson JSON Processor Wiki  ">
+    
+    <link rel="canonical" href="http://clonekim.github.io/posts/2013/2013-09-27-jackson-json-processor/"/>
 
+    
 
-<meta itemprop="datePublished" content="2013-09-27T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2013-09-27T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="67">
+    
+    
+    
+        
+            
+        
+    
+    <title> Jackson JSON Processor | Bonjour! </title>
 
-
-
-<meta itemprop="keywords" content="java," />
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <title>Bonjour!</title>
-  <style>
-   pre {
-     margin: 1em 0em 1em;
-     padding: 0.5em 0.5em 0.5em;
-     border: 1px solid #5C5C5C;
-   }
-
-   code {
-     white-space: pre-wrap;        
-     white-space: -moz-pre-wrap;   
-     white-space: -pre-wrap;       
-     white-space: -o-pre-wrap;     
-     word-wrap: break-word;        
-     line-height: 1.4em;
-   }
-
-   blockquote { background: #1D1F21; border-left: 3px solid #99cc66; }
-   table { margin: 1em auto; border-collapse: collapse; }
-   table, th, td { border: 1px solid #5C5C5C; }
-   tr:hover { background: #1D1F21; }
-  </style>
-  <link rel="stylesheet" href="css/tomorrow-night.min.css" />
-  <script src="js/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-</head>
-<body><h3><a href="http://clonekim.github.io/">Bonjour!</a></h3>
-<div id="content" class="container">
-<div class="card border-primary">
-  <div class="card-header text-right">
-    <small>Sep 27, 2013</small>
-  </div>
-  <div class="card-body">
-    <a  href="http://clonekim.github.io/posts/2013/2013-09-27-jackson-json-processor/">
-      <h5 class="card-title">Jackson JSON Processor</h5>
-    </a>
-    <p class="card-text">
+    <link rel="shortcut icon" href="http://clonekim.github.io/favicon.jpg"/>
+    <link rel="stylesheet" href="http://clonekim.github.io/css/bulma.min.css"/>
+    <link rel="stylesheet" href="http://clonekim.github.io/css/style.css"/>
+</head><body><header>
+    <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand is-size-4">
+            <a class="navbar-item" href="http://clonekim.github.io/">
+                    Bonjour!
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="navbar-menu" class="navbar-menu">
+            <div class="navbar-end">
+                
+                    
+                        <a class="navbar-item" href="/tags">태그</a>
+                    
+                
+            </div>
+            </div>
+    </nav>
+</header><main>
+      <div class="container">
+        <div class="columns">
+          <div class="column is-four-fifths">
+            <article class="post box is-radiusless">
+              <div class="post-title">
+                <h2 class="is-size-4">Jackson JSON Processor</h2>
+              </div>
+              <div class="post-meta">
+                <span class="post-time">2013-09-27</span>
+              </div>
+              <div class="post-content content">
+                
 
 <h2 id="parsing-option">Parsing option</h2>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">String data = <span style="color:#0ff;font-weight:bold">&#34;[{&#39;text&#39;:&#39;PROJECT&#39;,&#39;id&#39;:&#39;00156&#39;,&#39;leaf&#39;:true}]&#34;</span>;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">String data <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;[{&#39;text&#39;:&#39;PROJECT&#39;,&#39;id&#39;:&#39;00156&#39;,&#39;leaf&#39;:true}]&#34;</span><span style="color:#f92672">;</span>
 
 
-ObjectMapper mapper = <span style="color:#fff;font-weight:bold">new</span> ObjectMapper();
-mapper.<span style="color:#007f7f">configure</span>(JsonParser.<span style="color:#007f7f">Feature</span>.<span style="color:#007f7f">ALLOW_SINGLE_QUOTES</span>, <span style="color:#fff;font-weight:bold">true</span>);
+ObjectMapper mapper <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ObjectMapper<span style="color:#f92672">();</span>
+mapper<span style="color:#f92672">.</span><span style="color:#a6e22e">configure</span><span style="color:#f92672">(</span>JsonParser<span style="color:#f92672">.</span><span style="color:#a6e22e">Feature</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ALLOW_SINGLE_QUOTES</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
 
-JsonNode node = mapper.<span style="color:#007f7f">readTree</span>(data);</code></pre></div>
+JsonNode node <span style="color:#f92672">=</span> mapper<span style="color:#f92672">.</span><span style="color:#a6e22e">readTree</span><span style="color:#f92672">(</span>data<span style="color:#f92672">);</span></code></pre></div>
 <h2 id="annotation">Annotation</h2>
 
 <p><em>JsonSerialize</em></p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">	@JsonSerialize(using=JsonDateSerializer.<span style="color:#007f7f">class</span>)
-	<span style="color:#fff;font-weight:bold">public</span> Date getCreationDate() {
-		<span style="color:#fff;font-weight:bold">return</span> creationDate;
-	}</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">	<span style="color:#a6e22e">@JsonSerialize</span><span style="color:#f92672">(</span>using<span style="color:#f92672">=</span>JsonDateSerializer<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">)</span>
+	<span style="color:#66d9ef">public</span> Date <span style="color:#a6e22e">getCreationDate</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">return</span> creationDate<span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span></code></pre></div>
 <p><em>JsonDateSerializer.java</em></p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#fff;font-weight:bold">public</span> <span style="color:#fff;font-weight:bold">class</span> JsonDateSerializer <span style="color:#fff;font-weight:bold">extends</span> JsonSerializer&lt;Date&gt; {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">JsonDateSerializer</span> <span style="color:#66d9ef">extends</span> JsonSerializer<span style="color:#f92672">&lt;</span>Date<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
 
-    <span style="color:#fff;font-weight:bold">private</span> <span style="color:#fff;font-weight:bold">static</span> <span style="color:#fff;font-weight:bold">final</span> SimpleDateFormat dateFormat = <span style="color:#fff;font-weight:bold">new</span> SimpleDateFormat(<span style="color:#0ff;font-weight:bold">&#34;yyyy-MM-dd HH:mm:ss&#34;</span>); 
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> SimpleDateFormat dateFormat <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SimpleDateFormat<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;yyyy-MM-dd HH:mm:ss&#34;</span><span style="color:#f92672">);</span> 
 	  
-	@Override
-	<span style="color:#fff;font-weight:bold">public</span> <span style="color:#fff;font-weight:bold">void</span> serialize(Date date, JsonGenerator json, SerializerProvider provider)
-			<span style="color:#fff;font-weight:bold">throws</span> IOException, JsonProcessingException {
+	<span style="color:#a6e22e">@Override</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">serialize</span><span style="color:#f92672">(</span>Date date<span style="color:#f92672">,</span> JsonGenerator json<span style="color:#f92672">,</span> SerializerProvider provider<span style="color:#f92672">)</span>
+			<span style="color:#66d9ef">throws</span> IOException<span style="color:#f92672">,</span> JsonProcessingException <span style="color:#f92672">{</span>
 		
-		String formattedDate = dateFormat.<span style="color:#007f7f">format</span>(date);
-		json.<span style="color:#007f7f">writeString</span>(formattedDate);
-	}
+		String formattedDate <span style="color:#f92672">=</span> dateFormat<span style="color:#f92672">.</span><span style="color:#a6e22e">format</span><span style="color:#f92672">(</span>date<span style="color:#f92672">);</span>
+		json<span style="color:#f92672">.</span><span style="color:#a6e22e">writeString</span><span style="color:#f92672">(</span>formattedDate<span style="color:#f92672">);</span>
+	<span style="color:#f92672">}</span>
 
-}</code></pre></div>
+<span style="color:#f92672">}</span></code></pre></div>
 <ul>
 <li><a href="http://wiki.fasterxml.com/JacksonHome">Jackson JSON Processor Wiki</a></li>
 </ul>
-</p>
-    <p class="card-text text-right">
-      
-      <a href="http://clonekim.github.io/tags/java" class="btn btn-outline-success btn-sm">
-        java
-      </a>
-      
-    </p>
-  </div>
-</div>
 
+              </div>
+              <div class="columns is-mobile post-meta">
+                <div class="column is-half-desktop has-text-left is-paddingless"> 
+                   
+                  이전:<a href="http://clonekim.github.io/posts/2013/2013-09-27-proxy-authentication/"> 프록시서버 인증에러</a>
+                  
+                </div>
+                <div class="column is-half-desktop has-text-right is-paddingless">
+                  
+                  이후:<a href="http://clonekim.github.io/posts/2013/2013-09-27-jspwiki-install/"> JSPWiki 설치</a>
+                  
+                </div>
+                <div class="is-clearfix"></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </main>    <footer class="footer">
+    
+        <div class="copyright has-text-centered">
+            <a href="https://bulma.io">
+                <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
+            </a>
+            <p>© Bonjour! Power by Hugo</p>
+        </div>
+    </footer>
+    <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+        
+        if ($navbarBurgers.length > 0) {
+            
+            $navbarBurgers.forEach( el => {
+                el.addEventListener('click', () => {
+                
+                const target = el.dataset.target;
+                const $target = document.getElementById(target);
+                
+                el.classList.toggle('is-active');
+                $target.classList.toggle('is-active');
+    
+                });
+            });
+        }
+    });
+    
 
-
-<div id="disqus_thread"></div>
-<script type="text/javascript">
- (function() {
-   
-   
-   if (window.location.hostname == "localhost")
-     return;
-   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-   var disqus_shortname = 'clonekim-github-io';
-   dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
- })();
-</script>
-<noscript>
-  Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-</noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
-
-
-        </div></body>
+    </script>
+</body>
 </html>

@@ -6,6 +6,8 @@
     <description>Recent content in github on Bonjour!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
+    <managingEditor>clonekim-at-gmail-dot-com (DAEHEE KIM)</managingEditor>
+    <webMaster>clonekim-at-gmail-dot-com (DAEHEE KIM)</webMaster>
     <lastBuildDate>Wed, 13 Jan 2016 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://clonekim.github.io/tags/github/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +17,7 @@
       <title>Github에 블로그제작</title>
       <link>http://clonekim.github.io/posts/2016/2016-01-13-github-page/</link>
       <pubDate>Wed, 13 Jan 2016 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2016/2016-01-13-github-page/</guid>
       <description>깃허브에 계정만들기 먼저 github.com에 가입하고 저장소를 만든다
 저장소는 계정명.github.io라고 작성한다. 자세한 것은 GitHub Page를 살펴볼 것

@@ -6,6 +6,8 @@
     <description>Recent content in ring on Bonjour!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
+    <managingEditor>clonekim-at-gmail-dot-com (DAEHEE KIM)</managingEditor>
+    <webMaster>clonekim-at-gmail-dot-com (DAEHEE KIM)</webMaster>
     <lastBuildDate>Fri, 11 Sep 2015 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://clonekim.github.io/tags/ring/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +17,7 @@
       <title>Ring으로 웹프로그래밍</title>
       <link>http://clonekim.github.io/posts/2015/2015-09-11-ring-web-programming/</link>
       <pubDate>Fri, 11 Sep 2015 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2015/2015-09-11-ring-web-programming/</guid>
       <description>## Hello-Ring 프로젝트 작성
 새로운 프로젝트를 생성한다

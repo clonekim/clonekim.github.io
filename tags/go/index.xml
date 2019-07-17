@@ -6,6 +6,8 @@
     <description>Recent content in go on Bonjour!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
+    <managingEditor>clonekim-at-gmail-dot-com (DAEHEE KIM)</managingEditor>
+    <webMaster>clonekim-at-gmail-dot-com (DAEHEE KIM)</webMaster>
     <lastBuildDate>Thu, 02 Nov 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://clonekim.github.io/tags/go/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +17,7 @@
       <title>Emacs에서 Golang 를 위한 에디팅</title>
       <link>http://clonekim.github.io/posts/2017/2017-11-02-emacs-golang/</link>
       <pubDate>Thu, 02 Nov 2017 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2017/2017-11-02-emacs-golang/</guid>
       <description>설치 go get명령어로 아래와 같이 필요한 유틸리티(명령어)를 설치해야 한다
 $ go get github.com/golang/lint/golint github.com/nsf/gocode github.com/k0kubun/pp github.com/golang/lint/golint github.com/rogpeppe/godef github.com/dougm/goflymake golang.org/x/tools/cmd/godoc 또는 golang.org/x/tools/cmd/...  필요한 패키지 direx ;;디렉토리 트리 보여줌 popwin ;;direx를 다른창으로 열어줌 auto-complete ;;자동완성 flycheck ;;오류체크 flymake-go go-mode go-autocomplete go-eldoc ;;상태줄에 godoc간단히 보여줌  shell-intergration.el
@@ -28,7 +30,7 @@ $ go get github.com/golang/lint/golint github.com/nsf/gocode github.com/k0kubun/
       <title>Go Repl</title>
       <link>http://clonekim.github.io/posts/2017/2017-11-02-go-repl/</link>
       <pubDate>Thu, 02 Nov 2017 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2017/2017-11-02-go-repl/</guid>
       <description>$ go get github.com/motemen/gore$ gore -autoimport gore version 0.2.6 :help for help gore&amp;gt; fmt.Println(&amp;#34;Hello World&amp;#34;) Hello World 12 &amp;lt;nil&amp;gt; gore&amp;gt;</description>
     </item>

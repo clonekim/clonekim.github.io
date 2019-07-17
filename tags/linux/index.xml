@@ -6,6 +6,8 @@
     <description>Recent content in linux on Bonjour!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
+    <managingEditor>clonekim-at-gmail-dot-com (DAEHEE KIM)</managingEditor>
+    <webMaster>clonekim-at-gmail-dot-com (DAEHEE KIM)</webMaster>
     <lastBuildDate>Fri, 22 Sep 2017 01:10:18 +0900</lastBuildDate>
     
 	<atom:link href="http://clonekim.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +17,7 @@
       <title>Gtk Version</title>
       <link>http://clonekim.github.io/posts/2017/2017-09-21-gtk-version/</link>
       <pubDate>Fri, 22 Sep 2017 01:10:18 +0900</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2017/2017-09-21-gtk-version/</guid>
       <description>$ dpkg --get-selections | grep gtk  $ dpkg-query -W libgtk-3-0 libgtk-3-0:amd64 3.18.9-1ubuntu3.3  </description>
     </item>
@@ -24,7 +26,7 @@
       <title>Gnome Desktop</title>
       <link>http://clonekim.github.io/posts/2017/2017-09-21-gnome-css/</link>
       <pubDate>Fri, 22 Sep 2017 00:27:04 +0900</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2017/2017-09-21-gnome-css/</guid>
       <description>Gnome 데스크탑 을 사용중이다.
 문제는 터미널창이 겹쳐질때 구분이 안간다

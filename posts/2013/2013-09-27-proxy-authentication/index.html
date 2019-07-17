@@ -1,155 +1,160 @@
 <!DOCTYPE html>
-<html lang="ko"><head>
-  <meta charset="utf-8" />
-  <meta name="author" content="DAEHEE KIM" />
-  <meta name="description" content="Personal blog." />
-  <meta name="keywords" content="blog, tech" />
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<html><head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <link rel="canonical" href="http://clonekim.github.io/posts/2013/2013-09-27-proxy-authentication/">
-  <base href="http://clonekim.github.io/" />
-  <meta property="og:title" content="프록시서버 인증에러" />
-<meta property="og:description" content="HttpURLConnecton를 이용해서 프록시설정하고 다운로드할 데이터가 있었으나 인증에러를 발생
-java.net.Authenticator를 구현해야함
-import java.net.Authenticator; import java.net.MalformedURLException; import java.net.PasswordAuthentication; import java.net.URL; public class ProxyAuthenticator extends Authenticator { private String proxyhost; private String userid; private String password; public ProxyAuthenticator(String proxyhost, String userid, String password) { this.proxyhost = proxyhost; this.userid = userid; this.password = password; } @Override public URL getRequestingURL() { if (this.proxyhost == null) return null; try { return new URL(this.proxyhost); } catch (MalformedURLException e) { return null; } } @Override protected RequestorType getRequestorType() { return RequestorType." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://clonekim.github.io/posts/2013/2013-09-27-proxy-authentication/" />
-<meta property="article:published_time" content="2013-09-27T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2013-09-27T00:00:00&#43;00:00"/>
+    
+    <meta name="author"
+            content="DAEHEE KIM"/>
 
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="프록시서버 인증에러"/>
-<meta name="twitter:description" content="HttpURLConnecton를 이용해서 프록시설정하고 다운로드할 데이터가 있었으나 인증에러를 발생
+    
+    <meta name="description" content="HttpURLConnecton를 이용해서 프록시설정하고 다운로드할 데이터가 있었으나 인증에러를 발생
 java.net.Authenticator를 구현해야함
 import java.net.Authenticator; import java.net.MalformedURLException; import java.net.PasswordAuthentication; import java.net.URL; public class ProxyAuthenticator extends Authenticator { private String proxyhost; private String userid; private String password; public ProxyAuthenticator(String proxyhost, String userid, String password) { this.proxyhost = proxyhost; this.userid = userid; this.password = password; } @Override public URL getRequestingURL() { if (this.proxyhost == null) return null; try { return new URL(this.proxyhost); } catch (MalformedURLException e) { return null; } } @Override protected RequestorType getRequestorType() { return RequestorType."/>
+    
 
-  
-  
-<meta itemprop="name" content="프록시서버 인증에러">
-<meta itemprop="description" content="HttpURLConnecton를 이용해서 프록시설정하고 다운로드할 데이터가 있었으나 인증에러를 발생
-java.net.Authenticator를 구현해야함
-import java.net.Authenticator; import java.net.MalformedURLException; import java.net.PasswordAuthentication; import java.net.URL; public class ProxyAuthenticator extends Authenticator { private String proxyhost; private String userid; private String password; public ProxyAuthenticator(String proxyhost, String userid, String password) { this.proxyhost = proxyhost; this.userid = userid; this.password = password; } @Override public URL getRequestingURL() { if (this.proxyhost == null) return null; try { return new URL(this.proxyhost); } catch (MalformedURLException e) { return null; } } @Override protected RequestorType getRequestorType() { return RequestorType.">
+    
 
+    
+    <link rel="canonical" href="http://clonekim.github.io/posts/2013/2013-09-27-proxy-authentication/"/>
 
-<meta itemprop="datePublished" content="2013-09-27T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2013-09-27T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="105">
+    
 
+    
+    
+    
+        
+            
+        
+    
+    <title> 프록시서버 인증에러 | Bonjour! </title>
 
-
-<meta itemprop="keywords" content="java," />
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <title>Bonjour!</title>
-  <style>
-   pre {
-     margin: 1em 0em 1em;
-     padding: 0.5em 0.5em 0.5em;
-     border: 1px solid #5C5C5C;
-   }
-
-   code {
-     white-space: pre-wrap;        
-     white-space: -moz-pre-wrap;   
-     white-space: -pre-wrap;       
-     white-space: -o-pre-wrap;     
-     word-wrap: break-word;        
-     line-height: 1.4em;
-   }
-
-   blockquote { background: #1D1F21; border-left: 3px solid #99cc66; }
-   table { margin: 1em auto; border-collapse: collapse; }
-   table, th, td { border: 1px solid #5C5C5C; }
-   tr:hover { background: #1D1F21; }
-  </style>
-  <link rel="stylesheet" href="css/tomorrow-night.min.css" />
-  <script src="js/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-</head>
-<body><h3><a href="http://clonekim.github.io/">Bonjour!</a></h3>
-<div id="content" class="container">
-<div class="card border-primary">
-  <div class="card-header text-right">
-    <small>Sep 27, 2013</small>
-  </div>
-  <div class="card-body">
-    <a  href="http://clonekim.github.io/posts/2013/2013-09-27-proxy-authentication/">
-      <h5 class="card-title">프록시서버 인증에러</h5>
-    </a>
-    <p class="card-text"><p>HttpURLConnecton를 이용해서 프록시설정하고 다운로드할 데이터가 있었으나 인증에러를 발생<br />
+    <link rel="shortcut icon" href="http://clonekim.github.io/favicon.jpg"/>
+    <link rel="stylesheet" href="http://clonekim.github.io/css/bulma.min.css"/>
+    <link rel="stylesheet" href="http://clonekim.github.io/css/style.css"/>
+</head><body><header>
+    <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand is-size-4">
+            <a class="navbar-item" href="http://clonekim.github.io/">
+                    Bonjour!
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="navbar-menu" class="navbar-menu">
+            <div class="navbar-end">
+                
+                    
+                        <a class="navbar-item" href="/tags">태그</a>
+                    
+                
+            </div>
+            </div>
+    </nav>
+</header><main>
+      <div class="container">
+        <div class="columns">
+          <div class="column is-four-fifths">
+            <article class="post box is-radiusless">
+              <div class="post-title">
+                <h2 class="is-size-4">프록시서버 인증에러</h2>
+              </div>
+              <div class="post-meta">
+                <span class="post-time">2013-09-27</span>
+              </div>
+              <div class="post-content content">
+                <p>HttpURLConnecton를 이용해서 프록시설정하고 다운로드할 데이터가 있었으나 인증에러를 발생<br />
 java.net.Authenticator를 구현해야함</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#fff;font-weight:bold">import</span> java.net.Authenticator;
-<span style="color:#fff;font-weight:bold">import</span> java.net.MalformedURLException;
-<span style="color:#fff;font-weight:bold">import</span> java.net.PasswordAuthentication;
-<span style="color:#fff;font-weight:bold">import</span> java.net.URL;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.net.Authenticator<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.net.MalformedURLException<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.net.PasswordAuthentication<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.net.URL<span style="color:#f92672">;</span>
 
-<span style="color:#fff;font-weight:bold">public</span> <span style="color:#fff;font-weight:bold">class</span> ProxyAuthenticator <span style="color:#fff;font-weight:bold">extends</span> Authenticator {
-  <span style="color:#fff;font-weight:bold">private</span> String proxyhost;
-  <span style="color:#fff;font-weight:bold">private</span> String userid;
-  <span style="color:#fff;font-weight:bold">private</span> String password;
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ProxyAuthenticator</span> <span style="color:#66d9ef">extends</span> Authenticator <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">private</span> String proxyhost<span style="color:#f92672">;</span>
+  <span style="color:#66d9ef">private</span> String userid<span style="color:#f92672">;</span>
+  <span style="color:#66d9ef">private</span> String password<span style="color:#f92672">;</span>
 
-  <span style="color:#fff;font-weight:bold">public</span> ProxyAuthenticator(String proxyhost, String userid, String password) {
-    <span style="color:#fff;font-weight:bold">this</span>.<span style="color:#007f7f">proxyhost</span> = proxyhost;
-    <span style="color:#fff;font-weight:bold">this</span>.<span style="color:#007f7f">userid</span> = userid;
-    <span style="color:#fff;font-weight:bold">this</span>.<span style="color:#007f7f">password</span> = password;
-  }
+  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">ProxyAuthenticator</span><span style="color:#f92672">(</span>String proxyhost<span style="color:#f92672">,</span> String userid<span style="color:#f92672">,</span> String password<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">proxyhost</span> <span style="color:#f92672">=</span> proxyhost<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">userid</span> <span style="color:#f92672">=</span> userid<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">password</span> <span style="color:#f92672">=</span> password<span style="color:#f92672">;</span>
+  <span style="color:#f92672">}</span>
 
-  @Override
-  <span style="color:#fff;font-weight:bold">public</span> URL getRequestingURL() {
-    <span style="color:#fff;font-weight:bold">if</span> (<span style="color:#fff;font-weight:bold">this</span>.<span style="color:#007f7f">proxyhost</span> == <span style="color:#fff;font-weight:bold">null</span>) <span style="color:#fff;font-weight:bold">return</span> <span style="color:#fff;font-weight:bold">null</span>;
-    <span style="color:#fff;font-weight:bold">try</span> {
-      <span style="color:#fff;font-weight:bold">return</span> <span style="color:#fff;font-weight:bold">new</span> URL(<span style="color:#fff;font-weight:bold">this</span>.<span style="color:#007f7f">proxyhost</span>);
-    } <span style="color:#fff;font-weight:bold">catch</span> (MalformedURLException e) {
-      <span style="color:#fff;font-weight:bold">return</span> <span style="color:#fff;font-weight:bold">null</span>;
-    }
-  }
+  <span style="color:#a6e22e">@Override</span>
+  <span style="color:#66d9ef">public</span> URL <span style="color:#a6e22e">getRequestingURL</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">proxyhost</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> URL<span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">proxyhost</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>MalformedURLException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+  <span style="color:#f92672">}</span>
 
-  @Override
-  <span style="color:#fff;font-weight:bold">protected</span> RequestorType getRequestorType() {
-    <span style="color:#fff;font-weight:bold">return</span> RequestorType.<span style="color:#007f7f">PROXY</span>;
-  }
+  <span style="color:#a6e22e">@Override</span>
+  <span style="color:#66d9ef">protected</span> RequestorType <span style="color:#a6e22e">getRequestorType</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">return</span> RequestorType<span style="color:#f92672">.</span><span style="color:#a6e22e">PROXY</span><span style="color:#f92672">;</span>
+  <span style="color:#f92672">}</span>
 
-  @Override
-  <span style="color:#fff;font-weight:bold">protected</span> PasswordAuthentication getPasswordAuthentication() {
-    <span style="color:#fff;font-weight:bold">if</span> (<span style="color:#fff;font-weight:bold">this</span>.<span style="color:#007f7f">userid</span> == <span style="color:#fff;font-weight:bold">null</span> || <span style="color:#fff;font-weight:bold">this</span>.<span style="color:#007f7f">password</span> == <span style="color:#fff;font-weight:bold">null</span>) <span style="color:#fff;font-weight:bold">return</span> <span style="color:#fff;font-weight:bold">null</span>;
-    <span style="color:#fff;font-weight:bold">return</span> <span style="color:#fff;font-weight:bold">new</span> PasswordAuthentication(userid, password.<span style="color:#007f7f">toCharArray</span>());
-  }
-}</code></pre></div></p>
-    <p class="card-text text-right">
-      
-      <a href="http://clonekim.github.io/tags/java" class="btn btn-outline-success btn-sm">
-        java
-      </a>
-      
-    </p>
-  </div>
-</div>
+  <span style="color:#a6e22e">@Override</span>
+  <span style="color:#66d9ef">protected</span> PasswordAuthentication <span style="color:#a6e22e">getPasswordAuthentication</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">userid</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">||</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">password</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> PasswordAuthentication<span style="color:#f92672">(</span>userid<span style="color:#f92672">,</span> password<span style="color:#f92672">.</span><span style="color:#a6e22e">toCharArray</span><span style="color:#f92672">());</span>
+  <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div>
+              </div>
+              <div class="columns is-mobile post-meta">
+                <div class="column is-half-desktop has-text-left is-paddingless"> 
+                   
+                  이전:<a href="http://clonekim.github.io/posts/2013/2013-09-24-apache-taglib/"> Apache Tag Lib</a>
+                  
+                </div>
+                <div class="column is-half-desktop has-text-right is-paddingless">
+                  
+                  이후:<a href="http://clonekim.github.io/posts/2013/2013-09-27-jackson-json-processor/"> Jackson JSON Processor</a>
+                  
+                </div>
+                <div class="is-clearfix"></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </main>    <footer class="footer">
+    
+        <div class="copyright has-text-centered">
+            <a href="https://bulma.io">
+                <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
+            </a>
+            <p>© Bonjour! Power by Hugo</p>
+        </div>
+    </footer>
+    <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+        
+        if ($navbarBurgers.length > 0) {
+            
+            $navbarBurgers.forEach( el => {
+                el.addEventListener('click', () => {
+                
+                const target = el.dataset.target;
+                const $target = document.getElementById(target);
+                
+                el.classList.toggle('is-active');
+                $target.classList.toggle('is-active');
+    
+                });
+            });
+        }
+    });
+    
 
-
-
-<div id="disqus_thread"></div>
-<script type="text/javascript">
- (function() {
-   
-   
-   if (window.location.hostname == "localhost")
-     return;
-   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-   var disqus_shortname = 'clonekim-github-io';
-   dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
- })();
-</script>
-<noscript>
-  Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-</noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
-
-
-        </div></body>
+    </script>
+</body>
 </html>

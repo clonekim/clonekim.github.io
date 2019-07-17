@@ -6,6 +6,8 @@
     <description>Recent content in raspberry on Bonjour!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
+    <managingEditor>clonekim-at-gmail-dot-com (DAEHEE KIM)</managingEditor>
+    <webMaster>clonekim-at-gmail-dot-com (DAEHEE KIM)</webMaster>
     <lastBuildDate>Sun, 28 Jun 2015 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://clonekim.github.io/tags/raspberry/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +17,7 @@
       <title>RaspberryPi</title>
       <link>http://clonekim.github.io/posts/2015/2015-06-28-raspberrypi/</link>
       <pubDate>Sun, 28 Jun 2015 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2015/2015-06-28-raspberrypi/</guid>
       <description>준비  라즈베리파이2 microSD카드 (8G이상) HDMI케이블 LAN케이블 (카테고리3 이상) AC어댑터( USB단자출력 1A, 최소 700mA)  USB 3.0 : 5V, 900mA USB 2.0 : 5V, 500mA https://ko.wikipedia.org/wiki/USB  microUSB케이블 (A,B타입) 키보드,마우스 (USB연결)  구입  라즈베리파이2 with 고급 투명케이스 C + 방열판 셋트 RPi Camera &amp;copy;  하드웨어 살펴보기 정면
 뒷면

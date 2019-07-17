@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    
+    <meta name="author"
+            content="DAEHEE KIM"/>
+
+    
+
+    
+
+    
+    <link rel="canonical" href="http://clonekim.github.io/posts/"/>
+
+    
+    <link rel="alternate" type="application/rss&#43;xml" href="http://clonekim.github.io/posts/index.xml">
+    
+
+    
+    
+    
+        
+            
+        
+    
+    <title> Posts | Bonjour! </title>
+
+    <link rel="shortcut icon" href="http://clonekim.github.io/favicon.jpg"/>
+    <link rel="stylesheet" href="http://clonekim.github.io/css/bulma.min.css"/>
+    <link rel="stylesheet" href="http://clonekim.github.io/css/style.css"/>
+</head><body><header>
+    <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand is-size-4">
+            <a class="navbar-item" href="http://clonekim.github.io/">
+                    Bonjour!
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="navbar-menu" class="navbar-menu">
+            <div class="navbar-end">
+                
+                    
+                        <a class="navbar-item" href="/tags">태그</a>
+                    
+                
+            </div>
+            </div>
+    </nav>
+</header><main>
+            <div class="container">
+                <div class="columns">
+                <div class="column is-four-fifths"><section class="posts">
+
+<article class="post box is-radiusless">
+    <div class="post-title">
+        <a class="post-title-link" href="/posts/2017/2017-09-21-gtk-version/"><h2 class="is-size-4 has-text-dark">Gtk Version</h2></a>
+    </div>
+    <div class="post-meta">
+        <span class="post-time">2017-09-22</span>
+    </div>
+    <div class="post-excerpt content">
+        $ dpkg --get-selections | grep gtk  $ dpkg-query -W libgtk-3-0 libgtk-3-0:amd64 3.18.9-1ubuntu3.3  
+    </div>
+    <a href="/posts/2017/2017-09-21-gtk-version/">more</a>
+    </article>
+
+<article class="post box is-radiusless">
+    <div class="post-title">
+        <a class="post-title-link" href="/posts/2017/2017-09-21-gnome-css/"><h2 class="is-size-4 has-text-dark">Gnome Desktop</h2></a>
+    </div>
+    <div class="post-meta">
+        <span class="post-time">2017-09-22</span>
+    </div>
+    <div class="post-excerpt content">
+        Gnome 데스크탑 을 사용중이다.
+문제는 터미널창이 겹쳐질때 구분이 안간다
+아래와 같이 css를 작성하면 해결된다.
+~./config/gtk3.0/gtk.css
+.window-frame { border: 1px solid gray; }  단축키 Alt +F2 입력하고 프롬프트창에 r 이라고 입력 할것
+    </div>
+    <a href="/posts/2017/2017-09-21-gnome-css/">more</a>
+    </article>
+
+<article class="post box is-radiusless">
+    <div class="post-title">
+        <a class="post-title-link" href="/posts/2017/2017-09-09-emacs-tip/"><h2 class="is-size-4 has-text-dark">Web개발을 위한 Emacs설정</h2></a>
+    </div>
+    <div class="post-meta">
+        <span class="post-time">2017-09-09</span>
+    </div>
+    <div class="post-excerpt content">
+        전에 사용하는 web.el를 개선하였다.
+auto-complete 패키지를 사용하여 자동완성이 될것이다
+(require 'web-mode) (require 'auto-complete) (ac-config-default) (add-to-list 'auto-mode-alist '(&quot;\\.html?\\'&quot; . web-mode)) (add-to-list 'auto-mode-alist '(&quot;\\.[aj]sp\\'&quot; . web-mode)) (add-to-list 'auto-mode-alist '(&quot;\\.mustache\\'&quot; . web-mode)) (add-to-list 'auto-mode-alist '(&quot;\\.ftl\\'&quot; . web-mode)) (add-to-list 'auto-mode-alist '(&quot;\\.vue\\'&quot; . web-mode)) (defun my-web-mode-hook () (setq web-mode-markup-indent-offset 2) (setq web-mode-css-indent-offset 2) (setq web-mode-code-indent-offset 2) (setq web-mode-enable-current-element-highlight t) (setq web-mode-enable-current-column-highlight t) (setq web-mode-ac-sources-alist '((&quot;css&quot; . (ac-source-css-property)) (&quot;html&quot; . (ac-source-words-in-buffer ac-source-abbrev))))) (add-hook 'web-mode-hook 'my-web-mode-hook) (add-hook 'web-mode-before-auto-complete-hooks '(lambda () (let ((web-mode-cur-language (web-mode-language-at-pos))) (if (string= web-mode-cur-language &quot;html&quot;) (setq emmet-use-css-transform t) (setq emmet-use-css-transform nil)) (if (string= web-mode-cur-language &quot;css&quot;) (setq emmet-use-css-transform t) (setq emmet-use-css-transform nil)))))  
+    </div>
+    <a href="/posts/2017/2017-09-09-emacs-tip/">more</a>
+    </article>
+
+<article class="post box is-radiusless">
+    <div class="post-title">
+        <a class="post-title-link" href="/posts/2017/2017-08-21-deplo1y/"><h2 class="is-size-4 has-text-dark">Deployd</h2></a>
+    </div>
+    <div class="post-meta">
+        <span class="post-time">2017-08-21</span>
+    </div>
+    <div class="post-excerpt content">
+         몽고디비를 이용한 JSON Dummy 서버툴이다.
+설치 $ npm install -g deployd  몽고디비
+$ docker run --name deployd-mongo -d mongo -p 27017:27017  Deployd 실행 $ dpd create [project name] $ cd [project name] $ dpd -H localhost -P 27017 -d  
+    </div>
+    <a href="/posts/2017/2017-08-21-deplo1y/">more</a>
+    </article>
+
+<article class="post box is-radiusless">
+    <div class="post-title">
+        <a class="post-title-link" href="/posts/2017/2017-07-26-aws-s3-part-2/"><h2 class="is-size-4 has-text-dark">AWS S3 Part 2</h2></a>
+    </div>
+    <div class="post-meta">
+        <span class="post-time">2017-07-26</span>
+    </div>
+    <div class="post-excerpt content">
+         S3 Condition Referer를 참조해서 리소스제한
+{ &quot;Version&quot;: &quot;2012-10-17&quot;, &quot;Id&quot;: &quot;Policy1463129932149&quot;, &quot;Statement&quot;: [ { &quot;Sid&quot;: &quot;Stmt1463129927965&quot;, &quot;Effect&quot;: &quot;Allow&quot;, &quot;Principal&quot;: { &quot;AWS&quot;: &quot;*&quot; }, &quot;Action&quot;: &quot;s3:GetObject&quot;, &quot;Resource&quot;: &quot;arn:aws:s3:::your-bucket/*&quot;, &quot;Condition&quot;: { &quot;StringLike&quot;: { &quot;aws:Referer&quot;: [ &quot;http://yoursite/*&quot;, &quot;http://*.yoursite/*&quot; ] } } } ] }  
+    </div>
+    <a href="/posts/2017/2017-07-26-aws-s3-part-2/">more</a>
+    </article>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="page-nav">
+    
+    <a href="/posts/" class="extend prev">First</a>
+    
+
+    
+
+      
+
+        
+
+        
+          
+        
+
+        
+
+        
+          
+        
+
+        
+
+        
+
+      
+
+      
+      
+          <a href="/posts/" class="page-number">1</a>
+      
+
+    
+
+      
+
+        
+
+        
+
+        
+          
+        
+
+        
+          
+        
+
+        
+
+        
+
+      
+
+      
+      
+          <a href="/posts/page/2/" class="page-number current">2</a>
+      
+
+    
+
+      
+
+        
+
+        
+
+        
+
+        
+          
+        
+
+        
+
+        
+
+      
+
+      
+      
+          <a href="/posts/page/3/" class="page-number">3</a>
+      
+
+    
+
+      
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+      
+
+      
+      
+
+    
+
+      
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+      
+
+      
+      
+
+    
+
+      
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+      
+
+      
+      
+
+    
+
+      
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+      
+
+      
+      
+
+    
+
+      
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+      
+
+      
+      
+
+    
+
+      
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+      
+
+      
+      
+
+    
+
+      
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+      
+
+      
+      
+
+    
+
+      
+
+        
+
+        
+
+        
+
+        
+
+        
+          
+            <span class="space">...</span>
+          
+        
+
+        
+
+      
+
+      
+      
+
+    
+
+      
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+          
+        
+
+      
+
+      
+      
+          <a href="/posts/page/12/" class="page-number">12</a>
+      
+
+        
+
+
+    
+      <a href="/posts/page/3/" class="extend next">Last</a>
+    
+
+</nav>
+
+</div>
+                <div class="column">    <aside>
+        <h2 class="is-size-4">关于我</h2>
+        <div class="content">
+            Working in advertising platform team. Backend on duty,full stack in my own time.
+        </div>
+        <h2 class="is-size-4">GitHub</h2>
+        <div class="content">
+            <a href="https://github.com/lihongkun" target="_blank">https://github.com/lihongkun</a>
+        </div>
+    </aside></div>
+                </div>
+            </div>
+         </main>    <footer class="footer">
+    
+        <div class="copyright has-text-centered">
+            <a href="https://bulma.io">
+                <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
+            </a>
+            <p>© Bonjour! Power by Hugo</p>
+        </div>
+    </footer>
+    <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+        
+        if ($navbarBurgers.length > 0) {
+            
+            $navbarBurgers.forEach( el => {
+                el.addEventListener('click', () => {
+                
+                const target = el.dataset.target;
+                const $target = document.getElementById(target);
+                
+                el.classList.toggle('is-active');
+                $target.classList.toggle('is-active');
+    
+                });
+            });
+        }
+    });
+    
+
+    </script>
+</body>
+</html>

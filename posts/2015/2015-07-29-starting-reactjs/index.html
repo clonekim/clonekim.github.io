@@ -1,97 +1,77 @@
 <!DOCTYPE html>
-<html lang="ko"><head>
-  <meta charset="utf-8" />
-  <meta name="author" content="DAEHEE KIM" />
-  <meta name="description" content="Personal blog." />
-  <meta name="keywords" content="blog, tech" />
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<html><head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <link rel="canonical" href="http://clonekim.github.io/posts/2015/2015-07-29-starting-reactjs/">
-  <base href="http://clonekim.github.io/" />
-  <meta property="og:title" content="ReactJS 시작하기" />
-<meta property="og:description" content="Starter Kit으로 시작하기 0.13.x를 기준으로 작성함
+    
+    <meta name="author"
+            content="DAEHEE KIM"/>
+
+    
+    <meta name="description" content="Starter Kit으로 시작하기 0.13.x를 기준으로 작성함
 react-0.13.3.zip 다운로드
 hello React!
-&lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;script src=&#34;build/react.js&#34;&gt;&lt;/script&gt; &lt;script src=&#34;build/JSXTransformer.js&#34;&gt;&lt;/script&gt; &lt;/head&gt;	&lt;body&gt; &lt;div id=&#34;hello&#34;&gt;&lt;/div&gt; &lt;script type=&#34;text/jsx&#34;&gt; React.render(&lt;h1&gt;Hello, welcome to React!&lt;/h1&gt;, document.getElementById(&#39;hello&#39;)); &lt;/script&gt; &lt;/body&gt; &lt;/html&gt; JSX(JavaScript XML) JSX(JavaScript XML)는 XML 과 유사한 문법을 가지는 자바스크립트이다.
+&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;script src=&amp;#34;build/react.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;build/JSXTransformer.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt;	&amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;hello&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script type=&amp;#34;text/jsx&amp;#34;&amp;gt; React.render(&amp;lt;h1&amp;gt;Hello, welcome to React!&amp;lt;/h1&amp;gt;, document.getElementById(&amp;#39;hello&amp;#39;)); &amp;lt;/script&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; JSX(JavaScript XML) JSX(JavaScript XML)는 XML 과 유사한 문법을 가지는 자바스크립트이다.
 JSX 문법을 사용하기 위해서는 반드시 JSXTransformer.js가 필요하다
 상세한 JSX syntaxt과 spec 은 아래를 참조할 것
- http://facebook.github.io/react/docs/jsx-in-depth.html http://facebook.github.io/jsx/  //Html &lt;h1 class=&#34;test&#34;&gt;Hello&lt;/h1&gt; //JSX &lt;h1 className=&#34;test&#34;&gt;Hello&lt;/h1&gt; var text= &#34;Hello React!" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://clonekim.github.io/posts/2015/2015-07-29-starting-reactjs/" />
-<meta property="article:published_time" content="2015-07-29T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2015-07-29T00:00:00&#43;00:00"/>
+ http://facebook.github.io/react/docs/jsx-in-depth.html http://facebook.github.io/jsx/  //Html &amp;lt;h1 class=&amp;#34;test&amp;#34;&amp;gt;Hello&amp;lt;/h1&amp;gt; //JSX &amp;lt;h1 className=&amp;#34;test&amp;#34;&amp;gt;Hello&amp;lt;/h1&amp;gt; var text= &amp;#34;Hello React!"/>
+    
 
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="ReactJS 시작하기"/>
-<meta name="twitter:description" content="Starter Kit으로 시작하기 0.13.x를 기준으로 작성함
-react-0.13.3.zip 다운로드
-hello React!
-&lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;script src=&#34;build/react.js&#34;&gt;&lt;/script&gt; &lt;script src=&#34;build/JSXTransformer.js&#34;&gt;&lt;/script&gt; &lt;/head&gt;	&lt;body&gt; &lt;div id=&#34;hello&#34;&gt;&lt;/div&gt; &lt;script type=&#34;text/jsx&#34;&gt; React.render(&lt;h1&gt;Hello, welcome to React!&lt;/h1&gt;, document.getElementById(&#39;hello&#39;)); &lt;/script&gt; &lt;/body&gt; &lt;/html&gt; JSX(JavaScript XML) JSX(JavaScript XML)는 XML 과 유사한 문법을 가지는 자바스크립트이다.
-JSX 문법을 사용하기 위해서는 반드시 JSXTransformer.js가 필요하다
-상세한 JSX syntaxt과 spec 은 아래를 참조할 것
- http://facebook.github.io/react/docs/jsx-in-depth.html http://facebook.github.io/jsx/  //Html &lt;h1 class=&#34;test&#34;&gt;Hello&lt;/h1&gt; //JSX &lt;h1 className=&#34;test&#34;&gt;Hello&lt;/h1&gt; var text= &#34;Hello React!"/>
+    
 
-  
-  
-<meta itemprop="name" content="ReactJS 시작하기">
-<meta itemprop="description" content="Starter Kit으로 시작하기 0.13.x를 기준으로 작성함
-react-0.13.3.zip 다운로드
-hello React!
-&lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;script src=&#34;build/react.js&#34;&gt;&lt;/script&gt; &lt;script src=&#34;build/JSXTransformer.js&#34;&gt;&lt;/script&gt; &lt;/head&gt;	&lt;body&gt; &lt;div id=&#34;hello&#34;&gt;&lt;/div&gt; &lt;script type=&#34;text/jsx&#34;&gt; React.render(&lt;h1&gt;Hello, welcome to React!&lt;/h1&gt;, document.getElementById(&#39;hello&#39;)); &lt;/script&gt; &lt;/body&gt; &lt;/html&gt; JSX(JavaScript XML) JSX(JavaScript XML)는 XML 과 유사한 문법을 가지는 자바스크립트이다.
-JSX 문법을 사용하기 위해서는 반드시 JSXTransformer.js가 필요하다
-상세한 JSX syntaxt과 spec 은 아래를 참조할 것
- http://facebook.github.io/react/docs/jsx-in-depth.html http://facebook.github.io/jsx/  //Html &lt;h1 class=&#34;test&#34;&gt;Hello&lt;/h1&gt; //JSX &lt;h1 className=&#34;test&#34;&gt;Hello&lt;/h1&gt; var text= &#34;Hello React!">
+    
+    <link rel="canonical" href="http://clonekim.github.io/posts/2015/2015-07-29-starting-reactjs/"/>
 
+    
 
-<meta itemprop="datePublished" content="2015-07-29T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2015-07-29T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="469">
+    
+    
+    
+        
+            
+        
+    
+    <title> ReactJS 시작하기 | Bonjour! </title>
 
-
-
-<meta itemprop="keywords" content="react.js," />
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <title>Bonjour!</title>
-  <style>
-   pre {
-     margin: 1em 0em 1em;
-     padding: 0.5em 0.5em 0.5em;
-     border: 1px solid #5C5C5C;
-   }
-
-   code {
-     white-space: pre-wrap;        
-     white-space: -moz-pre-wrap;   
-     white-space: -pre-wrap;       
-     white-space: -o-pre-wrap;     
-     word-wrap: break-word;        
-     line-height: 1.4em;
-   }
-
-   blockquote { background: #1D1F21; border-left: 3px solid #99cc66; }
-   table { margin: 1em auto; border-collapse: collapse; }
-   table, th, td { border: 1px solid #5C5C5C; }
-   tr:hover { background: #1D1F21; }
-  </style>
-  <link rel="stylesheet" href="css/tomorrow-night.min.css" />
-  <script src="js/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-</head>
-<body><h3><a href="http://clonekim.github.io/">Bonjour!</a></h3>
-<div id="content" class="container">
-<div class="card border-primary">
-  <div class="card-header text-right">
-    <small>Jul 29, 2015</small>
-  </div>
-  <div class="card-body">
-    <a  href="http://clonekim.github.io/posts/2015/2015-07-29-starting-reactjs/">
-      <h5 class="card-title">ReactJS 시작하기</h5>
-    </a>
-    <p class="card-text">
+    <link rel="shortcut icon" href="http://clonekim.github.io/favicon.jpg"/>
+    <link rel="stylesheet" href="http://clonekim.github.io/css/bulma.min.css"/>
+    <link rel="stylesheet" href="http://clonekim.github.io/css/style.css"/>
+</head><body><header>
+    <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand is-size-4">
+            <a class="navbar-item" href="http://clonekim.github.io/">
+                    Bonjour!
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="navbar-menu" class="navbar-menu">
+            <div class="navbar-end">
+                
+                    
+                        <a class="navbar-item" href="/tags">태그</a>
+                    
+                
+            </div>
+            </div>
+    </nav>
+</header><main>
+      <div class="container">
+        <div class="columns">
+          <div class="column is-four-fifths">
+            <article class="post box is-radiusless">
+              <div class="post-title">
+                <h2 class="is-size-4">ReactJS 시작하기</h2>
+              </div>
+              <div class="post-meta">
+                <span class="post-time">2015-07-29</span>
+              </div>
+              <div class="post-content content">
+                
 
 <h2 id="starter-kit으로-시작하기">Starter Kit으로 시작하기</h2>
 
@@ -100,22 +80,22 @@ JSX 문법을 사용하기 위해서는 반드시 JSXTransformer.js가 필요하
 <p><a href="http://facebook.github.io/react/downloads/react-0.13.3.zip">react-0.13.3.zip 다운로드</a></p>
 
 <p><em>hello React!</em></p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#0f0;font-weight:bold">&lt;!DOCTYPE html&gt;</span>
-&lt;<span style="font-weight:bold">html</span>&gt;
-&lt;<span style="font-weight:bold">head</span>&gt;
-  &lt;<span style="font-weight:bold">script</span> <span style="color:#007f7f">src</span>=<span style="color:#0ff;font-weight:bold">&#34;build/react.js&#34;</span>&gt;&lt;/<span style="font-weight:bold">script</span>&gt;
-  &lt;<span style="font-weight:bold">script</span> <span style="color:#007f7f">src</span>=<span style="color:#0ff;font-weight:bold">&#34;build/JSXTransformer.js&#34;</span>&gt;&lt;/<span style="font-weight:bold">script</span>&gt;
-&lt;/<span style="font-weight:bold">head</span>&gt;	
-&lt;<span style="font-weight:bold">body</span>&gt;
-  &lt;<span style="font-weight:bold">div</span> <span style="color:#007f7f">id</span>=<span style="color:#0ff;font-weight:bold">&#34;hello&#34;</span>&gt;&lt;/<span style="font-weight:bold">div</span>&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+  &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;build/react.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+  &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;build/JSXTransformer.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;	
+&lt;<span style="color:#f92672">body</span>&gt;
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hello&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
     
-    &lt;<span style="font-weight:bold">script</span> <span style="color:#007f7f">type</span>=<span style="color:#0ff;font-weight:bold">&#34;text/jsx&#34;</span>&gt;
-	React.render(&lt;h1&gt;Hello, welcome to React!&lt;<span style="color:#f00">/h1&gt;,</span>
-	<span style="color:#fff;font-weight:bold">document</span>.getElementById(<span style="color:#0ff;font-weight:bold">&#39;hello&#39;</span>));
-    &lt;/<span style="font-weight:bold">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/jsx&#34;</span>&gt;
+	<span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">render</span>(<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Hello</span>, <span style="color:#a6e22e">welcome</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">React</span><span style="color:#f92672">!&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;,</span>
+	document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;hello&#39;</span>));
+    &lt;/<span style="color:#f92672">script</span>&gt;
     
-&lt;/<span style="font-weight:bold">body</span>&gt;
-&lt;/<span style="font-weight:bold">html</span>&gt;</code></pre></div>
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;</code></pre></div>
 <p><img src="/img/react/hello.png" alt="Hello React!" /></p>
 
 <h2 id="jsx-javascript-xml">JSX(JavaScript XML)</h2>
@@ -128,14 +108,14 @@ JSX 문법을 사용하기 위해서는 반드시 JSXTransformer.js가 필요하
 <li><a href="http://facebook.github.io/react/docs/jsx-in-depth.html">http://facebook.github.io/react/docs/jsx-in-depth.html</a></li>
 <li><a href="http://facebook.github.io/jsx/">http://facebook.github.io/jsx/</a></li>
 </ul>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#007f7f">//Html
-</span><span style="color:#007f7f"></span>&lt;h1 <span style="color:#fff;font-weight:bold">class</span>=<span style="color:#0ff;font-weight:bold">&#34;test&#34;</span>&gt;Hello&lt;<span style="color:#f00">/h1&gt;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">//Html
+</span><span style="color:#75715e"></span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span> <span style="color:#66d9ef">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;test&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Hello</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;</span>
 
-<span style="color:#007f7f">//JSX
-</span><span style="color:#007f7f"></span>&lt;h1 className=<span style="color:#0ff;font-weight:bold">&#34;test&#34;</span>&gt;Hello&lt;<span style="color:#f00">/h1&gt;</span>
+<span style="color:#75715e">//JSX
+</span><span style="color:#75715e"></span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;test&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Hello</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;</span>
 
-<span style="color:#fff;font-weight:bold">var</span> text= <span style="color:#0ff;font-weight:bold">&#34;Hello React!&#34;</span>;
-&lt;h1&gt;{text}&lt;<span style="color:#f00">/h1&gt;</span>
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">text</span><span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello React!&#34;</span>;
+<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span>{<span style="color:#a6e22e">text</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;</span>
 </code></pre></div>
 <h2 id="offline-transform">OffLine Transform</h2>
 
@@ -155,7 +135,7 @@ JSX 문법을 사용하기 위해서는 반드시 JSXTransformer.js가 필요하
 
 <ol>
 <li><p>클래스 생성</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#fff;font-weight:bold">var</span> MainView = React.createClass({});
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">MainView</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">createClass</span>({});
 </code></pre></div>
 <ol>
 <li>렌더링에 포함
@@ -168,73 +148,73 @@ React.render(&lt;MainView /&gt;, document.body);
 <p><em>render를 사용하여 화면에 출력한다</em></p>
 
 <p>화면에 출력한다. 한번만 호출된다</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">React.render([JSX syntaxt], DOM element)
-</code></pre></div><div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#fff;font-weight:bold">var</span> MainView = React.createClass({
-  render: <span style="color:#fff;font-weight:bold">function</span>() {
-    <span style="color:#fff;font-weight:bold">return</span> React.DOM.div({className: <span style="color:#0ff;font-weight:bold">&#39;root&#39;</span>}, <span style="color:#0ff;font-weight:bold">&#34;My Div&#34;</span>);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">render</span>([<span style="color:#a6e22e">JSX</span> <span style="color:#a6e22e">syntaxt</span>], <span style="color:#a6e22e">DOM</span> <span style="color:#a6e22e">element</span>)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">MainView</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">createClass</span>({
+  <span style="color:#a6e22e">render</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">DOM</span>.<span style="color:#a6e22e">div</span>({<span style="color:#a6e22e">className</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;root&#39;</span>}, <span style="color:#e6db74">&#34;My Div&#34;</span>);
   }
 });
 
-<span style="color:#007f7f">//아래는 JSX를 사용하여
-</span><span style="color:#007f7f"></span>
-<span style="color:#fff;font-weight:bold">var</span> MainView = React.createClass({
-  render: <span style="color:#fff;font-weight:bold">function</span>() {
-       <span style="color:#fff;font-weight:bold">return</span> &lt;div className:<span style="color:#0ff;font-weight:bold">&#34;root&#34;</span>&gt;My Div&lt;<span style="color:#f00">/div&gt;</span>
+<span style="color:#75715e">//아래는 JSX를 사용하여
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">MainView</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">createClass</span>({
+  <span style="color:#a6e22e">render</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
+       <span style="color:#66d9ef">return</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;root&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">My</span> <span style="color:#a6e22e">Div</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
   }
 });
 
-React.render(&lt;MainView /&gt;, <span style="color:#fff;font-weight:bold">document</span>.body);
+<span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">render</span>(<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">MainView</span> <span style="color:#f92672">/&gt;</span>, document.<span style="color:#a6e22e">body</span>);
 </code></pre></div>
 <p><em>컴포넌트는 다른 컴포넌트를 포함할 수 있다</em></p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#fff;font-weight:bold">var</span> Row = React.createClass({
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">Row</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">createClass</span>({
 
-	render: <span style="color:#fff;font-weight:bold">function</span>() {
-		<span style="color:#fff;font-weight:bold">return</span> &lt;tr&gt;&lt;td&gt;{<span style="color:#fff;font-weight:bold">this</span>.props.name}&lt;<span style="color:#f00">/td&gt;&lt;/tr&gt;;</span>
+	<span style="color:#a6e22e">render</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
+		<span style="color:#66d9ef">return</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">tr</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#a6e22e">td</span><span style="color:#f92672">&gt;</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">name</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/td&gt;&lt;/tr&gt;;</span>
 	}
 });
 
-<span style="color:#fff;font-weight:bold">var</span> Table = React.createClass({
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">Table</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">createClass</span>({
 
-	render: <span style="color:#fff;font-weight:bold">function</span>() {
+	<span style="color:#a6e22e">render</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
 
-	<span style="color:#fff;font-weight:bold">var</span> data = [];
-	data.push(&lt;Row name=<span style="color:#0ff;font-weight:bold">&#34;hello1&#34;</span>/&gt;);
-	data.push(&lt;Row name=<span style="color:#0ff;font-weight:bold">&#34;hello2&#34;</span>/&gt;);
-	data.push(&lt;Row name=<span style="color:#0ff;font-weight:bold">&#34;hello3&#34;</span>/&gt;);
+	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> [];
+	<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">push</span>(<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Row</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hello1&#34;</span><span style="color:#f92672">/&gt;</span>);
+	<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">push</span>(<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Row</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hello2&#34;</span><span style="color:#f92672">/&gt;</span>);
+	<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">push</span>(<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Row</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hello3&#34;</span><span style="color:#f92672">/&gt;</span>);
 
-		<span style="color:#fff;font-weight:bold">return</span> &lt;table className=<span style="color:#0ff;font-weight:bold">&#34;table&#34;</span>&gt;&lt;thead&gt;
-		  &lt;tr&gt;
-		    &lt;th&gt;Attribute&lt;<span style="color:#f00">/th&gt;</span>
-		    &lt;th&gt;Value&lt;<span style="color:#f00">/th&gt;</span>
-		  &lt;<span style="color:#f00">/tr&gt;</span>
-		  &lt;<span style="color:#f00">/thead&gt;</span>
-		  &lt;tbody&gt;{data}&lt;<span style="color:#f00">/tbody&gt;</span>
-		  &lt;<span style="color:#f00">/table&gt;</span>
+		<span style="color:#66d9ef">return</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">table</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;table&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#a6e22e">thead</span><span style="color:#f92672">&gt;</span>
+		  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">tr</span><span style="color:#f92672">&gt;</span>
+		    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">th</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Attribute</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/th&gt;</span>
+		    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">th</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Value</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/th&gt;</span>
+		  <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/tr&gt;</span>
+		  <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/thead&gt;</span>
+		  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">tbody</span><span style="color:#f92672">&gt;</span>{<span style="color:#a6e22e">data</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/tbody&gt;</span>
+		  <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/table&gt;</span>
 	}
 });
 
-React.render(&lt;Table /&gt;, <span style="color:#fff;font-weight:bold">document</span>.getElementById(<span style="color:#0ff;font-weight:bold">&#39;hello&#39;</span>));
+<span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">render</span>(<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Table</span> <span style="color:#f92672">/&gt;</span>, document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;hello&#39;</span>));
 </code></pre></div>
 <p><img src="/img/react/test03.png" alt="React Table" /></p>
 
 <h2 id="state-component">State Component</h2>
 
 <p><em>입력폼 만들기</em></p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#fff;font-weight:bold">var</span> input = React.createClass({}); <span style="color:#007f7f">//input는 html이므로 작동이 안된다. 아래처럼 수정할 것
-</span><span style="color:#007f7f"></span>
-<span style="color:#fff;font-weight:bold">var</span> Input = React.createClass({
-  render: <span style="color:#fff;font-weight:bold">function</span>() {
-    <span style="color:#fff;font-weight:bold">return</span> &lt;input type=<span style="color:#0ff;font-weight:bold">&#34;text&#34;</span> value=<span style="color:#0ff;font-weight:bold">&#34;Hello there&#34;</span> /&gt;;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">input</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">createClass</span>({}); <span style="color:#75715e">//input는 html이므로 작동이 안된다. 아래처럼 수정할 것
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">Input</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">createClass</span>({
+  <span style="color:#a6e22e">render</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
+    <span style="color:#66d9ef">return</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Hello there&#34;</span> <span style="color:#f92672">/&gt;</span>;
 });
 </code></pre></div>
 <p><em>초기값을 설정</em></p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#fff;font-weight:bold">var</span> Input = React.createClass({
-	getInitialState: <span style="color:#fff;font-weight:bold">function</span>() {				
-		<span style="color:#fff;font-weight:bold">return</span> {abc: <span style="color:#0ff;font-weight:bold">&#34;Hello There!&#34;</span>};
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">Input</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">createClass</span>({
+	<span style="color:#a6e22e">getInitialState</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {				
+		<span style="color:#66d9ef">return</span> {<span style="color:#a6e22e">abc</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Hello There!&#34;</span>};
 	},
 	
-	render: <span style="color:#fff;font-weight:bold">function</span>() {
-		<span style="color:#fff;font-weight:bold">return</span> &lt;Input type=<span style="color:#0ff;font-weight:bold">&#34;text&#34;</span> value={<span style="color:#fff;font-weight:bold">this</span>.state.abc} /&gt;;
+	<span style="color:#a6e22e">render</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
+		<span style="color:#66d9ef">return</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">abc</span>} <span style="color:#f92672">/&gt;</span>;
 	}
 })
 </code></pre></div>
@@ -243,21 +223,21 @@ React.render(&lt;Table /&gt;, <span style="color:#fff;font-weight:bold">document
 this.state에 변화를 주면 된다.</p>
 
 <p>변화를 주기 위해서</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#fff;font-weight:bold">this</span>.setState( 데이터 )
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>( <span style="color:#a6e22e">데이터</span> )
 </code></pre></div>
 <h2 id="event-핸들러">Event 핸들러</h2>
 
 <p>text 입력창에 변화가 발생할 때마다 초기값으로 돌리는 예이다<br />
 결과는 입력값 수정이 불가능하게 된다</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#fff;font-weight:bold">var</span> Input = React.createClass({
-	getInitialState: <span style="color:#fff;font-weight:bold">function</span>() {
-		<span style="color:#fff;font-weight:bold">return</span> {abc: <span style="color:#0ff;font-weight:bold">&#34;Hello There!&#34;</span>};
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">Input</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">createClass</span>({
+	<span style="color:#a6e22e">getInitialState</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
+		<span style="color:#66d9ef">return</span> {<span style="color:#a6e22e">abc</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Hello There!&#34;</span>};
 	},
-	handleEvent: <span style="color:#fff;font-weight:bold">function</span>(e) {
-		<span style="color:#fff;font-weight:bold">this</span>.setState({abc: <span style="color:#fff;font-weight:bold">this</span>.state.abc});
+	<span style="color:#a6e22e">handleEvent</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">e</span>) {
+		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({<span style="color:#a6e22e">abc</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">abc</span>});
 	},
-	render: <span style="color:#fff;font-weight:bold">function</span>() {
-		<span style="color:#fff;font-weight:bold">return</span> &lt;input type=<span style="color:#0ff;font-weight:bold">&#34;text&#34;</span> value={<span style="color:#fff;font-weight:bold">this</span>.state.abc} onChange={<span style="color:#fff;font-weight:bold">this</span>.handleEvent}/&gt;;
+	<span style="color:#a6e22e">render</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
+		<span style="color:#66d9ef">return</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">abc</span>} <span style="color:#a6e22e">onChange</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleEvent</span>}<span style="color:#f92672">/&gt;</span>;
 	}
 })
 </code></pre></div>
@@ -275,70 +255,70 @@ $ python -m SimpleHTTPServer
 <p><em>서버에서 사용할 데이터를 미리 준비</em></p>
 
 <p><code>example.json</code></p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
-  { <span style="font-weight:bold">&#34;author&#34;</span>: <span style="color:#0ff;font-weight:bold">&#34;Kim Dae Hee&#34;</span>, <span style="font-weight:bold">&#34;title&#34;</span> : <span style="color:#0ff;font-weight:bold">&#34;자바스크립트로 배우는 vert.x&#34;</span> },
-  { <span style="font-weight:bold">&#34;author&#34;</span>: <span style="color:#0ff;font-weight:bold">&#34;Kim Dae Hee&#34;</span>, <span style="font-weight:bold">&#34;title&#34;</span> : <span style="color:#0ff;font-weight:bold">&#34;React.js + Spring Boot&#34;</span> }
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
+  { <span style="color:#f92672">&#34;author&#34;</span>: <span style="color:#e6db74">&#34;Kim Dae Hee&#34;</span>, <span style="color:#f92672">&#34;title&#34;</span> : <span style="color:#e6db74">&#34;자바스크립트로 배우는 vert.x&#34;</span> },
+  { <span style="color:#f92672">&#34;author&#34;</span>: <span style="color:#e6db74">&#34;Kim Dae Hee&#34;</span>, <span style="color:#f92672">&#34;title&#34;</span> : <span style="color:#e6db74">&#34;React.js + Spring Boot&#34;</span> }
 ]</code></pre></div>
 <p><code>test05.html</code></p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#fff;font-weight:bold">var</span> Book = React.createClass({
-   render: <span style="color:#fff;font-weight:bold">function</span>() {
-      console.log(<span style="color:#0ff;font-weight:bold">&#34;here!&#34;</span>);
-      <span style="color:#fff;font-weight:bold">return</span> (
-         &lt;div&gt;
-            &lt;h4&gt;도서명: {<span style="color:#fff;font-weight:bold">this</span>.props.title}&lt;<span style="color:#f00">/h4&gt;</span>
-            &lt;p&gt;저자:{<span style="color:#fff;font-weight:bold">this</span>.props.author}&lt;<span style="color:#f00">/p&gt;</span>
-         &lt;<span style="color:#f00">/div&gt;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">Book</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">createClass</span>({
+   <span style="color:#a6e22e">render</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
+      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;here!&#34;</span>);
+      <span style="color:#66d9ef">return</span> (
+         <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+            <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h4</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">도서명</span><span style="color:#f92672">:</span> {<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">title</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h4&gt;</span>
+            <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">p</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">저자</span><span style="color:#f92672">:</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">author</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/p&gt;</span>
+         <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
       );
    }
 });
 
-<span style="color:#fff;font-weight:bold">var</span> BookList = React.createClass({
-   render: <span style="color:#fff;font-weight:bold">function</span> () {
-      console.log(<span style="color:#fff;font-weight:bold">this</span>.props.data);
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">BookList</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">createClass</span>({
+   <span style="color:#a6e22e">render</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> () {
+      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">data</span>);
 
-      <span style="color:#fff;font-weight:bold">var</span> nodes = <span style="color:#fff;font-weight:bold">this</span>.props.data.map(<span style="color:#fff;font-weight:bold">function</span>(item) {
+      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">nodes</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">map</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">item</span>) {
 
-         <span style="color:#fff;font-weight:bold">return</span> (
-            &lt;Book author={item.author} title={item.title} /&gt;
+         <span style="color:#66d9ef">return</span> (
+            <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Book</span> <span style="color:#a6e22e">author</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">author</span>} <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">title</span>} <span style="color:#f92672">/&gt;</span>
          );
 
       });
 
-      <span style="color:#fff;font-weight:bold">return</span> &lt;div&gt;{nodes}&lt;<span style="color:#f00">/div&gt;;</span>
+      <span style="color:#66d9ef">return</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>{<span style="color:#a6e22e">nodes</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;;</span>
    }
 
 });
 
 
-<span style="color:#fff;font-weight:bold">var</span> BookView = React.createClass({
-   getInitialState: <span style="color:#fff;font-weight:bold">function</span>() {
-      <span style="color:#fff;font-weight:bold">return</span> {data: []};
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">BookView</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">createClass</span>({
+   <span style="color:#a6e22e">getInitialState</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
+      <span style="color:#66d9ef">return</span> {<span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> []};
    },
-   componentDidMount: <span style="color:#fff;font-weight:bold">function</span>() {
-      console.log(<span style="color:#0ff;font-weight:bold">&#34;fetch from server&#34;</span>);
+   <span style="color:#a6e22e">componentDidMount</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
+      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;fetch from server&#34;</span>);
 
-      $.ajax({
-         url: <span style="color:#0ff;font-weight:bold">&#39;example.json&#39;</span>,
-         dataType: <span style="color:#0ff;font-weight:bold">&#39;json&#39;</span>,
-         success: <span style="color:#fff;font-weight:bold">function</span>(data) {
-            <span style="color:#fff;font-weight:bold">this</span>.setState({data:data});
-         }.bind(<span style="color:#fff;font-weight:bold">this</span>)
+      <span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">ajax</span>({
+         <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;example.json&#39;</span>,
+         <span style="color:#a6e22e">dataType</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;json&#39;</span>,
+         <span style="color:#a6e22e">success</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">data</span>) {
+            <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({<span style="color:#a6e22e">data</span><span style="color:#f92672">:</span><span style="color:#a6e22e">data</span>});
+         }.<span style="color:#a6e22e">bind</span>(<span style="color:#66d9ef">this</span>)
       });
 
    },
 
-   render: <span style="color:#fff;font-weight:bold">function</span>() {
+   <span style="color:#a6e22e">render</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
 
-      <span style="color:#fff;font-weight:bold">return</span> (
-         &lt;div&gt;
-           &lt;h1&gt; Book List&lt;<span style="color:#f00">/h1&gt;</span>
-           &lt;BookList data={<span style="color:#fff;font-weight:bold">this</span>.state.data} /&gt;
-         &lt;<span style="color:#f00">/div&gt;</span>
+      <span style="color:#66d9ef">return</span> (
+         <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+           <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">Book</span> <span style="color:#a6e22e">List</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;</span>
+           <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">BookList</span> <span style="color:#a6e22e">data</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">data</span>} <span style="color:#f92672">/&gt;</span>
+         <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
       );
    }
 });
 
-React.render(&lt;BookView /&gt;, <span style="color:#fff;font-weight:bold">document</span>.getElementById(<span style="color:#0ff;font-weight:bold">&#39;hello&#39;</span>));
+<span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">render</span>(<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">BookView</span> <span style="color:#f92672">/&gt;</span>, document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;hello&#39;</span>));
 </code></pre></div>
 <p><img src="/img/react/test05.png" alt="React Server Side" /></p>
 
@@ -350,39 +330,56 @@ React.render(&lt;BookView /&gt;, <span style="color:#fff;font-weight:bold">docum
 <li><a href="http://winterbe.com/posts/2015/02/16/isomorphic-react-webapps-on-the-jvm/">http://winterbe.com/posts/2015/02/16/isomorphic-react-webapps-on-the-jvm/</a></li>
 <li><a href="https://github.com/winterbe/spring-react-example">https://github.com/winterbe/spring-react-example</a></li>
 </ul>
-</p>
-    <p class="card-text text-right">
-      
-      <a href="http://clonekim.github.io/tags/react.js" class="btn btn-outline-success btn-sm">
-        react.js
-      </a>
-      
-    </p>
-  </div>
-</div>
 
+              </div>
+              <div class="columns is-mobile post-meta">
+                <div class="column is-half-desktop has-text-left is-paddingless"> 
+                   
+                  이전:<a href="http://clonekim.github.io/posts/2015/2015-07-18-install-redmine/"> Redmine3 설치하기</a>
+                  
+                </div>
+                <div class="column is-half-desktop has-text-right is-paddingless">
+                  
+                  이후:<a href="http://clonekim.github.io/posts/2015/2015-09-03-mariadb-replication-using-gtid/"> GTID를 이용한 Mariadb Replication</a>
+                  
+                </div>
+                <div class="is-clearfix"></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </main>    <footer class="footer">
+    
+        <div class="copyright has-text-centered">
+            <a href="https://bulma.io">
+                <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
+            </a>
+            <p>© Bonjour! Power by Hugo</p>
+        </div>
+    </footer>
+    <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+        
+        if ($navbarBurgers.length > 0) {
+            
+            $navbarBurgers.forEach( el => {
+                el.addEventListener('click', () => {
+                
+                const target = el.dataset.target;
+                const $target = document.getElementById(target);
+                
+                el.classList.toggle('is-active');
+                $target.classList.toggle('is-active');
+    
+                });
+            });
+        }
+    });
+    
 
-
-<div id="disqus_thread"></div>
-<script type="text/javascript">
- (function() {
-   
-   
-   if (window.location.hostname == "localhost")
-     return;
-   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-   var disqus_shortname = 'clonekim-github-io';
-   dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
- })();
-</script>
-<noscript>
-  Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-</noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
-
-
-        </div></body>
+    </script>
+</body>
 </html>

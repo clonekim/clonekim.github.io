@@ -1,156 +1,142 @@
 <!DOCTYPE html>
-<html lang="ko"><head>
-  <meta charset="utf-8" />
-  <meta name="author" content="DAEHEE KIM" />
-  <meta name="description" content="Personal blog." />
-  <meta name="keywords" content="blog, tech" />
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<html><head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <link rel="canonical" href="http://clonekim.github.io/posts/2012/2012-02-03-ruby-some-basic/">
-  <base href="http://clonekim.github.io/" />
-  <meta property="og:title" content="Ruby Some Basic" />
-<meta property="og:description" content="json 생성
-require &#39;json&#39; jsonbody = JSON.generate[&#34;message&#34;=&gt;&#34;test&#34;,&#34;user&#34;=&gt;&#34;user1&#34;] rest-client을 이용한 예제
-require &#39;rubygems&#39; require &#39;rest_client&#39; require &#39;json&#39; jdata = JSON.generate([&#34;test&#34;]) RestClient.put &#39;http://localhost:4567/users/123&#39;, jdata, {:content_type =&gt; :json} Net:HTTP GET/PUT
-require &#39;net/http&#39; http = Net::HTTP.new(&#39;www.data.com&#39;) response = http.request_put(&#39;/?access_token=123&#39;, jsonbody)url = URI.parse(&#39;http://localhost:3000/someservice/&#39;) request = Net::HTTP::Post.new(url.path) request.body = &#34;&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;&lt;somedata&gt;&lt;name&gt;Test Name 1&lt;/name&gt;&lt;description&gt;Some data for Unit testing&lt;/description&gt;&lt;/somedata&gt;&#34; response = Net::HTTP.start(url.host, url.port) {|http| http.request(request)} #Note this test PASSES! assert_equal &#39;201 Created&#39;, response.get_fields(&#39;Status&#39;)[0]require &#39;net/http&#39; require &#39;uri&#39; type = &#39;record&#39; activity = &#39;query-data&#39; xml_req =&lt;&lt;EOF &lt;?" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://clonekim.github.io/posts/2012/2012-02-03-ruby-some-basic/" />
-<meta property="article:published_time" content="2012-02-03T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2012-02-03T00:00:00&#43;00:00"/>
+    
+    <meta name="author"
+            content="DAEHEE KIM"/>
 
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Ruby Some Basic"/>
-<meta name="twitter:description" content="json 생성
-require &#39;json&#39; jsonbody = JSON.generate[&#34;message&#34;=&gt;&#34;test&#34;,&#34;user&#34;=&gt;&#34;user1&#34;] rest-client을 이용한 예제
-require &#39;rubygems&#39; require &#39;rest_client&#39; require &#39;json&#39; jdata = JSON.generate([&#34;test&#34;]) RestClient.put &#39;http://localhost:4567/users/123&#39;, jdata, {:content_type =&gt; :json} Net:HTTP GET/PUT
-require &#39;net/http&#39; http = Net::HTTP.new(&#39;www.data.com&#39;) response = http.request_put(&#39;/?access_token=123&#39;, jsonbody)url = URI.parse(&#39;http://localhost:3000/someservice/&#39;) request = Net::HTTP::Post.new(url.path) request.body = &#34;&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;&lt;somedata&gt;&lt;name&gt;Test Name 1&lt;/name&gt;&lt;description&gt;Some data for Unit testing&lt;/description&gt;&lt;/somedata&gt;&#34; response = Net::HTTP.start(url.host, url.port) {|http| http.request(request)} #Note this test PASSES! assert_equal &#39;201 Created&#39;, response.get_fields(&#39;Status&#39;)[0]require &#39;net/http&#39; require &#39;uri&#39; type = &#39;record&#39; activity = &#39;query-data&#39; xml_req =&lt;&lt;EOF &lt;?"/>
+    
+    <meta name="description" content="json 생성
+require &amp;#39;json&amp;#39; jsonbody = JSON.generate[&amp;#34;message&amp;#34;=&amp;gt;&amp;#34;test&amp;#34;,&amp;#34;user&amp;#34;=&amp;gt;&amp;#34;user1&amp;#34;] rest-client을 이용한 예제
+require &amp;#39;rubygems&amp;#39; require &amp;#39;rest_client&amp;#39; require &amp;#39;json&amp;#39; jdata = JSON.generate([&amp;#34;test&amp;#34;]) RestClient.put &amp;#39;http://localhost:4567/users/123&amp;#39;, jdata, {:content_type =&amp;gt; :json} Net:HTTP GET/PUT
+require &amp;#39;net/http&amp;#39; http = Net::HTTP.new(&amp;#39;www.data.com&amp;#39;) response = http.request_put(&amp;#39;/?access_token=123&amp;#39;, jsonbody)url = URI.parse(&amp;#39;http://localhost:3000/someservice/&amp;#39;) request = Net::HTTP::Post.new(url.path) request.body = &amp;#34;&amp;lt;?xml version=&amp;#39;1.0&amp;#39; encoding=&amp;#39;UTF-8&amp;#39;?&amp;gt;&amp;lt;somedata&amp;gt;&amp;lt;name&amp;gt;Test Name 1&amp;lt;/name&amp;gt;&amp;lt;description&amp;gt;Some data for Unit testing&amp;lt;/description&amp;gt;&amp;lt;/somedata&amp;gt;&amp;#34; response = Net::HTTP.start(url.host, url.port) {|http| http.request(request)} #Note this test PASSES! assert_equal &amp;#39;201 Created&amp;#39;, response.get_fields(&amp;#39;Status&amp;#39;)[0]require &amp;#39;net/http&amp;#39; require &amp;#39;uri&amp;#39; type = &amp;#39;record&amp;#39; activity = &amp;#39;query-data&amp;#39; xml_req =&amp;lt;&amp;lt;EOF &amp;lt;?"/>
+    
 
-  
-  
-<meta itemprop="name" content="Ruby Some Basic">
-<meta itemprop="description" content="json 생성
-require &#39;json&#39; jsonbody = JSON.generate[&#34;message&#34;=&gt;&#34;test&#34;,&#34;user&#34;=&gt;&#34;user1&#34;] rest-client을 이용한 예제
-require &#39;rubygems&#39; require &#39;rest_client&#39; require &#39;json&#39; jdata = JSON.generate([&#34;test&#34;]) RestClient.put &#39;http://localhost:4567/users/123&#39;, jdata, {:content_type =&gt; :json} Net:HTTP GET/PUT
-require &#39;net/http&#39; http = Net::HTTP.new(&#39;www.data.com&#39;) response = http.request_put(&#39;/?access_token=123&#39;, jsonbody)url = URI.parse(&#39;http://localhost:3000/someservice/&#39;) request = Net::HTTP::Post.new(url.path) request.body = &#34;&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;&lt;somedata&gt;&lt;name&gt;Test Name 1&lt;/name&gt;&lt;description&gt;Some data for Unit testing&lt;/description&gt;&lt;/somedata&gt;&#34; response = Net::HTTP.start(url.host, url.port) {|http| http.request(request)} #Note this test PASSES! assert_equal &#39;201 Created&#39;, response.get_fields(&#39;Status&#39;)[0]require &#39;net/http&#39; require &#39;uri&#39; type = &#39;record&#39; activity = &#39;query-data&#39; xml_req =&lt;&lt;EOF &lt;?">
+    
 
+    
+    <link rel="canonical" href="http://clonekim.github.io/posts/2012/2012-02-03-ruby-some-basic/"/>
 
-<meta itemprop="datePublished" content="2012-02-03T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2012-02-03T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="219">
+    
 
+    
+    
+    
+        
+            
+        
+    
+    <title> Ruby Some Basic | Bonjour! </title>
 
-
-<meta itemprop="keywords" content="ruby," />
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <title>Bonjour!</title>
-  <style>
-   pre {
-     margin: 1em 0em 1em;
-     padding: 0.5em 0.5em 0.5em;
-     border: 1px solid #5C5C5C;
-   }
-
-   code {
-     white-space: pre-wrap;        
-     white-space: -moz-pre-wrap;   
-     white-space: -pre-wrap;       
-     white-space: -o-pre-wrap;     
-     word-wrap: break-word;        
-     line-height: 1.4em;
-   }
-
-   blockquote { background: #1D1F21; border-left: 3px solid #99cc66; }
-   table { margin: 1em auto; border-collapse: collapse; }
-   table, th, td { border: 1px solid #5C5C5C; }
-   tr:hover { background: #1D1F21; }
-  </style>
-  <link rel="stylesheet" href="css/tomorrow-night.min.css" />
-  <script src="js/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-</head>
-<body><h3><a href="http://clonekim.github.io/">Bonjour!</a></h3>
-<div id="content" class="container">
-<div class="card border-primary">
-  <div class="card-header text-right">
-    <small>Feb 3, 2012</small>
-  </div>
-  <div class="card-body">
-    <a  href="http://clonekim.github.io/posts/2012/2012-02-03-ruby-some-basic/">
-      <h5 class="card-title">Ruby Some Basic</h5>
-    </a>
-    <p class="card-text">
+    <link rel="shortcut icon" href="http://clonekim.github.io/favicon.jpg"/>
+    <link rel="stylesheet" href="http://clonekim.github.io/css/bulma.min.css"/>
+    <link rel="stylesheet" href="http://clonekim.github.io/css/style.css"/>
+</head><body><header>
+    <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand is-size-4">
+            <a class="navbar-item" href="http://clonekim.github.io/">
+                    Bonjour!
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="navbar-menu" class="navbar-menu">
+            <div class="navbar-end">
+                
+                    
+                        <a class="navbar-item" href="/tags">태그</a>
+                    
+                
+            </div>
+            </div>
+    </nav>
+</header><main>
+      <div class="container">
+        <div class="columns">
+          <div class="column is-four-fifths">
+            <article class="post box is-radiusless">
+              <div class="post-title">
+                <h2 class="is-size-4">Ruby Some Basic</h2>
+              </div>
+              <div class="post-meta">
+                <span class="post-time">2012-02-03</span>
+              </div>
+              <div class="post-content content">
+                
 
 <p><em>json 생성</em></p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#fff;font-weight:bold">require</span> <span style="color:#0ff;font-weight:bold">&#39;json&#39;</span>
-jsonbody = JSON.generate[<span style="color:#0ff;font-weight:bold">&#34;message&#34;</span>=&gt;<span style="color:#0ff;font-weight:bold">&#34;test&#34;</span>,<span style="color:#0ff;font-weight:bold">&#34;user&#34;</span>=&gt;<span style="color:#0ff;font-weight:bold">&#34;user1&#34;</span>]</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">require <span style="color:#e6db74">&#39;json&#39;</span>
+jsonbody <span style="color:#f92672">=</span> <span style="color:#66d9ef">JSON</span><span style="color:#f92672">.</span>generate<span style="color:#f92672">[</span><span style="color:#e6db74">&#34;message&#34;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#34;test&#34;</span>,<span style="color:#e6db74">&#34;user&#34;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#34;user1&#34;</span><span style="color:#f92672">]</span></code></pre></div>
 <p><em>rest-client을 이용한 예제</em></p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#fff;font-weight:bold">require</span> <span style="color:#0ff;font-weight:bold">&#39;rubygems&#39;</span>
-<span style="color:#fff;font-weight:bold">require</span> <span style="color:#0ff;font-weight:bold">&#39;rest_client&#39;</span>
-<span style="color:#fff;font-weight:bold">require</span> <span style="color:#0ff;font-weight:bold">&#39;json&#39;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">require <span style="color:#e6db74">&#39;rubygems&#39;</span>
+require <span style="color:#e6db74">&#39;rest_client&#39;</span>
+require <span style="color:#e6db74">&#39;json&#39;</span>
 
-jdata = JSON.generate([<span style="color:#0ff;font-weight:bold">&#34;test&#34;</span>])
-RestClient.put <span style="color:#0ff;font-weight:bold">&#39;http://localhost:4567/users/123&#39;</span>, jdata, {<span style="color:#0ff;font-weight:bold">:content_type</span> =&gt; <span style="color:#0ff;font-weight:bold">:json</span>}</code></pre></div>
+jdata <span style="color:#f92672">=</span> <span style="color:#66d9ef">JSON</span><span style="color:#f92672">.</span>generate(<span style="color:#f92672">[</span><span style="color:#e6db74">&#34;test&#34;</span><span style="color:#f92672">]</span>)
+<span style="color:#66d9ef">RestClient</span><span style="color:#f92672">.</span>put <span style="color:#e6db74">&#39;http://localhost:4567/users/123&#39;</span>, jdata, {<span style="color:#e6db74">:content_type</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">:json</span>}</code></pre></div>
 <h2 id="net-http">Net:HTTP</h2>
 
 <p><em>GET/PUT</em></p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#fff;font-weight:bold">require</span> <span style="color:#0ff;font-weight:bold">&#39;net/http&#39;</span>
-http = Net::HTTP.new(<span style="color:#0ff;font-weight:bold">&#39;www.data.com&#39;</span>)
-response = http.request_put(<span style="color:#0ff;font-weight:bold">&#39;/?access_token=123&#39;</span>, jsonbody)</code></pre></div><div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">url = URI.parse(<span style="color:#0ff;font-weight:bold">&#39;http://localhost:3000/someservice/&#39;</span>)
-request = Net::HTTP::Post.new(url.path)
-request.body = <span style="color:#0ff;font-weight:bold">&#34;&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;&lt;somedata&gt;&lt;name&gt;Test Name 1&lt;/name&gt;&lt;description&gt;Some data for Unit testing&lt;/description&gt;&lt;/somedata&gt;&#34;</span>
-response = Net::HTTP.start(url.host, url.port) {|http| http.request(request)}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">require <span style="color:#e6db74">&#39;net/http&#39;</span>
+http <span style="color:#f92672">=</span> <span style="color:#66d9ef">Net</span><span style="color:#f92672">::</span><span style="color:#66d9ef">HTTP</span><span style="color:#f92672">.</span>new(<span style="color:#e6db74">&#39;www.data.com&#39;</span>)
+response <span style="color:#f92672">=</span> http<span style="color:#f92672">.</span>request_put(<span style="color:#e6db74">&#39;/?access_token=123&#39;</span>, jsonbody)</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">url <span style="color:#f92672">=</span> <span style="color:#66d9ef">URI</span><span style="color:#f92672">.</span>parse(<span style="color:#e6db74">&#39;http://localhost:3000/someservice/&#39;</span>)
+request <span style="color:#f92672">=</span> <span style="color:#66d9ef">Net</span><span style="color:#f92672">::</span><span style="color:#66d9ef">HTTP</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Post</span><span style="color:#f92672">.</span>new(url<span style="color:#f92672">.</span>path)
+request<span style="color:#f92672">.</span>body <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;&lt;somedata&gt;&lt;name&gt;Test Name 1&lt;/name&gt;&lt;description&gt;Some data for Unit testing&lt;/description&gt;&lt;/somedata&gt;&#34;</span>
+response <span style="color:#f92672">=</span> <span style="color:#66d9ef">Net</span><span style="color:#f92672">::</span><span style="color:#66d9ef">HTTP</span><span style="color:#f92672">.</span>start(url<span style="color:#f92672">.</span>host, url<span style="color:#f92672">.</span>port) {<span style="color:#f92672">|</span>http<span style="color:#f92672">|</span> http<span style="color:#f92672">.</span>request(request)}
 
-<span style="color:#007f7f">#Note this test PASSES!</span>
-assert_equal <span style="color:#0ff;font-weight:bold">&#39;201 Created&#39;</span>, response.get_fields(<span style="color:#0ff;font-weight:bold">&#39;Status&#39;</span>)[<span style="color:#ff0;font-weight:bold">0</span>]</code></pre></div><div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#fff;font-weight:bold">require</span> <span style="color:#0ff;font-weight:bold">&#39;net/http&#39;</span>
-<span style="color:#fff;font-weight:bold">require</span> <span style="color:#0ff;font-weight:bold">&#39;uri&#39;</span>
+<span style="color:#75715e">#Note this test PASSES!</span>
+assert_equal <span style="color:#e6db74">&#39;201 Created&#39;</span>, response<span style="color:#f92672">.</span>get_fields(<span style="color:#e6db74">&#39;Status&#39;</span>)<span style="color:#f92672">[</span><span style="color:#ae81ff">0</span><span style="color:#f92672">]</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">require <span style="color:#e6db74">&#39;net/http&#39;</span>
+require <span style="color:#e6db74">&#39;uri&#39;</span>
 
-type = <span style="color:#0ff;font-weight:bold">&#39;record&#39;</span>
-activity = <span style="color:#0ff;font-weight:bold">&#39;query-data&#39;</span>
+type <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;record&#39;</span>
+activity <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;query-data&#39;</span>
 
-xml_req =<span style="color:#0ff;font-weight:bold">&lt;&lt;EOF
-</span><span style="color:#0ff;font-weight:bold"></span>&lt;? xml version=<span style="color:#0ff;font-weight:bold">&#39;1.0&#39;</span> <span style="color:#0ff;font-weight:bold">?&gt;</span>
-&lt;DATASET&gt;
-&lt;SITE_ID&gt;<span style="color:#ff0;font-weight:bold">123456789</span>&lt;<span style="color:#0ff;font-weight:bold">/SITE_ID&gt;
-</span><span style="color:#0ff;font-weight:bold">&lt;MLID&gt;987654321&lt;/</span>MLID&gt;
-&lt;DATA type=<span style="color:#0ff;font-weight:bold">&#39;email&#39;</span>&gt;user@somedomain.com&lt;<span style="color:#0ff;font-weight:bold">/DATA&gt;
-</span><span style="color:#0ff;font-weight:bold">&lt;/</span>DATASET&gt;
-EOF
+xml_req <span style="color:#f92672">=</span><span style="color:#e6db74">&lt;&lt;EOF
+</span><span style="color:#e6db74"></span><span style="color:#f92672">&lt;</span>? xml version<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;1.0&#39;</span> <span style="color:#e6db74">?&gt;</span>
+<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">DATASET</span><span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">SITE_ID</span><span style="color:#f92672">&gt;</span><span style="color:#ae81ff">123456789</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74">/SITE_ID&gt;
+</span><span style="color:#e6db74">&lt;MLID&gt;987654321&lt;/</span><span style="color:#66d9ef">MLID</span><span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">DATA</span> type<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;email&#39;</span><span style="color:#f92672">&gt;</span>user@somedomain<span style="color:#f92672">.</span>com<span style="color:#f92672">&lt;</span><span style="color:#e6db74">/DATA&gt;
+</span><span style="color:#e6db74">&lt;/</span><span style="color:#66d9ef">DATASET</span><span style="color:#f92672">&gt;</span>
+<span style="color:#66d9ef">EOF</span>
 
 
-req = <span style="color:#0ff;font-weight:bold">&#34;type=</span><span style="color:#0ff;font-weight:bold">#{</span>type<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold">&amp;activity=</span><span style="color:#0ff;font-weight:bold">#{</span>activity<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold">&amp;input=&#34;</span>
-req = req + URI.escape(xml_req)
+req <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;type=</span><span style="color:#e6db74">#{</span>type<span style="color:#e6db74">}</span><span style="color:#e6db74">&amp;activity=</span><span style="color:#e6db74">#{</span>activity<span style="color:#e6db74">}</span><span style="color:#e6db74">&amp;input=&#34;</span>
+req <span style="color:#f92672">=</span> req <span style="color:#f92672">+</span> <span style="color:#66d9ef">URI</span><span style="color:#f92672">.</span>escape(xml_req)
 
-res = Net::HTTP.start(<span style="color:#0ff;font-weight:bold">&#39;www.uptilt.com&#39;</span>) { |http|
-  http.post(<span style="color:#0ff;font-weight:bold">&#34;/API/mailing_list.html&#34;</span>, req)
+res <span style="color:#f92672">=</span> <span style="color:#66d9ef">Net</span><span style="color:#f92672">::</span><span style="color:#66d9ef">HTTP</span><span style="color:#f92672">.</span>start(<span style="color:#e6db74">&#39;www.uptilt.com&#39;</span>) { <span style="color:#f92672">|</span>http<span style="color:#f92672">|</span>
+  http<span style="color:#f92672">.</span>post(<span style="color:#e6db74">&#34;/API/mailing_list.html&#34;</span>, req)
 }
-<span style="color:#fff;font-weight:bold">puts</span> res.body</code></pre></div><div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#fff;font-weight:bold">require</span> <span style="color:#0ff;font-weight:bold">&#39;net/http&#39;</span>
-<span style="color:#fff;font-weight:bold">require</span> <span style="color:#0ff;font-weight:bold">&#39;pp&#39;</span>
+puts res<span style="color:#f92672">.</span>body</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">require <span style="color:#e6db74">&#39;net/http&#39;</span>
+require <span style="color:#e6db74">&#39;pp&#39;</span>
 
-http = Net::HTTP.new(<span style="color:#0ff;font-weight:bold">&#39;localhost&#39;</span>, <span style="color:#ff0;font-weight:bold">8080</span>)
+http <span style="color:#f92672">=</span> <span style="color:#66d9ef">Net</span><span style="color:#f92672">::</span><span style="color:#66d9ef">HTTP</span><span style="color:#f92672">.</span>new(<span style="color:#e6db74">&#39;localhost&#39;</span>, <span style="color:#ae81ff">8080</span>)
 
-params = {
-  <span style="color:#0ff;font-weight:bold">&#39;Accept&#39;</span> =&gt; <span style="color:#0ff;font-weight:bold">&#39;application/xml&#39;</span>
+params <span style="color:#f92672">=</span> {
+  <span style="color:#e6db74">&#39;Accept&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;application/xml&#39;</span>
 }
 
-resp = http.get(<span style="color:#0ff;font-weight:bold">&#39;/acerapp/say.app&#39;</span>, params)
+resp <span style="color:#f92672">=</span> http<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;/acerapp/say.app&#39;</span>, params)
 
-pp resp.response
-pp resp.body</code></pre></div>
+pp resp<span style="color:#f92672">.</span>response
+pp resp<span style="color:#f92672">.</span>body</code></pre></div>
 <h2 id="io">IO</h2>
 
 <p><em>popen</em></p>
 
 <p>IO.popen명령어를 사용해서 IO오브젝트를 얻는다<br />
 get을 호출하면 출력결과를 볼 수 있다</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">IO.popen(<span style="color:#0ff;font-weight:bold">&#34;ping localhost&#34;</span>) <span style="color:#fff;font-weight:bold">do</span> |io|
-  <span style="color:#fff;font-weight:bold">while</span> io.gets
-    <span style="color:#fff;font-weight:bold">print</span> $_
-  <span style="color:#fff;font-weight:bold">end</span>
-<span style="color:#fff;font-weight:bold">end</span></code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">IO</span><span style="color:#f92672">.</span>popen(<span style="color:#e6db74">&#34;ping localhost&#34;</span>) <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>io<span style="color:#f92672">|</span>
+  <span style="color:#66d9ef">while</span> io<span style="color:#f92672">.</span>gets
+    print $_
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span></code></pre></div>
 <p><em>실행결과</em></p>
 
 <pre><code>PING localhost.localdomain (127.0.0.1) 56(84) bytes of data.
@@ -164,42 +150,59 @@ rtt min/avg/max/mdev = 0.022/0.022/0.023/0.004 ms
 </code></pre>
 
 <p>pid를 얻어 프로세스를 닫는다.</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">io = IO.popen(<span style="color:#0ff;font-weight:bold">&#34;ping localhost&#34;</span>)
-<span style="color:#fff;font-weight:bold">sleep</span>(<span style="color:#ff0;font-weight:bold">3</span>)
-Process.kill(<span style="color:#0ff;font-weight:bold">&#34;INT&#34;</span>, io.pid)
-<span style="color:#fff;font-weight:bold">print</span> io.readlines</code></pre></div></p>
-    <p class="card-text text-right">
-      
-      <a href="http://clonekim.github.io/tags/ruby" class="btn btn-outline-success btn-sm">
-        ruby
-      </a>
-      
-    </p>
-  </div>
-</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">io <span style="color:#f92672">=</span> <span style="color:#66d9ef">IO</span><span style="color:#f92672">.</span>popen(<span style="color:#e6db74">&#34;ping localhost&#34;</span>)
+sleep(<span style="color:#ae81ff">3</span>)
+<span style="color:#66d9ef">Process</span><span style="color:#f92672">.</span>kill(<span style="color:#e6db74">&#34;INT&#34;</span>, io<span style="color:#f92672">.</span>pid)
+print io<span style="color:#f92672">.</span>readlines</code></pre></div>
+              </div>
+              <div class="columns is-mobile post-meta">
+                <div class="column is-half-desktop has-text-left is-paddingless"> 
+                   
+                  이전:<a href="http://clonekim.github.io/posts/2012/2012-10-17-ognl-in-java/"> OGNL</a>
+                  
+                </div>
+                <div class="column is-half-desktop has-text-right is-paddingless">
+                  
+                  이후:<a href="http://clonekim.github.io/posts/2012/2012-05-23-vim-favorite-setting/"> 즐겨사용하는 VIM 설정</a>
+                  
+                </div>
+                <div class="is-clearfix"></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </main>    <footer class="footer">
+    
+        <div class="copyright has-text-centered">
+            <a href="https://bulma.io">
+                <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
+            </a>
+            <p>© Bonjour! Power by Hugo</p>
+        </div>
+    </footer>
+    <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+        
+        if ($navbarBurgers.length > 0) {
+            
+            $navbarBurgers.forEach( el => {
+                el.addEventListener('click', () => {
+                
+                const target = el.dataset.target;
+                const $target = document.getElementById(target);
+                
+                el.classList.toggle('is-active');
+                $target.classList.toggle('is-active');
+    
+                });
+            });
+        }
+    });
+    
 
-
-
-<div id="disqus_thread"></div>
-<script type="text/javascript">
- (function() {
-   
-   
-   if (window.location.hostname == "localhost")
-     return;
-   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-   var disqus_shortname = 'clonekim-github-io';
-   dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
- })();
-</script>
-<noscript>
-  Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-</noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
-
-
-        </div></body>
+    </script>
+</body>
 </html>

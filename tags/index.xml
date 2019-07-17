@@ -6,6 +6,8 @@
     <description>Recent content in Tags on Bonjour!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
+    <managingEditor>clonekim-at-gmail-dot-com (DAEHEE KIM)</managingEditor>
+    <webMaster>clonekim-at-gmail-dot-com (DAEHEE KIM)</webMaster>
     <lastBuildDate>Mon, 24 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://clonekim.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +17,7 @@
       <title>docker</title>
       <link>http://clonekim.github.io/tags/docker/</link>
       <pubDate>Mon, 24 Dec 2018 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/tags/docker/</guid>
       <description></description>
     </item>
@@ -24,7 +26,7 @@
       <title>spark</title>
       <link>http://clonekim.github.io/tags/spark/</link>
       <pubDate>Mon, 24 Dec 2018 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/tags/spark/</guid>
       <description></description>
     </item>
@@ -33,7 +35,7 @@
       <title>python</title>
       <link>http://clonekim.github.io/tags/python/</link>
       <pubDate>Thu, 05 Jul 2018 23:29:30 +0900</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/tags/python/</guid>
       <description></description>
     </item>
@@ -42,7 +44,7 @@
       <title>emacs</title>
       <link>http://clonekim.github.io/tags/emacs/</link>
       <pubDate>Thu, 02 Nov 2017 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/tags/emacs/</guid>
       <description></description>
     </item>
@@ -51,7 +53,7 @@
       <title>go</title>
       <link>http://clonekim.github.io/tags/go/</link>
       <pubDate>Thu, 02 Nov 2017 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/tags/go/</guid>
       <description></description>
     </item>
@@ -60,7 +62,7 @@
       <title>gnome</title>
       <link>http://clonekim.github.io/tags/gnome/</link>
       <pubDate>Fri, 22 Sep 2017 01:10:18 +0900</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/tags/gnome/</guid>
       <description></description>
     </item>
@@ -69,7 +71,7 @@
       <title>linux</title>
       <link>http://clonekim.github.io/tags/linux/</link>
       <pubDate>Fri, 22 Sep 2017 01:10:18 +0900</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/tags/linux/</guid>
       <description></description>
     </item>
@@ -78,7 +80,7 @@
       <title>deployd</title>
       <link>http://clonekim.github.io/tags/deployd/</link>
       <pubDate>Mon, 21 Aug 2017 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/tags/deployd/</guid>
       <description></description>
     </item>
@@ -87,7 +89,7 @@
       <title>aws</title>
       <link>http://clonekim.github.io/tags/aws/</link>
       <pubDate>Wed, 26 Jul 2017 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/tags/aws/</guid>
       <description></description>
     </item>
@@ -96,7 +98,7 @@
       <title>clojure</title>
       <link>http://clonekim.github.io/tags/clojure/</link>
       <pubDate>Fri, 14 Jul 2017 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/tags/clojure/</guid>
       <description></description>
     </item>
@@ -105,7 +107,7 @@
       <title>angularjs</title>
       <link>http://clonekim.github.io/tags/angularjs/</link>
       <pubDate>Mon, 02 Jan 2017 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/tags/angularjs/</guid>
       <description></description>
     </item>
@@ -114,7 +116,7 @@
       <title>clojurescript</title>
       <link>http://clonekim.github.io/tags/clojurescript/</link>
       <pubDate>Tue, 20 Sep 2016 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/tags/clojurescript/</guid>
       <description></description>
     </item>
@@ -123,7 +125,7 @@
       <title>react.js</title>
       <link>http://clonekim.github.io/tags/react.js/</link>
       <pubDate>Tue, 19 Jan 2016 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/tags/react.js/</guid>
       <description></description>
     </item>
@@ -132,7 +134,7 @@
       <title>game</title>
       <link>http://clonekim.github.io/tags/game/</link>
       <pubDate>Thu, 14 Jan 2016 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/tags/game/</guid>
       <description></description>
     </item>
@@ -141,7 +143,7 @@
       <title>cryogen</title>
       <link>http://clonekim.github.io/tags/cryogen/</link>
       <pubDate>Wed, 13 Jan 2016 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/tags/cryogen/</guid>
       <description></description>
     </item>
@@ -150,7 +152,7 @@
       <title>github</title>
       <link>http://clonekim.github.io/tags/github/</link>
       <pubDate>Wed, 13 Jan 2016 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/tags/github/</guid>
       <description></description>
     </item>
@@ -159,7 +161,7 @@
       <title>freemarker</title>
       <link>http://clonekim.github.io/tags/freemarker/</link>
       <pubDate>Wed, 23 Sep 2015 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/tags/freemarker/</guid>
       <description></description>
     </item>
@@ -168,7 +170,7 @@
       <title>java</title>
       <link>http://clonekim.github.io/tags/java/</link>
       <pubDate>Wed, 23 Sep 2015 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/tags/java/</guid>
       <description></description>
     </item>
@@ -177,7 +179,7 @@
       <title>oracle</title>
       <link>http://clonekim.github.io/tags/oracle/</link>
       <pubDate>Fri, 11 Sep 2015 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/tags/oracle/</guid>
       <description></description>
     </item>
@@ -186,7 +188,7 @@
       <title>ring</title>
       <link>http://clonekim.github.io/tags/ring/</link>
       <pubDate>Fri, 11 Sep 2015 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/tags/ring/</guid>
       <description></description>
     </item>
@@ -195,7 +197,7 @@
       <title>mariadb</title>
       <link>http://clonekim.github.io/tags/mariadb/</link>
       <pubDate>Thu, 03 Sep 2015 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/tags/mariadb/</guid>
       <description></description>
     </item>
@@ -204,7 +206,7 @@
       <title>redmine</title>
       <link>http://clonekim.github.io/tags/redmine/</link>
       <pubDate>Sat, 18 Jul 2015 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/tags/redmine/</guid>
       <description></description>
     </item>
@@ -213,7 +215,7 @@
       <title>vi</title>
       <link>http://clonekim.github.io/tags/vi/</link>
       <pubDate>Thu, 16 Jul 2015 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/tags/vi/</guid>
       <description></description>
     </item>
@@ -222,7 +224,7 @@
       <title>captcha</title>
       <link>http://clonekim.github.io/tags/captcha/</link>
       <pubDate>Tue, 14 Jul 2015 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/tags/captcha/</guid>
       <description></description>
     </item>
@@ -231,7 +233,7 @@
       <title>jruby</title>
       <link>http://clonekim.github.io/tags/jruby/</link>
       <pubDate>Tue, 14 Jul 2015 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/tags/jruby/</guid>
       <description></description>
     </item>
@@ -240,7 +242,7 @@
       <title>node.js</title>
       <link>http://clonekim.github.io/tags/node.js/</link>
       <pubDate>Tue, 14 Jul 2015 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/tags/node.js/</guid>
       <description></description>
     </item>
@@ -249,7 +251,7 @@
       <title>raspberry</title>
       <link>http://clonekim.github.io/tags/raspberry/</link>
       <pubDate>Sun, 28 Jun 2015 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/tags/raspberry/</guid>
       <description></description>
     </item>
@@ -258,7 +260,7 @@
       <title>javascript</title>
       <link>http://clonekim.github.io/tags/javascript/</link>
       <pubDate>Tue, 03 Feb 2015 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/tags/javascript/</guid>
       <description></description>
     </item>
@@ -267,7 +269,7 @@
       <title>imagemagick</title>
       <link>http://clonekim.github.io/tags/imagemagick/</link>
       <pubDate>Sun, 01 Feb 2015 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/tags/imagemagick/</guid>
       <description></description>
     </item>
@@ -276,7 +278,7 @@
       <title>backbone</title>
       <link>http://clonekim.github.io/tags/backbone/</link>
       <pubDate>Fri, 03 Oct 2014 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/tags/backbone/</guid>
       <description></description>
     </item>
@@ -285,7 +287,7 @@
       <title>gulp</title>
       <link>http://clonekim.github.io/tags/gulp/</link>
       <pubDate>Fri, 03 Oct 2014 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/tags/gulp/</guid>
       <description></description>
     </item>
@@ -294,7 +296,7 @@
       <title>wiki</title>
       <link>http://clonekim.github.io/tags/wiki/</link>
       <pubDate>Fri, 27 Sep 2013 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/tags/wiki/</guid>
       <description></description>
     </item>
@@ -303,7 +305,7 @@
       <title>jsp</title>
       <link>http://clonekim.github.io/tags/jsp/</link>
       <pubDate>Tue, 24 Sep 2013 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/tags/jsp/</guid>
       <description></description>
     </item>
@@ -312,7 +314,7 @@
       <title>svn</title>
       <link>http://clonekim.github.io/tags/svn/</link>
       <pubDate>Tue, 24 Sep 2013 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/tags/svn/</guid>
       <description></description>
     </item>
@@ -321,7 +323,7 @@
       <title>nginx</title>
       <link>http://clonekim.github.io/tags/nginx/</link>
       <pubDate>Mon, 13 May 2013 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/tags/nginx/</guid>
       <description></description>
     </item>
@@ -330,7 +332,7 @@
       <title>php</title>
       <link>http://clonekim.github.io/tags/php/</link>
       <pubDate>Mon, 13 May 2013 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/tags/php/</guid>
       <description></description>
     </item>
@@ -339,7 +341,7 @@
       <title>ruby</title>
       <link>http://clonekim.github.io/tags/ruby/</link>
       <pubDate>Fri, 03 Feb 2012 00:00:00 +0000</pubDate>
-      
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/tags/ruby/</guid>
       <description></description>
     </item>

@@ -1,1266 +1,475 @@
 <!DOCTYPE html>
-<html lang="ko"><head>
+<html><head>
 	<meta name="generator" content="Hugo 0.55.6" />
-  <meta charset="utf-8" />
-  <meta name="author" content="DAEHEE KIM" />
-  <meta name="description" content="Personal blog." />
-  <meta name="keywords" content="blog, tech" />
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <link rel="canonical" href="http://clonekim.github.io/">
-  <base href="http://clonekim.github.io/" />
-  <meta property="og:title" content="Bonjour!" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="http://clonekim.github.io/" />
+    
+    <meta name="author"
+            content="DAEHEE KIM"/>
 
-<meta property="og:updated_time" content="2018-12-24T00:00:00&#43;00:00"/>
+    
 
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Bonjour!"/>
-<meta name="twitter:description" content=""/>
+    
 
-  
-  
-<meta itemprop="name" content="Bonjour!">
-<meta itemprop="description" content="">
+    
+    <link rel="canonical" href="http://clonekim.github.io/"/>
+
+    
+    <link rel="alternate" type="application/rss&#43;xml" href="http://clonekim.github.io/index.xml">
+    
+
+    
+    
+    
+        
+            
+        
+    
+    <title>Bonjour!</title>
+
+    <link rel="shortcut icon" href="http://clonekim.github.io/favicon.jpg"/>
+    <link rel="stylesheet" href="http://clonekim.github.io/css/bulma.min.css"/>
+    <link rel="stylesheet" href="http://clonekim.github.io/css/style.css"/>
+</head><body><header>
+    <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand is-size-4">
+            <a class="navbar-item" href="http://clonekim.github.io/">
+                    Bonjour!
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="navbar-menu" class="navbar-menu">
+            <div class="navbar-end">
+                
+                    
+                        <a class="navbar-item" href="/tags">태그</a>
+                    
+                
+            </div>
+            </div>
+    </nav>
+</header><main>
+      <div class="container">
+        <div class="columns"><section class="posts">
+
+<article class="post box is-radiusless">
+    <div class="post-title">
+        <a class="post-title-link" href="/posts/2018/2018-12-24-aggregation-tags-with-spark/"><h2 class="is-size-4 has-text-dark">Spark</h2></a>
+    </div>
+    <div class="post-meta">
+        <span class="post-time">2018-12-24</span>
+    </div>
+    <div class="post-excerpt content">
+        현재 특정 테이블의 태그정보와 아래와 같다
+특정컬럼에 태그 값이 컴마 구분으로 들어있음
+   tags     태그, 태그, 태그 &hellip;    파일 처리 해당 컬럼만 csv로 만들어본것
+# -*- coding: utf-8 -*- from pyspark import SparkConf from pyspark import SparkContext from pyspark.sql import SparkSession from pyspark.sql.types import * lines = sc.textFile(&#39;[csv파일]&#39;, use_unicode=True) counts = lines.flatMap(lambda line: line.split(&#39;,&#39;)).map(lambda word: (word,1)).reduceByKey(lambda a,b : a + b) schema = StructType([ StructField(&#39;tag&#39;, StringType(), False), StructField(&#39;count&#39;, IntegerType(), False), ]) df = spark.
+    </div>
+    <a href="/posts/2018/2018-12-24-aggregation-tags-with-spark/">more</a>
+    </article>
+
+<article class="post box is-radiusless">
+    <div class="post-title">
+        <a class="post-title-link" href="/posts/2018/2018-12-24-how-spark/"><h2 class="is-size-4 has-text-dark">Spark - Docker 이미지만들기</h2></a>
+    </div>
+    <div class="post-meta">
+        <span class="post-time">2018-12-24</span>
+    </div>
+    <div class="post-excerpt content">
+        Spark Docker를 이용한 스파크 실습  Docker Image 만들기 spark-version-tgz는 미리 홈페이지에서 다운받아둘것
+├── Dockerfile ├── config │ ├── core-site.xml │ ├── hdfs-site.xml │ └── spark-env.sh ├── spark-2.4.0-bin-hadoop2.7.tgz └── start-spark.sh  Dockerfile
+FROM ubuntu:18.04 ENV SPARK_HOME /opt/spark ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64 RUN apt-get update &amp;&amp; apt-get install -y \ wget \ python3 \ psmisc \ net-tools \ openjdk-8-jdk &amp;&amp; \ apt-get autoclean &amp;&amp; \ ln -s /usr/bin/python3 /usr/bin/python RUN wget http://apache.
+    </div>
+    <a href="/posts/2018/2018-12-24-how-spark/">more</a>
+    </article>
+
+<article class="post box is-radiusless">
+    <div class="post-title">
+        <a class="post-title-link" href="/posts/2018/2018-07-05-eralchemy/"><h2 class="is-size-4 has-text-dark">ERAlchemy 를 이용한 ERD작성</h2></a>
+    </div>
+    <div class="post-meta">
+        <span class="post-time">2018-07-05</span>
+    </div>
+    <div class="post-excerpt content">
+        우분투를 사용하는 환경이다.  사전준비 $ sudo apt install graphviz graphviz-dev python 라이브러리 설치 $ pip install pygraphviz --install-option=&#34;--include-path=/usr/include/graphviz&#34; --install-option=&#34;--library-path=/usr/lib/graphviz/&#34; $ pip install eralchemy 에러 graphviz 를 설치하지 않았을 경우
+ (Python) ValueError: Program dot not found in path  graphviz-dev를 설치하지 않았을 경우
+undefined symbol: Agundirected  사용법 MySQL에 접속해서 해당 DB를 pdf로 출력해봄
+내부적으로 SQLAlchemy를 사용해서 db접속시 url를 아래와 같다.
+사용하는 드라이버가 달라서 접속 url을 주의해야함.
+현재 pymysql를 사용하므로
+    </div>
+    <a href="/posts/2018/2018-07-05-eralchemy/">more</a>
+    </article>
+
+<article class="post box is-radiusless">
+    <div class="post-title">
+        <a class="post-title-link" href="/posts/2017/2017-11-02-emacs-golang/"><h2 class="is-size-4 has-text-dark">Emacs에서 Golang 를 위한 에디팅</h2></a>
+    </div>
+    <div class="post-meta">
+        <span class="post-time">2017-11-02</span>
+    </div>
+    <div class="post-excerpt content">
+        설치 go get명령어로 아래와 같이 필요한 유틸리티(명령어)를 설치해야 한다
+$ go get github.com/golang/lint/golint github.com/nsf/gocode github.com/k0kubun/pp github.com/golang/lint/golint github.com/rogpeppe/godef github.com/dougm/goflymake golang.org/x/tools/cmd/godoc 또는 golang.org/x/tools/cmd/...  필요한 패키지 direx ;;디렉토리 트리 보여줌 popwin ;;direx를 다른창으로 열어줌 auto-complete ;;자동완성 flycheck ;;오류체크 flymake-go go-mode go-autocomplete go-eldoc ;;상태줄에 godoc간단히 보여줌  shell-intergration.el
+터미널에서 실행하면 이멕스가 작동하는데 바로가기에서는 작동이 안된다
+아래와 같이 쉘환경에 통합하고 나서 실행하니 문제가 없었다
+(when (memq window-system &#39;(mac ns)) (exec-path-from-shell-initialize) (exec-path-from-shell-copy-envs &#39;(&#34;PATH&#34; &#34;GOPATH&#34;))) go.
+    </div>
+    <a href="/posts/2017/2017-11-02-emacs-golang/">more</a>
+    </article>
+
+<article class="post box is-radiusless">
+    <div class="post-title">
+        <a class="post-title-link" href="/posts/2017/2017-11-02-go-repl/"><h2 class="is-size-4 has-text-dark">Go Repl</h2></a>
+    </div>
+    <div class="post-meta">
+        <span class="post-time">2017-11-02</span>
+    </div>
+    <div class="post-excerpt content">
+        $ go get github.com/motemen/gore$ gore -autoimport gore version 0.2.6 :help for help gore&gt; fmt.Println(&#34;Hello World&#34;) Hello World 12 &lt;nil&gt; gore&gt;
+    </div>
+    <a href="/posts/2017/2017-11-02-go-repl/">more</a>
+    </article>
+
+</section>
 
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <title>Bonjour!</title>
-  <style>
-   pre {
-     margin: 1em 0em 1em;
-     padding: 0.5em 0.5em 0.5em;
-     border: 1px solid #5C5C5C;
-   }
 
-   code {
-     white-space: pre-wrap;        
-     white-space: -moz-pre-wrap;   
-     white-space: -pre-wrap;       
-     white-space: -o-pre-wrap;     
-     word-wrap: break-word;        
-     line-height: 1.4em;
-   }
 
-   blockquote { background: #1D1F21; border-left: 3px solid #99cc66; }
-   table { margin: 1em auto; border-collapse: collapse; }
-   table, th, td { border: 1px solid #5C5C5C; }
-   tr:hover { background: #1D1F21; }
-  </style>
-  <link rel="stylesheet" href="css/tomorrow-night.min.css" />
-  <script src="js/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-</head>
-<body><h3><a href="http://clonekim.github.io/">Bonjour!</a></h3>
-<div id="content" class="container">
 
-<div class="row">
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Dec 24, 2018</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2018/2018-12-24-aggregation-tags-with-spark/">
-          <h5 class="card-title">Spark</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/spark" class="btn btn-outline-success btn-sm">
-              spark
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Dec 24, 2018</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2018/2018-12-24-how-spark/">
-          <h5 class="card-title">Spark - Docker 이미지만들기</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/spark" class="btn btn-outline-success btn-sm">
-              spark
-            </a>
-          
-            <a href="http://clonekim.github.io/tags/docker" class="btn btn-outline-success btn-sm">
-              docker
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Jul 5, 2018</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2018/2018-07-05-eralchemy/">
-          <h5 class="card-title">ERAlchemy 를 이용한 ERD작성</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/python" class="btn btn-outline-success btn-sm">
-              python
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Nov 2, 2017</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2017/2017-11-02-emacs-golang/">
-          <h5 class="card-title">Emacs에서 Golang 를 위한 에디팅</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/emacs" class="btn btn-outline-success btn-sm">
-              emacs
-            </a>
-          
-            <a href="http://clonekim.github.io/tags/go" class="btn btn-outline-success btn-sm">
-              go
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Nov 2, 2017</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2017/2017-11-02-go-repl/">
-          <h5 class="card-title">Go Repl</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/go" class="btn btn-outline-success btn-sm">
-              go
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Sep 22, 2017</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2017/2017-09-21-gtk-version/">
-          <h5 class="card-title">Gtk Version</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/linux" class="btn btn-outline-success btn-sm">
-              linux
-            </a>
-          
-            <a href="http://clonekim.github.io/tags/gnome" class="btn btn-outline-success btn-sm">
-              gnome
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Sep 22, 2017</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2017/2017-09-21-gnome-css/">
-          <h5 class="card-title">Gnome Desktop</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/linux" class="btn btn-outline-success btn-sm">
-              linux
-            </a>
-          
-            <a href="http://clonekim.github.io/tags/gnome" class="btn btn-outline-success btn-sm">
-              gnome
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Sep 9, 2017</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2017/2017-09-09-emacs-tip/">
-          <h5 class="card-title">Web개발을 위한 Emacs설정</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/emacs" class="btn btn-outline-success btn-sm">
-              emacs
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Aug 21, 2017</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2017/2017-08-21-deplo1y/">
-          <h5 class="card-title">Deployd</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/deployd" class="btn btn-outline-success btn-sm">
-              deployd
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Jul 26, 2017</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2017/2017-07-26-aws-s3-part-2/">
-          <h5 class="card-title">AWS S3 Part 2</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/aws" class="btn btn-outline-success btn-sm">
-              aws
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Jul 14, 2017</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2017/2017-07-14-using-freemarker-from-clojure/">
-          <h5 class="card-title">Freemarker를 Clojure에서</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/clojure" class="btn btn-outline-success btn-sm">
-              clojure
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Jan 2, 2017</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2017/2017-01-02-angular-jsonp/">
-          <h5 class="card-title">Angular 1.6 사용</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/angularjs" class="btn btn-outline-success btn-sm">
-              angularjs
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Sep 20, 2016</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2016/2016-09-20-using-jquery-in-clojurescript/">
-          <h5 class="card-title">clojurescript에서 jquery사용</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/clojurescript" class="btn btn-outline-success btn-sm">
-              clojurescript
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>May 12, 2016</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2016/2016-05-12-aws-elastick-beanstalk-1/">
-          <h5 class="card-title">AWS Elastick Beanstalk 1</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/aws" class="btn btn-outline-success btn-sm">
-              aws
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>May 7, 2016</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2016/2016-05-07-emacs-package/">
-          <h5 class="card-title">Emacs를 쓰면서</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/emacs" class="btn btn-outline-success btn-sm">
-              emacs
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Apr 20, 2016</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2016/2016-04-20-aws-s3-part-1/">
-          <h5 class="card-title">AWS S3 Part 1</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/aws" class="btn btn-outline-success btn-sm">
-              aws
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Mar 1, 2016</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2016/2016-03-01-docker-start/">
-          <h5 class="card-title">Docker 시작하기</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/docker" class="btn btn-outline-success btn-sm">
-              docker
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Jan 19, 2016</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2016/2016-01-19-using-gulp-react/">
-          <h5 class="card-title">Gulp로 React빌드</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/react.js" class="btn btn-outline-success btn-sm">
-              react.js
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Jan 18, 2016</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2016/2016-01-18-starting-clojurescript/">
-          <h5 class="card-title">ClojureScript 시작하기</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/clojurescript" class="btn btn-outline-success btn-sm">
-              clojurescript
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Jan 14, 2016</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2016/2016-01-14-clojurescript-gaming/">
-          <h5 class="card-title">Clojure(Script)로 게임제작</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/clojure" class="btn btn-outline-success btn-sm">
-              clojure
-            </a>
-          
-            <a href="http://clonekim.github.io/tags/game" class="btn btn-outline-success btn-sm">
-              game
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Jan 13, 2016</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2016/2016-01-13-github-page/">
-          <h5 class="card-title">Github에 블로그제작</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/github" class="btn btn-outline-success btn-sm">
-              github
-            </a>
-          
-            <a href="http://clonekim.github.io/tags/cryogen" class="btn btn-outline-success btn-sm">
-              cryogen
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Sep 25, 2015</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2015/2015-09-25-starting-clojure/">
-          <h5 class="card-title">Clojure 시작하기</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/clojure" class="btn btn-outline-success btn-sm">
-              clojure
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Sep 25, 2015</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2015/2015-09-25-jdbc-in-clojure/">
-          <h5 class="card-title">클로저에서 Jdbc</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/clojure" class="btn btn-outline-success btn-sm">
-              clojure
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Sep 23, 2015</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2015/2015-09-23-freemarker-assign-tip/">
-          <h5 class="card-title">Freemarker assign팁</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/java" class="btn btn-outline-success btn-sm">
-              java
-            </a>
-          
-            <a href="http://clonekim.github.io/tags/freemarker" class="btn btn-outline-success btn-sm">
-              freemarker
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Sep 11, 2015</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2015/2015-09-11-custom-emacs-setting/">
-          <h5 class="card-title">Clojure를 위한 Emacs 환경</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/emacs" class="btn btn-outline-success btn-sm">
-              emacs
-            </a>
-          
-            <a href="http://clonekim.github.io/tags/clojure" class="btn btn-outline-success btn-sm">
-              clojure
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Sep 11, 2015</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2015/2015-09-10-oracle-jdbc/">
-          <h5 class="card-title">Oracle Jdbc Url</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/java" class="btn btn-outline-success btn-sm">
-              java
-            </a>
-          
-            <a href="http://clonekim.github.io/tags/oracle" class="btn btn-outline-success btn-sm">
-              oracle
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Sep 11, 2015</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2015/2015-09-11-ring-web-programming/">
-          <h5 class="card-title">Ring으로 웹프로그래밍</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/clojure" class="btn btn-outline-success btn-sm">
-              clojure
-            </a>
-          
-            <a href="http://clonekim.github.io/tags/ring" class="btn btn-outline-success btn-sm">
-              ring
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Sep 3, 2015</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2015/2015-09-03-mariadb-replication-using-gtid/">
-          <h5 class="card-title">GTID를 이용한 Mariadb Replication</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/mariadb" class="btn btn-outline-success btn-sm">
-              mariadb
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Jul 29, 2015</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2015/2015-07-29-starting-reactjs/">
-          <h5 class="card-title">ReactJS 시작하기</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/react.js" class="btn btn-outline-success btn-sm">
-              react.js
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Jul 18, 2015</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2015/2015-07-18-install-redmine/">
-          <h5 class="card-title">Redmine3 설치하기</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/redmine" class="btn btn-outline-success btn-sm">
-              redmine
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Jul 16, 2015</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2015/2015-07-16-windows-vim/">
-          <h5 class="card-title">윈도우즈 Vim설정</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/vi" class="btn btn-outline-success btn-sm">
-              vi
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Jul 14, 2015</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2015/2015-07-14-how-to-captcha-in-node.js/">
-          <h5 class="card-title">Node.js로 Captcha</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/node.js" class="btn btn-outline-success btn-sm">
-              node.js
-            </a>
-          
-            <a href="http://clonekim.github.io/tags/captcha" class="btn btn-outline-success btn-sm">
-              captcha
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Jul 14, 2015</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2015/2015-07-14-sinatra/">
-          <h5 class="card-title">Sinatra 웹프로그래밍</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/jruby" class="btn btn-outline-success btn-sm">
-              jruby
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Jul 2, 2015</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2015/2015-07-02-angularjs/">
-          <h5 class="card-title">AngularJS 다국어처리</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/angularjs" class="btn btn-outline-success btn-sm">
-              angularjs
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Jun 28, 2015</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2015/2015-06-28-raspberrypi/">
-          <h5 class="card-title">RaspberryPi</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/raspberry" class="btn btn-outline-success btn-sm">
-              raspberry
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Feb 3, 2015</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2015/2015-02-03-beefy-tip/">
-          <h5 class="card-title">beefy 팁</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/javascript" class="btn btn-outline-success btn-sm">
-              javascript
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Feb 1, 2015</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2015/2015-02-01-imagemagick/">
-          <h5 class="card-title">ImageMagick</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/imagemagick" class="btn btn-outline-success btn-sm">
-              imagemagick
-            </a>
-          
-            <a href="http://clonekim.github.io/tags/captcha" class="btn btn-outline-success btn-sm">
-              captcha
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Dec 29, 2014</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2014/2014-12-29-requirejs/">
-          <h5 class="card-title">RequireJS 예제</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/javascript" class="btn btn-outline-success btn-sm">
-              javascript
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Nov 10, 2014</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2014/2014-11-10-angularjs-tip/">
-          <h5 class="card-title">AngularJS Tips</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/angularjs" class="btn btn-outline-success btn-sm">
-              angularjs
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Oct 3, 2014</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2014/2014-10-03-backbone_handlebar_gulp_tip/">
-          <h5 class="card-title">backbone &#43; handlebar &#43; gulp 팁</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/backbone" class="btn btn-outline-success btn-sm">
-              backbone
-            </a>
-          
-            <a href="http://clonekim.github.io/tags/gulp" class="btn btn-outline-success btn-sm">
-              gulp
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Mar 2, 2014</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2014/2014-03-02-uuid-in-javascript/">
-          <h5 class="card-title">자바스크립트로 UUID 생성</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/javascript" class="btn btn-outline-success btn-sm">
-              javascript
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Jan 5, 2014</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2014/2014-01-05-java-ionio-tutorial/">
-          <h5 class="card-title">Java IO/NIO Tutorial</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/java" class="btn btn-outline-success btn-sm">
-              java
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Oct 12, 2013</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2013/2013-10-12-bigdecimal-java/">
-          <h5 class="card-title">BigDecimal을 이용한 반올림</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/java" class="btn btn-outline-success btn-sm">
-              java
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Oct 10, 2013</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2013/2013-10-10-javascript-pattern/">
-          <h5 class="card-title">JavaScript 개발팁</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/javascript" class="btn btn-outline-success btn-sm">
-              javascript
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Oct 1, 2013</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2013/2013-10-01-java-concurrent/">
-          <h5 class="card-title">java.util.concurrent</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/java" class="btn btn-outline-success btn-sm">
-              java
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Sep 27, 2013</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2013/2013-09-27-jspwiki-install/">
-          <h5 class="card-title">JSPWiki 설치</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/wiki" class="btn btn-outline-success btn-sm">
-              wiki
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Sep 27, 2013</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2013/2013-09-27-jackson-json-processor/">
-          <h5 class="card-title">Jackson JSON Processor</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/java" class="btn btn-outline-success btn-sm">
-              java
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Sep 27, 2013</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2013/2013-09-27-proxy-authentication/">
-          <h5 class="card-title">프록시서버 인증에러</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/java" class="btn btn-outline-success btn-sm">
-              java
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Sep 24, 2013</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2013/2013-09-24-apache-taglib/">
-          <h5 class="card-title">Apache Tag Lib</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/jsp" class="btn btn-outline-success btn-sm">
-              jsp
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Sep 24, 2013</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2013/2013-09-24-svn-as-windows-service/">
-          <h5 class="card-title">윈도우즈에 SVN서비스등록</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/svn" class="btn btn-outline-success btn-sm">
-              svn
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Jun 20, 2013</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2013/2013-06-20-unsupported-classversion-error/">
-          <h5 class="card-title">자바 호환에러</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/java" class="btn btn-outline-success btn-sm">
-              java
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Jun 16, 2013</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2013/2013-06-16-java-compile-option/">
-          <h5 class="card-title">Java Compile Option</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/java" class="btn btn-outline-success btn-sm">
-              java
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>May 13, 2013</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2013/2013-05-13-phpfpm-nginx/">
-          <h5 class="card-title">PHP FPM</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/php" class="btn btn-outline-success btn-sm">
-              php
-            </a>
-          
-            <a href="http://clonekim.github.io/tags/nginx" class="btn btn-outline-success btn-sm">
-              nginx
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>May 23, 2012</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2012/2012-05-23-vim-favorite-setting/">
-          <h5 class="card-title">즐겨사용하는 VIM 설정</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/vi" class="btn btn-outline-success btn-sm">
-              vi
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Feb 3, 2012</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2012/2012-02-03-ruby-some-basic/">
-          <h5 class="card-title">Ruby Some Basic</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/ruby" class="btn btn-outline-success btn-sm">
-              ruby
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Jan 17, 2012</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2012/2012-10-17-ognl-in-java/">
-          <h5 class="card-title">OGNL</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/java" class="btn btn-outline-success btn-sm">
-              java
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-6 col-md-4">
-    <div class="card border-secondary mb-3">
-      <div class="card-header text-right">
-        <small>Jun 12, 2011</small>
-      </div>
-      <div class="card-body">
-        <a  href="http://clonekim.github.io/posts/2011/2011-06-12-java-date-bug/">
-          <h5 class="card-title">Java Date에러</h5>
-        </a>
-        <p class="card-text text-right">
-          
-            <a href="http://clonekim.github.io/tags/java" class="btn btn-outline-success btn-sm">
-              java
-            </a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-  
+
+
+
+
+
+
+
+
+
+
+<nav class="page-nav">
+    
+
+    
+
+      
+
+        
+
+        
+          
+        
+
+        
+
+        
+          
+        
+
+        
+
+        
+
+      
+
+      
+      
+          <a href="/" class="page-number current">1</a>
+      
+
+    
+
+      
+
+        
+
+        
+
+        
+          
+        
+
+        
+          
+        
+
+        
+
+        
+
+      
+
+      
+      
+          <a href="/page/2/" class="page-number">2</a>
+      
+
+    
+
+      
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+      
+
+      
+      
+
+    
+
+      
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+      
+
+      
+      
+
+    
+
+      
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+      
+
+      
+      
+
+    
+
+      
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+      
+
+      
+      
+
+    
+
+      
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+      
+
+      
+      
+
+    
+
+      
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+      
+
+      
+      
+
+    
+
+      
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+      
+
+      
+      
+
+    
+
+      
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+      
+
+      
+      
+
+    
+
+      
+
+        
+
+        
+
+        
+
+        
+
+        
+          
+            <span class="space">...</span>
+          
+        
+
+        
+
+      
+
+      
+      
+
+    
+
+      
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+          
+        
+
+      
+
+      
+      
+          <a href="/page/12/" class="page-number">12</a>
+      
+
+        
+
+
+    
+      <a href="/page/2/" class="extend next">Last</a>
+    
+
+</nav>
+
 </div>
+      </div>
+    </main>    <footer class="footer">
+    
+        <div class="copyright has-text-centered">
+            <a href="https://bulma.io">
+                <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
+            </a>
+            <p>© Bonjour! Power by Hugo</p>
+        </div>
+    </footer>
+    <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+        
+        if ($navbarBurgers.length > 0) {
+            
+            $navbarBurgers.forEach( el => {
+                el.addEventListener('click', () => {
+                
+                const target = el.dataset.target;
+                const $target = document.getElementById(target);
+                
+                el.classList.toggle('is-active');
+                $target.classList.toggle('is-active');
+    
+                });
+            });
+        }
+    });
+    
 
-
-
-
-        </div></body>
+    </script>
+</body>
 </html>
