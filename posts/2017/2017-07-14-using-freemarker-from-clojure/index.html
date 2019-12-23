@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     
-    <meta name="author"
-            content="DAEHEE KIM"/>
+    <meta name="author" content="DAEHEE KIM"/>
 
     
     <meta name="description" content="참고소스
@@ -30,16 +29,17 @@
             
         
     
-    <title> Freemarker를 Clojure에서 | Bonjour! </title>
+    <title> Freemarker를 Clojure에서 | (Less is more) </title>
 
     <link rel="shortcut icon" href="http://clonekim.github.io/favicon.jpg"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/bulma.min.css"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/style.css"/>
-</head><body><header>
-    <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+</head>
+<body><header>
+    <nav class="navbar is-fixed-top has-background-black-bis" role="navigation" aria-label="main navigation">
         <div class="navbar-brand is-size-4">
             <a class="navbar-item" href="http://clonekim.github.io/">
-                    Bonjour!
+                    (Less is more)
             </a>
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
                 <span aria-hidden="true"></span>
@@ -57,12 +57,13 @@
             </div>
             </div>
     </nav>
-</header><main>
+</header>
+<main>
       <div class="container">
         <div class="columns">
           
           <div class="column">
-            <div class="content">
+            <div>
               <nav id="TableOfContents">
 <ul>
 <li>
@@ -96,12 +97,12 @@
 <p>템플릿리소스는 해당 디렉토리로 초기화한다</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clj" data-lang="clj">(<span style="color:#66d9ef">defn </span>gen-config
   [<span style="color:#f92672">&amp;</span> {<span style="color:#e6db74">:keys</span> [shared] <span style="color:#e6db74">:or</span> {shared {}}}]
-  (<span style="color:#66d9ef">let </span>[cfg (doto (Configuration.)
-              (.setDirectoryForTemplateLoading (file <span style="color:#e6db74">&#34;/Users/bonjour/git/cms/resources/public/ftl&#34;</span>))
-              (.setDefaultEncoding <span style="color:#e6db74">&#34;UTF-8&#34;</span>)
-              (.setObjectWrapper (DefaultObjectWrapper.)))]
-    (doseq [[k v] (map-&gt;model shared)]
-      (.setSharedVariable <span style="color:#f92672">^</span>Configuration cfg <span style="color:#f92672">^</span>String k v))
+  (<span style="color:#66d9ef">let </span>[cfg (doto (<span style="color:#a6e22e">Configuration.</span>)
+              (<span style="color:#a6e22e">.setDirectoryForTemplateLoading</span> (<span style="color:#a6e22e">file</span> <span style="color:#e6db74">&#34;/Users/bonjour/git/cms/resources/public/ftl&#34;</span>))
+              (<span style="color:#a6e22e">.setDefaultEncoding</span> <span style="color:#e6db74">&#34;UTF-8&#34;</span>)
+              (<span style="color:#a6e22e">.setObjectWrapper</span> (<span style="color:#a6e22e">DefaultObjectWrapper.</span>)))]
+    (doseq [[k v] (<span style="color:#a6e22e">map-&gt;model</span> shared)]
+      (<span style="color:#a6e22e">.setSharedVariable</span> <span style="color:#f92672">^</span>Configuration cfg <span style="color:#f92672">^</span>String k v))
     cfg))</code></pre></div>
 <p>아래와 같이 템플릿로더를 직접구현해서도 가능하다</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clj" data-lang="clj">(<span style="color:#66d9ef">ns </span>freemarker.template
@@ -116,29 +117,29 @@
 
 (<span style="color:#66d9ef">def </span>DBTemplateLoader
   (proxy [freemarker.cache.TemplateLoader] []
-    (findTemplateSource [<span style="color:#f92672">^</span>String name]
+    (<span style="color:#a6e22e">findTemplateSource</span> [<span style="color:#f92672">^</span>String name]
        <span style="color:#75715e">;; 요청한 템플릿이름이 넘어온다</span>
       name)
     
-    (closeTemplateSource [<span style="color:#f92672">^</span>Object source])
+    (<span style="color:#a6e22e">closeTemplateSource</span> [<span style="color:#f92672">^</span>Object source])
 
-    (getLastModified [<span style="color:#f92672">^</span>Object source]
+    (<span style="color:#a6e22e">getLastModified</span> [<span style="color:#f92672">^</span>Object source]
       <span style="color:#ae81ff">-1</span>)
 
-    (getReader [<span style="color:#f92672">^</span>Object source <span style="color:#f92672">^</span>String encoding]
+    (<span style="color:#a6e22e">getReader</span> [<span style="color:#f92672">^</span>Object source <span style="color:#f92672">^</span>String encoding]
       
       <span style="color:#75715e">;; 템플릿을 DB나 캐시에서 돌려줄 수 있다</span>
-      (java.io.StringReader. <span style="color:#e6db74">&#34;&lt;html&gt;&lt;body&gt;Hello&lt;/body&gt;&lt;/html&gt;&#34;</span>)
+      (<span style="color:#a6e22e">java.io.StringReader.</span> <span style="color:#e6db74">&#34;&lt;html&gt;&lt;body&gt;Hello&lt;/body&gt;&lt;/html&gt;&#34;</span>)
       )))</code></pre></div>
 <p>구현된 DBTemplateLoader로 교체한다</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clj" data-lang="clj">(<span style="color:#66d9ef">defn </span>gen-config
   [<span style="color:#f92672">&amp;</span> {<span style="color:#e6db74">:keys</span> [shared] <span style="color:#e6db74">:or</span> {shared {}}}]
-  (<span style="color:#66d9ef">let </span>[cfg (doto (Configuration.)
-              (.setDefaultEncoding <span style="color:#e6db74">&#34;UTF-8&#34;</span>)
-              (.setObjectWrapper (DefaultObjectWrapper.))
-              (.setTemplateLoader DBTemplateLoader))]
-    (doseq [[k v] (map-&gt;model shared)]
-      (.setSharedVariable <span style="color:#f92672">^</span>Configuration cfg <span style="color:#f92672">^</span>String k v))
+  (<span style="color:#66d9ef">let </span>[cfg (doto (<span style="color:#a6e22e">Configuration.</span>)
+              (<span style="color:#a6e22e">.setDefaultEncoding</span> <span style="color:#e6db74">&#34;UTF-8&#34;</span>)
+              (<span style="color:#a6e22e">.setObjectWrapper</span> (<span style="color:#a6e22e">DefaultObjectWrapper.</span>))
+              (<span style="color:#a6e22e">.setTemplateLoader</span> DBTemplateLoader))]
+    (doseq [[k v] (<span style="color:#a6e22e">map-&gt;model</span> shared)]
+      (<span style="color:#a6e22e">.setSharedVariable</span> <span style="color:#f92672">^</span>Configuration cfg <span style="color:#f92672">^</span>String k v))
     cfg))</code></pre></div>
               </div>
               <div class="columns is-mobile post-meta">
@@ -164,7 +165,7 @@
             <a href="https://bulma.io">
                 <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
             </a>
-            <p>© Bonjour! Power by Hugo</p>
+            <p>© (Less is more) Power by Hugo</p>
         </div>
     </footer>
     <script type="text/javascript">

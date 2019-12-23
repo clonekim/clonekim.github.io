@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     
-    <meta name="author"
-            content="DAEHEE KIM"/>
+    <meta name="author" content="DAEHEE KIM"/>
 
     
 
@@ -26,16 +25,17 @@
             
         
     
-    <title> Posts | Bonjour! </title>
+    <title> Posts | (Less is more) </title>
 
     <link rel="shortcut icon" href="http://clonekim.github.io/favicon.jpg"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/bulma.min.css"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/style.css"/>
-</head><body><header>
-    <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+</head>
+<body><header>
+    <nav class="navbar is-fixed-top has-background-black-bis" role="navigation" aria-label="main navigation">
         <div class="navbar-brand is-size-4">
             <a class="navbar-item" href="http://clonekim.github.io/">
-                    Bonjour!
+                    (Less is more)
             </a>
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
                 <span aria-hidden="true"></span>
@@ -53,91 +53,80 @@
             </div>
             </div>
     </nav>
-</header><main>
+</header>
+<main>
             <div class="container">
                 <div class="columns">
-                <div class="column is-four-fifths"><section class="posts">
-
-<article class="post box is-radiusless">
-    <div class="post-title">
+                <div class="column is-four-fifths"><div class="column">
+  <section class="posts">
+    
+    <article class="post box is-radiusless">
+      <div class="post-title">
         <a class="post-title-link" href="/posts/2018/2018-12-24-aggregation-tags-with-spark/"><h2 class="is-size-4 has-text-dark">Spark</h2></a>
-    </div>
-    <div class="post-meta">
-        <span class="post-time">2018-12-24</span>
-    </div>
-    <div class="post-excerpt content">
-        현재 특정 테이블의 태그정보와 아래와 같다
-특정컬럼에 태그 값이 컴마 구분으로 들어있음
-   tags     태그, 태그, 태그 &hellip;    파일 처리 해당 컬럼만 csv로 만들어본것
-# -*- coding: utf-8 -*- from pyspark import SparkConf from pyspark import SparkContext from pyspark.sql import SparkSession from pyspark.sql.types import * lines = sc.textFile(&#39;[csv파일]&#39;, use_unicode=True) counts = lines.flatMap(lambda line: line.split(&#39;,&#39;)).map(lambda word: (word,1)).reduceByKey(lambda a,b : a + b) schema = StructType([ StructField(&#39;tag&#39;, StringType(), False), StructField(&#39;count&#39;, IntegerType(), False), ]) df = spark.
-    </div>
-    <a href="/posts/2018/2018-12-24-aggregation-tags-with-spark/">more</a>
+      </div>
+      <div class="post-meta has-text-right">
+        <span class="post-time" >2018-12-24</span>
+      </div>
+      <div class="has-text-right">
+        <a href="/posts/2018/2018-12-24-aggregation-tags-with-spark/" >more</a>
+      </div>
+      <div class="is-clearfix"></div>
     </article>
-
-<article class="post box is-radiusless">
-    <div class="post-title">
+    
+    <article class="post box is-radiusless">
+      <div class="post-title">
         <a class="post-title-link" href="/posts/2018/2018-12-24-how-spark/"><h2 class="is-size-4 has-text-dark">Spark - Docker 이미지만들기</h2></a>
-    </div>
-    <div class="post-meta">
-        <span class="post-time">2018-12-24</span>
-    </div>
-    <div class="post-excerpt content">
-        Spark Docker를 이용한 스파크 실습  Docker Image 만들기 spark-version-tgz는 미리 홈페이지에서 다운받아둘것
-├── Dockerfile ├── config │ ├── core-site.xml │ ├── hdfs-site.xml │ └── spark-env.sh ├── spark-2.4.0-bin-hadoop2.7.tgz └── start-spark.sh  Dockerfile
-FROM ubuntu:18.04 ENV SPARK_HOME /opt/spark ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64 RUN apt-get update &amp;&amp; apt-get install -y \ wget \ python3 \ psmisc \ net-tools \ openjdk-8-jdk &amp;&amp; \ apt-get autoclean &amp;&amp; \ ln -s /usr/bin/python3 /usr/bin/python RUN wget http://apache.
-    </div>
-    <a href="/posts/2018/2018-12-24-how-spark/">more</a>
+      </div>
+      <div class="post-meta has-text-right">
+        <span class="post-time" >2018-12-24</span>
+      </div>
+      <div class="has-text-right">
+        <a href="/posts/2018/2018-12-24-how-spark/" >more</a>
+      </div>
+      <div class="is-clearfix"></div>
     </article>
-
-<article class="post box is-radiusless">
-    <div class="post-title">
+    
+    <article class="post box is-radiusless">
+      <div class="post-title">
         <a class="post-title-link" href="/posts/2018/2018-07-05-eralchemy/"><h2 class="is-size-4 has-text-dark">ERAlchemy 를 이용한 ERD작성</h2></a>
-    </div>
-    <div class="post-meta">
-        <span class="post-time">2018-07-05</span>
-    </div>
-    <div class="post-excerpt content">
-        우분투를 사용하는 환경이다.  사전준비 $ sudo apt install graphviz graphviz-dev python 라이브러리 설치 $ pip install pygraphviz --install-option=&#34;--include-path=/usr/include/graphviz&#34; --install-option=&#34;--library-path=/usr/lib/graphviz/&#34; $ pip install eralchemy 에러 graphviz 를 설치하지 않았을 경우
- (Python) ValueError: Program dot not found in path  graphviz-dev를 설치하지 않았을 경우
-undefined symbol: Agundirected  사용법 MySQL에 접속해서 해당 DB를 pdf로 출력해봄
-내부적으로 SQLAlchemy를 사용해서 db접속시 url를 아래와 같다.
-사용하는 드라이버가 달라서 접속 url을 주의해야함.
-현재 pymysql를 사용하므로
-    </div>
-    <a href="/posts/2018/2018-07-05-eralchemy/">more</a>
+      </div>
+      <div class="post-meta has-text-right">
+        <span class="post-time" >2018-07-05</span>
+      </div>
+      <div class="has-text-right">
+        <a href="/posts/2018/2018-07-05-eralchemy/" >more</a>
+      </div>
+      <div class="is-clearfix"></div>
     </article>
-
-<article class="post box is-radiusless">
-    <div class="post-title">
+    
+    <article class="post box is-radiusless">
+      <div class="post-title">
         <a class="post-title-link" href="/posts/2017/2017-11-02-emacs-golang/"><h2 class="is-size-4 has-text-dark">Emacs에서 Golang 를 위한 에디팅</h2></a>
-    </div>
-    <div class="post-meta">
-        <span class="post-time">2017-11-02</span>
-    </div>
-    <div class="post-excerpt content">
-        설치 go get명령어로 아래와 같이 필요한 유틸리티(명령어)를 설치해야 한다
-$ go get github.com/golang/lint/golint github.com/nsf/gocode github.com/k0kubun/pp github.com/golang/lint/golint github.com/rogpeppe/godef github.com/dougm/goflymake golang.org/x/tools/cmd/godoc 또는 golang.org/x/tools/cmd/...  필요한 패키지 direx ;;디렉토리 트리 보여줌 popwin ;;direx를 다른창으로 열어줌 auto-complete ;;자동완성 flycheck ;;오류체크 flymake-go go-mode go-autocomplete go-eldoc ;;상태줄에 godoc간단히 보여줌  shell-intergration.el
-터미널에서 실행하면 이멕스가 작동하는데 바로가기에서는 작동이 안된다
-아래와 같이 쉘환경에 통합하고 나서 실행하니 문제가 없었다
-(when (memq window-system &#39;(mac ns)) (exec-path-from-shell-initialize) (exec-path-from-shell-copy-envs &#39;(&#34;PATH&#34; &#34;GOPATH&#34;))) go.
-    </div>
-    <a href="/posts/2017/2017-11-02-emacs-golang/">more</a>
+      </div>
+      <div class="post-meta has-text-right">
+        <span class="post-time" >2017-11-02</span>
+      </div>
+      <div class="has-text-right">
+        <a href="/posts/2017/2017-11-02-emacs-golang/" >more</a>
+      </div>
+      <div class="is-clearfix"></div>
     </article>
-
-<article class="post box is-radiusless">
-    <div class="post-title">
+    
+    <article class="post box is-radiusless">
+      <div class="post-title">
         <a class="post-title-link" href="/posts/2017/2017-11-02-go-repl/"><h2 class="is-size-4 has-text-dark">Go Repl</h2></a>
-    </div>
-    <div class="post-meta">
-        <span class="post-time">2017-11-02</span>
-    </div>
-    <div class="post-excerpt content">
-        $ go get github.com/motemen/gore$ gore -autoimport gore version 0.2.6 :help for help gore&gt; fmt.Println(&#34;Hello World&#34;) Hello World 12 &lt;nil&gt; gore&gt;
-    </div>
-    <a href="/posts/2017/2017-11-02-go-repl/">more</a>
+      </div>
+      <div class="post-meta has-text-right">
+        <span class="post-time" >2017-11-02</span>
+      </div>
+      <div class="has-text-right">
+        <a href="/posts/2017/2017-11-02-go-repl/" >more</a>
+      </div>
+      <div class="is-clearfix"></div>
     </article>
-
-</section>
+    
+  </section>
+</div>
 
 
 
@@ -428,26 +417,19 @@ $ go get github.com/golang/lint/golint github.com/nsf/gocode github.com/k0kubun/
           <a href="/posts/page/12/" class="page-number">12</a>
       
 
-        
+    
 
 
     
-      <a href="/posts/page/2/" class="extend next">Last</a>
+      <a href="/posts/page/2/" class="extend next">끝</a>
     
 
 </nav>
 
 </div>
-                <div class="column">    <aside>
-        <h2 class="is-size-4">关于我</h2>
-        <div class="content">
-            Working in advertising platform team. Backend on duty,full stack in my own time.
-        </div>
-        <h2 class="is-size-4">GitHub</h2>
-        <div class="content">
-            <a href="https://github.com/lihongkun" target="_blank">https://github.com/lihongkun</a>
-        </div>
-    </aside></div>
+                <div class="column">
+
+                </div>
                 </div>
             </div>
          </main>    <footer class="footer">
@@ -456,7 +438,7 @@ $ go get github.com/golang/lint/golint github.com/nsf/gocode github.com/k0kubun/
             <a href="https://bulma.io">
                 <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
             </a>
-            <p>© Bonjour! Power by Hugo</p>
+            <p>© (Less is more) Power by Hugo</p>
         </div>
     </footer>
     <script type="text/javascript">

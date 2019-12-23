@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     
-    <meta name="author"
-            content="DAEHEE KIM"/>
+    <meta name="author" content="DAEHEE KIM"/>
 
     
     <meta name="description" content="## 설치환경
@@ -32,16 +31,17 @@ bundle install --without development test  아래 파일을 /etc/thin/redmine."/
             
         
     
-    <title> Redmine3 설치하기 | Bonjour! </title>
+    <title> Redmine3 설치하기 | (Less is more) </title>
 
     <link rel="shortcut icon" href="http://clonekim.github.io/favicon.jpg"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/bulma.min.css"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/style.css"/>
-</head><body><header>
-    <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+</head>
+<body><header>
+    <nav class="navbar is-fixed-top has-background-black-bis" role="navigation" aria-label="main navigation">
         <div class="navbar-brand is-size-4">
             <a class="navbar-item" href="http://clonekim.github.io/">
-                    Bonjour!
+                    (Less is more)
             </a>
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
                 <span aria-hidden="true"></span>
@@ -59,12 +59,13 @@ bundle install --without development test  아래 파일을 /etc/thin/redmine."/
             </div>
             </div>
     </nav>
-</header><main>
+</header>
+<main>
       <div class="container">
         <div class="columns">
           
           <div class="column">
-            <div class="content">
+            <div>
               <nav id="TableOfContents">
 <ul>
 <li>
@@ -134,7 +135,7 @@ $ bundle install --without development test
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml">---
 chdir: <span style="color:#e6db74">&#34;/home/redmine&#34;</span>
 environment: production
-address: <span style="color:#ae81ff">127.0</span>.<span style="color:#ae81ff">0.1</span>
+address: <span style="color:#ae81ff">127.0.0.1</span>
 port: <span style="color:#ae81ff">3000</span>
 timeout: <span style="color:#ae81ff">30</span>
 log: <span style="color:#e6db74">&#34;/home/redmine/log/thin.log&#34;</span>
@@ -181,7 +182,7 @@ daemonize: <span style="color:#66d9ef">true</span> </code></pre></div>
             <a href="https://bulma.io">
                 <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
             </a>
-            <p>© Bonjour! Power by Hugo</p>
+            <p>© (Less is more) Power by Hugo</p>
         </div>
     </footer>
     <script type="text/javascript">

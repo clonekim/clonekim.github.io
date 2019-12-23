@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     
-    <meta name="author"
-            content="DAEHEE KIM"/>
+    <meta name="author" content="DAEHEE KIM"/>
 
     
-    <meta name="description" content="쓰레드 생성은 시스템에 따라 제한됨 쓰레드풀을 사용할 수 있는 패키지가 있음 Future는 메서드를 비동기로 실행 후 나중에 결과를 받을 수 있음  import java.math.BigDecimal; import java.util.ArrayList; import java.util.List; import java.util.concurrent.Callable; import java.util.concurrent.ExecutionException; import java.util.concurrent.ExecutorService; import java.util.concurrent.Executors; import java.util.concurrent.Future; public class CallableTest { public static void main(String[] args) { callableTest(); } private static class Result { Long in; BigDecimal out; Result(final Long in, final BigDecimal out) { this.in = in; this."/>
+    <meta name="description" content="쓰레드 생성은 시스템에 따라 제한됨 쓰레드풀을 사용할 수 있는 패키지가 있음 Future는 메서드를 비동기로 실행 후 나중에 결과를 받을 수 있음
+import java.math.BigDecimal; import java.util.ArrayList; import java.util.List; import java.util.concurrent.Callable; import java.util.concurrent.ExecutionException; import java.util.concurrent.ExecutorService; import java.util.concurrent.Executors; import java.util.concurrent.Future; public class CallableTest { public static void main(String[] args) { callableTest(); } private static class Result { Long in; BigDecimal out; Result(final Long in, final BigDecimal out) { this.in = in; this.out = out; } } private static void callableTest() { ExecutorService executor = Executors."/>
     
 
     
@@ -26,16 +26,17 @@
             
         
     
-    <title> java.util.concurrent | Bonjour! </title>
+    <title> java.util.concurrent | (Less is more) </title>
 
     <link rel="shortcut icon" href="http://clonekim.github.io/favicon.jpg"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/bulma.min.css"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/style.css"/>
-</head><body><header>
-    <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+</head>
+<body><header>
+    <nav class="navbar is-fixed-top has-background-black-bis" role="navigation" aria-label="main navigation">
         <div class="navbar-brand is-size-4">
             <a class="navbar-item" href="http://clonekim.github.io/">
-                    Bonjour!
+                    (Less is more)
             </a>
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
                 <span aria-hidden="true"></span>
@@ -53,12 +54,13 @@
             </div>
             </div>
     </nav>
-</header><main>
+</header>
+<main>
       <div class="container">
         <div class="columns">
           
           <div class="column">
-            <div class="content">
+            <div>
                             
             </div>
           </div>          
@@ -74,81 +76,83 @@
                 <ol>
 <li>쓰레드 생성은 시스템에 따라 제한됨</li>
 <li>쓰레드풀을 사용할 수 있는 패키지가 있음</li>
-<li>Future는 메서드를 비동기로 실행 후 나중에 결과를 받을 수 있음</li>
+
+<li><p>Future는 메서드를 비동기로 실행 후 나중에 결과를 받을 수 있음</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#960050;background-color:#1e0010">import java</span>.<span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">BigDecimal</span>;
+<span style="color:#960050;background-color:#1e0010">import java</span>.<span style="color:#a6e22e">util</span>.<span style="color:#a6e22e">ArrayList</span>;
+<span style="color:#960050;background-color:#1e0010">import java</span>.<span style="color:#a6e22e">util</span>.<span style="color:#a6e22e">List</span>;
+<span style="color:#960050;background-color:#1e0010">import java</span>.<span style="color:#a6e22e">util</span>.<span style="color:#a6e22e">concurrent</span>.<span style="color:#a6e22e">Callable</span>;
+<span style="color:#960050;background-color:#1e0010">import java</span>.<span style="color:#a6e22e">util</span>.<span style="color:#a6e22e">concurrent</span>.<span style="color:#a6e22e">ExecutionException</span>;
+<span style="color:#960050;background-color:#1e0010">import java</span>.<span style="color:#a6e22e">util</span>.<span style="color:#a6e22e">concurrent</span>.<span style="color:#a6e22e">ExecutorService</span>;
+<span style="color:#960050;background-color:#1e0010">import java</span>.<span style="color:#a6e22e">util</span>.<span style="color:#a6e22e">concurrent</span>.<span style="color:#a6e22e">Executors</span>;
+<span style="color:#960050;background-color:#1e0010">import java</span>.<span style="color:#a6e22e">util</span>.<span style="color:#a6e22e">concurrent</span>.<span style="color:#a6e22e">Future</span>;
+
+<span style="color:#960050;background-color:#1e0010">public class </span>CallableTest {
+
+<span style="color:#960050;background-color:#1e0010">public static void main</span>(<span style="color:#960050;background-color:#1e0010">String[] args</span>) {
+    callableTest();
+}
+
+<span style="color:#960050;background-color:#1e0010">private static class Result </span>{
+    <span style="color:#960050;background-color:#1e0010">Long in</span>;
+    <span style="color:#960050;background-color:#1e0010">BigDecimal out</span>;
+
+    Result(<span style="color:#960050;background-color:#1e0010">final Long </span>in, <span style="color:#960050;background-color:#1e0010">final BigDecimal </span>out) {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">in</span> <span style="color:#f92672">=</span> in;
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">out</span> <span style="color:#f92672">=</span> out;
+    }
+}
+
+<span style="color:#960050;background-color:#1e0010">private static void callableTest</span>() {
+
+    <span style="color:#960050;background-color:#1e0010">ExecutorService executor </span><span style="color:#f92672">=</span> Executors.<span style="color:#a6e22e">newFixedThreadPool</span>(3);
+    <span style="color:#960050;background-color:#1e0010">List&lt;Future&lt;Result&gt;&gt; futures </span><span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>Future<span style="color:#f92672">&lt;</span>Result<span style="color:#f92672">&gt;&gt;</span>();
+
+    <span style="color:#66d9ef">for</span>(<span style="color:#960050;background-color:#1e0010">long i </span><span style="color:#f92672">=</span>2; i <span style="color:#f92672">&lt;=</span> 1000; i<span style="color:#f92672">++</span>) {
+        <span style="color:#960050;background-color:#1e0010">final Long </span>n <span style="color:#f92672">=</span> Long.<span style="color:#a6e22e">valueOf</span>(i);
+        <span style="color:#960050;background-color:#1e0010">Callable&lt;Result&gt; callable </span><span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Callable<span style="color:#f92672">&lt;</span>Result<span style="color:#f92672">&gt;</span>() {
+
+            <span style="color:#960050;background-color:#1e0010">public Result </span>call() <span style="color:#960050;background-color:#1e0010">throws Exception </span>{
+                <span style="color:#960050;background-color:#1e0010">BigDecimal fac </span><span style="color:#f92672">=</span> fac(n);
+                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> Result(n, fac);
+            }
+        };
+
+        <span style="color:#960050;background-color:#1e0010">Future&lt;Result&gt; future </span><span style="color:#f92672">=</span> executor.<span style="color:#a6e22e">submit</span>(callable);
+        futures.<span style="color:#a6e22e">add</span>(future);
+    }
+
+    <span style="color:#66d9ef">for</span>(<span style="color:#960050;background-color:#1e0010">Future&lt;Result&gt; future </span><span style="color:#f92672">:</span> futures) {
+        <span style="color:#960050;background-color:#1e0010">Result result</span>;
+        <span style="color:#66d9ef">try</span> {
+            result <span style="color:#f92672">=</span> future.<span style="color:#a6e22e">get</span>();
+            System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;fac(%d) = %s\n&#34;</span>, result.<span style="color:#a6e22e">in</span>, result.<span style="color:#a6e22e">out</span>);
+        } <span style="color:#66d9ef">catch</span> (<span style="color:#960050;background-color:#1e0010">InterruptedException e</span>) {
+            e.<span style="color:#a6e22e">printStackTrace</span>();
+        } <span style="color:#66d9ef">catch</span> (<span style="color:#960050;background-color:#1e0010">ExecutionException e</span>) {
+            e.<span style="color:#a6e22e">printStackTrace</span>();
+        }
+
+    }
+}
+
+<span style="color:#960050;background-color:#1e0010">private static BigDecimal fac</span>(<span style="color:#960050;background-color:#1e0010">Long n</span>) {
+    <span style="color:#960050;background-color:#1e0010">BigDecimal result </span><span style="color:#f92672">=</span> BigDecimal.<span style="color:#a6e22e">ONE</span>;
+    <span style="color:#66d9ef">for</span>(<span style="color:#960050;background-color:#1e0010">long i </span><span style="color:#f92672">=</span>1; i <span style="color:#f92672">&lt;=</span> n; i<span style="color:#f92672">++</span>) {
+        result <span style="color:#f92672">=</span> result.<span style="color:#a6e22e">multiply</span>(BigDecimal.<span style="color:#a6e22e">valueOf</span>(i));
+    }
+
+    <span style="color:#66d9ef">return</span> result;
+}
+
+}</code></pre></div></li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.math.BigDecimal<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.util.ArrayList<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.util.List<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.util.concurrent.Callable<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.util.concurrent.ExecutionException<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.util.concurrent.ExecutorService<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.util.concurrent.Executors<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.util.concurrent.Future<span style="color:#f92672">;</span>
 
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CallableTest</span> <span style="color:#f92672">{</span>
-
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-        callableTest<span style="color:#f92672">();</span>
-    <span style="color:#f92672">}</span>
-
-    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Result</span> <span style="color:#f92672">{</span>
-        Long in<span style="color:#f92672">;</span>
-        BigDecimal out<span style="color:#f92672">;</span>
-
-        Result<span style="color:#f92672">(</span><span style="color:#66d9ef">final</span> Long in<span style="color:#f92672">,</span> <span style="color:#66d9ef">final</span> BigDecimal out<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-            <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">in</span> <span style="color:#f92672">=</span> in<span style="color:#f92672">;</span>
-            <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">out</span> <span style="color:#f92672">=</span> out<span style="color:#f92672">;</span>
-        <span style="color:#f92672">}</span>
-    <span style="color:#f92672">}</span>
-
-    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">callableTest</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-
-        ExecutorService executor <span style="color:#f92672">=</span> Executors<span style="color:#f92672">.</span><span style="color:#a6e22e">newFixedThreadPool</span><span style="color:#f92672">(</span>3<span style="color:#f92672">);</span>
-        List<span style="color:#f92672">&lt;</span>Future<span style="color:#f92672">&lt;</span>Result<span style="color:#f92672">&gt;&gt;</span> futures <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>Future<span style="color:#f92672">&lt;</span>Result<span style="color:#f92672">&gt;&gt;();</span>
-
-        <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">long</span> i <span style="color:#f92672">=</span>2<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;=</span> 1000<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
-            <span style="color:#66d9ef">final</span> Long n <span style="color:#f92672">=</span> Long<span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span>i<span style="color:#f92672">);</span>
-            Callable<span style="color:#f92672">&lt;</span>Result<span style="color:#f92672">&gt;</span> callable <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Callable<span style="color:#f92672">&lt;</span>Result<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span>
-
-                <span style="color:#66d9ef">public</span> Result <span style="color:#a6e22e">call</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
-                    BigDecimal fac <span style="color:#f92672">=</span> fac<span style="color:#f92672">(</span>n<span style="color:#f92672">);</span>
-                    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> Result<span style="color:#f92672">(</span>n<span style="color:#f92672">,</span> fac<span style="color:#f92672">);</span>
-                <span style="color:#f92672">}</span>
-            <span style="color:#f92672">};</span>
-
-            Future<span style="color:#f92672">&lt;</span>Result<span style="color:#f92672">&gt;</span> future <span style="color:#f92672">=</span> executor<span style="color:#f92672">.</span><span style="color:#a6e22e">submit</span><span style="color:#f92672">(</span>callable<span style="color:#f92672">);</span>
-            futures<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>future<span style="color:#f92672">);</span>
-        <span style="color:#f92672">}</span>
-
-        <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span>Future<span style="color:#f92672">&lt;</span>Result<span style="color:#f92672">&gt;</span> future <span style="color:#f92672">:</span> futures<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-            Result result<span style="color:#f92672">;</span>
-            <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
-                result <span style="color:#f92672">=</span> future<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">();</span>
-                System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">printf</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;fac(%d) = %s\n&#34;</span><span style="color:#f92672">,</span> result<span style="color:#f92672">.</span><span style="color:#a6e22e">in</span><span style="color:#f92672">,</span> result<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">);</span>
-            <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>InterruptedException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-                e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
-            <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>ExecutionException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-                e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
-            <span style="color:#f92672">}</span>
-
-        <span style="color:#f92672">}</span>
-    <span style="color:#f92672">}</span>
-
-    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> BigDecimal <span style="color:#a6e22e">fac</span><span style="color:#f92672">(</span>Long n<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-        BigDecimal result <span style="color:#f92672">=</span> BigDecimal<span style="color:#f92672">.</span><span style="color:#a6e22e">ONE</span><span style="color:#f92672">;</span>
-        <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">long</span> i <span style="color:#f92672">=</span>1<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;=</span> n<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
-            result <span style="color:#f92672">=</span> result<span style="color:#f92672">.</span><span style="color:#a6e22e">multiply</span><span style="color:#f92672">(</span>BigDecimal<span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span>i<span style="color:#f92672">));</span>
-        <span style="color:#f92672">}</span>
-
-        <span style="color:#66d9ef">return</span> result<span style="color:#f92672">;</span>
-    <span style="color:#f92672">}</span>
-
-<span style="color:#f92672">}</span></code></pre></div>
               </div>
               <div class="columns is-mobile post-meta">
                 <div class="column is-half-desktop has-text-left is-paddingless"> 
                    
-                  이전:<a href="http://clonekim.github.io/posts/2013/2013-09-27-jspwiki-install/"> JSPWiki 설치</a>
+                  이전:<a href="http://clonekim.github.io/posts/2013/2013-09-27-jackson-json-processor/"> Jackson JSON Processor</a>
                   
                 </div>
                 <div class="column is-half-desktop has-text-right is-paddingless">
@@ -168,7 +172,7 @@
             <a href="https://bulma.io">
                 <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
             </a>
-            <p>© Bonjour! Power by Hugo</p>
+            <p>© (Less is more) Power by Hugo</p>
         </div>
     </footer>
     <script type="text/javascript">

@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>spark on Bonjour!</title>
+    <title>spark on (Less is more)</title>
     <link>http://clonekim.github.io/tags/spark/</link>
-    <description>Recent content in spark on Bonjour!</description>
+    <description>Recent content in spark on (Less is more)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
     <managingEditor>clonekim-at-gmail-dot-com (DAEHEE KIM)</managingEditor>
@@ -21,7 +21,7 @@
       <guid>http://clonekim.github.io/posts/2018/2018-12-24-aggregation-tags-with-spark/</guid>
       <description>현재 특정 테이블의 태그정보와 아래와 같다
 특정컬럼에 태그 값이 컴마 구분으로 들어있음
-   tags     태그, 태그, 태그 &amp;hellip;    파일 처리 해당 컬럼만 csv로 만들어본것
+   tags     태그, 태그, 태그 &amp;hellip;    CSV 파일 읽기 해당 컬럼만 csv로 만들어본것
 # -*- coding: utf-8 -*- from pyspark import SparkConf from pyspark import SparkContext from pyspark.sql import SparkSession from pyspark.sql.types import * lines = sc.textFile(&amp;#39;[csv파일]&amp;#39;, use_unicode=True) counts = lines.flatMap(lambda line: line.split(&amp;#39;,&amp;#39;)).map(lambda word: (word,1)).reduceByKey(lambda a,b : a + b) schema = StructType([ StructField(&amp;#39;tag&amp;#39;, StringType(), False), StructField(&amp;#39;count&amp;#39;, IntegerType(), False), ]) df = spark.</description>
     </item>
     

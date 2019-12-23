@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     
-    <meta name="author"
-            content="DAEHEE KIM"/>
+    <meta name="author" content="DAEHEE KIM"/>
 
     
 
@@ -26,16 +25,17 @@
             
         
     
-    <title> clojurescript | Bonjour! </title>
+    <title> clojurescript | (Less is more) </title>
 
     <link rel="shortcut icon" href="http://clonekim.github.io/favicon.jpg"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/bulma.min.css"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/style.css"/>
-</head><body><header>
-    <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+</head>
+<body><header>
+    <nav class="navbar is-fixed-top has-background-black-bis" role="navigation" aria-label="main navigation">
         <div class="navbar-brand is-size-4">
             <a class="navbar-item" href="http://clonekim.github.io/">
-                    Bonjour!
+                    (Less is more)
             </a>
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
                 <span aria-hidden="true"></span>
@@ -53,44 +53,41 @@
             </div>
             </div>
     </nav>
-</header><main>
+</header>
+<main>
       <div class="container">
         <div class="columns">
-          <div class="column"><section class="posts">
-
-<article class="post box is-radiusless">
-    <div class="post-title">
+          <div class="column"><div class="column">
+  <section class="posts">
+    
+    <article class="post box is-radiusless">
+      <div class="post-title">
         <a class="post-title-link" href="/posts/2016/2016-09-20-using-jquery-in-clojurescript/"><h2 class="is-size-4 has-text-dark">clojurescript에서 jquery사용</h2></a>
-    </div>
-    <div class="post-meta">
-        <span class="post-time">2016-09-20</span>
-    </div>
-    <div class="post-excerpt content">
-         view.clj
-(defn view-layout [&amp; content] (html [:head [:meta {:http-equiv &#34;Content-type&#34; :content &#34;text/html; charset=utf-8&#34;}] [&#34;title&#34;: &#34;Project-Name&#34;]] [:body content])) (defn view-content [] (view-layout [:h2 &#34;Project-Name&#34;] [:p {:id &#34;clickhere&#34;} &#34;Get yourself a nice alert by clicking here.&#34;] [:script {:src &#34;/js/jquery-1.10.2.min.js&#34;}] [:script {:src &#34;/js/cljs.js&#34;}])) hello.cljs
-(:require [jayq.core :as jq]) (:use [jayq.core :only [$]]) ;; ;; $(&#34;#btn&#34;).click(function() {alert(&#34;Hi!&#34;); }); ;; (jq/bind ($ &#34;#btn&#34;) :click (fn [] (js/alert &#34;Hi!&#34;))) lein cljsbuild once lein run  참고  ClojureScriptという選択肢 ClojureScript入門  
-    </div>
-    <a href="/posts/2016/2016-09-20-using-jquery-in-clojurescript/">more</a>
+      </div>
+      <div class="post-meta has-text-right">
+        <span class="post-time" >2016-09-20</span>
+      </div>
+      <div class="has-text-right">
+        <a href="/posts/2016/2016-09-20-using-jquery-in-clojurescript/" >more</a>
+      </div>
+      <div class="is-clearfix"></div>
     </article>
-
-<article class="post box is-radiusless">
-    <div class="post-title">
+    
+    <article class="post box is-radiusless">
+      <div class="post-title">
         <a class="post-title-link" href="/posts/2016/2016-01-18-starting-clojurescript/"><h2 class="is-size-4 has-text-dark">ClojureScript 시작하기</h2></a>
-    </div>
-    <div class="post-meta">
-        <span class="post-time">2016-01-18</span>
-    </div>
-    <div class="post-excerpt content">
-        프로젝트 설정 leiningen
-[org.clojure/clojurescript &#34;1.7.228&#34;] plugin
-[lein-cljsbuild &#34;1.1.2&#34;] project.clj
-(defproject hello-ring &#34;0.1.0-SNAPSHOT&#34; :description &#34;FIXME: write description&#34; :url &#34;http://example.com/FIXME&#34; :license {:name &#34;Eclipse Public License&#34; :url &#34;http://www.eclipse.org/legal/epl-v10.html&#34;} :dependencies [[org.clojure/clojure &#34;1.7.0&#34;] [org.clojure/clojurescript &#34;1.7.228&#34;] [ring/ring-core &#34;1.4.0&#34;] [ring/ring-defaults &#34;0.1.5&#34;] [ring/ring-json &#34;0.4.0&#34;] [ring/ring-jetty-adapter &#34;1.4.0&#34;] [compojure &#34;1.4.0&#34;]] :plugins [[lein-cljsbuild &#34;1.1.2&#34;] [lein-ring &#34;0.9.7&#34;]] :cljsbuild {:builds {:main {:source-paths [&#34;src-cljs&#34;] :compiler {:output-to &#34;resources/public/js/app.js&#34; :output-dir &#34;resources/public/out&#34; :optimizations :simple :pretty-print true}}}} :ring {:handler hello-ring.core/app} :main hello-ring.core) cljs소스를 src-cljs라는 경로로 선택했다
-디렉토리를 만들어야한다
-    </div>
-    <a href="/posts/2016/2016-01-18-starting-clojurescript/">more</a>
+      </div>
+      <div class="post-meta has-text-right">
+        <span class="post-time" >2016-01-18</span>
+      </div>
+      <div class="has-text-right">
+        <a href="/posts/2016/2016-01-18-starting-clojurescript/" >more</a>
+      </div>
+      <div class="is-clearfix"></div>
     </article>
-
-</section>
+    
+  </section>
+</div>
 </div>
         </div>
 
@@ -114,7 +111,7 @@
             <a href="https://bulma.io">
                 <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
             </a>
-            <p>© Bonjour! Power by Hugo</p>
+            <p>© (Less is more) Power by Hugo</p>
         </div>
     </footer>
     <script type="text/javascript">

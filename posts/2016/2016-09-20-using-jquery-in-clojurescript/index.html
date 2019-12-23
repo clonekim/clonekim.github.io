@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     
-    <meta name="author"
-            content="DAEHEE KIM"/>
+    <meta name="author" content="DAEHEE KIM"/>
 
     
     <meta name="description" content=" view.clj
@@ -28,16 +27,17 @@
             
         
     
-    <title> clojurescript에서 jquery사용 | Bonjour! </title>
+    <title> clojurescript에서 jquery사용 | (Less is more) </title>
 
     <link rel="shortcut icon" href="http://clonekim.github.io/favicon.jpg"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/bulma.min.css"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/style.css"/>
-</head><body><header>
-    <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+</head>
+<body><header>
+    <nav class="navbar is-fixed-top has-background-black-bis" role="navigation" aria-label="main navigation">
         <div class="navbar-brand is-size-4">
             <a class="navbar-item" href="http://clonekim.github.io/">
-                    Bonjour!
+                    (Less is more)
             </a>
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
                 <span aria-hidden="true"></span>
@@ -55,12 +55,13 @@
             </div>
             </div>
     </nav>
-</header><main>
+</header>
+<main>
       <div class="container">
         <div class="columns">
           
           <div class="column">
-            <div class="content">
+            <div>
               <nav id="TableOfContents">
 <ul>
 <li>
@@ -84,7 +85,7 @@
 
 <p><em>view.clj</em></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defn </span>view-layout [<span style="color:#f92672">&amp;</span> content]
-  (html
+  (<span style="color:#a6e22e">html</span>
       [<span style="color:#e6db74">:head</span>
            [<span style="color:#e6db74">:meta</span> {<span style="color:#e6db74">:http-equiv</span> <span style="color:#e6db74">&#34;Content-type&#34;</span>
                         <span style="color:#e6db74">:content</span> <span style="color:#e6db74">&#34;text/html; charset=utf-8&#34;</span>}]
@@ -92,7 +93,7 @@
       [<span style="color:#e6db74">:body</span> content]))
 
 (<span style="color:#66d9ef">defn </span>view-content []
-  (view-layout
+  (<span style="color:#a6e22e">view-layout</span>
        [<span style="color:#e6db74">:h2</span> <span style="color:#e6db74">&#34;Project-Name&#34;</span>]
        [<span style="color:#e6db74">:p</span> {<span style="color:#e6db74">:id</span> <span style="color:#e6db74">&#34;clickhere&#34;</span>} <span style="color:#e6db74">&#34;Get yourself a nice alert by clicking here.&#34;</span>]
        [<span style="color:#e6db74">:script</span> {<span style="color:#e6db74">:src</span> <span style="color:#e6db74">&#34;/js/jquery-1.10.2.min.js&#34;</span>}]
@@ -105,7 +106,7 @@
 <span style="color:#75715e">;; $(&#34;#btn&#34;).click(function() {alert(&#34;Hi!&#34;); });</span>
 <span style="color:#75715e">;;</span>
 
-(jq/bind ($ <span style="color:#e6db74">&#34;#btn&#34;</span>) <span style="color:#e6db74">:click</span> (<span style="color:#66d9ef">fn </span>[] (js/alert <span style="color:#e6db74">&#34;Hi!&#34;</span>)))</code></pre></div>
+(<span style="color:#a6e22e">jq/bind</span> (<span style="color:#a6e22e">$</span> <span style="color:#e6db74">&#34;#btn&#34;</span>) <span style="color:#e6db74">:click</span> (<span style="color:#66d9ef">fn </span>[] (<span style="color:#a6e22e">js/alert</span> <span style="color:#e6db74">&#34;Hi!&#34;</span>)))</code></pre></div>
 <pre><code>lein cljsbuild once
 lein run
 </code></pre>
@@ -141,7 +142,7 @@ lein run
             <a href="https://bulma.io">
                 <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
             </a>
-            <p>© Bonjour! Power by Hugo</p>
+            <p>© (Less is more) Power by Hugo</p>
         </div>
     </footer>
     <script type="text/javascript">

@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>clojure on Bonjour!</title>
+    <title>clojure on (Less is more)</title>
     <link>http://clonekim.github.io/tags/clojure/</link>
-    <description>Recent content in clojure on Bonjour!</description>
+    <description>Recent content in clojure on (Less is more)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
     <managingEditor>clonekim-at-gmail-dot-com (DAEHEE KIM)</managingEditor>
@@ -47,7 +47,8 @@ IDE/Tools  LightTable Cursive Emacs  Leiningen으로 시작하기 Leiningen (레
 윈도우에서만 self-install해준다
 Project 생성 lein new [프로젝트명]  프로젝트 의존성 추가 라이브러리는 아래의 저장소에서 검색이 가능하고
 의존성에 추가하면 된다
- clojars Maven repository  :dependencies [[org.clojure/clojure &amp;#34;1.7.0&amp;#34;] [groupId/artifactId &amp;#34;version&amp;#34;]]) 그외의 라이브러리 저장소로는 추가로 지정할수있다
+ clojars Maven repository
+:dependencies [[org.clojure/clojure &amp;#34;1.7.0&amp;#34;] [groupId/artifactId &amp;#34;version&amp;#34;]])  그외의 라이브러리 저장소로는 추가로 지정할수있다
 :repositories { &amp;#34;이름&amp;#34; &amp;#34;http://192.168.0.10:8081/nexus/content/repositories/thirdparty&amp;#34; } REPL(Read Eval Print Loop) 실행 lein repl  REPL에서 클로저코드를 작성하고 바로 실행이 가능하다</description>
     </item>
     

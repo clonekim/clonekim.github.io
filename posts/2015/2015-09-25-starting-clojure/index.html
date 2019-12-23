@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     
-    <meta name="author"
-            content="DAEHEE KIM"/>
+    <meta name="author" content="DAEHEE KIM"/>
 
     
     <meta name="description" content="JVM위에서 작동하는 함수형 프로그래밍이다
@@ -15,7 +14,8 @@ IDE/Tools  LightTable Cursive Emacs  Leiningen으로 시작하기 Leiningen (레
 윈도우에서만 self-install해준다
 Project 생성 lein new [프로젝트명]  프로젝트 의존성 추가 라이브러리는 아래의 저장소에서 검색이 가능하고
 의존성에 추가하면 된다
- clojars Maven repository  :dependencies [[org.clojure/clojure &amp;#34;1.7.0&amp;#34;] [groupId/artifactId &amp;#34;version&amp;#34;]]) 그외의 라이브러리 저장소로는 추가로 지정할수있다
+ clojars Maven repository
+:dependencies [[org.clojure/clojure &amp;#34;1.7.0&amp;#34;] [groupId/artifactId &amp;#34;version&amp;#34;]])  그외의 라이브러리 저장소로는 추가로 지정할수있다
 :repositories { &amp;#34;이름&amp;#34; &amp;#34;http://192.168.0.10:8081/nexus/content/repositories/thirdparty&amp;#34; } REPL(Read Eval Print Loop) 실행 lein repl  REPL에서 클로저코드를 작성하고 바로 실행이 가능하다"/>
     
 
@@ -33,16 +33,17 @@ Project 생성 lein new [프로젝트명]  프로젝트 의존성 추가 라이�
             
         
     
-    <title> Clojure 시작하기 | Bonjour! </title>
+    <title> Clojure 시작하기 | (Less is more) </title>
 
     <link rel="shortcut icon" href="http://clonekim.github.io/favicon.jpg"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/bulma.min.css"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/style.css"/>
-</head><body><header>
-    <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+</head>
+<body><header>
+    <nav class="navbar is-fixed-top has-background-black-bis" role="navigation" aria-label="main navigation">
         <div class="navbar-brand is-size-4">
             <a class="navbar-item" href="http://clonekim.github.io/">
-                    Bonjour!
+                    (Less is more)
             </a>
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
                 <span aria-hidden="true"></span>
@@ -60,12 +61,13 @@ Project 생성 lein new [프로젝트명]  프로젝트 의존성 추가 라이�
             </div>
             </div>
     </nav>
-</header><main>
+</header>
+<main>
       <div class="container">
         <div class="columns">
           
           <div class="column">
-            <div class="content">
+            <div>
               <nav id="TableOfContents">
 <ul>
 <li>
@@ -159,10 +161,12 @@ Project 생성 lein new [프로젝트명]  프로젝트 의존성 추가 라이�
 
 <ul>
 <li><a href="https://clojars.org">clojars</a></li>
-<li><a href="http://mvnrepository.com">Maven repository</a></li>
+
+<li><p><a href="http://mvnrepository.com">Maven repository</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure"><span style="color:#e6db74">:dependencies</span> [[org.clojure/clojure <span style="color:#e6db74">&#34;1.7.0&#34;</span>]
+            [groupId/artifactId <span style="color:#e6db74">&#34;version&#34;</span>]])</code></pre></div></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure"> <span style="color:#e6db74">:dependencies</span> [[org.clojure/clojure <span style="color:#e6db74">&#34;1.7.0&#34;</span>]
-                [groupId/artifactId <span style="color:#e6db74">&#34;version&#34;</span>]])</code></pre></div>
+
 <p>그외의 라이브러리 저장소로는 추가로 지정할수있다</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">  <span style="color:#e6db74">:repositories</span> {
        <span style="color:#e6db74">&#34;이름&#34;</span> <span style="color:#e6db74">&#34;http://192.168.0.10:8081/nexus/content/repositories/thirdparty&#34;</span>
@@ -180,14 +184,14 @@ user=&gt; (doc conj) <span style="color:#75715e">;도움말 보기</span>
 clojure.core/conj
 ([coll x] [coll x <span style="color:#f92672">&amp;</span> xs])
   conj[oin]<span style="color:#66d9ef">. </span>Returns a <span style="color:#66d9ef">new </span>collection with the xs
-    <span style="color:#e6db74">&#39;added&#39;.</span> (conj nil item) returns (item)<span style="color:#66d9ef">. </span> The <span style="color:#e6db74">&#39;addition</span><span style="color:#f92672">&#39;</span> may
+    <span style="color:#e6db74">&#39;added&#39;.</span> (conj nil item) returns (<span style="color:#a6e22e">item</span>)<span style="color:#66d9ef">. </span> The <span style="color:#e6db74">&#39;addition</span><span style="color:#f92672">&#39;</span> may
     happen at different <span style="color:#e6db74">&#39;places</span><span style="color:#f92672">&#39;</span> depending on the concrete type.
 nil
 user=&gt; (doc +)
 -------------------------
 clojure.core/+
 ([] [x] [x y] [x y <span style="color:#f92672">&amp;</span> more])
-  Returns the sum of nums. (+) returns <span style="color:#ae81ff">0</span><span style="color:#66d9ef">. </span>Does not auto-promote
+  Returns the sum of nums. (<span style="color:#a6e22e">+</span>) returns <span style="color:#ae81ff">0</span><span style="color:#66d9ef">. </span>Does not auto-promote
   longs, will throw on overflow. See also<span style="color:#960050;background-color:#1e0010">:</span> +<span style="color:#f92672">&#39;</span>
 nil  </code></pre></div>
 <h2 id="자료구조">자료구조</h2>
@@ -330,13 +334,13 @@ clojure.lang.PersistentVector$ChunkedSeq</code></pre></div>
 <span style="color:#75715e">;; #{[:c 3] [:b 2] [:a 1]}</span>
 
 
-(clojure.set/union <span style="color:#f92672">#</span>{<span style="color:#e6db74">:r</span> <span style="color:#e6db74">:b</span> <span style="color:#e6db74">:w</span>} <span style="color:#f92672">#</span>{<span style="color:#e6db74">:w</span> <span style="color:#e6db74">:p</span> <span style="color:#e6db74">:y</span>})
+(<span style="color:#a6e22e">clojure.set/union</span> <span style="color:#f92672">#</span>{<span style="color:#e6db74">:r</span> <span style="color:#e6db74">:b</span> <span style="color:#e6db74">:w</span>} <span style="color:#f92672">#</span>{<span style="color:#e6db74">:w</span> <span style="color:#e6db74">:p</span> <span style="color:#e6db74">:y</span>})
 <span style="color:#75715e">;; #{:y :r :w :b :p}  중복요소 제거하고 모두 포함</span>
 
-(clojure.set/difference <span style="color:#f92672">#</span>{<span style="color:#e6db74">:r</span> <span style="color:#e6db74">:b</span> <span style="color:#e6db74">:w</span>} <span style="color:#f92672">#</span>{<span style="color:#e6db74">:w</span> <span style="color:#e6db74">:p</span> <span style="color:#e6db74">:y</span>})
+(<span style="color:#a6e22e">clojure.set/difference</span> <span style="color:#f92672">#</span>{<span style="color:#e6db74">:r</span> <span style="color:#e6db74">:b</span> <span style="color:#e6db74">:w</span>} <span style="color:#f92672">#</span>{<span style="color:#e6db74">:w</span> <span style="color:#e6db74">:p</span> <span style="color:#e6db74">:y</span>})
 <span style="color:#75715e">;; #{:r :b}</span>
 
-(clojure.set/intersection <span style="color:#f92672">#</span>{<span style="color:#e6db74">:r</span> <span style="color:#e6db74">:b</span> <span style="color:#e6db74">:w</span>} <span style="color:#f92672">#</span>{<span style="color:#e6db74">:w</span> <span style="color:#e6db74">:p</span> <span style="color:#e6db74">:y</span>})
+(<span style="color:#a6e22e">clojure.set/intersection</span> <span style="color:#f92672">#</span>{<span style="color:#e6db74">:r</span> <span style="color:#e6db74">:b</span> <span style="color:#e6db74">:w</span>} <span style="color:#f92672">#</span>{<span style="color:#e6db74">:w</span> <span style="color:#e6db74">:p</span> <span style="color:#e6db74">:y</span>})
 <span style="color:#75715e">;;#{:w}</span></code></pre></div>
 <h2 id="binding">Binding</h2>
 
@@ -372,7 +376,7 @@ alice/name
 <span style="color:#75715e">;; &#34;King&#34; 다른 네임공간의 변수를 사용</span>
 
 <span style="color:#75715e">;; alias 사용</span>
-(require <span style="color:#f92672">&#39;</span>[alice <span style="color:#e6db74">:as</span> al])
+(<span style="color:#a6e22e">require</span> <span style="color:#f92672">&#39;</span>[alice <span style="color:#e6db74">:as</span> al])
 al/name
 <span style="color:#75715e">;; &#34;King&#34;</span>
 
@@ -390,7 +394,7 @@ al/name
 <h2 id="함수정의">함수정의</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defn </span>follow-the-rabbit [] <span style="color:#e6db74">&#34;Off we go!&#34;</span>)
 
-(follow-the-rabbit)
+(<span style="color:#a6e22e">follow-the-rabbit</span>)
 <span style="color:#75715e">;; &#34;Off we go!&#34;</span>
 
 <span style="color:#66d9ef">defn </span>shop-for-jams [jam1 jam2]
@@ -398,7 +402,7 @@ al/name
    <span style="color:#e6db74">:jam1</span> jam1
    <span style="color:#e6db74">:jam2</span> jam2})
 
-(shop-for-jams <span style="color:#e6db74">&#34;strawberry&#34;</span> <span style="color:#e6db74">&#34;marmalade&#34;</span>)
+(<span style="color:#a6e22e">shop-for-jams</span> <span style="color:#e6db74">&#34;strawberry&#34;</span> <span style="color:#e6db74">&#34;marmalade&#34;</span>)
 <span style="color:#75715e">;; {:name &#34;jam-basket&#34;, :jam1 &#34;strawberry&#34;, :jam2 &#34;marmalade&#34;}</span>
 
 <span style="color:#75715e">;;anonymous 함수</span>
@@ -446,14 +450,14 @@ al/name
 <span style="color:#75715e">;;-&gt; Yes otherwise nil</span></code></pre></div>
 <h3 id="cond-case">cond, case</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">let </span>[bottle <span style="color:#e6db74">&#34;drink&#34;</span>]
-  (cond
+  (<span style="color:#a6e22e">cond</span>
     (= bottle <span style="color:#e6db74">&#34;poison&#34;</span>) <span style="color:#e6db74">&#34;don&#39;t touch&#34;</span>
     (= bottle <span style="color:#e6db74">&#34;empty&#34;</span>) <span style="color:#e6db74">&#34;all gone&#34;</span>))
  <span style="color:#75715e">;;-&gt; nil</span></code></pre></div>
 <p>cond와 달리 매칭되는 것이 없을 경우  IllegalArgumentException 을 발생시킴<br />
 아래와 같이 익셉션을 발생하지 않고 unknown을 출력할 수 있음</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">let </span>[bottle <span style="color:#e6db74">&#34;drink&#34;</span>]
- (case bottle
+ (<span style="color:#a6e22e">case</span> bottle
    <span style="color:#e6db74">&#34;poison&#34;</span> <span style="color:#e6db74">&#34;don&#39;t touch&#34;</span>
    <span style="color:#e6db74">&#34;drink&#34;</span> <span style="color:#e6db74">&#34;drink it&#34;</span> 
    <span style="color:#e6db74">&#34;unknown&#34;</span> )) </code></pre></div>
@@ -463,20 +467,20 @@ al/name
 
 <p>doto는 생성된 인스턴스에 계속적인 메서드를 호출(부가효과)를 할 수 있고<br />
 최종적으로 돌려주는 것은 그 인스턴스가 된다</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(doto (java.util.HashMap.)
-      (.put <span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#e6db74">&#34;clojure&#34;</span>)
-      (.put <span style="color:#e6db74">&#34;ver&#34;</span> <span style="color:#e6db74">&#34;1.7&#34;</span>))
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(doto (<span style="color:#a6e22e">java.util.HashMap.</span>)
+      (<span style="color:#a6e22e">.put</span> <span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#e6db74">&#34;clojure&#34;</span>)
+      (<span style="color:#a6e22e">.put</span> <span style="color:#e6db74">&#34;ver&#34;</span> <span style="color:#e6db74">&#34;1.7&#34;</span>))
 
 <span style="color:#75715e">;; {&#34;name&#34; &#34;clojure&#34; , &#34;ver&#34; &#34;1.7&#34;}</span></code></pre></div>
 <h3 id="threading">Threading(-&gt;)</h3>
 
 <p>최종적으로 돌려주는 것은 해당 메서드가 적용된 것</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(-&gt; (java.util.HashMap.)
-    (.put <span style="color:#e6db74">&#34;num&#34;</span> <span style="color:#ae81ff">1234</span>))
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(-&gt; (<span style="color:#a6e22e">java.util.HashMap.</span>)
+    (<span style="color:#a6e22e">.put</span> <span style="color:#e6db74">&#34;num&#34;</span> <span style="color:#ae81ff">1234</span>))
 <span style="color:#75715e">;; nil</span>
 
 (-&gt; <span style="color:#e6db74">&#34;aaaa&#34;</span>
-    (.toUpperCase))
+    (<span style="color:#a6e22e">.toUpperCase</span>))
 <span style="color:#75715e">;; &#34;AAAA&#34;</span></code></pre></div>
 <h2 id="database">Database</h2>
 
@@ -494,26 +498,26 @@ al/name
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#e6db74">:import</span> java.awt.Panel
          java.util.Date)
 
-(<span style="color:#e6db74">:import</span> (java.io Writer
+(<span style="color:#e6db74">:import</span> (<span style="color:#a6e22e">java.io</span> Writer
                   ByteArrayOutputStream))</code></pre></div>
 <h3 id="inner-class를-사용할-경우">Inner class를 사용할 경우</h3>
 
 <p>아래와 같은 클래스일 경우다</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Robot</span> <span style="color:#f92672">{</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#960050;background-color:#1e0010">public class </span>Robot {
 
-  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Radio</span>  <span style="color:#f92672">{</span>
-   <span style="color:#f92672">...</span>
-  <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span></code></pre></div>
+  <span style="color:#960050;background-color:#1e0010">public static class Radio  </span>{
+   ...
+  }
+}</code></pre></div>
 <pre><code>(Robot$Radio.)
 </code></pre>
 
 <h3 id="try-catch">try..catch</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure"> (try
-    (Integer/parseInt s)
-    (catch NumberFormatException e
-      (.printStackTrace e))
-    (finally
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure"> (<span style="color:#a6e22e">try</span>
+    (<span style="color:#a6e22e">Integer/parseInt</span> s)
+    (<span style="color:#a6e22e">catch</span> NumberFormatException e
+      (<span style="color:#a6e22e">.printStackTrace</span> e))
+    (<span style="color:#a6e22e">finally</span>
       (println <span style="color:#e6db74">&#34;Attempted to parse as integer: &#34;</span> s)))</code></pre></div>
 <h2 id="web-programming">Web Programming</h2>
 
@@ -569,7 +573,7 @@ al/name
             <a href="https://bulma.io">
                 <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
             </a>
-            <p>© Bonjour! Power by Hugo</p>
+            <p>© (Less is more) Power by Hugo</p>
         </div>
     </footer>
     <script type="text/javascript">

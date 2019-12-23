@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html><head>
-	<meta name="generator" content="Hugo 0.55.6" />
+	<meta name="generator" content="Hugo 0.59.1" />
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     
-    <meta name="author"
-            content="DAEHEE KIM"/>
+    <meta name="author" content="DAEHEE KIM"/>
 
     
 
@@ -27,16 +26,17 @@
             
         
     
-    <title>Bonjour!</title>
+    <title>(Less is more)</title>
 
     <link rel="shortcut icon" href="http://clonekim.github.io/favicon.jpg"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/bulma.min.css"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/style.css"/>
-</head><body><header>
-    <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+</head>
+<body><header>
+    <nav class="navbar is-fixed-top has-background-black-bis" role="navigation" aria-label="main navigation">
         <div class="navbar-brand is-size-4">
             <a class="navbar-item" href="http://clonekim.github.io/">
-                    Bonjour!
+                    (Less is more)
             </a>
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
                 <span aria-hidden="true"></span>
@@ -54,96 +54,79 @@
             </div>
             </div>
     </nav>
-</header><main>
+</header>
+<main>
       <div class="container">
-        <div class="columns"><section class="posts">
-
-<article class="post box is-radiusless">
-    <div class="post-title">
+        <div class="columns"><div class="column">
+  <section class="posts">
+    
+    <article class="post box is-radiusless">
+      <div class="post-title">
         <a class="post-title-link" href="/posts/2015/2015-07-16-windows-vim/"><h2 class="is-size-4 has-text-dark">윈도우즈 Vim설정</h2></a>
-    </div>
-    <div class="post-meta">
-        <span class="post-time">2015-07-16</span>
-    </div>
-    <div class="post-excerpt content">
-        vi를 윈도우즈에서 사용하기 위한 가이드
-설치  http://www.vim.org http://www.vim.org/download.php  설정 아래 파일을 C:\Users[계정명]_vimrc 에 위치한다
-set nu set autoindent set nobackup set showcmd set ruler set enc=utf-8 set fencs=euckr,cp949,utf-8 set tabstop=3 set nowrap set lines=30 columns=140 lang mes en_US source $VIMRUNTIME/delmenu.vim source $VIMRUNTIME/menu.vim  Explore 명령모드에서 :Explore로 입력하면 탐색창모드로 전환한다. 특정파일을 선택 시 편집할 수 있고
-Ctrl +^ 입력시 바로 이전 탐색창으로 이동한다.
-    </div>
-    <a href="/posts/2015/2015-07-16-windows-vim/">more</a>
+      </div>
+      <div class="post-meta has-text-right">
+        <span class="post-time" >2015-07-16</span>
+      </div>
+      <div class="has-text-right">
+        <a href="/posts/2015/2015-07-16-windows-vim/" >more</a>
+      </div>
+      <div class="is-clearfix"></div>
     </article>
-
-<article class="post box is-radiusless">
-    <div class="post-title">
+    
+    <article class="post box is-radiusless">
+      <div class="post-title">
         <a class="post-title-link" href="/posts/2015/2015-07-14-how-to-captcha-in-node.js/"><h2 class="is-size-4 has-text-dark">Node.js로 Captcha</h2></a>
-    </div>
-    <div class="post-meta">
-        <span class="post-time">2015-07-14</span>
-    </div>
-    <div class="post-excerpt content">
-        canvas를 이용한 캡챠(captcha)를 생성하려고 한다.
-사용하려는 패키지는 canvas-captcha이다
-의존성 설치 apt-get install libpango1.0-dev apt-get install libjpeg-dev apt-get install libgif-dev  소스작성 captcha.js
-var captcha = require(&#39;canvas-captcha&#39;) ,captchaOptions = { charPool: (&#39;abcdefghijklmnopqrstuvwxyz&#39; + &#39;abcdefghijklmnopqrstuvwxyz&#39;.toUpperCase() + &#39;1234567890&#39;).split(&#39;&#39;) //char pool Array  ,size: { width: 120 ,height: 52 } //image size  ,textPos: { left: 15 ,top: 36 } //text drawing start position  ,rotate: .01 //text ratate  ,charLength: 5 //how many chars  //,font: &#39;26px&#39; //font size  ,strokeStyle: &#39;#0088cc&#39; //style  ,bgColor: &#39;#eeeeee&#39; //bg color  ,confusion: true //draw another group background text to mangle the text  //,cFont: &#39;30px&#39; //bg text style  ,cStrokeStyle: &#39;#adc&#39; //bg text color  ,cRotate: -.
-    </div>
-    <a href="/posts/2015/2015-07-14-how-to-captcha-in-node.js/">more</a>
+      </div>
+      <div class="post-meta has-text-right">
+        <span class="post-time" >2015-07-14</span>
+      </div>
+      <div class="has-text-right">
+        <a href="/posts/2015/2015-07-14-how-to-captcha-in-node.js/" >more</a>
+      </div>
+      <div class="is-clearfix"></div>
     </article>
-
-<article class="post box is-radiusless">
-    <div class="post-title">
+    
+    <article class="post box is-radiusless">
+      <div class="post-title">
         <a class="post-title-link" href="/posts/2015/2015-07-14-sinatra/"><h2 class="is-size-4 has-text-dark">Sinatra 웹프로그래밍</h2></a>
-    </div>
-    <div class="post-meta">
-        <span class="post-time">2015-07-14</span>
-    </div>
-    <div class="post-excerpt content">
-        설치 jruby -S gem install sinatra  Hello Ruby require &#39;rubygems&#39; require &#39;sinatra&#39; get &#39;/&#39; do &#39;Hello Jruby&#39; end 라우터 get, post, put, delete를 사용할 수있다
-get &#39;/&#39; do end 요청파라미터 /?name=foo 로 요청 시 아래와 같이
-post &#39;/&#39; do puts params[&#39;name&#39;] end 본문으로 Json를 요청받을 경우 post &#39;/&#39; do payload = JSON.parse(request.body.read) puts payload status 201 end 응답하기 문자열, html, json, 바이너리 등의 모든 컨텐츠로 응답가능하다
-get &#39;/&#39; do &#39;Hello&#39; end Json으로 응답하기 require &#39;sinatra&#39; require &#39;json&#39; get &#39;/&#39; do content_type :json data = { foo: &#39;bar&#39;} data.
-    </div>
-    <a href="/posts/2015/2015-07-14-sinatra/">more</a>
+      </div>
+      <div class="post-meta has-text-right">
+        <span class="post-time" >2015-07-14</span>
+      </div>
+      <div class="has-text-right">
+        <a href="/posts/2015/2015-07-14-sinatra/" >more</a>
+      </div>
+      <div class="is-clearfix"></div>
     </article>
-
-<article class="post box is-radiusless">
-    <div class="post-title">
+    
+    <article class="post box is-radiusless">
+      <div class="post-title">
         <a class="post-title-link" href="/posts/2015/2015-07-02-angularjs/"><h2 class="is-size-4 has-text-dark">AngularJS 다국어처리</h2></a>
-    </div>
-    <div class="post-meta">
-        <span class="post-time">2015-07-02</span>
-    </div>
-    <div class="post-excerpt content">
-        IndexController.js
-module.exports = [&#39;$scope&#39;, &#39;$cookies&#39;, &#39;TranslationService&#39;, function($scope, $cookies, TranslationService) { TranslationService.getLanguage($scope, $cookies); $scope.multiLng = function( lang ) { $cookies.put(&#34;lang&#34;, lang); TranslationService.getLanguage($scope, $cookies); } }];  TranslationService.js
-module.exports = [&#39;$http&#39;, function($http) { this.getLanguage = function($scope, $cookies, cbk) { var lang = $cookies.get(&#39;lang&#39;) || &#39;ko&#39;; $http({ method: &#39;GET&#39;, url: &#39;/js/locale_&#39; + lang +&#39;.json&#39; }).success(function(response) { $scope.translation = response;	$scope.lang = lang; }); }; }];  locale_zh.js
-{ &#34;online_start&#34;: &#34;Online申请&#34;, ... }  index.
-    </div>
-    <a href="/posts/2015/2015-07-02-angularjs/">more</a>
+      </div>
+      <div class="post-meta has-text-right">
+        <span class="post-time" >2015-07-02</span>
+      </div>
+      <div class="has-text-right">
+        <a href="/posts/2015/2015-07-02-angularjs/" >more</a>
+      </div>
+      <div class="is-clearfix"></div>
     </article>
-
-<article class="post box is-radiusless">
-    <div class="post-title">
+    
+    <article class="post box is-radiusless">
+      <div class="post-title">
         <a class="post-title-link" href="/posts/2015/2015-06-28-raspberrypi/"><h2 class="is-size-4 has-text-dark">RaspberryPi</h2></a>
-    </div>
-    <div class="post-meta">
-        <span class="post-time">2015-06-28</span>
-    </div>
-    <div class="post-excerpt content">
-        준비  라즈베리파이2 microSD카드 (8G이상) HDMI케이블 LAN케이블 (카테고리3 이상) AC어댑터( USB단자출력 1A, 최소 700mA)  USB 3.0 : 5V, 900mA USB 2.0 : 5V, 500mA https://ko.wikipedia.org/wiki/USB  microUSB케이블 (A,B타입) 키보드,마우스 (USB연결)  구입  라즈베리파이2 with 고급 투명케이스 C + 방열판 셋트 RPi Camera &copy;  하드웨어 살펴보기 정면
-뒷면
-1) SoC (CPU), 메모리
-2) 전원단자
-3) USB포트
-4) HDMI포트
-7) 컴포지트출력, 오디오출력
-8) DSI (Display Serial Interface)
-9) 랜포트
-    </div>
-    <a href="/posts/2015/2015-06-28-raspberrypi/">more</a>
+      </div>
+      <div class="post-meta has-text-right">
+        <span class="post-time" >2015-06-28</span>
+      </div>
+      <div class="has-text-right">
+        <a href="/posts/2015/2015-06-28-raspberrypi/" >more</a>
+      </div>
+      <div class="is-clearfix"></div>
     </article>
-
-</section>
+    
+  </section>
+</div>
 </div>
 
 
@@ -161,7 +144,7 @@ module.exports = [&#39;$http&#39;, function($http) { this.getLanguage = function
 
 <nav class="page-nav">
     
-    <a href="/page/6/" class="extend prev">First</a>
+    <a href="/page/6/" class="extend prev">처음</a>
     
 
     
@@ -444,11 +427,11 @@ module.exports = [&#39;$http&#39;, function($http) { this.getLanguage = function
           <a href="/page/12/" class="page-number">12</a>
       
 
-        
+    
 
 
     
-      <a href="/page/8/" class="extend next">Last</a>
+      <a href="/page/8/" class="extend next">끝</a>
     
 
 </nav>
@@ -460,7 +443,7 @@ module.exports = [&#39;$http&#39;, function($http) { this.getLanguage = function
             <a href="https://bulma.io">
                 <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
             </a>
-            <p>© Bonjour! Power by Hugo</p>
+            <p>© (Less is more) Power by Hugo</p>
         </div>
     </footer>
     <script type="text/javascript">

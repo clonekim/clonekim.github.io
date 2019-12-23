@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Bonjour!</title>
+    <title>Posts on (Less is more)</title>
     <link>http://clonekim.github.io/posts/</link>
-    <description>Recent content in Posts on Bonjour!</description>
+    <description>Recent content in Posts on (Less is more)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
     <managingEditor>clonekim-at-gmail-dot-com (DAEHEE KIM)</managingEditor>
@@ -21,7 +21,7 @@
       <guid>http://clonekim.github.io/posts/2018/2018-12-24-aggregation-tags-with-spark/</guid>
       <description>현재 특정 테이블의 태그정보와 아래와 같다
 특정컬럼에 태그 값이 컴마 구분으로 들어있음
-   tags     태그, 태그, 태그 &amp;hellip;    파일 처리 해당 컬럼만 csv로 만들어본것
+   tags     태그, 태그, 태그 &amp;hellip;    CSV 파일 읽기 해당 컬럼만 csv로 만들어본것
 # -*- coding: utf-8 -*- from pyspark import SparkConf from pyspark import SparkContext from pyspark.sql import SparkSession from pyspark.sql.types import * lines = sc.textFile(&amp;#39;[csv파일]&amp;#39;, use_unicode=True) counts = lines.flatMap(lambda line: line.split(&amp;#39;,&amp;#39;)).map(lambda word: (word,1)).reduceByKey(lambda a,b : a + b) schema = StructType([ StructField(&amp;#39;tag&amp;#39;, StringType(), False), StructField(&amp;#39;count&amp;#39;, IntegerType(), False), ]) df = spark.</description>
     </item>
     
@@ -283,7 +283,8 @@ IDE/Tools  LightTable Cursive Emacs  Leiningen으로 시작하기 Leiningen (레
 윈도우에서만 self-install해준다
 Project 생성 lein new [프로젝트명]  프로젝트 의존성 추가 라이브러리는 아래의 저장소에서 검색이 가능하고
 의존성에 추가하면 된다
- clojars Maven repository  :dependencies [[org.clojure/clojure &amp;#34;1.7.0&amp;#34;] [groupId/artifactId &amp;#34;version&amp;#34;]]) 그외의 라이브러리 저장소로는 추가로 지정할수있다
+ clojars Maven repository
+:dependencies [[org.clojure/clojure &amp;#34;1.7.0&amp;#34;] [groupId/artifactId &amp;#34;version&amp;#34;]])  그외의 라이브러리 저장소로는 추가로 지정할수있다
 :repositories { &amp;#34;이름&amp;#34; &amp;#34;http://192.168.0.10:8081/nexus/content/repositories/thirdparty&amp;#34; } REPL(Read Eval Print Loop) 실행 lein repl  REPL에서 클로저코드를 작성하고 바로 실행이 가능하다</description>
     </item>
     
@@ -379,7 +380,8 @@ hello React!
 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;script src=&amp;#34;build/react.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;build/JSXTransformer.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt;	&amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;hello&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script type=&amp;#34;text/jsx&amp;#34;&amp;gt; React.render(&amp;lt;h1&amp;gt;Hello, welcome to React!&amp;lt;/h1&amp;gt;, document.getElementById(&amp;#39;hello&amp;#39;)); &amp;lt;/script&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; JSX(JavaScript XML) JSX(JavaScript XML)는 XML 과 유사한 문법을 가지는 자바스크립트이다.
 JSX 문법을 사용하기 위해서는 반드시 JSXTransformer.js가 필요하다
 상세한 JSX syntaxt과 spec 은 아래를 참조할 것
- http://facebook.github.io/react/docs/jsx-in-depth.html http://facebook.github.io/jsx/  //Html &amp;lt;h1 class=&amp;#34;test&amp;#34;&amp;gt;Hello&amp;lt;/h1&amp;gt; //JSX &amp;lt;h1 className=&amp;#34;test&amp;#34;&amp;gt;Hello&amp;lt;/h1&amp;gt; var text= &amp;#34;Hello React!</description>
+ http://facebook.github.io/react/docs/jsx-in-depth.html http://facebook.github.io/jsx/
+//Html &amp;lt;h1 class=&amp;#34;test&amp;#34;&amp;gt;Hello&amp;lt;/h1&amp;gt; //JSX &amp;lt;h1 className=&amp;#34;test&amp;#34;&amp;gt;Hello&amp;lt;/h1&amp;gt; var text= &amp;#34;Hello React!</description>
     </item>
     
     <item>
@@ -572,7 +574,19 @@ return &amp;#39;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&amp;#39;.replace(/[xy]/g, f
       <pubDate>Tue, 01 Oct 2013 00:00:00 +0000</pubDate>
       <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2013/2013-10-01-java-concurrent/</guid>
-      <description>쓰레드 생성은 시스템에 따라 제한됨 쓰레드풀을 사용할 수 있는 패키지가 있음 Future는 메서드를 비동기로 실행 후 나중에 결과를 받을 수 있음  import java.math.BigDecimal; import java.util.ArrayList; import java.util.List; import java.util.concurrent.Callable; import java.util.concurrent.ExecutionException; import java.util.concurrent.ExecutorService; import java.util.concurrent.Executors; import java.util.concurrent.Future; public class CallableTest { public static void main(String[] args) { callableTest(); } private static class Result { Long in; BigDecimal out; Result(final Long in, final BigDecimal out) { this.in = in; this.</description>
+      <description>쓰레드 생성은 시스템에 따라 제한됨 쓰레드풀을 사용할 수 있는 패키지가 있음 Future는 메서드를 비동기로 실행 후 나중에 결과를 받을 수 있음
+import java.math.BigDecimal; import java.util.ArrayList; import java.util.List; import java.util.concurrent.Callable; import java.util.concurrent.ExecutionException; import java.util.concurrent.ExecutorService; import java.util.concurrent.Executors; import java.util.concurrent.Future; public class CallableTest { public static void main(String[] args) { callableTest(); } private static class Result { Long in; BigDecimal out; Result(final Long in, final BigDecimal out) { this.in = in; this.out = out; } } private static void callableTest() { ExecutorService executor = Executors.</description>
+    </item>
+    
+    <item>
+      <title>Jackson JSON Processor</title>
+      <link>http://clonekim.github.io/posts/2013/2013-09-27-jackson-json-processor/</link>
+      <pubDate>Fri, 27 Sep 2013 00:00:00 +0000</pubDate>
+      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
+      <guid>http://clonekim.github.io/posts/2013/2013-09-27-jackson-json-processor/</guid>
+      <description> Parsing option String data = &amp;#34;[{&amp;#39;text&amp;#39;:&amp;#39;PROJECT&amp;#39;,&amp;#39;id&amp;#39;:&amp;#39;00156&amp;#39;,&amp;#39;leaf&amp;#39;:true}]&amp;#34;; ObjectMapper mapper = new ObjectMapper(); mapper.configure(JsonParser.Feature.ALLOW_SINGLE_QUOTES, true); JsonNode node = mapper.readTree(data); Annotation JsonSerialize
+@JsonSerialize(using=JsonDateSerializer.class) public Date getCreationDate() { return creationDate; } JsonDateSerializer.java
+public class JsonDateSerializer extends JsonSerializer&amp;lt;Date&amp;gt; { private static final SimpleDateFormat dateFormat = new SimpleDateFormat(&amp;#34;yyyy-MM-dd HH:mm:ss&amp;#34;); @Override public void serialize(Date date, JsonGenerator json, SerializerProvider provider) throws IOException, JsonProcessingException { String formattedDate = dateFormat.format(date); json.writeString(formattedDate); } }  Jackson JSON Processor Wiki  </description>
     </item>
     
     <item>
@@ -587,17 +601,6 @@ return &amp;#39;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&amp;#39;.replace(/[xy]/g, f
 jspwiki.baseURL= http://cloud9ine.cafe24.com/wiki jspwiki.fileSystemProvider.pageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/ jspwiki.basicAttachmentProvider.storageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/  jspwiki.policy
 Anonymous를 코멘트처리
 Nginx 연동 upstream tomcat { server 127.0.0.1:8080; } server { ... location /wiki { proxy_pass http://tomcat; }  </description>
-    </item>
-    
-    <item>
-      <title>Jackson JSON Processor</title>
-      <link>http://clonekim.github.io/posts/2013/2013-09-27-jackson-json-processor/</link>
-      <pubDate>Fri, 27 Sep 2013 00:00:00 +0000</pubDate>
-      <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
-      <guid>http://clonekim.github.io/posts/2013/2013-09-27-jackson-json-processor/</guid>
-      <description> Parsing option String data = &amp;#34;[{&amp;#39;text&amp;#39;:&amp;#39;PROJECT&amp;#39;,&amp;#39;id&amp;#39;:&amp;#39;00156&amp;#39;,&amp;#39;leaf&amp;#39;:true}]&amp;#34;; ObjectMapper mapper = new ObjectMapper(); mapper.configure(JsonParser.Feature.ALLOW_SINGLE_QUOTES, true); JsonNode node = mapper.readTree(data); Annotation JsonSerialize
-@JsonSerialize(using=JsonDateSerializer.class) public Date getCreationDate() { return creationDate; } JsonDateSerializer.java
-public class JsonDateSerializer extends JsonSerializer&amp;lt;Date&amp;gt; { private static final SimpleDateFormat dateFormat = new SimpleDateFormat(&amp;#34;yyyy-MM-dd HH:mm:ss&amp;#34;); @Override public void serialize(Date date, JsonGenerator json, SerializerProvider provider) throws IOException, JsonProcessingException { String formattedDate = dateFormat.format(date); json.writeString(formattedDate); } }  Jackson JSON Processor Wiki  </description>
     </item>
     
     <item>

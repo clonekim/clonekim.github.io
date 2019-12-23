@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     
-    <meta name="author"
-            content="DAEHEE KIM"/>
+    <meta name="author" content="DAEHEE KIM"/>
 
     
 
@@ -26,16 +25,17 @@
             
         
     
-    <title> angularjs | Bonjour! </title>
+    <title> angularjs | (Less is more) </title>
 
     <link rel="shortcut icon" href="http://clonekim.github.io/favicon.jpg"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/bulma.min.css"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/style.css"/>
-</head><body><header>
-    <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+</head>
+<body><header>
+    <nav class="navbar is-fixed-top has-background-black-bis" role="navigation" aria-label="main navigation">
         <div class="navbar-brand is-size-4">
             <a class="navbar-item" href="http://clonekim.github.io/">
-                    Bonjour!
+                    (Less is more)
             </a>
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
                 <span aria-hidden="true"></span>
@@ -53,60 +53,54 @@
             </div>
             </div>
     </nav>
-</header><main>
+</header>
+<main>
       <div class="container">
         <div class="columns">
-          <div class="column"><section class="posts">
-
-<article class="post box is-radiusless">
-    <div class="post-title">
+          <div class="column"><div class="column">
+  <section class="posts">
+    
+    <article class="post box is-radiusless">
+      <div class="post-title">
         <a class="post-title-link" href="/posts/2017/2017-01-02-angular-jsonp/"><h2 class="is-size-4 has-text-dark">Angular 1.6 사용</h2></a>
-    </div>
-    <div class="post-meta">
-        <span class="post-time">2017-01-02</span>
-    </div>
-    <div class="post-excerpt content">
-        angular 1.6 이상적용
-PREFIX
-이제 기본값으로 !가 붙는다
-.config(['$locationProvider', function($locationProvider){ $locationProvider.hashPrefix(''); }])  JSONP
-$http.json(url, {jsonpCallbackParam: 'callback'}) .then(function(res) { ... })  
-    </div>
-    <a href="/posts/2017/2017-01-02-angular-jsonp/">more</a>
+      </div>
+      <div class="post-meta has-text-right">
+        <span class="post-time" >2017-01-02</span>
+      </div>
+      <div class="has-text-right">
+        <a href="/posts/2017/2017-01-02-angular-jsonp/" >more</a>
+      </div>
+      <div class="is-clearfix"></div>
     </article>
-
-<article class="post box is-radiusless">
-    <div class="post-title">
+    
+    <article class="post box is-radiusless">
+      <div class="post-title">
         <a class="post-title-link" href="/posts/2015/2015-07-02-angularjs/"><h2 class="is-size-4 has-text-dark">AngularJS 다국어처리</h2></a>
-    </div>
-    <div class="post-meta">
-        <span class="post-time">2015-07-02</span>
-    </div>
-    <div class="post-excerpt content">
-        IndexController.js
-module.exports = [&#39;$scope&#39;, &#39;$cookies&#39;, &#39;TranslationService&#39;, function($scope, $cookies, TranslationService) { TranslationService.getLanguage($scope, $cookies); $scope.multiLng = function( lang ) { $cookies.put(&#34;lang&#34;, lang); TranslationService.getLanguage($scope, $cookies); } }];  TranslationService.js
-module.exports = [&#39;$http&#39;, function($http) { this.getLanguage = function($scope, $cookies, cbk) { var lang = $cookies.get(&#39;lang&#39;) || &#39;ko&#39;; $http({ method: &#39;GET&#39;, url: &#39;/js/locale_&#39; + lang +&#39;.json&#39; }).success(function(response) { $scope.translation = response;	$scope.lang = lang; }); }; }];  locale_zh.js
-{ &#34;online_start&#34;: &#34;Online申请&#34;, ... }  index.
-    </div>
-    <a href="/posts/2015/2015-07-02-angularjs/">more</a>
+      </div>
+      <div class="post-meta has-text-right">
+        <span class="post-time" >2015-07-02</span>
+      </div>
+      <div class="has-text-right">
+        <a href="/posts/2015/2015-07-02-angularjs/" >more</a>
+      </div>
+      <div class="is-clearfix"></div>
     </article>
-
-<article class="post box is-radiusless">
-    <div class="post-title">
+    
+    <article class="post box is-radiusless">
+      <div class="post-title">
         <a class="post-title-link" href="/posts/2014/2014-11-10-angularjs-tip/"><h2 class="is-size-4 has-text-dark">AngularJS Tips</h2></a>
-    </div>
-    <div class="post-meta">
-        <span class="post-time">2014-11-10</span>
-    </div>
-    <div class="post-excerpt content">
-        개발 정보
-버젼 1.2.26를 사용
-scope 계층화 &lt;!DOCTYPE html&gt; &lt;html lang=&#34;ko&#34; ng-app=&#34;app&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;utf-8&#34;&gt; &lt;meta http-equiv=&#34;X-UA-Compatible&#34; content=&#34;IE=edge&#34;&gt; &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;&gt; &lt;title&gt;Services and Modules&lt;/title&gt; &lt;link rel=&#34;stylesheet&#34; href=&#34;bootstrap/css/bootstrap.css&#34; /&gt; &lt;link rel=&#34;stylesheet&#34; href=&#34;bootstrap/css/bootstrap-theme.css&#34; /&gt; &lt;script type=&#34;text/javascript&#34; src=&#34;jquery/jquery.js&#34;&gt;&lt;/script&gt; &lt;script type=&#34;text/javascript&#34; src=&#34;jquery-ui/jquery-ui.js&#34;&gt;&lt;/script&gt; &lt;script type=&#34;text/javascript&#34; src=&#34;angular/angular.js&#34;&gt;&lt;/script&gt; &lt;script&gt; angular.module(&#34;app&#34;, []) .controller(&#34;ParentController&#34;, [&#39;$scope&#39;, function($scope) { $scope.value = &#39;parent value&#39;; $scope.getUpperValue = function () { return angular.uppercase($scope.value); } }]) .controller(&#34;ChildController&#34;,[ &#39;$scope&#39;, function($scope) { $scope.newValue = &#39;child value&#39;; }]); &lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;div ng-controller=&#34;ParentController&#34;&gt; &lt;h3&gt;parent&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;value: {{value}}&lt;/li&gt; &lt;li&gt;Upper: {{getUpperValue()}}&lt;/li&gt; &lt;li&gt;newValue: {{newValue}} &lt;/li&gt; &lt;/ul&gt; &lt;/div&gt; &lt;div ng-controller=&#34;ChildController&#34;&gt; &lt;h3&gt;parent&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;value: {{value}}&lt;/li&gt; &lt;li&gt;Upper: {{getUpperValue()}}&lt;/li&gt; &lt;li&gt;newValue: {{newValue}} &lt;/li&gt; &lt;/ul&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt; 제대로 된 결과를 보려면
-    </div>
-    <a href="/posts/2014/2014-11-10-angularjs-tip/">more</a>
+      </div>
+      <div class="post-meta has-text-right">
+        <span class="post-time" >2014-11-10</span>
+      </div>
+      <div class="has-text-right">
+        <a href="/posts/2014/2014-11-10-angularjs-tip/" >more</a>
+      </div>
+      <div class="is-clearfix"></div>
     </article>
-
-</section>
+    
+  </section>
+</div>
 </div>
         </div>
 
@@ -130,7 +124,7 @@ scope 계층화 &lt;!DOCTYPE html&gt; &lt;html lang=&#34;ko&#34; ng-app=&#34;app
             <a href="https://bulma.io">
                 <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
             </a>
-            <p>© Bonjour! Power by Hugo</p>
+            <p>© (Less is more) Power by Hugo</p>
         </div>
     </footer>
     <script type="text/javascript">

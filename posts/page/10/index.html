@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     
-    <meta name="author"
-            content="DAEHEE KIM"/>
+    <meta name="author" content="DAEHEE KIM"/>
 
     
 
@@ -26,16 +25,17 @@
             
         
     
-    <title> Posts | Bonjour! </title>
+    <title> Posts | (Less is more) </title>
 
     <link rel="shortcut icon" href="http://clonekim.github.io/favicon.jpg"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/bulma.min.css"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/style.css"/>
-</head><body><header>
-    <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+</head>
+<body><header>
+    <nav class="navbar is-fixed-top has-background-black-bis" role="navigation" aria-label="main navigation">
         <div class="navbar-brand is-size-4">
             <a class="navbar-item" href="http://clonekim.github.io/">
-                    Bonjour!
+                    (Less is more)
             </a>
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
                 <span aria-hidden="true"></span>
@@ -53,93 +53,80 @@
             </div>
             </div>
     </nav>
-</header><main>
+</header>
+<main>
             <div class="container">
                 <div class="columns">
-                <div class="column is-four-fifths"><section class="posts">
-
-<article class="post box is-radiusless">
-    <div class="post-title">
-        <a class="post-title-link" href="/posts/2013/2013-09-27-jspwiki-install/"><h2 class="is-size-4 has-text-dark">JSPWiki 설치</h2></a>
-    </div>
-    <div class="post-meta">
-        <span class="post-time">2013-09-27</span>
-    </div>
-    <div class="post-excerpt content">
-         Apache JSPWiki
-설정 server.xml
-&lt;Connector address=&#34;127.0.0.1&#34; port=&#34;8080&#34; protocol=&#34;org.apache.coyote.http11.Http11NioProtocol&#34; connectionTimeout=&#34;20000&#34; maxThreads=&#34;3&#34; minSpareThreads=&#34;2&#34; redirectPort=&#34;8443&#34; URIEncoding=&#34;UTF-8&#34;/&gt; jspwiki.properties
-jspwiki.baseURL= http://cloud9ine.cafe24.com/wiki jspwiki.fileSystemProvider.pageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/ jspwiki.basicAttachmentProvider.storageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/  jspwiki.policy
-Anonymous를 코멘트처리
-Nginx 연동 upstream tomcat { server 127.0.0.1:8080; } server { ... location /wiki { proxy_pass http://tomcat; }  
-    </div>
-    <a href="/posts/2013/2013-09-27-jspwiki-install/">more</a>
-    </article>
-
-<article class="post box is-radiusless">
-    <div class="post-title">
+                <div class="column is-four-fifths"><div class="column">
+  <section class="posts">
+    
+    <article class="post box is-radiusless">
+      <div class="post-title">
         <a class="post-title-link" href="/posts/2013/2013-09-27-jackson-json-processor/"><h2 class="is-size-4 has-text-dark">Jackson JSON Processor</h2></a>
-    </div>
-    <div class="post-meta">
-        <span class="post-time">2013-09-27</span>
-    </div>
-    <div class="post-excerpt content">
-         Parsing option String data = &#34;[{&#39;text&#39;:&#39;PROJECT&#39;,&#39;id&#39;:&#39;00156&#39;,&#39;leaf&#39;:true}]&#34;; ObjectMapper mapper = new ObjectMapper(); mapper.configure(JsonParser.Feature.ALLOW_SINGLE_QUOTES, true); JsonNode node = mapper.readTree(data); Annotation JsonSerialize
-@JsonSerialize(using=JsonDateSerializer.class) public Date getCreationDate() { return creationDate; } JsonDateSerializer.java
-public class JsonDateSerializer extends JsonSerializer&lt;Date&gt; { private static final SimpleDateFormat dateFormat = new SimpleDateFormat(&#34;yyyy-MM-dd HH:mm:ss&#34;); @Override public void serialize(Date date, JsonGenerator json, SerializerProvider provider) throws IOException, JsonProcessingException { String formattedDate = dateFormat.format(date); json.writeString(formattedDate); } }  Jackson JSON Processor Wiki  
-    </div>
-    <a href="/posts/2013/2013-09-27-jackson-json-processor/">more</a>
+      </div>
+      <div class="post-meta has-text-right">
+        <span class="post-time" >2013-09-27</span>
+      </div>
+      <div class="has-text-right">
+        <a href="/posts/2013/2013-09-27-jackson-json-processor/" >more</a>
+      </div>
+      <div class="is-clearfix"></div>
     </article>
-
-<article class="post box is-radiusless">
-    <div class="post-title">
+    
+    <article class="post box is-radiusless">
+      <div class="post-title">
+        <a class="post-title-link" href="/posts/2013/2013-09-27-jspwiki-install/"><h2 class="is-size-4 has-text-dark">JSPWiki 설치</h2></a>
+      </div>
+      <div class="post-meta has-text-right">
+        <span class="post-time" >2013-09-27</span>
+      </div>
+      <div class="has-text-right">
+        <a href="/posts/2013/2013-09-27-jspwiki-install/" >more</a>
+      </div>
+      <div class="is-clearfix"></div>
+    </article>
+    
+    <article class="post box is-radiusless">
+      <div class="post-title">
         <a class="post-title-link" href="/posts/2013/2013-09-27-proxy-authentication/"><h2 class="is-size-4 has-text-dark">프록시서버 인증에러</h2></a>
-    </div>
-    <div class="post-meta">
-        <span class="post-time">2013-09-27</span>
-    </div>
-    <div class="post-excerpt content">
-        HttpURLConnecton를 이용해서 프록시설정하고 다운로드할 데이터가 있었으나 인증에러를 발생
-java.net.Authenticator를 구현해야함
-import java.net.Authenticator; import java.net.MalformedURLException; import java.net.PasswordAuthentication; import java.net.URL; public class ProxyAuthenticator extends Authenticator { private String proxyhost; private String userid; private String password; public ProxyAuthenticator(String proxyhost, String userid, String password) { this.proxyhost = proxyhost; this.userid = userid; this.password = password; } @Override public URL getRequestingURL() { if (this.proxyhost == null) return null; try { return new URL(this.proxyhost); } catch (MalformedURLException e) { return null; } } @Override protected RequestorType getRequestorType() { return RequestorType.
-    </div>
-    <a href="/posts/2013/2013-09-27-proxy-authentication/">more</a>
+      </div>
+      <div class="post-meta has-text-right">
+        <span class="post-time" >2013-09-27</span>
+      </div>
+      <div class="has-text-right">
+        <a href="/posts/2013/2013-09-27-proxy-authentication/" >more</a>
+      </div>
+      <div class="is-clearfix"></div>
     </article>
-
-<article class="post box is-radiusless">
-    <div class="post-title">
+    
+    <article class="post box is-radiusless">
+      <div class="post-title">
         <a class="post-title-link" href="/posts/2013/2013-09-24-apache-taglib/"><h2 class="is-size-4 has-text-dark">Apache Tag Lib</h2></a>
-    </div>
-    <div class="post-meta">
-        <span class="post-time">2013-09-24</span>
-    </div>
-    <div class="post-excerpt content">
-        Maven &lt;groupId&gt;jstl&lt;/groupId&gt; &lt;artifactId&gt;jstl&lt;/artifactId&gt; &lt;version&gt;1.2&lt;/version&gt; 태그를 사용하기 위한 선언 &lt;%@ taglib prefix=&#34;c&#34; uri=&#34;http://java.sun.com/jsp/jstl/core&#34;%&gt; &lt;%@ taglib prefix=&#34;fn&#34; uri=&#34;http://java.sun.com/jsp/jstl/functions&#34; %&gt; &lt;%@ taglib prefix=&#34;fmt&#34; uri=&#34;http://java.sun.com/jsp/jstl/fmt&#34;%&gt; param test.jsp?name=1234 일 경우
-${param.변수} 로 획득할 수 있다.
-${param.name}으로 알수 있겠다.
-core set &lt;c:set var=&#34;string&#34; value=&#34;값&#34;/&gt; &lt;c:set var=&#34;string&#34; value=&#34;${변수.프로퍼티}&#34;/&gt; out &lt;c:out value=&#34;${fn:substring(string,0,50)}&#34; default=&#34;초기값&#34;/&gt; &lt;c:out value=&#34;안녕하세요&#34; /&gt; test &lt;c:if test=&#34;${변수가 존재하면}&#34;&gt; ..처리 &lt;/c:if&gt; &lt;c:if test=&#34;${변수 &lt; 숫자 }&#34;&gt; ..처리 &lt;/c:if&gt; &lt;c:if test=&#34;${변수 &lt; true}&#34;&gt; ..처리 &lt;/c:if&gt; choose &lt;c:choose&gt; &lt;c:when test=&#34;조건&#34;&gt; .
-    </div>
-    <a href="/posts/2013/2013-09-24-apache-taglib/">more</a>
+      </div>
+      <div class="post-meta has-text-right">
+        <span class="post-time" >2013-09-24</span>
+      </div>
+      <div class="has-text-right">
+        <a href="/posts/2013/2013-09-24-apache-taglib/" >more</a>
+      </div>
+      <div class="is-clearfix"></div>
     </article>
-
-<article class="post box is-radiusless">
-    <div class="post-title">
+    
+    <article class="post box is-radiusless">
+      <div class="post-title">
         <a class="post-title-link" href="/posts/2013/2013-09-24-svn-as-windows-service/"><h2 class="is-size-4 has-text-dark">윈도우즈에 SVN서비스등록</h2></a>
-    </div>
-    <div class="post-meta">
-        <span class="post-time">2013-09-24</span>
-    </div>
-    <div class="post-excerpt content">
-        ###SVN서버를 윈도우에서 서비스로 등록한다.*
-Creating the Repository svnadmin create c:\svn  Edit Configuration 방금 생성한 레포지토리 디렉토리로 이동하여
-conf\passwd 에서
-아이디 = 패스워드 형식으로 등록 ex) test = 1234  conf\svnserve.conf 에서 아래와 같이 설정
-anon-access = read auth-access = write password-db = passwd  Register as a Service C:\Program Files\Subversion\bin\svnserve.exe --service --root c:\svn 또는 C:\&gt; sc create svn binpath= &quot;C:\svn\bin\svnserve.exe --service -r C:\repos&quot; displayname= &quot;Subversion Server&quot; depend= Tcpip start= auto C:\&gt;sc create svnserver binpath= &quot;C:\Program Files\Subversion\bin\svnserve.
-    </div>
-    <a href="/posts/2013/2013-09-24-svn-as-windows-service/">more</a>
+      </div>
+      <div class="post-meta has-text-right">
+        <span class="post-time" >2013-09-24</span>
+      </div>
+      <div class="has-text-right">
+        <a href="/posts/2013/2013-09-24-svn-as-windows-service/" >more</a>
+      </div>
+      <div class="is-clearfix"></div>
     </article>
-
-</section>
+    
+  </section>
+</div>
 
 
 
@@ -157,7 +144,7 @@ anon-access = read auth-access = write password-db = passwd  Register as a Servi
 
 <nav class="page-nav">
     
-    <a href="/posts/page/9/" class="extend prev">First</a>
+    <a href="/posts/page/9/" class="extend prev">처음</a>
     
 
     
@@ -438,26 +425,19 @@ anon-access = read auth-access = write password-db = passwd  Register as a Servi
           <a href="/posts/page/12/" class="page-number">12</a>
       
 
-        
+    
 
 
     
-      <a href="/posts/page/11/" class="extend next">Last</a>
+      <a href="/posts/page/11/" class="extend next">끝</a>
     
 
 </nav>
 
 </div>
-                <div class="column">    <aside>
-        <h2 class="is-size-4">关于我</h2>
-        <div class="content">
-            Working in advertising platform team. Backend on duty,full stack in my own time.
-        </div>
-        <h2 class="is-size-4">GitHub</h2>
-        <div class="content">
-            <a href="https://github.com/lihongkun" target="_blank">https://github.com/lihongkun</a>
-        </div>
-    </aside></div>
+                <div class="column">
+
+                </div>
                 </div>
             </div>
          </main>    <footer class="footer">
@@ -466,7 +446,7 @@ anon-access = read auth-access = write password-db = passwd  Register as a Servi
             <a href="https://bulma.io">
                 <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
             </a>
-            <p>© Bonjour! Power by Hugo</p>
+            <p>© (Less is more) Power by Hugo</p>
         </div>
     </footer>
     <script type="text/javascript">

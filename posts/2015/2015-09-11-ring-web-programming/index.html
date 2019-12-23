@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     
-    <meta name="author"
-            content="DAEHEE KIM"/>
+    <meta name="author" content="DAEHEE KIM"/>
 
     
     <meta name="description" content="## Hello-Ring 프로젝트 작성
@@ -32,16 +31,17 @@ ring-core: essential functions for handling parameters, cookies and more ring-de
             
         
     
-    <title> Ring으로 웹프로그래밍 | Bonjour! </title>
+    <title> Ring으로 웹프로그래밍 | (Less is more) </title>
 
     <link rel="shortcut icon" href="http://clonekim.github.io/favicon.jpg"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/bulma.min.css"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/style.css"/>
-</head><body><header>
-    <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+</head>
+<body><header>
+    <nav class="navbar is-fixed-top has-background-black-bis" role="navigation" aria-label="main navigation">
         <div class="navbar-brand is-size-4">
             <a class="navbar-item" href="http://clonekim.github.io/">
-                    Bonjour!
+                    (Less is more)
             </a>
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
                 <span aria-hidden="true"></span>
@@ -59,12 +59,13 @@ ring-core: essential functions for handling parameters, cookies and more ring-de
             </div>
             </div>
     </nav>
-</header><main>
+</header>
+<main>
       <div class="container">
         <div class="columns">
           
           <div class="column">
-            <div class="content">
+            <div>
               <nav id="TableOfContents">
 <ul>
 <li>
@@ -134,7 +135,7 @@ ring-jetty-adapter: a Ring adapter that uses the Jetty webserver
 
 
 (<span style="color:#66d9ef">defn </span>-main []
-   (run-jetty app-handler {<span style="color:#e6db74">:port</span> <span style="color:#ae81ff">8080</span>}))</code></pre></div>
+   (<span style="color:#a6e22e">run-jetty</span> app-handler {<span style="color:#e6db74">:port</span> <span style="color:#ae81ff">8080</span>}))</code></pre></div>
 <p><em>실행</em></p>
 
 <p><img src="/img/clojure/ring-start.png" alt="Hello Ring" /></p>
@@ -167,13 +168,13 @@ response 그런 기능을 삽입하는 것이다</p>
          [ring.util.response <span style="color:#e6db74">:as</span> response]))
 
 (<span style="color:#66d9ef">defn </span>app-handler [request]
-	(response {<span style="color:#e6db74">:name</span> <span style="color:#e6db74">&#34;Hello&#34;</span> }))
+	(<span style="color:#a6e22e">response</span> {<span style="color:#e6db74">:name</span> <span style="color:#e6db74">&#34;Hello&#34;</span> }))
 
 (<span style="color:#66d9ef">def </span>app-handler
-	(wrap-json-response app-handler))
+	(<span style="color:#a6e22e">wrap-json-response</span> app-handler))
 
 (<span style="color:#66d9ef">defn </span>-main []
-	(run-jetty app-handler {<span style="color:#e6db74">:port</span> <span style="color:#ae81ff">3000</span>}))</code></pre></div>
+	(<span style="color:#a6e22e">run-jetty</span> app-handler {<span style="color:#e6db74">:port</span> <span style="color:#ae81ff">3000</span>}))</code></pre></div>
 <p><img src="/img/clojure/json-resp.png" alt="json-resp" /></p>
 
 <p><em>request를 json으로 다루기</em></p>
@@ -181,11 +182,11 @@ response 그런 기능을 삽입하는 것이다</p>
 <p>body자체를 json으로 받거나 요청파라미터를 처리할 경우에<br />
 ring.middleware.json 의 wrap-json-body, wrap-json-params이 필요함<br />
 반드시 Content-Type이 application/json 일 경우에만 반응함</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clj" data-lang="clj">(POST <span style="color:#e6db74">&#34;/confirm&#34;</span> req
-  (<span style="color:#66d9ef">let </span>[name (get-in req [<span style="color:#e6db74">:params</span> <span style="color:#e6db74">&#34;name&#34;</span>])]
-  (response {<span style="color:#e6db74">:desc</span> (str <span style="color:#e6db74">&#34;The name you sent to me was &#34;</span> name)})))
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clj" data-lang="clj">(<span style="color:#a6e22e">POST</span> <span style="color:#e6db74">&#34;/confirm&#34;</span> req
+  (<span style="color:#66d9ef">let </span>[name (<span style="color:#a6e22e">get-in</span> req [<span style="color:#e6db74">:params</span> <span style="color:#e6db74">&#34;name&#34;</span>])]
+  (<span style="color:#a6e22e">response</span> {<span style="color:#e6db74">:desc</span> (str <span style="color:#e6db74">&#34;The name you sent to me was &#34;</span> name)})))
 
-(POST <span style="color:#e6db74">&#34;/&#34;</span> req
+(<span style="color:#a6e22e">POST</span> <span style="color:#e6db74">&#34;/&#34;</span> req
   (println (get (<span style="color:#e6db74">:body</span> req) <span style="color:#e6db74">&#34;age&#34;</span>)))  </code></pre></div>
 <p>curl를 이용해서 request 를 보내보자</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> -X POST -d <span style="color:#e6db74">&#39;{&#34;age&#34; : 20}&#39;</span> http://127.0.0.1:8080</code></pre></div>
@@ -197,21 +198,21 @@ PersistentArrayMap 로 나타난다<br />
 
 <p>ring.middleware.json 의  wrap-json-params이 필요함<br />
 반드시 Content-Type이 application/json 일 경우에만 반응함</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> -X POST -d <span style="color:#e6db74">&#39;{&#34;age&#34; : 20, &#34;name&#34;: &#34;kim&#34;}&#39;</span> http://127.0.0.1:8080/confirm</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(POST <span style="color:#e6db74">&#34;/confirm&#34;</span> {p <span style="color:#e6db74">:params</span>}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> -X POST -d <span style="color:#e6db74">&#39;{&#34;age&#34; : 20, &#34;name&#34;: &#34;kim&#34;}&#39;</span> http://127.0.0.1:8080/confirm</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#a6e22e">POST</span> <span style="color:#e6db74">&#34;/confirm&#34;</span> {p <span style="color:#e6db74">:params</span>}
   (println p)) <span style="color:#75715e">; {age 20, name kim} 으로 출력</span>
 
 <span style="color:#75715e">;위와 같음</span>
-(POST <span style="color:#e6db74">&#34;/confirm&#34;</span> {model <span style="color:#e6db74">:json-params</span>}
+(<span style="color:#a6e22e">POST</span> <span style="color:#e6db74">&#34;/confirm&#34;</span> {model <span style="color:#e6db74">:json-params</span>}
    (println (get model <span style="color:#e6db74">&#34;name&#34;</span>))<span style="color:#75715e">; =&gt; 20</span>
    
 <span style="color:#75715e">;파라미터를 인자로 받음</span>
-(POST <span style="color:#e6db74">&#34;/confirm&#34;</span> [name age]
+(<span style="color:#a6e22e">POST</span> <span style="color:#e6db74">&#34;/confirm&#34;</span> [name age]
 ...
 
 <span style="color:#75715e">; request를 그대로 사용</span>
-(POST <span style="color:#e6db74">&#34;/confirm&#34;</span> req
-  (<span style="color:#66d9ef">let </span>[name (get-in req [<span style="color:#e6db74">:params</span> <span style="color:#e6db74">&#34;name&#34;</span>])]
-  (response {<span style="color:#e6db74">:desc</span> (str <span style="color:#e6db74">&#34;The name you sent to me was &#34;</span> name)})))</code></pre></div>
+(<span style="color:#a6e22e">POST</span> <span style="color:#e6db74">&#34;/confirm&#34;</span> req
+  (<span style="color:#66d9ef">let </span>[name (<span style="color:#a6e22e">get-in</span> req [<span style="color:#e6db74">:params</span> <span style="color:#e6db74">&#34;name&#34;</span>])]
+  (<span style="color:#a6e22e">response</span> {<span style="color:#e6db74">:desc</span> (str <span style="color:#e6db74">&#34;The name you sent to me was &#34;</span> name)})))</code></pre></div>
 <h2 id="routing">Routing</h2>
 
 <h3 id="compojure">Compojure</h3>
@@ -220,15 +221,15 @@ PersistentArrayMap 로 나타난다<br />
 		  [ring.adapter.jetty <span style="color:#e6db74">:as</span> ring]))
 
 
-(defroutes routes
-	(GET <span style="color:#e6db74">&#34;/&#34;</span> [] <span style="color:#e6db74">&#34;&lt;h1&gt;Compojure111&lt;/h1&gt;&#34;</span>)
-	(POST <span style="color:#e6db74">&#34;/login&#34;</span> req
+(<span style="color:#a6e22e">defroutes</span> routes
+	(<span style="color:#a6e22e">GET</span> <span style="color:#e6db74">&#34;/&#34;</span> [] <span style="color:#e6db74">&#34;&lt;h1&gt;Compojure111&lt;/h1&gt;&#34;</span>)
+	(<span style="color:#a6e22e">POST</span> <span style="color:#e6db74">&#34;/login&#34;</span> req
 		(<span style="color:#66d9ef">let </span>[id (get (<span style="color:#e6db74">:params</span> req) <span style="color:#e6db74">:id</span>)
 		      passwd (get (<span style="color:#e6db74">:params</span> req) <span style="color:#e6db74">:passwd</span>)]
 		(str <span style="color:#e6db74">&#34;Your Id: &#34;</span> id <span style="color:#e6db74">&#34; Password: &#34;</span> passwd))))
 
 (<span style="color:#66d9ef">defn </span>-main []
-	(ring/run-jetty <span style="color:#f92672">#</span><span style="color:#e6db74">&#39;routes</span> {<span style="color:#e6db74">:port</span> <span style="color:#ae81ff">8080</span> <span style="color:#e6db74">:join?</span> false}))</code></pre></div>
+	(<span style="color:#a6e22e">ring/run-jetty</span> <span style="color:#f92672">#</span><span style="color:#e6db74">&#39;routes</span> {<span style="color:#e6db74">:port</span> <span style="color:#ae81ff">8080</span> <span style="color:#e6db74">:join?</span> false}))</code></pre></div>
 <h3 id="page-not-found">Page Not Found</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clj" data-lang="clj">(<span style="color:#66d9ef">ns </span>hello-ring.core
    (<span style="color:#e6db74">:require</span> [compojure.core <span style="color:#e6db74">:refer</span> <span style="color:#e6db74">:all</span>]
@@ -236,12 +237,12 @@ PersistentArrayMap 로 나타난다<br />
 	     [ring.adapter.jetty <span style="color:#e6db74">:as</span> ring]))
 
 ...
-(defroutes app
-  (GET <span style="color:#e6db74">&#34;/&#34;</span> [] (index))
-  (route/not-found <span style="color:#e6db74">&#34;&lt;h1&gt;Page not found&lt;/h1&gt;&#34;</span>))
+(<span style="color:#a6e22e">defroutes</span> app
+  (<span style="color:#a6e22e">GET</span> <span style="color:#e6db74">&#34;/&#34;</span> [] (<span style="color:#a6e22e">index</span>))
+  (<span style="color:#a6e22e">route/not-found</span> <span style="color:#e6db74">&#34;&lt;h1&gt;Page not found&lt;/h1&gt;&#34;</span>))
 
 (<span style="color:#66d9ef">defn </span>-main []
-  (ring/run-jetty <span style="color:#f92672">#</span><span style="color:#e6db74">&#39;app</span> {<span style="color:#e6db74">:port</span> <span style="color:#ae81ff">8080</span> <span style="color:#e6db74">:join?</span> false}))</code></pre></div>
+  (<span style="color:#a6e22e">ring/run-jetty</span> <span style="color:#f92672">#</span><span style="color:#e6db74">&#39;app</span> {<span style="color:#e6db74">:port</span> <span style="color:#ae81ff">8080</span> <span style="color:#e6db74">:join?</span> false}))</code></pre></div>
 <h2 id="미들웨어를-적용한-소스">미들웨어를 적용한 소스</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clj" data-lang="clj">(<span style="color:#66d9ef">ns </span>hello-ring.core
 	(<span style="color:#e6db74">:use</span>
@@ -253,28 +254,28 @@ PersistentArrayMap 로 나타난다<br />
 		[ring.middleware.json <span style="color:#e6db74">:refer</span> [wrap-json-response wrap-json-body wrap-json-params]]
 		[ring.middleware.defaults <span style="color:#e6db74">:refer</span> [wrap-defaults site-defaults]]))
 	
-(defroutes app-routes
-	(GET <span style="color:#e6db74">&#34;/&#34;</span> [] (str <span style="color:#e6db74">&#34;Hello &#34;</span> <span style="color:#e6db74">&#34;Clojure&#34;</span>))
-	(GET <span style="color:#e6db74">&#34;/what-my-ip&#34;</span> req (response {<span style="color:#e6db74">:name</span> <span style="color:#e6db74">&#34;Hello&#34;</span> <span style="color:#e6db74">:ip</span> (<span style="color:#e6db74">:remote-addr</span> req)}))
-	(POST <span style="color:#e6db74">&#34;/login&#34;</span> req 
+(<span style="color:#a6e22e">defroutes</span> app-routes
+	(<span style="color:#a6e22e">GET</span> <span style="color:#e6db74">&#34;/&#34;</span> [] (str <span style="color:#e6db74">&#34;Hello &#34;</span> <span style="color:#e6db74">&#34;Clojure&#34;</span>))
+	(<span style="color:#a6e22e">GET</span> <span style="color:#e6db74">&#34;/what-my-ip&#34;</span> req (<span style="color:#a6e22e">response</span> {<span style="color:#e6db74">:name</span> <span style="color:#e6db74">&#34;Hello&#34;</span> <span style="color:#e6db74">:ip</span> (<span style="color:#e6db74">:remote-addr</span> req)}))
+	(<span style="color:#a6e22e">POST</span> <span style="color:#e6db74">&#34;/login&#34;</span> req 
 	   (<span style="color:#66d9ef">let </span>[id (get (<span style="color:#e6db74">:params</span> req) <span style="color:#e6db74">:id</span>)
 	         passwd (get (<span style="color:#e6db74">:params</span> req) <span style="color:#e6db74">:passwd</span>)]	          
-	      (response {<span style="color:#e6db74">:id</span> id <span style="color:#e6db74">:passwd</span> passwd})))
+	      (<span style="color:#a6e22e">response</span> {<span style="color:#e6db74">:id</span> id <span style="color:#e6db74">:passwd</span> passwd})))
 	      
-	(POST <span style="color:#e6db74">&#34;/confirm&#34;</span> req
-		<span style="color:#66d9ef">let </span>[name (get-in req [<span style="color:#e6db74">:params</span> <span style="color:#e6db74">&#34;name&#34;</span>])]
-		(response {<span style="color:#e6db74">:desc</span> (str <span style="color:#e6db74">&#34;The name you sent to me was &#34;</span> name)}))		
-	(route/not-found <span style="color:#e6db74">&#34;Page not found&#34;</span>))
+	(<span style="color:#a6e22e">POST</span> <span style="color:#e6db74">&#34;/confirm&#34;</span> req
+		<span style="color:#66d9ef">let </span>[name (<span style="color:#a6e22e">get-in</span> req [<span style="color:#e6db74">:params</span> <span style="color:#e6db74">&#34;name&#34;</span>])]
+		(<span style="color:#a6e22e">response</span> {<span style="color:#e6db74">:desc</span> (str <span style="color:#e6db74">&#34;The name you sent to me was &#34;</span> name)}))		
+	(<span style="color:#a6e22e">route/not-found</span> <span style="color:#e6db74">&#34;Page not found&#34;</span>))
 
 
 (<span style="color:#66d9ef">def </span>app-routes
 	(-&gt; app-routes		
-	  (wrap-json-body {<span style="color:#e6db74">:keywords?</span> true <span style="color:#e6db74">:bigdecimals?</span> true})
+	  (<span style="color:#a6e22e">wrap-json-body</span> {<span style="color:#e6db74">:keywords?</span> true <span style="color:#e6db74">:bigdecimals?</span> true})
 		wrap-json-params
 		wrap-json-response))
 
 (<span style="color:#66d9ef">def </span>app
-	(wrap-defaults app-routes (assoc-in site-defaults [<span style="color:#e6db74">:security</span> <span style="color:#e6db74">:anti-forgery</span>] false)))</code></pre></div>
+	(<span style="color:#a6e22e">wrap-defaults</span> app-routes (<span style="color:#a6e22e">assoc-in</span> site-defaults [<span style="color:#e6db74">:security</span> <span style="color:#e6db74">:anti-forgery</span>] false)))</code></pre></div>
 <h2 id="hiccup">Hiccup</h2>
 
 <p><em>leiningen</em></p>
@@ -283,8 +284,8 @@ PersistentArrayMap 로 나타난다<br />
 </code></pre>
 
 <p><em>repl에서 바로 테스트</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(require <span style="color:#f92672">&#39;</span>[hiccup.core <span style="color:#e6db74">:as</span> h])
-(h/html [<span style="color:#e6db74">:h1</span> <span style="color:#e6db74">&#34;Hello World&#34;</span>])
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#a6e22e">require</span> <span style="color:#f92672">&#39;</span>[hiccup.core <span style="color:#e6db74">:as</span> h])
+(<span style="color:#a6e22e">h/html</span> [<span style="color:#e6db74">:h1</span> <span style="color:#e6db74">&#34;Hello World&#34;</span>])
 <span style="color:#75715e">;; &lt;h1&gt;Hello World&lt;/h1&gt;&#34;</span></code></pre></div>
 <p><em>ring에서 사용해보자</em></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">ns </span>hello-ring.core
@@ -293,18 +294,18 @@ PersistentArrayMap 로 나타난다<br />
 	     [hiccup.page <span style="color:#e6db74">:as</span> page]))
 
 (<span style="color:#66d9ef">defn </span>index []
-   (page/html5
+   (<span style="color:#a6e22e">page/html5</span>
 	[<span style="color:#e6db74">:head</span>
 	   [<span style="color:#e6db74">&#34;title&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;Hiccup test&#34;</span>]]
 	[<span style="color:#e6db74">:body</span>
 	   [<span style="color:#e6db74">:div</span> {<span style="color:#e6db74">:id</span> <span style="color:#e6db74">&#34;content&#34;</span>} <span style="color:#e6db74">&#34;Hello World&#34;</span>]] ))
 
 	
-(defroutes routes
-   (GET <span style="color:#e6db74">&#34;/&#34;</span> [] (index)))
+(<span style="color:#a6e22e">defroutes</span> routes
+   (<span style="color:#a6e22e">GET</span> <span style="color:#e6db74">&#34;/&#34;</span> [] (<span style="color:#a6e22e">index</span>)))
 
 (<span style="color:#66d9ef">def </span>-main []
-   (run-jetty <span style="color:#f92672">#</span><span style="color:#e6db74">&#39;routes</span> {<span style="color:#e6db74">:port</span> <span style="color:#ae81ff">8080</span>})   </code></pre></div>
+   (<span style="color:#a6e22e">run-jetty</span> <span style="color:#f92672">#</span><span style="color:#e6db74">&#39;routes</span> {<span style="color:#e6db74">:port</span> <span style="color:#ae81ff">8080</span>})   </code></pre></div>
 <p>실제 html소스에서 공백이 제외된다</p>
 
 <p><img src="/img/clojure/hiccup-html-source.png" alt="Hiccup Source" /></p>
@@ -322,7 +323,7 @@ PersistentArrayMap 로 나타난다<br />
     [clojure.java.io <span style="color:#e6db74">:as</span> io]))
 
 
-(jade/configure {<span style="color:#e6db74">:template-dir</span> <span style="color:#e6db74">&#34;public&#34;</span>
+(<span style="color:#a6e22e">jade/configure</span> {<span style="color:#e6db74">:template-dir</span> <span style="color:#e6db74">&#34;public&#34;</span>
                  <span style="color:#e6db74">:pretty-print</span> false
                  <span style="color:#e6db74">:cache?</span> true})</code></pre></div>
 <p><em>core.clj</em></p>
@@ -336,7 +337,7 @@ PersistentArrayMap 로 나타난다<br />
 
 
 (<span style="color:#66d9ef">defn </span>index []
-  (jade/render <span style="color:#e6db74">&#34;index.jade&#34;</span> {<span style="color:#e6db74">&#34;title&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;Hello World&#34;</span>})</code></pre></div>
+  (<span style="color:#a6e22e">jade/render</span> <span style="color:#e6db74">&#34;index.jade&#34;</span> {<span style="color:#e6db74">&#34;title&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;Hello World&#34;</span>})</code></pre></div>
 <p><em>public/index.jade</em></p>
 
 <p>title값이 치환된다</p>
@@ -363,7 +364,7 @@ html
 ...
 
 (<span style="color:#66d9ef">defn </span>-main []
-  (run-server <span style="color:#f92672">#</span><span style="color:#e6db74">&#39;app</span> {<span style="color:#e6db74">:port</span> <span style="color:#ae81ff">8080</span>}))</code></pre></div>
+  (<span style="color:#a6e22e">run-server</span> <span style="color:#f92672">#</span><span style="color:#e6db74">&#39;app</span> {<span style="color:#e6db74">:port</span> <span style="color:#ae81ff">8080</span>}))</code></pre></div>
 <h2 id="plugins">Plugins</h2>
 
 <h3 id="lein-ring">lein-ring</h3>
@@ -416,7 +417,7 @@ html
             <a href="https://bulma.io">
                 <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
             </a>
-            <p>© Bonjour! Power by Hugo</p>
+            <p>© (Less is more) Power by Hugo</p>
         </div>
     </footer>
     <script type="text/javascript">

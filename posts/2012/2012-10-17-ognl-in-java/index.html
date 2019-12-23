@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     
-    <meta name="author"
-            content="DAEHEE KIM"/>
+    <meta name="author" content="DAEHEE KIM"/>
 
     
     <meta name="description" content="Maven
@@ -29,16 +28,17 @@ Map&amp;lt;String, Object&amp;gt; map = new HashMap&amp;lt;String, Object&amp;gt
             
         
     
-    <title> OGNL | Bonjour! </title>
+    <title> OGNL | (Less is more) </title>
 
     <link rel="shortcut icon" href="http://clonekim.github.io/favicon.jpg"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/bulma.min.css"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/style.css"/>
-</head><body><header>
-    <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+</head>
+<body><header>
+    <nav class="navbar is-fixed-top has-background-black-bis" role="navigation" aria-label="main navigation">
         <div class="navbar-brand is-size-4">
             <a class="navbar-item" href="http://clonekim.github.io/">
-                    Bonjour!
+                    (Less is more)
             </a>
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
                 <span aria-hidden="true"></span>
@@ -56,12 +56,13 @@ Map&amp;lt;String, Object&amp;gt; map = new HashMap&amp;lt;String, Object&amp;gt
             </div>
             </div>
     </nav>
-</header><main>
+</header>
+<main>
       <div class="container">
         <div class="columns">
           
           <div class="column">
-            <div class="content">
+            <div>
                             
             </div>
           </div>          
@@ -81,19 +82,19 @@ Map&amp;lt;String, Object&amp;gt; map = new HashMap&amp;lt;String, Object&amp;gt
     <span style="color:#f92672">&lt;version&gt;</span>3.0.5<span style="color:#f92672">&lt;/version&gt;</span>
 <span style="color:#f92672">&lt;/dependency&gt;</span></code></pre></div>
 <p><em>소스</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> Object<span style="color:#f92672">&gt;</span> map <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> Object<span style="color:#f92672">&gt;();</span>
-map<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;book&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;모바일 웹앱&#34;</span><span style="color:#f92672">);</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Map<span style="color:#f92672">&lt;</span>String, <span style="color:#960050;background-color:#1e0010">Object&gt; map </span><span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;</span>String, Object<span style="color:#f92672">&gt;</span>();
+map.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">&#34;book&#34;</span>, <span style="color:#e6db74">&#34;모바일 웹앱&#34;</span>);
 
-System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>Ognl<span style="color:#f92672">.</span><span style="color:#a6e22e">getValue</span><span style="color:#f92672">(</span>Ognl<span style="color:#f92672">.</span><span style="color:#a6e22e">parseExpression</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;book&#34;</span><span style="color:#f92672">),</span> map<span style="color:#f92672">));</span>
+System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(Ognl.<span style="color:#a6e22e">getValue</span>(Ognl.<span style="color:#a6e22e">parseExpression</span>(<span style="color:#e6db74">&#34;book&#34;</span>), map));
 
-Map context <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">();</span>
-List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> values1 <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>List<span style="color:#f92672">)</span>Ognl<span style="color:#f92672">.</span><span style="color:#a6e22e">getValue</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;{123,&#39;abc&#39;,&#39;00oo&#39;}&#34;</span><span style="color:#f92672">,</span> context<span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> Object<span style="color:#f92672">());</span>
+<span style="color:#960050;background-color:#1e0010">Map context </span><span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap();
+<span style="color:#960050;background-color:#1e0010">List&lt;String&gt; values1 </span><span style="color:#f92672">=</span> (List)Ognl.<span style="color:#a6e22e">getValue</span>(<span style="color:#e6db74">&#34;{123,&#39;abc&#39;,&#39;00oo&#39;}&#34;</span>, context, <span style="color:#66d9ef">new</span> Object());
 
-System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>values1<span style="color:#f92672">);</span>
+System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(values1);
 
-Map values2  <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>Map<span style="color:#f92672">)</span> Ognl<span style="color:#f92672">.</span><span style="color:#a6e22e">getValue</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;#{123:333,&#39;abc&#39;:111, &#39;bbb&#39;:&#39;Kim&#39;, &#39;other&#39;:&#39;[0,2,3,4,5]&#39;}&#34;</span><span style="color:#f92672">,</span> context<span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> Object<span style="color:#f92672">());</span>
+<span style="color:#960050;background-color:#1e0010">Map values2  </span><span style="color:#f92672">=</span> (Map) Ognl.<span style="color:#a6e22e">getValue</span>(<span style="color:#e6db74">&#34;#{123:333,&#39;abc&#39;:111, &#39;bbb&#39;:&#39;Kim&#39;, &#39;other&#39;:&#39;[0,2,3,4,5]&#39;}&#34;</span>, context, <span style="color:#66d9ef">new</span> Object());
 
-System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>values2<span style="color:#f92672">);</span></code></pre></div>
+System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(values2);</code></pre></div>
 <p><em>출력</em></p>
 
 <pre><code>모바일 웹앱
@@ -125,7 +126,7 @@ System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span>
             <a href="https://bulma.io">
                 <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
             </a>
-            <p>© Bonjour! Power by Hugo</p>
+            <p>© (Less is more) Power by Hugo</p>
         </div>
     </footer>
     <script type="text/javascript">

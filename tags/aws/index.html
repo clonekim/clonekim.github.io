@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     
-    <meta name="author"
-            content="DAEHEE KIM"/>
+    <meta name="author" content="DAEHEE KIM"/>
 
     
 
@@ -26,16 +25,17 @@
             
         
     
-    <title> aws | Bonjour! </title>
+    <title> aws | (Less is more) </title>
 
     <link rel="shortcut icon" href="http://clonekim.github.io/favicon.jpg"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/bulma.min.css"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/style.css"/>
-</head><body><header>
-    <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+</head>
+<body><header>
+    <nav class="navbar is-fixed-top has-background-black-bis" role="navigation" aria-label="main navigation">
         <div class="navbar-brand is-size-4">
             <a class="navbar-item" href="http://clonekim.github.io/">
-                    Bonjour!
+                    (Less is more)
             </a>
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
                 <span aria-hidden="true"></span>
@@ -53,64 +53,54 @@
             </div>
             </div>
     </nav>
-</header><main>
+</header>
+<main>
       <div class="container">
         <div class="columns">
-          <div class="column"><section class="posts">
-
-<article class="post box is-radiusless">
-    <div class="post-title">
+          <div class="column"><div class="column">
+  <section class="posts">
+    
+    <article class="post box is-radiusless">
+      <div class="post-title">
         <a class="post-title-link" href="/posts/2017/2017-07-26-aws-s3-part-2/"><h2 class="is-size-4 has-text-dark">AWS S3 Part 2</h2></a>
-    </div>
-    <div class="post-meta">
-        <span class="post-time">2017-07-26</span>
-    </div>
-    <div class="post-excerpt content">
-         S3 Condition Referer를 참조해서 리소스제한
-{ &quot;Version&quot;: &quot;2012-10-17&quot;, &quot;Id&quot;: &quot;Policy1463129932149&quot;, &quot;Statement&quot;: [ { &quot;Sid&quot;: &quot;Stmt1463129927965&quot;, &quot;Effect&quot;: &quot;Allow&quot;, &quot;Principal&quot;: { &quot;AWS&quot;: &quot;*&quot; }, &quot;Action&quot;: &quot;s3:GetObject&quot;, &quot;Resource&quot;: &quot;arn:aws:s3:::your-bucket/*&quot;, &quot;Condition&quot;: { &quot;StringLike&quot;: { &quot;aws:Referer&quot;: [ &quot;http://yoursite/*&quot;, &quot;http://*.yoursite/*&quot; ] } } } ] }  
-    </div>
-    <a href="/posts/2017/2017-07-26-aws-s3-part-2/">more</a>
+      </div>
+      <div class="post-meta has-text-right">
+        <span class="post-time" >2017-07-26</span>
+      </div>
+      <div class="has-text-right">
+        <a href="/posts/2017/2017-07-26-aws-s3-part-2/" >more</a>
+      </div>
+      <div class="is-clearfix"></div>
     </article>
-
-<article class="post box is-radiusless">
-    <div class="post-title">
+    
+    <article class="post box is-radiusless">
+      <div class="post-title">
         <a class="post-title-link" href="/posts/2016/2016-05-12-aws-elastick-beanstalk-1/"><h2 class="is-size-4 has-text-dark">AWS Elastick Beanstalk 1</h2></a>
-    </div>
-    <div class="post-meta">
-        <span class="post-time">2016-05-12</span>
-    </div>
-    <div class="post-excerpt content">
-        awsebcli 설치 linux
-$ sudo apt install python3-pip $ pip3 install awsebcli  MacOS
-$ brew install python3 $ sudo pip3 install awsebcli  pip가 업데이드안되어서 설치가 안될경우에는
-$ sudo pip3 install --upgrade pip  설치 시 sudo 를 사용하지 않고 로컬(자신의 홈디렉토리)에 설치 할경우에는
-&ndash;user 파라미터를 사용하면 .local/bin 에 설치된다.
-그외에 추가로 setuptools를 환경에 따라 요구할 수 있다.
-eb 초기화 $ mkdir eb $ cd eb $ eb init  초기화를 실행하면 자신의 홈디렉토리에 .
-    </div>
-    <a href="/posts/2016/2016-05-12-aws-elastick-beanstalk-1/">more</a>
+      </div>
+      <div class="post-meta has-text-right">
+        <span class="post-time" >2016-05-12</span>
+      </div>
+      <div class="has-text-right">
+        <a href="/posts/2016/2016-05-12-aws-elastick-beanstalk-1/" >more</a>
+      </div>
+      <div class="is-clearfix"></div>
     </article>
-
-<article class="post box is-radiusless">
-    <div class="post-title">
+    
+    <article class="post box is-radiusless">
+      <div class="post-title">
         <a class="post-title-link" href="/posts/2016/2016-04-20-aws-s3-part-1/"><h2 class="is-size-4 has-text-dark">AWS S3 Part 1</h2></a>
-    </div>
-    <div class="post-meta">
-        <span class="post-time">2016-04-20</span>
-    </div>
-    <div class="post-excerpt content">
-         S3 버킷 작성  콘솔로 로그인한다 S3로 이동한다 Bucket(버킷)을 생성한다
-해당 버킷은 해당 리젼에서 유일무이해야 한다  정적 리소스 호스팅  버킷을 만든다
- 퍼미션에서 버킷정책(Bucket policy)을 작성한다
- AWS Policy Generator를 통해
-권한을 작성한다(포맷은 JSON)
- Policy 작성
-     Select type of policy S3 bucket policy     Principal AWS:*   Action getObject   ARN arn:aws:s3:::[bucket name]/*    
-    </div>
-    <a href="/posts/2016/2016-04-20-aws-s3-part-1/">more</a>
+      </div>
+      <div class="post-meta has-text-right">
+        <span class="post-time" >2016-04-20</span>
+      </div>
+      <div class="has-text-right">
+        <a href="/posts/2016/2016-04-20-aws-s3-part-1/" >more</a>
+      </div>
+      <div class="is-clearfix"></div>
     </article>
-
-</section>
+    
+  </section>
+</div>
 </div>
         </div>
 
@@ -134,7 +124,7 @@ eb 초기화 $ mkdir eb $ cd eb $ eb init  초기화를 실행하면 자신의 �
             <a href="https://bulma.io">
                 <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
             </a>
-            <p>© Bonjour! Power by Hugo</p>
+            <p>© (Less is more) Power by Hugo</p>
         </div>
     </footer>
     <script type="text/javascript">

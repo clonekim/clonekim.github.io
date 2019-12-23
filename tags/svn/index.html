@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     
-    <meta name="author"
-            content="DAEHEE KIM"/>
+    <meta name="author" content="DAEHEE KIM"/>
 
     
 
@@ -26,16 +25,17 @@
             
         
     
-    <title> svn | Bonjour! </title>
+    <title> svn | (Less is more) </title>
 
     <link rel="shortcut icon" href="http://clonekim.github.io/favicon.jpg"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/bulma.min.css"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/style.css"/>
-</head><body><header>
-    <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+</head>
+<body><header>
+    <nav class="navbar is-fixed-top has-background-black-bis" role="navigation" aria-label="main navigation">
         <div class="navbar-brand is-size-4">
             <a class="navbar-item" href="http://clonekim.github.io/">
-                    Bonjour!
+                    (Less is more)
             </a>
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
                 <span aria-hidden="true"></span>
@@ -53,29 +53,28 @@
             </div>
             </div>
     </nav>
-</header><main>
+</header>
+<main>
       <div class="container">
         <div class="columns">
-          <div class="column"><section class="posts">
-
-<article class="post box is-radiusless">
-    <div class="post-title">
+          <div class="column"><div class="column">
+  <section class="posts">
+    
+    <article class="post box is-radiusless">
+      <div class="post-title">
         <a class="post-title-link" href="/posts/2013/2013-09-24-svn-as-windows-service/"><h2 class="is-size-4 has-text-dark">윈도우즈에 SVN서비스등록</h2></a>
-    </div>
-    <div class="post-meta">
-        <span class="post-time">2013-09-24</span>
-    </div>
-    <div class="post-excerpt content">
-        ###SVN서버를 윈도우에서 서비스로 등록한다.*
-Creating the Repository svnadmin create c:\svn  Edit Configuration 방금 생성한 레포지토리 디렉토리로 이동하여
-conf\passwd 에서
-아이디 = 패스워드 형식으로 등록 ex) test = 1234  conf\svnserve.conf 에서 아래와 같이 설정
-anon-access = read auth-access = write password-db = passwd  Register as a Service C:\Program Files\Subversion\bin\svnserve.exe --service --root c:\svn 또는 C:\&gt; sc create svn binpath= &quot;C:\svn\bin\svnserve.exe --service -r C:\repos&quot; displayname= &quot;Subversion Server&quot; depend= Tcpip start= auto C:\&gt;sc create svnserver binpath= &quot;C:\Program Files\Subversion\bin\svnserve.
-    </div>
-    <a href="/posts/2013/2013-09-24-svn-as-windows-service/">more</a>
+      </div>
+      <div class="post-meta has-text-right">
+        <span class="post-time" >2013-09-24</span>
+      </div>
+      <div class="has-text-right">
+        <a href="/posts/2013/2013-09-24-svn-as-windows-service/" >more</a>
+      </div>
+      <div class="is-clearfix"></div>
     </article>
-
-</section>
+    
+  </section>
+</div>
 </div>
         </div>
 
@@ -99,7 +98,7 @@ anon-access = read auth-access = write password-db = passwd  Register as a Servi
             <a href="https://bulma.io">
                 <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
             </a>
-            <p>© Bonjour! Power by Hugo</p>
+            <p>© (Less is more) Power by Hugo</p>
         </div>
     </footer>
     <script type="text/javascript">

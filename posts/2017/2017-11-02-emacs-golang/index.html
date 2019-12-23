@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     
-    <meta name="author"
-            content="DAEHEE KIM"/>
+    <meta name="author" content="DAEHEE KIM"/>
 
     
     <meta name="description" content="설치 go get명령어로 아래와 같이 필요한 유틸리티(명령어)를 설치해야 한다
@@ -30,16 +29,17 @@ $ go get github.com/golang/lint/golint github.com/nsf/gocode github.com/k0kubun/
             
         
     
-    <title> Emacs에서 Golang 를 위한 에디팅 | Bonjour! </title>
+    <title> Emacs에서 Golang 를 위한 에디팅 | (Less is more) </title>
 
     <link rel="shortcut icon" href="http://clonekim.github.io/favicon.jpg"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/bulma.min.css"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/style.css"/>
-</head><body><header>
-    <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+</head>
+<body><header>
+    <nav class="navbar is-fixed-top has-background-black-bis" role="navigation" aria-label="main navigation">
         <div class="navbar-brand is-size-4">
             <a class="navbar-item" href="http://clonekim.github.io/">
-                    Bonjour!
+                    (Less is more)
             </a>
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
                 <span aria-hidden="true"></span>
@@ -57,12 +57,13 @@ $ go get github.com/golang/lint/golint github.com/nsf/gocode github.com/k0kubun/
             </div>
             </div>
     </nav>
-</header><main>
+</header>
+<main>
       <div class="container">
         <div class="columns">
           
           <div class="column">
-            <div class="content">
+            <div>
               <nav id="TableOfContents">
 <ul>
 <li>
@@ -128,20 +129,20 @@ go-eldoc              ;;상태줄에 godoc간단히 보여줌
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">(add-to-list <span style="color:#e6db74">&#39;load-path</span> (concat (getenv <span style="color:#e6db74">&#34;GOPATH&#34;</span>)  <span style="color:#e6db74">&#34;/src/github.com/golang/lint/misc/emacs&#34;</span>))
 (add-to-list <span style="color:#e6db74">&#39;load-path</span> (concat (getenv <span style="color:#e6db74">&#34;GOPATH&#34;</span>)  <span style="color:#e6db74">&#34;/src/github.com/dougm/goflymake&#34;</span>))
 
-(require <span style="color:#e6db74">&#39;direx</span>)
-(require <span style="color:#e6db74">&#39;go-mode</span>)
-(require <span style="color:#e6db74">&#39;go-flymake</span>)
-(require <span style="color:#e6db74">&#39;go-flycheck</span>)
-(require <span style="color:#e6db74">&#39;go-autocomplete</span>)
-(require <span style="color:#e6db74">&#39;auto-complete-config</span>)
+(<span style="color:#a6e22e">require</span> <span style="color:#e6db74">&#39;direx</span>)
+(<span style="color:#a6e22e">require</span> <span style="color:#e6db74">&#39;go-mode</span>)
+(<span style="color:#a6e22e">require</span> <span style="color:#e6db74">&#39;go-flymake</span>)
+(<span style="color:#a6e22e">require</span> <span style="color:#e6db74">&#39;go-flycheck</span>)
+(<span style="color:#a6e22e">require</span> <span style="color:#e6db74">&#39;go-autocomplete</span>)
+(<span style="color:#a6e22e">require</span> <span style="color:#e6db74">&#39;auto-complete-config</span>)
 
 
 (global-set-key (kbd <span style="color:#e6db74">&#34;C-x C-j&#34;</span>) <span style="color:#e6db74">&#39;direx:jump-to-directory-other-window</span>)
 
 (ac-config-default)
 
-(if (not (string-match <span style="color:#e6db74">&#34;go&#34;</span> compile-command))
-    (set (make-local-variable <span style="color:#e6db74">&#39;compile-command</span>)
+(<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">not</span> (string-match <span style="color:#e6db74">&#34;go&#34;</span> compile-command))
+    (<span style="color:#a6e22e">set</span> (make-local-variable <span style="color:#e6db74">&#39;compile-command</span>)
          <span style="color:#e6db74">&#34;go build -v &amp;&amp; go test -v &amp;&amp; go vet&#34;</span>))
 
 (add-hook <span style="color:#e6db74">&#39;go-mode-hook</span> (lambda ()
@@ -186,7 +187,7 @@ go-eldoc              ;;상태줄에 godoc간단히 보여줌
             <a href="https://bulma.io">
                 <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
             </a>
-            <p>© Bonjour! Power by Hugo</p>
+            <p>© (Less is more) Power by Hugo</p>
         </div>
     </footer>
     <script type="text/javascript">

@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     
-    <meta name="author"
-            content="DAEHEE KIM"/>
+    <meta name="author" content="DAEHEE KIM"/>
 
     
 
@@ -26,16 +25,17 @@
             
         
     
-    <title> captcha | Bonjour! </title>
+    <title> captcha | (Less is more) </title>
 
     <link rel="shortcut icon" href="http://clonekim.github.io/favicon.jpg"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/bulma.min.css"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/style.css"/>
-</head><body><header>
-    <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+</head>
+<body><header>
+    <nav class="navbar is-fixed-top has-background-black-bis" role="navigation" aria-label="main navigation">
         <div class="navbar-brand is-size-4">
             <a class="navbar-item" href="http://clonekim.github.io/">
-                    Bonjour!
+                    (Less is more)
             </a>
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
                 <span aria-hidden="true"></span>
@@ -53,46 +53,41 @@
             </div>
             </div>
     </nav>
-</header><main>
+</header>
+<main>
       <div class="container">
         <div class="columns">
-          <div class="column"><section class="posts">
-
-<article class="post box is-radiusless">
-    <div class="post-title">
+          <div class="column"><div class="column">
+  <section class="posts">
+    
+    <article class="post box is-radiusless">
+      <div class="post-title">
         <a class="post-title-link" href="/posts/2015/2015-07-14-how-to-captcha-in-node.js/"><h2 class="is-size-4 has-text-dark">Node.js로 Captcha</h2></a>
-    </div>
-    <div class="post-meta">
-        <span class="post-time">2015-07-14</span>
-    </div>
-    <div class="post-excerpt content">
-        canvas를 이용한 캡챠(captcha)를 생성하려고 한다.
-사용하려는 패키지는 canvas-captcha이다
-의존성 설치 apt-get install libpango1.0-dev apt-get install libjpeg-dev apt-get install libgif-dev  소스작성 captcha.js
-var captcha = require(&#39;canvas-captcha&#39;) ,captchaOptions = { charPool: (&#39;abcdefghijklmnopqrstuvwxyz&#39; + &#39;abcdefghijklmnopqrstuvwxyz&#39;.toUpperCase() + &#39;1234567890&#39;).split(&#39;&#39;) //char pool Array  ,size: { width: 120 ,height: 52 } //image size  ,textPos: { left: 15 ,top: 36 } //text drawing start position  ,rotate: .01 //text ratate  ,charLength: 5 //how many chars  //,font: &#39;26px&#39; //font size  ,strokeStyle: &#39;#0088cc&#39; //style  ,bgColor: &#39;#eeeeee&#39; //bg color  ,confusion: true //draw another group background text to mangle the text  //,cFont: &#39;30px&#39; //bg text style  ,cStrokeStyle: &#39;#adc&#39; //bg text color  ,cRotate: -.
-    </div>
-    <a href="/posts/2015/2015-07-14-how-to-captcha-in-node.js/">more</a>
+      </div>
+      <div class="post-meta has-text-right">
+        <span class="post-time" >2015-07-14</span>
+      </div>
+      <div class="has-text-right">
+        <a href="/posts/2015/2015-07-14-how-to-captcha-in-node.js/" >more</a>
+      </div>
+      <div class="is-clearfix"></div>
     </article>
-
-<article class="post box is-radiusless">
-    <div class="post-title">
+    
+    <article class="post box is-radiusless">
+      <div class="post-title">
         <a class="post-title-link" href="/posts/2015/2015-02-01-imagemagick/"><h2 class="is-size-4 has-text-dark">ImageMagick</h2></a>
-    </div>
-    <div class="post-meta">
-        <span class="post-time">2015-02-01</span>
-    </div>
-    <div class="post-excerpt content">
-        Thumbnail
-convert [Image 1] -thumbnail 50% [Result Image] or convert [Image 1] -thumbnail 100x70 [Result Image]  Composite
-composite -geometry +[x]+[y] [Image 1] [Image 2] [Result Image] ex) composite -geometry +02+30 person.jpg background.jpg profile.jpg  Image Info
-identify -format '%wx%h %m %b %n' [file]  box 필터
-convert [file] -scale [n]% -filter box -resize [size]! [file]  inline 이미지 생성
-png 로 이미지를 생성하되 :- 또는 png:fd:1 를 사용하면 표준 출력 장치(모니터) 로 내보냄
-    </div>
-    <a href="/posts/2015/2015-02-01-imagemagick/">more</a>
+      </div>
+      <div class="post-meta has-text-right">
+        <span class="post-time" >2015-02-01</span>
+      </div>
+      <div class="has-text-right">
+        <a href="/posts/2015/2015-02-01-imagemagick/" >more</a>
+      </div>
+      <div class="is-clearfix"></div>
     </article>
-
-</section>
+    
+  </section>
+</div>
 </div>
         </div>
 
@@ -116,7 +111,7 @@ png 로 이미지를 생성하되 :- 또는 png:fd:1 를 사용하면 표준 출
             <a href="https://bulma.io">
                 <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
             </a>
-            <p>© Bonjour! Power by Hugo</p>
+            <p>© (Less is more) Power by Hugo</p>
         </div>
     </footer>
     <script type="text/javascript">

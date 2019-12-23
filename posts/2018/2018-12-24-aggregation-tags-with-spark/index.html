@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     
-    <meta name="author"
-            content="DAEHEE KIM"/>
+    <meta name="author" content="DAEHEE KIM"/>
 
     
     <meta name="description" content="현재 특정 테이블의 태그정보와 아래와 같다
 특정컬럼에 태그 값이 컴마 구분으로 들어있음
-   tags     태그, 태그, 태그 &amp;hellip;    파일 처리 해당 컬럼만 csv로 만들어본것
+   tags     태그, 태그, 태그 &amp;hellip;    CSV 파일 읽기 해당 컬럼만 csv로 만들어본것
 # -*- coding: utf-8 -*- from pyspark import SparkConf from pyspark import SparkContext from pyspark.sql import SparkSession from pyspark.sql.types import * lines = sc.textFile(&amp;#39;[csv파일]&amp;#39;, use_unicode=True) counts = lines.flatMap(lambda line: line.split(&amp;#39;,&amp;#39;)).map(lambda word: (word,1)).reduceByKey(lambda a,b : a &#43; b) schema = StructType([ StructField(&amp;#39;tag&amp;#39;, StringType(), False), StructField(&amp;#39;count&amp;#39;, IntegerType(), False), ]) df = spark."/>
     
 
@@ -29,16 +28,17 @@
             
         
     
-    <title> Spark | Bonjour! </title>
+    <title> Spark | (Less is more) </title>
 
     <link rel="shortcut icon" href="http://clonekim.github.io/favicon.jpg"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/bulma.min.css"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/style.css"/>
-</head><body><header>
-    <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+</head>
+<body><header>
+    <nav class="navbar is-fixed-top has-background-black-bis" role="navigation" aria-label="main navigation">
         <div class="navbar-brand is-size-4">
             <a class="navbar-item" href="http://clonekim.github.io/">
-                    Bonjour!
+                    (Less is more)
             </a>
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
                 <span aria-hidden="true"></span>
@@ -56,20 +56,21 @@
             </div>
             </div>
     </nav>
-</header><main>
+</header>
+<main>
       <div class="container">
         <div class="columns">
           
           <div class="column">
-            <div class="content">
+            <div>
               <nav id="TableOfContents">
 <ul>
 <li>
 <ul>
-<li><a href="#파일-처리">파일 처리</a></li>
+<li><a href="#csv-파일-읽기">CSV 파일 읽기</a></li>
 <li><a href="#jdbc를-통해-소스-읽어오기">JDBC를 통해 소스 읽어오기</a></li>
 <li><a href="#jdbc로-통해-write-처리">JDBC로 통해 Write 처리</a></li>
-<li><a href="#flatmap-사용해봄">flatMap 사용해봄</a></li>
+<li><a href="#flatmap">flatMap</a></li>
 </ul></li>
 </ul>
 </nav>              
@@ -103,7 +104,7 @@
 </tbody>
 </table>
 
-<h2 id="파일-처리">파일 처리</h2>
+<h2 id="csv-파일-읽기">CSV 파일 읽기</h2>
 
 <p>해당 컬럼만 csv로 만들어본것</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
@@ -166,7 +167,7 @@ url<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;[jdbc ur
         password<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;[password]&#39;</span>,
         driver<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;org.mariadb.jdbc.Driver&#39;</span>,
         dbtable<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;top_tags&#39;</span>)<span style="color:#f92672">.</span>mode(<span style="color:#e6db74">&#39;overwrite&#39;</span>)<span style="color:#f92672">.</span>save()</code></pre></div>
-<h2 id="flatmap-사용해봄">flatMap 사용해봄</h2>
+<h2 id="flatmap">flatMap</h2>
 
 <p><em>테이블 A</em></p>
 
@@ -276,7 +277,7 @@ df<span style="color:#f92672">.</span>filter(df[<span style="color:#e6db74">&#39
             <a href="https://bulma.io">
                 <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
             </a>
-            <p>© Bonjour! Power by Hugo</p>
+            <p>© (Less is more) Power by Hugo</p>
         </div>
     </footer>
     <script type="text/javascript">

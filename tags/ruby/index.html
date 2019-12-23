@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     
-    <meta name="author"
-            content="DAEHEE KIM"/>
+    <meta name="author" content="DAEHEE KIM"/>
 
     
 
@@ -26,16 +25,17 @@
             
         
     
-    <title> ruby | Bonjour! </title>
+    <title> ruby | (Less is more) </title>
 
     <link rel="shortcut icon" href="http://clonekim.github.io/favicon.jpg"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/bulma.min.css"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/style.css"/>
-</head><body><header>
-    <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+</head>
+<body><header>
+    <nav class="navbar is-fixed-top has-background-black-bis" role="navigation" aria-label="main navigation">
         <div class="navbar-brand is-size-4">
             <a class="navbar-item" href="http://clonekim.github.io/">
-                    Bonjour!
+                    (Less is more)
             </a>
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
                 <span aria-hidden="true"></span>
@@ -53,28 +53,28 @@
             </div>
             </div>
     </nav>
-</header><main>
+</header>
+<main>
       <div class="container">
         <div class="columns">
-          <div class="column"><section class="posts">
-
-<article class="post box is-radiusless">
-    <div class="post-title">
+          <div class="column"><div class="column">
+  <section class="posts">
+    
+    <article class="post box is-radiusless">
+      <div class="post-title">
         <a class="post-title-link" href="/posts/2012/2012-02-03-ruby-some-basic/"><h2 class="is-size-4 has-text-dark">Ruby Some Basic</h2></a>
-    </div>
-    <div class="post-meta">
-        <span class="post-time">2012-02-03</span>
-    </div>
-    <div class="post-excerpt content">
-        json 생성
-require &#39;json&#39; jsonbody = JSON.generate[&#34;message&#34;=&gt;&#34;test&#34;,&#34;user&#34;=&gt;&#34;user1&#34;] rest-client을 이용한 예제
-require &#39;rubygems&#39; require &#39;rest_client&#39; require &#39;json&#39; jdata = JSON.generate([&#34;test&#34;]) RestClient.put &#39;http://localhost:4567/users/123&#39;, jdata, {:content_type =&gt; :json} Net:HTTP GET/PUT
-require &#39;net/http&#39; http = Net::HTTP.new(&#39;www.data.com&#39;) response = http.request_put(&#39;/?access_token=123&#39;, jsonbody)url = URI.parse(&#39;http://localhost:3000/someservice/&#39;) request = Net::HTTP::Post.new(url.path) request.body = &#34;&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;&lt;somedata&gt;&lt;name&gt;Test Name 1&lt;/name&gt;&lt;description&gt;Some data for Unit testing&lt;/description&gt;&lt;/somedata&gt;&#34; response = Net::HTTP.start(url.host, url.port) {|http| http.request(request)} #Note this test PASSES! assert_equal &#39;201 Created&#39;, response.get_fields(&#39;Status&#39;)[0]require &#39;net/http&#39; require &#39;uri&#39; type = &#39;record&#39; activity = &#39;query-data&#39; xml_req =&lt;&lt;EOF &lt;?
-    </div>
-    <a href="/posts/2012/2012-02-03-ruby-some-basic/">more</a>
+      </div>
+      <div class="post-meta has-text-right">
+        <span class="post-time" >2012-02-03</span>
+      </div>
+      <div class="has-text-right">
+        <a href="/posts/2012/2012-02-03-ruby-some-basic/" >more</a>
+      </div>
+      <div class="is-clearfix"></div>
     </article>
-
-</section>
+    
+  </section>
+</div>
 </div>
         </div>
 
@@ -98,7 +98,7 @@ require &#39;net/http&#39; http = Net::HTTP.new(&#39;www.data.com&#39;) response
             <a href="https://bulma.io">
                 <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
             </a>
-            <p>© Bonjour! Power by Hugo</p>
+            <p>© (Less is more) Power by Hugo</p>
         </div>
     </footer>
     <script type="text/javascript">

@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     
-    <meta name="author"
-            content="DAEHEE KIM"/>
+    <meta name="author" content="DAEHEE KIM"/>
 
     
 
@@ -26,16 +25,17 @@
             
         
     
-    <title> backbone | Bonjour! </title>
+    <title> backbone | (Less is more) </title>
 
     <link rel="shortcut icon" href="http://clonekim.github.io/favicon.jpg"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/bulma.min.css"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/style.css"/>
-</head><body><header>
-    <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+</head>
+<body><header>
+    <nav class="navbar is-fixed-top has-background-black-bis" role="navigation" aria-label="main navigation">
         <div class="navbar-brand is-size-4">
             <a class="navbar-item" href="http://clonekim.github.io/">
-                    Bonjour!
+                    (Less is more)
             </a>
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
                 <span aria-hidden="true"></span>
@@ -53,30 +53,28 @@
             </div>
             </div>
     </nav>
-</header><main>
+</header>
+<main>
       <div class="container">
         <div class="columns">
-          <div class="column"><section class="posts">
-
-<article class="post box is-radiusless">
-    <div class="post-title">
+          <div class="column"><div class="column">
+  <section class="posts">
+    
+    <article class="post box is-radiusless">
+      <div class="post-title">
         <a class="post-title-link" href="/posts/2014/2014-10-03-backbone_handlebar_gulp_tip/"><h2 class="is-size-4 has-text-dark">backbone &#43; handlebar &#43; gulp 팁</h2></a>
-    </div>
-    <div class="post-meta">
-        <span class="post-time">2014-10-03</span>
-    </div>
-    <div class="post-excerpt content">
-        백본과 핸들바를 사용해서 소스를 컴파일 후
-정해진 경로로 결과물을 내보내자.
-핸들바를 사용하지 않을려면 brfs도 고려해보자
-패키지 설치
-npm install --global gulp npm install --save-dev gulp npm install --save-dev browserify npm install --save-dev vinyl-source-stream npm install --save handlebars npm install --save hbsfy  gulpfile.js
-var gulp = require(&#39;gulp&#39;), browserify = require(&#39;browserify&#39;), source = require(&#39;vinyl-source-stream&#39;), hbsfy = require(&#39;hbsfy&#39;); gulp.task(&#39;build&#39;, function() { var b = browserify(&#39;./js/app.js&#39;, {debug:true}); return b.transform(hbsfy) .bundle() .pipe(source(&#39;app.js&#39;)) .pipe(gulp.dest(&#39;/home/alpha/public/js&#39;)); }); gulp.
-    </div>
-    <a href="/posts/2014/2014-10-03-backbone_handlebar_gulp_tip/">more</a>
+      </div>
+      <div class="post-meta has-text-right">
+        <span class="post-time" >2014-10-03</span>
+      </div>
+      <div class="has-text-right">
+        <a href="/posts/2014/2014-10-03-backbone_handlebar_gulp_tip/" >more</a>
+      </div>
+      <div class="is-clearfix"></div>
     </article>
-
-</section>
+    
+  </section>
+</div>
 </div>
         </div>
 
@@ -100,7 +98,7 @@ var gulp = require(&#39;gulp&#39;), browserify = require(&#39;browserify&#39;), 
             <a href="https://bulma.io">
                 <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
             </a>
-            <p>© Bonjour! Power by Hugo</p>
+            <p>© (Less is more) Power by Hugo</p>
         </div>
     </footer>
     <script type="text/javascript">

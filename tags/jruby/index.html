@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     
-    <meta name="author"
-            content="DAEHEE KIM"/>
+    <meta name="author" content="DAEHEE KIM"/>
 
     
 
@@ -26,16 +25,17 @@
             
         
     
-    <title> jruby | Bonjour! </title>
+    <title> jruby | (Less is more) </title>
 
     <link rel="shortcut icon" href="http://clonekim.github.io/favicon.jpg"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/bulma.min.css"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/style.css"/>
-</head><body><header>
-    <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+</head>
+<body><header>
+    <nav class="navbar is-fixed-top has-background-black-bis" role="navigation" aria-label="main navigation">
         <div class="navbar-brand is-size-4">
             <a class="navbar-item" href="http://clonekim.github.io/">
-                    Bonjour!
+                    (Less is more)
             </a>
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
                 <span aria-hidden="true"></span>
@@ -53,28 +53,28 @@
             </div>
             </div>
     </nav>
-</header><main>
+</header>
+<main>
       <div class="container">
         <div class="columns">
-          <div class="column"><section class="posts">
-
-<article class="post box is-radiusless">
-    <div class="post-title">
+          <div class="column"><div class="column">
+  <section class="posts">
+    
+    <article class="post box is-radiusless">
+      <div class="post-title">
         <a class="post-title-link" href="/posts/2015/2015-07-14-sinatra/"><h2 class="is-size-4 has-text-dark">Sinatra 웹프로그래밍</h2></a>
-    </div>
-    <div class="post-meta">
-        <span class="post-time">2015-07-14</span>
-    </div>
-    <div class="post-excerpt content">
-        설치 jruby -S gem install sinatra  Hello Ruby require &#39;rubygems&#39; require &#39;sinatra&#39; get &#39;/&#39; do &#39;Hello Jruby&#39; end 라우터 get, post, put, delete를 사용할 수있다
-get &#39;/&#39; do end 요청파라미터 /?name=foo 로 요청 시 아래와 같이
-post &#39;/&#39; do puts params[&#39;name&#39;] end 본문으로 Json를 요청받을 경우 post &#39;/&#39; do payload = JSON.parse(request.body.read) puts payload status 201 end 응답하기 문자열, html, json, 바이너리 등의 모든 컨텐츠로 응답가능하다
-get &#39;/&#39; do &#39;Hello&#39; end Json으로 응답하기 require &#39;sinatra&#39; require &#39;json&#39; get &#39;/&#39; do content_type :json data = { foo: &#39;bar&#39;} data.
-    </div>
-    <a href="/posts/2015/2015-07-14-sinatra/">more</a>
+      </div>
+      <div class="post-meta has-text-right">
+        <span class="post-time" >2015-07-14</span>
+      </div>
+      <div class="has-text-right">
+        <a href="/posts/2015/2015-07-14-sinatra/" >more</a>
+      </div>
+      <div class="is-clearfix"></div>
     </article>
-
-</section>
+    
+  </section>
+</div>
 </div>
         </div>
 
@@ -98,7 +98,7 @@ get &#39;/&#39; do &#39;Hello&#39; end Json으로 응답하기 require &#39;sina
             <a href="https://bulma.io">
                 <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
             </a>
-            <p>© Bonjour! Power by Hugo</p>
+            <p>© (Less is more) Power by Hugo</p>
         </div>
     </footer>
     <script type="text/javascript">

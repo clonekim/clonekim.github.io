@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     
-    <meta name="author"
-            content="DAEHEE KIM"/>
+    <meta name="author" content="DAEHEE KIM"/>
 
     
     <meta name="description" content="Emacs 24를 기준으로 작성
@@ -34,16 +33,17 @@ Cider와 cider-nrepl의 버전이 맞아야함  profiles.clj
             
         
     
-    <title> Clojure를 위한 Emacs 환경 | Bonjour! </title>
+    <title> Clojure를 위한 Emacs 환경 | (Less is more) </title>
 
     <link rel="shortcut icon" href="http://clonekim.github.io/favicon.jpg"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/bulma.min.css"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/style.css"/>
-</head><body><header>
-    <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+</head>
+<body><header>
+    <nav class="navbar is-fixed-top has-background-black-bis" role="navigation" aria-label="main navigation">
         <div class="navbar-brand is-size-4">
             <a class="navbar-item" href="http://clonekim.github.io/">
-                    Bonjour!
+                    (Less is more)
             </a>
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
                 <span aria-hidden="true"></span>
@@ -61,12 +61,13 @@ Cider와 cider-nrepl의 버전이 맞아야함  profiles.clj
             </div>
             </div>
     </nav>
-</header><main>
+</header>
+<main>
       <div class="container">
         <div class="columns">
           
           <div class="column">
-            <div class="content">
+            <div>
               <nav id="TableOfContents">
 <ul>
 <li>
@@ -97,11 +98,11 @@ Cider와 cider-nrepl의 버전이 맞아야함  profiles.clj
 <h2 id="package-install">Package Install</h2>
 
 <p><em>init.el</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(require <span style="color:#e6db74">&#39;package</span>)
-(add-to-list <span style="color:#e6db74">&#39;package-archives</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#a6e22e">require</span> <span style="color:#e6db74">&#39;package</span>)
+(<span style="color:#a6e22e">add-to-list</span> <span style="color:#e6db74">&#39;package-archives</span>
         <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;melpa-stable&#34;</span> <span style="color:#66d9ef">. </span><span style="color:#e6db74">&#34;http://stable.melpa.org/packages/&#34;</span>) t)
 
-(package-initialize)</code></pre></div>
+(<span style="color:#a6e22e">package-initialize</span>)</code></pre></div>
 <p><em>package install</em></p>
 
 <pre><code>M-x package-install [RET] cider [RET]
@@ -192,7 +193,7 @@ C-c M-n: 현재 작업중인 namespace로 변경
             <a href="https://bulma.io">
                 <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
             </a>
-            <p>© Bonjour! Power by Hugo</p>
+            <p>© (Less is more) Power by Hugo</p>
         </div>
     </footer>
     <script type="text/javascript">

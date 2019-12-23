@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>react.js on Bonjour!</title>
+    <title>react.js on (Less is more)</title>
     <link>http://clonekim.github.io/tags/react.js/</link>
-    <description>Recent content in react.js on Bonjour!</description>
+    <description>Recent content in react.js on (Less is more)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
     <managingEditor>clonekim-at-gmail-dot-com (DAEHEE KIM)</managingEditor>
@@ -37,7 +37,8 @@ hello React!
 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;script src=&amp;#34;build/react.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;build/JSXTransformer.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt;	&amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;hello&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script type=&amp;#34;text/jsx&amp;#34;&amp;gt; React.render(&amp;lt;h1&amp;gt;Hello, welcome to React!&amp;lt;/h1&amp;gt;, document.getElementById(&amp;#39;hello&amp;#39;)); &amp;lt;/script&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; JSX(JavaScript XML) JSX(JavaScript XML)는 XML 과 유사한 문법을 가지는 자바스크립트이다.
 JSX 문법을 사용하기 위해서는 반드시 JSXTransformer.js가 필요하다
 상세한 JSX syntaxt과 spec 은 아래를 참조할 것
- http://facebook.github.io/react/docs/jsx-in-depth.html http://facebook.github.io/jsx/  //Html &amp;lt;h1 class=&amp;#34;test&amp;#34;&amp;gt;Hello&amp;lt;/h1&amp;gt; //JSX &amp;lt;h1 className=&amp;#34;test&amp;#34;&amp;gt;Hello&amp;lt;/h1&amp;gt; var text= &amp;#34;Hello React!</description>
+ http://facebook.github.io/react/docs/jsx-in-depth.html http://facebook.github.io/jsx/
+//Html &amp;lt;h1 class=&amp;#34;test&amp;#34;&amp;gt;Hello&amp;lt;/h1&amp;gt; //JSX &amp;lt;h1 className=&amp;#34;test&amp;#34;&amp;gt;Hello&amp;lt;/h1&amp;gt; var text= &amp;#34;Hello React!</description>
     </item>
     
   </channel>

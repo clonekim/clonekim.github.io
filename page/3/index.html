@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html><head>
-	<meta name="generator" content="Hugo 0.55.6" />
+	<meta name="generator" content="Hugo 0.59.1" />
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     
-    <meta name="author"
-            content="DAEHEE KIM"/>
+    <meta name="author" content="DAEHEE KIM"/>
 
     
 
@@ -27,16 +26,17 @@
             
         
     
-    <title>Bonjour!</title>
+    <title>(Less is more)</title>
 
     <link rel="shortcut icon" href="http://clonekim.github.io/favicon.jpg"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/bulma.min.css"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/style.css"/>
-</head><body><header>
-    <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+</head>
+<body><header>
+    <nav class="navbar is-fixed-top has-background-black-bis" role="navigation" aria-label="main navigation">
         <div class="navbar-brand is-size-4">
             <a class="navbar-item" href="http://clonekim.github.io/">
-                    Bonjour!
+                    (Less is more)
             </a>
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
                 <span aria-hidden="true"></span>
@@ -54,95 +54,79 @@
             </div>
             </div>
     </nav>
-</header><main>
+</header>
+<main>
       <div class="container">
-        <div class="columns"><section class="posts">
-
-<article class="post box is-radiusless">
-    <div class="post-title">
+        <div class="columns"><div class="column">
+  <section class="posts">
+    
+    <article class="post box is-radiusless">
+      <div class="post-title">
         <a class="post-title-link" href="/posts/2017/2017-07-14-using-freemarker-from-clojure/"><h2 class="is-size-4 has-text-dark">Freemarker를 Clojure에서</h2></a>
-    </div>
-    <div class="post-meta">
-        <span class="post-time">2017-07-14</span>
-    </div>
-    <div class="post-excerpt content">
-        참고소스
- [freemarker-clj &quot;0.1.0&quot;]  freemarker-clj
-템플릿 초기화 템플릿리소스는 해당 디렉토리로 초기화한다
-(defn gen-config [&amp; {:keys [shared] :or {shared {}}}] (let [cfg (doto (Configuration.) (.setDirectoryForTemplateLoading (file &#34;/Users/bonjour/git/cms/resources/public/ftl&#34;)) (.setDefaultEncoding &#34;UTF-8&#34;) (.setObjectWrapper (DefaultObjectWrapper.)))] (doseq [[k v] (map-&gt;model shared)] (.setSharedVariable ^Configuration cfg ^String k v)) cfg)) 아래와 같이 템플릿로더를 직접구현해서도 가능하다
-(ns freemarker.template (:require [clojure.tools.logging :as log] [clojure.java.io :refer [file]] [freemarker.shim :refer [map-&gt;model]]) (:import [freemarker.template Configuration DefaultObjectWrapper TemplateMethodModel] [java.io StringWriter])) (def DBTemplateLoader (proxy [freemarker.
-    </div>
-    <a href="/posts/2017/2017-07-14-using-freemarker-from-clojure/">more</a>
+      </div>
+      <div class="post-meta has-text-right">
+        <span class="post-time" >2017-07-14</span>
+      </div>
+      <div class="has-text-right">
+        <a href="/posts/2017/2017-07-14-using-freemarker-from-clojure/" >more</a>
+      </div>
+      <div class="is-clearfix"></div>
     </article>
-
-<article class="post box is-radiusless">
-    <div class="post-title">
+    
+    <article class="post box is-radiusless">
+      <div class="post-title">
         <a class="post-title-link" href="/posts/2017/2017-01-02-angular-jsonp/"><h2 class="is-size-4 has-text-dark">Angular 1.6 사용</h2></a>
-    </div>
-    <div class="post-meta">
-        <span class="post-time">2017-01-02</span>
-    </div>
-    <div class="post-excerpt content">
-        angular 1.6 이상적용
-PREFIX
-이제 기본값으로 !가 붙는다
-.config(['$locationProvider', function($locationProvider){ $locationProvider.hashPrefix(''); }])  JSONP
-$http.json(url, {jsonpCallbackParam: 'callback'}) .then(function(res) { ... })  
-    </div>
-    <a href="/posts/2017/2017-01-02-angular-jsonp/">more</a>
+      </div>
+      <div class="post-meta has-text-right">
+        <span class="post-time" >2017-01-02</span>
+      </div>
+      <div class="has-text-right">
+        <a href="/posts/2017/2017-01-02-angular-jsonp/" >more</a>
+      </div>
+      <div class="is-clearfix"></div>
     </article>
-
-<article class="post box is-radiusless">
-    <div class="post-title">
+    
+    <article class="post box is-radiusless">
+      <div class="post-title">
         <a class="post-title-link" href="/posts/2016/2016-09-20-using-jquery-in-clojurescript/"><h2 class="is-size-4 has-text-dark">clojurescript에서 jquery사용</h2></a>
-    </div>
-    <div class="post-meta">
-        <span class="post-time">2016-09-20</span>
-    </div>
-    <div class="post-excerpt content">
-         view.clj
-(defn view-layout [&amp; content] (html [:head [:meta {:http-equiv &#34;Content-type&#34; :content &#34;text/html; charset=utf-8&#34;}] [&#34;title&#34;: &#34;Project-Name&#34;]] [:body content])) (defn view-content [] (view-layout [:h2 &#34;Project-Name&#34;] [:p {:id &#34;clickhere&#34;} &#34;Get yourself a nice alert by clicking here.&#34;] [:script {:src &#34;/js/jquery-1.10.2.min.js&#34;}] [:script {:src &#34;/js/cljs.js&#34;}])) hello.cljs
-(:require [jayq.core :as jq]) (:use [jayq.core :only [$]]) ;; ;; $(&#34;#btn&#34;).click(function() {alert(&#34;Hi!&#34;); }); ;; (jq/bind ($ &#34;#btn&#34;) :click (fn [] (js/alert &#34;Hi!&#34;))) lein cljsbuild once lein run  참고  ClojureScriptという選択肢 ClojureScript入門  
-    </div>
-    <a href="/posts/2016/2016-09-20-using-jquery-in-clojurescript/">more</a>
+      </div>
+      <div class="post-meta has-text-right">
+        <span class="post-time" >2016-09-20</span>
+      </div>
+      <div class="has-text-right">
+        <a href="/posts/2016/2016-09-20-using-jquery-in-clojurescript/" >more</a>
+      </div>
+      <div class="is-clearfix"></div>
     </article>
-
-<article class="post box is-radiusless">
-    <div class="post-title">
+    
+    <article class="post box is-radiusless">
+      <div class="post-title">
         <a class="post-title-link" href="/posts/2016/2016-05-12-aws-elastick-beanstalk-1/"><h2 class="is-size-4 has-text-dark">AWS Elastick Beanstalk 1</h2></a>
-    </div>
-    <div class="post-meta">
-        <span class="post-time">2016-05-12</span>
-    </div>
-    <div class="post-excerpt content">
-        awsebcli 설치 linux
-$ sudo apt install python3-pip $ pip3 install awsebcli  MacOS
-$ brew install python3 $ sudo pip3 install awsebcli  pip가 업데이드안되어서 설치가 안될경우에는
-$ sudo pip3 install --upgrade pip  설치 시 sudo 를 사용하지 않고 로컬(자신의 홈디렉토리)에 설치 할경우에는
-&ndash;user 파라미터를 사용하면 .local/bin 에 설치된다.
-그외에 추가로 setuptools를 환경에 따라 요구할 수 있다.
-eb 초기화 $ mkdir eb $ cd eb $ eb init  초기화를 실행하면 자신의 홈디렉토리에 .
-    </div>
-    <a href="/posts/2016/2016-05-12-aws-elastick-beanstalk-1/">more</a>
+      </div>
+      <div class="post-meta has-text-right">
+        <span class="post-time" >2016-05-12</span>
+      </div>
+      <div class="has-text-right">
+        <a href="/posts/2016/2016-05-12-aws-elastick-beanstalk-1/" >more</a>
+      </div>
+      <div class="is-clearfix"></div>
     </article>
-
-<article class="post box is-radiusless">
-    <div class="post-title">
+    
+    <article class="post box is-radiusless">
+      <div class="post-title">
         <a class="post-title-link" href="/posts/2016/2016-05-07-emacs-package/"><h2 class="is-size-4 has-text-dark">Emacs를 쓰면서</h2></a>
-    </div>
-    <div class="post-meta">
-        <span class="post-time">2016-05-07</span>
-    </div>
-    <div class="post-excerpt content">
-        mode-icons-mode init.el
-'(mode-icons-mode t)  js-mode setup-js.el
-(add-to-list 'auto-mode-alist '(&quot;\\.js$&quot; . js-mode)) (add-hook 'js-mode-hook 'subword-mode) (add-hook 'html-mode-hook 'subword-mode) (setq js-indent-level 2) (eval-after-load &quot;sgml-mode&quot; '(progn (require 'tagedit) (tagedit-add-paredit-like-keybindings) (add-hook 'html-mode-hook (lambda () (tagedit-mode 1)))))  web-mode web.el
-(require 'web-mode) (add-to-list 'auto-mode-alist '(&quot;\\.html?\\'&quot; . web-mode)) (add-to-list 'auto-mode-alist '(&quot;\\.[aj]sp\\'&quot; . web-mode)) (add-to-list 'auto-mode-alist '(&quot;\\.mustache\\'&quot; . web-mode)) (add-to-list 'auto-mode-alist '(&quot;\\.ftl\\'&quot; . web-mode)) (add-to-list 'auto-mode-alist '(&quot;\\.vue\\'&quot; . web-mode)) (defun my-web-mode-hook () (setq web-mode-markup-indent-offset 2) (setq web-mode-css-indent-offset 2) (setq web-mode-code-indent-offset 2)) (add-hook 'web-mode-hook 'my-web-mode-hook)  neo-mode neo.
-    </div>
-    <a href="/posts/2016/2016-05-07-emacs-package/">more</a>
+      </div>
+      <div class="post-meta has-text-right">
+        <span class="post-time" >2016-05-07</span>
+      </div>
+      <div class="has-text-right">
+        <a href="/posts/2016/2016-05-07-emacs-package/" >more</a>
+      </div>
+      <div class="is-clearfix"></div>
     </article>
-
-</section>
+    
+  </section>
+</div>
 </div>
 
 
@@ -160,7 +144,7 @@ eb 초기화 $ mkdir eb $ cd eb $ eb init  초기화를 실행하면 자신의 �
 
 <nav class="page-nav">
     
-    <a href="/page/2/" class="extend prev">First</a>
+    <a href="/page/2/" class="extend prev">처음</a>
     
 
     
@@ -441,11 +425,11 @@ eb 초기화 $ mkdir eb $ cd eb $ eb init  초기화를 실행하면 자신의 �
           <a href="/page/12/" class="page-number">12</a>
       
 
-        
+    
 
 
     
-      <a href="/page/4/" class="extend next">Last</a>
+      <a href="/page/4/" class="extend next">끝</a>
     
 
 </nav>
@@ -457,7 +441,7 @@ eb 초기화 $ mkdir eb $ cd eb $ eb init  초기화를 실행하면 자신의 �
             <a href="https://bulma.io">
                 <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
             </a>
-            <p>© Bonjour! Power by Hugo</p>
+            <p>© (Less is more) Power by Hugo</p>
         </div>
     </footer>
     <script type="text/javascript">

@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     
-    <meta name="author"
-            content="DAEHEE KIM"/>
+    <meta name="author" content="DAEHEE KIM"/>
 
     
     <meta name="description" content="HttpURLConnecton를 이용해서 프록시설정하고 다운로드할 데이터가 있었으나 인증에러를 발생
@@ -28,16 +27,17 @@ import java.net.Authenticator; import java.net.MalformedURLException; import jav
             
         
     
-    <title> 프록시서버 인증에러 | Bonjour! </title>
+    <title> 프록시서버 인증에러 | (Less is more) </title>
 
     <link rel="shortcut icon" href="http://clonekim.github.io/favicon.jpg"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/bulma.min.css"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/style.css"/>
-</head><body><header>
-    <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+</head>
+<body><header>
+    <nav class="navbar is-fixed-top has-background-black-bis" role="navigation" aria-label="main navigation">
         <div class="navbar-brand is-size-4">
             <a class="navbar-item" href="http://clonekim.github.io/">
-                    Bonjour!
+                    (Less is more)
             </a>
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
                 <span aria-hidden="true"></span>
@@ -55,12 +55,13 @@ import java.net.Authenticator; import java.net.MalformedURLException; import jav
             </div>
             </div>
     </nav>
-</header><main>
+</header>
+<main>
       <div class="container">
         <div class="columns">
           
           <div class="column">
-            <div class="content">
+            <div>
                             
             </div>
           </div>          
@@ -75,43 +76,43 @@ import java.net.Authenticator; import java.net.MalformedURLException; import jav
               <div class="post-content content">
                 <p>HttpURLConnecton를 이용해서 프록시설정하고 다운로드할 데이터가 있었으나 인증에러를 발생<br />
 java.net.Authenticator를 구현해야함</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.net.Authenticator<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.net.MalformedURLException<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.net.PasswordAuthentication<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.net.URL<span style="color:#f92672">;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#960050;background-color:#1e0010">import java</span>.<span style="color:#a6e22e">net</span>.<span style="color:#a6e22e">Authenticator</span>;
+<span style="color:#960050;background-color:#1e0010">import java</span>.<span style="color:#a6e22e">net</span>.<span style="color:#a6e22e">MalformedURLException</span>;
+<span style="color:#960050;background-color:#1e0010">import java</span>.<span style="color:#a6e22e">net</span>.<span style="color:#a6e22e">PasswordAuthentication</span>;
+<span style="color:#960050;background-color:#1e0010">import java</span>.<span style="color:#a6e22e">net</span>.<span style="color:#a6e22e">URL</span>;
 
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ProxyAuthenticator</span> <span style="color:#66d9ef">extends</span> Authenticator <span style="color:#f92672">{</span>
-  <span style="color:#66d9ef">private</span> String proxyhost<span style="color:#f92672">;</span>
-  <span style="color:#66d9ef">private</span> String userid<span style="color:#f92672">;</span>
-  <span style="color:#66d9ef">private</span> String password<span style="color:#f92672">;</span>
+<span style="color:#960050;background-color:#1e0010">public class ProxyAuthenticator extends </span>Authenticator {
+  <span style="color:#960050;background-color:#1e0010">private String </span>proxyhost;
+  <span style="color:#960050;background-color:#1e0010">private String </span>userid;
+  <span style="color:#960050;background-color:#1e0010">private String </span>password;
 
-  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">ProxyAuthenticator</span><span style="color:#f92672">(</span>String proxyhost<span style="color:#f92672">,</span> String userid<span style="color:#f92672">,</span> String password<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-    <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">proxyhost</span> <span style="color:#f92672">=</span> proxyhost<span style="color:#f92672">;</span>
-    <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">userid</span> <span style="color:#f92672">=</span> userid<span style="color:#f92672">;</span>
-    <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">password</span> <span style="color:#f92672">=</span> password<span style="color:#f92672">;</span>
-  <span style="color:#f92672">}</span>
-
-  <span style="color:#a6e22e">@Override</span>
-  <span style="color:#66d9ef">public</span> URL <span style="color:#a6e22e">getRequestingURL</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">proxyhost</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
-    <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
-      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> URL<span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">proxyhost</span><span style="color:#f92672">);</span>
-    <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>MalformedURLException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
-    <span style="color:#f92672">}</span>
-  <span style="color:#f92672">}</span>
+  <span style="color:#960050;background-color:#1e0010">public ProxyAuthenticator</span>(<span style="color:#960050;background-color:#1e0010">String proxyhost</span>, <span style="color:#960050;background-color:#1e0010">String userid</span>, <span style="color:#960050;background-color:#1e0010">String password</span>) {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">proxyhost</span> <span style="color:#f92672">=</span> proxyhost;
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">userid</span> <span style="color:#f92672">=</span> userid;
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">password</span> <span style="color:#f92672">=</span> password;
+  }
 
   <span style="color:#a6e22e">@Override</span>
-  <span style="color:#66d9ef">protected</span> RequestorType <span style="color:#a6e22e">getRequestorType</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-    <span style="color:#66d9ef">return</span> RequestorType<span style="color:#f92672">.</span><span style="color:#a6e22e">PROXY</span><span style="color:#f92672">;</span>
-  <span style="color:#f92672">}</span>
+  <span style="color:#960050;background-color:#1e0010">public URL </span>getRequestingURL() {
+    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">proxyhost</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>) <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
+    <span style="color:#66d9ef">try</span> {
+      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> URL(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">proxyhost</span>);
+    } <span style="color:#66d9ef">catch</span> (<span style="color:#960050;background-color:#1e0010">MalformedURLException e</span>) {
+      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
+    }
+  }
 
   <span style="color:#a6e22e">@Override</span>
-  <span style="color:#66d9ef">protected</span> PasswordAuthentication <span style="color:#a6e22e">getPasswordAuthentication</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">userid</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">||</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">password</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
-    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> PasswordAuthentication<span style="color:#f92672">(</span>userid<span style="color:#f92672">,</span> password<span style="color:#f92672">.</span><span style="color:#a6e22e">toCharArray</span><span style="color:#f92672">());</span>
-  <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span></code></pre></div>
+  <span style="color:#960050;background-color:#1e0010">protected RequestorType </span>getRequestorType() {
+    <span style="color:#66d9ef">return</span> RequestorType.<span style="color:#a6e22e">PROXY</span>;
+  }
+
+  <span style="color:#a6e22e">@Override</span>
+  <span style="color:#960050;background-color:#1e0010">protected PasswordAuthentication </span>getPasswordAuthentication() {
+    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">userid</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">||</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">password</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>) <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> PasswordAuthentication(userid, password.<span style="color:#a6e22e">toCharArray</span>());
+  }
+}</code></pre></div>
               </div>
               <div class="columns is-mobile post-meta">
                 <div class="column is-half-desktop has-text-left is-paddingless"> 
@@ -121,7 +122,7 @@ java.net.Authenticator를 구현해야함</p>
                 </div>
                 <div class="column is-half-desktop has-text-right is-paddingless">
                   
-                  이후:<a href="http://clonekim.github.io/posts/2013/2013-09-27-jackson-json-processor/"> Jackson JSON Processor</a>
+                  이후:<a href="http://clonekim.github.io/posts/2013/2013-09-27-jspwiki-install/"> JSPWiki 설치</a>
                   
                 </div>
                 <div class="is-clearfix"></div>
@@ -136,7 +137,7 @@ java.net.Authenticator를 구현해야함</p>
             <a href="https://bulma.io">
                 <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
             </a>
-            <p>© Bonjour! Power by Hugo</p>
+            <p>© (Less is more) Power by Hugo</p>
         </div>
     </footer>
     <script type="text/javascript">

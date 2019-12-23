@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     
-    <meta name="author"
-            content="DAEHEE KIM"/>
+    <meta name="author" content="DAEHEE KIM"/>
 
     
     <meta name="description" content="Starter Kit으로 시작하기 0.13.x를 기준으로 작성함
@@ -15,7 +14,8 @@ hello React!
 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;script src=&amp;#34;build/react.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;build/JSXTransformer.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt;	&amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;hello&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script type=&amp;#34;text/jsx&amp;#34;&amp;gt; React.render(&amp;lt;h1&amp;gt;Hello, welcome to React!&amp;lt;/h1&amp;gt;, document.getElementById(&amp;#39;hello&amp;#39;)); &amp;lt;/script&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; JSX(JavaScript XML) JSX(JavaScript XML)는 XML 과 유사한 문법을 가지는 자바스크립트이다.
 JSX 문법을 사용하기 위해서는 반드시 JSXTransformer.js가 필요하다
 상세한 JSX syntaxt과 spec 은 아래를 참조할 것
- http://facebook.github.io/react/docs/jsx-in-depth.html http://facebook.github.io/jsx/  //Html &amp;lt;h1 class=&amp;#34;test&amp;#34;&amp;gt;Hello&amp;lt;/h1&amp;gt; //JSX &amp;lt;h1 className=&amp;#34;test&amp;#34;&amp;gt;Hello&amp;lt;/h1&amp;gt; var text= &amp;#34;Hello React!"/>
+ http://facebook.github.io/react/docs/jsx-in-depth.html http://facebook.github.io/jsx/
+//Html &amp;lt;h1 class=&amp;#34;test&amp;#34;&amp;gt;Hello&amp;lt;/h1&amp;gt; //JSX &amp;lt;h1 className=&amp;#34;test&amp;#34;&amp;gt;Hello&amp;lt;/h1&amp;gt; var text= &amp;#34;Hello React!"/>
     
 
     
@@ -32,16 +32,17 @@ JSX 문법을 사용하기 위해서는 반드시 JSXTransformer.js가 필요하
             
         
     
-    <title> ReactJS 시작하기 | Bonjour! </title>
+    <title> ReactJS 시작하기 | (Less is more) </title>
 
     <link rel="shortcut icon" href="http://clonekim.github.io/favicon.jpg"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/bulma.min.css"/>
     <link rel="stylesheet" href="http://clonekim.github.io/css/style.css"/>
-</head><body><header>
-    <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+</head>
+<body><header>
+    <nav class="navbar is-fixed-top has-background-black-bis" role="navigation" aria-label="main navigation">
         <div class="navbar-brand is-size-4">
             <a class="navbar-item" href="http://clonekim.github.io/">
-                    Bonjour!
+                    (Less is more)
             </a>
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
                 <span aria-hidden="true"></span>
@@ -59,12 +60,13 @@ JSX 문법을 사용하기 위해서는 반드시 JSXTransformer.js가 필요하
             </div>
             </div>
     </nav>
-</header><main>
+</header>
+<main>
       <div class="container">
         <div class="columns">
           
           <div class="column">
-            <div class="content">
+            <div>
               <nav id="TableOfContents">
 <ul>
 <li>
@@ -126,8 +128,8 @@ JSX 문법을 사용하기 위해서는 반드시 JSXTransformer.js가 필요하
 
 <ul>
 <li><a href="http://facebook.github.io/react/docs/jsx-in-depth.html">http://facebook.github.io/react/docs/jsx-in-depth.html</a></li>
-<li><a href="http://facebook.github.io/jsx/">http://facebook.github.io/jsx/</a></li>
-</ul>
+
+<li><p><a href="http://facebook.github.io/jsx/">http://facebook.github.io/jsx/</a></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">//Html
 </span><span style="color:#75715e"></span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span> <span style="color:#66d9ef">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;test&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Hello</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;</span>
 
@@ -136,7 +138,9 @@ JSX 문법을 사용하기 위해서는 반드시 JSXTransformer.js가 필요하
 
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">text</span><span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello React!&#34;</span>;
 <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span>{<span style="color:#a6e22e">text</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;</span>
-</code></pre></div>
+</code></pre></div></li>
+</ul>
+
 <h2 id="offline-transform">OffLine Transform</h2>
 
 <p>JSX 스크립트 필요없이 CommonJS스펙에 따른 빌드 방법이다</p>
@@ -156,13 +160,11 @@ JSX 문법을 사용하기 위해서는 반드시 JSXTransformer.js가 필요하
 <ol>
 <li><p>클래스 생성</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">MainView</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">createClass</span>({});
-</code></pre></div>
-<ol>
-<li>렌더링에 포함
-<code>javascript  
-React.render(&lt;MainView /&gt;, document.body);
-</code></li>
-</ol></li>
+</code></pre></div></li>
+
+<li><p>렌더링에 포함</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">render</span>(<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">MainView</span> <span style="color:#f92672">/&gt;</span>, document.<span style="color:#a6e22e">body</span>);
+</code></pre></div></li>
 </ol>
 
 <p><em>render를 사용하여 화면에 출력한다</em></p>
@@ -375,7 +377,7 @@ $ python -m SimpleHTTPServer
             <a href="https://bulma.io">
                 <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
             </a>
-            <p>© Bonjour! Power by Hugo</p>
+            <p>© (Less is more) Power by Hugo</p>
         </div>
     </footer>
     <script type="text/javascript">
