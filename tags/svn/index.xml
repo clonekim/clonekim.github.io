@@ -22,8 +22,8 @@
       <description>###SVN서버를 윈도우에서 서비스로 등록한다.*
 Creating the Repository svnadmin create c:\svn  Edit Configuration 방금 생성한 레포지토리 디렉토리로 이동하여
 conf\passwd 에서
-아이디 = 패스워드 형식으로 등록 ex) test = 1234  conf\svnserve.conf 에서 아래와 같이 설정
-anon-access = read auth-access = write password-db = passwd  Register as a Service C:\Program Files\Subversion\bin\svnserve.exe --service --root c:\svn 또는 C:\&amp;gt; sc create svn binpath= &amp;quot;C:\svn\bin\svnserve.exe --service -r C:\repos&amp;quot; displayname= &amp;quot;Subversion Server&amp;quot; depend= Tcpip start= auto C:\&amp;gt;sc create svnserver binpath= &amp;quot;C:\Program Files\Subversion\bin\svnserve.</description>
+아이디 = 패스워드 형식으로 등록 ex) test = 1234 conf\svnserve.conf 에서 아래와 같이 설정
+anon-access = read auth-access = write password-db = passwd Register as a Service C:\Program Files\Subversion\bin\svnserve.exe --service --root c:\svn 또는 C:\&amp;gt; sc create svn binpath= &amp;quot;C:\svn\bin\svnserve.exe --service -r C:\repos&amp;quot; displayname= &amp;quot;Subversion Server&amp;quot; depend= Tcpip start= auto C:\&amp;gt;sc create svnserver binpath= &amp;quot;C:\Program Files\Subversion\bin\svnserve.</description>
     </item>
     
   </channel>

@@ -1,137 +1,202 @@
 <!DOCTYPE html>
-<html><head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <link crossorigin="anonymous" media="all" rel="stylesheet" href="http://clonekim.github.io/css/frameworks.css" />
+    <link crossorigin="anonymous" media="all" rel="stylesheet" href="http://clonekim.github.io/css/github.css" />
     
-    <meta name="author" content="DAEHEE KIM"/>
-
+    <link crossorigin="anonymous" media="(prefers-color-scheme: dark)" rel="stylesheet"
+        href="http://clonekim.github.io/css/dark.css" />
     
-    <meta name="description" content="설치 jruby -S gem install sinatra  Hello Ruby require &amp;#39;rubygems&amp;#39; require &amp;#39;sinatra&amp;#39; get &amp;#39;/&amp;#39; do &amp;#39;Hello Jruby&amp;#39; end 라우터 get, post, put, delete를 사용할 수있다
+    <meta name="viewport" content="width=device-width">
+    <meta name="description"
+        content="설치 jruby -S gem install sinatra Hello Ruby require &amp;#39;rubygems&amp;#39; require &amp;#39;sinatra&amp;#39; get &amp;#39;/&amp;#39; do &amp;#39;Hello Jruby&amp;#39; end 라우터 get, post, put, delete를 사용할 수있다
 get &amp;#39;/&amp;#39; do end 요청파라미터 /?name=foo 로 요청 시 아래와 같이
 post &amp;#39;/&amp;#39; do puts params[&amp;#39;name&amp;#39;] end 본문으로 Json를 요청받을 경우 post &amp;#39;/&amp;#39; do payload = JSON.parse(request.body.read) puts payload status 201 end 응답하기 문자열, html, json, 바이너리 등의 모든 컨텐츠로 응답가능하다
-get &amp;#39;/&amp;#39; do &amp;#39;Hello&amp;#39; end Json으로 응답하기 require &amp;#39;sinatra&amp;#39; require &amp;#39;json&amp;#39; get &amp;#39;/&amp;#39; do content_type :json data = { foo: &amp;#39;bar&amp;#39;} data."/>
+get &amp;#39;/&amp;#39; do &amp;#39;Hello&amp;#39; end Json으로 응답하기 require &amp;#39;sinatra&amp;#39; require &amp;#39;json&amp;#39; get &amp;#39;/&amp;#39; do content_type :json data = { foo: &amp;#39;bar&amp;#39;} data." />
+    <meta name="keywords"
+        content="" />
+    <meta name="robots" content="noodp" />
+    <link rel="canonical" href="http://clonekim.github.io/posts/2015/2015-07-14-sinatra/" />
+
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Sinatra 웹프로그래밍 - (Less is more)" />
+    <meta name="twitter:description"
+        content="설치 jruby -S gem install sinatra Hello Ruby require &amp;#39;rubygems&amp;#39; require &amp;#39;sinatra&amp;#39; get &amp;#39;/&amp;#39; do &amp;#39;Hello Jruby&amp;#39; end 라우터 get, post, put, delete를 사용할 수있다
+get &amp;#39;/&amp;#39; do end 요청파라미터 /?name=foo 로 요청 시 아래와 같이
+post &amp;#39;/&amp;#39; do puts params[&amp;#39;name&amp;#39;] end 본문으로 Json를 요청받을 경우 post &amp;#39;/&amp;#39; do payload = JSON.parse(request.body.read) puts payload status 201 end 응답하기 문자열, html, json, 바이너리 등의 모든 컨텐츠로 응답가능하다
+get &amp;#39;/&amp;#39; do &amp;#39;Hello&amp;#39; end Json으로 응답하기 require &amp;#39;sinatra&amp;#39; require &amp;#39;json&amp;#39; get &amp;#39;/&amp;#39; do content_type :json data = { foo: &amp;#39;bar&amp;#39;} data." />
+    <meta name="twitter:site" content="http://clonekim.github.io/" />
+    <meta name="twitter:creator" content="" />
+    <meta name="twitter:image"
+        content="http://clonekim.github.io/">
+
+    
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Sinatra 웹프로그래밍 - (Less is more)">
+    <meta property="og:description"
+        content="설치 jruby -S gem install sinatra Hello Ruby require &amp;#39;rubygems&amp;#39; require &amp;#39;sinatra&amp;#39; get &amp;#39;/&amp;#39; do &amp;#39;Hello Jruby&amp;#39; end 라우터 get, post, put, delete를 사용할 수있다
+get &amp;#39;/&amp;#39; do end 요청파라미터 /?name=foo 로 요청 시 아래와 같이
+post &amp;#39;/&amp;#39; do puts params[&amp;#39;name&amp;#39;] end 본문으로 Json를 요청받을 경우 post &amp;#39;/&amp;#39; do payload = JSON.parse(request.body.read) puts payload status 201 end 응답하기 문자열, html, json, 바이너리 등의 모든 컨텐츠로 응답가능하다
+get &amp;#39;/&amp;#39; do &amp;#39;Hello&amp;#39; end Json으로 응답하기 require &amp;#39;sinatra&amp;#39; require &amp;#39;json&amp;#39; get &amp;#39;/&amp;#39; do content_type :json data = { foo: &amp;#39;bar&amp;#39;} data." />
+    <meta property="og:url" content="http://clonekim.github.io/posts/2015/2015-07-14-sinatra/" />
+    <meta property="og:site_name" content="Sinatra 웹프로그래밍" />
+    <meta property="og:image"
+        content="http://clonekim.github.io/">
+    <meta property="og:image:width" content="2048">
+    <meta property="og:image:height" content="1024">
+    
+    <meta property="article:published_time" content="2015-07-14 00:00:00 &#43;0000 UTC" />
     
 
     
-
-    
-    <link rel="canonical" href="http://clonekim.github.io/posts/2015/2015-07-14-sinatra/"/>
-
     
 
     
     
-    
-        
-            
-        
-    
-    <title> Sinatra 웹프로그래밍 | (Less is more) </title>
 
-    <link rel="shortcut icon" href="http://clonekim.github.io/favicon.jpg"/>
-    <link rel="stylesheet" href="http://clonekim.github.io/css/bulma.min.css"/>
-    <link rel="stylesheet" href="http://clonekim.github.io/css/style.css"/>
+    <title>Sinatra 웹프로그래밍 - (Less is more)</title>
+
+    <link rel="icon" type="image/x-icon" class="js-site-favicon" href="http://clonekim.github.io/images/favicon.ico">
+    <meta name="theme-color" content="#1e2327">
+
+    
+    
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-121397292-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </head>
-<body><header>
-    <nav class="navbar is-fixed-top has-background-black-bis" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand is-size-4">
-            <a class="navbar-item" href="http://clonekim.github.io/">
-                    (Less is more)
-            </a>
-            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
+
+<body class="env-production emoji-size-boost page-responsive page-profile">
+  <div class="position-relative js-header-wrapper ">
+    <span class="Progress progress-pjax-loader position-fixed width-full js-pjax-loader-bar">
+        <span class="progress-pjax-loader-bar top-0 left-0" style="width: 0%;"></span>
+    </span>
+    <header class="Header py-lg-0 js-details-container Details flex-wrap flex-lg-nowrap p-responsive" role="banner">
+        <div class="Header-item d-none d-lg-flex">
+            <a class="Header-link" href="http://clonekim.github.io/" aria-label="Homepage"
+                data-ga-click="Header, go to dashboard, icon:logo">
+                <svg class="octicon octicon-mark-github v-align-middle" height="32" viewBox="0 0 16 16" version="1.1"
+                    width="32" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                </svg>
             </a>
         </div>
-        <div id="navbar-menu" class="navbar-menu">
-            <div class="navbar-end">
-                
-                    
-                        <a class="navbar-item" href="/tags">태그</a>
-                    
-                
+        <div
+            class="Header-item Header-item--full flex-column flex-lg-row width-full flex-order-2 flex-lg-order-none mr-0 mr-lg-3 mt-3 mt-lg-0 Details-content--hidden">
+            <div class="header-search flex-self-stretch flex-lg-self-auto mr-0 mr-lg-3 mb-3 mb-lg-0 scoped-search site-scoped-search js-site-search position-relative js-jump-to"
+                role="combobox" aria-owns="jump-to-results" aria-label="Search or jump to" aria-haspopup="listbox"
+                aria-expanded="false">
+                <div class="position-relative">
+                </div>
             </div>
-            </div>
-    </nav>
-</header>
-<main>
-      <div class="container">
-        <div class="columns">
-          
-          <div class="column">
-            <div>
-              <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#설치">설치</a></li>
-<li><a href="#hello-ruby">Hello Ruby</a></li>
-<li><a href="#라우터">라우터</a></li>
-<li><a href="#요청파라미터">요청파라미터</a></li>
-<li><a href="#본문으로-json를-요청받을-경우">본문으로 Json를 요청받을 경우</a></li>
-<li><a href="#응답하기">응답하기</a></li>
-<li><a href="#json으로-응답하기">Json으로 응답하기</a></li>
-<li><a href="#sample-web">Sample Web</a></li>
-<li><a href="#템플릿">템플릿</a></li>
-<li><a href="#contrib-활용">Contrib 활용</a></li>
-<li><a href="#war-배포">War 배포</a></li>
-<li><a href="#참고">참고</a></li>
-</ul></li>
-</ul>
-</nav>              
-            </div>
-          </div>          
-          <div class="column is-9">
-            <article class="post box is-radiusless">
-              <div class="post-title">
-                <h2 class="is-size-4">Sinatra 웹프로그래밍</h2>
-              </div>
-              <div class="post-meta">
-                <span class="post-time">2015-07-14</span>
-              </div>
-              <div class="post-content content">
-                
+        </div>
+        <nav class="d-flex" aria-label="Global">
+            <a class="js-selected-navigation-item Header-link py-lg-3">&nbsp;</a>
+        </nav>
+        <div class="Header-item Header-item--full flex-justify-center d-lg-none position-relative" style="margin-right: auto;">
+            <a class="Header-link" href="http://clonekim.github.io/" aria-label="Homepage"
+                data-ga-click="Header, go to dashboard, icon:logo">
+                <svg class="octicon octicon-mark-github v-align-middle" height="32" viewBox="0 0 16 16" version="1.1"
+                    width="32" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                </svg>
+            </a>
+        </div>
 
-<h2 id="설치">설치</h2>
+    </header>
+</div>
 
+<div id="start-of-content" class="show-on-focus"></div>
+<div id="js-flash-container">
+</div>
+
+  
+<div class="application-main " data-commit-hovercards-enabled="">
+    <div itemscope="" itemtype="http://schema.org/SoftwareSourceCode" class="">
+        <main>
+            <div class="pagehead repohead instapaper_ignore readability-menu experiment-repo-nav pt-0 pt-lg-4 ">
+                <div class="repohead-details-container clearfix container-lg p-responsive d-none d-lg-block">
+                    <div class="mb-3 d-flex">
+                        <h1 class="public css-truncate float-none flex-auto width-fit pl-0">
+
+                            <span class="author"><a href="http://clonekim.github.io/"></a></span>
+                            <span class="path-divider"></span>
+                            <strong itemprop="name" class="css-truncate-target" style="max-width: 410px"><a
+                                    href="http://clonekim.github.io/posts/2015/2015-07-14-sinatra/">Sinatra 웹프로그래밍</a></strong>
+
+                            <div class="d-block text-small text-gray">
+                                Created <time-ago datetime="2015-07-14" class="no-wrap"
+                                    title="Created at 2015/07/14">
+                                    2015-07-14</time-ago>
+                                <span class="file-info-divider"></span>
+                                Modified <time-ago datetime="2015-07-14" class="no-wrap"
+                                    title="Modified  at 2015/07/14">
+                                    2015-07-14</time-ago>
+                            </div>
+                        </h1>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            <div class="container-lg clearfix new-discussion-timeline experiment-repo-nav  p-responsive">
+                <div class="repository-content ">
+                    <div class="Box mt-3 position-relative">
+                        <div class="Box-header py-2 d-flex flex-column flex-shrink-0 flex-md-row flex-md-items-center">
+                            <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
+                                728 Words
+                                
+                            </div>
+                        </div>
+
+                        <div id="readme" class="Box-body readme blob instapaper_body js-code-block-container">
+                            <article class="markdown-body entry-content p-3 p-md-6" itemprop="text"><h2 id="설치">설치</h2>
 <pre><code>jruby -S gem install sinatra
-</code></pre>
-
-<h2 id="hello-ruby">Hello Ruby</h2>
+</code></pre><h2 id="hello-ruby">Hello Ruby</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">require <span style="color:#e6db74">&#39;rubygems&#39;</span>
 require <span style="color:#e6db74">&#39;sinatra&#39;</span>
 
 get <span style="color:#e6db74">&#39;/&#39;</span> <span style="color:#66d9ef">do</span>
   <span style="color:#e6db74">&#39;Hello Jruby&#39;</span>
-<span style="color:#66d9ef">end</span></code></pre></div>
-<h2 id="라우터">라우터</h2>
-
+<span style="color:#66d9ef">end</span>
+</code></pre></div><h2 id="라우터">라우터</h2>
 <p>get, post, put, delete를 사용할 수있다</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">get <span style="color:#e6db74">&#39;/&#39;</span> <span style="color:#66d9ef">do</span>
 
-<span style="color:#66d9ef">end</span></code></pre></div>
-<h2 id="요청파라미터">요청파라미터</h2>
-
+<span style="color:#66d9ef">end</span>
+</code></pre></div><h2 id="요청파라미터">요청파라미터</h2>
 <p>/?name=foo 로 요청 시 아래와 같이</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">post <span style="color:#e6db74">&#39;/&#39;</span> <span style="color:#66d9ef">do</span>
   puts params<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;name&#39;</span><span style="color:#f92672">]</span>
-<span style="color:#66d9ef">end</span></code></pre></div>
-<h2 id="본문으로-json를-요청받을-경우">본문으로 Json를 요청받을 경우</h2>
+<span style="color:#66d9ef">end</span>
+</code></pre></div><h2 id="본문으로-json를-요청받을-경우">본문으로 Json를 요청받을 경우</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">post <span style="color:#e6db74">&#39;/&#39;</span> <span style="color:#66d9ef">do</span>
   payload <span style="color:#f92672">=</span> <span style="color:#66d9ef">JSON</span><span style="color:#f92672">.</span>parse(request<span style="color:#f92672">.</span>body<span style="color:#f92672">.</span>read)
   puts payload
   status <span style="color:#ae81ff">201</span>
-<span style="color:#66d9ef">end</span></code></pre></div>
-<h2 id="응답하기">응답하기</h2>
-
+<span style="color:#66d9ef">end</span>
+</code></pre></div><h2 id="응답하기">응답하기</h2>
 <p>문자열, html, json, 바이너리 등의 모든 컨텐츠로 응답가능하다</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">get <span style="color:#e6db74">&#39;/&#39;</span> <span style="color:#66d9ef">do</span>
   <span style="color:#e6db74">&#39;Hello&#39;</span>
-<span style="color:#66d9ef">end</span></code></pre></div>
-<h2 id="json으로-응답하기">Json으로 응답하기</h2>
+<span style="color:#66d9ef">end</span>
+</code></pre></div><h2 id="json으로-응답하기">Json으로 응답하기</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">require <span style="color:#e6db74">&#39;sinatra&#39;</span>
 require <span style="color:#e6db74">&#39;json&#39;</span>
 
@@ -139,17 +204,16 @@ get <span style="color:#e6db74">&#39;/&#39;</span> <span style="color:#66d9ef">d
   content_type <span style="color:#e6db74">:json</span>
   data <span style="color:#f92672">=</span> { <span style="color:#e6db74">foo</span>: <span style="color:#e6db74">&#39;bar&#39;</span>}
   data<span style="color:#f92672">.</span>to_json
-<span style="color:#66d9ef">end</span></code></pre></div>
-<p>또는 sinatra-contrib를 사용해서</p>
+<span style="color:#66d9ef">end</span>
+</code></pre></div><p>또는 sinatra-contrib를 사용해서</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">require <span style="color:#e6db74">&#39;sinatra&#39;</span>
 require <span style="color:#e6db74">&#39;sinatra-contrib&#39;</span>
 
 get <span style="color:#e6db74">&#39;/&#39;</span> <span style="color:#66d9ef">do</span>
   data <span style="color:#f92672">=</span> { <span style="color:#e6db74">foo</span>: <span style="color:#e6db74">&#39;bar&#39;</span>}
   json data
-<span style="color:#66d9ef">end</span></code></pre></div>
-<h2 id="sample-web">Sample Web</h2>
-
+<span style="color:#66d9ef">end</span>
+</code></pre></div><h2 id="sample-web">Sample Web</h2>
 <p><strong>app.rb</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">require <span style="color:#e6db74">&#39;rubygems&#39;</span>
 require <span style="color:#e6db74">&#39;sinatra&#39;</span>
@@ -176,93 +240,58 @@ get <span style="color:#e6db74">&#39;/api/users&#39;</span> <span style="color:#
 	<span style="color:#e6db74">page</span>: <span style="color:#ae81ff">1</span>
   }
   pager<span style="color:#f92672">.</span>to_json
-<span style="color:#66d9ef">end</span></code></pre></div>
-<p><strong>config.ru</strong></p>
+<span style="color:#66d9ef">end</span>
+</code></pre></div><p><strong>config.ru</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">require <span style="color:#e6db74">&#39;app.rb&#39;</span>
-run <span style="color:#66d9ef">Sinatra</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Application</span></code></pre></div>
-<p>아래와 같이 실행한다</p>
-
+run <span style="color:#66d9ef">Sinatra</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Application</span>
+</code></pre></div><p>아래와 같이 실행한다</p>
 <pre><code>jruby app.rb
-</code></pre>
-
-<p>실행 시 내장된 웹서버서(WEBrick)를 사용한다<br />
+</code></pre><p>실행 시 내장된 웹서버서(WEBrick)를 사용한다<br>
 기본적으로 4567번 포트를 사용한다</p>
-
-<p>아래는 Rack기반으로 기동하는 방법이다<br />
+<p>아래는 Rack기반으로 기동하는 방법이다<br>
 기본적으로 9292번 포트를 사용한다</p>
-
 <pre><code>jruby -S rackup config.ru
-</code></pre>
-
-<h2 id="템플릿">템플릿</h2>
-
+</code></pre><h2 id="템플릿">템플릿</h2>
 <p>기본적으로 erb템플릿을 사용한다</p>
-
 <p><strong>디렉토리 구조</strong></p>
-
 <p>public에 정적인 파일을 views에 .erb파일이 위치한다.</p>
-
 <pre><code>├─public
 └─views
        index.erb
        layout.erb
-</code></pre>
-
-<p><em>layout.erb</em></p>
-
+</code></pre><p><em>layout.erb</em></p>
 <pre><code>&lt;body&gt;
  &lt;%= yield %&gt;
 &lt;/body&gt;
-</code></pre>
-
-<p><em>index.erb</em></p>
-
+</code></pre><p><em>index.erb</em></p>
 <pre><code>&lt;h1&gt;Hello Sinatra&lt;/h1&gt;
 &lt;%= $servlet_context %&gt;
-</code></pre>
-
-<p>템플릿을 사용하려면</p>
+</code></pre><p>템플릿을 사용하려면</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">get <span style="color:#e6db74">&#39;/&#39;</span> <span style="color:#66d9ef">do</span>
   erb <span style="color:#e6db74">:index</span>
-<span style="color:#66d9ef">end</span></code></pre></div>
-<p>$servlet_context라는 인스턴스명을 출력할 것이다<br />
+<span style="color:#66d9ef">end</span>
+</code></pre></div><p>$servlet_context라는 인스턴스명을 출력할 것이다<br>
 단지 rack기반일 경우에만 출력됨</p>
-
 <h2 id="contrib-활용">Contrib 활용</h2>
-
 <pre><code>jruby -S gem install sinatra-contrib
 </code></pre>
-
 <p>reloader만 추가하고 소스를 수정 시 바로 적용됨</p>
-
 <pre><code>require 'sinatra/reloader'
-</code></pre>
-
-<h2 id="war-배포">War 배포</h2>
-
+</code></pre><h2 id="war-배포">War 배포</h2>
 <p>warbler를 설치한다</p>
-
 <pre><code>jruby -S gem install warbler
 </code></pre>
-
-<p>루비웹 프레임워크는 rack 이라는 인터페이스위에서 작동한다<br />
-자바의 서블릿과 같다<br />
+<p>루비웹 프레임워크는 rack 이라는 인터페이스위에서 작동한다<br>
+자바의 서블릿과 같다<br>
 rack으로 기동하는 파일을 작성한다</p>
-
 <p><em>config.ru</em></p>
-
 <pre><code>require 'app.rb'
 run Sinatra::Application
-</code></pre>
-
-<p>config 디렉토리를 만들고 warble config를 작성한다<br />
+</code></pre><p>config 디렉토리를 만들고 warble config를 작성한다<br>
 config아래에 warble.config라는 파일이 생성된다</p>
-
 <pre><code>mkdir config
 jruby -S warble config
-</code></pre>
-
-<p><em>warble.rb</em></p>
+</code></pre><p><em>warble.rb</em></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">Warbler</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Config</span><span style="color:#f92672">.</span>new <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>config<span style="color:#f92672">|</span>
 
    config<span style="color:#f92672">.</span>dirs <span style="color:#f92672">=</span> <span style="color:#e6db74">%w(public views)</span>
@@ -271,69 +300,61 @@ jruby -S warble config
    config<span style="color:#f92672">.</span>gem_dependencies <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
    config<span style="color:#f92672">.</span>pathmaps<span style="color:#f92672">.</span>application <span style="color:#f92672">=</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;WEB-INF/%p&#34;</span><span style="color:#f92672">]</span>
    config<span style="color:#f92672">.</span>jar_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;app&#34;</span>
-<span style="color:#66d9ef">end</span>  </code></pre></div>
-<p>이제 war파일을 작성하면 app.war 라는 파일이 보일것이다</p>
-
+<span style="color:#66d9ef">end</span>  
+</code></pre></div><p>이제 war파일을 작성하면 app.war 라는 파일이 보일것이다</p>
 <pre><code>jruby -S warble
 </code></pre>
-
 <h2 id="참고">참고</h2>
-
 <ul>
 <li><a href="http://www.rubyinside.com/sinatra-29-links-and-resources-for-a-quicker-easier-way-to-build-webapps-1371.html">Sinatra: 29 Links and Resources For A Quicker, Easier Way to Build Webapps</a></li>
 <li><a href="http://aligach.net/diary/20110307.html"> 今さらSinatra最低限メモ</a></li>
 <li><a href="http://www7b.biglobe.ne.jp/~makandat/gg_sites/Sinatra_Diary_01.html">Sinatra 日記</a></li>
 </ul>
-
-              </div>
-              <div class="columns is-mobile post-meta">
-                <div class="column is-half-desktop has-text-left is-paddingless"> 
-                   
-                  이전:<a href="http://clonekim.github.io/posts/2015/2015-07-02-angularjs/"> AngularJS 다국어처리</a>
-                  
+</article>
+                        </div>
+                    </div>
                 </div>
-                <div class="column is-half-desktop has-text-right is-paddingless">
-                  
-                  이후:<a href="http://clonekim.github.io/posts/2015/2015-07-14-how-to-captcha-in-node.js/"> Node.js로 Captcha</a>
-                  
-                </div>
-                <div class="is-clearfix"></div>
-              </div>
-            </article>
-          </div>
+            </div>
+        </main>
+    </div>
+</div>
 
-      </div>
-    </main>    <footer class="footer">
-    
-        <div class="copyright has-text-centered">
-            <a href="https://bulma.io">
-                <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
-            </a>
-            <p>© (Less is more) Power by Hugo</p>
-        </div>
-    </footer>
-    <script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', () => {
-        
-        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-        
-        if ($navbarBurgers.length > 0) {
-            
-            $navbarBurgers.forEach( el => {
-                el.addEventListener('click', () => {
-                
-                const target = el.dataset.target;
-                const $target = document.getElementById(target);
-                
-                el.classList.toggle('is-active');
-                $target.classList.toggle('is-active');
-    
-                });
-            });
-        }
-    });
-    
 
-    </script>
+
+  <div class="footer container-lg width-full p-responsive" role="contentinfo">
+    <div
+        class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
+        <ul
+            class="list-style-none d-flex flex-wrap col-12 col-lg-5 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
+            <li class="mr-3 mr-lg-0"></a></li>
+        </ul>
+
+        <a aria-label="Homepage" title="(Less is more)" class="footer-octicon d-none d-lg-block mx-lg-4"
+            href="http://clonekim.github.io/">
+            <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24"
+                aria-hidden="true">
+                <path fill-rule="evenodd"
+                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+                </path>
+            </svg>
+        </a>
+        <ul
+            class="list-style-none d-flex flex-wrap col-12 col-lg-5 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
+        </ul>
+    </div>
+    <div class="d-flex flex-justify-center pb-6">
+        <span class="f6 text-gray-light"></span>
+    </div>
+</div>
+
+<script crossorigin="anonymous"
+    type="application/javascript" src="http://clonekim.github.io/js/frameworks.js"></script>
+
+<script crossorigin="anonymous"
+    type="application/javascript" src="http://clonekim.github.io/js/github-bootstrap.js"></script>
+<script src="http://clonekim.github.io/js/stop.js"></script>
+<script src="http://clonekim.github.io/js/contributions.js"></script>
+
 </body>
+
 </html>

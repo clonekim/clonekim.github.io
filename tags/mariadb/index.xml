@@ -23,7 +23,8 @@
  표준복제: 각 노드는 자신만의 트랜잭션 ID를 갖는다 글로벌 트랜잭션(GTID, Global Transaction ID): 모든 노드는 같은 트랜잭션 ID를 갖는다 (MariaDB 10부터 가능)  환경 vm002: master
 vm003: slave
 마스터설정 GTID를 사용하기 위해 gtid_strict_mode를 활성해야함
-활성화시키위해서 서버를 재시작해야 한다</description>
+활성화시키위해서 서버를 재시작해야 한다
+[mysqld] server-id = 1 character-set-server = utf8 bind-address = 0.</description>
     </item>
     
   </channel>

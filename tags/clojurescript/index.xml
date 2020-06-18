@@ -19,9 +19,9 @@
       <pubDate>Tue, 20 Sep 2016 00:00:00 +0000</pubDate>
       <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2016/2016-09-20-using-jquery-in-clojurescript/</guid>
-      <description> view.clj
+      <description>view.clj
 (defn view-layout [&amp;amp; content] (html [:head [:meta {:http-equiv &amp;#34;Content-type&amp;#34; :content &amp;#34;text/html; charset=utf-8&amp;#34;}] [&amp;#34;title&amp;#34;: &amp;#34;Project-Name&amp;#34;]] [:body content])) (defn view-content [] (view-layout [:h2 &amp;#34;Project-Name&amp;#34;] [:p {:id &amp;#34;clickhere&amp;#34;} &amp;#34;Get yourself a nice alert by clicking here.&amp;#34;] [:script {:src &amp;#34;/js/jquery-1.10.2.min.js&amp;#34;}] [:script {:src &amp;#34;/js/cljs.js&amp;#34;}])) hello.cljs
-(:require [jayq.core :as jq]) (:use [jayq.core :only [$]]) ;; ;; $(&amp;#34;#btn&amp;#34;).click(function() {alert(&amp;#34;Hi!&amp;#34;); }); ;; (jq/bind ($ &amp;#34;#btn&amp;#34;) :click (fn [] (js/alert &amp;#34;Hi!&amp;#34;))) lein cljsbuild once lein run  참고  ClojureScriptという選択肢 ClojureScript入門  </description>
+(:require [jayq.core :as jq]) (:use [jayq.core :only [$]]) ;; ;; $(&amp;#34;#btn&amp;#34;).click(function() {alert(&amp;#34;Hi!&amp;#34;); }); ;; (jq/bind ($ &amp;#34;#btn&amp;#34;) :click (fn [] (js/alert &amp;#34;Hi!&amp;#34;))) lein cljsbuild once lein run 참고  ClojureScriptという選択肢 ClojureScript入門  </description>
     </item>
     
     <item>

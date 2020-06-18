@@ -20,10 +20,10 @@
       <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2015/2015-02-01-imagemagick/</guid>
       <description>Thumbnail
-convert [Image 1] -thumbnail 50% [Result Image] or convert [Image 1] -thumbnail 100x70 [Result Image]  Composite
-composite -geometry +[x]+[y] [Image 1] [Image 2] [Result Image] ex) composite -geometry +02+30 person.jpg background.jpg profile.jpg  Image Info
-identify -format &#39;%wx%h %m %b %n&#39; [file]  box 필터
-convert [file] -scale [n]% -filter box -resize [size]! [file]  inline 이미지 생성
+convert [Image 1] -thumbnail 50% [Result Image] or convert [Image 1] -thumbnail 100x70 [Result Image] Composite
+composite -geometry +[x]+[y] [Image 1] [Image 2] [Result Image] ex) composite -geometry +02+30 person.jpg background.jpg profile.jpg Image Info
+identify -format &#39;%wx%h %m %b %n&#39; [file] box 필터
+convert [file] -scale [n]% -filter box -resize [size]! [file] inline 이미지 생성
 png 로 이미지를 생성하되 :- 또는 png:fd:1 를 사용하면 표준 출력 장치(모니터) 로 내보냄</description>
     </item>
     

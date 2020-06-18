@@ -19,7 +19,7 @@
       <pubDate>Fri, 22 Sep 2017 01:10:18 +0900</pubDate>
       <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2017/2017-09-21-gtk-version/</guid>
-      <description>$ dpkg --get-selections | grep gtk  $ dpkg-query -W libgtk-3-0 libgtk-3-0:amd64 3.18.9-1ubuntu3.3  </description>
+      <description>$ dpkg --get-selections | grep gtk $ dpkg-query -W libgtk-3-0 libgtk-3-0:amd64 3.18.9-1ubuntu3.3 </description>
     </item>
     
     <item>
@@ -32,7 +32,7 @@
 문제는 터미널창이 겹쳐질때 구분이 안간다
 아래와 같이 css를 작성하면 해결된다.
 ~./config/gtk3.0/gtk.css
-.window-frame { border: 1px solid gray; }  단축키 Alt +F2 입력하고 프롬프트창에 r 이라고 입력 할것</description>
+.window-frame { border: 1px solid gray; } 단축키 Alt +F2 입력하고 프롬프트창에 r 이라고 입력 할것</description>
     </item>
     
   </channel>

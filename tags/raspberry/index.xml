@@ -19,15 +19,9 @@
       <pubDate>Sun, 28 Jun 2015 00:00:00 +0000</pubDate>
       <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2015/2015-06-28-raspberrypi/</guid>
-      <description>준비  라즈베리파이2 microSD카드 (8G이상) HDMI케이블 LAN케이블 (카테고리3 이상) AC어댑터( USB단자출력 1A, 최소 700mA)  USB 3.0 : 5V, 900mA USB 2.0 : 5V, 500mA https://ko.wikipedia.org/wiki/USB  microUSB케이블 (A,B타입) 키보드,마우스 (USB연결)  구입  라즈베리파이2 with 고급 투명케이스 C + 방열판 셋트 RPi Camera &amp;copy;  하드웨어 살펴보기 정면
+      <description>준비  라즈베리파이2 microSD카드 (8G이상) HDMI케이블 LAN케이블 (카테고리3 이상) AC어댑터( USB단자출력 1A, 최소 700mA)   USB 3.0 : 5V, 900mA USB 2.0 : 5V, 500mA https://ko.wikipedia.org/wiki/USB  microUSB케이블 (A,B타입) 키보드,마우스 (USB연결)  구입  라즈베리파이2 with 고급 투명케이스 C + 방열판 셋트 RPi Camera (C)  하드웨어 살펴보기 정면
 뒷면
-1) SoC (CPU), 메모리
-2) 전원단자
-3) USB포트
-4) HDMI포트
-7) 컴포지트출력, 오디오출력
-8) DSI (Display Serial Interface)
-9) 랜포트</description>
+ SoC (CPU), 메모리 전원단자 USB포트 HDMI포트 컴포지트출력, 오디오출력 DSI (Display Serial Interface) 랜포트 카메라 (CSI: Camera Serial Interface) GPIO (Genernal Purpose Input/Ouput) SD카드슬롯  OS설치하고 부팅까지 OS 설치  SD카드 포맷툴 다운로드하고 포맷할것   SD Formatter for Windows Download  NOOBS를 다운로드하고 SD카드에 압축해제   NOOBS에는 기본적으로 Raspbian이 포함되어 있음 https://www.</description>
     </item>
     
   </channel>

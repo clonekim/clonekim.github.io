@@ -1,129 +1,190 @@
 <!DOCTYPE html>
-<html><head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <link crossorigin="anonymous" media="all" rel="stylesheet" href="http://clonekim.github.io/css/frameworks.css" />
+    <link crossorigin="anonymous" media="all" rel="stylesheet" href="http://clonekim.github.io/css/github.css" />
     
-    <meta name="author" content="DAEHEE KIM"/>
-
+    <link crossorigin="anonymous" media="(prefers-color-scheme: dark)" rel="stylesheet"
+        href="http://clonekim.github.io/css/dark.css" />
     
-    <meta name="description" content="## Hello-Ring 프로젝트 작성
-새로운 프로젝트를 생성한다
+    <meta name="viewport" content="width=device-width">
+    <meta name="description"
+        content="Hello-Ring 프로젝트 작성 새로운 프로젝트를 생성한다
 lein new hello-ring  leiningen.clj
 project.clj의 :dependencies에 임베디드 Jetty서버 추가
 [ring/ring-jetty-adapter &amp;#34;1.4.0&amp;#34;] ring-jetty-adapter는 ring-core, ring-servlet, jetty-server를 의존성으로 가지고 있다
-ring-core: essential functions for handling parameters, cookies and more ring-devel: functions for developing and debugging Ring applications ring-servlet: construct Java servlets from Ring handlers ring-jetty-adapter: a Ring adapter that uses the Jetty webserver  hello_ring.core
-(ns hello-ring.core (:use [ring.adapter.jetty])) (defn app-handler [request] {:status 200 :header {&amp;#34;Content-Type&amp;#34; &amp;#34;text/html&amp;#34;} :body &amp;#34;Hello Ring&amp;#34;}) (defn -main [] (run-jetty app-handler {:port 8080})) 실행"/>
+ring-core: essential functions for handling parameters, cookies and more ring-devel: functions for developing and debugging Ring applications ring-servlet: construct Java servlets from Ring handlers ring-jetty-adapter: a Ring adapter that uses the Jetty webserver hello_ring.core
+(ns hello-ring.core (:use [ring.adapter.jetty])) (defn app-handler [request] {:status 200 :header {&amp;#34;Content-Type&amp;#34; &amp;#34;text/html&amp;#34;} :body &amp;#34;Hello Ring&amp;#34;}) (defn -main [] (run-jetty app-handler {:port 8080})) 실행" />
+    <meta name="keywords"
+        content="" />
+    <meta name="robots" content="noodp" />
+    <link rel="canonical" href="http://clonekim.github.io/posts/2015/2015-09-11-ring-web-programming/" />
+
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Ring으로 웹프로그래밍 - (Less is more)" />
+    <meta name="twitter:description"
+        content="Hello-Ring 프로젝트 작성 새로운 프로젝트를 생성한다
+lein new hello-ring  leiningen.clj
+project.clj의 :dependencies에 임베디드 Jetty서버 추가
+[ring/ring-jetty-adapter &amp;#34;1.4.0&amp;#34;] ring-jetty-adapter는 ring-core, ring-servlet, jetty-server를 의존성으로 가지고 있다
+ring-core: essential functions for handling parameters, cookies and more ring-devel: functions for developing and debugging Ring applications ring-servlet: construct Java servlets from Ring handlers ring-jetty-adapter: a Ring adapter that uses the Jetty webserver hello_ring.core
+(ns hello-ring.core (:use [ring.adapter.jetty])) (defn app-handler [request] {:status 200 :header {&amp;#34;Content-Type&amp;#34; &amp;#34;text/html&amp;#34;} :body &amp;#34;Hello Ring&amp;#34;}) (defn -main [] (run-jetty app-handler {:port 8080})) 실행" />
+    <meta name="twitter:site" content="http://clonekim.github.io/" />
+    <meta name="twitter:creator" content="" />
+    <meta name="twitter:image"
+        content="http://clonekim.github.io/">
+
+    
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Ring으로 웹프로그래밍 - (Less is more)">
+    <meta property="og:description"
+        content="Hello-Ring 프로젝트 작성 새로운 프로젝트를 생성한다
+lein new hello-ring  leiningen.clj
+project.clj의 :dependencies에 임베디드 Jetty서버 추가
+[ring/ring-jetty-adapter &amp;#34;1.4.0&amp;#34;] ring-jetty-adapter는 ring-core, ring-servlet, jetty-server를 의존성으로 가지고 있다
+ring-core: essential functions for handling parameters, cookies and more ring-devel: functions for developing and debugging Ring applications ring-servlet: construct Java servlets from Ring handlers ring-jetty-adapter: a Ring adapter that uses the Jetty webserver hello_ring.core
+(ns hello-ring.core (:use [ring.adapter.jetty])) (defn app-handler [request] {:status 200 :header {&amp;#34;Content-Type&amp;#34; &amp;#34;text/html&amp;#34;} :body &amp;#34;Hello Ring&amp;#34;}) (defn -main [] (run-jetty app-handler {:port 8080})) 실행" />
+    <meta property="og:url" content="http://clonekim.github.io/posts/2015/2015-09-11-ring-web-programming/" />
+    <meta property="og:site_name" content="Ring으로 웹프로그래밍" />
+    <meta property="og:image"
+        content="http://clonekim.github.io/">
+    <meta property="og:image:width" content="2048">
+    <meta property="og:image:height" content="1024">
+    
+    <meta property="article:published_time" content="2015-09-11 00:00:00 &#43;0000 UTC" />
     
 
     
-
-    
-    <link rel="canonical" href="http://clonekim.github.io/posts/2015/2015-09-11-ring-web-programming/"/>
-
     
 
     
     
-    
-        
-            
-        
-    
-    <title> Ring으로 웹프로그래밍 | (Less is more) </title>
 
-    <link rel="shortcut icon" href="http://clonekim.github.io/favicon.jpg"/>
-    <link rel="stylesheet" href="http://clonekim.github.io/css/bulma.min.css"/>
-    <link rel="stylesheet" href="http://clonekim.github.io/css/style.css"/>
+    <title>Ring으로 웹프로그래밍 - (Less is more)</title>
+
+    <link rel="icon" type="image/x-icon" class="js-site-favicon" href="http://clonekim.github.io/images/favicon.ico">
+    <meta name="theme-color" content="#1e2327">
+
+    
+    
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-121397292-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </head>
-<body><header>
-    <nav class="navbar is-fixed-top has-background-black-bis" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand is-size-4">
-            <a class="navbar-item" href="http://clonekim.github.io/">
-                    (Less is more)
-            </a>
-            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
+
+<body class="env-production emoji-size-boost page-responsive page-profile">
+  <div class="position-relative js-header-wrapper ">
+    <span class="Progress progress-pjax-loader position-fixed width-full js-pjax-loader-bar">
+        <span class="progress-pjax-loader-bar top-0 left-0" style="width: 0%;"></span>
+    </span>
+    <header class="Header py-lg-0 js-details-container Details flex-wrap flex-lg-nowrap p-responsive" role="banner">
+        <div class="Header-item d-none d-lg-flex">
+            <a class="Header-link" href="http://clonekim.github.io/" aria-label="Homepage"
+                data-ga-click="Header, go to dashboard, icon:logo">
+                <svg class="octicon octicon-mark-github v-align-middle" height="32" viewBox="0 0 16 16" version="1.1"
+                    width="32" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                </svg>
             </a>
         </div>
-        <div id="navbar-menu" class="navbar-menu">
-            <div class="navbar-end">
-                
-                    
-                        <a class="navbar-item" href="/tags">태그</a>
-                    
-                
+        <div
+            class="Header-item Header-item--full flex-column flex-lg-row width-full flex-order-2 flex-lg-order-none mr-0 mr-lg-3 mt-3 mt-lg-0 Details-content--hidden">
+            <div class="header-search flex-self-stretch flex-lg-self-auto mr-0 mr-lg-3 mb-3 mb-lg-0 scoped-search site-scoped-search js-site-search position-relative js-jump-to"
+                role="combobox" aria-owns="jump-to-results" aria-label="Search or jump to" aria-haspopup="listbox"
+                aria-expanded="false">
+                <div class="position-relative">
+                </div>
             </div>
-            </div>
-    </nav>
-</header>
-<main>
-      <div class="container">
-        <div class="columns">
-          
-          <div class="column">
-            <div>
-              <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#middleware">MiddleWare</a>
-<ul>
-<li><a href="#ring-json">ring-json</a></li>
-</ul></li>
-<li><a href="#routing">Routing</a>
-<ul>
-<li><a href="#compojure">Compojure</a></li>
-<li><a href="#page-not-found">Page Not Found</a></li>
-</ul></li>
-<li><a href="#미들웨어를-적용한-소스">미들웨어를 적용한 소스</a></li>
-<li><a href="#hiccup">Hiccup</a></li>
-<li><a href="#jade">Jade</a></li>
-<li><a href="#http-kit">Http-kit</a></li>
-<li><a href="#plugins">Plugins</a>
-<ul>
-<li><a href="#lein-ring">lein-ring</a></li>
-</ul></li>
-<li><a href="#참고">참고</a></li>
-</ul></li>
-</ul>
-</nav>              
-            </div>
-          </div>          
-          <div class="column is-9">
-            <article class="post box is-radiusless">
-              <div class="post-title">
-                <h2 class="is-size-4">Ring으로 웹프로그래밍</h2>
-              </div>
-              <div class="post-meta">
-                <span class="post-time">2015-09-11</span>
-              </div>
-              <div class="post-content content">
-                
+        </div>
+        <nav class="d-flex" aria-label="Global">
+            <a class="js-selected-navigation-item Header-link py-lg-3">&nbsp;</a>
+        </nav>
+        <div class="Header-item Header-item--full flex-justify-center d-lg-none position-relative" style="margin-right: auto;">
+            <a class="Header-link" href="http://clonekim.github.io/" aria-label="Homepage"
+                data-ga-click="Header, go to dashboard, icon:logo">
+                <svg class="octicon octicon-mark-github v-align-middle" height="32" viewBox="0 0 16 16" version="1.1"
+                    width="32" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                </svg>
+            </a>
+        </div>
 
-<p>## Hello-Ring 프로젝트 작성</p>
+    </header>
+</div>
 
+<div id="start-of-content" class="show-on-focus"></div>
+<div id="js-flash-container">
+</div>
+
+  
+<div class="application-main " data-commit-hovercards-enabled="">
+    <div itemscope="" itemtype="http://schema.org/SoftwareSourceCode" class="">
+        <main>
+            <div class="pagehead repohead instapaper_ignore readability-menu experiment-repo-nav pt-0 pt-lg-4 ">
+                <div class="repohead-details-container clearfix container-lg p-responsive d-none d-lg-block">
+                    <div class="mb-3 d-flex">
+                        <h1 class="public css-truncate float-none flex-auto width-fit pl-0">
+
+                            <span class="author"><a href="http://clonekim.github.io/"></a></span>
+                            <span class="path-divider"></span>
+                            <strong itemprop="name" class="css-truncate-target" style="max-width: 410px"><a
+                                    href="http://clonekim.github.io/posts/2015/2015-09-11-ring-web-programming/">Ring으로 웹프로그래밍</a></strong>
+
+                            <div class="d-block text-small text-gray">
+                                Created <time-ago datetime="2015-09-11" class="no-wrap"
+                                    title="Created at 2015/09/11">
+                                    2015-09-11</time-ago>
+                                <span class="file-info-divider"></span>
+                                Modified <time-ago datetime="2015-09-11" class="no-wrap"
+                                    title="Modified  at 2015/09/11">
+                                    2015-09-11</time-ago>
+                            </div>
+                        </h1>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            <div class="container-lg clearfix new-discussion-timeline experiment-repo-nav  p-responsive">
+                <div class="repository-content ">
+                    <div class="Box mt-3 position-relative">
+                        <div class="Box-header py-2 d-flex flex-column flex-shrink-0 flex-md-row flex-md-items-center">
+                            <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
+                                1219 Words
+                                
+                            </div>
+                        </div>
+
+                        <div id="readme" class="Box-body readme blob instapaper_body js-code-block-container">
+                            <article class="markdown-body entry-content p-3 p-md-6" itemprop="text"><h2 id="hello-ring-프로젝트-작성">Hello-Ring 프로젝트 작성</h2>
 <p><em>새로운 프로젝트를 생성한다</em></p>
-
 <pre><code>lein new hello-ring
 </code></pre>
-
 <p><em>leiningen.clj</em></p>
-
 <p>project.clj의 :dependencies에 임베디드 Jetty서버 추가</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clj" data-lang="clj">[ring/ring-jetty-adapter <span style="color:#e6db74">&#34;1.4.0&#34;</span>]</code></pre></div>
-<p>ring-jetty-adapter는 ring-core, ring-servlet, jetty-server를 의존성으로 가지고 있다</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clj" data-lang="clj">[ring/ring-jetty-adapter <span style="color:#e6db74">&#34;1.4.0&#34;</span>]
+</code></pre></div><p>ring-jetty-adapter는 ring-core, ring-servlet, jetty-server를 의존성으로 가지고 있다</p>
 <pre><code>ring-core: essential functions for handling parameters, cookies and more
 ring-devel: functions for developing and debugging Ring applications
 ring-servlet: construct Java servlets from Ring handlers
 ring-jetty-adapter: a Ring adapter that uses the Jetty webserver
-</code></pre>
-
-<p><em>hello_ring.core</em></p>
+</code></pre><p><em>hello_ring.core</em></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">ns </span>hello-ring.core
 	(<span style="color:#e6db74">:use</span> [ring.adapter.jetty]))
 
@@ -135,32 +196,22 @@ ring-jetty-adapter: a Ring adapter that uses the Jetty webserver
 
 
 (<span style="color:#66d9ef">defn </span>-main []
-   (<span style="color:#a6e22e">run-jetty</span> app-handler {<span style="color:#e6db74">:port</span> <span style="color:#ae81ff">8080</span>}))</code></pre></div>
-<p><em>실행</em></p>
-
-<p><img src="/img/clojure/ring-start.png" alt="Hello Ring" /></p>
-
+   (<span style="color:#a6e22e">run-jetty</span> app-handler {<span style="color:#e6db74">:port</span> <span style="color:#ae81ff">8080</span>}))
+</code></pre></div><p><em>실행</em></p>
+<p><img src="/img/clojure/ring-start.png" alt="Hello Ring"></p>
 <pre><code>lein run -m hello-ring.core
 ...
 2015-09-11 16:02:19.133:INFO:oejs.Server:nREPL-worker-0: jetty-9.2.10.v20150310
 2015-09-11 16:02:19.153:INFO:oejs.ServerConnector:nREPL-worker-0: Started ServerConnector@31de707e{HTTP/1.1}{0.0.0.0:8080}
 2015-09-11 16:02:19.154:INFO:oejs.Server:nREPL-worker-0: Started @12408ms
-</code></pre>
-
-<h2 id="middleware">MiddleWare</h2>
-
+</code></pre><h2 id="middleware">MiddleWare</h2>
 <h3 id="ring-json">ring-json</h3>
-
 <p><em>leiningen</em></p>
-
 <pre><code>[ring/ring-json &quot;0.4.0&quot;]
 </code></pre>
-
 <p><em>응답을 json으로 처리</em></p>
-
-<p>요청 결과를 JSON을 보내기 위해서 일부러 Content-Type를 설정 하는 것 보다<br />
+<p>요청 결과를 JSON을 보내기 위해서 일부러 Content-Type를 설정 하는 것 보다<br>
 response 그런 기능을 삽입하는 것이다</p>
-
 <p>ring.middleware.json의 wrap-json-response를 사용한다</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">ns </span>hello-ring.core
 	(<span style="color:#e6db74">:use</span> [ring.adapter.jetty]
@@ -174,31 +225,29 @@ response 그런 기능을 삽입하는 것이다</p>
 	(<span style="color:#a6e22e">wrap-json-response</span> app-handler))
 
 (<span style="color:#66d9ef">defn </span>-main []
-	(<span style="color:#a6e22e">run-jetty</span> app-handler {<span style="color:#e6db74">:port</span> <span style="color:#ae81ff">3000</span>}))</code></pre></div>
-<p><img src="/img/clojure/json-resp.png" alt="json-resp" /></p>
-
+	(<span style="color:#a6e22e">run-jetty</span> app-handler {<span style="color:#e6db74">:port</span> <span style="color:#ae81ff">3000</span>}))
+</code></pre></div><p><img src="/img/clojure/json-resp.png" alt="json-resp"></p>
 <p><em>request를 json으로 다루기</em></p>
-
-<p>body자체를 json으로 받거나 요청파라미터를 처리할 경우에<br />
-ring.middleware.json 의 wrap-json-body, wrap-json-params이 필요함<br />
+<p>body자체를 json으로 받거나 요청파라미터를 처리할 경우에<br>
+ring.middleware.json 의 wrap-json-body, wrap-json-params이 필요함<br>
 반드시 Content-Type이 application/json 일 경우에만 반응함</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clj" data-lang="clj">(<span style="color:#a6e22e">POST</span> <span style="color:#e6db74">&#34;/confirm&#34;</span> req
   (<span style="color:#66d9ef">let </span>[name (<span style="color:#a6e22e">get-in</span> req [<span style="color:#e6db74">:params</span> <span style="color:#e6db74">&#34;name&#34;</span>])]
   (<span style="color:#a6e22e">response</span> {<span style="color:#e6db74">:desc</span> (str <span style="color:#e6db74">&#34;The name you sent to me was &#34;</span> name)})))
 
 (<span style="color:#a6e22e">POST</span> <span style="color:#e6db74">&#34;/&#34;</span> req
-  (println (get (<span style="color:#e6db74">:body</span> req) <span style="color:#e6db74">&#34;age&#34;</span>)))  </code></pre></div>
-<p>curl를 이용해서 request 를 보내보자</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> -X POST -d <span style="color:#e6db74">&#39;{&#34;age&#34; : 20}&#39;</span> http://127.0.0.1:8080</code></pre></div>
-<p>post로 json 데이터를 보낼 경우 body를 출력시<br />
-PersistentArrayMap 로 나타난다<br />
+  (println (get (<span style="color:#e6db74">:body</span> req) <span style="color:#e6db74">&#34;age&#34;</span>)))  
+</code></pre></div><p>curl를 이용해서 request 를 보내보자</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> -X POST -d <span style="color:#e6db74">&#39;{&#34;age&#34; : 20}&#39;</span> http://127.0.0.1:8080
+</code></pre></div><p>post로 json 데이터를 보낼 경우 body를 출력시<br>
+PersistentArrayMap 로 나타난다<br>
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get">clojure.core/get</a> 으로 값 취득한다</p>
-
 <p><em>json request를 param으로 읽기</em></p>
-
-<p>ring.middleware.json 의  wrap-json-params이 필요함<br />
+<p>ring.middleware.json 의  wrap-json-params이 필요함<br>
 반드시 Content-Type이 application/json 일 경우에만 반응함</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> -X POST -d <span style="color:#e6db74">&#39;{&#34;age&#34; : 20, &#34;name&#34;: &#34;kim&#34;}&#39;</span> http://127.0.0.1:8080/confirm</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#a6e22e">POST</span> <span style="color:#e6db74">&#34;/confirm&#34;</span> {p <span style="color:#e6db74">:params</span>}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> -X POST -d <span style="color:#e6db74">&#39;{&#34;age&#34; : 20, &#34;name&#34;: &#34;kim&#34;}&#39;</span> http://127.0.0.1:8080/confirm
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">
+(<span style="color:#a6e22e">POST</span> <span style="color:#e6db74">&#34;/confirm&#34;</span> {p <span style="color:#e6db74">:params</span>}
   (println p)) <span style="color:#75715e">; {age 20, name kim} 으로 출력</span>
 
 <span style="color:#75715e">;위와 같음</span>
@@ -212,9 +261,8 @@ PersistentArrayMap 로 나타난다<br />
 <span style="color:#75715e">; request를 그대로 사용</span>
 (<span style="color:#a6e22e">POST</span> <span style="color:#e6db74">&#34;/confirm&#34;</span> req
   (<span style="color:#66d9ef">let </span>[name (<span style="color:#a6e22e">get-in</span> req [<span style="color:#e6db74">:params</span> <span style="color:#e6db74">&#34;name&#34;</span>])]
-  (<span style="color:#a6e22e">response</span> {<span style="color:#e6db74">:desc</span> (str <span style="color:#e6db74">&#34;The name you sent to me was &#34;</span> name)})))</code></pre></div>
-<h2 id="routing">Routing</h2>
-
+  (<span style="color:#a6e22e">response</span> {<span style="color:#e6db74">:desc</span> (str <span style="color:#e6db74">&#34;The name you sent to me was &#34;</span> name)})))
+</code></pre></div><h2 id="routing">Routing</h2>
 <h3 id="compojure">Compojure</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">ns </span>hello-ring.core
 	(<span style="color:#e6db74">:require</span> [compojure.core <span style="color:#e6db74">:refer</span> [defroutes GET]]
@@ -229,8 +277,8 @@ PersistentArrayMap 로 나타난다<br />
 		(str <span style="color:#e6db74">&#34;Your Id: &#34;</span> id <span style="color:#e6db74">&#34; Password: &#34;</span> passwd))))
 
 (<span style="color:#66d9ef">defn </span>-main []
-	(<span style="color:#a6e22e">ring/run-jetty</span> <span style="color:#f92672">#</span><span style="color:#e6db74">&#39;routes</span> {<span style="color:#e6db74">:port</span> <span style="color:#ae81ff">8080</span> <span style="color:#e6db74">:join?</span> false}))</code></pre></div>
-<h3 id="page-not-found">Page Not Found</h3>
+	(<span style="color:#a6e22e">ring/run-jetty</span> <span style="color:#f92672">#</span><span style="color:#e6db74">&#39;routes</span> {<span style="color:#e6db74">:port</span> <span style="color:#ae81ff">8080</span> <span style="color:#e6db74">:join?</span> false}))
+</code></pre></div><h3 id="page-not-found">Page Not Found</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clj" data-lang="clj">(<span style="color:#66d9ef">ns </span>hello-ring.core
    (<span style="color:#e6db74">:require</span> [compojure.core <span style="color:#e6db74">:refer</span> <span style="color:#e6db74">:all</span>]
 	     [compojure.route <span style="color:#e6db74">:as</span> route]
@@ -242,8 +290,8 @@ PersistentArrayMap 로 나타난다<br />
   (<span style="color:#a6e22e">route/not-found</span> <span style="color:#e6db74">&#34;&lt;h1&gt;Page not found&lt;/h1&gt;&#34;</span>))
 
 (<span style="color:#66d9ef">defn </span>-main []
-  (<span style="color:#a6e22e">ring/run-jetty</span> <span style="color:#f92672">#</span><span style="color:#e6db74">&#39;app</span> {<span style="color:#e6db74">:port</span> <span style="color:#ae81ff">8080</span> <span style="color:#e6db74">:join?</span> false}))</code></pre></div>
-<h2 id="미들웨어를-적용한-소스">미들웨어를 적용한 소스</h2>
+  (<span style="color:#a6e22e">ring/run-jetty</span> <span style="color:#f92672">#</span><span style="color:#e6db74">&#39;app</span> {<span style="color:#e6db74">:port</span> <span style="color:#ae81ff">8080</span> <span style="color:#e6db74">:join?</span> false}))
+</code></pre></div><h2 id="미들웨어를-적용한-소스">미들웨어를 적용한 소스</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clj" data-lang="clj">(<span style="color:#66d9ef">ns </span>hello-ring.core
 	(<span style="color:#e6db74">:use</span>
 		[ring.util.response <span style="color:#e6db74">:as</span> response])
@@ -275,19 +323,16 @@ PersistentArrayMap 로 나타난다<br />
 		wrap-json-response))
 
 (<span style="color:#66d9ef">def </span>app
-	(<span style="color:#a6e22e">wrap-defaults</span> app-routes (<span style="color:#a6e22e">assoc-in</span> site-defaults [<span style="color:#e6db74">:security</span> <span style="color:#e6db74">:anti-forgery</span>] false)))</code></pre></div>
-<h2 id="hiccup">Hiccup</h2>
-
+	(<span style="color:#a6e22e">wrap-defaults</span> app-routes (<span style="color:#a6e22e">assoc-in</span> site-defaults [<span style="color:#e6db74">:security</span> <span style="color:#e6db74">:anti-forgery</span>] false)))
+</code></pre></div><h2 id="hiccup">Hiccup</h2>
 <p><em>leiningen</em></p>
-
 <pre><code>[hiccup &quot;1.0.5&quot;]
 </code></pre>
-
 <p><em>repl에서 바로 테스트</em></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#a6e22e">require</span> <span style="color:#f92672">&#39;</span>[hiccup.core <span style="color:#e6db74">:as</span> h])
 (<span style="color:#a6e22e">h/html</span> [<span style="color:#e6db74">:h1</span> <span style="color:#e6db74">&#34;Hello World&#34;</span>])
-<span style="color:#75715e">;; &lt;h1&gt;Hello World&lt;/h1&gt;&#34;</span></code></pre></div>
-<p><em>ring에서 사용해보자</em></p>
+<span style="color:#75715e">;; &lt;h1&gt;Hello World&lt;/h1&gt;&#34;</span>
+</code></pre></div><p><em>ring에서 사용해보자</em></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">ns </span>hello-ring.core
    (<span style="color:#e6db74">:require</span> [compojure.core <span style="color:#e6db74">:refer</span> [defroutes GET]]
 	     [ring.adapter.jetty <span style="color:#e6db74">:refer</span> [run-jetty]]
@@ -305,18 +350,14 @@ PersistentArrayMap 로 나타난다<br />
    (<span style="color:#a6e22e">GET</span> <span style="color:#e6db74">&#34;/&#34;</span> [] (<span style="color:#a6e22e">index</span>)))
 
 (<span style="color:#66d9ef">def </span>-main []
-   (<span style="color:#a6e22e">run-jetty</span> <span style="color:#f92672">#</span><span style="color:#e6db74">&#39;routes</span> {<span style="color:#e6db74">:port</span> <span style="color:#ae81ff">8080</span>})   </code></pre></div>
-<p>실제 html소스에서 공백이 제외된다</p>
-
-<p><img src="/img/clojure/hiccup-html-source.png" alt="Hiccup Source" /></p>
-
+   (<span style="color:#a6e22e">run-jetty</span> <span style="color:#f92672">#</span><span style="color:#e6db74">&#39;routes</span> {<span style="color:#e6db74">:port</span> <span style="color:#ae81ff">8080</span>})   
+</code></pre></div><p>실제 html소스에서 공백이 제외된다</p>
+<p><img src="/img/clojure/hiccup-html-source.png" alt="Hiccup Source"></p>
 <h2 id="jade">Jade</h2>
-
 <p><a href="https://github.com/neuland/jade4j">jade4</a>를 wrapper한 jade 뷰템플릿이다</p>
-
 <p><em>leiningen</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">[clj-jade <span style="color:#e6db74">&#34;0.1.7&#34;</span>]</code></pre></div>
-<p><em>jade_config.clj</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">[clj-jade <span style="color:#e6db74">&#34;0.1.7&#34;</span>]
+</code></pre></div><p><em>jade_config.clj</em></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">ns </span>hello-ring.jade-config
   (<span style="color:#e6db74">:require</span>
     [clj-jade.core <span style="color:#e6db74">:as</span> jade]
@@ -325,8 +366,9 @@ PersistentArrayMap 로 나타난다<br />
 
 (<span style="color:#a6e22e">jade/configure</span> {<span style="color:#e6db74">:template-dir</span> <span style="color:#e6db74">&#34;public&#34;</span>
                  <span style="color:#e6db74">:pretty-print</span> false
-                 <span style="color:#e6db74">:cache?</span> true})</code></pre></div>
-<p><em>core.clj</em></p>
+                 <span style="color:#e6db74">:cache?</span> true})
+
+</code></pre></div><p><em>core.clj</em></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">ns </span>hello-ring.core
 
   (<span style="color:#e6db74">:use</span> 
@@ -337,11 +379,9 @@ PersistentArrayMap 로 나타난다<br />
 
 
 (<span style="color:#66d9ef">defn </span>index []
-  (<span style="color:#a6e22e">jade/render</span> <span style="color:#e6db74">&#34;index.jade&#34;</span> {<span style="color:#e6db74">&#34;title&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;Hello World&#34;</span>})</code></pre></div>
-<p><em>public/index.jade</em></p>
-
+  (<span style="color:#a6e22e">jade/render</span> <span style="color:#e6db74">&#34;index.jade&#34;</span> {<span style="color:#e6db74">&#34;title&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;Hello World&#34;</span>})
+</code></pre></div><p><em>public/index.jade</em></p>
 <p>title값이 치환된다</p>
-
 <pre><code>!!!5
 html
     head
@@ -352,39 +392,28 @@ html
         nav(class=&quot;navbar-default&quot;)
             div(class=&quot;container&quot;)
 ...             
-</code></pre>
-
-<h2 id="http-kit">Http-kit</h2>
-
+</code></pre><h2 id="http-kit">Http-kit</h2>
 <p><a href="http://www.http-kit.org/">http://www.http-kit.org</a></p>
-
 <p>jetty 에서 http-kit으로 변경</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">ns </span>hello-ring.core 
   (<span style="color:#e6db74">:require</span> [ring.adapter.jetty <span style="color:#e6db74">:refer</span> [run-server]])
 ...
 
 (<span style="color:#66d9ef">defn </span>-main []
-  (<span style="color:#a6e22e">run-server</span> <span style="color:#f92672">#</span><span style="color:#e6db74">&#39;app</span> {<span style="color:#e6db74">:port</span> <span style="color:#ae81ff">8080</span>}))</code></pre></div>
-<h2 id="plugins">Plugins</h2>
-
+  (<span style="color:#a6e22e">run-server</span> <span style="color:#f92672">#</span><span style="color:#e6db74">&#39;app</span> {<span style="color:#e6db74">:port</span> <span style="color:#ae81ff">8080</span>}))
+</code></pre></div><h2 id="plugins">Plugins</h2>
 <h3 id="lein-ring">lein-ring</h3>
-
-<p>Leiningen의 Ring 작업을 편하기 하기 위한 플러그인이다<br />
+<p>Leiningen의 Ring 작업을 편하기 하기 위한 플러그인이다<br>
 즉 서버를 구동하거나 jar, war로 디플로이하는 하는 일이다</p>
-
 <p><em>project.clj</em></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure"> <span style="color:#e6db74">:plugins</span> [[lein-ring <span style="color:#e6db74">&#34;0.8.13&#34;</span>]]
- <span style="color:#e6db74">:ring</span> {<span style="color:#e6db74">:handler</span> hello-ring.core/app} <span style="color:#75715e">;;시작할 수 있는 핸들러를 지정</span></code></pre></div>
-<p>바로 서버구동이 가능하고 기본적으로 3000 포트를 사용함<br />
+ <span style="color:#e6db74">:ring</span> {<span style="color:#e6db74">:handler</span> hello-ring.core/app} <span style="color:#75715e">;;시작할 수 있는 핸들러를 지정</span>
+</code></pre></div><p>바로 서버구동이 가능하고 기본적으로 3000 포트를 사용함<br>
 이제 서버측 코드를 수정하면 바로 적용이 된다</p>
-
 <p><em>실행</em></p>
-
 <pre><code>lein ring server
 </code></pre>
-
 <h2 id="참고">참고</h2>
-
 <ul>
 <li><a href="https://github.com/ring-clojure/ring">https://github.com/ring-clojure/ring</a></li>
 <li><a href="https://github.com/weavejester/hiccup">https://github.com/weavejester/hiccup</a></li>
@@ -392,56 +421,51 @@ html
 <li><a href="liquidz.github.io/2011/12/practical-compojure.html">実践(?)Compojure</a></li>
 <li><a href="https://github.com/technomancy/shouter">shouter</a></li>
 </ul>
-
-              </div>
-              <div class="columns is-mobile post-meta">
-                <div class="column is-half-desktop has-text-left is-paddingless"> 
-                   
-                  이전:<a href="http://clonekim.github.io/posts/2015/2015-09-03-mariadb-replication-using-gtid/"> GTID를 이용한 Mariadb Replication</a>
-                  
+</article>
+                        </div>
+                    </div>
                 </div>
-                <div class="column is-half-desktop has-text-right is-paddingless">
-                  
-                  이후:<a href="http://clonekim.github.io/posts/2015/2015-09-10-oracle-jdbc/"> Oracle Jdbc Url</a>
-                  
-                </div>
-                <div class="is-clearfix"></div>
-              </div>
-            </article>
-          </div>
+            </div>
+        </main>
+    </div>
+</div>
 
-      </div>
-    </main>    <footer class="footer">
-    
-        <div class="copyright has-text-centered">
-            <a href="https://bulma.io">
-                <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
-            </a>
-            <p>© (Less is more) Power by Hugo</p>
-        </div>
-    </footer>
-    <script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', () => {
-        
-        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-        
-        if ($navbarBurgers.length > 0) {
-            
-            $navbarBurgers.forEach( el => {
-                el.addEventListener('click', () => {
-                
-                const target = el.dataset.target;
-                const $target = document.getElementById(target);
-                
-                el.classList.toggle('is-active');
-                $target.classList.toggle('is-active');
-    
-                });
-            });
-        }
-    });
-    
 
-    </script>
+
+  <div class="footer container-lg width-full p-responsive" role="contentinfo">
+    <div
+        class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
+        <ul
+            class="list-style-none d-flex flex-wrap col-12 col-lg-5 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
+            <li class="mr-3 mr-lg-0"></a></li>
+        </ul>
+
+        <a aria-label="Homepage" title="(Less is more)" class="footer-octicon d-none d-lg-block mx-lg-4"
+            href="http://clonekim.github.io/">
+            <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24"
+                aria-hidden="true">
+                <path fill-rule="evenodd"
+                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+                </path>
+            </svg>
+        </a>
+        <ul
+            class="list-style-none d-flex flex-wrap col-12 col-lg-5 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
+        </ul>
+    </div>
+    <div class="d-flex flex-justify-center pb-6">
+        <span class="f6 text-gray-light"></span>
+    </div>
+</div>
+
+<script crossorigin="anonymous"
+    type="application/javascript" src="http://clonekim.github.io/js/frameworks.js"></script>
+
+<script crossorigin="anonymous"
+    type="application/javascript" src="http://clonekim.github.io/js/github-bootstrap.js"></script>
+<script src="http://clonekim.github.io/js/stop.js"></script>
+<script src="http://clonekim.github.io/js/contributions.js"></script>
+
 </body>
+
 </html>

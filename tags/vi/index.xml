@@ -21,7 +21,7 @@
       <guid>http://clonekim.github.io/posts/2015/2015-07-16-windows-vim/</guid>
       <description>vi를 윈도우즈에서 사용하기 위한 가이드
 설치  http://www.vim.org http://www.vim.org/download.php  설정 아래 파일을 C:\Users[계정명]_vimrc 에 위치한다
-set nu set autoindent set nobackup set showcmd set ruler set enc=utf-8 set fencs=euckr,cp949,utf-8 set tabstop=3 set nowrap set lines=30 columns=140 lang mes en_US source $VIMRUNTIME/delmenu.vim source $VIMRUNTIME/menu.vim  Explore 명령모드에서 :Explore로 입력하면 탐색창모드로 전환한다. 특정파일을 선택 시 편집할 수 있고
+set nu set autoindent set nobackup set showcmd set ruler set enc=utf-8 set fencs=euckr,cp949,utf-8 set tabstop=3 set nowrap set lines=30 columns=140 lang mes en_US source $VIMRUNTIME/delmenu.vim source $VIMRUNTIME/menu.vim Explore 명령모드에서 :Explore로 입력하면 탐색창모드로 전환한다. 특정파일을 선택 시 편집할 수 있고
 Ctrl +^ 입력시 바로 이전 탐색창으로 이동한다.</description>
     </item>
     
@@ -32,7 +32,7 @@ Ctrl +^ 입력시 바로 이전 탐색창으로 이동한다.</description>
       <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2012/2012-05-23-vim-favorite-setting/</guid>
       <description>~./vimrc 또는 /etc/vim/vimrc.local
-set autoindent set smartindent set shiftwidth=3 set tabstop=3 set title set nu set background=dark set nobackup set fileencoding=utf-8 set nowrap set showmatch set ruler syntax on  </description>
+set autoindent set smartindent set shiftwidth=3 set tabstop=3 set title set nu set background=dark set nobackup set fileencoding=utf-8 set nowrap set showmatch set ruler syntax on </description>
     </item>
     
   </channel>

@@ -19,8 +19,8 @@
       <pubDate>Fri, 26 Jul 2019 17:25:26 +0900</pubDate>
       <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2019/howto-spring-boot-1/</guid>
-      <description> Quick Start curl https://start.spring.io/starter.tgz \  -d language=kotlin \  -d dependencies=web,jdbc,devtools \  -d type=maven-project \  -d baseDir=hello-boot | tar -xzvf - application.yml 템플릿에 포함된 application.properties의 확장자를 yml로 바꾼다.
-JDBC server: port: 8080 spring: application: name: datasource: driver-class-name: url: username: password:</description>
+      <description>Quick Start curl https://start.spring.io/starter.tgz \  -d language=kotlin \  -d dependencies=web,jdbc,devtools \  -d type=maven-project \  -d baseDir=hello-boot | tar -xzvf - application.yml 템플릿에 포함된 application.properties의 확장자를 yml로 바꾼다.
+JDBC server: port: 8080 spring: application: name: datasource: driver-class-name: url: username: password: </description>
     </item>
     
     <item>
@@ -51,9 +51,9 @@ yarn add ag-grid-community ag-grid-vue vue-property-decorator Hello AgGrid &amp;
       <pubDate>Mon, 24 Dec 2018 00:00:00 +0000</pubDate>
       <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2018/2018-12-24-how-spark/</guid>
-      <description>Spark Docker를 이용한 스파크 실습  Docker Image 만들기 spark-version-tgz는 미리 홈페이지에서 다운받아둘것
-├── Dockerfile ├── config │ ├── core-site.xml │ ├── hdfs-site.xml │ └── spark-env.sh ├── spark-2.4.0-bin-hadoop2.7.tgz └── start-spark.sh  Dockerfile
-FROM ubuntu:18.04 ENV SPARK_HOME /opt/spark ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64 RUN apt-get update &amp;amp;&amp;amp; apt-get install -y \ wget \ python3 \ psmisc \ net-tools \ openjdk-8-jdk &amp;amp;&amp;amp; \ apt-get autoclean &amp;amp;&amp;amp; \ ln -s /usr/bin/python3 /usr/bin/python RUN wget http://apache.</description>
+      <description>Spark Docker를 이용한 스파크 실습 Docker Image 만들기 spark-version-tgz는 미리 홈페이지에서 다운받아둘것
+├── Dockerfile ├── config │ ├── core-site.xml │ ├── hdfs-site.xml │ └── spark-env.sh ├── spark-2.4.0-bin-hadoop2.7.tgz └── start-spark.sh Dockerfile
+FROM ubuntu:18.04 ENV SPARK_HOME /opt/spark ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64 RUN apt-get update &amp;amp;&amp;amp; apt-get install -y \ wget \ python3 \ psmisc \ net-tools \ openjdk-8-jdk &amp;amp;&amp;amp; \ apt-get autoclean &amp;amp;&amp;amp; \ ln -s /usr/bin/python3 /usr/bin/python RUN wget http://apache.tt.co.kr/spark/spark-2.4.0/spark-2.4.0-bin-hadoop2.7.tgz -O /spark-2.4.0-bin-hadoop2.7.tgz RUN tar -xvf spark-2.</description>
     </item>
     
     <item>
@@ -62,12 +62,14 @@ FROM ubuntu:18.04 ENV SPARK_HOME /opt/spark ENV JAVA_HOME /usr/lib/jvm/java-8-op
       <pubDate>Thu, 05 Jul 2018 23:29:30 +0900</pubDate>
       <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2018/2018-07-05-eralchemy/</guid>
-      <description>우분투를 사용하는 환경이다.  사전준비 $ sudo apt install graphviz graphviz-dev python 라이브러리 설치 $ pip install pygraphviz --install-option=&amp;#34;--include-path=/usr/include/graphviz&amp;#34; --install-option=&amp;#34;--library-path=/usr/lib/graphviz/&amp;#34; $ pip install eralchemy 에러 graphviz 를 설치하지 않았을 경우
- (Python) ValueError: Program dot not found in path  graphviz-dev를 설치하지 않았을 경우
-undefined symbol: Agundirected  사용법 MySQL에 접속해서 해당 DB를 pdf로 출력해봄
+      <description>우분투를 사용하는 환경이다. 사전준비 $ sudo apt install graphviz graphviz-dev python 라이브러리 설치 $ pip install pygraphviz --install-option=&amp;#34;--include-path=/usr/include/graphviz&amp;#34; --install-option=&amp;#34;--library-path=/usr/lib/graphviz/&amp;#34; $ pip install eralchemy 에러 graphviz 를 설치하지 않았을 경우
+ (Python) ValueError: Program dot not found in path graphviz-dev를 설치하지 않았을 경우
+undefined symbol: Agundirected 사용법 MySQL에 접속해서 해당 DB를 pdf로 출력해봄
 내부적으로 SQLAlchemy를 사용해서 db접속시 url를 아래와 같다.
 사용하는 드라이버가 달라서 접속 url을 주의해야함.
-현재 pymysql를 사용하므로</description>
+현재 pymysql를 사용하므로
+https://docs.sqlalchemy.org/en/latest/dialects/mysql.html#module-sqlalchemy.dialects.mysql.pymysql
+$ eralchemy -i &amp;#39;mysql+pymysql://test:test@localhost:3306/testdb&amp;#39; -o a.</description>
     </item>
     
     <item>
@@ -77,10 +79,11 @@ undefined symbol: Agundirected  사용법 MySQL에 접속해서 해당 DB를 pdf
       <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2017/2017-11-02-emacs-golang/</guid>
       <description>설치 go get명령어로 아래와 같이 필요한 유틸리티(명령어)를 설치해야 한다
-$ go get github.com/golang/lint/golint github.com/nsf/gocode github.com/k0kubun/pp github.com/golang/lint/golint github.com/rogpeppe/godef github.com/dougm/goflymake golang.org/x/tools/cmd/godoc 또는 golang.org/x/tools/cmd/...  필요한 패키지 direx ;;디렉토리 트리 보여줌 popwin ;;direx를 다른창으로 열어줌 auto-complete ;;자동완성 flycheck ;;오류체크 flymake-go go-mode go-autocomplete go-eldoc ;;상태줄에 godoc간단히 보여줌  shell-intergration.el
+$ go get github.com/golang/lint/golint github.com/nsf/gocode github.com/k0kubun/pp github.com/golang/lint/golint github.com/rogpeppe/godef github.com/dougm/goflymake golang.org/x/tools/cmd/godoc 또는 golang.org/x/tools/cmd/... 필요한 패키지 direx ;;디렉토리 트리 보여줌 popwin ;;direx를 다른창으로 열어줌 auto-complete ;;자동완성 flycheck ;;오류체크 flymake-go go-mode go-autocomplete go-eldoc ;;상태줄에 godoc간단히 보여줌 shell-intergration.el
 터미널에서 실행하면 이멕스가 작동하는데 바로가기에서는 작동이 안된다
 아래와 같이 쉘환경에 통합하고 나서 실행하니 문제가 없었다
-(when (memq window-system &amp;#39;(mac ns)) (exec-path-from-shell-initialize) (exec-path-from-shell-copy-envs &amp;#39;(&amp;#34;PATH&amp;#34; &amp;#34;GOPATH&amp;#34;))) go.</description>
+(when (memq window-system &amp;#39;(mac ns)) (exec-path-from-shell-initialize) (exec-path-from-shell-copy-envs &amp;#39;(&amp;#34;PATH&amp;#34; &amp;#34;GOPATH&amp;#34;))) go.el
+.bash_profile에 GOPATH가 설정되어야함</description>
     </item>
     
     <item>
@@ -89,7 +92,7 @@ $ go get github.com/golang/lint/golint github.com/nsf/gocode github.com/k0kubun/
       <pubDate>Thu, 02 Nov 2017 00:00:00 +0000</pubDate>
       <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2017/2017-11-02-go-repl/</guid>
-      <description>$ go get github.com/motemen/gore$ gore -autoimport gore version 0.2.6 :help for help gore&amp;gt; fmt.Println(&amp;#34;Hello World&amp;#34;) Hello World 12 &amp;lt;nil&amp;gt; gore&amp;gt;</description>
+      <description>$ go get github.com/motemen/gore $ gore -autoimport gore version 0.2.6 :help for help gore&amp;gt; fmt.Println(&amp;#34;Hello World&amp;#34;) Hello World 12 &amp;lt;nil&amp;gt; gore&amp;gt; </description>
     </item>
     
     <item>
@@ -98,7 +101,7 @@ $ go get github.com/golang/lint/golint github.com/nsf/gocode github.com/k0kubun/
       <pubDate>Fri, 22 Sep 2017 01:10:18 +0900</pubDate>
       <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2017/2017-09-21-gtk-version/</guid>
-      <description>$ dpkg --get-selections | grep gtk  $ dpkg-query -W libgtk-3-0 libgtk-3-0:amd64 3.18.9-1ubuntu3.3  </description>
+      <description>$ dpkg --get-selections | grep gtk $ dpkg-query -W libgtk-3-0 libgtk-3-0:amd64 3.18.9-1ubuntu3.3 </description>
     </item>
     
     <item>
@@ -111,7 +114,7 @@ $ go get github.com/golang/lint/golint github.com/nsf/gocode github.com/k0kubun/
 문제는 터미널창이 겹쳐질때 구분이 안간다
 아래와 같이 css를 작성하면 해결된다.
 ~./config/gtk3.0/gtk.css
-.window-frame { border: 1px solid gray; }  단축키 Alt +F2 입력하고 프롬프트창에 r 이라고 입력 할것</description>
+.window-frame { border: 1px solid gray; } 단축키 Alt +F2 입력하고 프롬프트창에 r 이라고 입력 할것</description>
     </item>
     
     <item>
@@ -122,7 +125,7 @@ $ go get github.com/golang/lint/golint github.com/nsf/gocode github.com/k0kubun/
       <guid>http://clonekim.github.io/posts/2017/2017-09-09-emacs-tip/</guid>
       <description>전에 사용하는 web.el를 개선하였다.
 auto-complete 패키지를 사용하여 자동완성이 될것이다
-(require &#39;web-mode) (require &#39;auto-complete) (ac-config-default) (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.html?\\&#39;&amp;quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.[aj]sp\\&#39;&amp;quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.mustache\\&#39;&amp;quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.ftl\\&#39;&amp;quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.vue\\&#39;&amp;quot; . web-mode)) (defun my-web-mode-hook () (setq web-mode-markup-indent-offset 2) (setq web-mode-css-indent-offset 2) (setq web-mode-code-indent-offset 2) (setq web-mode-enable-current-element-highlight t) (setq web-mode-enable-current-column-highlight t) (setq web-mode-ac-sources-alist &#39;((&amp;quot;css&amp;quot; . (ac-source-css-property)) (&amp;quot;html&amp;quot; . (ac-source-words-in-buffer ac-source-abbrev))))) (add-hook &#39;web-mode-hook &#39;my-web-mode-hook) (add-hook &#39;web-mode-before-auto-complete-hooks &#39;(lambda () (let ((web-mode-cur-language (web-mode-language-at-pos))) (if (string= web-mode-cur-language &amp;quot;html&amp;quot;) (setq emmet-use-css-transform t) (setq emmet-use-css-transform nil)) (if (string= web-mode-cur-language &amp;quot;css&amp;quot;) (setq emmet-use-css-transform t) (setq emmet-use-css-transform nil)))))  </description>
+(require &#39;web-mode) (require &#39;auto-complete) (ac-config-default) (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.html?\\&#39;&amp;quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.[aj]sp\\&#39;&amp;quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.mustache\\&#39;&amp;quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.ftl\\&#39;&amp;quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.vue\\&#39;&amp;quot; . web-mode)) (defun my-web-mode-hook () (setq web-mode-markup-indent-offset 2) (setq web-mode-css-indent-offset 2) (setq web-mode-code-indent-offset 2) (setq web-mode-enable-current-element-highlight t) (setq web-mode-enable-current-column-highlight t) (setq web-mode-ac-sources-alist &#39;((&amp;quot;css&amp;quot; . (ac-source-css-property)) (&amp;quot;html&amp;quot; . (ac-source-words-in-buffer ac-source-abbrev))))) (add-hook &#39;web-mode-hook &#39;my-web-mode-hook) (add-hook &#39;web-mode-before-auto-complete-hooks &#39;(lambda () (let ((web-mode-cur-language (web-mode-language-at-pos))) (if (string= web-mode-cur-language &amp;quot;html&amp;quot;) (setq emmet-use-css-transform t) (setq emmet-use-css-transform nil)) (if (string= web-mode-cur-language &amp;quot;css&amp;quot;) (setq emmet-use-css-transform t) (setq emmet-use-css-transform nil))))) </description>
     </item>
     
     <item>
@@ -131,9 +134,9 @@ auto-complete 패키지를 사용하여 자동완성이 될것이다
       <pubDate>Mon, 21 Aug 2017 00:00:00 +0000</pubDate>
       <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2017/2017-08-21-deplo1y/</guid>
-      <description> 몽고디비를 이용한 JSON Dummy 서버툴이다.
-설치 $ npm install -g deployd  몽고디비
-$ docker run --name deployd-mongo -d mongo -p 27017:27017  Deployd 실행 $ dpd create [project name] $ cd [project name] $ dpd -H localhost -P 27017 -d  </description>
+      <description>몽고디비를 이용한 JSON Dummy 서버툴이다.
+설치 $ npm install -g deployd 몽고디비
+$ docker run --name deployd-mongo -d mongo -p 27017:27017 Deployd 실행 $ dpd create [project name] $ cd [project name] $ dpd -H localhost -P 27017 -d </description>
     </item>
     
     <item>
@@ -142,8 +145,8 @@ $ docker run --name deployd-mongo -d mongo -p 27017:27017  Deployd 실행 $ dpd 
       <pubDate>Wed, 26 Jul 2017 00:00:00 +0000</pubDate>
       <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2017/2017-07-26-aws-s3-part-2/</guid>
-      <description> S3 Condition Referer를 참조해서 리소스제한
-{ &amp;quot;Version&amp;quot;: &amp;quot;2012-10-17&amp;quot;, &amp;quot;Id&amp;quot;: &amp;quot;Policy1463129932149&amp;quot;, &amp;quot;Statement&amp;quot;: [ { &amp;quot;Sid&amp;quot;: &amp;quot;Stmt1463129927965&amp;quot;, &amp;quot;Effect&amp;quot;: &amp;quot;Allow&amp;quot;, &amp;quot;Principal&amp;quot;: { &amp;quot;AWS&amp;quot;: &amp;quot;*&amp;quot; }, &amp;quot;Action&amp;quot;: &amp;quot;s3:GetObject&amp;quot;, &amp;quot;Resource&amp;quot;: &amp;quot;arn:aws:s3:::your-bucket/*&amp;quot;, &amp;quot;Condition&amp;quot;: { &amp;quot;StringLike&amp;quot;: { &amp;quot;aws:Referer&amp;quot;: [ &amp;quot;http://yoursite/*&amp;quot;, &amp;quot;http://*.yoursite/*&amp;quot; ] } } } ] }  </description>
+      <description>S3 Condition Referer를 참조해서 리소스제한
+{ &amp;quot;Version&amp;quot;: &amp;quot;2012-10-17&amp;quot;, &amp;quot;Id&amp;quot;: &amp;quot;Policy1463129932149&amp;quot;, &amp;quot;Statement&amp;quot;: [ { &amp;quot;Sid&amp;quot;: &amp;quot;Stmt1463129927965&amp;quot;, &amp;quot;Effect&amp;quot;: &amp;quot;Allow&amp;quot;, &amp;quot;Principal&amp;quot;: { &amp;quot;AWS&amp;quot;: &amp;quot;*&amp;quot; }, &amp;quot;Action&amp;quot;: &amp;quot;s3:GetObject&amp;quot;, &amp;quot;Resource&amp;quot;: &amp;quot;arn:aws:s3:::your-bucket/*&amp;quot;, &amp;quot;Condition&amp;quot;: { &amp;quot;StringLike&amp;quot;: { &amp;quot;aws:Referer&amp;quot;: [ &amp;quot;http://yoursite/*&amp;quot;, &amp;quot;http://*.yoursite/*&amp;quot; ] } } } ] } </description>
     </item>
     
     <item>
@@ -153,10 +156,10 @@ $ docker run --name deployd-mongo -d mongo -p 27017:27017  Deployd 실행 $ dpd 
       <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2017/2017-07-14-using-freemarker-from-clojure/</guid>
       <description>참고소스
- [freemarker-clj &amp;quot;0.1.0&amp;quot;]  freemarker-clj
+ [freemarker-clj &amp;quot;0.1.0&amp;quot;] freemarker-clj
 템플릿 초기화 템플릿리소스는 해당 디렉토리로 초기화한다
 (defn gen-config [&amp;amp; {:keys [shared] :or {shared {}}}] (let [cfg (doto (Configuration.) (.setDirectoryForTemplateLoading (file &amp;#34;/Users/bonjour/git/cms/resources/public/ftl&amp;#34;)) (.setDefaultEncoding &amp;#34;UTF-8&amp;#34;) (.setObjectWrapper (DefaultObjectWrapper.)))] (doseq [[k v] (map-&amp;gt;model shared)] (.setSharedVariable ^Configuration cfg ^String k v)) cfg)) 아래와 같이 템플릿로더를 직접구현해서도 가능하다
-(ns freemarker.template (:require [clojure.tools.logging :as log] [clojure.java.io :refer [file]] [freemarker.shim :refer [map-&amp;gt;model]]) (:import [freemarker.template Configuration DefaultObjectWrapper TemplateMethodModel] [java.io StringWriter])) (def DBTemplateLoader (proxy [freemarker.</description>
+(ns freemarker.template (:require [clojure.tools.logging :as log] [clojure.java.io :refer [file]] [freemarker.shim :refer [map-&amp;gt;model]]) (:import [freemarker.template Configuration DefaultObjectWrapper TemplateMethodModel] [java.io StringWriter])) (def DBTemplateLoader (proxy [freemarker.cache.TemplateLoader] [] (findTemplateSource [^String name] ;; 요청한 템플릿이름이 넘어온다 name) (closeTemplateSource [^Object source]) (getLastModified [^Object source] -1) (getReader [^Object source ^String encoding] ;; 템플릿을 DB나 캐시에서 돌려줄 수 있다 (java.</description>
     </item>
     
     <item>
@@ -168,8 +171,8 @@ $ docker run --name deployd-mongo -d mongo -p 27017:27017  Deployd 실행 $ dpd 
       <description>angular 1.6 이상적용
 PREFIX
 이제 기본값으로 !가 붙는다
-.config([&#39;$locationProvider&#39;, function($locationProvider){ $locationProvider.hashPrefix(&#39;&#39;); }])  JSONP
-$http.json(url, {jsonpCallbackParam: &#39;callback&#39;}) .then(function(res) { ... })  </description>
+.config([&#39;$locationProvider&#39;, function($locationProvider){ $locationProvider.hashPrefix(&#39;&#39;); }]) JSONP
+$http.json(url, {jsonpCallbackParam: &#39;callback&#39;}) .then(function(res) { ... }) </description>
     </item>
     
     <item>
@@ -178,9 +181,9 @@ $http.json(url, {jsonpCallbackParam: &#39;callback&#39;}) .then(function(res) { 
       <pubDate>Tue, 20 Sep 2016 00:00:00 +0000</pubDate>
       <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2016/2016-09-20-using-jquery-in-clojurescript/</guid>
-      <description> view.clj
+      <description>view.clj
 (defn view-layout [&amp;amp; content] (html [:head [:meta {:http-equiv &amp;#34;Content-type&amp;#34; :content &amp;#34;text/html; charset=utf-8&amp;#34;}] [&amp;#34;title&amp;#34;: &amp;#34;Project-Name&amp;#34;]] [:body content])) (defn view-content [] (view-layout [:h2 &amp;#34;Project-Name&amp;#34;] [:p {:id &amp;#34;clickhere&amp;#34;} &amp;#34;Get yourself a nice alert by clicking here.&amp;#34;] [:script {:src &amp;#34;/js/jquery-1.10.2.min.js&amp;#34;}] [:script {:src &amp;#34;/js/cljs.js&amp;#34;}])) hello.cljs
-(:require [jayq.core :as jq]) (:use [jayq.core :only [$]]) ;; ;; $(&amp;#34;#btn&amp;#34;).click(function() {alert(&amp;#34;Hi!&amp;#34;); }); ;; (jq/bind ($ &amp;#34;#btn&amp;#34;) :click (fn [] (js/alert &amp;#34;Hi!&amp;#34;))) lein cljsbuild once lein run  참고  ClojureScriptという選択肢 ClojureScript入門  </description>
+(:require [jayq.core :as jq]) (:use [jayq.core :only [$]]) ;; ;; $(&amp;#34;#btn&amp;#34;).click(function() {alert(&amp;#34;Hi!&amp;#34;); }); ;; (jq/bind ($ &amp;#34;#btn&amp;#34;) :click (fn [] (js/alert &amp;#34;Hi!&amp;#34;))) lein cljsbuild once lein run 참고  ClojureScriptという選択肢 ClojureScript入門  </description>
     </item>
     
     <item>
@@ -190,12 +193,12 @@ $http.json(url, {jsonpCallbackParam: &#39;callback&#39;}) .then(function(res) { 
       <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2016/2016-05-12-aws-elastick-beanstalk-1/</guid>
       <description>awsebcli 설치 linux
-$ sudo apt install python3-pip $ pip3 install awsebcli  MacOS
-$ brew install python3 $ sudo pip3 install awsebcli  pip가 업데이드안되어서 설치가 안될경우에는
-$ sudo pip3 install --upgrade pip  설치 시 sudo 를 사용하지 않고 로컬(자신의 홈디렉토리)에 설치 할경우에는
+$ sudo apt install python3-pip $ pip3 install awsebcli MacOS
+$ brew install python3 $ sudo pip3 install awsebcli pip가 업데이드안되어서 설치가 안될경우에는
+$ sudo pip3 install --upgrade pip 설치 시 sudo 를 사용하지 않고 로컬(자신의 홈디렉토리)에 설치 할경우에는
 &amp;ndash;user 파라미터를 사용하면 .local/bin 에 설치된다.
 그외에 추가로 setuptools를 환경에 따라 요구할 수 있다.
-eb 초기화 $ mkdir eb $ cd eb $ eb init  초기화를 실행하면 자신의 홈디렉토리에 .</description>
+eb 초기화 $ mkdir eb $ cd eb $ eb init 초기화를 실행하면 자신의 홈디렉토리에 .</description>
     </item>
     
     <item>
@@ -205,9 +208,9 @@ eb 초기화 $ mkdir eb $ cd eb $ eb init  초기화를 실행하면 자신의 �
       <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2016/2016-05-07-emacs-package/</guid>
       <description>mode-icons-mode init.el
-&#39;(mode-icons-mode t)  js-mode setup-js.el
-(add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.js$&amp;quot; . js-mode)) (add-hook &#39;js-mode-hook &#39;subword-mode) (add-hook &#39;html-mode-hook &#39;subword-mode) (setq js-indent-level 2) (eval-after-load &amp;quot;sgml-mode&amp;quot; &#39;(progn (require &#39;tagedit) (tagedit-add-paredit-like-keybindings) (add-hook &#39;html-mode-hook (lambda () (tagedit-mode 1)))))  web-mode web.el
-(require &#39;web-mode) (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.html?\\&#39;&amp;quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.[aj]sp\\&#39;&amp;quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.mustache\\&#39;&amp;quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.ftl\\&#39;&amp;quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.vue\\&#39;&amp;quot; . web-mode)) (defun my-web-mode-hook () (setq web-mode-markup-indent-offset 2) (setq web-mode-css-indent-offset 2) (setq web-mode-code-indent-offset 2)) (add-hook &#39;web-mode-hook &#39;my-web-mode-hook)  neo-mode neo.</description>
+&#39;(mode-icons-mode t) js-mode setup-js.el
+(add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.js$&amp;quot; . js-mode)) (add-hook &#39;js-mode-hook &#39;subword-mode) (add-hook &#39;html-mode-hook &#39;subword-mode) (setq js-indent-level 2) (eval-after-load &amp;quot;sgml-mode&amp;quot; &#39;(progn (require &#39;tagedit) (tagedit-add-paredit-like-keybindings) (add-hook &#39;html-mode-hook (lambda () (tagedit-mode 1))))) web-mode web.el
+(require &#39;web-mode) (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.html?\\&#39;&amp;quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.[aj]sp\\&#39;&amp;quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.mustache\\&#39;&amp;quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.ftl\\&#39;&amp;quot; . web-mode)) (add-to-list &#39;auto-mode-alist &#39;(&amp;quot;\\.vue\\&#39;&amp;quot; . web-mode)) (defun my-web-mode-hook () (setq web-mode-markup-indent-offset 2) (setq web-mode-css-indent-offset 2) (setq web-mode-code-indent-offset 2)) (add-hook &#39;web-mode-hook &#39;my-web-mode-hook) neo-mode neo.</description>
     </item>
     
     <item>
@@ -216,12 +219,12 @@ eb 초기화 $ mkdir eb $ cd eb $ eb init  초기화를 실행하면 자신의 �
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2016/2016-04-20-aws-s3-part-1/</guid>
-      <description> S3 버킷 작성  콘솔로 로그인한다 S3로 이동한다 Bucket(버킷)을 생성한다
-해당 버킷은 해당 리젼에서 유일무이해야 한다  정적 리소스 호스팅  버킷을 만든다
- 퍼미션에서 버킷정책(Bucket policy)을 작성한다
- AWS Policy Generator를 통해
+      <description>S3 버킷 작성  콘솔로 로그인한다 S3로 이동한다 Bucket(버킷)을 생성한다
+해당 버킷은 해당 리젼에서 유일무이해야 한다  정적 리소스 호스팅   버킷을 만든다
+  퍼미션에서 버킷정책(Bucket policy)을 작성한다
+  AWS Policy Generator를 통해
 권한을 작성한다(포맷은 JSON)
- Policy 작성
+  Policy 작성
      Select type of policy S3 bucket policy     Principal AWS:*   Action getObject   ARN arn:aws:s3:::[bucket name]/*    </description>
     </item>
     
@@ -232,12 +235,12 @@ eb 초기화 $ mkdir eb $ cd eb $ eb init  초기화를 실행하면 자신의 �
       <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2016/2016-03-01-docker-start/</guid>
       <description>Docker 시작하기 이미지다운로드
-$ docker pull [이미지이름]  컨테이너 생성
-$ docker run --name [컨테이너이름]  컨테이너로 접속
-$ docker exec -it [컨테이너] bash  컨테이너 시작/재시작
-$ docker start [컨테이너이름] $ docker stop [컨테이너이름]  MySQL 사용하기 mysql이미지를 다운로드와 함께 컨테이너 시작하기
-$ docker run --name mysql -e MYSQL_ROOT_PASSWORD=root -e TZ=Asia/Seoul -p 3306:3306 -d mysql --character-set-server=utf8  컨테이너확인
-$ docker ps CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES cf5fbb3d49b1 mysql &amp;quot;docker-entrypoint.</description>
+$ docker pull [이미지이름] 컨테이너 생성
+$ docker run --name [컨테이너이름] 컨테이너로 접속
+$ docker exec -it [컨테이너] bash 컨테이너 시작/재시작
+$ docker start [컨테이너이름] $ docker stop [컨테이너이름] MySQL 사용하기 mysql이미지를 다운로드와 함께 컨테이너 시작하기
+$ docker run --name mysql -e MYSQL_ROOT_PASSWORD=root -e TZ=Asia/Seoul -p 3306:3306 -d mysql --character-set-server=utf8 컨테이너확인
+$ docker ps CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES cf5fbb3d49b1 mysql &amp;quot;docker-entrypoint...&amp;quot; 34 minutes ago Up 34 minutes 0.</description>
     </item>
     
     <item>
@@ -246,10 +249,10 @@ $ docker ps CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES cf5fbb3d49b1 m
       <pubDate>Tue, 19 Jan 2016 00:00:00 +0000</pubDate>
       <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2016/2016-01-19-using-gulp-react/</guid>
-      <description>gulp와 함께 의존성설치 npm install -g gulp  react 개발에 필요한 라이브러리와
+      <description>gulp와 함께 의존성설치 npm install -g gulp react 개발에 필요한 라이브러리와
 번들로 묶기위한 browserify를 설치
-npm install react --save-dev npm install react-dom --save-dev npm install browserify --save-dev npm install gulp --save-dev npm install vinyl-source-stream --save-dev npm install babelify --save-dev npm install babel-preset-react --save-dev  gulpfile
-var gulp = require(&amp;#39;gulp&amp;#39;), browserify = require(&amp;#39;browserify&amp;#39;), babelify = require(&amp;#39;babelify&amp;#39;), source = require(&amp;#39;vinyl-source-stream&amp;#39;); gulp.task(&amp;#39;default&amp;#39;, function() { return browserify(&amp;#39;./source/app.js&amp;#39;) .transform(babelify, {presets: [&amp;#39;react&amp;#39;]}) .bundle() .pipe(source(&amp;#39;app.min.js&amp;#39;)) .</description>
+npm install react --save-dev npm install react-dom --save-dev npm install browserify --save-dev npm install gulp --save-dev npm install vinyl-source-stream --save-dev npm install babelify --save-dev npm install babel-preset-react --save-dev gulpfile
+var gulp = require(&amp;#39;gulp&amp;#39;), browserify = require(&amp;#39;browserify&amp;#39;), babelify = require(&amp;#39;babelify&amp;#39;), source = require(&amp;#39;vinyl-source-stream&amp;#39;); gulp.task(&amp;#39;default&amp;#39;, function() { return browserify(&amp;#39;./source/app.js&amp;#39;) .transform(babelify, {presets: [&amp;#39;react&amp;#39;]}) .bundle() .pipe(source(&amp;#39;app.min.js&amp;#39;)) .pipe(gulp.dest(&amp;#39;./build/&amp;#39;)); }); app.js</description>
     </item>
     
     <item>
@@ -284,11 +287,12 @@ var gulp = require(&amp;#39;gulp&amp;#39;), browserify = require(&amp;#39;browse
 저장소는 계정명.github.io라고 작성한다. 자세한 것은 GitHub Page를 살펴볼 것
 lein 설치 leiningen 을 설치한다
 프로젝트를 생성한다 cryogen템플릿을 이용해서 블로그 프로젝트를 생성한다
-lein new cryogen my-blog cd my-blog  git clone한다 public 디렉토리는 없기때문에 작성한다
+lein new cryogen my-blog cd my-blog git clone한다 public 디렉토리는 없기때문에 작성한다
 예) git@github.com:[계정명]/[생성한 저장소] [target 디렉토리]
-mkdir resources/public git clone git@github.com:clonekim/clonekim.github.io.git resources/public  config.edn 편집 resources/templates/config.edn를 편집한다
+mkdir resources/public git clone git@github.com:clonekim/clonekim.github.io.git resources/public config.edn 편집 resources/templates/config.edn를 편집한다
 내용중 아래와 같이 &amp;ldquo;&amp;ldquo;으로 설정한다
-:blog-prefix &amp;quot;&amp;quot;  서버 시작 아래 명령어로 서버를 시작한다</description>
+:blog-prefix &amp;quot;&amp;quot; 서버 시작 아래 명령어로 서버를 시작한다
+서버는 로컬에서 시작하고 앞으로 작성할 문서를 서버에서 파싱해주는 역할을 한다</description>
     </item>
     
     <item>
@@ -301,11 +305,10 @@ mkdir resources/public git clone git@github.com:clonekim/clonekim.github.io.git 
 clojure 얻기 http://clojure.org
 IDE/Tools  LightTable Cursive Emacs  Leiningen으로 시작하기 Leiningen (레닝겐)은 클로져를 쉽게 시작하기 위한 빌드자동화 툴이다
 윈도우에서만 self-install해준다
-Project 생성 lein new [프로젝트명]  프로젝트 의존성 추가 라이브러리는 아래의 저장소에서 검색이 가능하고
+Project 생성 lein new [프로젝트명] 프로젝트 의존성 추가 라이브러리는 아래의 저장소에서 검색이 가능하고
 의존성에 추가하면 된다
- clojars Maven repository
-:dependencies [[org.clojure/clojure &amp;#34;1.7.0&amp;#34;] [groupId/artifactId &amp;#34;version&amp;#34;]])  그외의 라이브러리 저장소로는 추가로 지정할수있다
-:repositories { &amp;#34;이름&amp;#34; &amp;#34;http://192.168.0.10:8081/nexus/content/repositories/thirdparty&amp;#34; } REPL(Read Eval Print Loop) 실행 lein repl  REPL에서 클로저코드를 작성하고 바로 실행이 가능하다</description>
+ clojars Maven repository  :dependencies [[org.clojure/clojure &amp;#34;1.7.0&amp;#34;] [groupId/artifactId &amp;#34;version&amp;#34;]]) 그외의 라이브러리 저장소로는 추가로 지정할수있다
+:repositories { &amp;#34;이름&amp;#34; &amp;#34;http://192.168.0.10:8081/nexus/content/repositories/thirdparty&amp;#34; } REPL(Read Eval Print Loop) 실행 lein repl REPL에서 클로저코드를 작성하고 바로 실행이 가능하다</description>
     </item>
     
     <item>
@@ -314,9 +317,9 @@ Project 생성 lein new [프로젝트명]  프로젝트 의존성 추가 라이�
       <pubDate>Fri, 25 Sep 2015 00:00:00 +0000</pubDate>
       <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2015/2015-09-25-jdbc-in-clojure/</guid>
-      <description> 클로저에서 JDBC(Java Database Connectivity) 를 사용하기 위한 가이드
+      <description>클로저에서 JDBC(Java Database Connectivity) 를 사용하기 위한 가이드
 몇몇 함수가 없어진 경우가 있기 때문에 소스보기로 확인할 것
- clojure-doc보기 소스보기   leiningen [org.clojure/java.jdbc &amp;quot;0.4.2&amp;quot;]  간단한 예제 (ns db-test.core (:require [clojure.java.jdbc :as sql]))	(def db {:classname &amp;#34;com.mysql.jdbc.Driver&amp;#34; :subprotocol &amp;#34;mysql&amp;#34; :subname &amp;#34;//127.0.0.1:3306/test&amp;#34; :user &amp;#34;xxx&amp;#34; :password &amp;#34;xxxx&amp;#34; }) (defn get-user [] (println (sql/query db [&amp;#34;select * from users&amp;#34;]))) (defn -main [] (get-user)) 참고  HikarCP를 사용하는 예 clojure.jdbc doc  </description>
+ clojure-doc보기 소스보기  leiningen [org.clojure/java.jdbc &amp;quot;0.4.2&amp;quot;]  간단한 예제 (ns db-test.core (:require [clojure.java.jdbc :as sql]))	(def db {:classname &amp;#34;com.mysql.jdbc.Driver&amp;#34; :subprotocol &amp;#34;mysql&amp;#34; :subname &amp;#34;//127.0.0.1:3306/test&amp;#34; :user &amp;#34;xxx&amp;#34; :password &amp;#34;xxxx&amp;#34; }) (defn get-user [] (println (sql/query db [&amp;#34;select * from users&amp;#34;]))) (defn -main [] (get-user)) 참고  HikarCP를 사용하는 예 clojure.jdbc doc  </description>
     </item>
     
     <item>
@@ -326,9 +329,9 @@ Project 생성 lein new [프로젝트명]  프로젝트 의존성 추가 라이�
       <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2015/2015-09-23-freemarker-assign-tip/</guid>
       <description>변수 x에 42를 할당하고 이것은 명백히 Number 타입이다
-&amp;lt;#assign x=42 /&amp;gt;  String타입으로 변환할 수 있다
-${x?string} ${x?string[0..1]}  .(dot)가 들어간 변수도 사용할 수 있다
-&amp;lt;#assign telephone=&amp;quot;${site\\.telephone?string}&amp;quot; /&amp;gt; //15881234 ${telephone[0..3]}-${telephone[4..7]} //1588-1234  </description>
+&amp;lt;#assign x=42 /&amp;gt; String타입으로 변환할 수 있다
+${x?string} ${x?string[0..1]} .(dot)가 들어간 변수도 사용할 수 있다
+&amp;lt;#assign telephone=&amp;quot;${site\\.telephone?string}&amp;quot; /&amp;gt; //15881234 ${telephone[0..3]}-${telephone[4..7]} //1588-1234 </description>
     </item>
     
     <item>
@@ -355,9 +358,9 @@ Cider와 cider-nrepl의 버전이 맞아야함  profiles.clj
       <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2015/2015-09-10-oracle-jdbc/</guid>
       <description>JDBC URL syntax
-jdbc:oracle:thin:@[HOST][:PORT]:SID jdbc:oracle:thin:@//[HOST][:PORT]/SERVICE  Hikari Pool를 사용 시 아래와 같이 경고메시지가 나타나면
+jdbc:oracle:thin:@[HOST][:PORT]:SID jdbc:oracle:thin:@//[HOST][:PORT]/SERVICE Hikari Pool를 사용 시 아래와 같이 경고메시지가 나타나면
 oracle.jdbc.driver.OracleDriver에서 oracle.jdbc.OracleDriver 로 바꿀 것
-2015-09-10 WARN (main) [DriverDataSource(&amp;lt;init&amp;gt;:68)] Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation. 2015-09-10 DEBUG (main) [PoolUtilities(getAndSetNetworkTimeout:198)] HikariPool-0 - Connection.setNetworkTimeout() not supported   JDBC - Oracle FAQ Database JDBC Developer&amp;rsquo;s Guide and Reference  </description>
+2015-09-10 WARN (main) [DriverDataSource(&amp;lt;init&amp;gt;:68)] Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation. 2015-09-10 DEBUG (main) [PoolUtilities(getAndSetNetworkTimeout:198)] HikariPool-0 - Connection.setNetworkTimeout() not supported  JDBC - Oracle FAQ Database JDBC Developer&amp;rsquo;s Guide and Reference  </description>
     </item>
     
     <item>
@@ -366,12 +369,11 @@ oracle.jdbc.driver.OracleDriver에서 oracle.jdbc.OracleDriver 로 바꿀 것
       <pubDate>Fri, 11 Sep 2015 00:00:00 +0000</pubDate>
       <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2015/2015-09-11-ring-web-programming/</guid>
-      <description>## Hello-Ring 프로젝트 작성
-새로운 프로젝트를 생성한다
+      <description>Hello-Ring 프로젝트 작성 새로운 프로젝트를 생성한다
 lein new hello-ring  leiningen.clj
 project.clj의 :dependencies에 임베디드 Jetty서버 추가
 [ring/ring-jetty-adapter &amp;#34;1.4.0&amp;#34;] ring-jetty-adapter는 ring-core, ring-servlet, jetty-server를 의존성으로 가지고 있다
-ring-core: essential functions for handling parameters, cookies and more ring-devel: functions for developing and debugging Ring applications ring-servlet: construct Java servlets from Ring handlers ring-jetty-adapter: a Ring adapter that uses the Jetty webserver  hello_ring.core
+ring-core: essential functions for handling parameters, cookies and more ring-devel: functions for developing and debugging Ring applications ring-servlet: construct Java servlets from Ring handlers ring-jetty-adapter: a Ring adapter that uses the Jetty webserver hello_ring.core
 (ns hello-ring.core (:use [ring.adapter.jetty])) (defn app-handler [request] {:status 200 :header {&amp;#34;Content-Type&amp;#34; &amp;#34;text/html&amp;#34;} :body &amp;#34;Hello Ring&amp;#34;}) (defn -main [] (run-jetty app-handler {:port 8080})) 실행</description>
     </item>
     
@@ -385,7 +387,8 @@ ring-core: essential functions for handling parameters, cookies and more ring-de
  표준복제: 각 노드는 자신만의 트랜잭션 ID를 갖는다 글로벌 트랜잭션(GTID, Global Transaction ID): 모든 노드는 같은 트랜잭션 ID를 갖는다 (MariaDB 10부터 가능)  환경 vm002: master
 vm003: slave
 마스터설정 GTID를 사용하기 위해 gtid_strict_mode를 활성해야함
-활성화시키위해서 서버를 재시작해야 한다</description>
+활성화시키위해서 서버를 재시작해야 한다
+[mysqld] server-id = 1 character-set-server = utf8 bind-address = 0.</description>
     </item>
     
     <item>
@@ -400,8 +403,7 @@ hello React!
 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;script src=&amp;#34;build/react.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;build/JSXTransformer.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt;	&amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;hello&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script type=&amp;#34;text/jsx&amp;#34;&amp;gt; React.render(&amp;lt;h1&amp;gt;Hello, welcome to React!&amp;lt;/h1&amp;gt;, document.getElementById(&amp;#39;hello&amp;#39;)); &amp;lt;/script&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; JSX(JavaScript XML) JSX(JavaScript XML)는 XML 과 유사한 문법을 가지는 자바스크립트이다.
 JSX 문법을 사용하기 위해서는 반드시 JSXTransformer.js가 필요하다
 상세한 JSX syntaxt과 spec 은 아래를 참조할 것
- http://facebook.github.io/react/docs/jsx-in-depth.html http://facebook.github.io/jsx/
-//Html &amp;lt;h1 class=&amp;#34;test&amp;#34;&amp;gt;Hello&amp;lt;/h1&amp;gt; //JSX &amp;lt;h1 className=&amp;#34;test&amp;#34;&amp;gt;Hello&amp;lt;/h1&amp;gt; var text= &amp;#34;Hello React!</description>
+ http://facebook.github.io/react/docs/jsx-in-depth.html http://facebook.github.io/jsx/  //Html &amp;lt;h1 class=&amp;#34;test&amp;#34;&amp;gt;Hello&amp;lt;/h1&amp;gt; //JSX &amp;lt;h1 className=&amp;#34;test&amp;#34;&amp;gt;Hello&amp;lt;/h1&amp;gt; var text= &amp;#34;Hello React!</description>
     </item>
     
     <item>
@@ -410,13 +412,12 @@ JSX 문법을 사용하기 위해서는 반드시 JSXTransformer.js가 필요하
       <pubDate>Sat, 18 Jul 2015 00:00:00 +0000</pubDate>
       <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2015/2015-07-18-install-redmine/</guid>
-      <description>## 설치환경
- redmine-3.0.4 centos 6.6 redmine install가이드  RVM 설치 rvm.io 에 대하여
+      <description>설치환경  redmine-3.0.4 centos 6.6 redmine install가이드  RVM 설치 rvm.io 에 대하여
 rvm을 이용하여 루비를 버젼별로 설치및 관리할 수 있다
-rvm install ruby rvm gemset create redmine rvm gemset use redmine  의존성 라이브러리 CentOS 의존성
-redmine 설치 $ cd redmine-x.x.x $ gem install bundler $ bundle install --without development test  Thin Gemfile을 수정하여 thin을 최상단에 추가
+rvm install ruby rvm gemset create redmine rvm gemset use redmine 의존성 라이브러리 CentOS 의존성
+redmine 설치 $ cd redmine-x.x.x $ gem install bundler $ bundle install --without development test Thin Gemfile을 수정하여 thin을 최상단에 추가
 다시 번들로 라이브러리 설치
-bundle install --without development test  아래 파일을 /etc/thin/redmine.</description>
+bundle install --without development test 아래 파일을 /etc/thin/redmine.yml 로 저장</description>
     </item>
     
     <item>
@@ -427,7 +428,7 @@ bundle install --without development test  아래 파일을 /etc/thin/redmine.</
       <guid>http://clonekim.github.io/posts/2015/2015-07-16-windows-vim/</guid>
       <description>vi를 윈도우즈에서 사용하기 위한 가이드
 설치  http://www.vim.org http://www.vim.org/download.php  설정 아래 파일을 C:\Users[계정명]_vimrc 에 위치한다
-set nu set autoindent set nobackup set showcmd set ruler set enc=utf-8 set fencs=euckr,cp949,utf-8 set tabstop=3 set nowrap set lines=30 columns=140 lang mes en_US source $VIMRUNTIME/delmenu.vim source $VIMRUNTIME/menu.vim  Explore 명령모드에서 :Explore로 입력하면 탐색창모드로 전환한다. 특정파일을 선택 시 편집할 수 있고
+set nu set autoindent set nobackup set showcmd set ruler set enc=utf-8 set fencs=euckr,cp949,utf-8 set tabstop=3 set nowrap set lines=30 columns=140 lang mes en_US source $VIMRUNTIME/delmenu.vim source $VIMRUNTIME/menu.vim Explore 명령모드에서 :Explore로 입력하면 탐색창모드로 전환한다. 특정파일을 선택 시 편집할 수 있고
 Ctrl +^ 입력시 바로 이전 탐색창으로 이동한다.</description>
     </item>
     
@@ -439,7 +440,7 @@ Ctrl +^ 입력시 바로 이전 탐색창으로 이동한다.</description>
       <guid>http://clonekim.github.io/posts/2015/2015-07-14-how-to-captcha-in-node.js/</guid>
       <description>canvas를 이용한 캡챠(captcha)를 생성하려고 한다.
 사용하려는 패키지는 canvas-captcha이다
-의존성 설치 apt-get install libpango1.0-dev apt-get install libjpeg-dev apt-get install libgif-dev  소스작성 captcha.js
+의존성 설치 apt-get install libpango1.0-dev apt-get install libjpeg-dev apt-get install libgif-dev 소스작성 captcha.js
 var captcha = require(&amp;#39;canvas-captcha&amp;#39;) ,captchaOptions = { charPool: (&amp;#39;abcdefghijklmnopqrstuvwxyz&amp;#39; + &amp;#39;abcdefghijklmnopqrstuvwxyz&amp;#39;.toUpperCase() + &amp;#39;1234567890&amp;#39;).split(&amp;#39;&amp;#39;) //char pool Array  ,size: { width: 120 ,height: 52 } //image size  ,textPos: { left: 15 ,top: 36 } //text drawing start position  ,rotate: .01 //text ratate  ,charLength: 5 //how many chars  //,font: &amp;#39;26px&amp;#39; //font size  ,strokeStyle: &amp;#39;#0088cc&amp;#39; //style  ,bgColor: &amp;#39;#eeeeee&amp;#39; //bg color  ,confusion: true //draw another group background text to mangle the text  //,cFont: &amp;#39;30px&amp;#39; //bg text style  ,cStrokeStyle: &amp;#39;#adc&amp;#39; //bg text color  ,cRotate: -.</description>
     </item>
     
@@ -449,7 +450,7 @@ var captcha = require(&amp;#39;canvas-captcha&amp;#39;) ,captchaOptions = { char
       <pubDate>Tue, 14 Jul 2015 00:00:00 +0000</pubDate>
       <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2015/2015-07-14-sinatra/</guid>
-      <description>설치 jruby -S gem install sinatra  Hello Ruby require &amp;#39;rubygems&amp;#39; require &amp;#39;sinatra&amp;#39; get &amp;#39;/&amp;#39; do &amp;#39;Hello Jruby&amp;#39; end 라우터 get, post, put, delete를 사용할 수있다
+      <description>설치 jruby -S gem install sinatra Hello Ruby require &amp;#39;rubygems&amp;#39; require &amp;#39;sinatra&amp;#39; get &amp;#39;/&amp;#39; do &amp;#39;Hello Jruby&amp;#39; end 라우터 get, post, put, delete를 사용할 수있다
 get &amp;#39;/&amp;#39; do end 요청파라미터 /?name=foo 로 요청 시 아래와 같이
 post &amp;#39;/&amp;#39; do puts params[&amp;#39;name&amp;#39;] end 본문으로 Json를 요청받을 경우 post &amp;#39;/&amp;#39; do payload = JSON.parse(request.body.read) puts payload status 201 end 응답하기 문자열, html, json, 바이너리 등의 모든 컨텐츠로 응답가능하다
 get &amp;#39;/&amp;#39; do &amp;#39;Hello&amp;#39; end Json으로 응답하기 require &amp;#39;sinatra&amp;#39; require &amp;#39;json&amp;#39; get &amp;#39;/&amp;#39; do content_type :json data = { foo: &amp;#39;bar&amp;#39;} data.</description>
@@ -462,9 +463,10 @@ get &amp;#39;/&amp;#39; do &amp;#39;Hello&amp;#39; end Json으로 응답하기 r
       <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2015/2015-07-02-angularjs/</guid>
       <description>IndexController.js
-module.exports = [&amp;#39;$scope&amp;#39;, &amp;#39;$cookies&amp;#39;, &amp;#39;TranslationService&amp;#39;, function($scope, $cookies, TranslationService) { TranslationService.getLanguage($scope, $cookies); $scope.multiLng = function( lang ) { $cookies.put(&amp;#34;lang&amp;#34;, lang); TranslationService.getLanguage($scope, $cookies); } }];  TranslationService.js
-module.exports = [&amp;#39;$http&amp;#39;, function($http) { this.getLanguage = function($scope, $cookies, cbk) { var lang = $cookies.get(&amp;#39;lang&amp;#39;) || &amp;#39;ko&amp;#39;; $http({ method: &amp;#39;GET&amp;#39;, url: &amp;#39;/js/locale_&amp;#39; + lang +&amp;#39;.json&amp;#39; }).success(function(response) { $scope.translation = response;	$scope.lang = lang; }); }; }];  locale_zh.js
-{ &amp;#34;online_start&amp;#34;: &amp;#34;Online申请&amp;#34;, ... }  index.</description>
+module.exports = [&amp;#39;$scope&amp;#39;, &amp;#39;$cookies&amp;#39;, &amp;#39;TranslationService&amp;#39;, function($scope, $cookies, TranslationService) { TranslationService.getLanguage($scope, $cookies); $scope.multiLng = function( lang ) { $cookies.put(&amp;#34;lang&amp;#34;, lang); TranslationService.getLanguage($scope, $cookies); } }]; TranslationService.js
+module.exports = [&amp;#39;$http&amp;#39;, function($http) { this.getLanguage = function($scope, $cookies, cbk) { var lang = $cookies.get(&amp;#39;lang&amp;#39;) || &amp;#39;ko&amp;#39;; $http({ method: &amp;#39;GET&amp;#39;, url: &amp;#39;/js/locale_&amp;#39; + lang +&amp;#39;.json&amp;#39; }).success(function(response) { $scope.translation = response;	$scope.lang = lang; }); }; }]; locale_zh.js
+{ &amp;#34;online_start&amp;#34;: &amp;#34;Online申请&amp;#34;, ... } index.html
+&amp;lt;div class=&amp;#34;text-center&amp;#34; style=&amp;#34;background-color:#f15c34;&amp;#34;&amp;gt; &amp;lt;a class=&amp;#34;btn btn-default&amp;#34; ng-click=&amp;#34;multiLng(&amp;#39;ko&amp;#39;)&amp;#34;&amp;gt;한국어&amp;lt;/a&amp;gt; &amp;lt;a class=&amp;#34;btn btn-default&amp;#34; ng-click=&amp;#34;multiLng(&amp;#39;us&amp;#39;)&amp;#34;&amp;gt;English&amp;lt;/a&amp;gt; &amp;lt;a class=&amp;#34;btn btn-default&amp;#34; ng-click=&amp;#34;multiLng(&amp;#39;zh&amp;#39;)&amp;#34;&amp;gt;中國語&amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;container&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;row&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;col-lg-12&amp;#34;&amp;gt; &amp;lt;div&amp;gt; &amp;lt;a class=&amp;#34;btn r-btn btn-primary btn-xl&amp;#34; href=&amp;#34;#menu&amp;#34;&amp;gt;{{translation.</description>
     </item>
     
     <item>
@@ -473,15 +475,9 @@ module.exports = [&amp;#39;$http&amp;#39;, function($http) { this.getLanguage = 
       <pubDate>Sun, 28 Jun 2015 00:00:00 +0000</pubDate>
       <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2015/2015-06-28-raspberrypi/</guid>
-      <description>준비  라즈베리파이2 microSD카드 (8G이상) HDMI케이블 LAN케이블 (카테고리3 이상) AC어댑터( USB단자출력 1A, 최소 700mA)  USB 3.0 : 5V, 900mA USB 2.0 : 5V, 500mA https://ko.wikipedia.org/wiki/USB  microUSB케이블 (A,B타입) 키보드,마우스 (USB연결)  구입  라즈베리파이2 with 고급 투명케이스 C + 방열판 셋트 RPi Camera &amp;copy;  하드웨어 살펴보기 정면
+      <description>준비  라즈베리파이2 microSD카드 (8G이상) HDMI케이블 LAN케이블 (카테고리3 이상) AC어댑터( USB단자출력 1A, 최소 700mA)   USB 3.0 : 5V, 900mA USB 2.0 : 5V, 500mA https://ko.wikipedia.org/wiki/USB  microUSB케이블 (A,B타입) 키보드,마우스 (USB연결)  구입  라즈베리파이2 with 고급 투명케이스 C + 방열판 셋트 RPi Camera (C)  하드웨어 살펴보기 정면
 뒷면
-1) SoC (CPU), 메모리
-2) 전원단자
-3) USB포트
-4) HDMI포트
-7) 컴포지트출력, 오디오출력
-8) DSI (Display Serial Interface)
-9) 랜포트</description>
+ SoC (CPU), 메모리 전원단자 USB포트 HDMI포트 컴포지트출력, 오디오출력 DSI (Display Serial Interface) 랜포트 카메라 (CSI: Camera Serial Interface) GPIO (Genernal Purpose Input/Ouput) SD카드슬롯  OS설치하고 부팅까지 OS 설치  SD카드 포맷툴 다운로드하고 포맷할것   SD Formatter for Windows Download  NOOBS를 다운로드하고 SD카드에 압축해제   NOOBS에는 기본적으로 Raspbian이 포함되어 있음 https://www.</description>
     </item>
     
     <item>
@@ -501,10 +497,10 @@ module.exports = [&amp;#39;$http&amp;#39;, function($http) { this.getLanguage = 
       <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2015/2015-02-01-imagemagick/</guid>
       <description>Thumbnail
-convert [Image 1] -thumbnail 50% [Result Image] or convert [Image 1] -thumbnail 100x70 [Result Image]  Composite
-composite -geometry +[x]+[y] [Image 1] [Image 2] [Result Image] ex) composite -geometry +02+30 person.jpg background.jpg profile.jpg  Image Info
-identify -format &#39;%wx%h %m %b %n&#39; [file]  box 필터
-convert [file] -scale [n]% -filter box -resize [size]! [file]  inline 이미지 생성
+convert [Image 1] -thumbnail 50% [Result Image] or convert [Image 1] -thumbnail 100x70 [Result Image] Composite
+composite -geometry +[x]+[y] [Image 1] [Image 2] [Result Image] ex) composite -geometry +02+30 person.jpg background.jpg profile.jpg Image Info
+identify -format &#39;%wx%h %m %b %n&#39; [file] box 필터
+convert [file] -scale [n]% -filter box -resize [size]! [file] inline 이미지 생성
 png 로 이미지를 생성하되 :- 또는 png:fd:1 를 사용하면 표준 출력 장치(모니터) 로 내보냄</description>
     </item>
     
@@ -542,8 +538,8 @@ scope 계층화 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;ko&amp;
 정해진 경로로 결과물을 내보내자.
 핸들바를 사용하지 않을려면 brfs도 고려해보자
 패키지 설치
-npm install --global gulp npm install --save-dev gulp npm install --save-dev browserify npm install --save-dev vinyl-source-stream npm install --save handlebars npm install --save hbsfy  gulpfile.js
-var gulp = require(&amp;#39;gulp&amp;#39;), browserify = require(&amp;#39;browserify&amp;#39;), source = require(&amp;#39;vinyl-source-stream&amp;#39;), hbsfy = require(&amp;#39;hbsfy&amp;#39;); gulp.task(&amp;#39;build&amp;#39;, function() { var b = browserify(&amp;#39;./js/app.js&amp;#39;, {debug:true}); return b.transform(hbsfy) .bundle() .pipe(source(&amp;#39;app.js&amp;#39;)) .pipe(gulp.dest(&amp;#39;/home/alpha/public/js&amp;#39;)); }); gulp.</description>
+npm install --global gulp npm install --save-dev gulp npm install --save-dev browserify npm install --save-dev vinyl-source-stream npm install --save handlebars npm install --save hbsfy gulpfile.js
+var gulp = require(&amp;#39;gulp&amp;#39;), browserify = require(&amp;#39;browserify&amp;#39;), source = require(&amp;#39;vinyl-source-stream&amp;#39;), hbsfy = require(&amp;#39;hbsfy&amp;#39;); gulp.task(&amp;#39;build&amp;#39;, function() { var b = browserify(&amp;#39;./js/app.js&amp;#39;, {debug:true}); return b.transform(hbsfy) .bundle() .pipe(source(&amp;#39;app.js&amp;#39;)) .pipe(gulp.dest(&amp;#39;/home/alpha/public/js&amp;#39;)); }); gulp.task(&amp;#39;watch&amp;#39;, function() { gulp.</description>
     </item>
     
     <item>
@@ -571,7 +567,7 @@ return &amp;#39;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&amp;#39;.replace(/[xy]/g, f
       <pubDate>Sat, 12 Oct 2013 00:00:00 +0000</pubDate>
       <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2013/2013-10-12-bigdecimal-java/</guid>
-      <description>BigDecimal.ROUND_DOWN	// 내림 BigDecimal.ROUND_HALF_UP // 반올림 BigDecimal.ROUND_UP // 올림</description>
+      <description>BigDecimal.ROUND_DOWN	// 내림 BigDecimal.ROUND_HALF_UP // 반올림 BigDecimal.ROUND_UP // 올림 </description>
     </item>
     
     <item>
@@ -582,10 +578,11 @@ return &amp;#39;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&amp;#39;.replace(/[xy]/g, f
       <guid>http://clonekim.github.io/posts/2013/2013-10-10-javascript-pattern/</guid>
       <description>Module Pattern
 로직과 private 변수를 캡슐화하는 방법으로 아래와 같은 모듈패턴( 익명함수) 을 많이 사용한다.
-(function() { /* ... */ })();  jQuery와 연동해서 사용할 경우 아래와 같이 파라미터를 전달하도록 한다.
-(function($) { /* ... */ })(jQuery);  글로벌 변수를 전달해서 네임스페이스로 확장 할 수 있다.
-(function($, exports) { exports.Foo = &amp;#34;wem&amp;#34;; })(jQuery, window);  IIFE(mmediately-Invoked Function Expression)
-(function() { var mod = {}; })();  window라는 식별자를 거치지 않고 전역변수를 접근하자</description>
+(function() { /* ... */ })(); jQuery와 연동해서 사용할 경우 아래와 같이 파라미터를 전달하도록 한다.
+(function($) { /* ... */ })(jQuery); 글로벌 변수를 전달해서 네임스페이스로 확장 할 수 있다.
+(function($, exports) { exports.Foo = &amp;#34;wem&amp;#34;; })(jQuery, window); IIFE(mmediately-Invoked Function Expression)
+(function() { var mod = {}; })(); window라는 식별자를 거치지 않고 전역변수를 접근하자
+함수를 new와 생성자를 사용하지 않고 호출한 경우 this 는 전역객체 (window)가 된다.</description>
     </item>
     
     <item>
@@ -594,8 +591,7 @@ return &amp;#39;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&amp;#39;.replace(/[xy]/g, f
       <pubDate>Tue, 01 Oct 2013 00:00:00 +0000</pubDate>
       <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2013/2013-10-01-java-concurrent/</guid>
-      <description>쓰레드 생성은 시스템에 따라 제한됨 쓰레드풀을 사용할 수 있는 패키지가 있음 Future는 메서드를 비동기로 실행 후 나중에 결과를 받을 수 있음
-import java.math.BigDecimal; import java.util.ArrayList; import java.util.List; import java.util.concurrent.Callable; import java.util.concurrent.ExecutionException; import java.util.concurrent.ExecutorService; import java.util.concurrent.Executors; import java.util.concurrent.Future; public class CallableTest { public static void main(String[] args) { callableTest(); } private static class Result { Long in; BigDecimal out; Result(final Long in, final BigDecimal out) { this.in = in; this.out = out; } } private static void callableTest() { ExecutorService executor = Executors.</description>
+      <description>쓰레드 생성은 시스템에 따라 제한됨 쓰레드풀을 사용할 수 있는 패키지가 있음 Future는 메서드를 비동기로 실행 후 나중에 결과를 받을 수 있음  import java.math.BigDecimal; import java.util.ArrayList; import java.util.List; import java.util.concurrent.Callable; import java.util.concurrent.ExecutionException; import java.util.concurrent.ExecutorService; import java.util.concurrent.Executors; import java.util.concurrent.Future; public class CallableTest { public static void main(String[] args) { callableTest(); } private static class Result { Long in; BigDecimal out; Result(final Long in, final BigDecimal out) { this.in = in; this.</description>
     </item>
     
     <item>
@@ -604,7 +600,7 @@ import java.math.BigDecimal; import java.util.ArrayList; import java.util.List; 
       <pubDate>Fri, 27 Sep 2013 00:00:00 +0000</pubDate>
       <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2013/2013-09-27-jackson-json-processor/</guid>
-      <description> Parsing option String data = &amp;#34;[{&amp;#39;text&amp;#39;:&amp;#39;PROJECT&amp;#39;,&amp;#39;id&amp;#39;:&amp;#39;00156&amp;#39;,&amp;#39;leaf&amp;#39;:true}]&amp;#34;; ObjectMapper mapper = new ObjectMapper(); mapper.configure(JsonParser.Feature.ALLOW_SINGLE_QUOTES, true); JsonNode node = mapper.readTree(data); Annotation JsonSerialize
+      <description>Parsing option String data = &amp;#34;[{&amp;#39;text&amp;#39;:&amp;#39;PROJECT&amp;#39;,&amp;#39;id&amp;#39;:&amp;#39;00156&amp;#39;,&amp;#39;leaf&amp;#39;:true}]&amp;#34;; ObjectMapper mapper = new ObjectMapper(); mapper.configure(JsonParser.Feature.ALLOW_SINGLE_QUOTES, true); JsonNode node = mapper.readTree(data); Annotation JsonSerialize
 @JsonSerialize(using=JsonDateSerializer.class) public Date getCreationDate() { return creationDate; } JsonDateSerializer.java
 public class JsonDateSerializer extends JsonSerializer&amp;lt;Date&amp;gt; { private static final SimpleDateFormat dateFormat = new SimpleDateFormat(&amp;#34;yyyy-MM-dd HH:mm:ss&amp;#34;); @Override public void serialize(Date date, JsonGenerator json, SerializerProvider provider) throws IOException, JsonProcessingException { String formattedDate = dateFormat.format(date); json.writeString(formattedDate); } }  Jackson JSON Processor Wiki  </description>
     </item>
@@ -615,12 +611,12 @@ public class JsonDateSerializer extends JsonSerializer&amp;lt;Date&amp;gt; { pri
       <pubDate>Fri, 27 Sep 2013 00:00:00 +0000</pubDate>
       <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2013/2013-09-27-jspwiki-install/</guid>
-      <description> Apache JSPWiki
+      <description>Apache JSPWiki
 설정 server.xml
 &amp;lt;Connector address=&amp;#34;127.0.0.1&amp;#34; port=&amp;#34;8080&amp;#34; protocol=&amp;#34;org.apache.coyote.http11.Http11NioProtocol&amp;#34; connectionTimeout=&amp;#34;20000&amp;#34; maxThreads=&amp;#34;3&amp;#34; minSpareThreads=&amp;#34;2&amp;#34; redirectPort=&amp;#34;8443&amp;#34; URIEncoding=&amp;#34;UTF-8&amp;#34;/&amp;gt; jspwiki.properties
-jspwiki.baseURL= http://cloud9ine.cafe24.com/wiki jspwiki.fileSystemProvider.pageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/ jspwiki.basicAttachmentProvider.storageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/  jspwiki.policy
+jspwiki.baseURL= http://cloud9ine.cafe24.com/wiki jspwiki.fileSystemProvider.pageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/ jspwiki.basicAttachmentProvider.storageDir = /usr/local/apache-tomcat-7.0.42/jspwiki/ jspwiki.policy
 Anonymous를 코멘트처리
-Nginx 연동 upstream tomcat { server 127.0.0.1:8080; } server { ... location /wiki { proxy_pass http://tomcat; }  </description>
+Nginx 연동 upstream tomcat { server 127.0.0.1:8080; } server { ... location /wiki { proxy_pass http://tomcat; } </description>
     </item>
     
     <item>
@@ -640,7 +636,7 @@ import java.net.Authenticator; import java.net.MalformedURLException; import jav
       <pubDate>Tue, 24 Sep 2013 00:00:00 +0000</pubDate>
       <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2013/2013-09-24-apache-taglib/</guid>
-      <description>Maven &amp;lt;groupId&amp;gt;jstl&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jstl&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.2&amp;lt;/version&amp;gt; 태그를 사용하기 위한 선언 &amp;lt;%@ taglib prefix=&amp;#34;c&amp;#34; uri=&amp;#34;http://java.sun.com/jsp/jstl/core&amp;#34;%&amp;gt; &amp;lt;%@ taglib prefix=&amp;#34;fn&amp;#34; uri=&amp;#34;http://java.sun.com/jsp/jstl/functions&amp;#34; %&amp;gt; &amp;lt;%@ taglib prefix=&amp;#34;fmt&amp;#34; uri=&amp;#34;http://java.sun.com/jsp/jstl/fmt&amp;#34;%&amp;gt; param test.jsp?name=1234 일 경우
+      <description>Maven &amp;lt;groupId&amp;gt;jstl&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jstl&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.2&amp;lt;/version&amp;gt; 태그를 사용하기 위한 선언 &amp;lt;%@ taglib prefix=&amp;quot;c&amp;quot; uri=&amp;quot;http://java.sun.com/jsp/jstl/core&amp;quot;%&amp;gt; &amp;lt;%@ taglib prefix=&amp;quot;fn&amp;quot; uri=&amp;quot;http://java.sun.com/jsp/jstl/functions&amp;quot; %&amp;gt; &amp;lt;%@ taglib prefix=&amp;quot;fmt&amp;quot; uri=&amp;quot;http://java.sun.com/jsp/jstl/fmt&amp;quot;%&amp;gt; param test.jsp?name=1234 일 경우
 ${param.변수} 로 획득할 수 있다.
 ${param.name}으로 알수 있겠다.
 core set &amp;lt;c:set var=&amp;#34;string&amp;#34; value=&amp;#34;값&amp;#34;/&amp;gt; &amp;lt;c:set var=&amp;#34;string&amp;#34; value=&amp;#34;${변수.프로퍼티}&amp;#34;/&amp;gt; out &amp;lt;c:out value=&amp;#34;${fn:substring(string,0,50)}&amp;#34; default=&amp;#34;초기값&amp;#34;/&amp;gt; &amp;lt;c:out value=&amp;#34;안녕하세요&amp;#34; /&amp;gt; test &amp;lt;c:if test=&amp;#34;${변수가 존재하면}&amp;#34;&amp;gt; ..처리 &amp;lt;/c:if&amp;gt; &amp;lt;c:if test=&amp;#34;${변수 &amp;lt; 숫자 }&amp;#34;&amp;gt; ..처리 &amp;lt;/c:if&amp;gt; &amp;lt;c:if test=&amp;#34;${변수 &amp;lt; true}&amp;#34;&amp;gt; ..처리 &amp;lt;/c:if&amp;gt; choose &amp;lt;c:choose&amp;gt; &amp;lt;c:when test=&amp;#34;조건&amp;#34;&amp;gt; .</description>
@@ -655,8 +651,8 @@ core set &amp;lt;c:set var=&amp;#34;string&amp;#34; value=&amp;#34;값&amp;#34;/
       <description>###SVN서버를 윈도우에서 서비스로 등록한다.*
 Creating the Repository svnadmin create c:\svn  Edit Configuration 방금 생성한 레포지토리 디렉토리로 이동하여
 conf\passwd 에서
-아이디 = 패스워드 형식으로 등록 ex) test = 1234  conf\svnserve.conf 에서 아래와 같이 설정
-anon-access = read auth-access = write password-db = passwd  Register as a Service C:\Program Files\Subversion\bin\svnserve.exe --service --root c:\svn 또는 C:\&amp;gt; sc create svn binpath= &amp;quot;C:\svn\bin\svnserve.exe --service -r C:\repos&amp;quot; displayname= &amp;quot;Subversion Server&amp;quot; depend= Tcpip start= auto C:\&amp;gt;sc create svnserver binpath= &amp;quot;C:\Program Files\Subversion\bin\svnserve.</description>
+아이디 = 패스워드 형식으로 등록 ex) test = 1234 conf\svnserve.conf 에서 아래와 같이 설정
+anon-access = read auth-access = write password-db = passwd Register as a Service C:\Program Files\Subversion\bin\svnserve.exe --service --root c:\svn 또는 C:\&amp;gt; sc create svn binpath= &amp;quot;C:\svn\bin\svnserve.exe --service -r C:\repos&amp;quot; displayname= &amp;quot;Subversion Server&amp;quot; depend= Tcpip start= auto C:\&amp;gt;sc create svnserver binpath= &amp;quot;C:\Program Files\Subversion\bin\svnserve.</description>
     </item>
     
     <item>
@@ -665,10 +661,10 @@ anon-access = read auth-access = write password-db = passwd  Register as a Servi
       <pubDate>Thu, 20 Jun 2013 00:00:00 +0000</pubDate>
       <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2013/2013-06-20-unsupported-classversion-error/</guid>
-      <description>java.lang.UnsupportedClassVersion_error (Unsupported major.minor version 51.0)  하위버전의 클래스파일을 상위버전이 읽어들일때는 상관없지만
+      <description>java.lang.UnsupportedClassVersion_error (Unsupported major.minor version 51.0) 하위버전의 클래스파일을 상위버전이 읽어들일때는 상관없지만
 상위버전의 클래스파일을 하위버전이 읽어올때는 위와 같은 에러를 낸다
 에러 상세코드
-version 52.0 컴파일 버전 : 1.8 version 51.0 컴파일 버전 : 1.7 version 50.0 컴파일 버전 : 1.6 version 49.0 컴파일 버전 : 1.5 version 48.0 컴파일 버전 : 1.4  </description>
+version 52.0 컴파일 버전 : 1.8 version 51.0 컴파일 버전 : 1.7 version 50.0 컴파일 버전 : 1.6 version 49.0 컴파일 버전 : 1.5 version 48.0 컴파일 버전 : 1.4 </description>
     </item>
     
     <item>
@@ -677,7 +673,7 @@ version 52.0 컴파일 버전 : 1.8 version 51.0 컴파일 버전 : 1.7 version 
       <pubDate>Sun, 16 Jun 2013 00:00:00 +0000</pubDate>
       <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2013/2013-06-16-java-compile-option/</guid>
-      <description>-Dfile.encoding=[Character Set] -Dclient.encoding.override=[Character Set]  </description>
+      <description>-Dfile.encoding=[Character Set] -Dclient.encoding.override=[Character Set] </description>
     </item>
     
     <item>
@@ -686,7 +682,7 @@ version 52.0 컴파일 버전 : 1.8 version 51.0 컴파일 버전 : 1.7 version 
       <pubDate>Mon, 13 May 2013 00:00:00 +0000</pubDate>
       <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2013/2013-05-13-phpfpm-nginx/</guid>
-      <description>PHP Install apt-get install php5-fpm php5-mongo php5-mysql  /etc/php5/fpm/php.ini
+      <description>PHP Install apt-get install php5-fpm php5-mongo php5-mysql /etc/php5/fpm/php.ini
 ; This directive determines whether or not PHP will recognize code between ; &amp;lt;? and ?&amp;gt; tags as PHP source which should be processed as such. It is ; generally recommended that &amp;lt;?php and ?&amp;gt; should be used and that this feature ; should be disabled, as enabling it may result in issues when generating XML ; documents, however this remains supported for backward compatibility reasons.</description>
     </item>
     
@@ -697,7 +693,7 @@ version 52.0 컴파일 버전 : 1.8 version 51.0 컴파일 버전 : 1.7 version 
       <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2012/2012-05-23-vim-favorite-setting/</guid>
       <description>~./vimrc 또는 /etc/vim/vimrc.local
-set autoindent set smartindent set shiftwidth=3 set tabstop=3 set title set nu set background=dark set nobackup set fileencoding=utf-8 set nowrap set showmatch set ruler syntax on  </description>
+set autoindent set smartindent set shiftwidth=3 set tabstop=3 set title set nu set background=dark set nobackup set fileencoding=utf-8 set nowrap set showmatch set ruler syntax on </description>
     </item>
     
     <item>
@@ -709,7 +705,7 @@ set autoindent set smartindent set shiftwidth=3 set tabstop=3 set title set nu s
       <description>json 생성
 require &amp;#39;json&amp;#39; jsonbody = JSON.generate[&amp;#34;message&amp;#34;=&amp;gt;&amp;#34;test&amp;#34;,&amp;#34;user&amp;#34;=&amp;gt;&amp;#34;user1&amp;#34;] rest-client을 이용한 예제
 require &amp;#39;rubygems&amp;#39; require &amp;#39;rest_client&amp;#39; require &amp;#39;json&amp;#39; jdata = JSON.generate([&amp;#34;test&amp;#34;]) RestClient.put &amp;#39;http://localhost:4567/users/123&amp;#39;, jdata, {:content_type =&amp;gt; :json} Net:HTTP GET/PUT
-require &amp;#39;net/http&amp;#39; http = Net::HTTP.new(&amp;#39;www.data.com&amp;#39;) response = http.request_put(&amp;#39;/?access_token=123&amp;#39;, jsonbody)url = URI.parse(&amp;#39;http://localhost:3000/someservice/&amp;#39;) request = Net::HTTP::Post.new(url.path) request.body = &amp;#34;&amp;lt;?xml version=&amp;#39;1.0&amp;#39; encoding=&amp;#39;UTF-8&amp;#39;?&amp;gt;&amp;lt;somedata&amp;gt;&amp;lt;name&amp;gt;Test Name 1&amp;lt;/name&amp;gt;&amp;lt;description&amp;gt;Some data for Unit testing&amp;lt;/description&amp;gt;&amp;lt;/somedata&amp;gt;&amp;#34; response = Net::HTTP.start(url.host, url.port) {|http| http.request(request)} #Note this test PASSES! assert_equal &amp;#39;201 Created&amp;#39;, response.get_fields(&amp;#39;Status&amp;#39;)[0]require &amp;#39;net/http&amp;#39; require &amp;#39;uri&amp;#39; type = &amp;#39;record&amp;#39; activity = &amp;#39;query-data&amp;#39; xml_req =&amp;lt;&amp;lt;EOF &amp;lt;?</description>
+require &amp;#39;net/http&amp;#39; http = Net::HTTP.new(&amp;#39;www.data.com&amp;#39;) response = http.request_put(&amp;#39;/?access_token=123&amp;#39;, jsonbody) url = URI.parse(&amp;#39;http://localhost:3000/someservice/&amp;#39;) request = Net::HTTP::Post.new(url.path) request.body = &amp;#34;&amp;lt;?xml version=&amp;#39;1.0&amp;#39; encoding=&amp;#39;UTF-8&amp;#39;?&amp;gt;&amp;lt;somedata&amp;gt;&amp;lt;name&amp;gt;Test Name 1&amp;lt;/name&amp;gt;&amp;lt;description&amp;gt;Some data for Unit testing&amp;lt;/description&amp;gt;&amp;lt;/somedata&amp;gt;&amp;#34; response = Net::HTTP.start(url.host, url.port) {|http| http.request(request)} #Note this test PASSES! assert_equal &amp;#39;201 Created&amp;#39;, response.get_fields(&amp;#39;Status&amp;#39;)[0] require &amp;#39;net/http&amp;#39; require &amp;#39;uri&amp;#39; type = &amp;#39;record&amp;#39; activity = &amp;#39;query-data&amp;#39; xml_req =&amp;lt;&amp;lt;EOF &amp;lt;?</description>
     </item>
     
     <item>
@@ -721,7 +717,7 @@ require &amp;#39;net/http&amp;#39; http = Net::HTTP.new(&amp;#39;www.data.com&am
       <description>Maven
 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;ognl&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;ognl&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.0.5&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; 소스
 Map&amp;lt;String, Object&amp;gt; map = new HashMap&amp;lt;String, Object&amp;gt;(); map.put(&amp;#34;book&amp;#34;, &amp;#34;모바일 웹앱&amp;#34;); System.out.println(Ognl.getValue(Ognl.parseExpression(&amp;#34;book&amp;#34;), map)); Map context = new HashMap(); List&amp;lt;String&amp;gt; values1 = (List)Ognl.getValue(&amp;#34;{123,&amp;#39;abc&amp;#39;,&amp;#39;00oo&amp;#39;}&amp;#34;, context, new Object()); System.out.println(values1); Map values2 = (Map) Ognl.getValue(&amp;#34;#{123:333,&amp;#39;abc&amp;#39;:111, &amp;#39;bbb&amp;#39;:&amp;#39;Kim&amp;#39;, &amp;#39;other&amp;#39;:&amp;#39;[0,2,3,4,5]&amp;#39;}&amp;#34;, context, new Object()); System.out.println(values2); 출력
-모바일 웹앱 [123, abc, 00oo] {123=333, abc=111, bbb=Kim, other=[0,2,3,4,5]}  </description>
+모바일 웹앱 [123, abc, 00oo] {123=333, abc=111, bbb=Kim, other=[0,2,3,4,5]} </description>
     </item>
     
     <item>
@@ -730,7 +726,7 @@ Map&amp;lt;String, Object&amp;gt; map = new HashMap&amp;lt;String, Object&amp;gt
       <pubDate>Sun, 12 Jun 2011 00:00:00 +0000</pubDate>
       <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2011/2011-06-12-java-date-bug/</guid>
-      <description> Override time zone 생성한 Date 객체가 KST가 아닌 자꾸 GMT로 출력 될 경우
+      <description>Override time zone 생성한 Date 객체가 KST가 아닌 자꾸 GMT로 출력 될 경우
 System.setProperty(&amp;#34;user.timezone&amp;#34;, &amp;#34;Asia/Seoul&amp;#34;) ex) System.setProperty(&amp;#34;user.timezone&amp;#34;, &amp;#34;UTC&amp;#34;); TimeZone.setDefault(null); //reset 하기 위해 반드시 필요함 서버를 구동시에 -D 옵션으로 설정할 것
 참고  Override a Java application&amp;rsquo;s time zone Java&amp;rsquo;s java.util.TimeZone  </description>
     </item>

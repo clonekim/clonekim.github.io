@@ -54,10 +54,11 @@ return &amp;#39;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&amp;#39;.replace(/[xy]/g, f
       <guid>http://clonekim.github.io/posts/2013/2013-10-10-javascript-pattern/</guid>
       <description>Module Pattern
 로직과 private 변수를 캡슐화하는 방법으로 아래와 같은 모듈패턴( 익명함수) 을 많이 사용한다.
-(function() { /* ... */ })();  jQuery와 연동해서 사용할 경우 아래와 같이 파라미터를 전달하도록 한다.
-(function($) { /* ... */ })(jQuery);  글로벌 변수를 전달해서 네임스페이스로 확장 할 수 있다.
-(function($, exports) { exports.Foo = &amp;#34;wem&amp;#34;; })(jQuery, window);  IIFE(mmediately-Invoked Function Expression)
-(function() { var mod = {}; })();  window라는 식별자를 거치지 않고 전역변수를 접근하자</description>
+(function() { /* ... */ })(); jQuery와 연동해서 사용할 경우 아래와 같이 파라미터를 전달하도록 한다.
+(function($) { /* ... */ })(jQuery); 글로벌 변수를 전달해서 네임스페이스로 확장 할 수 있다.
+(function($, exports) { exports.Foo = &amp;#34;wem&amp;#34;; })(jQuery, window); IIFE(mmediately-Invoked Function Expression)
+(function() { var mod = {}; })(); window라는 식별자를 거치지 않고 전역변수를 접근하자
+함수를 new와 생성자를 사용하지 않고 호출한 경우 this 는 전역객체 (window)가 된다.</description>
     </item>
     
   </channel>

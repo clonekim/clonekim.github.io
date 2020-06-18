@@ -1,244 +1,251 @@
 <!DOCTYPE html>
-<html><head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <link crossorigin="anonymous" media="all" rel="stylesheet" href="http://clonekim.github.io/css/frameworks.css" />
+    <link crossorigin="anonymous" media="all" rel="stylesheet" href="http://clonekim.github.io/css/github.css" />
     
-    <meta name="author" content="DAEHEE KIM"/>
-
+    <link crossorigin="anonymous" media="(prefers-color-scheme: dark)" rel="stylesheet"
+        href="http://clonekim.github.io/css/dark.css" />
     
-    <meta name="description" content="준비  라즈베리파이2 microSD카드 (8G이상) HDMI케이블 LAN케이블 (카테고리3 이상) AC어댑터( USB단자출력 1A, 최소 700mA)  USB 3.0 : 5V, 900mA USB 2.0 : 5V, 500mA https://ko.wikipedia.org/wiki/USB  microUSB케이블 (A,B타입) 키보드,마우스 (USB연결)  구입  라즈베리파이2 with 고급 투명케이스 C &#43; 방열판 셋트 RPi Camera &amp;copy;  하드웨어 살펴보기 정면
+    <meta name="viewport" content="width=device-width">
+    <meta name="description"
+        content="준비  라즈베리파이2 microSD카드 (8G이상) HDMI케이블 LAN케이블 (카테고리3 이상) AC어댑터( USB단자출력 1A, 최소 700mA)   USB 3.0 : 5V, 900mA USB 2.0 : 5V, 500mA https://ko.wikipedia.org/wiki/USB  microUSB케이블 (A,B타입) 키보드,마우스 (USB연결)  구입  라즈베리파이2 with 고급 투명케이스 C &#43; 방열판 셋트 RPi Camera (C)  하드웨어 살펴보기 정면
 뒷면
-1) SoC (CPU), 메모리
-2) 전원단자
-3) USB포트
-4) HDMI포트
-7) 컴포지트출력, 오디오출력
-8) DSI (Display Serial Interface)
-9) 랜포트"/>
+ SoC (CPU), 메모리 전원단자 USB포트 HDMI포트 컴포지트출력, 오디오출력 DSI (Display Serial Interface) 랜포트 카메라 (CSI: Camera Serial Interface) GPIO (Genernal Purpose Input/Ouput) SD카드슬롯  OS설치하고 부팅까지 OS 설치  SD카드 포맷툴 다운로드하고 포맷할것   SD Formatter for Windows Download  NOOBS를 다운로드하고 SD카드에 압축해제   NOOBS에는 기본적으로 Raspbian이 포함되어 있음 https://www." />
+    <meta name="keywords"
+        content="" />
+    <meta name="robots" content="noodp" />
+    <link rel="canonical" href="http://clonekim.github.io/posts/2015/2015-06-28-raspberrypi/" />
+
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="RaspberryPi - (Less is more)" />
+    <meta name="twitter:description"
+        content="준비  라즈베리파이2 microSD카드 (8G이상) HDMI케이블 LAN케이블 (카테고리3 이상) AC어댑터( USB단자출력 1A, 최소 700mA)   USB 3.0 : 5V, 900mA USB 2.0 : 5V, 500mA https://ko.wikipedia.org/wiki/USB  microUSB케이블 (A,B타입) 키보드,마우스 (USB연결)  구입  라즈베리파이2 with 고급 투명케이스 C &#43; 방열판 셋트 RPi Camera (C)  하드웨어 살펴보기 정면
+뒷면
+ SoC (CPU), 메모리 전원단자 USB포트 HDMI포트 컴포지트출력, 오디오출력 DSI (Display Serial Interface) 랜포트 카메라 (CSI: Camera Serial Interface) GPIO (Genernal Purpose Input/Ouput) SD카드슬롯  OS설치하고 부팅까지 OS 설치  SD카드 포맷툴 다운로드하고 포맷할것   SD Formatter for Windows Download  NOOBS를 다운로드하고 SD카드에 압축해제   NOOBS에는 기본적으로 Raspbian이 포함되어 있음 https://www." />
+    <meta name="twitter:site" content="http://clonekim.github.io/" />
+    <meta name="twitter:creator" content="" />
+    <meta name="twitter:image"
+        content="http://clonekim.github.io/">
+
+    
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="RaspberryPi - (Less is more)">
+    <meta property="og:description"
+        content="준비  라즈베리파이2 microSD카드 (8G이상) HDMI케이블 LAN케이블 (카테고리3 이상) AC어댑터( USB단자출력 1A, 최소 700mA)   USB 3.0 : 5V, 900mA USB 2.0 : 5V, 500mA https://ko.wikipedia.org/wiki/USB  microUSB케이블 (A,B타입) 키보드,마우스 (USB연결)  구입  라즈베리파이2 with 고급 투명케이스 C &#43; 방열판 셋트 RPi Camera (C)  하드웨어 살펴보기 정면
+뒷면
+ SoC (CPU), 메모리 전원단자 USB포트 HDMI포트 컴포지트출력, 오디오출력 DSI (Display Serial Interface) 랜포트 카메라 (CSI: Camera Serial Interface) GPIO (Genernal Purpose Input/Ouput) SD카드슬롯  OS설치하고 부팅까지 OS 설치  SD카드 포맷툴 다운로드하고 포맷할것   SD Formatter for Windows Download  NOOBS를 다운로드하고 SD카드에 압축해제   NOOBS에는 기본적으로 Raspbian이 포함되어 있음 https://www." />
+    <meta property="og:url" content="http://clonekim.github.io/posts/2015/2015-06-28-raspberrypi/" />
+    <meta property="og:site_name" content="RaspberryPi" />
+    <meta property="og:image"
+        content="http://clonekim.github.io/">
+    <meta property="og:image:width" content="2048">
+    <meta property="og:image:height" content="1024">
+    
+    <meta property="article:published_time" content="2015-06-28 00:00:00 &#43;0000 UTC" />
     
 
     
-
-    
-    <link rel="canonical" href="http://clonekim.github.io/posts/2015/2015-06-28-raspberrypi/"/>
-
     
 
     
     
-    
-        
-            
-        
-    
-    <title> RaspberryPi | (Less is more) </title>
 
-    <link rel="shortcut icon" href="http://clonekim.github.io/favicon.jpg"/>
-    <link rel="stylesheet" href="http://clonekim.github.io/css/bulma.min.css"/>
-    <link rel="stylesheet" href="http://clonekim.github.io/css/style.css"/>
+    <title>RaspberryPi - (Less is more)</title>
+
+    <link rel="icon" type="image/x-icon" class="js-site-favicon" href="http://clonekim.github.io/images/favicon.ico">
+    <meta name="theme-color" content="#1e2327">
+
+    
+    
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-121397292-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </head>
-<body><header>
-    <nav class="navbar is-fixed-top has-background-black-bis" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand is-size-4">
-            <a class="navbar-item" href="http://clonekim.github.io/">
-                    (Less is more)
-            </a>
-            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
+
+<body class="env-production emoji-size-boost page-responsive page-profile">
+  <div class="position-relative js-header-wrapper ">
+    <span class="Progress progress-pjax-loader position-fixed width-full js-pjax-loader-bar">
+        <span class="progress-pjax-loader-bar top-0 left-0" style="width: 0%;"></span>
+    </span>
+    <header class="Header py-lg-0 js-details-container Details flex-wrap flex-lg-nowrap p-responsive" role="banner">
+        <div class="Header-item d-none d-lg-flex">
+            <a class="Header-link" href="http://clonekim.github.io/" aria-label="Homepage"
+                data-ga-click="Header, go to dashboard, icon:logo">
+                <svg class="octicon octicon-mark-github v-align-middle" height="32" viewBox="0 0 16 16" version="1.1"
+                    width="32" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                </svg>
             </a>
         </div>
-        <div id="navbar-menu" class="navbar-menu">
-            <div class="navbar-end">
-                
-                    
-                        <a class="navbar-item" href="/tags">태그</a>
-                    
-                
+        <div
+            class="Header-item Header-item--full flex-column flex-lg-row width-full flex-order-2 flex-lg-order-none mr-0 mr-lg-3 mt-3 mt-lg-0 Details-content--hidden">
+            <div class="header-search flex-self-stretch flex-lg-self-auto mr-0 mr-lg-3 mb-3 mb-lg-0 scoped-search site-scoped-search js-site-search position-relative js-jump-to"
+                role="combobox" aria-owns="jump-to-results" aria-label="Search or jump to" aria-haspopup="listbox"
+                aria-expanded="false">
+                <div class="position-relative">
+                </div>
             </div>
-            </div>
-    </nav>
-</header>
-<main>
-      <div class="container">
-        <div class="columns">
-          
-          <div class="column">
-            <div>
-              <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#준비">준비</a></li>
-<li><a href="#구입">구입</a></li>
-<li><a href="#하드웨어-살펴보기">하드웨어 살펴보기</a></li>
-<li><a href="#os설치하고-부팅까지">OS설치하고 부팅까지</a>
-<ul>
-<li><a href="#os-설치">OS 설치</a></li>
-<li><a href="#라즈베리-연결구성">라즈베리 연결구성</a></li>
-</ul></li>
-<li><a href="#picture306-1-img-raspberry-picture306-1-png"><img src="/img/raspberry/picture306-1.png" alt="picture306-1" /></a>
-<ul>
-<li><a href="#로그인">로그인</a></li>
-<li><a href="#네트워크-설정">네트워크 설정</a></li>
-</ul></li>
-<li><a href="#원격으로-서버를-접속하려면">원격으로 서버를 접속하려면</a>
-<ul>
-<li><a href="#sshd">SSHD</a></li>
-<li><a href="#vnc">VNC</a>
-<ul>
-<li><a href="#vnc서버-설치">VNC서버 설치</a></li>
-<li><a href="#vnc서버-시작">VNC서버 시작</a></li>
-<li><a href="#vnc-클라이언트를-이용해서-vnc서버-접속">VNC 클라이언트를 이용해서 VNC서버 접속</a></li>
-<li><a href="#서버스크립트">서버스크립트</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#라이브tv">라이브TV</a></li>
-<li><a href="#gpio">GPIO</a></li>
-<li><a href="#카메라">카메라</a>
-<ul>
-<li><a href="#하드웨어-설치-전원이-off된-상태에서">하드웨어 설치 (전원이 off된 상태에서)</a></li>
-<li><a href="#카메라-활성화">카메라 활성화</a></li>
-<li><a href="#카메라를-작동하기-위한-프로그래밍">카메라를 작동하기 위한 프로그래밍</a></li>
-</ul></li>
-<li><a href="#참고">참고</a></li>
-</ul></li>
-</ul>
-</nav>              
-            </div>
-          </div>          
-          <div class="column is-9">
-            <article class="post box is-radiusless">
-              <div class="post-title">
-                <h2 class="is-size-4">RaspberryPi</h2>
-              </div>
-              <div class="post-meta">
-                <span class="post-time">2015-06-28</span>
-              </div>
-              <div class="post-content content">
-                
+        </div>
+        <nav class="d-flex" aria-label="Global">
+            <a class="js-selected-navigation-item Header-link py-lg-3">&nbsp;</a>
+        </nav>
+        <div class="Header-item Header-item--full flex-justify-center d-lg-none position-relative" style="margin-right: auto;">
+            <a class="Header-link" href="http://clonekim.github.io/" aria-label="Homepage"
+                data-ga-click="Header, go to dashboard, icon:logo">
+                <svg class="octicon octicon-mark-github v-align-middle" height="32" viewBox="0 0 16 16" version="1.1"
+                    width="32" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                </svg>
+            </a>
+        </div>
 
-<h2 id="준비">준비</h2>
+    </header>
+</div>
 
+<div id="start-of-content" class="show-on-focus"></div>
+<div id="js-flash-container">
+</div>
+
+  
+<div class="application-main " data-commit-hovercards-enabled="">
+    <div itemscope="" itemtype="http://schema.org/SoftwareSourceCode" class="">
+        <main>
+            <div class="pagehead repohead instapaper_ignore readability-menu experiment-repo-nav pt-0 pt-lg-4 ">
+                <div class="repohead-details-container clearfix container-lg p-responsive d-none d-lg-block">
+                    <div class="mb-3 d-flex">
+                        <h1 class="public css-truncate float-none flex-auto width-fit pl-0">
+
+                            <span class="author"><a href="http://clonekim.github.io/"></a></span>
+                            <span class="path-divider"></span>
+                            <strong itemprop="name" class="css-truncate-target" style="max-width: 410px"><a
+                                    href="http://clonekim.github.io/posts/2015/2015-06-28-raspberrypi/">RaspberryPi</a></strong>
+
+                            <div class="d-block text-small text-gray">
+                                Created <time-ago datetime="2015-06-28" class="no-wrap"
+                                    title="Created at 2015/06/28">
+                                    2015-06-28</time-ago>
+                                <span class="file-info-divider"></span>
+                                Modified <time-ago datetime="2015-06-28" class="no-wrap"
+                                    title="Modified  at 2015/06/28">
+                                    2015-06-28</time-ago>
+                            </div>
+                        </h1>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            <div class="container-lg clearfix new-discussion-timeline experiment-repo-nav  p-responsive">
+                <div class="repository-content ">
+                    <div class="Box mt-3 position-relative">
+                        <div class="Box-header py-2 d-flex flex-column flex-shrink-0 flex-md-row flex-md-items-center">
+                            <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
+                                956 Words
+                                
+                            </div>
+                        </div>
+
+                        <div id="readme" class="Box-body readme blob instapaper_body js-code-block-container">
+                            <article class="markdown-body entry-content p-3 p-md-6" itemprop="text"><h2 id="준비">준비</h2>
 <ol>
 <li>라즈베리파이2</li>
 <li>microSD카드 (8G이상)</li>
 <li>HDMI케이블</li>
 <li>LAN케이블 (카테고리3 이상)</li>
-<li>AC어댑터( USB단자출력 1A, 최소 700mA)
-
+<li>AC어댑터( USB단자출력 1A, 최소 700mA)</li>
+</ol>
 <ul>
 <li>USB 3.0 : 5V, 900mA</li>
 <li>USB 2.0 : 5V, 500mA</li>
 <li><a href="https://ko.wikipedia.org/wiki/USB">https://ko.wikipedia.org/wiki/USB</a></li>
-</ul></li>
+</ul>
+<ol start="6">
 <li>microUSB케이블 (A,B타입)</li>
 <li>키보드,마우스 (USB연결)</li>
 </ol>
-
 <h2 id="구입">구입</h2>
-
 <ul>
 <li><a href="http://eleparts.co.kr/EPXDVKYK">라즈베리파이2 with 고급 투명케이스 C + 방열판 셋트</a></li>
-<li><a href="http://eleparts.co.kr/EPXDVF6A">RPi Camera &copy;</a></li>
+<li><a href="http://eleparts.co.kr/EPXDVF6A">RPi Camera (C)</a></li>
 </ul>
-
 <h2 id="하드웨어-살펴보기">하드웨어 살펴보기</h2>
-
 <p>정면</p>
-
-<p><img src="/img/raspberry/picture360-1.png" alt="Front" /></p>
-
+<p><img src="/img/raspberry/picture360-1.png" alt="Front"></p>
 <p>뒷면</p>
-
-<p><img src="/img/raspberry/picture360-2.png" alt="Back" /></p>
-
-<p>1) SoC (CPU), 메모리<br />
-2) 전원단자<br />
-3) USB포트<br />
-4) HDMI포트<br />
-7) 컴포지트출력, 오디오출력<br />
-8) DSI (Display Serial Interface)<br />
-9) 랜포트<br />
-10) 카메라 (CSI: Camera Serial Interface)<br />
-11) GPIO (Genernal Purpose Input/Ouput)<br />
-12) SD카드슬롯</p>
-
-<h2 id="os설치하고-부팅까지">OS설치하고 부팅까지</h2>
-
-<h3 id="os-설치">OS 설치</h3>
-
+<p><img src="/img/raspberry/picture360-2.png" alt="Back"></p>
 <ol>
-<li>SD카드 포맷툴 다운로드하고 포맷할것<br />
-
+<li>SoC (CPU), 메모리</li>
+<li>전원단자</li>
+<li>USB포트</li>
+<li>HDMI포트</li>
+<li>컴포지트출력, 오디오출력</li>
+<li>DSI (Display Serial Interface)</li>
+<li>랜포트</li>
+<li>카메라 (CSI: Camera Serial Interface)</li>
+<li>GPIO (Genernal Purpose Input/Ouput)</li>
+<li>SD카드슬롯</li>
+</ol>
+<h2 id="os설치하고-부팅까지">OS설치하고 부팅까지</h2>
+<h3 id="os-설치">OS 설치</h3>
+<ol>
+<li>SD카드 포맷툴 다운로드하고 포맷할것</li>
+</ol>
 <ul>
 <li><a href="https://www.sdcard.org/downloads/index.html">SD Formatter for Windows Download</a></li>
-</ul></li>
-<li>NOOBS를 다운로드하고 SD카드에 압축해제<br />
-
-<ul>
-<li>NOOBS에는 기본적으로 Raspbian이 포함되어 있음<br /></li>
-<li><a href="https://www.raspberrypi.org/help/noobs-setup">https://www.raspberrypi.org/help/noobs-setup</a></li>
-</ul></li>
+</ul>
+<ol start="2">
+<li>NOOBS를 다운로드하고 SD카드에 압축해제</li>
 </ol>
-
+<ul>
+<li>NOOBS에는 기본적으로 Raspbian이 포함되어 있음</li>
+<li><a href="https://www.raspberrypi.org/help/noobs-setup">https://www.raspberrypi.org/help/noobs-setup</a></li>
+</ul>
 <h3 id="라즈베리-연결구성">라즈베리 연결구성</h3>
-
-<h2 id="picture306-1-img-raspberry-picture306-1-png"><img src="/img/raspberry/picture306-1.png" alt="picture306-1" /></h2>
-
+<h2 id="picture306-1imgraspberrypicture306-1png"><img src="/img/raspberry/picture306-1.png" alt="picture306-1"></h2>
 <h3 id="로그인">로그인</h3>
-
 <p>처음설치 후 로그인계정은 아래와 같음</p>
-
-<p>로그인: pi<br />
+<p>로그인: pi<br>
 패스워드: raspberry</p>
-
 <h3 id="네트워크-설정">네트워크 설정</h3>
-
-<p>기본적으로 라즈베리에 dhcp에 Hot-plug기능이 있음<br />
+<p>기본적으로 라즈베리에 dhcp에 Hot-plug기능이 있음<br>
 그래서 랜카드를 그냥 꽂으면 ip를 자동으로 할당함</p>
-
 <h2 id="원격으로-서버를-접속하려면">원격으로 서버를 접속하려면</h2>
-
 <h3 id="sshd">SSHD</h3>
-
 <p>기본적으로 sshd 데몬이 기동되고 있기 때문에 설정필요없음</p>
-
 <h3 id="vnc">VNC</h3>
-
 <p>vnc서버 설치 후 원격에서 접속이 가능하다</p>
-
 <h4 id="vnc서버-설치">VNC서버 설치</h4>
-
 <pre><code> sudo apt-get install tightvncserver
-</code></pre>
-
-<h4 id="vnc서버-시작">VNC서버 시작</h4>
-
+</code></pre><h4 id="vnc서버-시작">VNC서버 시작</h4>
 <pre><code>tightvncserver :1 -geometry 1280x800 -depth 24
-</code></pre>
-
-<p>위 명령어 입력 후 패스워드 설정이 나온다<br />
+</code></pre><p>위 명령어 입력 후 패스워드 설정이 나온다<br>
 Would you like to enter a view-only password라고 물어보면 그냥 엔터</p>
-
 <h4 id="vnc-클라이언트를-이용해서-vnc서버-접속">VNC 클라이언트를 이용해서 VNC서버 접속</h4>
-
-<p>리얼vnc를 실행한다.<br />
-서버주소와 디스플레이넘버를 아래와 같이 입력 후 패스워드를 물어보면<br />
+<p>리얼vnc를 실행한다.<br>
+서버주소와 디스플레이넘버를 아래와 같이 입력 후 패스워드를 물어보면<br>
 서버설정 시 입력한 패스워드를 입력한다</p>
-
-<p><img src="/img/raspberry/picture14-1.png" alt="&quot;Connect VNC&quot;" /></p>
-
-<p><img src="/img/raspberry/picture14-2.png" alt="&quot;VNC Screen&quot;" /></p>
-
+<p><img src="/img/raspberry/picture14-1.png" alt="&ldquo;Connect VNC&rdquo;"></p>
+<p><img src="/img/raspberry/picture14-2.png" alt="&ldquo;VNC Screen&rdquo;"></p>
 <h4 id="서버스크립트">서버스크립트</h4>
-
-<p>VNC서버를 자동으로 시작하기 위해 첨부파일 스크립트를 사용한다<br />
+<p>VNC서버를 자동으로 시작하기 위해 첨부파일 스크립트를 사용한다<br>
 스크립트를 복사후 실행권한을 준다</p>
-
 <p><em>tightvnc</em></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">### BEGIN INIT INFO</span>
 <span style="color:#75715e"># Provides: tightvnc</span>
@@ -283,55 +290,33 @@ export USER HOME
         ;;
 <span style="color:#66d9ef">esac</span>
 
-exit <span style="color:#ae81ff">0</span></code></pre></div>
-<pre><code>sudo cp tightvnc /etc/init.d
+exit <span style="color:#ae81ff">0</span>
+</code></pre></div><pre><code>sudo cp tightvnc /etc/init.d
 sudo chmod +x /etc/init.d/tightvnc
-</code></pre>
-
-<p><em>1. 서버를 시작한다</em></p>
-
+</code></pre><p><em>1. 서버를 시작한다</em></p>
 <pre><code>sudo /etc/init.d/tightvnc start
-</code></pre>
-
-<p><em>2. 서버 부팅시 자동으로 실행될 수 있도록 작성</em></p>
-
+</code></pre><p><em>2. 서버 부팅시 자동으로 실행될 수 있도록 작성</em></p>
 <pre><code>sudo update-rc.d tightvnc defaults
-</code></pre>
-
-<h2 id="라이브tv">라이브TV</h2>
-
+</code></pre><h2 id="라이브tv">라이브TV</h2>
 <ul>
 <li><a href="http://www.techradar.com/news/computing/pc/tv-on-raspberry-pi-watch-and-record-live-tv-1151587">Watch and record live TV on your Raspberry Pi</a></li>
 </ul>
-
 <h2 id="gpio">GPIO</h2>
-
 <ul>
 <li><a href="http://openmicros.org/index.php/articles/94-ciseco-product-documentation/raspberry-pi/217-getting-started-with-raspberry-pi-gpio-and-python">Getting Started with Raspberry Pi GPIO and Python</a></li>
 <li><a href="http://makezine.com/projects/tutorial-raspberry-pi-gpio-pins-and-python/">Tutorial: Raspberry Pi GPIO Pins and Python</a></li>
 </ul>
-
 <h2 id="카메라">카메라</h2>
-
 <h3 id="하드웨어-설치-전원이-off된-상태에서">하드웨어 설치 (전원이 off된 상태에서)</h3>
-
-<p><a href="https://www.raspberrypi.org/documentation/usage/camera/">10번</a>에 연결한다</p>
-
+<p>[10번][1]에 연결한다
+[1]: <a href="https://www.raspberrypi.org/documentation/usage/camera/">https://www.raspberrypi.org/documentation/usage/camera/</a></p>
 <h3 id="카메라-활성화">카메라 활성화</h3>
-
 <pre><code>sudo raspi-config
-</code></pre>
-
-<p><img src="/img/raspberry/picture825-1.png" alt="picture825-1.png" /></p>
-
+</code></pre><p><img src="/img/raspberry/picture825-1.png" alt="picture825-1.png"></p>
 <p>에서 Enable Camera를 활성화 시키고 재부팅</p>
-
 <h3 id="카메라를-작동하기-위한-프로그래밍">카메라를 작동하기 위한 프로그래밍</h3>
-
 <p>Shell, Python으로 가능하다. (모든 프로그래밍 및 라이브러리는 초기설치에 포함되어있음)</p>
-
 <h2 id="참고">참고</h2>
-
 <ul>
 <li><a href="https://learn.sparkfun.com/tutorials">https://learn.sparkfun.com/tutorials</a></li>
 <li><a href="http://wiki.rasplay.org/doku.php">http://wiki.rasplay.org/doku.php</a></li>
@@ -342,56 +327,51 @@ sudo chmod +x /etc/init.d/tightvnc
 <li><a href="http://www.rasplay.org/">http://www.rasplay.org/</a></li>
 <li><a href="/img/raspberry/picture820-1.png">참고도서</a></li>
 </ul>
-
-              </div>
-              <div class="columns is-mobile post-meta">
-                <div class="column is-half-desktop has-text-left is-paddingless"> 
-                   
-                  이전:<a href="http://clonekim.github.io/posts/2015/2015-02-03-beefy-tip/"> beefy 팁</a>
-                  
+</article>
+                        </div>
+                    </div>
                 </div>
-                <div class="column is-half-desktop has-text-right is-paddingless">
-                  
-                  이후:<a href="http://clonekim.github.io/posts/2015/2015-07-02-angularjs/"> AngularJS 다국어처리</a>
-                  
-                </div>
-                <div class="is-clearfix"></div>
-              </div>
-            </article>
-          </div>
+            </div>
+        </main>
+    </div>
+</div>
 
-      </div>
-    </main>    <footer class="footer">
-    
-        <div class="copyright has-text-centered">
-            <a href="https://bulma.io">
-                <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
-            </a>
-            <p>© (Less is more) Power by Hugo</p>
-        </div>
-    </footer>
-    <script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', () => {
-        
-        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-        
-        if ($navbarBurgers.length > 0) {
-            
-            $navbarBurgers.forEach( el => {
-                el.addEventListener('click', () => {
-                
-                const target = el.dataset.target;
-                const $target = document.getElementById(target);
-                
-                el.classList.toggle('is-active');
-                $target.classList.toggle('is-active');
-    
-                });
-            });
-        }
-    });
-    
 
-    </script>
+
+  <div class="footer container-lg width-full p-responsive" role="contentinfo">
+    <div
+        class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
+        <ul
+            class="list-style-none d-flex flex-wrap col-12 col-lg-5 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
+            <li class="mr-3 mr-lg-0"></a></li>
+        </ul>
+
+        <a aria-label="Homepage" title="(Less is more)" class="footer-octicon d-none d-lg-block mx-lg-4"
+            href="http://clonekim.github.io/">
+            <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24"
+                aria-hidden="true">
+                <path fill-rule="evenodd"
+                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+                </path>
+            </svg>
+        </a>
+        <ul
+            class="list-style-none d-flex flex-wrap col-12 col-lg-5 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
+        </ul>
+    </div>
+    <div class="d-flex flex-justify-center pb-6">
+        <span class="f6 text-gray-light"></span>
+    </div>
+</div>
+
+<script crossorigin="anonymous"
+    type="application/javascript" src="http://clonekim.github.io/js/frameworks.js"></script>
+
+<script crossorigin="anonymous"
+    type="application/javascript" src="http://clonekim.github.io/js/github-bootstrap.js"></script>
+<script src="http://clonekim.github.io/js/stop.js"></script>
+<script src="http://clonekim.github.io/js/contributions.js"></script>
+
 </body>
+
 </html>

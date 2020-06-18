@@ -19,10 +19,10 @@
       <pubDate>Tue, 19 Jan 2016 00:00:00 +0000</pubDate>
       <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2016/2016-01-19-using-gulp-react/</guid>
-      <description>gulp와 함께 의존성설치 npm install -g gulp  react 개발에 필요한 라이브러리와
+      <description>gulp와 함께 의존성설치 npm install -g gulp react 개발에 필요한 라이브러리와
 번들로 묶기위한 browserify를 설치
-npm install react --save-dev npm install react-dom --save-dev npm install browserify --save-dev npm install gulp --save-dev npm install vinyl-source-stream --save-dev npm install babelify --save-dev npm install babel-preset-react --save-dev  gulpfile
-var gulp = require(&amp;#39;gulp&amp;#39;), browserify = require(&amp;#39;browserify&amp;#39;), babelify = require(&amp;#39;babelify&amp;#39;), source = require(&amp;#39;vinyl-source-stream&amp;#39;); gulp.task(&amp;#39;default&amp;#39;, function() { return browserify(&amp;#39;./source/app.js&amp;#39;) .transform(babelify, {presets: [&amp;#39;react&amp;#39;]}) .bundle() .pipe(source(&amp;#39;app.min.js&amp;#39;)) .</description>
+npm install react --save-dev npm install react-dom --save-dev npm install browserify --save-dev npm install gulp --save-dev npm install vinyl-source-stream --save-dev npm install babelify --save-dev npm install babel-preset-react --save-dev gulpfile
+var gulp = require(&amp;#39;gulp&amp;#39;), browserify = require(&amp;#39;browserify&amp;#39;), babelify = require(&amp;#39;babelify&amp;#39;), source = require(&amp;#39;vinyl-source-stream&amp;#39;); gulp.task(&amp;#39;default&amp;#39;, function() { return browserify(&amp;#39;./source/app.js&amp;#39;) .transform(babelify, {presets: [&amp;#39;react&amp;#39;]}) .bundle() .pipe(source(&amp;#39;app.min.js&amp;#39;)) .pipe(gulp.dest(&amp;#39;./build/&amp;#39;)); }); app.js</description>
     </item>
     
     <item>
@@ -37,8 +37,7 @@ hello React!
 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;script src=&amp;#34;build/react.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;build/JSXTransformer.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt;	&amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;hello&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script type=&amp;#34;text/jsx&amp;#34;&amp;gt; React.render(&amp;lt;h1&amp;gt;Hello, welcome to React!&amp;lt;/h1&amp;gt;, document.getElementById(&amp;#39;hello&amp;#39;)); &amp;lt;/script&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; JSX(JavaScript XML) JSX(JavaScript XML)는 XML 과 유사한 문법을 가지는 자바스크립트이다.
 JSX 문법을 사용하기 위해서는 반드시 JSXTransformer.js가 필요하다
 상세한 JSX syntaxt과 spec 은 아래를 참조할 것
- http://facebook.github.io/react/docs/jsx-in-depth.html http://facebook.github.io/jsx/
-//Html &amp;lt;h1 class=&amp;#34;test&amp;#34;&amp;gt;Hello&amp;lt;/h1&amp;gt; //JSX &amp;lt;h1 className=&amp;#34;test&amp;#34;&amp;gt;Hello&amp;lt;/h1&amp;gt; var text= &amp;#34;Hello React!</description>
+ http://facebook.github.io/react/docs/jsx-in-depth.html http://facebook.github.io/jsx/  //Html &amp;lt;h1 class=&amp;#34;test&amp;#34;&amp;gt;Hello&amp;lt;/h1&amp;gt; //JSX &amp;lt;h1 className=&amp;#34;test&amp;#34;&amp;gt;Hello&amp;lt;/h1&amp;gt; var text= &amp;#34;Hello React!</description>
     </item>
     
   </channel>

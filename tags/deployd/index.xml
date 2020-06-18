@@ -19,9 +19,9 @@
       <pubDate>Mon, 21 Aug 2017 00:00:00 +0000</pubDate>
       <author>clonekim-at-gmail-dot-com (DAEHEE KIM)</author>
       <guid>http://clonekim.github.io/posts/2017/2017-08-21-deplo1y/</guid>
-      <description> 몽고디비를 이용한 JSON Dummy 서버툴이다.
-설치 $ npm install -g deployd  몽고디비
-$ docker run --name deployd-mongo -d mongo -p 27017:27017  Deployd 실행 $ dpd create [project name] $ cd [project name] $ dpd -H localhost -P 27017 -d  </description>
+      <description>몽고디비를 이용한 JSON Dummy 서버툴이다.
+설치 $ npm install -g deployd 몽고디비
+$ docker run --name deployd-mongo -d mongo -p 27017:27017 Deployd 실행 $ dpd create [project name] $ cd [project name] $ dpd -H localhost -P 27017 -d </description>
     </item>
     
   </channel>
